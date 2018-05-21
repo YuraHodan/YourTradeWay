@@ -1,0 +1,48 @@
+.title-section
+  display: block
+  &.blue-line
+
+.one-item-block
+  position: relative
+  padding-bottom: 100%
+  &:before
+      content: ""
+      position: absolute
+      left: 0
+      right: 0
+      bottom: -5px
+      height: 5px
+      background-color: $red
+  &.yellow-block
+    &:before
+      background-color: yellow
+
+
+
+.btn-big
+  display: inline-block
+  cursor: pointer
+  font-weight: 800
+  padding: 3px 60px
+  font-size: 17px
+  letter-spacing: .25em
+  color: $white
+  background-color: $black
+  text-align: center
+  line-height: 50px
+  border-radius: 50px
+  +transition(.3s)
+  &:hover
+    box-shadow: 0 0 15px rgba(0,0,0,0.5)
+  &:visited
+    background-color: $verBlack
+  &.blue-btn
+    color: $white
+    background-color: $blue
+    &:visited
+      background-color: $verBlue
+  &.yellow-btn
+    color: $black
+    background-color: $yellow
+    &:visited
+      background-color: $verOrange

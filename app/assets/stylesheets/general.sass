@@ -8,6 +8,7 @@ body
   display: -o-flex
   display: flex
   flex-direction: column
+  font-family: 'Montserrat', sans-serif
   background: white
   .main-wrapper
     flex: 1
@@ -19,27 +20,6 @@ body
   #{$header}, .#{$header}
     font-size: $font-size
 
-// for
-// @for $i from 1 through 3
-//   .item-#{$i}
-//     width: 2em * $i
-
-// while
-// $i: 6;
-// @while $i > 0
-//   .item-#{$i}
-//     width: 2em * $i
-//   $i: $i - 2
-
-// func
-// $grid-width: 40px;
-// $gutter-width: 10px;
-
-// @function grid-width($n)
-//   @return $n * $grid-width + ($n - 1) * $gutter-width
-
-// #sidebar
-//   width: grid-width(5)
 
 .small
   font-size: 0.75rem
