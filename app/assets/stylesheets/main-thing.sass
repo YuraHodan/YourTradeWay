@@ -1,19 +1,134 @@
-.main-thing
+.main
+  .varieties
+    .one-list-box
+      height: 450px
+      position: relative
+      margin-bottom: 25px
+    .img-bg
+      background-size: contain
+      background-position: 0
+    .list-comntainer
+      background-color: $blue
+      width: 57%
+      position: absolute
+      top: 0
+      right: 0
+      bottom: 0
+      color: $white
+      &.destreb
+        background-color: $green
+        color: $gray
+      &.marcet
+        background-color: $red
+        color: $white
+      &.logic
+        background-color: $orange
+        color: $gray
+      h3
+        padding: 50px 0 0 50px
+        font-size: 25px
+        font-weight: 500
+        word-spacing: .7em
+        letter-spacing: 3px
+      ul
+        padding: 50px
+        list-style: square outside
+        li
+          padding-bottom: 15px
+          cursor: pointer
+
+
+
+  .new-producers
+    padding: 150px 0
+    position: relative
+    .new-producers-tex
+      margin: 0 auto 50px
+      width: 100%
+      max-width: 100%
+      padding-bottom: 20px
+      font-size: 25px
+      font-weight: 600
+      text-transform: uppercase
+    .border-producers
+      margin-bottom: 30px
+      .one-new-producers
+        border-style: solid
+        border-color: $grayBg
+        border-width: 1px 1px 0px 1px
+        position: relative
+        padding-bottom: 100%
+        cursor: pointer
+    .one-item-block
+      &:before
+        bottom: 25px
+    .img-bg
+      background-size: contain
+      left: 60px
+      right: 60px
+    .btn-big
+      display: block
+      width: 255px
+      margin: 50px auto 0
+    +breakpoint(medium down)
+      padding: 20px 10px
+  .tradergram-wrapper
+    background-color: $grayBg
+    padding: 200px 0
+    position: relative
+    .comand-tradergram
+      text-align: center
+      margin: 0 auto 50px
+      width: 1100px
+      max-width: 100%
+      h2
+        padding-bottom: 40px
+        font-size: 30px
+        font-weight: 600
+        text-transform: uppercase
+      p
+        color: $gray
+    .one-tradergram-box
+      position: relative
+      padding-bottom: 100%
+      cursor: pointer
+    .tradergram-text
+      padding: 20px 0
+      cursor: pointer
+      h3
+        font-size: 16px
+        font-weight: 600
+        word-spacing: .2em
+        line-height: 1.5
+      p
+        font-size: 12px
+        word-spacing: .2em
+        line-height: 1.5
+        color: $gray
+
+    .btn-big
+      display: block
+      width: 255px
+      margin: 50px auto 0
+    +breakpoint(medium down)
+      padding: 20px 0
+
   .about-product
     display: flex
+    padding-bottom: 150px
+    padding-top: 150px
     .about-box
       padding-top: -50px
       display: flex
       justify-content: center
       align-items: center
-      +breakpoint(medium down)
-        display: block
     .text-about-product
       margin-right: 100px
       h2
         padding-bottom: 30px
         font-size: 40px
         word-spacing: 3em
+        text-transform: uppercase
       p
         font-size: 16px
         font-family: OpenSans
@@ -23,7 +138,48 @@
         color: $gray
     .btn-big
       margin-top: 30px
-      +breakpoint(medium down)
-        margin-bottom: 20px
     .img-target
       padding-bottom: 140%
+
+    +breakpoint(medium down)
+      padding: 20px 0
+      .about-box
+        display: block
+      .text-about-product
+        text-align: center
+        margin-right: 0px
+      .btn-big
+        margin-bottom: 20px
+
+  .apply
+    display: flex
+    justify-content: center
+    align-items: center
+    background-color: $grayBg
+    padding: 200px 0
+    .comand-apply
+      flex-direction: column
+      display: flex
+      justify-content: center
+      align-items: center
+      .apply-taitle
+        h2
+          padding-bottom: 40px
+          font-size: 30px
+          font-weight: 650
+          text-transform: uppercase
+      .apply-text
+        width: 50%
+        text-align: center
+        font-size: 16px
+        font-family: OpenSans
+        font-weight: 100
+        word-spacing: .2em
+        line-height: 1.5
+        color: $gray
+        padding-bottom: 70px
+    +breakpoint(medium down)
+      padding: 20px 0
+      .comand-apply
+        .apply-text
+          width: 100%
