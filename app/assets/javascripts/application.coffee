@@ -4,6 +4,9 @@
 
 #= require global
 
+#     P A G E S
+#= require main
+
 #     P L U G I N S
 
 #= require plugins/jquery-easing
