@@ -5,7 +5,8 @@
 #= require global
 
 #     P A G E S
-#= require main
+
+
 
 #     P L U G I N S
 
@@ -20,6 +21,8 @@
 # require plugins/scroll-banner
 #= require plugins/selectize.min
 #= require plugins/parallax.min
+#= require plugins/slick.min
+# require plugins/jquery-migrate.min
 
 #     I N I T I A L I Z E
 
@@ -36,3 +39,5 @@
 #= require tabs
 #= require navigation
 #= require links
+#= require slider
+#= require main
