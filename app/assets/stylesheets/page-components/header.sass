@@ -96,7 +96,7 @@
       text-decoration: none
       font-weight: 700
       font-size: 12px
-      line-height: 32px
+      line-height: 60px
       padding: 0 15px
     li
       position: relative
@@ -107,19 +107,25 @@
         background: #ddd
       &:hover
         background: #f6f6f6
+      &::before
+        display: none
     ul
       display: none
       position: absolute
       top: 100%
       left: 0
-      background: #fff
+      background: $black
       padding: 0
       li
         float: none
-        width: 200px
+        width: 320px
+        border-bottom: 1px solid red
       a
+        color: $white
+        font-weight: 600
         line-height: 120%
         padding: 10px 15px
+        font-size: 17px
       ul
         top: 0
         left: 100%
