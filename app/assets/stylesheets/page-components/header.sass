@@ -103,27 +103,22 @@
       float: left
       margin: 0
       padding: 0
-      &.current-menu-item
-        background: #ddd
-      &:hover
-        background: #f6f6f6
       &::before
-        display: none
+          display: none
+
     ul
       display: none
       position: absolute
       top: 100%
       left: 0
-      background: $black
       padding: 0
       li
         float: none
         width: 320px
-        border-bottom: 1px solid red
       a
         color: $white
         font-weight: 600
-        line-height: 120%
+        line-height: 100%
         padding: 10px 15px
         font-size: 17px
       ul
@@ -131,3 +126,101 @@
         left: 100%
     li:hover > ul
       display: block
+  .tape-text
+    font-size: 13px
+    padding: 15px
+    background-color: $black
+    color: $gray
+  .top-menu1
+    top: -120%
+    background: $menu
+    border-right: 1px solid $almostWhite
+    p
+      color: $gray
+      background-color: $menu
+      font-size: 13px
+      padding: 15px
+      border-bottom: 1px solid  $almostWhite
+    a
+      padding: 15px 25px
+    &.top-menu2
+      top: -220%
+    &.top-menu3
+      top: -268%
+    &.top-menu4
+      top: -370%
+    &.top-menu5
+      top: -473%
+    &.top-menu6
+      top: -575%
+    &.top-menu7
+      top: -678
+    .menu-tab3
+      top: -117%
+      padding-bottom: 40px
+      background-color: white
+      width: 600px
+      .img-bg
+        // position: absolute
+        // padding-right: 100%
+        background-size: auto
+        margin-top: 200px
+        margin-left: 160px
+      p
+        background-color: white
+      a
+        font-size: 13px
+        padding: 15px 25px
+        color: $black
+        &:hover
+          text-decoration: underline
+      &.tab3-top2
+        top: -217%
+      &.tab3-top3
+        top: -317%
+      &.tab3-top4
+        top: -417%
+      &.tab3-top5
+        top: -517%
+      &.tab3-top6
+        top: -617%
+      &.tab3-top7
+        top: -717%
+
+
+  .target-list2
+    color: $black
+    font-size: 13px
+    background: $menu
+    &:after
+      content: ">"
+      position: absolute
+      font-size: 13px
+      color: $gray
+      right: 20px
+    &:hover
+      background-color: $yellow
+      color: $black
+  .targer-first
+    color: $white
+    background: $black
+    border-top: 1px solid  black
+    &:before
+      content: ""
+      position: absolute
+      width: 5px
+      height: 99%
+      top: 0
+      left: 0
+      background-color: $yellow
+      border-top: 1px solid  black
+    &:after
+      // content: "url(photo/main/svg/slider-arrow-right.svg)"
+      content: ">"
+      position: absolute
+      font-size: 20px
+      color: $gray
+      right: 20px
+    &:hover
+      background-color: $yellow
+      color: $black

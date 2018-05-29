@@ -6,95 +6,385 @@ nav#primary_nav_wrap
       a.top-nav.yellow-nav href="#"  товари
       ul
         li
-          p тип товарів
+          p.tape-text тип товарів
         li
-          a href="#"  продукти харчування
-        li
-          a href="#" косметика і гігієна
-        li
-          a href="#" товари для дому
-        li
-          a href="#"  канцелярські товари
-        li
-          a href="#"  автотовари
-        li
-          a href="#"  товари для тварин
-        li
-          a href="#"  виробництво
-          ul
+          a.targer-first href="#"  продукти харчування
+          ul.top-menu1
             li
-              a href="#"  Deep Menu 1
-              ul
-                li
-                  a href="#"  Sub Deep 1
-                li
-                  a href="#"  Sub Deep 2
-                li
-                  a href="#"  Sub Deep 3
-                li
-                  a href="#"  Sub Deep 4
-                li
-                  a href="#"  Sub Deep 4
-                li
-                  a href="#"  Sub Deep 4
-                li
-                  a href="#"  Sub Deep 4
-                li
-                  a href="#"  Sub Deep 4
+              p тип товарів
             li
-              a href="#"  Deep Menu 2
-              ul
+              a.target-list2 href="#"  Овочі та фрукти
+              ul.menu-tab3
+                .img-bg style="background-image: url(#{asset_path('photo/main/food.jpg')})"
                 li
-                  a href="#"  Sub Deep 1
+                  p тип товарів
                 li
-                  a href="#"  Sub Deep 2
+                  a href="#"  Овощи/Грибы
                 li
-                  a href="#"  Sub Deep 3
+                  a href="#"  Фрукты и Ягоды
                 li
-                  a href="#"  Sub Deep 4
+                  a href="#"  Сухофрукты/Орехи
                 li
-                  a href="#"  Sub Deep 4
+                  a href="#"  Зелень
+            li
+              a.target-list2 href="#"  Заморозка
+              ul.menu-tab3.tab3-top2
+                .img-bg style="background-image: url(#{asset_path('photo/main/food.jpg')})"
                 li
-                  a href="#"  Sub Deep 4
+                  p тип товарів
                 li
-                  a href="#"  Sub Deep 4
+                  a href="#"  Готовые блюда/Полуфабрикаты
                 li
-                  a href="#"  Sub Deep 4
+                  a href="#"  Замороженные овощи и фрукты
+                li
+                  a href="#"  Мороженное
+                li
+                  a href="#"  Рыба и Морепродукты
+            li
+              a.target-list2 href="#"  МЯСО / РЫБА / ПТИЦА
+              ul.menu-tab3.tab3-top3
+                .img-bg style="background-image: url(#{asset_path('photo/main/food.jpg')})"
+                li
+                  p тип товарів
+                li
+                  a href="#"  Рыбные продукты
+                li
+                  a href="#"  Свежое мясо(птица/говядина/свинина)
+                li
+                  a href="#"  Колбасные изделия
+            li
+              a.target-list2 href="#"  КОНДИТЕРСКИЕ ИЗДЕЛИЯ
+              ul.menu-tab3.tab3-top4
+                .img-bg style="background-image: url(#{asset_path('photo/main/food.jpg')})"
+                li
+                  p тип товарів
+                li
+                  a href="#"  Жевательные резинки и мятные драже
+                li
+                  a href="#"  Диабетические Продукты
+                li
+                  a href="#"  Восточные сладости
+                li
+                  a href="#"  Конфеты(шоколадные/карамель/весовые)
+                li
+                  a href="#"  Шоколад(крем/плитка/батон/яйца)
+                li
+                  a href="#"  Печенье
+                li
+                  a href="#"  Мармелад,зефир,пастила
+                li
+                  a href="#"  Кексы,рулеты,круассаны,торты
+              li
+                a.target-list2 href="#"  СОУСЫ/КОНСЕРВЫ
+                ul.menu-tab3.tab3-top5
+                  .img-bg style="background-image: url(#{asset_path('photo/main/food.jpg')})"
+                  li
+                    p тип товарів
+                  li
+                    a href="#"  Соусы,кетчупы,заправки
+                  li
+                    a href="#"  Фруктовая консервация
+                  li
+                    a href="#"  Овощная,грибная консервация
+                  li
+                    a href="#"  Рыбные консервы
+                  li
+                    a href="#"  Мясная консервация
+                  li
+                    a href="#"  Сгущеное молоко
+              li
+                a.target-list2 href="#"  БАКАЛЕЯ/ПЕКАРНЯ
+                ul.menu-tab3.tab3-top6
+                  .img-bg style="background-image: url(#{asset_path('photo/main/food.jpg')})"
+                  li
+                    p тип товарів
+                  li
+                    a href="#"  Масло растительное
+                  li
+                    a href="#"  Крупы
+                  li
+                    a href="#"  Чай,кофе,какао
+                  li
+                    a href="#"  Соль,сахар,крахмал,сода,уксус
+                  li
+                    a href="#"  Мед
+                  li
+                    a href="#"  Сухие завтраки / Еда быстрого приготовления
+                  li
+                    a href="#"  Кондитерские п/ф
+                  li
+                    a href="#"  Снеки
+                  li
+                    a href="#"  Специи и приправы
+                  li
+                    a href="#"  Соевая продукция/Восточная кухня
+                  li
+                    a href="#"  Сухари,гренки,сдоба/Хлеба
 
-    li
-      a.top-nav.blue-nav href="#"  виробники
-      ul
-        li
-          a href="#"  Sub Menu 1
-        li
-          a href="#"  Sub Menu 2
-        li
-          a href="#"  Sub Menu 3
-    li
-      a.top-nav.green-nav href="#"  дистрибютори
-      ul
-        li.dir
-          a href="#"  Sub Menu 1
-        li.dir
-          a href="#"  Sub Menu 2 THIS IS SO LONG IT MIGHT CAUSE AN ISSEUE BUT MAYBE NOT?
-          ul
             li
-              a href="#"  Category 1
+              a.target-list2 href="#"  НАПИТКИ
+              ul.menu-tab3.tab3-top7
+                .img-bg style="background-image: url(#{asset_path('photo/main/food.jpg')})"
+                li
+                  p тип товарів
+                li
+                  a href="#"  Безалкогольные напитки и соки
+                li
+                  a href="#"  Пиво и слабоалкогольные напитки
+                li
+                  a href="#"  Алкогольные напитки
             li
-              a href="#"  Category 2
-            li
-              a href="#"  Category 3
-            li
-              a href="#"  Category 4
-            li
-              a href="#"  Category 5
+              a.target-list2 href="#"  МОЛОКО/СЫРЫ/ЯЙЦА
+              ul.menu-tab3.tab3-top7
+                .img-bg style="background-image: url(#{asset_path('photo/main/food.jpg')})"
+                li
+                  p тип товарів
+                li
+                  a href="#"  Яйцо
+                li
+                  a href="#"  Молоко/Сметана/Йогурты
+                li
+                  a href="#"  Сыры/Творожные изделия
+                li
+                  a href="#"  Сыры/Творожные изделия
+                li
+                  a href="#"  Кефир,кисломолочные продукты,сливки,сырки
         li
-          a href="#"  Sub Menu 3
-        li
-          a href="#"  Sub Menu 4
-        li
-          a href="#"  Sub Menu 5
-    li
-      a.top-nav.red-nav href="#"  маркети
-    li
-      a.top-nav.orange-nav href="#"  логістика
+          a.targer-first href="#" косметика і гігієна
+          ul.top-menu1.top-menu2
+            li
+              p тип товарів
+            li
+              a.target-list2 href="#"  Deep Menu 1
+              ul.menu-tab3.tab3-top1
+                .img-bg style="background-image: url(#{asset_path('photo/main/food.jpg')})"
+                li
+                  p тип товарів
+                li
+                  a href="#"  Sub Deep 1
+                li
+                  a href="#"  Sub Deep 2
+                li
+                  a href="#"  Sub Deep 3
+                li
+                  a href="#"  Sub Deep 4
+                li
+                  a href="#"  Sub Deep 5
+                li
+                  a href="#"  Sub Deep 6
+                li
+                  a href="#"  Sub Deep 7
+            li
+              a.target-list2 href="#"  Deep Menu 2
+              ul.menu-tab3.tab3-top2
+                .img-bg style="background-image: url(#{asset_path('photo/main/food.jpg')})"
+                li
+                  p тип товарів
+                li
+                  a href="#"  Sub Deep 1
+                li
+                  a href="#"  Sub Deep 2
+                li
+                  a href="#"  Sub Deep 3
+                li
+                  a href="#"  Sub Deep 4
+                li
+                  a href="#"  Sub Deep 5
+                li
+                  a href="#"  Sub Deep 6
+                li
+                  a href="#"  Sub Deep 7
+            li
+              a.target-list2 href="#"  Deep Menu 3
+              ul.menu-tab3.tab3-top3
+                .img-bg style="background-image: url(#{asset_path('photo/main/food.jpg')})"
+                li
+                  p тип товарів
+                li
+                  a href="#"  Sub Deep 1
+                li
+                  a href="#"  Sub Deep 2
+                li
+                  a href="#"  Sub Deep 3
+                li
+                  a href="#"  Sub Deep 4
+                li
+                  a href="#"  Sub Deep 5
+                li
+                  a href="#"  Sub Deep 6
+                li
+                  a href="#"  Sub Deep 7
+            li
+              a.target-list2 href="#"  Deep Menu 4
+              ul.menu-tab3.tab3-top4
+                .img-bg style="background-image: url(#{asset_path('photo/main/food.jpg')})"
+                li
+                  p тип товарів
+                li
+                  a href="#"  Sub Deep 1
+                li
+                  a href="#"  Sub Deep 2
+                li
+                  a href="#"  Sub Deep 3
+                li
+                  a href="#"  Sub Deep 4
+                li
+                  a href="#"  Sub Deep 5
+                li
+                  a href="#"  Sub Deep 6
+                li
+                  a href="#"  Sub Deep 7
+            li
+              a.target-list2 href="#"  Deep Menu 5
+              ul.menu-tab3.tab3-top5
+                .img-bg style="background-image: url(#{asset_path('photo/main/food.jpg')})"
+                li
+                  p тип товарів
+                li
+                  a href="#"  Sub Deep 1
+                li
+                  a href="#"  Sub Deep 2
+                li
+                  a href="#"  Sub Deep 3
+                li
+                  a href="#"  Sub Deep 4
+                li
+                  a href="#"  Sub Deep 5
+                li
+                  a href="#"  Sub Deep 6
+                li
+                  a href="#"  Sub Deep 7
+            li
+              a.target-list2 href="#"  Deep Menu 6
+              ul.menu-tab3.tab3-top6
+                .img-bg style="background-image: url(#{asset_path('photo/main/food.jpg')})"
+                li
+                  p тип товарів
+                li
+                  a href="#"  Sub Deep 1
+                li
+                  a href="#"  Sub Deep 2
+                li
+                  a href="#"  Sub Deep 3
+                li
+                  a href="#"  Sub Deep 4
+                li
+                  a href="#"  Sub Deep 5
+                li
+                  a href="#"  Sub Deep 6
+                li
+                  a href="#"  Sub Deep 7
+            li
+              a.target-list2 href="#"  Deep Menu 7
+              ul.menu-tab3.tab3-top7
+                .img-bg style="background-image: url(#{asset_path('photo/main/food.jpg')})"
+                li
+                  p тип товарів
+                li
+                  a href="#"  Sub Deep 1
+                li
+                  a href="#"  Sub Deep 2
+                li
+                  a href="#"  Sub Deep 3
+                li
+                  a href="#"  Sub Deep 4
+                li
+                  a href="#"  Sub Deep 5
+                li
+                  a href="#"  Sub Deep 6
+                li
+                  a href="#"  Sub Deep 7
+
+
+
+
+
+
+
+        / li
+        /   a href="#"  канцелярські товари
+        /   a href="#" товари для дому
+        / li
+        / li
+        /   a href="#"  автотовари
+        / li
+        /   a href="#"  товари для тварин
+        / li
+        /   a href="#"  виробництво
+        /   ul
+        /     li
+        /       a href="#"  Deep Menu 1
+        /       ul
+        /         li
+        /           a href="#"  Sub Deep 1
+        /         li
+        /           a href="#"  Sub Deep 2
+        /         li
+        /           a href="#"  Sub Deep 3
+        /         li
+        /           a href="#"  Sub Deep 4
+        /         li
+        /           a href="#"  Sub Deep 4
+        /         li
+        /           a href="#"  Sub Deep 4
+        /         li
+        /           a href="#"  Sub Deep 4
+        /         li
+        /           a href="#"  Sub Deep 4
+        /     li
+        /       a href="#"  Deep Menu 2
+        /       ul
+        /         li
+        /           a href="#"  Sub Deep 1
+        /         li
+        /           a href="#"  Sub Deep 2
+        /         li
+        /           a href="#"  Sub Deep 3
+        /         li
+        /           a href="#"  Sub Deep 4
+        /         li
+        /           a href="#"  Sub Deep 4
+        /         li
+        /           a href="#"  Sub Deep 4
+        /         li
+        /           a href="#"  Sub Deep 4
+        /         li
+        /           a href="#"  Sub Deep 4
+    /
+    / li
+    /   a.top-nav.blue-nav href="#"  виробники
+    /   ul
+    /     li
+    /       a href="#"  Sub Menu 1
+    /     li
+    /       a href="#"  Sub Menu 2
+    /     li
+    /       a href="#"  Sub Menu 3
+    / li
+    /   a.top-nav.green-nav href="#"  дистрибютори
+    /   ul
+    /     li.dir
+    /       a href="#"  Sub Menu 1
+    /     li.dir
+    /       a href="#"  Sub Menu 2 THIS IS SO LONG IT MIGHT CAUSE AN ISSEUE BUT MAYBE NOT?
+    /       ul
+    /         li
+    /           a href="#"  Category 1
+    /         li
+    /           a href="#"  Category 2
+    /         li
+    /           a href="#"  Category 3
+    /         li
+    /           a href="#"  Category 4
+    /         li
+    /           a href="#"  Category 5
+    /     li
+    /       a href="#"  Sub Menu 3
+    /     li
+    /       a href="#"  Sub Menu 4
+    /     li
+    /       a href="#"  Sub Menu 5
+    / li
+    /   a.top-nav.red-nav href="#"  маркети
+    / li
+    /   a.top-nav.orange-nav href="#"  логістика
