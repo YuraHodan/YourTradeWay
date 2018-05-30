@@ -1,226 +1,264 @@
-// .header-container
-//   position: fixed
-//   padding: 16px 30px
-//   width: 100%
-//   background: transparent
-//   display: -webkit-flex
-//   display: -moz-flex
-//   display: -ms-flex
-//   display: -o-flex
-//   display: flex
-//   justify-content: space-between
-//   +transition-property(transform)
-//   +transition-duration(1s)
-//   +translate(0,-100%)
-//   z-index: 11
-//   &.scrolled, &.visible
-//     +translate(0,0)
-//   @media #{$small-only}
-//   @media #{$xxlarge-up}
-//   .logo
-//     width: 70px
-//     line-height: 1
-//     svg
-//       width: 100%
-//       path
-//         +transition(0.5s)
-//       path.heart
-//         transform-origin: center
-//         fill: $pink600
-//       path.outline
-//         fill: white
-//     &:hover
-//       svg
-//         path.heart
-//           animation: heartbeat 1s infinite
-//     @media #{$small-only}
-//       width: 50px
-//   .logo, .right-part
-//     align-self: center
-//   .right-part
-//     margin-left: auto
-//     .small
-//       @extend %istok
-//       color: $brown800
-//       text-transform: uppercase
-//       letter-spacing: 2px
-//       padding: 20px
-//       +transition(0.5s)
-//       @media #{$small-only}
-//         display: none
-//       &:hover
-//         color: $pink600
+.heder-menu
 
-//   //     H a m b u r g e r
+  /** page structure *
 
-//   .hamburger
-//     margin-left: 4em
-//     .hamburger-box
-//       width: 32px
-//       cursor: pointer
+  nav
+    display: block
+    width: 100%
+    height: 70px
+  .wrapper
+    display: block
+    margin: 0 auto
+  .title
+    padding: 20px
+    font-size: 12px
+    color: $title
+    letter-spacing: 1px
+    border-bottom: 1px solid black
+  .title2
+    font-weight: 600
+    padding: 20px
+    font-size: 12px
+    color: $title
+    letter-spacing: 1px
+    border-bottom: 1px solid $almostWhite
 
-//     .hamburger-inner
-//       width: 100%
-//       border-radius: 0
-//       height: 2px
-//       background: $brown800
-//       &:before, &:after
-//         width: 100%
-//         background: $brown800
-//         height: 2px
-//         border-radius: 0
 
-//     @media #{$large-up}
-//       &.is-active
-//         .hamburger-inner
-//           background: white
-//           &:before, &:after
-//             background: white
-//         &:hover
-//           .hamburger-inner
-//             background: $pink600
-//             &:before, &:after
-//               background: $pink600
-#primary_nav_wrap
-  margin-top: 15px
-  z-index: 11
-  ul
-    list-style: none
+  #menu
+    display: block
     position: relative
-    float: left
-    margin: 0
-    padding: 0
-    a
-      display: block
-      color: #333
-      text-decoration: none
-      font-weight: 700
-      font-size: 12px
-      line-height: 60px
-      padding: 0 15px
+    z-index: 99
     li
-      position: relative
-      float: left
-      margin: 0
-      padding: 0
-      &::before
-          display: none
-
-    ul
-      display: none
-      position: absolute
-      top: 100%
-      left: 0
-      padding: 0
-      li
-        float: none
-        width: 320px
-      a
-        color: $white
-        font-weight: 600
-        line-height: 100%
-        padding: 10px 15px
-        font-size: 17px
-      ul
-        top: 0
-        left: 100%
-    li:hover > ul
+      font-weight: 600
       display: block
-  .tape-text
-    font-size: 13px
-    padding: 15px
-    background-color: $black
-    color: $gray
-  .top-menu1
-    top: -120%
-    background: $menu
-    border-right: 1px solid $almostWhite
-    p
-      color: $gray
-      background-color: $menu
-      font-size: 13px
-      padding: 15px
-      border-bottom: 1px solid  $almostWhite
-    a
-      padding: 15px 25px
-    &.top-menu2
-      top: -220%
-    &.top-menu3
-      top: -268%
-    &.top-menu4
-      top: -370%
-    &.top-menu5
-      top: -473%
-    &.top-menu6
-      top: -575%
-    &.top-menu7
-      top: -678
-    .menu-tab3
-      top: -117%
-      padding-bottom: 40px
-      background-color: white
-      width: 600px
-      .img-bg
-        // position: absolute
-        // padding-right: 100%
-        background-size: auto
-        margin-top: 200px
-        margin-left: 160px
-      p
-        background-color: white
+      float: left
+      letter-spacing: 1px
+      margin-left: 0px
+      &:before
+        display: none
       a
-        font-size: 13px
-        padding: 15px 25px
+        display: block
+        position: relative
+        float: left
+        padding: 0 35px
+        font-size: 17px
+        line-height: 60px
+        font-weight: bold
+        text-decoration: none
+        background-color: $almostRed
         color: $black
-        &:hover
-          text-decoration: underline
-      &.tab3-top2
-        top: -217%
-      &.tab3-top3
-        top: -317%
-      &.tab3-top4
-        top: -417%
-      &.tab3-top5
-        top: -517%
-      &.tab3-top6
-        top: -617%
-      &.tab3-top7
-        top: -717%
+        &:hover, &.active
+        &.yellow
+          background-color: $yellow
 
+        &.blue
+          background-color: $blue
+        &.green
+          background-color: $green
+        &.red
+          background-color: $red
+        &.orange
+          background-color: $orange
+      ul
+        display: none
+        position: absolute
+        top: 60px
+        width: 300px
+        background: $black
+        z-index: -1
+        -webkit-box-shadow: 0 2px 7px rgba(0, 0, 0, 0.45)
+        -moz-box-shadow: 0 2px 7px rgba(0, 0, 0, 0.45)
+        box-shadow: 0 2px 7px rgba(0, 0, 0, 0.45)
+        padding-bottom: 100px
+        li
+          display: block
+          width: 300px
+          a
+            width: 300px
+            display: block
+            float: none
+            font-size: 15px
+            line-height: 40px
+            padding: 0 15px
+            color: white
+            background-color: $black
+            border-bottom: 1px solid black
+            letter-spacing: 1px
+            text-transform: uppercase
+            &:before
+              content: ""
+              position: absolute
+              width: 5px
+              height: 100%
+              top: 0
+              left: 0
+              background-color: $yellow
+            svg
+              fill: white
+              width: 20px
+              height: 20px
+              +y-align
+              right: 10px
+            &:hover,&.active
+              background: $yellow
+              color: $black
+        &.blue
+          li
+            a
+              &:before
+                background-color: $blue
+        &.green
+          li
+            a
+              &:before
+                background-color: $green
+        &.redb
+          li
+            a
+              &:before
+                background-color: $red
+        &.orangb
+          li
+            a
+              &:before
+                background-color: $orange
+        .img-bg
+          width: 500px
+          height: 500px
+          bottom: 0
+          background-size: contain
+          left: initial
+          top: initial
+          z-index: 1
+          background-position: bottom
+        &.expanded
+          width: 300px
+          li
+            margin-right: 200px
+        li
+          ul
+            display: none
+            position: absolute
+            left: 300px
+            top: 0
+            height: 100%
+            background: none
+            -webkit-box-shadow: none
+            -moz-box-shadow: none
+            box-shadow: none
+            background-color: $menu
+            border-bottom: 10px solid $black
+            li a
+              border-bottom: 0px solid
+              background-color: $menu
+              color: $verBlack
+              font-size: 14px
+              font-weight: 400
+              font-family: OpenSans
+              text-transform: none
+              &:before
+                display: none
+            &.expanded
+              width: 300px
+              li
+                margin-right: 200px
+            li
+              ul
+                display: none
+                position: absolute
+                left: 300px
+                top: 0
+                width: 600px
+                height: 101.8%
+                background: none
+                -webkit-box-shadow: none
+                -moz-box-shadow: none
+                box-shadow: none
+                background-color: white
+                border-left: 1px solid $almostWhite
+                border-bottom: 10px solid $black
+                li a
+                  background-color: white
+                  color: $verBlack
+                  &:hover,&.active
+                    text-decoration: underline
+                    background-color: white
+                    text-transform: lowercase
+                    font-weight: 400
+                    font-family: OpenSans
+                    font-size: 14px
+                    text-transform: none
 
-  .target-list2
-    color: $black
-    font-size: 13px
-    background: $menu
+          &.purple
+            a
+              &:hover, &.active
+                background: $blue
+                color: $black
+            ul
+              background: $menu
+              a
+                color: $verBlack
+                &:hover,&.active
+                  text-decoration: underline
+                  background-color: $menu
+
+          &.green2
+            a
+              &:hover, &.active
+                background: $green
+                color: $black
+            ul
+              background: $menu
+              a
+                color: $verBlack
+                &:hover,&.active
+                  text-decoration: underline
+                  background-color: $menu
+          &.aqua
+            a
+              &:hover, &.active
+                background: $red
+                color: $black
+            ul
+              background: $menu
+              a
+                color: $menu
+          &.orange2
+            a
+              &:hover, &.active
+                background: $orange
+                color: $menu
+            ul
+              background: $menu
+          &.blue
+            a
+              &:hover, &.active
+                background: #4d6899
+                color: #fff
+            ul
+              background: #4d6899
+          &.gold
+            a
+              &:hover, &.active
+                background: #97944c
+                color: #fff
+            ul
+              background: #97944c
+
+  /** clearfix *
+
+  .clearfix
     &:after
-      content: ">"
-      position: absolute
-      font-size: 13px
-      color: $gray
-      right: 20px
-    &:hover
-      background-color: $yellow
-      color: $black
-  .targer-first
-    color: $white
-    background: $black
-    border-top: 1px solid  black
-    &:before
-      content: ""
-      position: absolute
-      width: 5px
-      height: 99%
-      top: 0
-      left: 0
-      background-color: $yellow
-      border-top: 1px solid  black
-    &:after
-      // content: "url(photo/main/svg/slider-arrow-right.svg)"
-      content: ">"
-      position: absolute
-      font-size: 20px
-      color: $gray
-      right: 20px
-    &:hover
-      background-color: $yellow
-      color: $black
+      content: "."
+      display: block
+      clear: both
+      visibility: hidden
+      line-height: 0
+      height: 0
+    display: inline-block
+
+  html[xmlns] .clearfix
+    display: block
+
+  * html .clearfix
+    height: 1%

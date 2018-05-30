@@ -3,6 +3,7 @@
 #= require jquery_ujs
 
 #= require global
+#= require main
 
 #     P A G E S
 

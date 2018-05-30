@@ -20,6 +20,7 @@
       padding-right: 20px
       line-height: 1.7
       li
+        position: relative
         &:before
           top: 11px
       &:nth-child(3n)
@@ -31,6 +32,7 @@
             &:before
               display: none
             li
+              position: relative
               &:nth-child(n+5)
                 // opacity: 1
                 display: block
@@ -56,6 +58,7 @@
           padding-top: 25px
           padding-left: 25px
           li
+            position: relative
             +transition(.3s)
             &:nth-child(n+5)
               // opacity: 0
@@ -143,6 +146,7 @@
           padding: 50px
           list-style: square outside
           li
+            position: relative
             padding-bottom: 15px
             cursor: pointer
 
