@@ -3,7 +3,7 @@ classes = {
   scroll_larger_than_header_height: "scroll-larger-than-header-height"
 }
 
-header_selector = ".top-nav-wrapper"
+header_selector = ".header-container"
 banner_selector = ""
 
 setClosingTimeout = ()->
@@ -12,7 +12,6 @@ setClosingTimeout = ()->
   visibility_duration = 3000
   window.top_nav_timeout =  setTimeout(
     ()->
-      #alert("setClosingTimeout")
       window.top_nav_timeout = false
       if !window.top_nav_locked
 
@@ -24,13 +23,14 @@ setClosingTimeout = ()->
 handle_scroll = (e)->
   if e && e.ctrlKey
     alert("ctrl")
-  # top nav
   $banner = $(banner_selector)
-  banner_height = $banner.height()
-
+  # banner_height = $banner.height()
+  banner_height = 0
   scroll_top = $("body").scrollTop() || $(window).scrollTop()
+  # console.log('scroll_top:' scroll_top)
   $top_nav = $(header_selector)
   top_nav_height = $top_nav.height()
+  # console.log(top_nav_height)
 
   if scroll_top > top_nav_height
     $top_nav.addClass(classes.scroll_larger_than_header_height)
@@ -46,8 +46,7 @@ handle_scroll = (e)->
     delta = e
 
   $("body").attr("header_timeout")
-  #console.log "delta: ", delta
-  if scroll_top > banner_height && delta < 0 && !$("body").hasClass("navigation_move")
+  if scroll_top > banner_height && delta < 0
     $top_nav.addClass(scrolled_class)
     if window.top_nav_timeout
       clearTimeout(window.top_nav_timeout)
@@ -115,24 +114,17 @@ if use_custom_scroll_speed
 
 
     condition = !$body.hasClass('open-popup') && !$body.data("scroll_in_progress") && (current_scroll_top >= min_stroll_top || deltaY < 0)
-    #console.log "condition: ", condition
 
     if condition
 
 
-#console.log "wheel: ", e
       e.preventDefault()
-
-      #future_scroll_top = current_scroll_top + deltaY * 2.5
       scroll_direction_up = deltaY < 0
 
       increment = 100
 
       if scroll_direction_up
         increment = increment * -1
-
-
-
 
       future_scroll_top = current_scroll_top + increment
       if future_scroll_top > max_scroll_top
@@ -143,11 +135,8 @@ if use_custom_scroll_speed
       if current_scroll_top != future_scroll_top
         $body.data("scroll_top", future_scroll_top)
 
-        #console.log "future_scroll_top: ", future_scroll_top
-
         $html_body.stop()
         $html_body.animate({scrollTop: future_scroll_top}, {
           duration: 600,
           easing: "easeOutExpo"
-#easing: "easeOutBack"
         })

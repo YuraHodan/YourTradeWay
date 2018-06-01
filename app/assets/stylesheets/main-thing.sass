@@ -95,14 +95,16 @@
       height: 450px
       position: relative
       margin-bottom: 25px
+      overflow: hidden
       &.hover-list
         &:hover
           #rotate2
             +rotate(-90deg)
-          .list-comntainer
-            +translate(-100%,0)
+          // .list-comntainer
+          //   +translate(-100%,0)
           .hover-list-box
             pointer-events: initial
+            +translate(0,0)
       .img-bg
         // background-size: contain
         background-position: 0
@@ -118,6 +120,15 @@
       .hover-list-box
         pointer-events: none
         +transition(.5s)
+        width: 100% !important
+        +translate(50%,0)
+        left: 0
+        ul
+          column-count: 2
+        +breakpoint(small only)
+          
+          ul
+            column-count: 1
       .list-comntainer, .hover-list-box
         background-color: $blue
         width: 50%
@@ -127,9 +138,13 @@
         bottom: 0
         color: $white
         +transition(.5s)
+        &.hover-list-box
+          width: 51%
         &.destreb
           background-color: $green
           color: $gray
+          +breakpoint(small only)
+            width: 100%
         &.marcet
           background-color: $red
           color: $white
@@ -149,6 +164,8 @@
             position: relative
             padding-bottom: 15px
             cursor: pointer
+        +breakpoint(small only)
+          width: 100%
 
   .new-producers
     padding: 150px 0
@@ -257,10 +274,10 @@
       .about-box
         display: block
       .text-about-product
-        text-align: center
         margin-right: 0px
       .btn-big
         margin-bottom: 20px
+
 
   .apply
     display: flex

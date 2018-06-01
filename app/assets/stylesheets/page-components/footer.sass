@@ -35,6 +35,18 @@
             path
               &:hover
                 fill: $yellow
+    +breakpoint(small only)
+      flex-direction: column
+      .futer-logo
+        width: 50%
+        svg
+          height: 60px
+      .tex-futer
+        padding: 20px 0
+        flex-direction: column-reverse
+        .one-text
+          padding: 10px 0
+
   .futer-blurb
     border-top: 1px solid $verBlack
     padding: 15px 15px
@@ -54,3 +66,15 @@
           g
             path
               fill: $gray
+    +breakpoint(small only)
+      display: flex
+      flex-direction: column-reverse
+      .tex-voronin
+        position: relative
+        right: 0
+      .voroninlogo
+        position: relative
+        left: -51%
+        top: -15px
+      .copywriting
+        text-align: center

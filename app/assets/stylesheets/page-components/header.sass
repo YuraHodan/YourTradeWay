@@ -1,22 +1,35 @@
+.header-container
+  position: fixed
+  width: 100%
+  z-index: 100
+  +translate(0,-200%)
+  +transition(.5s)
+  &.scrolled, &.visible
+    +translate(0,0)
+    .heder-menu
+      +translate(0,0)
+
 .heder-menu
+  +translate(0,-100%)
+  +transition(1s)
+  position: fixed
+  width: 100%
+  bottom: -70px
+  z-index: -1
+  background-color: white
+  &:after
+    content: ""
+    position: absolute
+    top: 65px
+    width: 100%
+    height: 5px
+    z-index: 1
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.05)
+
 
   /** page structure *
 
-  nav
-    display: block
-    width: 100%
-    height: 70px
-    &::after
-      content: ""
-      position: absolute
-      width: 100%
-      height: 5px
-      margin-top: -14px
-      z-index: 4
-      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.05)
-  .wrapper
-    display: inline-block
-    margin: 0 auto
+
   .title
     padding: 20px
     font-size: 12px
@@ -34,20 +47,17 @@
 
   #menu
     display: block
-    position: relative
-    z-index: 2
     li
       font-weight: 600
-      display: block
       float: left
       letter-spacing: 1px
       margin-left: 0px
       &:before
         display: none
       a
+        z-index: 2
         display: block
         position: relative
-        float: left
         padding: 0 35px
         font-size: 17px
         letter-spacing: 0.3px
@@ -254,7 +264,7 @@
             ul
               background: #97944c
 
-  /** clearfix *
+    /** clearfix *
 
   .clearfix
     &:after
@@ -264,103 +274,97 @@
       visibility: hidden
       line-height: 0
       height: 0
-    display: inline-block
 
-  html[xmlns] .clearfix
-    display: block
+.heder-content
+  background-color: $black
+  display: flex
+  justify-content: center
+  align-items: center
+  color: $white
+  height: 100%
+  padding: 50px 0
+  z-index: 100
 
-  * html .clearfix
-    height: 1%
-.menue-heder
-  .columns
-    background-color: $black
-    .heder-content
-      display: flex
-      justify-content: center
-      align-items: center
-      color: $white
-      height: 100px
-      .heder-logo
+  .heder-logo
+    position: absolute
+    left: 0
+    svg
+      cursor: pointer
+      height: 60px
+      padding: 0 50px
+  .tex-heder
+    position: absolute
+    right: 50px
+    display: flex
+    align-items: center
+    .one-text
+      font-size: 14px
+      cursor: pointer
+      padding: 0 25px
+      &:hover
+        color: $yellow
+    .btn-big-heder
+      display: inline-block
+      cursor: pointer
+      text-transform: uppercase
+      font-weight: 700
+      padding: 0px 60px
+      font-size: 14px
+      letter-spacing: .25em
+      color: $yellow
+      background-color: $black
+      text-align: center
+      line-height: 50px
+      border-radius: 50px
+      border: 2px solid $yellow
+      +transition(.3s)
+      &:hover
+        background-color: $yellow
+        color: $black
+        box-shadow: 0 0 15px rgba(0,0,0,0.5)
+    .language-box
+      // float: right
+      font-size: 14px
+      font-weight: 600
+      position: relative
+      cursor: pointer
+      text-transform: uppercase
+      svg
+        fill: $gray
+        margin-left: 10px
+        vertical-align: middle
+        +transition(.3s)
+      // path
+      // fill: rgba(white, 0.3)
+      .language-one
+        font-weight: 600
+        color: $black
+        cursor: pointer
+        height: 100%
+        display: inline-block
+      .hover-block
         position: absolute
+        width: 100%
+        opacity: 0
         left: 0
-        svg
-          cursor: pointer
-          height: 70px
-          padding: 0 25px
-      .tex-heder
-        position: absolute
-        right: 50px
-        display: flex
-        justify-content: center
-        align-items: center
-        .one-text
-          font-size: 14px
-          cursor: pointer
-          padding: 0 25px
-          &:hover
-            color: $yellow
-        .btn-big-heder
-          display: inline-block
-          cursor: pointer
-          text-transform: uppercase
-          font-weight: 700
-          padding: 0px 60px
-          font-size: 14px
-          letter-spacing: .25em
+        // top: 55px
+        pointer-events: none
+        background-color: $black
+        +transition(.3s)
+        // border-bottom: 3px solid red
+      .language-one
+        color: white
+        // border-bottom: 1px solid red
+        display: block
+        padding: 10px 20px
+        text-align: center
+        &:last-child
+          // border-bottom: 1px solid transparent
+        &:hover
           color: $yellow
-          background-color: $black
-          text-align: center
-          line-height: 50px
-          border-radius: 50px
-          border: 2px solid $yellow
-          +transition(.3s)
-          &:hover
-            background-color: $yellow
-            color: $black
-            box-shadow: 0 0 15px rgba(0,0,0,0.5)
-        .language-box
-          // float: right
-          font-size: 14px
-          font-weight: 600
-          position: relative
-          cursor: pointer
-          text-transform: uppercase
-          svg
-            fill: $gray
-            margin-left: 10px
-            vertical-align: middle
-            +transition(.3s)
-          // path
-          // fill: rgba(white, 0.3)
-          .language-one
-            font-weight: 600
-            color: $black
-            cursor: pointer
-            height: 100%
-            display: inline-block
-          .hover-block
-            position: absolute
-            width: 100%
-            opacity: 0
-            left: 0
-            // top: 55px
-            pointer-events: none
-            background-color: $black
-            +transition(.3s)
-            // border-bottom: 3px solid red
-          .language-one
-            color: white
-            // border-bottom: 1px solid red
-            display: block
-            padding: 10px 20px
-            text-align: center
-            &:last-child
-              // border-bottom: 1px solid transparent
-            &:hover
-              color: $yellow
-          &:hover
-            svg
-              +rotate(180deg)
-            .hover-block
-              opacity: 1
-              pointer-events: initial
+      &:hover
+        svg
+          +rotate(180deg)
+        .hover-block
+          opacity: 1
+          pointer-events: initial
