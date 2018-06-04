@@ -1,7 +1,7 @@
 $document.on 'click', '.accordion-button', (e)->
 
     e.preventDefault()
-    
+
     $this = $(this)
 
     #     b u t t o n
@@ -11,7 +11,7 @@ $document.on 'click', '.accordion-button', (e)->
     else
         $this.siblings().removeClass('opened')
         $this.addClass('opened')
-  
+
     #     a c c o r d i o n
 
     if $this.next().hasClass('show')

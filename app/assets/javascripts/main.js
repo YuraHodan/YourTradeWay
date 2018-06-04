@@ -50,4 +50,11 @@ $(function(){
     $('ul:first',this).parent().find('> a').removeClass('active');
     $('ul:first', this).hide();
   });
+
+    $('#rotate2').on('click', function(e){
+      if ($(window).width() <= '995'){
+        $('.long-list').addClass('active')
+        console.log("1");
+   }
+    });
 });

@@ -1,48 +1,42 @@
 .accordion-button
   position: relative
   padding: 20px 0
-  border-top: 1px solid $grey200
-  border-bottom: 1px solid $grey200
   cursor: pointer
+  background: $graySelect
+  display: flex
   &:nth-child(n+2)
     margin-top: -1px
   p
-    font-size: 20px
+    font-size: 14px
+    padding-left: 10px
     text-transform: uppercase
-    color: $brown400
-    +bold
-    line-height: 1
+    font-weight: 600
+    letter-spacing: 0.5px
+  .svg-slid
+    padding-left: 60%
+    max-width: 60%
+    position: relative
+    display: inline-block
+
   span
     font-size: 14px
-    color: $grey400
+    color: $black
+    font-weight: 600
     +bold
-  &:before, &:after
-    content: ''
-    position: absolute
-    top: 50%
-    right: 10px
-    width: 20px
-    height: 2px
-    background: $brown400
-    +translate(0,-50%)
-    +transition(0.25s)
-  &:before
-    +rotate(-90deg)
+
+  svg
   &.opened
     border-bottom: 0
-    &:before
-      +rotate(0)
-    &:after
-      background: red
-    p
-      color: red
-    
+    svg
+      +rotate(-180deg)
+
+
 .accordion-inner
   overflow: hidden
   display: none
   +translate(0,0)
-  border-bottom: 2px solid red
-  padding: 20px 30px 40px
+  border: 1px solid $graySelect
+  padding: 0px 10px 10px
   p
     width: 700px
     max-width: 90%
@@ -53,11 +47,6 @@
       color: $grey600
       line-height: 1.5
       margin: 10px 0
-  ul
-    li
-      &:before
-        content: '\2014'
-        margin-right: 10px
   ol
     counter-reset: count-list
     li
@@ -65,10 +54,6 @@
       &:before
         content: counter(count-list) '.'
         margin-right: 10px
-
-  .send-resume
-    font-size: 18px
-    color: $brown300
     &:before
       content: ''
       display: inline-block
@@ -77,3 +62,5 @@
       height: 1px
       margin-right: 10px
       background: $brown300
+  &.show
+    display: block !important

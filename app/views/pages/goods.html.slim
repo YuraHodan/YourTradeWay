@@ -1,0 +1,41 @@
+/ .main
+/   .slider
+/     = render "selector"
+.tovars
+  .selector
+    = render "selector"
+  .dubl-select
+    .row
+      .medium-3.columns
+        .accordion-button.opened
+          p afdsfdsf
+          .svg-slid = inline_svg "svg/ic_keyboard_arrow_up_black_24px.svg"
+        .accordion-inner.show
+
+          .selector
+            ul.read-more-wrap
+              li
+                .one-checkbox
+                  .checkbox
+                    input#checkbox-salis1 type="checkbox"
+                    label.switcher-control for="checkbox-salis1"
+                      span продажа
+              li
+                .one-checkbox
+                  .checkbox
+                    input#checkbox-salis2 type="checkbox"
+                    label.switcher-control for="checkbox-salis2"
+                      span продажа
+              li.read-more-target
+                .one-checkbox
+                  .checkbox
+                    input#checkbox-salis3 type="checkbox"
+                    label.switcher-control for="checkbox-salis3"
+                      span продажа
+              li.read-more-target
+                .one-checkbox
+                  .checkbox
+                    input#checkbox-salis4 type="checkbox"
+                    label.switcher-control for="checkbox-salis4"
+                      span продажа
+            label.read-more-trigger for="post-3"

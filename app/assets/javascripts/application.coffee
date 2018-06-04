@@ -42,3 +42,4 @@
 #= require links
 #= require slider
 #= require main
+#= require select
