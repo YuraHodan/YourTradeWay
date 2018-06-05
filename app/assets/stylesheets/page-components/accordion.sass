@@ -13,10 +13,12 @@
     font-weight: 600
     letter-spacing: 0.5px
   .svg-slid
-    padding-left: 60%
+    padding-left: 50%
     max-width: 60%
     position: relative
     display: inline-block
+    +breakpoint(medium only)
+      padding-left: 20%
 
   span
     font-size: 14px
@@ -45,8 +47,8 @@
     li
       font-size: 14px
       color: $grey600
-      line-height: 1.5
-      margin: 10px 0
+      line-height: 2.3
+      margin: 0px 0
   ol
     counter-reset: count-list
     li
