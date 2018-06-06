@@ -4,7 +4,7 @@
 
 #= require global
 #= require main
-
+#= require angular
 #     P A G E S
 
 
@@ -24,6 +24,7 @@
 #= require plugins/parallax.min
 #= require plugins/slick.min
 # require plugins/jquery-migrate.min
+#= require plugins/mixitup-2.1.1.min
 
 #     I N I T I A L I Z E
 
@@ -43,3 +44,7 @@
 #= require slider
 #= require main
 #= require select
+
+
+#     A N G U L A  R
+#= require angular/app

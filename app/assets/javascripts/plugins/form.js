@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  
+
   //     c u s t o m     l a b e l s
 
   $('input').blur(function() {
