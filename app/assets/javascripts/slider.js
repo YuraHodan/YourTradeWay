@@ -58,7 +58,7 @@ $('.goode1-slider-nav').slick({
 $('.goode2-slider-for').slick({
  slidesToShow: 1,
  slidesToScroll: 1,
- arrows: false,
+ arrows: true,
  fade: true,
  asNavFor: '.goode2-slider-nav'
 });
@@ -66,9 +66,32 @@ $('.goode2-slider-nav').slick({
  slidesToShow: 3,
  slidesToScroll: 3,
  asNavFor: '.goode2-slider-for',
+ dots: true,
  autoplay: true,
  autoplaySpeed: 2000,
- nextArrow: $('.mainlidet').find('.next-btn'),
- prevArrow: $('.mainlidet').find('.prev-btn')
+ nextArrow: false,
+ prevArrow: false
+
+});
+
+
+//// advertisingSlider
+
+$('.advertising-slider-for').slick({
+ slidesToShow: 1,
+ slidesToScroll: 1,
+ arrows: false,
+ fade: false,
+ asNavFor: '.advertising-slider-nav'
+});
+$('.advertising-slider-nav').slick({
+ slidesToShow: 1,
+ slidesToScroll: 1,
+ asNavFor: '.advertising-slider-for',
+ focusOnSelect: false,
+ autoplay: true,
+ autoplaySpeed: 2000,
+ nextArrow: false,
+ prevArrow: false
 
 });

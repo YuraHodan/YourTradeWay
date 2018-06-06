@@ -24,8 +24,11 @@ p
     &:before
       background-color: $yellow
   &.blue-block
-    &::before
+    &:before
       background-color: $blue
+  &.gray-block
+    &:before
+      background-color: $goodsgrayeband
 
 .top-nav
   display: inline-block
@@ -84,7 +87,7 @@ p
 ul
   list-style-type: disc
   li
-    
+
     margin-left: 20px
     &:before
       content: ""

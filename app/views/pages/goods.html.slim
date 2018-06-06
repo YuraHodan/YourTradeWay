@@ -1,97 +1,114 @@
-/ .main
-/   .slider
-/     = render "selector"
-.tovars
-  .row
-    .medium-3.columns
-      .selector
-        = render "selector"
-      .dubl-select
-        .accordion-button.opened
-          p afdsfdsf
-          .svg-slid = inline_svg "svg/ic_keyboard_arrow_up_black_24px.svg"
-        .accordion-inner.show
+  .tovarsp
+    .row
+      .medium-3.columns
+        .selector
+          = render "selector"
+        .dubl-select
+          .accordion-button.opened
+            p afdsfdsf
+            .svg-slid = inline_svg "svg/ic_keyboard_arrow_up_black_24px.svg"
+          .accordion-inner.show
 
-          .selector
-            ul.read-more-wrap
-              li
-                .one-checkbox
-                  .checkbox
-                    input#checkbox-salis1 type="checkbox"
-                    label.switcher-control for="checkbox-salis1"
-                    span продажа
-                    nav
-                      ul.drop-down.closed
-                        li
-                          a.nav-button href="#"   = inline_svg "svg/ic_keyboard_arrow_down_black_24px.svg"
-                        .down
-                          ul
-                            li
-                              .one-checkbox
-                                .checkbox
-                                  input#checkbox-salis6 type="checkbox"
-                                  label.switcher-control for="checkbox-salis6"
-                                  span продажа
-                            li
-                              .one-checkbox
-                                .checkbox
-                                  input#checkbox-salis7 type="checkbox"
-                                  label.switcher-control for="checkbox-salis7"
-                                  span продажа
-                            li
-                              .one-checkbox
-                                .checkbox
-                                  input#checkbox-salis8 type="checkbox"
-                                  label.switcher-control for="checkbox-salis8"
-                                  span продажа
-              li
-                .one-checkbox
-                  .checkbox
-                    input#checkbox-salis2 type="checkbox"
-                    label.switcher-control for="checkbox-salis2"
-                    span продажа
-                    nav
-                      ul.drop-down.closed
-                        li
-                          a.nav-button href="#"   = inline_svg "svg/ic_keyboard_arrow_down_black_24px.svg"
-                        li
-                          .one-checkbox
-                            .checkbox
-                              input#checkbox-salis9 type="checkbox"
-                              label.switcher-control for="checkbox-salis10"
-                              span продажа
-                        li
-                          .one-checkbox
-                            .checkbox
-                              input#checkbox-salis11 type="checkbox"
-                              label.switcher-control for="checkbox-salis11"
-                              span продажа
-                        li.
-                          .one-checkbox
-                            .checkbox
-                              input#checkbox-salis12 type="checkbox"
-                              label.switcher-control for="checkbox-salis12"
-                              span продажа
+            .selector
+              ul.read-more-wrap
+                li
+                  .one-checkbox
+                    .checkbox
+                      input#checkbox-salis1 type="checkbox"
+                      label.switcher-control for="checkbox-salis1"
+                      span продажа
+                      nav
+                        ul.drop-down.closed
+                          li
+                            a.nav-button href="#"   = inline_svg "svg/ic_keyboard_arrow_down_black_24px.svg"
+                          .down
+                            ul
+                              li
+                                .one-checkbox
+                                  .checkbox
+                                    input#checkbox-salis6 type="checkbox"
+                                    label.switcher-control for="checkbox-salis6"
+                                    span продажа
+                              li
+                                .one-checkbox
+                                  .checkbox
+                                    input#checkbox-salis7 type="checkbox"
+                                    label.switcher-control for="checkbox-salis7"
+                                    span продажа
+                              li
+                                .one-checkbox
+                                  .checkbox
+                                    input#checkbox-salis8 type="checkbox"
+                                    label.switcher-control for="checkbox-salis8"
+                                    span продажа
+                li
+                  .one-checkbox
+                    .checkbox
+                      input#checkbox-salis2 type="checkbox"
+                      label.switcher-control for="checkbox-salis2"
+                      span продажа
+                      nav
+                        ul.drop-down.closed
+                          li
+                            a.nav-button href="#"   = inline_svg "svg/ic_keyboard_arrow_down_black_24px.svg"
+                          li
+                            .one-checkbox
+                              .checkbox
+                                input#checkbox-salis9 type="checkbox"
+                                label.switcher-control for="checkbox-salis10"
+                                span продажа
+                          li
+                            .one-checkbox
+                              .checkbox
+                                input#checkbox-salis11 type="checkbox"
+                                label.switcher-control for="checkbox-salis11"
+                                span продажа
+                          li.
+                            .one-checkbox
+                              .checkbox
+                                input#checkbox-salis12 type="checkbox"
+                                label.switcher-control for="checkbox-salis12"
+                                span продажа
 
-              li
-                .one-checkbox
-                  .checkbox
-                    input#checkbox-salis3 type="checkbox"
-                    label.switcher-control for="checkbox-salis3"
-                      span продажа
-              li
-                .one-checkbox
-                  .checkbox
-                    input#checkbox-salis4 type="checkbox"
-                    label.switcher-control for="checkbox-salis4"
-                      span продажа
-              li
-                .one-checkbox
-                  .checkbox
-                    input#checkbox-salis5 type="checkbox"
-                    label.switcher-control for="checkbox-salis5"
-                      span продажа
-    .medium-9.columns
-      = render "goodsSlider1"
-    / .medium-9.columns
-    /   = render "goodsSlider2"
+                li
+                  .one-checkbox
+                    .checkbox
+                      input#checkbox-salis3 type="checkbox"
+                      label.switcher-control for="checkbox-salis3"
+                        span продажа
+                li
+                  .one-checkbox
+                    .checkbox
+                      input#checkbox-salis4 type="checkbox"
+                      label.switcher-control for="checkbox-salis4"
+                        span продажа
+                li
+                  .one-checkbox
+                    .checkbox
+                      input#checkbox-salis5 type="checkbox"
+                      label.switcher-control for="checkbox-salis5"
+                        span продажа
+        .selector
+          = render "advertisingSlider"
+      .medium-9.columns
+        = render "goodsSlider1"
+      .medium-9.columns
+        .topgoods
+          .topgoods-tex.color-line.gray-block
+            .title топ товари
+          = render "goodsSlider2"
+      .medium-9.columns
+        .vibe-text.color-line.gray-block
+          .title средстрва по уходу за волосами
+        .vibe-goods
+          .medium-4.columns
+            .border-producers.color-line.yellow-block
+              .one-new-product
+                .img-bg style="background-image: url(#{asset_path('photo/main/news_3.jpg')})"
+              .description
+                .description-txt
+                  .maker Тульський молочний комбинат
+                  .product-name Моцарула middle 100г (4 шарика)
+                  .price.color-line.gray-block
+                    .oriented-price орієнтовочная цена:
+                    .mony 8.40$

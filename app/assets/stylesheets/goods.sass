@@ -1,5 +1,6 @@
-.tovars
+.tovarsp
   padding-top: 200px
+  background-color: $grayBG
   nav .drop-down
     overflow: hidden
     margin: 0 auto
@@ -14,9 +15,77 @@
       height: 35px
     li
       list-style: none
-    // a
-    //   width: 200px
-    //   position: absolute
-    //   margin-left: -111px
     .down
       margin-top: -20px
+  .topgoods
+    background-color: $goodsYellow
+    height: 45vh
+    padding: 50px 20px 10px 2px
+    margin-left: -30px
+    .topgoods-tex
+      top: -20px
+      &:before
+        height: 1px
+      .title
+        color: $black
+        font-size: 22px
+        font-weight: 600
+        left: 10px
+        display: inline-block
+        padding-left: 20px
+  .vibe-text
+    color: $black
+    font-size: 22px
+    font-weight: 600
+    left: 10px
+    padding-left: 20px
+    top: 20px
+    &:before
+      height: 1px
+    .title
+      display: inline-block
+      margin-left: -20px
+  .vibe-goods
+    padding-top: 50px
+.border-producers
+  box-shadow: 0 6px 6px 0 rgba(13, 1, 1, 0.2)
+  margin-bottom: 30px
+  &:before
+    height: 5px
+    bottom: 0px
+  .one-new-product
+    position: relative
+    padding-bottom: 70%
+    cursor: pointer
+  .description
+    background-color: white
+    .description-txt
+      padding:  20px 20px
+      .maker
+        color: $gray
+        font-size: 13px
+        padding: 25px 0 10px
+        cursor: pointer
+        &:hover
+          color: $yellow
+      .product-name
+        color: $black
+        font-size: 17px
+        padding-bottom: 20px
+      .price
+        display: flex
+        flex-wrap: nowrap
+        padding-top: 10px
+        &:before
+          height: 1px
+          bottom: 40px
+        .oriented-price
+          color: $gray
+          font-size: 13px
+          width: 50%
+        .mony
+          color: $black
+          font-size: 25px
+          font-weight: 700
+          position: absolute
+          right: 0

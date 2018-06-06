@@ -37,7 +37,8 @@
       font-size: 22px
       padding-bottom: 25px
   &.goode1
-    padding: 0
+    padding: 0 20px 20px
+    margin-left: -50px
     li
       cursor: pointer
       height: 40vh
@@ -46,9 +47,48 @@
       width: 40px
       top: 0
     .prev-btn
-      left: 92%
+      left: 90%
     .next-btn
+  &.goode2
+    padding: 0
+    li
+      cursor: pointer
+    .next-btn2, .prev-btn2
+      height: 80px
+      width: 80px
+      background-color: $black
+      z-index: 10
+      +y-align
+    .prev-btn2
+      left: 20px
+    .next-btn2
+      right: 20px
+    .slick-dots
+      display: flex
+      margin: 0
+      padding: 1rem 0
+      position: absolute
       right: 0
+      top: -55px
+      li
+        display: inline-block
+        margin: 0 0.25rem
+      button
+        display: block
+        width: 15px
+        height: 15px
+        padding: 0
+        border: none
+        background-color: $black
+        text-indent: -999999px
+      li.slick-active button
+        width: 10px
+        height: 10px
+  &.advertising
+    padding: 0
+    ul
+      li
+        margin-left: 0px
 
 .mainlidet-small
   .content-baner
