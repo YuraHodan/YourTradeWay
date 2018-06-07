@@ -1,13 +1,7 @@
-var ytvApp = angular.module('ytvApp', []);
+var ytwApp = angular.module('ytwApp', []);
 
-
-// $(document).on('ready page:load', function() {
-//     angular.bootstrap(document.body, ['pizzaApp'])
-// });
-
-// $(document).on "turbolinks:load", ->
-
-ytvApp.directive('mixitup',function(){
+console.log('1');
+ytwApp.directive('mixitup',function(){
     var linker = function(scope,element,attrs) {
         scope.$watch('entities', function(){
             element.mixItUp();
@@ -18,5 +12,4 @@ ytvApp.directive('mixitup',function(){
         link: linker,
         scope:{entities:'='}
     }
-
 })
