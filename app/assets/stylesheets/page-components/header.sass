@@ -44,9 +44,29 @@
     letter-spacing: 1px
     border-bottom: 1px solid $almostWhite
 
-
   #menu
     display: block
+    .second-performance
+      height: 647px
+      overflow-y: auto
+      &::-webkit-scrollbar-track
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2)
+        // border-radius: 10px
+        background-color: #F5F5F5
+      &::-webkit-scrollbar
+        width: 6px
+        background-color: #F5F5F5
+      &::-webkit-scrollbar-thumb
+        border-radius: 10px
+        // -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3)
+        background-color: $yellow
+      &.blue
+        &::-webkit-scrollbar-thumb
+          background-color: $blue
+      &.green
+        &::-webkit-scrollbar-thumb
+          background-color: $green
+
     li
       font-weight: 600
       float: left
@@ -55,11 +75,12 @@
       &:before
         display: none
       a
+        text-transform: uppercase
         z-index: 2
         display: block
         position: relative
         padding: 0 35px
-        font-size: 17px
+        font-size: 15px
         letter-spacing: 0.3px
         line-height: 70px
         // font-weight: bold
@@ -88,7 +109,9 @@
         -webkit-box-shadow: 0 2px 7px rgba(0, 0, 0, 0.45)
         -moz-box-shadow: 0 2px 7px rgba(0, 0, 0, 0.45)
         box-shadow: 0 2px 7px rgba(0, 0, 0, 0.45)
-        padding-bottom: 100px
+        // padding-bottom: 100px
+        &.bige
+          height: 710px
         li
           display: block
           width: 300px
@@ -188,7 +211,7 @@
                 left: 300px
                 top: 0
                 width: 600px
-                height: 101.8%
+                height: 101.4%
                 background: none
                 -webkit-box-shadow: none
                 -moz-box-shadow: none
@@ -207,6 +230,7 @@
                     font-family: OpenSans
                     font-size: 14px
                     text-transform: none
+
 
           &.purple
             a

@@ -153,25 +153,35 @@
           color: $gray
           +breakpoint(small only)
             width: 100%
+          ul
+            li
+              &:before
+                background-color: $gray
         &.marcet
           background-color: $red
           color: $white
         &.logic
           background-color: $orange
           color: $gray
+          ul
+            li
+              &:before
+                background-color: $gray
         h3
-          padding: 50px 0 0 50px
+          padding: 50px 0 0 20px
           font-size: 25px
           font-weight: 500
           word-spacing: .7em
           letter-spacing: 3px
         ul
-          padding: 50px
+          padding: 20px
           list-style: square outside
           li
             position: relative
             padding-bottom: 15px
             cursor: pointer
+            &:before
+              background-color: white
         +breakpoint(small only)
           width: 100%
 
