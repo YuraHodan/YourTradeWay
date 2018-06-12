@@ -1,4 +1,4 @@
-  .tovarsp ng-controller="goodsControler as store"
+  .tovarsp ng-controller="goodsControler as stor"
     .row
       .medium-3.columns
         .selector
@@ -88,9 +88,9 @@
                       input#checkbox-salis5 type="checkbox"
                       label.switcher-control for="checkbox-salis5"
                         span продажа
-          .remove-all
-            .x-component = inline_svg "photo/main/svg/filter_clear.svg"
-            .ramove-text очистить все
+            .remove-all
+              .x-component = inline_svg "photo/main/svg/filter_clear.svg"
+              .ramove-text очистить все
         .selector
           = render "advertisingSlider"
       .medium-9.columns
@@ -99,12 +99,12 @@
         .topgoods
           .topgoods-tex.color-line.gray-block
             .title топ товари
-          / = render "goodsSlider2"
+          = render "goodsSlider2"
       .medium-9.columns
         .vibe-text.color-line.gray-block
           .title средстрва по уходу за волосами
         .vibe-goods
-          #page-content.medium-4.columns.page-content ng-repeat="product in store.data "
+          #page-content.medium-4.columns.page-content.gallery ng-repeat="product in records | limitTo : 6"
             .border-producers.color-line.yellow-block
               .one-new-product
                 .img-bg style="background-image: url(#{asset_path('photo/main/news_3.jpg')})"
@@ -119,25 +119,38 @@
                       | {{product.oriented}}
                     .mony
                       | {{product.mony}}
-    
 
+      .medium-9.columns
+        = render "recomendation"
+        .vibe-goods
+          .medium-4.columns ng-repeat="product in store.data | limitTo:6:6 "
+            .border-producers.color-line.yellow-block
+              .one-new-product
+                .img-bg style="background-image: url(#{asset_path('photo/main/news_3.jpg')})"
+              .description
+                .description-txt
+                  .maker
+                    | {{product.maker}}
+                  .product-name
+                    | {{product.product}}
+                  .price.color-line.gray-block
+                    .oriented-price
+                      | {{product.oriented}}
+                    .mony
+                      | {{product.mony}}
 
-
-      / .medium-9.columns
-      /   = render "recomendation"
-      /   .vibe-goods
-      /     .medium-4.columns ng-repeat="product in store.data | limitTo:6:6 "
-      /       .border-producers.color-line.yellow-block
-      /         .one-new-product
-      /           .img-bg style="background-image: url(#{asset_path('photo/main/news_3.jpg')})"
-      /         .description
-      /           .description-txt
-      /             .maker
-      /               | {{product.maker}}
-      /             .product-name
-      /               | {{product.product}}
-      /             .price.color-line.gray-block
-      /               .oriented-price
-      /                 | {{product.oriented}}
-      /               .mony
-      /                 | {{product.mony}}
+          #page-content.medium-4.columns.page-content.gallery ng-repeat="product in records | limitTo : 6 : 6"
+            .border-producers.color-line.yellow-block
+              .one-new-product
+                .img-bg style="background-image: url(#{asset_path('photo/main/news_3.jpg')})"
+              .description
+                .description-txt
+                  .maker
+                    | {{product.maker}}
+                  .product-name
+                    | {{product.product}}
+                  .price.color-line.gray-block
+                    .oriented-price
+                      | {{product.oriented}}
+                    .mony
+                      | {{product.mony}}

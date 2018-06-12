@@ -27,11 +27,12 @@
 # require plugins/jquery-migrate.min
 #= require plugins/mixitup-2.1.1.min
 #= require plugins/jquery.paginate.min
+# require plugins/jquery.simplePagination
 # require plagins/bootstrap.min
 
 #     I N I T I A L I Z E
 
-#= require google_map
+# require google_map
 #= require appear-initialize
 #= require bxslider
 #= require fullpage_banner_height
@@ -47,7 +48,7 @@
 #= require slider
 #= require main
 #= require select
-#= require paginator
+# require paginator
 
 
 #     A N G U L A  R

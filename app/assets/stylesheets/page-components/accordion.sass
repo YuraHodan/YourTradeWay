@@ -67,12 +67,22 @@
   &.show
     display: block !important
 .remove-all
+  cursor: pointer
   display: flex
   flex-wrap: nowrap
+  padding-left: 25%
+  border-top: 1px solid $almostWhite
+  opacity: 1
   .x-component
+    padding: 20px 0px 20px
     svg
       height: 15px
   .ramove-text
-    font-size: 15px
+    padding: 20px 0px 20px
+    font-size: 17px
+    font-variant: 600
     color: $blue
     padding-left: 10px
+  &:hover
+    opacity: 0.6
+    .ramove-text

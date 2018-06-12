@@ -1,7 +1,8 @@
 ytwApp.controller('goodsControler',function($scope){
 
 
-  this.data = [{maker: 'Тульський молочний комбинат',
+  $scope.records = [
+          {maker: 'Тульський молочний комбинат',
           product : 'Моцарула middle 100г (4 шарика)',
           oriented : 'орієнтовочная цена:',
           mony : '1$' },
@@ -62,6 +63,5 @@ ytwApp.controller('goodsControler',function($scope){
           oriented : 'орієнтовочная цена:',
           mony : '15$' }
         ]
-
 });
 console.log('2');
