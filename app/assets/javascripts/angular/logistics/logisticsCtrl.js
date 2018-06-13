@@ -1,0 +1,47 @@
+ytwApp.controller('logisticsControler',function($scope){
+
+
+  $scope.records = [
+          {maker: "Азербайджан",
+           product: "EGT EXPRESS"},
+           {maker: "Азербайджан",
+            product: "EGT EXPRESS"},
+            {maker: "Азербайджан",
+             product: "EGT EXPRESS"},
+             {maker: "Азербайджан",
+              product: "EGT EXPRESS"},
+              {maker: "Азербайджан",
+               product: "EGT EXPRESS"},
+               {maker: "Азербайджан",
+                product: "EGT EXPRESS"},
+                {maker: "Азербайджан",
+                 product: "EGT EXPRESS"},
+                 {maker: "Азербайджан",
+                  product: "EGT EXPRESS"},
+                  {maker: "Азербайджан",
+                   product: "EGT EXPRESS"},
+                   {maker: "Азербайджан",
+                    product: "EGT EXPRESS"},
+                    {maker: "Азербайджан",
+                     product: "EGT EXPRESS"},
+                     {maker: "Азербайджан",
+                      product: "EGT EXPRESS"},
+                      {maker: "Азербайджан",
+                       product: "EGT EXPRESS"},
+                       {maker: "Азербайджан",
+                        product: "EGT EXPRESS"},
+                        {maker: "Азербайджан",
+                         product: "EGT EXPRESS"},
+                         {maker: "Азербайджан",
+                          product: "EGT EXPRESS"},
+                          {maker: "Азербайджан",
+                           product: "EGT EXPRESS"},
+                           {maker: "Азербайджан",
+                            product: "EGT EXPRESS"},
+                            {maker: "Азербайджан",
+                             product: "EGT EXPRESS"},
+                             {maker: "Азербайджан",
+                              product: "EGT EXPRESS"}
+        ]
+});
+console.log('2');

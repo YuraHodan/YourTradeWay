@@ -1,4 +1,4 @@
-.producer ng-controller="producerControler as stor"
+.distributors ng-controller="dustrubutorsControler as stor"
   .row
     .medium-3.columns
       .selector
@@ -98,41 +98,41 @@
         .sales-leaders.color-line.gray-block
           .title лидерь на рьнке
           .medium-4.columns
-            .border-producers.color-line.blue-block
+            .border-producers.color-line.green-block
               .one-new-producers
-                .img-bg style="background-image: url(#{asset_path('photo/main/logos/images.png')})"
+                .img-bg style="background-image: url(#{asset_path('photo/main/logos/2677650ac2e6996116659b8a3f91438a.png')})"
               .description
                 .description-txt
                   .maker
                     | Азербайджан
                   .product-name
-                    | Йорсан
+                    | Softprom by ERC
           .medium-4.columns
-            .border-producers.color-line.blue-block
+            .border-producers.color-line.green-block
               .one-new-producers
-                .img-bg style="background-image: url(#{asset_path('photo/main/logos/images.png')})"
+                .img-bg style="background-image: url(#{asset_path('photo/main/logos/2677650ac2e6996116659b8a3f91438a.png')})"
               .description
                 .description-txt
                   .maker
                     | Азербайджан
                   .product-name
-                    | Йорсан
+                    | Softprom by ERC
           .medium-4.columns
-            .border-producers.color-line.blue-block
+            .border-producers.color-line.green-block
               .one-new-producers
-                .img-bg style="background-image: url(#{asset_path('photo/main/logos/images.png')})"
+                .img-bg style="background-image: url(#{asset_path('photo/main/logos/2677650ac2e6996116659b8a3f91438a.png')})"
               .description
                 .description-txt
                   .maker
                     | Азербайджан
                   .product-name
-                    | Йорсан
+                    | Softprom by ERC
     .medium-9.columns
       .salse-all
         .medium-4.columns  ng-repeat="product in records | limitTo:6:6"
-          .border-producers.color-line.blue-block
+          .border-producers.color-line.green-block
             .one-new-producers
-              .img-bg style="background-image: url(#{asset_path('photo/main/logos/images.png')})"
+              .img-bg style="background-image: url(#{asset_path('photo/main/logos/2677650ac2e6996116659b8a3f91438a.png')})"
             .description
               .description-txt
                 .maker
@@ -140,12 +140,13 @@
                 .product-name
                   | {{product.product}}
     .medium-9.columns
-      = render "recomendationSalse"
+      = render "recomendationdistributors"
+    .medium-9.columns
       .salse-all
         .medium-4.columns  ng-repeat="product in records | limitTo : 6"
-          .border-producers.color-line.blue-block
+          .border-producers.color-line.green-block
             .one-new-producers
-              .img-bg style="background-image: url(#{asset_path('photo/main/logos/images.png')})"
+              .img-bg style="background-image: url(#{asset_path('photo/main/logos/2677650ac2e6996116659b8a3f91438a.png')})"
             .description
               .description-txt
                 .maker

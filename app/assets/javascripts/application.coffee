@@ -49,6 +49,7 @@
 #= require main
 #= require select
 # require paginator
+#= require premium
 
 
 #     A N G U L A  R
@@ -60,3 +61,7 @@
 #= require angular/producer/producerCtrl
 
 #= require angular/distributors/distrubutorsCtrl
+
+#= require angular/market/marcetCtrl
+
+#= require angular/logistics/logisticsCtrl
