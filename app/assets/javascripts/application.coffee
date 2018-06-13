@@ -56,3 +56,7 @@
 
 #= require angular/goods/goodsCtrl
 #= require angular/goods/goodsService
+
+#= require angular/producer/producerCtrl
+
+#= require angular/distributors/distrubutorsCtrl

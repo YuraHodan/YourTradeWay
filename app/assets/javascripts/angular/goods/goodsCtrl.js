@@ -65,3 +65,29 @@ ytwApp.controller('goodsControler',function($scope){
         ]
 });
 console.log('2');
+// ytwApp.controller('mainCtrl', function( $scope, $http){
+//
+//
+//   $http.get('./menu.json')
+//     .then(function(data){
+//       $scope.menuObj = data;
+//       pagination.setProducts( data.products );
+//       $scope.products = pagination.getPageProducts( $scope.currentPage );
+//       $scope.paginationList = pagination.getPaginationList();
+//     }).catch(angular.noop);
+//
+//   $scope.showPage = function(page) {
+//     if ( page == 'prev' ) {
+//       $scope.products = pagination.getPrevPageProducts();
+//     } else if ( page == 'next' ) {
+//       $scope.products = pagination.getNextPageProducts();
+//     } else {
+//       $scope.products = pagination.getPageProducts( page );
+//     }
+//   }
+//
+//   $scope.currentPageNum = function() {
+//     return pagination.getCurrentPageNum();
+//   }
+//
+// })

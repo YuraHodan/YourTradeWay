@@ -1,0 +1,156 @@
+.producer ng-controller="producerControler as stor"
+  .row
+    .medium-3.columns
+      .selector
+        = render "selector"
+      .dubl-select
+        .accordion-button.opened
+          p afdsfdsf
+          .svg-slid = inline_svg "svg/ic_keyboard_arrow_up_black_24px.svg"
+        .accordion-inner.show
+
+          .selector
+            ul.read-more-wrap
+              li
+                .one-checkbox
+                  .checkbox
+                    input#checkbox-salis1 type="checkbox"
+                    label.switcher-control for="checkbox-salis1"
+                    span продажа
+                    nav
+                      ul.drop-down.closed
+                        li
+                          a.nav-button href="#"   = inline_svg "svg/ic_keyboard_arrow_down_black_24px.svg"
+                        .down
+                          ul
+                            li
+                              .one-checkbox
+                                .checkbox
+                                  input#checkbox-salis6 type="checkbox"
+                                  label.switcher-control for="checkbox-salis6"
+                                  span продажа
+                            li
+                              .one-checkbox
+                                .checkbox
+                                  input#checkbox-salis7 type="checkbox"
+                                  label.switcher-control for="checkbox-salis7"
+                                  span продажа
+                            li
+                              .one-checkbox
+                                .checkbox
+                                  input#checkbox-salis8 type="checkbox"
+                                  label.switcher-control for="checkbox-salis8"
+                                  span продажа
+              li
+                .one-checkbox
+                  .checkbox
+                    input#checkbox-salis2 type="checkbox"
+                    label.switcher-control for="checkbox-salis2"
+                    span продажа
+                    nav
+                      ul.drop-down.closed
+                        li
+                          a.nav-button href="#"   = inline_svg "svg/ic_keyboard_arrow_down_black_24px.svg"
+                        li
+                          .one-checkbox
+                            .checkbox
+                              input#checkbox-salis9 type="checkbox"
+                              label.switcher-control for="checkbox-salis10"
+                              span продажа
+                        li
+                          .one-checkbox
+                            .checkbox
+                              input#checkbox-salis11 type="checkbox"
+                              label.switcher-control for="checkbox-salis11"
+                              span продажа
+                        li.
+                          .one-checkbox
+                            .checkbox
+                              input#checkbox-salis12 type="checkbox"
+                              label.switcher-control for="checkbox-salis12"
+                              span продажа
+
+              li
+                .one-checkbox
+                  .checkbox
+                    input#checkbox-salis3 type="checkbox"
+                    label.switcher-control for="checkbox-salis3"
+                      span продажа
+              li
+                .one-checkbox
+                  .checkbox
+                    input#checkbox-salis4 type="checkbox"
+                    label.switcher-control for="checkbox-salis4"
+                      span продажа
+              li
+                .one-checkbox
+                  .checkbox
+                    input#checkbox-salis5 type="checkbox"
+                    label.switcher-control for="checkbox-salis5"
+                      span продажа
+          .remove-all
+            .x-component = inline_svg "photo/main/svg/filter_clear.svg"
+            .ramove-text очистить все
+        .selector
+          = render "advertisingSlider"
+    .medium-9.columns
+      .sales
+        .sales-leaders.color-line.gray-block
+          .title лидерь на рьнке
+          .medium-4.columns
+            .border-producers.color-line.blue-block
+              .one-new-producers
+                .img-bg style="background-image: url(#{asset_path('photo/main/logos/images.png')})"
+              .description
+                .description-txt
+                  .maker
+                    | Азербайджан
+                  .product-name
+                    | Йорсан
+          .medium-4.columns
+            .border-producers.color-line.blue-block
+              .one-new-producers
+                .img-bg style="background-image: url(#{asset_path('photo/main/logos/images.png')})"
+              .description
+                .description-txt
+                  .maker
+                    | Азербайджан
+                  .product-name
+                    | Йорсан
+          .medium-4.columns
+            .border-producers.color-line.blue-block
+              .one-new-producers
+                .img-bg style="background-image: url(#{asset_path('photo/main/logos/images.png')})"
+              .description
+                .description-txt
+                  .maker
+                    | Азербайджан
+                  .product-name
+                    | Йорсан
+    .medium-9.columns
+      .salse-text.color-line.gray-block
+        .title средстрва по уходу за волосами
+      .salse-all
+        .medium-4.columns  ng-repeat="product in records | limitTo:6:6"
+          .border-producers.color-line.blue-block
+            .one-new-producers
+              .img-bg style="background-image: url(#{asset_path('photo/main/logos/images.png')})"
+            .description
+              .description-txt
+                .maker
+                  | {{product.maker}}
+                .product-name
+                  | {{product.product}}
+    .medium-9.columns
+      = render "recomendationSalse"
+      .salse-all
+        .medium-4.columns  ng-repeat="product in records | limitTo : 6"
+          .border-producers.color-line.blue-block
+            .one-new-producers
+              .img-bg style="background-image: url(#{asset_path('photo/main/logos/images.png')})"
+            .description
+              .description-txt
+                .maker
+                  | {{product.maker}}
+                .product-name
+                  | {{product.product}}

@@ -154,3 +154,14 @@
                       | {{product.oriented}}
                     .mony
                       | {{product.mony}}
+    / .bodyt ng-controller="mainCtrl"
+    /   .container
+    /     .row
+    /       .col-sm-3 ng-repeat=("item in products")
+    /         .thumbnail
+    /           .caption
+    /             h4  { item.name }
+    /     .pagination-wrap
+    /       ul.pagination
+    /         li max-size="3" ng-class=("{'active': currentPageNum() == page.link}") ng-click="showPage(page.link)" ng-repeat=("page in paginationList")
+    /           a ng-bind-html="page.name"
