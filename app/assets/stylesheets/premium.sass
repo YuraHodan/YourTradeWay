@@ -1,19 +1,131 @@
 .premium
   padding-top: 200px
-  background-color: $grayBG
-  .tab
-    button
-
-  /* Style the buttons inside the tab
-
-  /* Change background color of buttons on hover
-
-  /* Create an active/current tablink class
-
-  /* Style the tab content
-
+  background-color: white
+  .title-top
+    text-align: center
+    text-transform: uppercase
+    font-weight: 700
+    font-size: 35px
+    color: $black
+    padding-bottom: 40px
+  .wrapper-tab
+    display: flex
+    justify-content: center
+    .tab
+      display: flex
+      justify-content: space-around
+      width: 60%
+      button
+        display: inline-block
+        cursor: pointer
+        text-transform: uppercase
+        font-weight: 600
+        padding: 0px 30px
+        font-size: 12px
+        letter-spacing: .25em
+        color: $black
+        background-color: white
+        text-align: center
+        line-height: 35px
+        border-radius: 50px
+        border: 2px solid $blue
+        +transition(.7s)
+        &.active
+          background-color: $blue
+        &.green
+          border: 2px solid $green
+          &.active
+            background-color: $green
+        &.red
+          border: 2px solid $red
+          &.active
+            background-color: $red
+        &.orange
+          border: 2px solid $orange
+          &.active
+            background-color: $orange
+  #goods
+    display: block
   .tabcontent
     display: none
     padding: 6px 12px
-    border: 1px solid #ccc
-    border-top: none
+    .center-tab-all
+      height: 900px
+      padding-top: 50px
+      display: flex
+      justify-content: center
+      .content-tab
+        width: 80%
+        margin-bottom: 100px
+        background-color: white
+        display: flex
+        justify-content: center
+        border: 1px solid $premiumborder
+        text-align: center
+        &.top-basic
+          border: 0px
+          box-shadow: 0px 15px 20px 10px rgba(0, 0, 0, 0.06)
+          &:before
+            box-shadow: 0px 10px 30px rgba(0, 170, 255, 1)
+        .title
+          font-weight: 700
+          text-transform: uppercase
+          font-size: 18px
+          padding: 40px 0
+          &:before
+            background-color: $premiumborder
+            height: 1px
+            bottom: 0px
+
+        .filling
+          position: relative
+          .goods, .tovars, .support, .impressions, .support-platinum, .marceting-platinum
+            padding: 25px 0
+            .number
+              font-weight: 500
+              font-size: 20px
+            .number-text
+              color: $gray
+              padding-top: 5px
+              font-weight: 400
+              font-size: 15px
+          &.basic
+            .title
+              color: $blue
+          .battons
+            position: absolute
+            bottom: 30px
+            right: -30px
+            .btn-big
+              display: inline-block
+              cursor: pointer
+              text-transform: uppercase
+              font-weight: 700
+              padding: 0px 60px
+              font-size: 15px
+              letter-spacing: .25em
+              color: $yellow
+              background-color: white
+              text-align: center
+              line-height: 50px
+              border-radius: 50px
+              border: 2px solid $yellow
+              &:hover
+                background-color: $yellow
+                color: $black
+                border: 2px solid $yellow
+                box-shadow: 0px 7px 7px rgba(255, 224, 0, 0.4)
+              &.red
+                color: $red
+                border: 2px solid $red
+                &:hover
+                  background-color: $red
+                  color: white
+                  border: 2px solid $red
+                  box-shadow: 0px 7px 7px rgba(255, 29, 94, 0.3)
+              &.blue
+                background-color: $blue
+                color: white
+                border: 2px solid $blue
+                &:hover
+                  box-shadow: 0px 7px 7px rgba(36, 187, 234, 0.4)

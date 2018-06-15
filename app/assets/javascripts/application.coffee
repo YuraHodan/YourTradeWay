@@ -65,3 +65,5 @@
 #= require angular/market/marcetCtrl
 
 #= require angular/logistics/logisticsCtrl
+
+#= require angular/onegoods/onegoodsCtrl

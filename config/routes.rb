@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     get "market", actio: "market"
     get "logistics", action: "logistics"
     get "premium", action: "premium"
+    get "onegoods", action: "onegoods"
   end
 
   match "*url", to: "application#render_not_found", via: [:get, :post, :path, :put, :update, :delete]
