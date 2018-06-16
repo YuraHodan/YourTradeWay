@@ -100,7 +100,8 @@
       &.hover-list
         &:hover
           #rotate2
-            +rotate(-90deg)
+            border-radius: 50px
+            +rotate(-180deg)
           // .list-comntainer
           //   +translate(-100%,0)
           .hover-list-box
@@ -148,16 +149,26 @@
         +transition(.5s)
         &.hover-list-box
           width: 51%
+        ul
+          li
+            padding-top: 5px
+            &:before
+              top: 12px
         &.destreb
           background-color: $green
           color: $gray
           +breakpoint(small only)
             width: 100%
+          h3
+            text-transform: uppercase
           ul
             li
               &:before
                 background-color: $gray
-        &.marcet
+        // &.marcet
+        //   background-color: $red
+        //   color: $white
+        &.logic2
           background-color: $red
           color: $white
         &.logic
