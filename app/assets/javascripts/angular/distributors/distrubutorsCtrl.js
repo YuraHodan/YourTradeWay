@@ -1,0 +1,55 @@
+ytwApp.controller('dustrubutorsControler',function($scope){
+
+
+  $scope.records = [
+          {maker: "Азербайджан",
+           product: "Softprom by ERC"},
+           {maker: "Азербайджан",
+            product: "Softprom by ERC"},
+            {maker: "Азербайджан",
+             product: "Softprom by ERC"},
+             {maker: "Азербайджан",
+              product: "Softprom by ERC"},
+              {maker: "Азербайджан",
+               product: "Softprom by ERC"},
+               {maker: "Азербайджан",
+                product: "Softprom by ERC"},
+                {maker: "Азербайджан",
+                 product: "Softprom by ERC"},
+                 {maker: "Азербайджан",
+                  product: "Softprom by ERC"},
+                  {maker: "Азербайджан",
+                   product: "Softprom by ERC"},
+                   {maker: "Азербайджан",
+                    product: "Softprom by ERC"},
+                    {maker: "Азербайджан",
+                     product: "Softprom by ERC"},
+                     {maker: "Азербайджан",
+                      product: "Softprom by ERC"},
+                      {maker: "Азербайджан",
+                       product: "Softprom by ERC"},
+                       {maker: "Азербайджан",
+                        product: "Softprom by ERC"},
+                        {maker: "Азербайджан",
+                         product: "Softprom by ERC"},
+                         {maker: "Азербайджан",
+                          product: "Softprom by ERC"},
+                          {maker: "Азербайджан",
+                           product: "Softprom by ERC"},
+                           {maker: "Азербайджан",
+                            product: "Softprom by ERC"},
+                            {maker: "Азербайджан",
+                             product: "Softprom by ERC"},
+                             {maker: "Азербайджан",
+                              product: "Softprom by ERC"},
+                              {maker: "Азербайджан",
+                               product: "Softprom by ERC"},
+                               {maker: "Азербайджан",
+                                product: "Softprom by ERC"},
+                                {maker: "Азербайджан",
+                                 product: "Softprom by ERC"}
+
+
+        ]
+});
+console.log('2');

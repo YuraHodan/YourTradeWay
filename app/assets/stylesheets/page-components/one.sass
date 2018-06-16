@@ -29,6 +29,16 @@ p
   &.gray-block
     &:before
       background-color: $goodsgrayeband
+  &.green-block
+    &:before
+      background-color: $green
+  &.red-block
+    &:before
+      background-color: $red
+  &.orange-block
+    &:before
+      background-color: $orange
+
 
 .top-nav
   display: inline-block
@@ -68,9 +78,10 @@ p
   text-align: center
   line-height: 50px
   border-radius: 50px
-  +transition(.3s)
+  +transition(.7s)
   &:hover
-    box-shadow: 0 0 15px rgba(0,0,0,0.5)
+    box-shadow: 0px 7px 7px rgba(48, 58, 67, 0.2)
+    background-color: $verBlack
   &:visited
     background-color: $verBlack
   &.blue-btn
@@ -78,12 +89,32 @@ p
     background-color: $blue
     &:visited
       background-color: $verBlue
+    &:hover
+      box-shadow: 0px 7px 7px rgba(36, 187, 234, 0.3)
+      background-color: $verBlue
   &.yellow-btn
     color: $black
     background-color: $yellow
     &:visited
       background-color: $verOrange
-
+    &:hover
+      background-color: $verOrange
+      box-shadow: 0px 7px 7px rgba(255, 224, 0, 0.2)
+  &.green-btn
+    color: $black
+    background-color: $green
+    &:visited
+      background-color: $goodsgrayeband
+  &.red-btn
+    color: $black
+    background-color: $red
+    &:visited
+      background-color: $red
+  &.orange-btn
+    color: $black
+    background-color: $orange
+    &:visited
+      background-color: $orange
 ul
   list-style-type: disc
   li

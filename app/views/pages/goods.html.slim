@@ -1,7 +1,7 @@
-  .tovarsp ng-controller="goodsControler as store"
+  .tovarsp ng-controller="goodsControler as stor"
     .row
       .medium-3.columns
-        .selector
+        .selectorr
           = render "selector"
         .dubl-select
           .accordion-button.opened
@@ -88,9 +88,9 @@
                       input#checkbox-salis5 type="checkbox"
                       label.switcher-control for="checkbox-salis5"
                         span продажа
-          .remove-all
-            .x-component = inline_svg "photo/main/svg/filter_clear.svg"
-            .ramove-text очистить все
+            .remove-all
+              .x-component = inline_svg "photo/main/svg/filter_clear.svg"
+              .ramove-text очистить все
         .selector
           = render "advertisingSlider"
       .medium-9.columns
@@ -104,7 +104,7 @@
         .vibe-text.color-line.gray-block
           .title средстрва по уходу за волосами
         .vibe-goods
-          .medium-4.columns ng-repeat="product in store.data | limitTo:6"
+          #page-content.medium-4.columns.page-content.gallery ng-repeat="product in records | limitTo : 6"
             .border-producers.color-line.yellow-block
               .one-new-product
                 .img-bg style="background-image: url(#{asset_path('photo/main/news_3.jpg')})"
@@ -119,10 +119,11 @@
                       | {{product.oriented}}
                     .mony
                       | {{product.mony}}
+
       .medium-9.columns
         = render "recomendation"
         .vibe-goods
-          .medium-4.columns ng-repeat="product in store.data | limitTo:7-13"
+          .medium-4.columns ng-repeat="product in store.data | limitTo:6:6 "
             .border-producers.color-line.yellow-block
               .one-new-product
                 .img-bg style="background-image: url(#{asset_path('photo/main/news_3.jpg')})"
@@ -137,3 +138,30 @@
                       | {{product.oriented}}
                     .mony
                       | {{product.mony}}
+
+          #page-content.medium-4.columns.page-content.gallery ng-repeat="product in records | limitTo : 6 : 6"
+            .border-producers.color-line.yellow-block
+              .one-new-product
+                .img-bg style="background-image: url(#{asset_path('photo/main/news_3.jpg')})"
+              .description
+                .description-txt
+                  .maker
+                    | {{product.maker}}
+                  .product-name
+                    | {{product.product}}
+                  .price.color-line.gray-block
+                    .oriented-price
+                      | {{product.oriented}}
+                    .mony
+                      | {{product.mony}}
+    / .bodyt ng-controller="mainCtrl"
+    /   .container
+    /     .row
+    /       .col-sm-3 ng-repeat=("item in products")
+    /         .thumbnail
+    /           .caption
+    /             h4  { item.name }
+    /     .pagination-wrap
+    /       ul.pagination
+    /         li max-size="3" ng-class=("{'active': currentPageNum() == page.link}") ng-click="showPage(page.link)" ng-repeat=("page in paginationList")
+    /           a ng-bind-html="page.name"

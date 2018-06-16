@@ -5,6 +5,7 @@
 #= require global
 #= require main
 #= require angular
+#= require angular-ui-bootstrap
 #     P A G E S
 
 
@@ -25,10 +26,13 @@
 #= require plugins/slick.min
 # require plugins/jquery-migrate.min
 #= require plugins/mixitup-2.1.1.min
+#= require plugins/jquery.paginate.min
+# require plugins/jquery.simplePagination
+# require plagins/bootstrap.min
 
 #     I N I T I A L I Z E
 
-#= require google_map
+# require google_map
 #= require appear-initialize
 #= require bxslider
 #= require fullpage_banner_height
@@ -44,6 +48,8 @@
 #= require slider
 #= require main
 #= require select
+# require paginator
+#= require premium
 
 
 #     A N G U L A  R
@@ -51,3 +57,13 @@
 
 #= require angular/goods/goodsCtrl
 #= require angular/goods/goodsService
+
+#= require angular/producer/producerCtrl
+
+#= require angular/distributors/distrubutorsCtrl
+
+#= require angular/market/marcetCtrl
+
+#= require angular/logistics/logisticsCtrl
+
+#= require angular/onegoods/onegoodsCtrl
