@@ -92,6 +92,48 @@ $('.advertising-slider-nav').slick({
  autoplay: true,
  autoplaySpeed: 2000,
  nextArrow: false,
- prevArrow: false
+ prevArrow: false,
+ dots: false,
 
+});
+
+
+
+/// one goodsslider
+
+    // $('.onegood-slider-for').slick({
+    //   slidesToShow: 1,
+    //   slidesToScroll: 1,
+    //   arrows: false,
+    //   fade: true,
+    //   asNavFor: '.onegood-slider-nav',
+    //   autoplay: true
+    // });
+    // $('.onegood-slider-nav').slick({
+    //   slidesToShow: 3,
+    //   slidesToScroll: 1,
+    //   asNavFor: '.onegood-slider-for',
+    //   dots: true,
+    //   centerMode: true,
+    //   focusOnSelect: true
+    // });
+
+
+    $(function() {
+  $('.slider-for2').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    fade: true,
+    // autoplay: true,
+    asNavFor: '.slider-nav2'
+  });
+  $('.slider-nav2').slick({
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    asNavFor: '.slider-for2',
+    dots: true,
+    // centerMode: true,
+    focusOnSelect: true
+  });
 });
