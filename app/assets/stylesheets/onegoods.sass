@@ -1,16 +1,97 @@
 .onegoods
   padding-top: 200px
   background-color: $grayBG
-  .box
-    font: 14px
-    font-size: 14px
-    line-height: 16px
-    .text
-      overflow: hidden
   .title
     font-size: 35px
     font-weight: 700
     padding-bottom: 20px
   .moni-or
+    background-color: $yellow
+    padding: 20px 30px
+    display: inline-flex
+    align-items: center
+    line-height: 1.25
+    .moni-tex
+      font-size: 20px
+      font-weight: 600
+      padding-right: 150px
+    .moni-nomber
+      font-size: 35px
+      font-weight: 700
+  .about-product
+    font-size: 16px
+    color: black
+    font-weight: 700
+    padding: 50px 0
+    .weight, .kind, .number, .weight, .suitability,
+      display: flex
+      padding-bottom: 7px
+      .text
+        padding-left: 5px
+        font-weight: 400
+  .about-as
+    padding-bottom: 20px
+    &:before
+      height: 1px
+      bottom: 10px
+    .title2
+      font-size: 20px
+      font-weight: 700
+      text-transform: uppercase
+      letter-spacing: 2px
+  .box
+    padding-bottom: 20px
+    .text
+      overflow: hidden
+    .read-more
+      padding-top: 10px
+      font-weight: 600
+      letter-spacing: 1px
+  .title3
+    padding-bottom: 15px
+    font-size: 20px
+    font-weight: 700
+    text-transform: uppercase
+    letter-spacing: 2px
+    &:before
+      height: 1px
+      bottom: 10px
+  .country, .address, .activity, .sayt
     display: flex
-    background-color: $orange
+    color: black
+    font-weight: 700
+    padding: 5px 0
+    font-size: 16px
+    padding-bottom: 7px
+    .text
+      padding-left: 5px
+      font-weight: 400
+    a
+      color: $blue
+      cursor: pointer
+      &:hover
+        color: $yellow
+        // recomendationmarket
+  .recomendation-tovars
+    background-color: white
+    height: 48vh
+    padding-bottom: 100px
+  .vibe-text
+    padding: 20px 0
+    &:before
+      height: 1px
+      bottom: 25px
+    .title
+      font-size: 22px
+      font-weight: 600
+      left: 10px
+      display: inline-block
+      padding-left: 20px
+  .allap
+    padding: 100px 0px 200px 0px 
+    flex-direction: column
+    display: flex
+    justify-content: center
+    align-items: center
+  p
+    font-size: 14px

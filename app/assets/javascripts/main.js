@@ -72,7 +72,7 @@ function ReadMore (_jObj, lineNum) { //class
   var HIDE_LABEL = "скрить";
 
   var jObj = _jObj;
-  var textMinHeight = ""+ (parseInt(jObj.children(".text").css("line-height"),10)*lineNum) +"px";
+  var textMinHeight = ""+ (parseInt(jObj.children(".text").css("line-height"),23)*lineNum) +"px";
   var textMaxHeight = ""+jObj.children(".text").css("height");
 
   jObj.children(".text").css("height", ""+textMaxHeight);
@@ -82,7 +82,7 @@ function ReadMore (_jObj, lineNum) { //class
   jObj.append ("<p class=read-more>"+READ_MORE_LABEL+"</p>");
 
   jObj.children(".read-more").css({
-      "color": "#07b1d8",
+      "color": "#24bbea",
       "font-weight": "bold",
       "cursor": "pointer"
     });

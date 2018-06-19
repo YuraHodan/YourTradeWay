@@ -1,0 +1,50 @@
+.oneproducter
+  .row.columns-left
+    .medium-3.columns
+      .wrapper
+        .compani-logo
+          .img-bg style="background-image: url(#{asset_path('photo/main/logos/brands_icon_1.png')})"
+    .medium-5.columns
+      .text-oneproducter
+        .title
+          | Туровсикй молочний комбінат
+          .title-smolle
+            | продукть питания
+        .rules
+          .country
+            | Страна:
+            .text
+              | Беларусь
+          .address
+            | Адреса:
+            .text
+              | улица Ваупшпасова 4,Минск 220070
+          .site
+            | Сайт:
+            a.text href="https://www.youtube.com"
+              | www.youtube.com
+        .contacts
+          .text-face.color-line.gray-block
+            | контактное лицо
+          .forms-abaut
+            .lup
+              .icon = inline_svg "photo/main/svg/man.svg"
+              .text.name
+                | Иванов Иван Иванов
+            .lup
+              .icon  = inline_svg "photo/main/svg/mail.svg"
+              .text
+                a href="mailto: example@com.ua" example@com.ua
+            .lup
+              .icon = inline_svg "photo/main/svg/phone.svg"
+              .text
+                a href="tel:+78142332211" +7(814)-233-22-11
+            .lup
+              .icon = inline_svg "photo/main/svg/phone.svg"
+              .text
+                a href="tel:+78142332211" +7(814)-233-22-11
+    .medium-4.columns
+      .sertuficat
+        .title сертифікат
+        .selector
+          = render "oneproducterslider"

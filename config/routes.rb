@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     get "logistics", action: "logistics"
     get "premium", action: "premium"
     get "onegoods", action: "onegoods"
+    get "oneproducter", action: "oneproducter"
   end
 
   match "*url", to: "application#render_not_found", via: [:get, :post, :path, :put, :update, :delete]
