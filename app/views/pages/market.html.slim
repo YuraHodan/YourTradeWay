@@ -132,7 +132,7 @@
         .medium-4.columns  ng-repeat="product in records | limitTo:6:6"
           .border-producers.color-line.red-block
             .one-new-producers
-              .img-bg style="background-image: url(#{asset_path('photo/main/logos/brands_icon_1.png')})"
+              a.img-bg href=onemarket_path style="background-image: url(#{asset_path('photo/main/logos/brands_icon_1.png')})"
             .description
               .description-txt
                 .maker

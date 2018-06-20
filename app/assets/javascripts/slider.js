@@ -101,24 +101,6 @@ $('.advertising-slider-nav').slick({
 
 /// one goodsslider
 
-    // $('.onegood-slider-for').slick({
-    //   slidesToShow: 1,
-    //   slidesToScroll: 1,
-    //   arrows: false,
-    //   fade: true,
-    //   asNavFor: '.onegood-slider-nav',
-    //   autoplay: true
-    // });
-    // $('.onegood-slider-nav').slick({
-    //   slidesToShow: 3,
-    //   slidesToScroll: 1,
-    //   asNavFor: '.onegood-slider-for',
-    //   dots: true,
-    //   centerMode: true,
-    //   focusOnSelect: true
-    // });
-
-
     $(function() {
   $('.slider-for2').slick({
     slidesToShow: 1,
@@ -136,4 +118,24 @@ $('.advertising-slider-nav').slick({
     // centerMode: true,
     focusOnSelect: true
   });
+});
+/// one oneproducter
+
+$('.producter-slider-for').slick({
+ slidesToShow: 1,
+ slidesToScroll: 1,
+ arrows: true,
+ fade: true,
+ asNavFor: '.producter-slider-nav'
+});
+$('.producter-slider-nav').slick({
+ slidesToShow: 1,
+ slidesToScroll: 1,
+ asNavFor: '.producter-slider-for',
+ dots: true,
+ autoplay: true,
+ autoplaySpeed: 2000,
+ nextArrow: false,
+ prevArrow: false
+
 });

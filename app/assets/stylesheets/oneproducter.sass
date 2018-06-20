@@ -1,6 +1,11 @@
 .oneproducter
   padding-top: 200px
   background-color: $grayBG
+  .media-ob
+    @media only screen and (max-width: 400px)
+      display: flex
+      align-items: center
+      justify-content: center
   .compani-logo
     position: relative
     padding-bottom: 70%
@@ -10,11 +15,25 @@
     border-style: solid
     border-color: $black
     border-width: 1px
+    .tex-box
+      width: 100%
+      position: absolute
+      bottom: 0
+      text-align: center
+      padding: 25px
+      background-color: $red
+      color: white
+      font-weight: 600
+      font-size: 16px
+    @media only screen and (max-width: 780px)
+      width: 250px
     .img-bg
       background-size: contain
       left: 60px
       right: 60px
   .text-oneproducter
+    @media only screen and (max-width: 400px)
+      padding-top: 20px
     .title
       font-size: 30px
       font-weight: 600
@@ -60,3 +79,136 @@
             &.name
               font-size: 17px
               font-weight: 600
+
+  .about-us
+    .title
+      color: black
+      font-size: 18px
+      letter-spacing: 1px
+      font-weight: 600
+      text-transform: uppercase
+      padding-bottom: 30px
+      &:before
+        height: 1px
+        bottom: 20px
+    .about-us-text
+      padding-bottom: 30px
+      p
+        font-family: OpenSans
+        color: black
+        font-size: 14px
+        line-height: 2.0em
+      ul
+        li
+          font-weight: 600
+          line-height: 40px
+          &::before
+            content: ""
+            position: absolute
+            left: -10px
+            top: 6px
+            width: 4px
+            height: 4px
+            border-radius: 50%
+      .marka
+        padding-top: 30px
+      table
+        font-weight: 600
+        font-size: 14px
+        td
+          padding-top: 20px
+        .rigt
+          padding-left: 100px
+          @media #{$small-only}
+            padding-left: 20px
+
+
+  .sertuficat
+    border: 1px solid $goodsgrayeband
+    .title
+      background-color: $goodsgrayeband
+      padding: 20px 20px
+    .selector
+      padding-top: 50px
+      background-color: white
+      .goode2
+        @media #{$small-only}
+          padding-right: 15px
+        @media #{$medium-up}
+          padding-right: 15px
+        ul
+          li
+            height: 500px
+            @media only screen and (max-width: 1024px)
+              height: 350px
+            .border-producers
+              .img-bg
+                height: 450px
+                background-size: auto
+                @media only screen and (max-width: 1024px)
+                  height: 300px
+      .slick-dots
+        display: inline-block
+        height: 0px
+        position: relative
+        top: -35px
+        left: 45%
+        li
+          height: 0
+  .batton-doun
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    .btn-big
+      background-color: white
+      border: 1px solid $yellow
+      display: flex
+      padding: 0px 20px
+      line-height: 40px
+      font-size: 15px
+      width: 80%
+      margin-top: 20px
+      @media only screen and (max-width: 1024px)
+        width: 100%
+        font-size: 9px
+      @media #{$small-only}
+        width: 100%
+        font-size: 14px
+      &:hover
+        background-color: $yellow
+      .text
+        color: $black
+      .icon
+        height: 30px
+        padding-top: 5px
+        margin-left: auto
+        svg
+          height: 30px
+  .company-products
+    text-align: center
+    padding: 60px 0
+    .title
+      font-size: 45px
+      font-weight: 700
+
+  .recomendation-tovars
+    height: 85vh
+    @media #{$medium-up}
+      height: 60vh
+    @media #{$small-only}
+      height: 0vh
+      background-color: $grayBG
+  .vibe-goods
+    padding-top: 30px
+  .allap
+    padding: 80px 0
+    display: flex
+    align-items: center
+    justify-content: center
+
+
+
+    ////// one distreputor
+  .targer
+    padding-bottom: 100px
