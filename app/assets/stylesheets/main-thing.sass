@@ -10,6 +10,8 @@
       font-size: 25px
       font-weight: 600
       text-transform: uppercase
+      +breakpoint(small only)
+        padding-top: 75px
     .aasd
       display: flex
       align-items: flex-start
@@ -20,6 +22,8 @@
       width: 33.3%
       padding-right: 20px
       line-height: 1.7
+      +breakpoint(small only)
+        padding: 0px 10px
       li
         position: relative
         &:before
@@ -92,11 +96,40 @@
     padding: 100px 0
     position: relative
     background-color: $grayBg
+    +breakpoint(small only)
+      background-color: white
+      padding: 20px 0px
+    .smolle-one-list-box
+      display: none
+      +breakpoint(small only)
+        display: block
+      .show-info
+        font-weight: 600
+        padding: 20px
+        background-color: $blue
+        color: white
+        &.gren
+          background-color: $green
+          color: $black
+        &.red
+          background-color: $red
+        &.orange
+          background-color: $orange
+          color: $black
+        .more-info
+          display: none
+          ul
+            li
+              padding-top: 30px
+              &:last-child
+                padding-bottom: 30px
     .one-list-box,.long-list
       height: 450px
       position: relative
       margin-bottom: 25px
       overflow: hidden
+      +breakpoint(small only)
+        display: none
       &.hover-list
         &:hover
           #rotate2
@@ -195,7 +228,22 @@
               background-color: white
         +breakpoint(small only)
           width: 100%
-
+  .new-producers-smoll
+    padding: 30px 0
+    display: none
+    +breakpoint(small only)
+      display: block
+    .btn-big
+      margin-left: 10%
+    .new-producers-tex
+      text-align: center
+      margin: 0 auto 50px
+      width: 100%
+      max-width: 100%
+      padding-bottom: 20px
+      font-size: 20px
+      font-weight: 600
+      text-transform: uppercase
   .new-producers
     padding: 150px 0
     position: relative
@@ -233,6 +281,12 @@
     background-color: $grayBg
     padding: 200px 0
     position: relative
+    +breakpoint(small only)
+      display: none
+    &.smole
+      display: none
+      +breakpoint(small only)
+        display: block
     .comand-tradergram
       text-align: center
       margin: 0 auto 50px
@@ -295,6 +349,8 @@
         color: $gray
     .btn-big
       margin-top: 30px
+      +breakpoint(medium down)
+        margin-left: 5%
     .img-target
       padding-bottom: 140%
 
@@ -340,3 +396,4 @@
       .comand-apply
         .apply-text
           width: 100%
+  //// adaptiv

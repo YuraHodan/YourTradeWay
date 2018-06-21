@@ -15,5 +15,8 @@
 $document.on 'click', '.list-arrow', ->
   # var this = $(this).parent()
 
-  $('.one-tovar').siblings().removeClass('opened')
+  # $('.one-tovar').siblings().removeClass('opened')
   $(this).parent().toggleClass('opened')
+  # if ($('.one-tovar').hasClass('opened')){
+  #   $(this).removeClass('opened')
+  # }

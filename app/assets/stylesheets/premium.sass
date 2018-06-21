@@ -1,6 +1,9 @@
-.premium
+.premium, .premium-smolle
   padding-top: 200px
   background-color: white
+  &.premium
+    +breakpoint(small only)
+      display: none
   .title-top
     text-align: center
     text-transform: uppercase
@@ -81,6 +84,8 @@
           position: relative
           .goods, .tovars, .support, .impressions, .support-platinum, .marceting-platinum
             padding: 25px 0
+            @media screen and (max-width: 770px)
+              padding: 20px 0
             .number
               font-weight: 500
               font-size: 20px
@@ -96,6 +101,10 @@
             position: absolute
             bottom: 30px
             right: -30px
+            @media screen and (max-width: 1025px)
+              right: 5px
+            @media screen and (max-width: 770px)
+              right: 11px
             .btn-big
               display: inline-block
               cursor: pointer
@@ -110,6 +119,11 @@
               line-height: 50px
               border-radius: 50px
               border: 2px solid $yellow
+              @media screen and (max-width: 1025px)
+                padding: 0px 50px
+                font-size: 10px
+              @media screen and (max-width: 770px)
+                padding: 0px 20px
               &:hover
                 background-color: $yellow
                 color: $black

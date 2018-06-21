@@ -101,3 +101,16 @@ function ReadMore (_jObj, lineNum) { //class
 
 
 readMore( $("#box"), 2);
+
+
+
+$('.show-info').click( function() {
+	$(this).find('.more-info').slideToggle('slow');
+  console.log('3');
+});
+
+ $('.list-arrow').click(function(){
+   if ($('.one-tovar').hasClass('.opened')){
+     $('.one-tovar').removeClass('.opened')
+   }
+ })
