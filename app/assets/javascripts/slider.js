@@ -139,3 +139,24 @@ $('.producter-slider-nav').slick({
  prevArrow: false
 
 });
+
+/// premiym smollle
+$('.slider-smolle-for').slick({
+ slidesToShow: 1,
+ slidesToScroll: 1,
+ arrows: false,
+ fade: true,
+ asNavFor: '.slider-smolle-nav'
+});
+$('.slider-smolle-nav').slick({
+ slidesToShow: 1,
+ slidesToScroll: 1,
+ asNavFor: '.slider-smolle-for',
+ dots: false,
+ centerMode: true,
+ focusOnSelect: true,
+ autoplay: false,
+ nextArrow: false,
+ prevArrow: false
+
+});
