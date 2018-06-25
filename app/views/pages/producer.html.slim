@@ -132,7 +132,7 @@
         .medium-4.columns  ng-repeat="product in records | limitTo:6:6"
           .border-producers.color-line.blue-block
             .one-new-producers
-              .img-bg style="background-image: url(#{asset_path('photo/main/logos/images.png')})"
+              a.img-bg href=oneproducter_path style="background-image: url(#{asset_path('photo/main/logos/images.png')})"
             .description
               .description-txt
                 .maker
@@ -145,7 +145,7 @@
         .medium-4.columns  ng-repeat="product in records | limitTo : 6"
           .border-producers.color-line.blue-block
             .one-new-producers
-              .img-bg style="background-image: url(#{asset_path('photo/main/logos/images.png')})"
+              a.img-bg href=oneproducter_path style="background-image: url(#{asset_path('photo/main/logos/images.png')})"
             .description
               .description-txt
                 .maker

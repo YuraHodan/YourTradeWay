@@ -31,6 +31,53 @@
 
   .varieties
     .row
+      .smolle-one-list-box
+        .medium-3.columns.show-info
+          h3 призвадители
+          .more-info
+            ul
+              li Продукты питания
+              li косметика и гигиена
+              li товары для дома
+              li канцелярские товары
+              li автотовары
+              li товары для животных
+        .medium-3.columns.show-info.gren
+          h3 дистрибюторь
+          .more-info
+            ul
+              li Продукты питания
+              li сырье
+              li бытовая химия / косметика
+              li посуда
+              li текстиль / спорт товары
+              li Электротовары
+              li Мебель
+              li Строительные аксессуары
+              li Медицина
+              li Промышленное оборудование
+              li Автотовары
+              li Канцтовары
+        .medium-3.columns.show-info.red
+          h3 маркеть
+          .more-info
+            ul
+              li супермаркет
+              li канцелярський
+              li вещевой
+              li строительный
+              li промышленный
+              li электроника
+              li мебельный
+              li смешанный
+        .medium-3.columns.show-info.orange
+          h3 логистика
+          .more-info
+            ul
+              li железнодорожный
+              li автотранспорт
+              li авиаперевозки
+              li морской транспорт
       .medium-6.columns
         .one-list-box
           .img-bg style="background-image: url(#{asset_path('photo/main/distribute.jpg')})"
@@ -49,18 +96,14 @@
           .hover-list-box.destreb
             h3 дистрибюторь
             ul
-              li Продукты питания
-              li сырье
-              li бытовая химия / косметика
-              li посуда
-              li текстиль / спорт товары
-              li Электротовары
-              li Мебель
-              li Строительные аксессуары
-              li Медицина
-              li Промышленное оборудование
-              li Автотовары
-              li Канцтовары
+              li супермаркет
+              li канцелярський
+              li вещевой
+              li строительный
+              li промышленный
+              li электроника
+              li мебельный
+              li смешанный
           #rotate2= inline_svg "photo/main/svg/list-arrow-down.svg"
 
               li Lorem ipsum dolor sit amet
@@ -88,7 +131,13 @@
               li автотранспорт
               li авиаперевозки
               li морской транспорт
-  .new-producers
+  .new-producers-smoll
+    .row.collapse
+      .columns
+        h3.new-producers-tex.color-line.blue-block  новие призводител
+      =render "smollemaneslider"
+      .btn-big.blue-btn  всі новини
+  .new-producers.desktop
     .row.collapse
       .columns
         h3.new-producers-tex.color-line.blue-block  новие призводители
@@ -126,6 +175,20 @@
             .one-new-producers
               .img-bg style="background-image: url(#{asset_path('photo/main/logos/images.png')})"
       .btn-big.blue-btn  всі новини
+  .tradergram-wrapper.smole
+    .row
+      .columns
+        .comand-tradergram
+          h2 tradergram
+          p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+        .row
+          .medium-4.columns
+            .one-tradergram-box
+              .img-bg style="background-image: url(#{asset_path('photo/main/news_1.jpg')})"
+            .tradergram-text
+              h3 Lorem ipsum dolor sit amet,60 consectetur adipisicing elit
+              p 12.04.2018
+        .btn-big  всі новини
   .tradergram-wrapper
     .row
       .columns

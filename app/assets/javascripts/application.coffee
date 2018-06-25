@@ -67,3 +67,5 @@
 #= require angular/logistics/logisticsCtrl
 
 #= require angular/onegoods/onegoodsCtrl
+
+#= require angular/oneproducter/oneproducterCtrl

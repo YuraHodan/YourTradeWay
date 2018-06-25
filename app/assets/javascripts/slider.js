@@ -92,6 +92,72 @@ $('.advertising-slider-nav').slick({
  autoplay: true,
  autoplaySpeed: 2000,
  nextArrow: false,
+ prevArrow: false,
+ dots: false,
+
+});
+
+
+
+/// one goodsslider
+
+    $(function() {
+  $('.slider-for2').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    fade: true,
+    // autoplay: true,
+    asNavFor: '.slider-nav2'
+  });
+  $('.slider-nav2').slick({
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    asNavFor: '.slider-for2',
+    dots: true,
+    // centerMode: true,
+    focusOnSelect: true
+  });
+});
+/// one oneproducter
+
+$('.producter-slider-for').slick({
+ slidesToShow: 1,
+ slidesToScroll: 1,
+ arrows: true,
+ fade: true,
+ asNavFor: '.producter-slider-nav'
+});
+$('.producter-slider-nav').slick({
+ slidesToShow: 1,
+ slidesToScroll: 1,
+ asNavFor: '.producter-slider-for',
+ dots: true,
+ autoplay: true,
+ autoplaySpeed: 2000,
+ nextArrow: false,
+ prevArrow: false
+
+});
+
+/// premiym smollle
+$('.slider-smolle-for').slick({
+ slidesToShow: 1,
+ slidesToScroll: 1,
+ arrows: false,
+ fade: true,
+ asNavFor: '.slider-smolle-nav'
+});
+$('.slider-smolle-nav').slick({
+ slidesToShow: 1,
+ slidesToScroll: 1,
+ asNavFor: '.slider-smolle-for',
+ dots: false,
+ centerMode: true,
+ focusOnSelect: true,
+ autoplay: true,
+ autoplaySpeed: 2000,
+ nextArrow: false,
  prevArrow: false
 
 });

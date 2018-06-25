@@ -66,6 +66,8 @@
         font-size: 13px
         padding: 25px 0 10px
         cursor: pointer
+        @media only screen and (max-width: 768px ) 
+          display: none
         &:hover
           color: $yellow
       .product-name
@@ -83,12 +85,17 @@
           color: $gray
           font-size: 13px
           width: 50%
+          @media only screen and (max-width: 768px ) and (min-width: 400px)
+            font-size: 10px
+            margin-left: -10px
         .mony
           color: $black
           font-size: 25px
           font-weight: 700
           position: absolute
           right: 0
+          @media only screen and (max-width: 768px)
+            font-size: 15px
 //// recomendation
 .recomendation-tovars
   background-color: white

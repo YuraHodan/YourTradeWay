@@ -8,9 +8,25 @@
 .mainlidet,.mainlidet-small
   padding: 200px 0 100px
   position: relative
+  .mainlidet
+  +breakpoint(small only)
+    padding: 0px
+    height: 300px
+  .border-producers
+    .one-new-producers
+      border: 1px solid $black
+      position: relative
+      padding-bottom: 100%
+      cursor: pointer
+      .img-bg
+        background-size: contain
+        left: 10px
+        right: 10px
   li
     height: 60vh
     position: relative
+    &.slider
+      height: 100%
     &::before
       display: none
   .next-btn, .prev-btn
@@ -104,3 +120,35 @@
       top: 50px
       h4
         font-size: 30px
+
+////// onegoodsslider
+.slider-onegoods
+  @media #{$small-only}
+    padding-bottom: 20px
+  .slick-dots
+    display: none
+  .slider-for2
+    // height: 300px
+    .slick-track
+      height: 500px
+      iframe
+        height: 500px
+        width: 100%
+  .slider-nav2
+    padding-top: 25px
+    width: 60%
+    margin: auto
+    .slick-slide
+      height: 50px
+      position: relative
+      // border: 2px solid $goodsgrayeband
+      margin: 0 10px
+    img
+      width: 50px
+      height: 50px
+      padding: 10px
+      +centered-inside
+      @media #{$small-only}
+        width: 200px
+        height: 200px
+        padding: 0

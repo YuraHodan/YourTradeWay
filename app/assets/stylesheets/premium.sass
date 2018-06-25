@@ -1,6 +1,9 @@
-.premium
+.premium, .premium-smolle
   padding-top: 200px
   background-color: white
+  &.premium
+    +breakpoint(small only)
+      display: none
   .title-top
     text-align: center
     text-transform: uppercase
@@ -44,7 +47,7 @@
           border: 2px solid $orange
           &.active
             background-color: $orange
-  #goods
+  #goods,
     display: block
   .tabcontent
     display: none
@@ -81,6 +84,8 @@
           position: relative
           .goods, .tovars, .support, .impressions, .support-platinum, .marceting-platinum
             padding: 25px 0
+            @media screen and (max-width: 770px)
+              padding: 20px 0
             .number
               font-weight: 500
               font-size: 20px
@@ -96,6 +101,10 @@
             position: absolute
             bottom: 30px
             right: -30px
+            @media screen and (max-width: 1025px)
+              right: 5px
+            @media screen and (max-width: 770px)
+              right: 11px
             .btn-big
               display: inline-block
               cursor: pointer
@@ -110,6 +119,11 @@
               line-height: 50px
               border-radius: 50px
               border: 2px solid $yellow
+              @media screen and (max-width: 1025px)
+                padding: 0px 50px
+                font-size: 10px
+              @media screen and (max-width: 770px)
+                padding: 0px 20px
               &:hover
                 background-color: $yellow
                 color: $black
@@ -129,3 +143,133 @@
                 border: 2px solid $blue
                 &:hover
                   box-shadow: 0px 7px 7px rgba(36, 187, 234, 0.4)
+// smolle primium
+.premium-smolle
+  display: none
+  +breakpoint(small only)
+    display: block
+  .title-all
+    text-align: center
+    .title-smolle
+      font-size: 18px
+      padding: 15px 0
+      font-weight: 600
+    .smolle-title
+      font-size: 16px
+      padding: 10px 0
+  .sel
+    .kabinet_selectid
+      display: flex
+      justify-content: center
+      select
+        width: 250px
+        display: inline-block
+        cursor: pointer
+        text-transform: uppercase
+        font-weight: 700
+        padding: 10px 25px
+        font-size: 14px
+        letter-spacing: .25em
+        background-color: white
+        text-align: center
+        line-height: 50px
+        border-radius: 50px
+        border: 2px solid $blue
+        color: $black
+        +transition(.7s)
+        #one1
+          background-color: $blue
+        #two1
+          background-color: $green
+        #three1
+          background-color: $red
+        #four1
+          background-color: $orange
+  .mainlidet
+    height: 1000px
+    .center-tab-all
+      height: 900px
+      padding: 50px 0px 0
+      display: flex
+      justify-content: center
+      .content-tab
+        width: 100%
+        margin-bottom: 100px
+        background-color: white
+        display: flex
+        justify-content: center
+        border: 1px solid $premiumborder
+        text-align: center
+        &.top-basic
+          &:before
+            box-shadow: 0px 10px 30px rgba(0, 170, 255, 1)
+        .title
+          font-weight: 700
+          text-transform: uppercase
+          font-size: 18px
+          padding: 40px 0
+          &:before
+            background-color: $premiumborder
+            height: 1px
+            bottom: 0px
+        .filling2
+          position: absolute
+          .goods, .tovars, .support, .impressions, .support-platinum, .marceting-platinum
+            padding: 15px 30px
+            .number
+              font-weight: 500
+              font-size: 20px
+            .goods
+              padding-top: 45px
+            .number-text
+              color: $gray
+              padding-top: 5px
+              font-weight: 400
+              font-size: 15px
+          &.basic
+            .title
+              color: $blue
+      .battons
+        position: absolute
+        bottom: 20px
+        .btn-big
+          display: inline-block
+          cursor: pointer
+          text-transform: uppercase
+          font-weight: 700
+          padding: 0px 60px
+          font-size: 15px
+          letter-spacing: .25em
+          color: $yellow
+          background-color: white
+          text-align: center
+          line-height: 50px
+          border-radius: 50px
+          border: 2px solid $yellow
+          @media screen and (max-width: 1025px)
+            padding: 0px 50px
+            font-size: 10px
+          @media screen and (max-width: 770px)
+            padding: 0px 20px
+          &:hover
+            background-color: $yellow
+            color: $black
+            border: 2px solid $yellow
+            box-shadow: 0px 7px 7px rgba(255, 224, 0, 0.4)
+          &.red
+            color: $red
+            border: 2px solid $red
+            &:hover
+              background-color: $red
+              color: white
+              border: 2px solid $red
+              box-shadow: 0px 7px 7px rgba(255, 29, 94, 0.3)
+          &.blue
+            background-color: $blue
+            color: white
+            border: 2px solid $blue
+            &:hover
+              box-shadow: 0px 7px 7px rgba(36, 187, 234, 0.4)
+  .slick-dots
+    display: flex
+    justify-content: center
