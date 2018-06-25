@@ -1,0 +1,77 @@
+.tradergram
+  padding-top: 200px
+  background-color: white
+  .tutle
+    font-size: 34px
+    font-weight: 600
+    text-align: center
+    padding: 50px 0
+    text-transform: uppercase
+  .wrapper-tab
+    display: flex
+    justify-content: center
+    .tab
+      .tablist-content
+        cursor: pointer
+        display: flex
+        padding: 10px 0
+        .img-bg
+          height: 100px
+          width: 100px
+          position: relative
+        .tex
+          padding-left: 15px
+          width: 300px
+          align-self: center
+          .tab-text
+            font-size: 18px
+            font-weight: 600
+            line-height: 25px
+            transition: 1s
+          .tab-data
+            font-size: 14px
+            color: $gray
+        &:hover
+          .tex
+            .tab-text
+              text-decoration: underline
+              color: $yellow
+
+  #goods,
+    display: block
+  .tabcontent
+    display: none
+    padding: 6px 12px
+    .center-tab-all
+      .content-tab
+        display: flex
+        .content-img
+          .img-bg
+            height: 500px
+            width: 500px
+            position: relative
+        .text-tovar
+          width: 500px
+          padding: 50px 60px
+          align-self: center
+          .smole-taitle
+            font-size: 18px
+            font-weight: 600
+            line-height: 25px
+          .tab-data
+            padding: 10px 0 40px
+            font-size: 14px
+            color: $gray
+          .tex-abaut-tovar
+            font-size: 14px
+            color: $gray
+            word-spacing: .2em
+            line-height: 20px
+            padding-bottom: 20px
+          .rede-more
+            font-size: 16px
+            color: $blue
+            cursor: pointer
+            font-weight: 600
+            &:hover
+              color: $yellow

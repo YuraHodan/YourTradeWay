@@ -155,7 +155,8 @@ $('.slider-smolle-nav').slick({
  dots: false,
  centerMode: true,
  focusOnSelect: true,
- autoplay: false,
+ autoplay: true,
+ autoplaySpeed: 2000,
  nextArrow: false,
  prevArrow: false
 
