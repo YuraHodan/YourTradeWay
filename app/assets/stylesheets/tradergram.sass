@@ -11,13 +11,14 @@
     display: flex
     justify-content: center
     .tab
+      display: inline-block
       .tablist-content
         cursor: pointer
         display: flex
         padding: 10px 0
         .img-bg
-          height: 100px
-          width: 100px
+          height: 150px
+          width: 150px
           position: relative
         .tex
           padding-left: 15px
@@ -75,3 +76,29 @@
             font-weight: 600
             &:hover
               color: $yellow
+  .nues-alle
+    padding-top: 100px
+    .ful-nues
+      cursor: pointer
+      padding-bottom: 60px
+      &:hover
+        color: $yellow
+      .img-nues
+        .img-bg
+          height: 500px
+          width: 500px
+          position: relative
+      .text-nues
+        padding-left: 15px
+        .title-nues
+          padding: 15px 0
+          font-size: 16px
+          font-weight: 600
+          word-spacing: .2em
+          transition: 1s
+          line-height: 25px
+        .tab-data
+          font-size: 14px
+          color: $gray
+          word-spacing: .2em
+          line-height: 20px
