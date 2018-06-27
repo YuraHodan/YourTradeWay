@@ -11,7 +11,11 @@
       text-transform: uppercase
   .contacts-alle
     .one-contacts
+      padding-bottom: 150px
       width: 85%
+      &.sosial
+        @media screen and (max-width: 1025px)
+          width: 100%
       .taitle-contacts
         font-size: 20px
         font-weight: 600
@@ -22,6 +26,10 @@
       .country, .address, .e-mail, .phone, .fax
         display: flex
         padding: 10px 0
+        @media screen and (max-width: 1025px)
+          display: inline-block
+        // +breakpoint(medium down)
+        //   display: inline-block
         &.e-mail
           .text
             color: $blue
@@ -34,3 +42,20 @@
         .olp-text
           .text
             padding: 9px 0
+      .icons
+        display: flex
+        .vk, .fb, .tw, .yt, .go, .in, .od, .pi
+          padding: 10px
+          cursor: pointer
+          svg
+            height: 16px
+            &:hover
+              g
+                g
+                  path
+                    fill: $yellow
+
+input.ng-invalid.ng-touched
+  background-color: red
+input.ng-valid.ng-touched
+  background-color: #78FA89

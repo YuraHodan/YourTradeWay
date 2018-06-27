@@ -69,3 +69,5 @@
 #= require angular/onegoods/onegoodsCtrl
 
 #= require angular/oneproducter/oneproducterCtrl
+
+#= require angular/contacts/contactsCtrl

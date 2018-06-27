@@ -1,4 +1,4 @@
-var ytwApp = angular.module('ytwApp', ['ui.bootstrap']);
+var ytwApp = angular.module('ytwApp', []);
 
 // console.log('1');
 // ytwApp.directive('mixitup',function(){
