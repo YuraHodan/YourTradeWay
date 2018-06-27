@@ -1,6 +1,6 @@
 .contacts
   padding-top: 200px
-  background-color: white
+  background-color: $grayBg
   .taitle
     padding-bottom: 50px
     .tex-taitle
@@ -54,8 +54,55 @@
                 g
                   path
                     fill: $yellow
+  .question
+    .form-group
+      display: grid
+      padding-bottom: 30px
+      .lable-one
+        display: flex
+        padding: 0 0 10px
+        .label
+          font-size: 16px
+          font-weight: 600
+        .span
+          font-size: 18px
+          color: red
+          padding-left: 5px
+      input
+        padding: 10px
+        height: 50px
+      textarea
+        height: 270px
+      .help-block
+        color: red
+        position: absolute
+        margin-left: 35%
+        margin-top: 6%
+        font-size: 14px
+        &.phone
+          margin-left: 20%
+    .button-te
+      padding: 50px 0 100px
+      display: flex
+      justify-content: center
 
 input.ng-invalid.ng-touched
-  background-color: red
-input.ng-valid.ng-touched
-  background-color: #78FA89
+  border: 2px solid red
+textarea.ng-invalid.ng-touched
+  border: 2px solid red
+button
+  display: inline-block
+  cursor: pointer
+  text-transform: uppercase
+  font-weight: 700
+  padding: 3px 60px
+  font-size: 14px
+  letter-spacing: .25em
+  color: $white
+  background-color: $yellow
+  text-align: center
+  line-height: 50px
+  border-radius: 50px
+  +transition(.7s)
+  &:disabled
+    background-color: $black

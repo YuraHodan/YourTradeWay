@@ -88,37 +88,45 @@
               .in =inline_svg "svg/smole/Asset4.svg"
               .od =inline_svg "svg/smole/Asset3.svg"
               .pi =inline_svg "svg/smole/Asset2.svg"
-  .medium-12.center
-    .taitle
-      .tex-taitle задать вопрос
-    .medium.columns
-      .question
-        form name="userForm" ng-submit="submitForm()" novalidate=""
-          .medium-6.columns
-            /! NAME
-            .form-group ng-class=("{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }")
-              label Name
-              input.form-control name="name" ng-model="user.name" required="" type="text" /
-              p.help-block ng-show=("userForm.name.$invalid && !userForm.name.$pristine")  You name is required.
-            /! EMAIL
-            .form-group ng-class=("{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }")
-              label Email
-              input.form-control name="email" ng-model="user.email" type="email" /
-              p.help-block ng-show=("userForm.email.$invalid && !userForm.email.$pristine")  Enter a valid email.
-            /! phone
-            .form-group ng-class=("{ 'has-error' : userForm.phone.$invalid && !userForm.phone.$pristine }")
-              label Phone
-              input.form-control name="phone" ng-model="user.phone" type="text"  placeholder="+91-636-78658" ng-pattern="phoneNumbr"
-              p.help-block ng-show="userForm.phone.$error.required"  Required!
-              p.help-block ng-show="userForm.phone.$error.minlength"  Phone no not less that 10 char.
-              p.help-block ng-show="userForm.phone.$error.maxlength"  Phone no not more than 11 char.
-              p.help-block ng-show="userForm.phone.$error.pattern"  Please match pattern [+91-036-78658 || 91-036-78658]
-          .medium-6.columns
-            /! question
-            .form-group ng-class=("{ 'has-error' : userForm.username.$invalid && !userForm.username.$pristine }")
-              label Username
-              input.form-control name="username" ng-maxlength="200" ng-minlength="10" ng-model="user.username" type="text" /
-              p.help-block ng-show="userForm.username.$error.minlength"  Username is too short.
-              p.help-block ng-show="userForm.username.$error.maxlength"  Username is too long.
-          .medium-12.columns
-            button.btn.btn-primary ng-disabled="userForm.$invalid" type="submit"  Submit
+  .row
+    .medium-12.columns
+      .taitle
+        .tex-taitle задать вопрос
+      .medium.columns
+        .question
+          form name="userForm" ng-submit="submitForm()" novalidate=""
+            .medium-6.columns
+              /! NAME
+              .form-group ng-class=("{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }")
+                .lable-one
+                  .label ФИО
+                  .span  *
+                input.form-control name="name" ng-model="user.name" required="" type="text" minlength="5" placeholder="Иванов Иван Ивіанович" /
+                p.help-block ng-show=("userForm.name.$invalid && !userForm.name.$pristine")  You name is required.
+              /! EMAIL
+              .form-group ng-class=("{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }")
+                .lable-one
+                  .label E-mail
+                  .span  *
+                input.form-control name="email" ng-model="user.email" type="email" placeholder="gmail@gmail.com" /
+                p.help-block ng-show=("userForm.email.$invalid && !userForm.email.$pristine")  Enter a valid email.
+              /! phone
+              .form-group ng-class=("{ 'has-error' : userForm.phone.$invalid && !userForm.phone.$pristine }")
+                .lable-one
+                  .label Телефон:
+                  .span  *
+                input.form-control name="phone" ng-model="user.phone" type="text"  placeholder="+91-636-78658" ng-pattern="phoneNumbr"
+
+                p.help-block.phone ng-show="userForm.phone.$error.pattern"  Please match pattern [+91 036 78658 or 91 036 78658]
+            .medium-6.columns
+              /! question
+              .form-group ng-class=("{ 'has-error' : userForm.username.$invalid && !userForm.username.$pristine }")
+                .lable-one
+                  .label Сообщения
+                  .span  *
+                textarea.form-control.ng-pristine.ng-valid.ng-empty.ng-touched name="comment" ng-model="user.comment" placeholder=("Поле для коментарів...") rows="5" minlength="15"
+                p.help-block ng-show="userForm.comment.$error.maxlength"  not less than 15 characters
+
+            .medium-12.columns
+              .button-te
+                button ng-disabled="userForm.$invalid" type="submit"  отпраить
