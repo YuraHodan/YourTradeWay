@@ -18,6 +18,8 @@ Rails.application.routes.draw do
     get "tradergram", action: "tradergram"
     get "onenues", action: "onenues"
     get "contacts", action: "contacts"
+    get "faq", action: "faq"
+    get "terms", action: "terms"
   end
 
   match "*url", to: "application#render_not_found", via: [:get, :post, :path, :put, :update, :delete]

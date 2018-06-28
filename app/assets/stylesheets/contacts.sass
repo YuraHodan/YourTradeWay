@@ -1,6 +1,6 @@
 .contacts
   padding-top: 200px
-  background-color: $grayBg
+  background-color: white
   .taitle
     padding-bottom: 50px
     .tex-taitle
@@ -87,9 +87,9 @@
       justify-content: center
 
 input.ng-invalid.ng-touched
-  border: 2px solid red
+  border: 1px solid red
 textarea.ng-invalid.ng-touched
-  border: 2px solid red
+  border: 1px solid red
 button
   display: inline-block
   cursor: pointer
@@ -106,3 +106,60 @@ button
   +transition(.7s)
   &:disabled
     background-color: $black
+
+
+
+// popup
+
+
+
+
+.popup
+  display: none
+  position: absolute
+  left: 0
+  right: 0
+  top: 0
+  bottom: 0
+  z-index: 10
+  margin-bottom: -550px
+
+.popup-overlay
+  background: rgba(0, 0, 0, 0.9)
+  position: absolute
+  left: 0
+  right: 0
+  top: 0
+  bottom: -50px
+
+.popup-content
+  position: absolute
+  background: #fff
+  width: 750px
+  margin: -58px 0 0 -264px
+  left: 45%
+  top: 60%
+  z-index: 11
+  text-align: center
+  padding: 130px 0
+  display: flex
+  flex-direction: column-reverse
+  .close-popup
+    right: -30px
+    font-size: 42px
+    svg
+      height: 80px
+    &:hover
+      svg
+        g
+          g
+            path
+              fill: $yellow
+
+  .title
+    font-size: 50px
+    font-weight: 600
+    padding: 35px
+  .title-text
+    font-size: 20px
+    word-spacing: 5px
