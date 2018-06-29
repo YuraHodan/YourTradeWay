@@ -1,0 +1,73 @@
+.registration ng-controller="registrationController as stor"
+  .row.collapse
+    .columns-9
+      .title-top
+        | регистрация
+      .taitle-contacts.color-line.yellow-block о компании
+      .wrapper-tab
+        .tab
+          button.tablinks.btn-big.blue-btn.active onclick="openPremium(event, 'goods')"  призводители
+          button.tablinks.btn-big.green-btn.green onclick="openPremium(event, 'distributors')"  дистрибютори
+          button.tablinks.btn-big.red-btn.red onclick="openPremium(event, 'marker')"  маркеть
+          button.tablinks.btn-big.orange-btn.orange onclick="openPremium(event, 'logistics')"  логист
+      #goods.tabcontent
+        form name="submitForm" ng-submit="submitForm()" novalidate=""
+          // tariff
+          .form-group ng-class=("{ 'has-error' : submitForm.tariff.$invalid && !submitForm.tariff.$pristine }")
+            .lable-one
+              .label Тарифньй план:
+              / .span  *
+            select#nazn.selectid.form-control name="tariff" required=""
+              //ng-model="user.tariff"
+              option#one1.sel_dok value="free"  free
+              option#two1.sel_dok value="basic"  basic
+              option#three1.sel_dok value="platinum"  platinum
+              / .clear
+              / .one style="display:none"
+              /   h1 lorem
+              / .too style="display:none"
+              /   h1 dsgfsdfsdfsdf2
+              / .three style="display:none"
+              /   h1 dsgfsdfsdfsdf3
+
+        //name
+        .form-group ng-class=("{ 'has-error' : submitForm.name.$invalid && !submitForm.name.$pristine }")
+          .lable-one
+            .label Названия компании:
+            / .span  *
+          input.form-control name="name" ng-model="user.name" required="" type="text" minlength="5" placeholder="ОАО 'ТУльский молочний комбинат'" /
+          p.help-block ng-show=("submitForm.name.$invalid && !submitForm.name.$pristine")  You name is required.
+
+
+
+
+        //manufacturers
+        .form-group ng-class=("{ 'has-error' : submitForm.tariff.$invalid && !submitForm.tariff.$pristine }")
+          .lable-one
+            .label тип призводства план:
+            / .span  *
+          select#nazn.selectid.form-control name="tariff" required=""
+            //ng-model="user.tariff"
+            option value="1"  питания
+            option value="2"  косметика
+            option value="3"  для дома
+
+
+
+
+        //logotype
+        / .form-group ng-class=("{ 'has-error' : submitForm.tariff.$invalid && !submitForm.tariff.$pristine }")
+        /   .lable-one
+        /     .label логотип:
+        /   div img-upload="" method="POST"
+
+
+
+        div
+          div img-upload="" method="POST"
+      #distributors.tabcontent
+        h1 sdfdsf2
+      #marker.tabcontent
+        h1 dsfdsfs3
+      #logistics.tabcontent
+        h1 sdfsdfdsf4

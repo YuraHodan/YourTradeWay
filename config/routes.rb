@@ -20,6 +20,8 @@ Rails.application.routes.draw do
     get "contacts", action: "contacts"
     get "faq", action: "faq"
     get "terms", action: "terms"
+    get "Registration", action: "Registration"
+    get "aboutus", action: "aboutus"
   end
 
   match "*url", to: "application#render_not_found", via: [:get, :post, :path, :put, :update, :delete]

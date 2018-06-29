@@ -73,3 +73,5 @@
 #= require angular/oneproducter/oneproducterCtrl
 
 #= require angular/contacts/contactsCtrl
+
+#= require angular/reqistration/reqistrationCtrl
