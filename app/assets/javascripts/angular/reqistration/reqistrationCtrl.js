@@ -7,16 +7,106 @@ $scope.phoneNumbr = /^\+?\d{2}[- ]?\d{3}[- ]?\d{5}$/;
 			// check to make sure the form is completely valid
 			if ($scope.registrationForm.$valid) {
         // alert('lox2');
-        // $scope.user = {};
-        // $scope.registrationForm.$setPristine();
+        $scope.user = {};
+        $scope.registrationForm.$setPristine();
 			}
 
 		};
+
+		$scope.imageSrc = "";
+
+	     $scope.$on("fileProgress", function(e, progress) {
+	       $scope.progress = progress.loaded / progress.total;
+	     });
+
 
 }]);
 console.log('7');
 
 
+//////////////////////////////////
+
+
+
+
+ytwApp.directive("ngFileSelect", function(fileReader, $timeout, $http,$compile) {
+    return {
+      scope: {
+        ngModel: '='
+      },
+      link: function($scope, el) {
+        function getFile(file) {
+          fileReader.readAsDataUrl(file, $scope)
+            .then(function(result) {
+              $timeout(function() {
+                $scope.ngModel = result;
+              });
+            });
+        }
+
+        el.bind("change", function(e) {
+          var file = (e.srcElement || e.target).files[0];
+          getFile(file);
+        });
+      }
+    };
+  });
+
+ytwApp.factory("fileReader", function($q, $log) {
+  var onLoad = function(reader, deferred, scope) {
+    return function() {
+      scope.$apply(function() {
+        deferred.resolve(reader.result);
+      });
+    };
+  };
+
+  var onError = function(reader, deferred, scope) {
+    return function() {
+      scope.$apply(function() {
+        deferred.reject(reader.result);
+      });
+    };
+  };
+
+  var onProgress = function(reader, scope) {
+    return function(event) {
+      scope.$broadcast("fileProgress", {
+        total: event.total,
+        loaded: event.loaded
+      });
+    };
+  };
+
+  var getReader = function(deferred, scope) {
+    var reader = new FileReader();
+    reader.onload = onLoad(reader, deferred, scope);
+    reader.onerror = onError(reader, deferred, scope);
+    reader.onprogress = onProgress(reader, scope);
+    return reader;
+  };
+
+  var readAsDataURL = function(file, scope) {
+    var deferred = $q.defer();
+
+    var reader = getReader(deferred, scope);
+    reader.readAsDataURL(file);
+
+    return deferred.promise;
+  };
+
+  return {
+    readAsDataUrl: readAsDataURL
+  };
+});
+
+
+
+
+
+
+
+//////////////////////////////////
 
 
 ytwApp.directive("imgUpload",function($http,$compile){
@@ -32,7 +122,7 @@ ytwApp.directive("imgUpload",function($http,$compile){
 						   '</div>'+
 						   '<div class="preview clearfix">'+
 						   		'<div class="previewData clearfix" ng-repeat="data in previewData track by $index">'+
-						   			'<img src={{data.src}}></img>'+
+						   			'<img  src={{data.src}}></img>'+
 						   				'<span ng-click="remove(data)" class="circle remove">'+
 						   					'<i class="fa fa-close"></i>'+
 						   				'</span>'+

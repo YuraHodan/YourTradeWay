@@ -22,49 +22,81 @@
               option#one1.sel_dok value="free"  free
               option#two1.sel_dok value="basic"  basic
               option#three1.sel_dok value="platinum"  platinum
-              / .clear
-              / .one style="display:none"
-              /   h1 lorem
-              / .too style="display:none"
-              /   h1 dsgfsdfsdfsdf2
-              / .three style="display:none"
-              /   h1 dsgfsdfsdfsdf3
 
-        //name
-        .form-group ng-class=("{ 'has-error' : submitForm.name.$invalid && !submitForm.name.$pristine }")
+          //name
+          .form-group ng-class=("{ 'has-error' : submitForm.name.$invalid && !submitForm.name.$pristine }")
+            .lable-one
+              .label Названия компании:
+              / .span  *
+            input.form-control name="name" ng-model="user.name" required="" type="text" minlength="5" placeholder="ОАО 'ТУльский молочний комбинат'" /
+            p.help-block ng-show=("submitForm.name.$invalid && !submitForm.name.$pristine")  You name is required.
+
+
+
+
+          //manufacturers
+          .form-group ng-class=("{ 'has-error' : submitForm.tariff.$invalid && !submitForm.tariff.$pristine }")
+            .lable-one
+              .label тип призводства план:
+              / .span  *
+            select#nazn.selectid.form-control name="tariff" required=""
+              option value="1"  питания
+              option value="2"  косметика
+              option value="3"  для дома
+
+
+          //logotype
+          .form-group ng-class=("{ 'has-error' : submitForm.tariff.$invalid && !submitForm.tariff.$pristine }")
           .lable-one
-            .label Названия компании:
-            / .span  *
-          input.form-control name="name" ng-model="user.name" required="" type="text" minlength="5" placeholder="ОАО 'ТУльский молочний комбинат'" /
-          p.help-block ng-show=("submitForm.name.$invalid && !submitForm.name.$pristine")  You name is required.
+            .label логотип:
+            input name='logo' ng-file-select="onFileSelect($files)" ng-model="imageSrc" required=""  type="file"
+          img ng-src="{{imageSrc}}"
+
+          //aboyut as
+          .form-group ng-class=("{ 'has-error' : submitForm.comment.$invalid && !submitForm.comment.$pristine }")
+            .lable-one
+              .label описания
+            textarea.form-control.ng-pristine.ng-valid.ng-empty.ng-touched name="comment" ng-model="user.comment" placeholder=("Поле для коментарів...") rows="5" minlength="15"
+            p.help-block ng-show="submitForm.comment.$error.maxlength"  not less than 15 characters
+
+          // foto
+          .form-group ng-class=("{ 'has-error' : submitForm.username.$invalid && !submitForm.username.$pristine }")
+            .lable-one
+              .label фото и видео
+            div
+              div  img-upload="" method="POST"
+          / catalog
+          .form-group ng-class=("{ 'has-error' : submitForm.catalog.$invalid && !submitForm.catalog.$pristine }")
+            .lable-one
+              .label каталог продукції:
+              input name="catalog" ng-model="user.catalog"  type="file"
+          // list
+          .form-group ng-class=("{ 'has-error' : submitForm.list.$invalid && !submitForm.list.$pristine }")
+            .lable-one
+              .label Прайс лист:
+              input name="list" ng-model="user.list"  type="file"
+          // sert
+          .form-group ng-class=("{ 'has-error' : submitForm.sert.$invalid && !submitForm.sert.$pristine }")
+            .lable-one
+              .label сертифікат:
+              input name="sert" ng-model="user.sert"  type="file"
 
 
 
 
-        //manufacturers
-        .form-group ng-class=("{ 'has-error' : submitForm.tariff.$invalid && !submitForm.tariff.$pristine }")
-          .lable-one
-            .label тип призводства план:
-            / .span  *
-          select#nazn.selectid.form-control name="tariff" required=""
-            //ng-model="user.tariff"
-            option value="1"  питания
-            option value="2"  косметика
-            option value="3"  для дома
 
 
 
 
-        //logotype
-        / .form-group ng-class=("{ 'has-error' : submitForm.tariff.$invalid && !submitForm.tariff.$pristine }")
-        /   .lable-one
-        /     .label логотип:
+
+
+          .button-te
+            button.open-popup data-id="popup_default" ng-disabled="submitForm.$invalid" type="submit"  отпраить
+
+
+
+        / div
         /   div img-upload="" method="POST"
-
-
-
-        div
-          div img-upload="" method="POST"
       #distributors.tabcontent
         h1 sdfdsf2
       #marker.tabcontent
