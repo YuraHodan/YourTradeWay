@@ -1,14 +1,11 @@
 ytwApp.controller('registrationController', ['$scope', function($scope,$http) {
-
 $scope.phoneNumbr = /^\+?\d{2}[- ]?\d{3}[- ]?\d{5}$/;
+$scope.faxNumbr = /^\+?\d{2}[- ]?\d{3}[- ]?\d{10}$/;
 
      // function to submit the form after all validation has occurred
 		$scope.submitForm = function() {
 			// check to make sure the form is completely valid
-			if ($scope.registrationForm.$valid) {
-        // alert('lox2');
-        $scope.user = {};
-        $scope.registrationForm.$setPristine();
+			if ($scope.submitForm.$valid) {
 			}
 
 		};
@@ -118,7 +115,10 @@ ytwApp.directive("imgUpload",function($http,$compile){
 				},
 				template : 	'<input class="fileUpload" type="file" multiple />'+
 							'<div class="dropzone">'+
-								'<p class="msg">Click or Drag and Drop files to upload</p>'+
+								'<div class="svgo"></div>'+
+								'<h3 class="msg">перетяните сюда ваши файли</h3>'+
+								'<p class="msgbotom">или <span class="span-text">виберите</span> их на вашем компютери</p>'+
+								'<div class="msgshadov">поддерживаєца только JPG,GIF,PNG формать </div>'+
 						   '</div>'+
 						   '<div class="preview clearfix">'+
 						   		'<div class="previewData clearfix" ng-repeat="data in previewData track by $index">'+
