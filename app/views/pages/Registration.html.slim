@@ -54,8 +54,10 @@
           .form-group ng-class=("{ 'has-error' : submitForm.tariff.$invalid && !submitForm.tariff.$pristine }")
             .lable-one
               .label логотип:
+
             input name='logo' ng-file-select="onFileSelect($files)" ng-model="imageSrc" required=""  type="file"
-          img ng-src="{{imageSrc}}"
+            .img
+              img.content-centering_element ng-src="{{imageSrc}}"
 
           //aboyut as
           .form-group ng-class=("{ 'has-error' : submitForm.comment.$invalid && !submitForm.comment.$pristine }")
@@ -71,20 +73,20 @@
             div.target
               div  img-upload="" method="POST"
           / catalog
-          .form-group ng-class=("{ 'has-error' : submitForm.catalog.$invalid && !submitForm.catalog.$pristine }")
+          .form-group.fails ng-class=("{ 'has-error' : submitForm.catalog.$invalid && !submitForm.catalog.$pristine }")
             .lable-one
               .label каталог продукції:
-            input name="catalog" ng-model="user.catalog"  type="file"
+            input#upload.custom-file-input name="catalog" ng-model="user.catalog"  type="file"
           // list
-          .form-group ng-class=("{ 'has-error' : submitForm.list.$invalid && !submitForm.list.$pristine }")
+          .form-group.fails ng-class=("{ 'has-error' : submitForm.list.$invalid && !submitForm.list.$pristine }")
             .lable-one
               .label Прайс лист:
-            input name="list" ng-model="user.list"  type="file"
+            input#upload.custom-file-input name="list" ng-model="user.list"  type="file"
           // sert
-          .form-group ng-class=("{ 'has-error' : submitForm.sert.$invalid && !submitForm.sert.$pristine }")
+          .form-group.fails ng-class=("{ 'has-error' : submitForm.sert.$invalid && !submitForm.sert.$pristine }")
             .lable-one
               .label сертифікат:
-            input name="sert" ng-model="user.sert"  type="file"
+            input#upload.custom-file-input name="sert" ng-model="user.sert"  type="file"
 
 
           //country
@@ -92,14 +94,14 @@
             .lable-one
               .label страна:
               / .span  *
-            input.text-input.form-control name="name" ng-model="user.country" required="" type="text" minlength="5" placeholder="страна"
+            input.text-input.form-control name="country" ng-model="user.country" required="" type="text" minlength="5" placeholder="страна"
             p.help-block ng-show=("submitForm.name.$invalid && !submitForm.name.$pristine")  You country is required.
           // city
           .form-group ng-class=("{ 'has-error' : submitForm.city.$invalid && !submitForm.city.$pristine }")
             .lable-one
               .label Город:
               / .span  *
-            input.text-input.form-control name="name" ng-model="user.city" required="" type="text" minlength="5" placeholder="страна"
+            input.text-input.form-control name="city" ng-model="user.city" required="" type="text" minlength="5" placeholder="страна"
             p.help-block ng-show=("submitForm.name.$invalid && !submitForm.name.$pristine")  You country is required.
           // street
           .form-group ng-class=("{ 'has-error' : submitForm.street.$invalid && !submitForm.street.$pristine }")

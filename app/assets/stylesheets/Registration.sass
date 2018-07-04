@@ -63,6 +63,9 @@
     .form-group
       display: flex
       padding: 30px 0
+      // &.fails
+      //   input[type="file"]
+      //     color: red
       .lable-one
         width: 25%
         display: flex
@@ -84,12 +87,62 @@
         border: 1px solid $gray
         padding-left: 20px
       textarea
-        padding: 20px 0 0 20px
         width: 75%
         height: 300px
-
-
-
+        padding: 12px 20px
+        box-sizing: border-box
+        border: 2px solid #ccc
+        border-radius: 4px
+        background-color: $input
+        font-size: 16px
+        resize: none
+      .custom-file-input
+        padding: 15px
+        color: #999
+        border: 1px solid #000
+        height: 60px
+        width: 50%
+        vertical-align: middle
+        position: relative
+        left: 25%
+        background-color: $input
+        color: $black
+        &::-webkit-file-upload-button
+          visibility: hidden
+        &::before
+          content: 'Вибрать файл'
+          cursor: pointer
+          text-transform: uppercase
+          font-weight: 600
+          padding: 15px 50px
+          font-size: 16px
+          letter-spacing: .25em
+          color: $black
+          background-color: white
+          text-align: center
+          line-height: 35px
+          border-radius: 50px
+          border: 2px solid $yellow
+          position: relative
+          left: -56%
+          top: -1px
+          +transition(.7s)
+        &:hover::before
+            background-color: $yellow
+            color: $black
+        &:active
+          outline: 0
+          &::before
+            background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9)
+      .img
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 200px
+        height: 200px
+        overflow: hidden
+        .content-centering_element
+          max-width: 100%
 
 
 
