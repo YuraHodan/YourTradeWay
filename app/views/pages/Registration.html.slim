@@ -55,7 +55,7 @@
             .lable-one
               .label логотип:
 
-            input name='logo' ng-file-select="onFileSelect($files)" ng-model="imageSrc" required=""  type="file"
+            input#upload.custom-file-input.none name='logo' ng-file-select="onFileSelect($files)" ng-model="imageSrc" required=""  type="file"
             .img
               img.content-centering_element ng-src="{{imageSrc}}"
 
@@ -88,7 +88,7 @@
               .label сертифікат:
             input#upload.custom-file-input name="sert" ng-model="user.sert"  type="file"
 
-
+          .taitle-contacts.color-line.yellow-block Дополнитильная информация
           //country
           .form-group ng-class=("{ 'has-error' : submitForm.country.$invalid && !submitForm.country.$pristine }")
             .lable-one
@@ -124,7 +124,7 @@
               / .span  *
             input.text-input.form-control name="site" ng-model="user.site" required="" type="text" minlength="5" placeholder="страна"
             p.help-block ng-show=("submitForm.site.$invalid && !submitForm.site.$pristine")  You site is street.
-            /////////////////////////////
+          .taitle-contacts.color-line.yellow-block контактное лицо
           // fio
           .form-group ng-class=("{ 'has-error' : submitForm.fio.$invalid && !submitForm.fio.$pristine }")
             .lable-one
