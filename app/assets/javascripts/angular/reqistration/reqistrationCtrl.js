@@ -5,9 +5,18 @@ $scope.faxNumbr = /^\+?\d{2}[- ]?\d{3}[- ]?\d{10}$/;
      // function to submit the form after all validation has occurred
 		$scope.submitForm = function() {
 			// check to make sure the form is completely valid
-			if ($scope.submitForm.$valid) {
+			if ($scope.usubmitForm.$valid) {
 			}
+			$scope.user = {};
+			$scope.usubmitForm.$setPristine();
 
+
+			if ($scope.dusubmitForm.$valid) {
+			}
+			if ($scope.musubmitForm.$valid) {
+			}
+			if ($scope.lusubmitForm.$valid) {
+			}
 		};
 
 		$scope.imageSrc = "";

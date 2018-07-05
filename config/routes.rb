@@ -20,7 +20,7 @@ Rails.application.routes.draw do
     get "contacts", action: "contacts"
     get "faq", action: "faq"
     get "terms", action: "terms"
-    get "Registration", action: "Registration"
+    get "registration", action: "registration"
     get "aboutus", action: "aboutus"
     get "topgoods", action: "topgoods"
   end

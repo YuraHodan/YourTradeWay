@@ -18,8 +18,26 @@
   .wrapper-tab
     padding: 30px 0
     display: flex
+    &.smole
+      display: none
     +breakpoint(small only)
-      display: inline-block
+      &.bge
+        display: none
+      &.smole
+        display: inline-block
+        .button-smolle
+          display: flex
+          flex-wrap: wrap
+          height: 175px
+          flex-direction: column
+          padding-left: 30%
+          .targer
+            color: white
+            font-size: 60px
+            font-weight: bold
+            text-align: center
+            padding: 10px
+
     .taitle
       display: flex
       align-items: center
@@ -33,6 +51,8 @@
       padding-left: 70px
       @media screen and (max-width: 1025px)
         padding-left: 25px
+      +breakpoint(small only)
+        padding-left: 0px
       button
         display: inline-block
         cursor: pointer
@@ -72,6 +92,18 @@
     .form-group
       display: flex
       padding: 30px 0
+      +breakpoint(small only)
+        display: block
+        // padding-bottom: 50px
+        //тут можна зменчити відступи на телефоні
+      .help-block
+        color: red
+        position: relative
+        margin-left: -80%
+        margin-top: 5%
+        font-size: 14px
+        // &.phone
+        //   margin-left: 20%
       // &.fails
       //   input[type="file"]
       //     color: red
@@ -83,19 +115,27 @@
         .label
           font-size: 16px
           font-weight: 600
+        +breakpoint(small only)
+          padding-bottom: 10px
+          width: 100%
+          padding-top: 10px
       select
         width: 80%
         height: 60px
         background-color: white
         font-size: 20px
         padding-left: 20px
+        +breakpoint(small only)
+          width: 100%
       .text-input
         height: 60px
         width: 80%
         // background-color: $input
         font-size: 20px
-        border: 1px solid $gray
+        // border: 1px solid $gray
         padding-left: 20px
+        +breakpoint(small only)
+          width: 100%
       textarea
         width: 75%
         height: 300px
@@ -105,6 +145,8 @@
         // background-color: $input
         font-size: 16px
         resize: none
+        +breakpoint(small only)
+          width: 100%
       .custom-file-input
         padding: 15px
         color: #999
@@ -119,6 +161,9 @@
         +breakpoint(medium down)
           width: 45%
           left: 35%
+        +breakpoint(small only)
+          width: 100%
+          left: 0%
         &.none
           color: white
           background-color: white
@@ -151,6 +196,9 @@
           +breakpoint(medium down)
             top: -4px
             left: -90%
+          +breakpoint(small only)
+            top: 60px
+            left: 12%
         &:hover::before
             background-color: $yellow
             color: $black
@@ -164,11 +212,14 @@
         display: flex
         justify-content: center
         align-items: center
-        width: 250px
+        width: 470px
         height: 250px
         overflow: hidden
         +breakpoint(medium down)
           margin-right: 0px
+        +breakpoint(small only)
+          margin-left: 15%
+          margin-top: 15%
         .content-centering_element
           max-width: 100%
   .button-te
@@ -204,6 +255,8 @@
       font-size: 25px
       font-weight: 600
       color: $black
+      +breakpoint(small only)
+        text-align: center
     .msgbotom
       padding: 10px 0 20px 0
       .span-text
@@ -276,7 +329,8 @@
         left: 7px
   .target
     width: 75%
-
+    +breakpoint(small only)
+      width: 100%
 
 
 .photo-upload
@@ -292,3 +346,59 @@
     position: absolute
     width: 0.1px
     z-index: -1
+
+
+// popup
+
+
+
+
+.popup
+  display: none
+  position: absolute
+  left: 0
+  right: 0
+  top: 0
+  bottom: 0
+  z-index: 10
+  margin-bottom: -3269px
+
+.popup-overlay
+  background: rgba(0, 0, 0, 0.9)
+  position: absolute
+  left: 0
+  right: 0
+  top: 0
+  bottom: -50px
+
+.popup-content
+  position: absolute
+  background: #fff
+  width: 750px
+  margin: -58px 0 0 -264px
+  left: 45%
+  top: 85%
+  z-index: 11
+  text-align: center
+  padding: 130px 0
+  display: flex
+  flex-direction: column-reverse
+  .close-popup
+    right: -30px
+    font-size: 42px
+    svg
+      height: 80px
+    &:hover
+      svg
+        g
+          g
+            path
+              fill: $yellow
+
+  .title
+    font-size: 50px
+    font-weight: 600
+    padding: 35px
+  .title-text
+    font-size: 20px
+    word-spacing: 5px
