@@ -1,6 +1,9 @@
 .tovarsp
   padding-top: 200px
   background-color: $grayBG
+  .smole-none
+    +breakpoint(small only)
+      display: none
   nav .drop-down
     overflow: hidden
     margin: 0 auto
@@ -23,6 +26,8 @@
     padding: 50px 20px 10px 2px
     margin-left: -30px
     @media screen and (max-width: 1025px)
+      height: 35vh
+    +breakpoint(small only)
       height: 35vh
     .topgoods-tex
       top: -20px
@@ -104,7 +109,7 @@
   height: 45vh
   padding: 50px 0px 10px 2px
   @media screen and (max-width: 1025px)
-    height: 35vh 
+    height: 35vh
   .recomendation-text
     top: -20px
     &:before

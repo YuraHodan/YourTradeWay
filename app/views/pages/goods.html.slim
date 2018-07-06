@@ -1,7 +1,7 @@
   .tovarsp ng-controller="goodsControler as stor"
     .row
       .medium-3.columns
-        .selectorr
+        .selector
           = render "selector"
         .dubl-select
           .accordion-button.opened
@@ -91,9 +91,9 @@
             .remove-all
               .x-component = inline_svg "photo/main/svg/filter_clear.svg"
               .ramove-text очистить все
-        .selector
+        .selector.smole-none
           = render "advertisingSlider"
-      .medium-9.columns
+      .medium-9.columns.smole-none
         = render "goodsSlider1"
       .medium-9.columns
         .topgoods
