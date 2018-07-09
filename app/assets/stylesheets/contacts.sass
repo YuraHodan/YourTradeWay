@@ -1,0 +1,165 @@
+.contacts
+  padding-top: 200px
+  background-color: white
+  .taitle
+    padding-bottom: 50px
+    .tex-taitle
+      text-align: center
+      font-size: 40px
+      font-weight: 600
+      letter-spacing: 2px
+      text-transform: uppercase
+  .contacts-alle
+    .one-contacts
+      padding-bottom: 150px
+      width: 85%
+      &.sosial
+        @media screen and (max-width: 1025px)
+          width: 100%
+      .taitle-contacts
+        font-size: 20px
+        font-weight: 600
+        padding-bottom: 30px
+        text-transform: uppercase
+        &:before
+          bottom: 20px
+      .country, .address, .e-mail, .phone, .fax
+        display: flex
+        padding: 10px 0
+        @media screen and (max-width: 1025px)
+          display: inline-block
+        // +breakpoint(medium down)
+        //   display: inline-block
+        &.e-mail
+          .text
+            color: $blue
+            text-decoration: underline
+            &:hover
+              color: $yellow
+        .olp-taitle
+          width: 100px
+          font-weight: 600
+        .olp-text
+          .text
+            padding: 9px 0
+      .icons
+        display: flex
+        .vk, .fb, .tw, .yt, .go, .in, .od, .pi
+          padding: 10px
+          cursor: pointer
+          svg
+            height: 16px
+            &:hover
+              g
+                g
+                  path
+                    fill: $yellow
+  .question
+    .form-group
+      display: grid
+      padding-bottom: 30px
+      .lable-one
+        display: flex
+        padding: 0 0 10px
+        .label
+          font-size: 16px
+          font-weight: 600
+        .span
+          font-size: 18px
+          color: red
+          padding-left: 5px
+      input
+        padding: 10px
+        height: 50px
+      textarea
+        height: 270px
+      .help-block
+        color: red
+        position: absolute
+        margin-left: 35%
+        margin-top: 6%
+        font-size: 14px
+        &.phone
+          margin-left: 20%
+    .button-te
+      padding: 50px 0 100px
+      display: flex
+      justify-content: center
+
+input.ng-invalid.ng-touched
+  border: 1px solid red
+textarea.ng-invalid.ng-touched
+  border: 1px solid red
+.open-popup
+  display: inline-block
+  cursor: pointer
+  text-transform: uppercase
+  font-weight: 700
+  padding: 3px 60px
+  font-size: 14px
+  letter-spacing: .25em
+  color: $white
+  background-color: $yellow
+  text-align: center
+  line-height: 50px
+  border-radius: 50px
+  +transition(.7s)
+  &:disabled
+    background-color: $black
+
+
+
+// popup
+
+
+
+
+.popup2
+  display: none
+  position: absolute
+  left: 0
+  right: 0
+  top: 0
+  bottom: 0
+  z-index: 10
+  margin-bottom: -550px
+
+.popup-overlay2
+  background: rgba(0, 0, 0, 0.9)
+  position: absolute
+  left: 0
+  right: 0
+  top: 0
+  bottom: -50px
+
+.popup-content2
+  position: absolute
+  background: #fff
+  width: 750px
+  margin: -58px 0 0 -264px
+  left: 45%
+  top: 60%
+  z-index: 11
+  text-align: center
+  padding: 130px 0
+  display: flex
+  flex-direction: column-reverse
+  .close-popup
+    right: -30px
+    font-size: 42px
+    svg
+      height: 80px
+    &:hover
+      svg
+        g
+          g
+            path
+              fill: $yellow
+
+  .title
+    font-size: 50px
+    font-weight: 600
+    padding: 35px
+  .title-text
+    font-size: 20px
+    word-spacing: 5px

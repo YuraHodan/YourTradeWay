@@ -1,0 +1,140 @@
+.contacts ng-controller="contactsController as stor"
+  .row
+    .medium-12.center
+      .taitle
+        .tex-taitle контакти
+      .medium.columns
+        .contacts-alle
+          .medium-4.columns
+            .one-contacts
+              .taitle-contacts.color-line.yellow-block главний офис
+              .country
+                .olp-taitle
+                  .title Страна:
+                .text Азербайджан
+              .address
+                .olp-taitle
+                  .title Адрес:
+                .text ул.Ваулпшасова 4, Баку 220070
+              .e-mail
+                .olp-taitle
+                  .title E-mail:
+                a.text href="mailto:ivanov.i@yourtradeway.com" ivanov.i@yourtradeway.com
+              .phone
+                .olp-taitle
+                  .title Телефон:
+                .text +7 (772) 568 58 67
+              .fax
+                .olp-taitle
+                  .title Факс:
+                .text +810 375 29 6298480
+        .contacts-alle
+          .medium-4.columns
+            .one-contacts
+              .taitle-contacts.color-line.yellow-block комерческий отдел
+              .e-mail
+                .olp-taitle
+                  .title E-mail:
+                a.text href="mailto:ivanov.i@yourtradeway.com" ivanov.i@yourtradeway.com
+              .phone
+                .olp-taitle
+                  .title Телефон:
+                .olp-text
+                  .text +7 (772) 568 58 67
+                  .text +7 (772) 568 58 67
+                  .text +7 (772) 568 58 67
+              .fax
+                .olp-taitle
+                  .title Факс:
+                .text +810 375 29 6298480
+        .contacts-alle
+          .medium-4.columns
+            .one-contacts
+              .taitle-contacts.color-line.yellow-block техподдержка
+              .e-mail
+                .olp-taitle
+                  .title E-mail:
+                a.text href="mailto:ivanov.i@yourtradeway.com" ivanov.i@yourtradeway.com
+              .phone
+                .olp-taitle
+                  .title Телефон:
+                .olp-text
+                  .text +7 (772) 568 58 67
+                  .text +7 (772) 568 58 67
+      .contacts-alle
+        .medium-4.columns
+          .one-contacts
+            .taitle-contacts.color-line.yellow-block рекламодателям
+            .e-mail
+              .olp-taitle
+                .title E-mail:
+              a.text href="mailto:ivanov.i@yourtradeway.com" ivanov.i@yourtradeway.com
+            .phone
+              .olp-taitle
+                .title Телефон:
+              .olp-text
+                .text +7 (772) 568 58 67
+                .text +7 (772) 568 58 67
+      .contacts-alle
+        .medium-4.columns
+          .one-contacts.sosial
+            .taitle-contacts.color-line.yellow-block ми в соцсетях
+            .icons
+              .vk =inline_svg "svg/smole/Asset9.svg"
+              .fb =inline_svg "svg/smole/Asset8.svg"
+              .tw =inline_svg "svg/smole/Asset7.svg"
+              .yt =inline_svg "svg/smole/Asset6.svg"
+              .go =inline_svg "svg/smole/Asset5.svg"
+              .in =inline_svg "svg/smole/Asset4.svg"
+              .od =inline_svg "svg/smole/Asset3.svg"
+              .pi =inline_svg "svg/smole/Asset2.svg"
+  .row
+    .medium-12.columns
+      .taitle
+        .tex-taitle задать вопрос
+      .medium.columns
+        .question
+          form name="userForm" ng-submit="submitForm()" novalidate=""
+            .medium-6.columns
+              /! NAME
+              .form-group ng-class=("{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }")
+                .lable-one
+                  .label ФИО
+                  .span  *
+                input.form-control name="name" ng-model="user.name" required="" type="text" minlength="5" placeholder="Иванов Иван Ивіанович" /
+                p.help-block ng-show=("userForm.name.$invalid && !userForm.name.$pristine")  You name is required.
+              /! EMAIL
+              .form-group ng-class=("{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }")
+                .lable-one
+                  .label E-mail
+                  .span  *
+                input.form-control name="email" ng-model="user.email" required="" type="email" placeholder="gmail@gmail.com" /
+                p.help-block ng-show=("userForm.email.$invalid && !userForm.email.$pristine")  Enter a valid email.
+              /! phone
+              .form-group ng-class=("{ 'has-error' : userForm.phone.$invalid && !userForm.phone.$pristine }")
+                .lable-one
+                  .label Телефон:
+                input.form-control name="phone" ng-model="user.phone" type="text"  placeholder="+91-636-78658" ng-pattern="phoneNumbr"
+
+                p.help-block.phone ng-show="userForm.phone.$error.pattern"  Please match pattern [+91 036 78658 or 91 036 78658]
+            .medium-6.columns
+              /! question
+              .form-group ng-class=("{ 'has-error' : userForm.username.$invalid && !userForm.username.$pristine }")
+                .lable-one
+                  .label Сообщения
+                  .span  *
+                textarea.form-control.ng-pristine.ng-valid.ng-empty.ng-touched name="comment" required="" ng-model="user.comment" placeholder=("Поле для коментарів...") rows="5" minlength="15"
+                p.help-block ng-show="userForm.comment.$error.maxlength"  not less than 15 characters
+
+            .medium-12.columns
+              .button-te
+                button.open-popup data-id="popup_default" ng-disabled="userForm.$invalid" type="submit"  отпраить
+
+
+
+#popup_default.popup2
+  .popup-overlay2
+  .popup-content2
+    .title-text После обработки даньч вам придот увидамления на почту
+    .title Ваш запрос отправлен
+    a.close-popup data-id="popup_default" href="#"  =inline_svg "svg/Approve.svg"

@@ -50,6 +50,8 @@
 #= require select
 # require paginator
 #= require premium
+#= require popup
+
 
 
 #     A N G U L A  R
@@ -69,3 +71,7 @@
 #= require angular/onegoods/onegoodsCtrl
 
 #= require angular/oneproducter/oneproducterCtrl
+
+#= require angular/contacts/contactsCtrl
+
+#= require angular/reqistration/reqistrationCtrl

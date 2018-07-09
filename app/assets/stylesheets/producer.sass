@@ -45,25 +45,41 @@
       background-size: contain
       left: 60px
       right: 60px
-  .sales
-    background-color: $goodsYellow
+  // .sales
+  //   background-color: $goodsYellow
+  //   height: 40vh
+  //   padding: 35px 20px 10px 2px
+  //   margin-left: -30px
+  //   .sales-leaders
+  //     &:before
+  //       height: 1px
+  //       bottom: 25px
+  //       background-color: $black
+  //     .title
+  //       padding-left: 20px
+  //       font-weight: 600
+  //       text-transform: uppercase
+  //       padding-bottom: 40px
+  //     .description-txt
+  //       padding: 0 20px
+  //       .maker
+  //         color: $blue
+  .topgoods
     height: 40vh
-    padding: 35px 20px 10px 2px
-    margin-left: -30px
-    .sales-leaders
-      &:before
-        height: 1px
-        bottom: 25px
-        background-color: $black
-      .title
-        padding-left: 20px
-        font-weight: 600
-        text-transform: uppercase
-        padding-bottom: 40px
-      .description-txt
-        padding: 0 20px
-        .maker
-          color: $blue
+    @media screen and (max-width: 1025px)
+      height: 25vh
+    +breakpoint(small only)
+      margin-left: 0px
+      height: 60vh
+    .topgoods-tex
+      .mainlidet
+        .border-producers
+          .one-new-product
+            background: white
+            .img-bg
+              background-size: contain
+              left: 60px
+              right: 60px
   .salse-text
     padding-top: 30px
     &:before
@@ -79,10 +95,19 @@
     height: 40vh
     padding: 35px 20px 10px 2px
     margin-left: -30px
+    @media screen and (max-width: 1025px)
+      height: 25vh
+    +breakpoint(small only)
+      height: 150vh
+      padding: 35px 0px 0px 0px
+      margin-left: 0
   .salse-all
     padding-top: 30px
     padding: 35px 20px 10px 2px
     margin-left: -30px
+    +breakpoint(small only)
+      padding: 35px 0px 0px 0px
+      margin-left: 0
     .description
       background-color: white
       .description-txt

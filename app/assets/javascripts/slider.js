@@ -70,7 +70,15 @@ $('.goode2-slider-nav').slick({
  autoplay: true,
  autoplaySpeed: 2000,
  nextArrow: false,
- prevArrow: false
+ prevArrow: false,
+ responsive: [
+ {
+   breakpoint: 400,
+   settings: {
+      slidesToShow: 1,
+   }
+ }
+ ]
 
 });
 
@@ -155,8 +163,8 @@ $('.slider-smolle-nav').slick({
  dots: false,
  centerMode: true,
  focusOnSelect: true,
- autoplay: true,
- autoplaySpeed: 2000,
+ // autoplay: true,
+ // autoplaySpeed: 1000,
  nextArrow: false,
  prevArrow: false
 

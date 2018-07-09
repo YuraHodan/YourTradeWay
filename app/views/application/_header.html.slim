@@ -1,12 +1,12 @@
 .header-container.ipad
   .heder-content
-    a.heder-logo = inline_svg "photo/main/svg/top-logo.svg"
+    a.heder-logo href=root_path = inline_svg "photo/main/svg/top-logo.svg"
     .tex-heder
-      a.one-text Главная
+      a.one-text href=root_path Главная
       a.one-text href=premium_path Премиум
       a.one-text href=tradergram_path Tradergram
-      a.one-text О нас
-      a.one-text Контакты
+      a.one-text href=aboutus_path О нас
+      a.one-text  href=contacts_path Контакты
       .select-heder
       .language-box.dib
         .language-one.active
@@ -15,7 +15,7 @@
         .hover-block
           .language-one ua
           .language-one eu
-      .btn-big-heder РЕГИСТРАЦИЯ
+      a.btn-big-heder href=registration_path РЕГИСТРАЦИЯ
 
 
     .heder-menu
@@ -24,7 +24,7 @@
           .wrapper
             ul#menu.clearfix
               li
-                a href="#"  Топ товары
+                a href=topgoods_path Топ товары
               li
                 a.yellow href=goods_path  Товары
                 ul.bige

@@ -1,0 +1,130 @@
+.tovarsp ng-controller="goodsControler as stor"
+  .row
+    .medium-3.columns
+      .selectorr
+        = render "selector"
+      .dubl-select
+        .accordion-button.opened
+          p afdsfdsf
+          .svg-slid = inline_svg "svg/ic_keyboard_arrow_up_black_24px.svg"
+        .accordion-inner.show
+
+          .selector
+            ul.read-more-wrap
+              li
+                .one-checkbox
+                  .checkbox
+                    input#checkbox-salis1 type="checkbox"
+                    label.switcher-control for="checkbox-salis1"
+                    span продажа
+                    nav
+                      ul.drop-down.closed
+                        li
+                          a.nav-button href="#"   = inline_svg "svg/ic_keyboard_arrow_down_black_24px.svg"
+                        .down
+                          ul
+                            li
+                              .one-checkbox
+                                .checkbox
+                                  input#checkbox-salis6 type="checkbox"
+                                  label.switcher-control for="checkbox-salis6"
+                                  span продажа
+                            li
+                              .one-checkbox
+                                .checkbox
+                                  input#checkbox-salis7 type="checkbox"
+                                  label.switcher-control for="checkbox-salis7"
+                                  span продажа
+                            li
+                              .one-checkbox
+                                .checkbox
+                                  input#checkbox-salis8 type="checkbox"
+                                  label.switcher-control for="checkbox-salis8"
+                                  span продажа
+              li
+                .one-checkbox
+                  .checkbox
+                    input#checkbox-salis2 type="checkbox"
+                    label.switcher-control for="checkbox-salis2"
+                    span продажа
+                    nav
+                      ul.drop-down.closed
+                        li
+                          a.nav-button href="#"   = inline_svg "svg/ic_keyboard_arrow_down_black_24px.svg"
+                        li
+                          .one-checkbox
+                            .checkbox
+                              input#checkbox-salis9 type="checkbox"
+                              label.switcher-control for="checkbox-salis10"
+                              span продажа
+                        li
+                          .one-checkbox
+                            .checkbox
+                              input#checkbox-salis11 type="checkbox"
+                              label.switcher-control for="checkbox-salis11"
+                              span продажа
+                        li.
+                          .one-checkbox
+                            .checkbox
+                              input#checkbox-salis12 type="checkbox"
+                              label.switcher-control for="checkbox-salis12"
+                              span продажа
+
+              li
+                .one-checkbox
+                  .checkbox
+                    input#checkbox-salis3 type="checkbox"
+                    label.switcher-control for="checkbox-salis3"
+                      span продажа
+              li
+                .one-checkbox
+                  .checkbox
+                    input#checkbox-salis4 type="checkbox"
+                    label.switcher-control for="checkbox-salis4"
+                      span продажа
+              li
+                .one-checkbox
+                  .checkbox
+                    input#checkbox-salis5 type="checkbox"
+                    label.switcher-control for="checkbox-salis5"
+                      span продажа
+          .remove-all
+            .x-component = inline_svg "photo/main/svg/filter_clear.svg"
+            .ramove-text очистить все
+      .selector
+        = render "advertisingSlider"
+    .medium-9.columns
+      .vibe-text.color-line.gray-block
+        .title топ товари
+      .vibe-goods
+        #page-content.medium-4.columns.page-content.gallery ng-repeat="product in records | limitTo : 6"
+          .border-producers.color-line.yellow-block
+            .one-new-product
+              a.img-bg href=onegoods_path style="background-image: url(#{asset_path('photo/main/news_3.jpg')})"
+            .description
+              .description-txt
+                .maker
+                  | {{product.maker}}
+                .product-name
+                  | {{product.product}}
+                .price.color-line.gray-block
+                  .oriented-price
+                    | {{product.oriented}}
+                  .mony
+                    | {{product.mony}}
+
+        #page-content.medium-4.columns.page-content.gallery ng-repeat="product in records | limitTo : 6 : 6"
+          .border-producers.color-line.yellow-block
+            .one-new-product
+              a.img-bg href=onegoods_path style="background-image: url(#{asset_path('photo/main/news_3.jpg')})"
+            .description
+              .description-txt
+                .maker
+                  | {{product.maker}}
+                .product-name
+                  | {{product.product}}
+                .price.color-line.gray-block
+                  .oriented-price
+                    | {{product.oriented}}
+                  .mony
+                    | {{product.mony}}

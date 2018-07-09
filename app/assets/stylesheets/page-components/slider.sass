@@ -11,7 +11,7 @@
   .mainlidet
   +breakpoint(small only)
     padding: 0px
-    height: 300px
+    height: initial
   .border-producers
     .one-new-producers
       border: 1px solid $black
@@ -99,11 +99,21 @@
         border: none
         background-color: $black
         text-indent: -999999px
+        +breakpoint(small only)
+          width: 10px
+          height: 10px
       li.slick-active button
         width: 10px
         height: 10px
+        +breakpoint(small only)
+          width: 7px
+          height: 7px
+
   &.advertising
-    padding: 0
+    +breakpoint(small only)
+      display: none
+    // padding: 0
+    padding-top: 50px
     ul
       li
         margin-left: 0px

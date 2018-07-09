@@ -68,6 +68,7 @@ p
 .btn-big
   display: inline-block
   cursor: pointer
+  position: relative
   text-transform: uppercase
   font-weight: 700
   padding: 3px 60px
@@ -79,6 +80,8 @@ p
   line-height: 50px
   border-radius: 50px
   +transition(.7s)
+  &:disabled
+    background-color: #303a43
   &:hover
     box-shadow: 0px 7px 7px rgba(48, 58, 67, 0.2)
     background-color: $verBlack
