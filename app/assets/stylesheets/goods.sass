@@ -28,7 +28,8 @@
     @media screen and (max-width: 1025px)
       height: 35vh
     +breakpoint(small only)
-      height: 35vh
+      height: 70vh
+      margin-left: 0px
     .topgoods-tex
       top: -20px
       &:before
@@ -47,6 +48,8 @@
     left: 10px
     padding-left: 20px
     top: 20px
+    +breakpoint(small only)
+      padding-top: 60px
     &:before
       height: 1px
     .title
@@ -110,6 +113,8 @@
   padding: 50px 0px 10px 2px
   @media screen and (max-width: 1025px)
     height: 35vh
+  +breakpoint(small only)
+    height: 200vh
   .recomendation-text
     top: -20px
     &:before
@@ -124,5 +129,7 @@
       padding-left: 20px
 .selectorr
   box-shadow: 0 6px 6px 0 rgba(13, 1, 1, 0.2)
-  .dubl-select
-    box-shadow: 0 6px 6px 0 rgba(13, 1, 1, 0.2)
+  // .dubl-select
+  //   box-shadow: 0 6px 6px 0 rgba(13, 1, 1, 0.2)
+  //   +breakpoint(small only)
+  //     padding-bottom: 150px

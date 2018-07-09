@@ -12,6 +12,9 @@
       text-transform: uppercase
       +breakpoint(small only)
         padding-top: 75px
+        padding-left: 10px
+        &:before
+          left: 10px
     .aasd
       display: flex
       align-items: flex-start
@@ -93,9 +96,9 @@
       +breakpoint(small only)
         width: 100%
   .varieties
-    padding: 100px 0
     position: relative
     background-color: $grayBg
+    background-color: white
     +breakpoint(small only)
       background-color: white
       padding: 20px 0px
@@ -234,7 +237,8 @@
     +breakpoint(small only)
       display: block
     .btn-big
-      margin-left: 10%
+      left: 50%
+      +translate(-50%,0)
     .new-producers-tex
       text-align: center
       margin: 0 auto 50px
@@ -318,9 +322,9 @@
         color: $gray
 
     .btn-big
-      display: block
-      width: 255px
-      margin: 50px auto 0
+      margin: 50px 0
+      left: 50%
+      +translate(-50%,0)
     +breakpoint(medium down)
       padding: 20px 0
 
@@ -349,8 +353,6 @@
         color: $gray
     .btn-big
       margin-top: 30px
-      +breakpoint(medium down)
-        margin-left: 5%
     .img-target
       padding-bottom: 140%
 
