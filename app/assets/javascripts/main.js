@@ -159,3 +159,27 @@ $('.show-info').click( function() {
     }
   });
 });
+
+// heder gamburger
+$( "#menuToggle" ).click(function() {
+  // $( ".manu-container" ).addClass( "opened" );
+  if ( $(".manu-container").hasClass("opened") ) {
+    $( ".manu-container" ).removeClass( "opened" );
+    $( ".manu-container-second" ).removeClass( "opened" );
+    $("body").removeClass("menuopen");
+}else {
+  $( ".manu-container" ).addClass( "opened" );
+  $("body").addClass("menuopen")
+}
+});
+// function Second(){
+//   // $( ".manu-container" ).removeClass( "opened" );
+//   $( this ).find(".manu-container-second").addClass('opened');
+// }
+$( ".classification" ).click(function() {
+  $( this ).find(".manu-container-second").addClass('opened');
+});
+$( ".step-back" ).click(function() {
+$(".manu-container-second").removeClass('opened');
+
+});
