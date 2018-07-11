@@ -220,18 +220,18 @@ $( ".classification-third" ).click(function() {
 
 
 // scrol
-$(window).scroll(function() {
-	var $height = $(window).scrollTop();
-  if($height > 400) {
-    $( ".manu-container" ).removeClass( "opened" );
-    $( ".manu-container-second" ).removeClass( "opened" );
-    $("body").removeClass("menuopen");
-    $('.arow').removeClass('visible');
-    $('.arowthird').removeClass('visible');
-    $('.arowtfourth').removeClass('visible');
-    $('.step-back p').html('виберите категорию');
-	}
-});
+// $(window).scroll(function() {
+// 	var $height = $(window).scrollTop();
+//   if($height > 400) {
+//     $( ".manu-container" ).removeClass( "opened" );
+//     $( ".manu-container-second" ).removeClass( "opened" );
+//     $("body").removeClass("menuopen");
+//     $('.arow').removeClass('visible');
+//     $('.arowthird').removeClass('visible');
+//     $('.arowtfourth').removeClass('visible');
+//     $('.step-back p').html('виберите категорию');
+// 	}
+// });
 $(document).ready(function(){
 	$('#nav-icon').click(function(){
 		$(this).toggleClass('open');
