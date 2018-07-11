@@ -8,6 +8,13 @@
     +translate(0,0)
     .heder-menu
       +translate(0,0)
+  .heder-content-bg
+    @media screen and (max-width: 1025px)
+      display: none
+  .heder-content.smole
+    display: none
+    @media screen and (max-width: 1025px)
+      display: flex
 
 .heder-menu
   +translate(0,-100%)
@@ -316,6 +323,9 @@
       cursor: pointer
       height: 60px
       padding: 0 50px
+      +breakpoint(small only)
+        height: 35px
+        padding: 0 25px
   .tex-heder
     position: absolute
     right: 50px
@@ -325,6 +335,8 @@
       font-size: 14px
       cursor: pointer
       padding: 0 15px
+      +breakpoint(small only)
+        display: none
       &:hover
         color: $yellow
     .btn-big-heder
@@ -392,3 +404,308 @@
         .hover-block
           opacity: 1
           pointer-events: initial
+
+
+  #menuToggle
+    input
+      display: block
+      width: 40px
+      height: 32px
+      position: absolute
+      top: -7px
+      left: -5px
+      cursor: pointer
+      opacity: 0
+      z-index: 2
+      -webkit-touch-callout: none
+      cursor: pointer
+    span
+      display: block
+      width: 33px
+      height: 4px
+      margin-bottom: 5px
+      position: relative
+      background: #cdcdcd
+      border-radius: 3px
+      z-index: 1
+      transform-origin: 4px 0px
+
+
+
+.heder-content
+.manu-container
+  position: fixed
+  transform: translate(200%, 0)
+  z-index: 99
+  width: 50%
+  right: 0
+  top: 98px
+  min-height: 100vh
+  overflow: hidden
+  pointer-events: none
+  -webkit-transition: 0.3s
+  -o-transition: 0.3s
+  transition: .7s
+  +breakpoint(small only)
+    width: 100%
+  .general-part
+    .manu-nav
+      margin-left: 0
+      .tex-heder
+        background-color: $black
+        display: flex
+        flex-direction: column
+        color: $almostWhite
+        .one-text
+          padding: 20px 0 20px 25px
+          cursor: pointer
+          font-size: 16px
+          text-transform: uppercase
+          font-weight: 400
+      .classification, .classification-top
+        margin-left: 0px
+        padding: 20px 0
+        background-color: $almostRed
+        display: flex
+        align-items: center
+        font-size: 16px
+        text-transform: uppercase
+        font-weight: 400
+        &.yellow
+          background-color: $yellow
+        &.blue
+          background-color: $blue
+        &.green
+          background-color: $green
+        &.red
+          background-color: $red
+        &.orange
+          background-color: $orange
+        a
+          width: 60%
+          padding-left: 25px
+        .arow-boxs
+          margin-left: 25%
+        &.classification-top
+          padding: 25px 0
+.manu-container-second
+  position: absolute
+  top: 63px
+  transform: translate(200%, 0)
+  z-index: 99
+  width: 100%
+  min-height: 100vh
+  overflow: hidden
+  pointer-events: none
+  -webkit-transition: 0.3s
+  -o-transition: 0.3s
+  transition: .7s
+  background: $black
+  text-align: left
+  line-height: 30px
+  .general-part
+    .manu-nav
+      .classification-second
+        // text-transform: capitalize
+        margin-left: 0px
+        padding: 20px 0
+        border-top: 1px solid black
+        background-color: $black
+        color: white
+        // text-transform: uppercase
+        font-size: 14px
+.manu-container-third
+  position: absolute
+  top: 0
+  transform: translate(200%, 0)
+  z-index: 99
+  width: 100%
+  min-height: 100vh
+  overflow: hidden
+  pointer-events: none
+  -webkit-transition: 0.3s
+  -o-transition: 0.3s
+  transition: .7s
+  background: $menu
+  text-align: left
+  .general-part
+    .manu-nav
+      .classification-third, .classification-third-end
+        text-transform: capitalize
+        margin-left: 0px
+        padding: 20px 0
+        border-top: 1px solid black
+        background: $menu
+        text-transform: uppercase
+        font-size: 14px
+        color: $black
+.manu-container-fourth
+  position: absolute
+  top: 0
+  transform: translate(200%, 0)
+  z-index: 99
+  width: 100%
+  min-height: 100vh
+  overflow: hidden
+  pointer-events: none
+  -webkit-transition: 0.3s
+  -o-transition: 0.3s
+  transition: .7s
+  background: white
+  .general-part
+    .manu-nav
+      .classification-fourth
+        margin-left: 0px
+        padding: 20px 0
+        border-top: 0.5px solid black
+        background-color: white
+        text-transform: uppercase
+        font-size: 14px
+        color: $black
+.step-back
+  background-color: $black
+  display: flex
+  align-items: center
+  border: 1px solid black
+  height: 68px
+  p
+    font-size: 18px
+    color: $almostWhite
+    padding-left: 80px
+  .arow
+    position: absolute
+    transform: translate(200%, 0)
+    overflow: hidden
+    pointer-events: none
+    -webkit-transition: 0.3s
+    -o-transition: 0.3s
+    transition: .7s
+    opacity: 0
+    svg
+      height: 60px
+      background: $yellow
+      padding: 23px
+  .arowthird
+    position: absolute
+    transform: translate(200%, 0)
+    overflow: hidden
+    pointer-events: none
+    -webkit-transition: 0.3s
+    -o-transition: 0.3s
+    transition: .7s
+    opacity: 0
+    svg
+      height: 64px
+      background: $black
+      padding: 23px
+      g
+        g
+          polygon
+            fill: white
+  .arowtfourth
+    position: absolute
+    transform: translate(200%, 0)
+    overflow: hidden
+    pointer-events: none
+    -webkit-transition: 0.3s
+    -o-transition: 0.3s
+    transition: .7s
+    opacity: 0
+    svg
+      height: 64px
+      background: $gray
+      padding: 23px
+
+  .visible
+    transform: translate(0, 0)
+    pointer-events: initial
+    opacity: 1
+
+
+.opened
+  transform: translate(0, 0)
+  pointer-events: initial
+
+
+
+
+
+
+/// menu opened body
+.menuopen
+  // overflow: hidden
+  position: relative
+
+
+
+/// gamburger
+#nav-icon
+  width: 60px
+  height: 30px
+  position: relative
+  margin: 50px auto
+  -webkit-transform: rotate(0deg)
+  -moz-transform: rotate(0deg)
+  -o-transform: rotate(0deg)
+  transform: rotate(0deg)
+  -webkit-transition: .5s ease-in-out
+  -moz-transition: .5s ease-in-out
+  -o-transition: .5s ease-in-out
+  transition: .5s ease-in-out
+  cursor: pointer
+  span
+    display: block
+    position: absolute
+    height: 3px
+    width: 30%
+    background: white
+    opacity: 1
+    -webkit-transform: rotate(0deg)
+    -moz-transform: rotate(0deg)
+    -o-transform: rotate(0deg)
+    transform: rotate(0deg)
+    -webkit-transition: .25s ease-in-out
+    -moz-transition: .25s ease-in-out
+    -o-transition: .25s ease-in-out
+    transition: .25s ease-in-out
+    &:nth-child(even)
+      left: 30%
+      border-radius: 0 9px 9px 0
+    &:nth-child(odd)
+      left: 0px
+      border-radius: 9px 0 0 9px
+    &:nth-child(1), &:nth-child(2)
+      top: 0px
+    &:nth-child(3), &:nth-child(4)
+      top: 13px
+    &:nth-child(5), &:nth-child(6)
+      top: 25px
+  &.open span
+    &:nth-child(1), &:nth-child(6)
+      -webkit-transform: rotate(45deg)
+      -moz-transform: rotate(45deg)
+      -o-transform: rotate(45deg)
+      transform: rotate(45deg)
+    &:nth-child(2), &:nth-child(5)
+      -webkit-transform: rotate(-45deg)
+      -moz-transform: rotate(-45deg)
+      -o-transform: rotate(-45deg)
+      transform: rotate(-45deg)
+    &:nth-child(1)
+      left: 11px
+      top: 7px
+    &:nth-child(2)
+      left: calc(50% - 5px)
+      top: 7px
+    &:nth-child(3)
+      left: -50%
+      opacity: 0
+    &:nth-child(4)
+      left: 100%
+      opacity: 0
+    &:nth-child(5)
+      left: 11px
+      top: 20px
+    &:nth-child(6)
+      left: calc(50% - 5px)
+      top: 20px

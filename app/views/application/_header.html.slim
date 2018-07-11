@@ -1,8 +1,675 @@
-.header-container.ipad
-  .heder-content
+.header-container
+  .heder-content-bg
+    .heder-content
+      a.heder-logo href=root_path = inline_svg "photo/main/svg/top-logo.svg"
+      .tex-heder
+        a.one-text href=root_path Главная
+        a.one-text href=premium_path Премиум
+        a.one-text href=tradergram_path Tradergram
+        a.one-text href=aboutus_path О нас
+        a.one-text  href=contacts_path Контакты
+        .select-heder
+        .language-box.dib
+          .language-one.active
+            | ru
+            = inline_svg "svg/ic_keyboard_arrow_down_black_24px.svg"
+          .hover-block
+            .language-one ua
+            .language-one eu
+        a.btn-big-heder href=registration_path РЕГИСТРАЦИЯ
+
+
+      .heder-menu
+        .row
+          .columns
+            .wrapper
+              ul#menu.clearfix
+                li
+                  a href=topgoods_path Топ товары
+                li
+                  a.yellow href=goods_path  Товары
+                  ul.bige
+                    .title ТИП ТОВАРОВ
+                    li
+                      a href="#"
+                        |ПРОДУКТЫ ПИТАНИЯ
+                        = inline_svg "svg/ic_keyboard_arrow_right_black_24px.svg"
+                      ul
+                        .title2 КАТЕГОРИЯ ТОВАРОВ
+                        .second-performance
+                          li
+                            a href="#"  Овощи / Фруктьr
+                            ul
+                              .title2 ГРУПА ТОВАРОВ
+                              .img-bg style="background-image: url(#{asset_path('photo/main/food.jpg')})"
+                              li
+                                a href="#"  Овощи/Грибы
+                              li
+                                a href="#"  Фрукты и Ягоды
+                              li
+                                a href="#"  Сухофрукты/Орехи
+                              li
+                                a href="#"  Зелень
+                          li
+                            a href="#"  Заморозка
+                            ul
+                              .title2 ГРУПА ТОВАРОВ
+                              .img-bg style="background-image: url(#{asset_path('photo/main/food.jpg')})"
+                              li
+                                a href="#"  Готовые блюда/Полуфабрикаты
+                              li
+                                a href="#"  Замороженные овощи и фрукты
+                              li
+                                a href="#"  Мороженное
+                              li
+                                a href="#"  Рыба и Морепродукты
+                          li
+                            a href="#"  Мясо / Рьба / Птица
+                            ul
+                              .title2 ГРУПА ТОВАРОВ
+                              .img-bg style="background-image: url(#{asset_path('photo/main/food.jpg')})"
+                              li
+                                a href="#"  Рыбные продукты
+                              li
+                                a href="#"  Свежое мясо(птица/говядина/свинина)
+                              li
+                                a href="#"  Колбасные изделия
+                          li
+                            a href="#"  Кондитерские изделия
+                            ul
+                              .title2 ГРУПА ТОВАРОВ
+                              .img-bg style="background-image: url(#{asset_path('photo/main/food.jpg')})"
+                              li
+                                a href="#"  Жевательные резинки и мятные драже
+                              li
+                                a href="#"  Диабетические Продукты
+                              li
+                                a href="#"  Восточные сладости
+                              li
+                                a href="#"  Конфеты(шоколадные/карамель/весовые
+                              li
+                                a href="#"  Шоколад(крем/плитка/батон/яйца)
+                              li
+                                a href="#"  Печенье
+                              li
+                                a href="#"  Мармелад,зефир,пастила
+                              li
+                                a href="#"  Кексы,рулеты,круассаны,торты
+                          li
+                            a href="#"  Соусь/Консервь
+                            ul
+                              .title2 ГРУПА ТОВАРОВ
+                              .img-bg style="background-image: url(#{asset_path('photo/main/food.jpg')})"
+                              li
+                                a href="#"  Соусы,кетчупы,заправки
+                              li
+                                a href="#"  Фруктовая консервация
+                              li
+                                a href="#"  Овощная,грибная консервация
+                              li
+                                a href="#"  Рыбные консервы
+                              li
+                                a href="#"  Мясная консервация
+                              li
+                                a href="#"  Сгущеное молоко
+                          li
+                            a href="#"  Бакалея/Пекарня
+                            ul
+                              .title2 ГРУПА ТОВАРОВ
+                              .img-bg style="background-image: url(#{asset_path('photo/main/food.jpg')})"
+                              li
+                                a href="#"  Масло растительное
+                              li
+                                a href="#"  Макаронные изделия/Мука
+                              li
+                                a href="#"  Крупы
+                              li
+                                a href="#"  Чай,кофе,какао
+                              li
+                                a href="#"  Мед
+                              li
+                                a href="#"  Сухие завтраки / Еда быстрого приготовления
+                              li
+                                a href="#"  Кондитерские п/ф
+                              li
+                                a href="#"  Снеки
+                              li
+                                a href="#"  Специи и приправы
+                              li
+                                a href="#"  Соевая продукция/Восточная кухня
+                              li
+                                a href="#"  Сухари,гренки,сдоба/Хлеба
+                          li
+                            a href="#"  Напитки
+                            ul
+                              .title2 ГРУПА ТОВАРОВ
+                              .img-bg style="background-image: url(#{asset_path('photo/main/food.jpg')})"
+                              li
+                                a href="#"  Безалкогольные напитки и соки
+                              li
+                                a href="#"  Пиво и слабоалкогольные напитки
+                              li
+                                a href="#"  Алкогольные напитки
+                          li
+                            a href="#"  Мопоко/Сьрь/Яйца
+                            ul
+                              .title2 ГРУПА ТОВАРОВ
+                              .img-bg style="background-image: url(#{asset_path('photo/main/food.jpg')})"
+                              li
+                                a href="#"  Яйца
+                              li
+                                a href="#"  Молоко/Сметана/Йогурты
+                              li
+                                a href="#"  Сыры/Творожные изделия
+                              li
+                                a href="#"  Масло/Маргарин/Спред
+                              li
+                                a href="#"  Кефир,кисломолочные продукты,сливки,сырки
+                    li
+                      a href="#"
+                        | КОСМЕТИКА И ГИГИЕНА
+                        = inline_svg "svg/ic_keyboard_arrow_right_black_24px.svg"
+                      ul
+                        .title2 КАТЕГОРИЯ ТОВАРОВ
+                        .second-performance
+                          li
+                            a href="#"  Средства по уходу за волосами
+                          li
+                            a href="#"  Уход за кожей/за ногтями
+                          li
+                            a href="#"  Дезодаранты,антипреспиранты/Аптечные товары/Женская гигиена
+                          li
+                            a href="#"  Влажные салфетки/Ватные и Бумажные изделия
+                          li
+                            a href="#"  Средства для ванн/Уход за зубамии, полостью рта
+                          li
+                            a href="#"  Бытовая химия/мыло и гели
+                    li
+                      a href="#"
+                        | ТОВАРЫ ДЛЯ ДОМА
+                        = inline_svg "svg/ic_keyboard_arrow_right_black_24px.svg"
+                      ul
+                        .title2 КАТЕГОРИЯ ТОВАРОВ
+                        .second-performance
+                          li
+                            a href="#"  Все для ванной комнаты и туалета/для уборки
+                          li
+                            a href="#"  Все для кухни и уборки
+                          li
+                            a href="#"  Порядок в доме
+                          li
+                            a href="#"  Электротовары
+                          li
+                            a href="#"  Текстиль / Постельное белье / Галантерийные товары и аксессуары
+                          li
+                            a href="#"  Аксессуары для отдыха и пикника
+                          li
+                            a href="#"  Посуда
+                          li
+                            a href="#"  Интерьер/Аксессуары для декора и праздника
+                          li
+                            a href="#"  Мебель
+                          li
+                            a href="#"  Строительство и Ремонт
+                          li
+                            a href="#"  Медицина
+                          li
+                            a href="#"  Спорттовары
+                          li
+                            a href="#"  Ювелирные изделия
+                          li
+                            a href="#"  Цветы, посадочный материал / смеси / удобрения
+                          li
+                            a href="#"  Инструменты для сада и огорода / Посуда для цветов
+                    li
+                      a href="#"
+                        | КАНЦЕЛЯРСКИЕ ТОВАРЫ
+                        = inline_svg "svg/ic_keyboard_arrow_right_black_24px.svg"
+                      ul
+                        .title2 КАТЕГОРИЯ ТОВАРОВ
+                        .second-performance
+                          li
+                            a href="#"  Бумаги,тетради,блокноты
+                          li
+                            a href="#"  Ручки,карандаши,фломастеры
+                          li
+                            a href="#"  Канцелярские аксесуары
+                          li
+                            a href="#"  Прочее
+                    li
+                      a href="#"
+                        | АВТОТОВАРЫ
+                        = inline_svg "svg/ic_keyboard_arrow_right_black_24px.svg"
+                      ul
+                        .title2 КАТЕГОРИЯ ТОВАРОВ
+                        .second-performance
+                          li
+                            a href="#"  Автоаксесуары
+                          li
+                            a href="#"  Автокосметика
+                          li
+                            a href="#"  Запчасти
+                    li
+                      a href="#"
+                        | ТОВАРЫ ДЛЯ ЖИВОТНЫХ
+                        = inline_svg "svg/ic_keyboard_arrow_right_black_24px.svg"
+                      ul
+                        .title2 КАТЕГОРИЯ ТОВАРОВ
+                        .second-performance
+                          li
+                            a href="#"  Все для кошек и собак
+                          li
+                            a href="#"  Все для птиц и рыб
+                          li
+                            a href="#"  Аксесуары для животных
+                    li
+                      a href="#"
+                        | ПРОМЫШЛЕННОЕ
+                        = inline_svg "svg/ic_keyboard_arrow_right_black_24px.svg"
+                      ul
+                        .title2 КАТЕГОРИЯ ТОВАРОВ
+                        .second-performance
+                          li
+                            a href="#"  ПИЩЕВЫЕ ИНГРИДИЕНТЫ / СЕЛЬСКОЕ ХОЗЯЙСТВО / ХИМИЧЕСКАЯ ПРОМЫШЛЕННОСТЬ
+                            ul
+                              .title2 ГРУПА ТОВАРОВ
+                              .img-bg style="background-image: url(#{asset_path('photo/main/food.jpg')})"
+                              li
+                                a href="#"  Пищевье ингредиенть
+                              li
+                                a href="#"  Пищевье ингредиенть
+                              li
+                                a href="#"  Животноводство
+                              li
+                                a href="#"  Птицеводство
+                              li
+                                a href="#"  Пчеловодство
+                              li
+                                a href="#"  Растеневодство
+                              li
+                                a href="#"  Рьбное хозяйство
+                              li
+                                a href="#"  Химические вецества
+                              li
+                                a href="#" Прочее
+                          li
+                            a href="#"  ПРОМЫШЛЕННОЕ ОБОРУДОВАНИЕ / СЫРЬЕ
+                            ul
+                              .title2 ГРУПА ТОВАРОВ
+                              .img-bg style="background-image: url(#{asset_path('photo/main/food.jpg')})"
+                              li
+                                a href="#"  Легкая/Пищевая промышленность
+                              li
+                                a href="#"  Химическая/Лесная промышленность
+                              li
+                                a href="#"  Топливно энергетическая промышленность
+                              li
+                                a href="#"  Тяжелая промышленность
+                              li
+                                a href="#"  Промышленное оборудование
+                              li
+                                a href="#"  Торговое оборудование
+                              li
+                                a href="#"  Агротехника
+                li
+                  a.blue href=producer_path  Производители
+                  ul.blue.bige
+                    li.purple
+                      .title ТИП ПРИЗВОДИТЕЛЕИ
+                      a href="#"  ПРОДУКТЫ ПИТАНИЯ
+                      ul
+                        .title2 ГРУПА ПРИЗВОДИТЕЛЕИ
+                        .second-performance.blue
+                          li
+                            a href="#"  Photoshop
+                          li
+                            a href="#"  Illustrator
+                          li
+                            a href="#"  InDesign
+                    li.purple
+                      a href="#"  КОСМЕТИКА И ГИГИЕНА
+                      ul
+                        .title2 ГРУПА ПРИЗВОДИТЕЛЕИ
+                        .second-performance.blue
+                          li
+                            a href="#"  Copywriting
+                          li
+                            a href="#"  Journalism
+                          li
+                            a href="#"  Poetry
+                          li
+                            a href="#"  Storytelling
+                    li.purple
+                      a href="#"  ТОВАРЫ ДЛЯ ДОМА
+                      ul
+                        .title2 ГРУПА ПРИЗВОДИТЕЛЕИ
+                        .second-performance.blue
+                          li
+                            a href="#"  Taxes
+                          li
+                            a href="#"  Credit
+                          li
+                            a href="#"  Asset Management
+                    li.purple
+                      a href="#"  КАНЦЕЛЯРСКИЕ ТОВАРЫ
+                      ul
+                        .title2 ГРУПА ПРИЗВОДИТЕЛЕИ
+                        .second-performance.blue
+                          li
+                            a href="#"  Print
+                          li
+                            a href="#"  Digital
+                          li
+                            a href="#"  Branding
+                          li
+                            a href="#"  Presenting
+                          li
+                            a href="#"  Social Media
+                    li.purple
+                      a href="#"  АВТОТОВАРЫ
+                      ul
+                        .title2 ГРУПА ПРИЗВОДИТЕЛЕИ
+                        .second-performance.blue
+                          li
+                            a href="#"  HTML5/CSS3
+                          li
+                            a href="#"  jQuery
+                          li
+                            a href="#"  PHP
+                          li
+                            a href="#"  Ruby on Rails
+                          li
+                            a href="#"  HTML5/CSS3
+                          li
+                            a href="#"  jQuery
+                          li
+                            a href="#"  PHP
+                          li
+                            a href="#"  Ruby on Rails
+                          li
+                            a href="#"  HTML5/CSS3
+                          li
+                            a href="#"  jQuery
+                          li
+                            a href="#"  PHP
+                          li
+                            a href="#"  Ruby on Rails
+                          li
+                            a href="#"  HTML5/CSS3
+                          li
+                            a href="#"  jQuery
+                          li
+                            a href="#"  PHP
+                          li
+                            a href="#"  Ruby on Rails
+                          li
+                            a href="#"  HTML5/CSS3
+                          li
+                            a href="#"  jQuery
+                          li
+                            a href="#"  PHP
+                          li
+                            a href="#"  Ruby on Rails
+                          li
+                            a href="#"  HTML5/CSS3
+                          li
+                            a href="#"  jQuery
+                          li
+                            a href="#"  PHP
+                          li
+                            a href="#"  Ruby on Rails
+                    li.purple
+                      a href="#"  ТОВАРЫ ДЛЯ ЖИВОТНЫХ
+                      ul
+                        .title2 ГРУПА ПРИЗВОДИТЕЛЕИ
+                        .second-performance.blue
+                          li
+                            a href="#"  Mechanics
+                          li
+                            a href="#"  Composition
+                    li.purple
+                      a href="#"  ПРОМЫШЛЕННОЕ
+                      ul
+                        .title2 ГРУПА ПРИЗВОДИТЕЛЕИ
+                        .second-performance.blue
+                          li
+                            a href="#"  Mechanics
+                          li
+                            a href="#"  Composition
+                li
+                  a.green href=distributors_path  Дистрибьюторы
+                  ul.green.bige
+                    li.green2
+                      .title ГРУПА ДИСТРИБЮТОРОВ
+                      a href="#"  Продукты питания
+                      ul
+                        .title2 ГРУПА ДИСТРИБЮТОРОВ
+                        .second-performance.green
+                          li
+                            a href="#"  HTML5/CSS3
+                          li
+                            a href="#"  jQuery
+                          li
+                            a href="#"  PHP
+                          li
+                            a href="#"  Ruby on Rails
+                    li.green2
+                      a href="#" сырье
+                      ul
+                        .title2 ГРУПА ДИСТРИБЮТОРОВ
+                        .second-performance.green
+                          li
+                            a href="#"  HTML5/CSS3
+                          li
+                            a href="#"  jQuery
+                          li
+                            a href="#"  PHP
+                          li
+                            a href="#"  Ruby on Rails
+                          li
+                            a href="#"  HTML5/CSS3
+                          li
+                            a href="#"  jQuery
+                          li
+                            a href="#"  PHP
+                          li
+                            a href="#"  Ruby on Rails
+                          li
+                            a href="#"  HTML5/CSS3
+                          li
+                            a href="#"  jQuery
+                          li
+                            a href="#"  PHP
+                          li
+                            a href="#"  Ruby on Rails
+                          li
+                            a href="#"  HTML5/CSS3
+                          li
+                            a href="#"  jQuery
+                          li
+                            a href="#"  PHP
+                          li
+                            a href="#"  Ruby on Rails
+                          li
+                            a href="#"  Ruby on Rails
+                          li
+                            a href="#"  HTML5/CSS3
+                          li
+                            a href="#"  jQuery
+                          li
+                            a href="#"  PHP
+                          li
+                            a href="#"  Ruby on Rails
+                    li.green2
+                      a href="#"  бытовая химия / косметика
+                      ul
+                        .title2 ГРУПА ДИСТРИБЮТОРОВ
+                        .second-performance.green
+                          li
+                            a href="#"  HTML5/CSS3
+                          li
+                            a href="#"  jQuery
+                          li
+                            a href="#"  PHP
+                          li
+                            a href="#"  Ruby on Rails
+                    li.green2
+                      a href="#"  посуда
+                      ul
+                        .title2 ГРУПА ДИСТРИБЮТОРОВ
+                        .second-performance.green
+                          li
+                            a href="#"  HTML5/CSS3
+                          li
+                            a href="#"  jQuery
+                          li
+                            a href="#"  PHP
+                          li
+                            a href="#"  Ruby on Rails
+                    li.green2
+                      a href="#"  Электротовары
+                      ul
+                        .title2 ГРУПА ДИСТРИБЮТОРОВ
+                        .second-performance.green
+                          li
+                            a href="#"  HTML5/CSS3
+                          li
+                            a href="#"  jQuery
+                          li
+                            a href="#"  PHP
+                          li
+                            a href="#"  Ruby on Rails
+                    li.green2
+                      a href="#"  Мебель
+                      ul
+                        .title2 ГРУПА ДИСТРИБЮТОРОВ
+                        .second-performance.green
+                          li
+                            a href="#"  HTML5/CSS3
+                          li
+                            a href="#"  jQuery
+                          li
+                            a href="#"  PHP
+                          li
+                            a href="#"  Ruby on Rails
+                    li.green2
+                      a href="#"  Строительные аксессуары
+                      ul
+                        .title2 ГРУПА ДИСТРИБЮТОРОВ
+                        .second-performance.green
+                          li
+                            a href="#"  HTML5/CSS3
+                          li
+                            a href="#"  jQuery
+                          li
+                            a href="#"  PHP
+                          li
+                            a href="#"  Ruby on Rails
+                    li.green2
+                      a href="#"  Медицина
+                      ul
+                        .title2 ГРУПА ДИСТРИБЮТОРОВ
+                        .second-performance.green
+                          li
+                            a href="#"  HTML5/CSS3
+                          li
+                            a href="#"  jQuery
+                          li
+                            a href="#"  PHP
+                          li
+                            a href="#"  Ruby on Rails
+                    li.green2
+                      a href="#"  Промышленное оборудование
+                      ul
+                        .title2 ГРУПА ДИСТРИБЮТОРОВ
+                        .second-performance.green
+                          li
+                            a href="#"  HTML5/CSS3
+                          li
+                            a href="#"  jQuery
+                          li
+                            a href="#"  PHP
+                          li
+                            a href="#"  Ruby on Rails
+                    li.green2
+                      a href="#"  Автотовары
+                      ul
+                        .title2 ГРУПА ДИСТРИБЮТОРОВ
+                        .second-performance.green
+                          li
+                            a href="#"  HTML5/CSS3
+                          li
+                            a href="#"  jQuery
+                          li
+                            a href="#"  PHP
+                          li
+                            a href="#"  Ruby on Rails
+                    li.green2
+                      a href="#"  Канцтовары
+                      ul
+                        .title2 ГРУПА ДИСТРИБЮТОРОВ
+                        .second-performance.green
+                          li
+                            a href="#"  HTML5/CSS3
+                          li
+                            a href="#"  jQuery
+                          li
+                            a href="#"  PHP
+                          li
+                            a href="#"  Ruby on Rails
+                    li.green2
+                      a href="#" Прочая продукция
+                      ul
+                        .title2 ГРУПА ДИСТРИБЮТОРОВ
+                        .second-performance.green
+                          li
+                            a href="#"  HTML5/CSS3
+                          li
+                            a href="#"  jQuery
+                          li
+                            a href="#"  PHP
+                          li
+                            a href="#"  Ruby on Rails
+                li
+                  a.red href=market_path  Маркеты
+                  ul.redb
+                    li.aqua
+                      .title ГРУПА МАРКЕТОВ
+                      a href="#"  супермаркет
+                    li.aqua
+                      a href="#"  канцелярський
+                    li.aqua
+                      a href="#"  вещевой
+                    li.aqua
+                      a href="#"  строительный
+                    li.aqua
+                      a href="#"  промышленный
+                    li.aqua
+                      a href="#"  электроника
+                    li.aqua
+                      a href="#"  мебельный
+                    li.aqua
+                      a href="#"  смешанный
+                li
+                  a.orange href=logistics_path  Логистика
+                  ul.orangb
+                    li.orange2
+                      .title title1
+                      a href="#"  железнодорожный
+                    li.orange2
+                      a href="#"  автотранспорт
+                    li.orange2
+                      a href="#"  авиаперевозки
+                    li.orange2
+                      a href="#"  морской транспорт
+
+
+
+
+
+  .heder-content.smole
     a.heder-logo href=root_path = inline_svg "photo/main/svg/top-logo.svg"
     .tex-heder
-      a.one-text href=root_path Главная
       a.one-text href=premium_path Премиум
       a.one-text href=tradergram_path Tradergram
       a.one-text href=aboutus_path О нас
@@ -15,649 +682,876 @@
         .hover-block
           .language-one ua
           .language-one eu
-      a.btn-big-heder href=registration_path РЕГИСТРАЦИЯ
-
-
-    .heder-menu
-      .row
-        .columns
-          .wrapper
-            ul#menu.clearfix
-              li
-                a href=topgoods_path Топ товары
-              li
-                a.yellow href=goods_path  Товары
-                ul.bige
-                  .title ТИП ТОВАРОВ
-                  li
-                    a href="#"
-                      |ПРОДУКТЫ ПИТАНИЯ
-                      = inline_svg "svg/ic_keyboard_arrow_right_black_24px.svg"
-                    ul
-                      .title2 КАТЕГОРИЯ ТОВАРОВ
-                      .second-performance
-                        li
-                          a href="#"  Овощи / Фруктьr
-                          ul
-                            .title2 ГРУПА ТОВАРОВ
-                            .img-bg style="background-image: url(#{asset_path('photo/main/food.jpg')})"
-                            li
-                              a href="#"  Овощи/Грибы
-                            li
-                              a href="#"  Фрукты и Ягоды
-                            li
-                              a href="#"  Сухофрукты/Орехи
-                            li
-                              a href="#"  Зелень
-                        li
-                          a href="#"  Заморозка
-                          ul
-                            .title2 ГРУПА ТОВАРОВ
-                            .img-bg style="background-image: url(#{asset_path('photo/main/food.jpg')})"
-                            li
-                              a href="#"  Готовые блюда/Полуфабрикаты
-                            li
-                              a href="#"  Замороженные овощи и фрукты
-                            li
-                              a href="#"  Мороженное
-                            li
-                              a href="#"  Рыба и Морепродукты
-                        li
-                          a href="#"  Мясо / Рьба / Птица
-                          ul
-                            .title2 ГРУПА ТОВАРОВ
-                            .img-bg style="background-image: url(#{asset_path('photo/main/food.jpg')})"
-                            li
-                              a href="#"  Рыбные продукты
-                            li
-                              a href="#"  Свежое мясо(птица/говядина/свинина)
-                            li
-                              a href="#"  Колбасные изделия
-                        li
-                          a href="#"  Кондитерские изделия
-                          ul
-                            .title2 ГРУПА ТОВАРОВ
-                            .img-bg style="background-image: url(#{asset_path('photo/main/food.jpg')})"
-                            li
-                              a href="#"  Жевательные резинки и мятные драже
-                            li
-                              a href="#"  Диабетические Продукты
-                            li
-                              a href="#"  Восточные сладости
-                            li
-                              a href="#"  Конфеты(шоколадные/карамель/весовые
-                            li
-                              a href="#"  Шоколад(крем/плитка/батон/яйца)
-                            li
-                              a href="#"  Печенье
-                            li
-                              a href="#"  Мармелад,зефир,пастила
-                            li
-                              a href="#"  Кексы,рулеты,круассаны,торты
-                        li
-                          a href="#"  Соусь/Консервь
-                          ul
-                            .title2 ГРУПА ТОВАРОВ
-                            .img-bg style="background-image: url(#{asset_path('photo/main/food.jpg')})"
-                            li
-                              a href="#"  Соусы,кетчупы,заправки
-                            li
-                              a href="#"  Фруктовая консервация
-                            li
-                              a href="#"  Овощная,грибная консервация
-                            li
-                              a href="#"  Рыбные консервы
-                            li
-                              a href="#"  Мясная консервация
-                            li
-                              a href="#"  Сгущеное молоко
-                        li
-                          a href="#"  Бакалея/Пекарня
-                          ul
-                            .title2 ГРУПА ТОВАРОВ
-                            .img-bg style="background-image: url(#{asset_path('photo/main/food.jpg')})"
-                            li
-                              a href="#"  Масло растительное
-                            li
-                              a href="#"  Макаронные изделия/Мука
-                            li
-                              a href="#"  Крупы
-                            li
-                              a href="#"  Чай,кофе,какао
-                            li
-                              a href="#"  Мед
-                            li
-                              a href="#"  Сухие завтраки / Еда быстрого приготовления
-                            li
-                              a href="#"  Кондитерские п/ф
-                            li
-                              a href="#"  Снеки
-                            li
-                              a href="#"  Специи и приправы
-                            li
-                              a href="#"  Соевая продукция/Восточная кухня
-                            li
-                              a href="#"  Сухари,гренки,сдоба/Хлеба
-                        li
-                          a href="#"  Напитки
-                          ul
-                            .title2 ГРУПА ТОВАРОВ
-                            .img-bg style="background-image: url(#{asset_path('photo/main/food.jpg')})"
-                            li
-                              a href="#"  Безалкогольные напитки и соки
-                            li
-                              a href="#"  Пиво и слабоалкогольные напитки
-                            li
-                              a href="#"  Алкогольные напитки
-                        li
-                          a href="#"  Мопоко/Сьрь/Яйца
-                          ul
-                            .title2 ГРУПА ТОВАРОВ
-                            .img-bg style="background-image: url(#{asset_path('photo/main/food.jpg')})"
-                            li
-                              a href="#"  Яйца
-                            li
-                              a href="#"  Молоко/Сметана/Йогурты
-                            li
-                              a href="#"  Сыры/Творожные изделия
-                            li
-                              a href="#"  Масло/Маргарин/Спред
-                            li
-                              a href="#"  Кефир,кисломолочные продукты,сливки,сырки
-                  li
-                    a href="#"
-                      | КОСМЕТИКА И ГИГИЕНА
-                      = inline_svg "svg/ic_keyboard_arrow_right_black_24px.svg"
-                    ul
-                      .title2 КАТЕГОРИЯ ТОВАРОВ
-                      .second-performance
-                        li
-                          a href="#"  Средства по уходу за волосами
-                        li
-                          a href="#"  Уход за кожей/за ногтями
-                        li
-                          a href="#"  Дезодаранты,антипреспиранты/Аптечные товары/Женская гигиена
-                        li
-                          a href="#"  Влажные салфетки/Ватные и Бумажные изделия
-                        li
-                          a href="#"  Средства для ванн/Уход за зубамии, полостью рта
-                        li
-                          a href="#"  Бытовая химия/мыло и гели
-                  li
-                    a href="#"
-                      | ТОВАРЫ ДЛЯ ДОМА
-                      = inline_svg "svg/ic_keyboard_arrow_right_black_24px.svg"
-                    ul
-                      .title2 КАТЕГОРИЯ ТОВАРОВ
-                      .second-performance
-                        li
-                          a href="#"  Все для ванной комнаты и туалета/для уборки
-                        li
-                          a href="#"  Все для кухни и уборки
-                        li
-                          a href="#"  Порядок в доме
-                        li
-                          a href="#"  Электротовары
-                        li
-                          a href="#"  Текстиль / Постельное белье / Галантерийные товары и аксессуары
-                        li
-                          a href="#"  Аксессуары для отдыха и пикника
-                        li
-                          a href="#"  Посуда
-                        li
-                          a href="#"  Интерьер/Аксессуары для декора и праздника
-                        li
-                          a href="#"  Мебель
-                        li
-                          a href="#"  Строительство и Ремонт
-                        li
-                          a href="#"  Медицина
-                        li
-                          a href="#"  Спорттовары
-                        li
-                          a href="#"  Ювелирные изделия
-                        li
-                          a href="#"  Цветы, посадочный материал / смеси / удобрения
-                        li
-                          a href="#"  Инструменты для сада и огорода / Посуда для цветов
-                  li
-                    a href="#"
-                      | КАНЦЕЛЯРСКИЕ ТОВАРЫ
-                      = inline_svg "svg/ic_keyboard_arrow_right_black_24px.svg"
-                    ul
-                      .title2 КАТЕГОРИЯ ТОВАРОВ
-                      .second-performance
-                        li
-                          a href="#"  Бумаги,тетради,блокноты
-                        li
-                          a href="#"  Ручки,карандаши,фломастеры
-                        li
-                          a href="#"  Канцелярские аксесуары
-                        li
-                          a href="#"  Прочее
-                  li
-                    a href="#"
-                      | АВТОТОВАРЫ
-                      = inline_svg "svg/ic_keyboard_arrow_right_black_24px.svg"
-                    ul
-                      .title2 КАТЕГОРИЯ ТОВАРОВ
-                      .second-performance
-                        li
-                          a href="#"  Автоаксесуары
-                        li
-                          a href="#"  Автокосметика
-                        li
-                          a href="#"  Запчасти
-                  li
-                    a href="#"
-                      | ТОВАРЫ ДЛЯ ЖИВОТНЫХ
-                      = inline_svg "svg/ic_keyboard_arrow_right_black_24px.svg"
-                    ul
-                      .title2 КАТЕГОРИЯ ТОВАРОВ
-                      .second-performance
-                        li
-                          a href="#"  Все для кошек и собак
-                        li
-                          a href="#"  Все для птиц и рыб
-                        li
-                          a href="#"  Аксесуары для животных
-                  li
-                    a href="#"
-                      | ПРОМЫШЛЕННОЕ
-                      = inline_svg "svg/ic_keyboard_arrow_right_black_24px.svg"
-                    ul
-                      .title2 КАТЕГОРИЯ ТОВАРОВ
-                      .second-performance
-                        li
-                          a href="#"  ПИЩЕВЫЕ ИНГРИДИЕНТЫ / СЕЛЬСКОЕ ХОЗЯЙСТВО / ХИМИЧЕСКАЯ ПРОМЫШЛЕННОСТЬ
-                          ul
-                            .title2 ГРУПА ТОВАРОВ
-                            .img-bg style="background-image: url(#{asset_path('photo/main/food.jpg')})"
-                            li
-                              a href="#"  Пищевье ингредиенть
-                            li
-                              a href="#"  Пищевье ингредиенть
-                            li
-                              a href="#"  Животноводство
-                            li
-                              a href="#"  Птицеводство
-                            li
-                              a href="#"  Пчеловодство
-                            li
-                              a href="#"  Растеневодство
-                            li
-                              a href="#"  Рьбное хозяйство
-                            li
-                              a href="#"  Химические вецества
-                            li
-                              a href="#" Прочее
-                        li
-                          a href="#"  ПРОМЫШЛЕННОЕ ОБОРУДОВАНИЕ / СЫРЬЕ
-                          ul
-                            .title2 ГРУПА ТОВАРОВ
-                            .img-bg style="background-image: url(#{asset_path('photo/main/food.jpg')})"
-                            li
-                              a href="#"  Легкая/Пищевая промышленность
-                            li
-                              a href="#"  Химическая/Лесная промышленность
-                            li
-                              a href="#"  Топливно энергетическая промышленность
-                            li
-                              a href="#"  Тяжелая промышленность
-                            li
-                              a href="#"  Промышленное оборудование
-                            li
-                              a href="#"  Торговое оборудование
-                            li
-                              a href="#"  Агротехника
-              li
-                a.blue href=producer_path  Производители
-                ul.blue.bige
-                  li.purple
-                    .title ТИП ПРИЗВОДИТЕЛЕИ
-                    a href="#"  ПРОДУКТЫ ПИТАНИЯ
-                    ul
-                      .title2 ГРУПА ПРИЗВОДИТЕЛЕИ
-                      .second-performance.blue
-                        li
-                          a href="#"  Photoshop
-                        li
-                          a href="#"  Illustrator
-                        li
-                          a href="#"  InDesign
-                  li.purple
-                    a href="#"  КОСМЕТИКА И ГИГИЕНА
-                    ul
-                      .title2 ГРУПА ПРИЗВОДИТЕЛЕИ
-                      .second-performance.blue
-                        li
-                          a href="#"  Copywriting
-                        li
-                          a href="#"  Journalism
-                        li
-                          a href="#"  Poetry
-                        li
-                          a href="#"  Storytelling
-                  li.purple
-                    a href="#"  ТОВАРЫ ДЛЯ ДОМА
-                    ul
-                      .title2 ГРУПА ПРИЗВОДИТЕЛЕИ
-                      .second-performance.blue
-                        li
-                          a href="#"  Taxes
-                        li
-                          a href="#"  Credit
-                        li
-                          a href="#"  Asset Management
-                  li.purple
-                    a href="#"  КАНЦЕЛЯРСКИЕ ТОВАРЫ
-                    ul
-                      .title2 ГРУПА ПРИЗВОДИТЕЛЕИ
-                      .second-performance.blue
-                        li
-                          a href="#"  Print
-                        li
-                          a href="#"  Digital
-                        li
-                          a href="#"  Branding
-                        li
-                          a href="#"  Presenting
-                        li
-                          a href="#"  Social Media
-                  li.purple
-                    a href="#"  АВТОТОВАРЫ
-                    ul
-                      .title2 ГРУПА ПРИЗВОДИТЕЛЕИ
-                      .second-performance.blue
-                        li
-                          a href="#"  HTML5/CSS3
-                        li
-                          a href="#"  jQuery
-                        li
-                          a href="#"  PHP
-                        li
-                          a href="#"  Ruby on Rails
-                        li
-                          a href="#"  HTML5/CSS3
-                        li
-                          a href="#"  jQuery
-                        li
-                          a href="#"  PHP
-                        li
-                          a href="#"  Ruby on Rails
-                        li
-                          a href="#"  HTML5/CSS3
-                        li
-                          a href="#"  jQuery
-                        li
-                          a href="#"  PHP
-                        li
-                          a href="#"  Ruby on Rails
-                        li
-                          a href="#"  HTML5/CSS3
-                        li
-                          a href="#"  jQuery
-                        li
-                          a href="#"  PHP
-                        li
-                          a href="#"  Ruby on Rails
-                        li
-                          a href="#"  HTML5/CSS3
-                        li
-                          a href="#"  jQuery
-                        li
-                          a href="#"  PHP
-                        li
-                          a href="#"  Ruby on Rails
-                        li
-                          a href="#"  HTML5/CSS3
-                        li
-                          a href="#"  jQuery
-                        li
-                          a href="#"  PHP
-                        li
-                          a href="#"  Ruby on Rails
-                  li.purple
-                    a href="#"  ТОВАРЫ ДЛЯ ЖИВОТНЫХ
-                    ul
-                      .title2 ГРУПА ПРИЗВОДИТЕЛЕИ
-                      .second-performance.blue
-                        li
-                          a href="#"  Mechanics
-                        li
-                          a href="#"  Composition
-                  li.purple
-                    a href="#"  ПРОМЫШЛЕННОЕ
-                    ul
-                      .title2 ГРУПА ПРИЗВОДИТЕЛЕИ
-                      .second-performance.blue
-                        li
-                          a href="#"  Mechanics
-                        li
-                          a href="#"  Composition
-              li
-                a.green href=distributors_path  Дистрибьюторы
-                ul.green.bige
-                  li.green2
-                    .title ГРУПА ДИСТРИБЮТОРОВ
-                    a href="#"  Продукты питания
-                    ul
-                      .title2 ГРУПА ДИСТРИБЮТОРОВ
-                      .second-performance.green
-                        li
-                          a href="#"  HTML5/CSS3
-                        li
-                          a href="#"  jQuery
-                        li
-                          a href="#"  PHP
-                        li
-                          a href="#"  Ruby on Rails
-                  li.green2
-                    a href="#" сырье
-                    ul
-                      .title2 ГРУПА ДИСТРИБЮТОРОВ
-                      .second-performance.green
-                        li
-                          a href="#"  HTML5/CSS3
-                        li
-                          a href="#"  jQuery
-                        li
-                          a href="#"  PHP
-                        li
-                          a href="#"  Ruby on Rails
-                        li
-                          a href="#"  HTML5/CSS3
-                        li
-                          a href="#"  jQuery
-                        li
-                          a href="#"  PHP
-                        li
-                          a href="#"  Ruby on Rails
-                        li
-                          a href="#"  HTML5/CSS3
-                        li
-                          a href="#"  jQuery
-                        li
-                          a href="#"  PHP
-                        li
-                          a href="#"  Ruby on Rails
-                        li
-                          a href="#"  HTML5/CSS3
-                        li
-                          a href="#"  jQuery
-                        li
-                          a href="#"  PHP
-                        li
-                          a href="#"  Ruby on Rails
-                        li
-                          a href="#"  Ruby on Rails
-                        li
-                          a href="#"  HTML5/CSS3
-                        li
-                          a href="#"  jQuery
-                        li
-                          a href="#"  PHP
-                        li
-                          a href="#"  Ruby on Rails
-                  li.green2
-                    a href="#"  бытовая химия / косметика
-                    ul
-                      .title2 ГРУПА ДИСТРИБЮТОРОВ
-                      .second-performance.green
-                        li
-                          a href="#"  HTML5/CSS3
-                        li
-                          a href="#"  jQuery
-                        li
-                          a href="#"  PHP
-                        li
-                          a href="#"  Ruby on Rails
-                  li.green2
-                    a href="#"  посуда
-                    ul
-                      .title2 ГРУПА ДИСТРИБЮТОРОВ
-                      .second-performance.green
-                        li
-                          a href="#"  HTML5/CSS3
-                        li
-                          a href="#"  jQuery
-                        li
-                          a href="#"  PHP
-                        li
-                          a href="#"  Ruby on Rails
-                  li.green2
-                    a href="#"  Электротовары
-                    ul
-                      .title2 ГРУПА ДИСТРИБЮТОРОВ
-                      .second-performance.green
-                        li
-                          a href="#"  HTML5/CSS3
-                        li
-                          a href="#"  jQuery
-                        li
-                          a href="#"  PHP
-                        li
-                          a href="#"  Ruby on Rails
-                  li.green2
-                    a href="#"  Мебель
-                    ul
-                      .title2 ГРУПА ДИСТРИБЮТОРОВ
-                      .second-performance.green
-                        li
-                          a href="#"  HTML5/CSS3
-                        li
-                          a href="#"  jQuery
-                        li
-                          a href="#"  PHP
-                        li
-                          a href="#"  Ruby on Rails
-                  li.green2
-                    a href="#"  Строительные аксессуары
-                    ul
-                      .title2 ГРУПА ДИСТРИБЮТОРОВ
-                      .second-performance.green
-                        li
-                          a href="#"  HTML5/CSS3
-                        li
-                          a href="#"  jQuery
-                        li
-                          a href="#"  PHP
-                        li
-                          a href="#"  Ruby on Rails
-                  li.green2
-                    a href="#"  Медицина
-                    ul
-                      .title2 ГРУПА ДИСТРИБЮТОРОВ
-                      .second-performance.green
-                        li
-                          a href="#"  HTML5/CSS3
-                        li
-                          a href="#"  jQuery
-                        li
-                          a href="#"  PHP
-                        li
-                          a href="#"  Ruby on Rails
-                  li.green2
-                    a href="#"  Промышленное оборудование
-                    ul
-                      .title2 ГРУПА ДИСТРИБЮТОРОВ
-                      .second-performance.green
-                        li
-                          a href="#"  HTML5/CSS3
-                        li
-                          a href="#"  jQuery
-                        li
-                          a href="#"  PHP
-                        li
-                          a href="#"  Ruby on Rails
-                  li.green2
-                    a href="#"  Автотовары
-                    ul
-                      .title2 ГРУПА ДИСТРИБЮТОРОВ
-                      .second-performance.green
-                        li
-                          a href="#"  HTML5/CSS3
-                        li
-                          a href="#"  jQuery
-                        li
-                          a href="#"  PHP
-                        li
-                          a href="#"  Ruby on Rails
-                  li.green2
-                    a href="#"  Канцтовары
-                    ul
-                      .title2 ГРУПА ДИСТРИБЮТОРОВ
-                      .second-performance.green
-                        li
-                          a href="#"  HTML5/CSS3
-                        li
-                          a href="#"  jQuery
-                        li
-                          a href="#"  PHP
-                        li
-                          a href="#"  Ruby on Rails
-                  li.green2
-                    a href="#" Прочая продукция
-                    ul
-                      .title2 ГРУПА ДИСТРИБЮТОРОВ
-                      .second-performance.green
-                        li
-                          a href="#"  HTML5/CSS3
-                        li
-                          a href="#"  jQuery
-                        li
-                          a href="#"  PHP
-                        li
-                          a href="#"  Ruby on Rails
-              li
-                a.red href=market_path  Маркеты
-                ul.redb
-                  li.aqua
-                    .title ГРУПА МАРКЕТОВ
-                    a href="#"  супермаркет
-                  li.aqua
-                    a href="#"  канцелярський
-                  li.aqua
-                    a href="#"  вещевой
-                  li.aqua
-                    a href="#"  строительный
-                  li.aqua
-                    a href="#"  промышленный
-                  li.aqua
-                    a href="#"  электроника
-                  li.aqua
-                    a href="#"  мебельный
-                  li.aqua
-                    a href="#"  смешанный
-              li
-                a.orange href=logistics_path  Логистика
-                ul.orangb
-                  li.orange2
-                    .title title1
-                    a href="#"  железнодорожный
-                  li.orange2
-                    a href="#"  автотранспорт
-                  li.orange2
-                    a href="#"  авиаперевозки
-                  li.orange2
-                    a href="#"  морской транспорт
+      / #menuToggle
+      /   input type="checkbox" /
+      /   span
+      /   span
+      /   span
+      #nav-icon
+        span
+        span
+        span
+        span
+        span
+        span
+  .manu-container
+    .general-part
+      .step-back
+        .arow = inline_svg "svg/arrowleft.svg"
+        .arowthird = inline_svg "svg/arrowleft.svg"
+        .arowtfourth = inline_svg "svg/arrowleft.svg"
+        p виберите категорию
+      .manu-nav
+        .classification-top
+          a href="#" Топ товары
+        .classification.yellow
+          a href="#" товары
+          .arow-boxs
+            = inline_svg "svg/ic_keyboard_arrow_right_black_24px.svg"
+          .manu-container-second
+            .general-part
+              .manu-nav
+                .classification-second
+                  a href="#" продукти питания
+                  .manu-container-third
+                    .general-part
+                      .manu-nav
+                        .classification-third
+                          a href="#" овощи / фрукты
+                          .manu-container-fourth
+                            .general-part
+                              .manu-nav
+                                .classification-fourth
+                                  a href="#" Овощи/Грибы
+                                .classification-fourth
+                                  a href="#" Фрукты и Ягоды
+                                .classification-fourth
+                                  a href="#" Сухофрукты/Орехи
+                                .classification-fourth
+                                  a href="#" Кондитерские изделия
+                                .classification-fourth
+                                  a href="#" Зелень
+                        .classification-third
+                          a href="#" Заморозка
+                          .manu-container-fourth
+                            .general-part
+                              .manu-nav
+                                .classification-fourth
+                                  a href="#" Готовые блюда/Полуфабрикаты
+                                .classification-fourth
+                                  a href="#" Замороженные овощи и фрукты
+                                .classification-fourth
+                                  a href="#" Мороженное
+                                .classification-fourth
+                                  a href="#" Кондитерские изделия
+                                .classification-fourth
+                                  a href="#" Рыба и Морепродукты
+                        .classification-third
+                          a href="#" мясо / риба / птица
+                          .manu-container-fourth
+                            .general-part
+                              .manu-nav
+                                .classification-fourth
+                                  a href="#" Рыбные продукты
+                                .classification-fourth
+                                  a href="#" Свежое мясо(птица/говядина/свинина)
+                                .classification-fourth
+                                  a href="#" Колбасные изделия
+                        .classification-third
+                          a href="#" Кондитерские изделия
+                          .manu-container-fourth
+                            .general-part
+                              .manu-nav
+                                .classification-fourth
+                                  a href="#" Жевательные резинки и мятные драже
+                                .classification-fourth
+                                  a href="#" Диабетические Продукты
+                                .classification-fourth
+                                  a href="#" Конфеты(шоколадные/карамель/весовые)
+                                .classification-fourth
+                                  a href="#" Шоколад(крем/плитка/батон/яйца)
+                                .classification-fourth
+                                  a href="#" Печенье
+                                .classification-fourth
+                                  a href="#" Мармелад,зефир,пастила
+                                .classification-fourth
+                                  a href="#" Кексы,рулеты,круассаны,торты
+                        .classification-third
+                          a href="#" Соусы / консервы
+                          .manu-container-fourth
+                            .general-part
+                              .manu-nav
+                                .classification-fourth
+                                  a href="#" Соусы,кетчупы,заправки
+                                .classification-fourth
+                                  a href="#" Фруктовая консервация
+                                .classification-fourth
+                                  a href="#" Овощная,грибная консервация
+                                .classification-fourth
+                                  a href="#" Рыбные консервы
+                                .classification-fourth
+                                  a href="#" Мясная консервация
+                                .classification-fourth
+                                  a href="#" Сгущеное молоко
+                        .classification-third
+                          a href="#" Бакалея/консервы
+                          .manu-container-fourth
+                            .general-part
+                              .manu-nav
+                                .classification-fourth
+                                  a href="#" Масло растительное
+                                .classification-fourth
+                                  a href="#" Макаронные изделия/Мука
+                                .classification-fourth
+                                  a href="#" Крупы
+                                .classification-fourth
+                                  a href="#" Чай,кофе,какао
+                                .classification-fourth
+                                  a href="#" Соль,сахар,крахмал,сода,уксус
+                                .classification-fourth
+                                  a href="#" Мед
+                                .classification-fourth
+                                  a href="#" Сухие завтраки / Еда быстрого приготовления
+                                .classification-fourth
+                                  a href="#" Кондитерские п/ф
+                                .classification-fourth
+                                  a href="#" Снеки
+                                .classification-fourth
+                                  a href="#" Специи и приправы
+                                .classification-fourth
+                                  a href="#" Соевая продукция/Восточная кухня
+                                .classification-fourth
+                                  a href="#" Сухари,гренки,сдоба/Хлеба
+                        .classification-third
+                          a href="#" напитки
+                          .manu-container-fourth
+                            .general-part
+                              .manu-nav
+                                .classification-fourth
+                                  a href="#" Безалкогольные напитки и соки
+                                .classification-fourth
+                                  a href="#" Пиво и слабоалкогольные напитки
+                                .classification-fourth
+                                  a href="#" Алкогольные напитки
+                        .classification-third
+                          a href="#" молоко / Сьрь / яйца
+                          .manu-container-fourth
+                            .general-part
+                              .manu-nav
+                                .classification-fourth
+                                  a href="#" Яйца
+                                .classification-fourth
+                                  a href="#" Молоко/Сметана/Йогурты
+                                .classification-fourth
+                                  a href="#" Сыры/Творожные изделия
+                                .classification-fourth
+                                  a href="#" Масло/Маргарин/Спред
+                                .classification-fourth
+                                  a href="#" Кефир,кисломолочные продукты,сливки,сырки
+                .classification-second
+                  a href="#" косметика и гигиєна
+                  .manu-container-third
+                    .general-part
+                      .manu-nav
+                        .classification-third-end
+                          a href="#" Средства по уходу за волосами
+                        .classification-third-end
+                          a href="#" Уход за кожей/за ногтями
+                        .classification-third-end
+                          a href="#" Дезодаранты,антипреспиранты/Аптечные товары/Женская гигиена
+                        .classification-third-end
+                          a href="#" Влажные салфетки/Ватные и Бумажные изделия
+                        .classification-third-end
+                          a href="#" Средства для ванн/Уход за зубамии, полостью рта
+                        .classification-third-end
+                          a href="#" Бытовая химия/мыло и гели
+                .classification-second
+                  a href="#" товары для дома
+                  .manu-container-third
+                    .general-part
+                      .manu-nav
+                        .classification-third-end
+                          a href="#" Все для ванной комнаты и туалета/для уборки
+                        .classification-third-end
+                          a href="#" Все для кухни и уборки
+                        .classification-third-end
+                          a href="#" Порядок в доме
+                        .classification-third-end
+                          a href="#" Электротовары.
+                        .classification-third-end
+                          a href="#" Текстиль / Постельное белье / Галантерийные товары и аксессуары
+                        .classification-third-end
+                          a href="#" Аксессуары для отдыха и пикника
+                        .classification-third-end
+                          a href="#" Посуда
+                        .classification-third-end
+                          a href="#" Интерьер/Аксессуары для декора и праздника
+                        .classification-third-end
+                          a href="#" Мебель
+                        .classification-third-end
+                          a href="#" Строительство и Ремонт
+                        .classification-third-end
+                          a href="#" Медицина
+                        .classification-third-end
+                          a href="#" Спорттовары
+                        .classification-third-end
+                          a href="#" Ювелирные изделия
+                        .classification-third-end
+                          a href="#" Цветы, посадочный материал / смеси / удобрения
+                .classification-second
+                  a href="#" Канцелярские товары
+                  .manu-container-third
+                    .general-part
+                      .manu-nav
+                        .classification-third-end
+                          a href="#" продукти питания1
+                        .classification-third-end
+                          a href="#" косметика и гигиєна1
+                        .classification-third-end
+                          a href="#" товары для дома1
+                        .classification-third-end
+                          a href="#" Канцелярские товары1
+                        .classification-third-end
+                          a href="#" Автотовары1
+                        .classification-third-end
+                          a href="#" товары для ЖИВОТНЫХ1
+                        .classification-third-end
+                          a href="#" промишленость1
+                .classification-second
+                  a href="#" Автотовары
+                  .manu-container-third
+                    .general-part
+                      .manu-nav
+                        .classification-third-end
+                          a href="#" продукти питания1
+                        .classification-third-end
+                          a href="#" косметика и гигиєна1
+                        .classification-third-end
+                          a href="#" товары для дома1
+                        .classification-third-end
+                          a href="#" Канцелярские товары1
+                        .classification-third-end
+                          a href="#" Автотовары1
+                        .classification-third-end
+                          a href="#" товары для ЖИВОТНЫХ1
+                        .classification-third-end
+                          a href="#" промишленость1
+                .classification-second
+                  a href="#" товары для ЖИВОТНЫХ
+                  .manu-container-third
+                    .general-part
+                      .manu-nav
+                        .classification-third-end
+                          a href="#" продукти питания1
+                        .classification-third-end
+                          a href="#" косметика и гигиєна1
+                        .classification-third-end
+                          a href="#" товары для дома1
+                        .classification-third-end
+                          a href="#" Канцелярские товары1
+                        .classification-third-end
+                          a href="#" Автотовары1
+                        .classification-third-end
+                          a href="#" товары для ЖИВОТНЫХ1
+                        .classification-third-end
+                          a href="#" промишленость1
+                .classification-second
+                  a href="#" промишленость
+                  .manu-container-third
+                    .general-part
+                      .manu-nav
+                        .classification-third
+                          a href="#" ПИЩЕВЫЕ ИНГРИДИЕНТЫ
+                          .classification-third
+                            .manu-container-fourth
+                              .general-part
+                                .manu-nav
+                                  .classification-fourth
+                                    a href="#" Безалкогольные напитки и соки
+                                  .classification-fourth
+                                    a href="#" Пиво и слабоалкогольные напитки
+                                  .classification-fourth
+                                    a href="#" Алкогольные напитки
+                        .classification-third
+                          a href="#" ПРОМЫШЛЕННОЕ ОБОРУДОВАНИЕ / СЫРЬЕ
+                          .classification-third
+                            .manu-container-fourth
+                              .general-part
+                                .manu-nav
+                                  .classification-fourth
+                                    a href="#" Легкая/Пищевая промышленность
+                                  .classification-fourth
+                                    a href="#" Химическая/Лесная промышленность
+                                  .classification-fourth
+                                    a href="#" Топливно энергетическая промышленность
+                                  .classification-fourth
+                                    a href="#" Легкая/Пищевая промышленность
+                                  .classification-fourth
+                                    a href="#" Химическая/Лесная промышленность
+                                  .classification-fourth
+                                    a href="#" Топливно энергетическая промышленность
+        .classification.blue
+          a href="#"  Производители
+          .arow-boxs
+            = inline_svg "svg/ic_keyboard_arrow_right_black_24px.svg"
+          .manu-container-second
+            .general-part
+              .manu-nav
+                .classification-second
+                  a href="#" продукти питания2
+                  .manu-container-third
+                    .general-part
+                      .manu-nav
+                        .classification-third
+                          a href="#" продукти питания1
+                        .classification-third
+                          a href="#" косметика и гигиєна1
+                        .classification-third
+                          a href="#" товары для дома1
+                        .classification-third
+                          a href="#" Канцелярские товары1
+                        .classification-third
+                          a href="#" Автотовары1
+                        .classification-third
+                          a href="#" товары для ЖИВОТНЫХ1
+                        .classification-third
+                          a href="#" промишленость1
+                .classification-second
+                  a href="#" косметика и гигиєна2
+                  .manu-container-third
+                    .general-part
+                      .manu-nav
+                        .classification-third
+                          a href="#" продукти питания1
+                        .classification-third
+                          a href="#" косметика и гигиєна1
+                        .classification-third
+                          a href="#" товары для дома1
+                        .classification-third
+                          a href="#" Канцелярские товары1
+                        .classification-third
+                          a href="#" Автотовары1
+                        .classification-third
+                          a href="#" товары для ЖИВОТНЫХ1
+                        .classification-third
+                          a href="#" промишленость1
+                .classification-second
+                  a href="#" товары для дома2
+                  .manu-container-third
+                    .general-part
+                      .manu-nav
+                        .classification-third
+                          a href="#" продукти питания1
+                        .classification-third
+                          a href="#" косметика и гигиєна1
+                        .classification-third
+                          a href="#" товары для дома1
+                        .classification-third
+                          a href="#" Канцелярские товары1
+                        .classification-third
+                          a href="#" Автотовары1
+                        .classification-third
+                          a href="#" товары для ЖИВОТНЫХ1
+                        .classification-third
+                          a href="#" промишленость1
+                .classification-second
+                  a href="#" Канцелярские товары2
+                  .manu-container-third
+                    .general-part
+                      .manu-nav
+                        .classification-third
+                          a href="#" продукти питания1
+                        .classification-third
+                          a href="#" косметика и гигиєна1
+                        .classification-third
+                          a href="#" товары для дома1
+                        .classification-third
+                          a href="#" Канцелярские товары1
+                        .classification-third
+                          a href="#" Автотовары1
+                        .classification-third
+                          a href="#" товары для ЖИВОТНЫХ1
+                        .classification-third
+                          a href="#" промишленость1
+                .classification-second
+                  a href="#" Автотовары2
+                  .manu-container-third
+                    .general-part
+                      .manu-nav
+                        .classification-third
+                          a href="#" продукти питания1
+                        .classification-third
+                          a href="#" косметика и гигиєна1
+                        .classification-third
+                          a href="#" товары для дома1
+                        .classification-third
+                          a href="#" Канцелярские товары1
+                        .classification-third
+                          a href="#" Автотовары1
+                        .classification-third
+                          a href="#" товары для ЖИВОТНЫХ1
+                        .classification-third
+                          a href="#" промишленость1
+                .classification-second
+                  a href="#" товары для ЖИВОТНЫХ2
+                  .manu-container-third
+                    .general-part
+                      .manu-nav
+                        .classification-third
+                          a href="#" продукти питания1
+                        .classification-third
+                          a href="#" косметика и гигиєна1
+                        .classification-third
+                          a href="#" товары для дома1
+                        .classification-third
+                          a href="#" Канцелярские товары1
+                        .classification-third
+                          a href="#" Автотовары1
+                        .classification-third
+                          a href="#" товары для ЖИВОТНЫХ1
+                        .classification-third
+                          a href="#" промишленость1
+                .classification-second
+                  a href="#" промишленость2
+                  .manu-container-third
+                    .general-part
+                      .manu-nav
+                        .classification-third
+                          a href="#" продукти питания1
+                        .classification-third
+                          a href="#" косметика и гигиєна1
+                        .classification-third
+                          a href="#" товары для дома1
+                        .classification-third
+                          a href="#" Канцелярские товары1
+                        .classification-third
+                          a href="#" Автотовары1
+                        .classification-third
+                          a href="#" товары для ЖИВОТНЫХ1
+                        .classification-third
+                          a href="#" промишленость1
+        .classification.green
+          a href="#"  Дистрибьюторы
+          .arow-boxs
+            = inline_svg "svg/ic_keyboard_arrow_right_black_24px.svg"
+          .manu-container-second
+            .general-part
+              .manu-nav
+                .classification-second
+                  a href="#" продукти питания3
+                  .manu-container-third
+                    .general-part
+                      .manu-nav
+                        .classification-third
+                          a href="#" продукти питания1
+                        .classification-third
+                          a href="#" косметика и гигиєна1
+                        .classification-third
+                          a href="#" товары для дома1
+                        .classification-third
+                          a href="#" Канцелярские товары1
+                        .classification-third
+                          a href="#" Автотовары1
+                        .classification-third
+                          a href="#" товары для ЖИВОТНЫХ1
+                        .classification-third
+                          a href="#" промишленость1
+                .classification-second
+                  a href="#" косметика и гигиєна3
+                  .manu-container-third
+                    .general-part
+                      .manu-nav
+                        .classification-third
+                          a href="#" продукти питания1
+                        .classification-third
+                          a href="#" косметика и гигиєна1
+                        .classification-third
+                          a href="#" товары для дома1
+                        .classification-third
+                          a href="#" Канцелярские товары1
+                        .classification-third
+                          a href="#" Автотовары1
+                        .classification-third
+                          a href="#" товары для ЖИВОТНЫХ1
+                        .classification-third
+                          a href="#" промишленость1
+                .classification-second
+                  a href="#" товары для дома3
+                  .manu-container-third
+                    .general-part
+                      .manu-nav
+                        .classification-third
+                          a href="#" продукти питания1
+                        .classification-third
+                          a href="#" косметика и гигиєна1
+                        .classification-third
+                          a href="#" товары для дома1
+                        .classification-third
+                          a href="#" Канцелярские товары1
+                        .classification-third
+                          a href="#" Автотовары1
+                        .classification-third
+                          a href="#" товары для ЖИВОТНЫХ1
+                        .classification-third
+                          a href="#" промишленость1
+                .classification-second
+                  a href="#" Канцелярские товары3
+                  .manu-container-third
+                    .general-part
+                      .manu-nav
+                        .classification-third
+                          a href="#" продукти питания1
+                        .classification-third
+                          a href="#" косметика и гигиєна1
+                        .classification-third
+                          a href="#" товары для дома1
+                        .classification-third
+                          a href="#" Канцелярские товары1
+                        .classification-third
+                          a href="#" Автотовары1
+                        .classification-third
+                          a href="#" товары для ЖИВОТНЫХ1
+                        .classification-third
+                          a href="#" промишленость1
+                .classification-second
+                  a href="#" Автотовары3
+                  .manu-container-third
+                    .general-part
+                      .manu-nav
+                        .classification-third
+                          a href="#" продукти питания1
+                        .classification-third
+                          a href="#" косметика и гигиєна1
+                        .classification-third
+                          a href="#" товары для дома1
+                        .classification-third
+                          a href="#" Канцелярские товары1
+                        .classification-third
+                          a href="#" Автотовары1
+                        .classification-third
+                          a href="#" товары для ЖИВОТНЫХ1
+                        .classification-third
+                          a href="#" промишленость1
+                .classification-second
+                  a href="#" товары для ЖИВОТНЫХ3
+                  .manu-container-third
+                    .general-part
+                      .manu-nav
+                        .classification-third
+                          a href="#" продукти питания1
+                        .classification-third
+                          a href="#" косметика и гигиєна1
+                        .classification-third
+                          a href="#" товары для дома1
+                        .classification-third
+                          a href="#" Канцелярские товары1
+                        .classification-third
+                          a href="#" Автотовары1
+                        .classification-third
+                          a href="#" товары для ЖИВОТНЫХ1
+                        .classification-third
+                          a href="#" промишленость1
+                .classification-second
+                  a href="#" промишленость3
+                  .manu-container-third
+                    .general-part
+                      .manu-nav
+                        .classification-third
+                          a href="#" продукти питания1
+                        .classification-third
+                          a href="#" косметика и гигиєна1
+                        .classification-third
+                          a href="#" товары для дома1
+                        .classification-third
+                          a href="#" Канцелярские товары1
+                        .classification-third
+                          a href="#" Автотовары1
+                        .classification-third
+                          a href="#" товары для ЖИВОТНЫХ1
+                        .classification-third
+                          a href="#" промишленость1
+        .classification.red
+          a href="#"  Маркеты
+          .arow-boxs
+            = inline_svg "svg/ic_keyboard_arrow_right_black_24px.svg"
+          .manu-container-second
+            .general-part
+              .manu-nav
+                .classification-second
+                  a href="#" продукти питания4
+                  .manu-container-third
+                    .general-part
+                      .manu-nav
+                        .classification-third
+                          a href="#" продукти питания1
+                        .classification-third
+                          a href="#" косметика и гигиєна1
+                        .classification-third
+                          a href="#" товары для дома1
+                        .classification-third
+                          a href="#" Канцелярские товары1
+                        .classification-third
+                          a href="#" Автотовары1
+                        .classification-third
+                          a href="#" товары для ЖИВОТНЫХ1
+                        .classification-third
+                          a href="#" промишленость1
+                .classification-second
+                  a href="#" косметика и гигиєна4
+                  .manu-container-third
+                    .general-part
+                      .manu-nav
+                        .classification-third
+                          a href="#" продукти питания1
+                        .classification-third
+                          a href="#" косметика и гигиєна1
+                        .classification-third
+                          a href="#" товары для дома1
+                        .classification-third
+                          a href="#" Канцелярские товары1
+                        .classification-third
+                          a href="#" Автотовары1
+                        .classification-third
+                          a href="#" товары для ЖИВОТНЫХ1
+                        .classification-third
+                          a href="#" промишленость1
+                .classification-second
+                  a href="#" товары для дома4
+                  .manu-container-third
+                    .general-part
+                      .manu-nav
+                        .classification-third
+                          a href="#" продукти питания1
+                        .classification-third
+                          a href="#" косметика и гигиєна1
+                        .classification-third
+                          a href="#" товары для дома1
+                        .classification-third
+                          a href="#" Канцелярские товары1
+                        .classification-third
+                          a href="#" Автотовары1
+                        .classification-third
+                          a href="#" товары для ЖИВОТНЫХ1
+                        .classification-third
+                          a href="#" промишленость1
+                .classification-second
+                  a href="#" Канцелярские товары4
+                  .manu-container-third
+                    .general-part
+                      .manu-nav
+                        .classification-third
+                          a href="#" продукти питания1
+                        .classification-third
+                          a href="#" косметика и гигиєна1
+                        .classification-third
+                          a href="#" товары для дома1
+                        .classification-third
+                          a href="#" Канцелярские товары1
+                        .classification-third
+                          a href="#" Автотовары1
+                        .classification-third
+                          a href="#" товары для ЖИВОТНЫХ1
+                        .classification-third
+                          a href="#" промишленость1
+                .classification-second
+                  a href="#" Автотовары4
+                  .manu-container-third
+                    .general-part
+                      .manu-nav
+                        .classification-third
+                          a href="#" продукти питания1
+                        .classification-third
+                          a href="#" косметика и гигиєна1
+                        .classification-third
+                          a href="#" товары для дома1
+                        .classification-third
+                          a href="#" Канцелярские товары1
+                        .classification-third
+                          a href="#" Автотовары1
+                        .classification-third
+                          a href="#" товары для ЖИВОТНЫХ1
+                        .classification-third
+                          a href="#" промишленость1
+                .classification-second
+                  a href="#" товары для ЖИВОТНЫХ4
+                  .manu-container-third
+                    .general-part
+                      .manu-nav
+                        .classification-third
+                          a href="#" продукти питания1
+                        .classification-third
+                          a href="#" косметика и гигиєна1
+                        .classification-third
+                          a href="#" товары для дома1
+                        .classification-third
+                          a href="#" Канцелярские товары1
+                        .classification-third
+                          a href="#" Автотовары1
+                        .classification-third
+                          a href="#" товары для ЖИВОТНЫХ1
+                        .classification-third
+                          a href="#" промишленость1
+                .classification-second
+                  a href="#" промишленость4
+                  .manu-container-third
+                    .general-part
+                      .manu-nav
+                        .classification-third
+                          a href="#" продукти питания1
+                        .classification-third
+                          a href="#" косметика и гигиєна1
+                        .classification-third
+                          a href="#" товары для дома1
+                        .classification-third
+                          a href="#" Канцелярские товары1
+                        .classification-third
+                          a href="#" Автотовары1
+                        .classification-third
+                          a href="#" товары для ЖИВОТНЫХ1
+                        .classification-third
+                          a href="#" промишленость1
+        .classification.orange
+          a href="#"  Логистика
+          .arow-boxs
+            = inline_svg "svg/ic_keyboard_arrow_right_black_24px.svg"
+          .manu-container-second
+            .general-part
+              .manu-nav
+                .classification-second
+                  a href="#" продукти питания5
+                  .manu-container-third
+                    .general-part
+                      .manu-nav
+                        .classification-third
+                          a href="#" продукти питания1
+                        .classification-third
+                          a href="#" косметика и гигиєна1
+                        .classification-third
+                          a href="#" товары для дома1
+                        .classification-third
+                          a href="#" Канцелярские товары1
+                        .classification-third
+                          a href="#" Автотовары1
+                        .classification-third
+                          a href="#" товары для ЖИВОТНЫХ1
+                        .classification-third
+                          a href="#" промишленость1
+                .classification-second
+                  a href="#" косметика и гигиєна5
+                  .manu-container-third
+                    .general-part
+                      .manu-nav
+                        .classification-third
+                          a href="#" продукти питания1
+                        .classification-third
+                          a href="#" косметика и гигиєна1
+                        .classification-third
+                          a href="#" товары для дома1
+                        .classification-third
+                          a href="#" Канцелярские товары1
+                        .classification-third
+                          a href="#" Автотовары1
+                        .classification-third
+                          a href="#" товары для ЖИВОТНЫХ1
+                        .classification-third
+                          a href="#" промишленость1
+                .classification-second
+                  a href="#" товары для дома5
+                  .manu-container-third
+                    .general-part
+                      .manu-nav
+                        .classification-third
+                          a href="#" продукти питания1
+                        .classification-third
+                          a href="#" косметика и гигиєна1
+                        .classification-third
+                          a href="#" товары для дома1
+                        .classification-third
+                          a href="#" Канцелярские товары1
+                        .classification-third
+                          a href="#" Автотовары1
+                        .classification-third
+                          a href="#" товары для ЖИВОТНЫХ1
+                        .classification-third
+                          a href="#" промишленость1
+                .classification-second
+                  a href="#" Канцелярские товары5
+                  .manu-container-third
+                    .general-part
+                      .manu-nav
+                        .classification-third
+                          a href="#" продукти питания1
+                        .classification-third
+                          a href="#" косметика и гигиєна1
+                        .classification-third
+                          a href="#" товары для дома1
+                        .classification-third
+                          a href="#" Канцелярские товары1
+                        .classification-third
+                          a href="#" Автотовары1
+                        .classification-third
+                          a href="#" товары для ЖИВОТНЫХ1
+                        .classification-third
+                          a href="#" промишленость1
+                .classification-second
+                  a href="#" Автотовары5
+                  .manu-container-third
+                    .general-part
+                      .manu-nav
+                        .classification-third
+                          a href="#" продукти питания1
+                        .classification-third
+                          a href="#" косметика и гигиєна1
+                        .classification-third
+                          a href="#" товары для дома1
+                        .classification-third
+                          a href="#" Канцелярские товары1
+                        .classification-third
+                          a href="#" Автотовары1
+                        .classification-third
+                          a href="#" товары для ЖИВОТНЫХ1
+                        .classification-third
+                          a href="#" промишленость1
+                .classification-second
+                  a href="#" товары для ЖИВОТНЫХ5
+                  .manu-container-third
+                    .general-part
+                      .manu-nav
+                        .classification-third
+                          a href="#" продукти питания1
+                        .classification-third
+                          a href="#" косметика и гигиєна1
+                        .classification-third
+                          a href="#" товары для дома1
+                        .classification-third
+                          a href="#" Канцелярские товары1
+                        .classification-third
+                          a href="#" Автотовары1
+                        .classification-third
+                          a href="#" товары для ЖИВОТНЫХ1
+                        .classification-third
+                          a href="#" промишленость1
+                .classification-second
+                  a href="#" промишленость5
+                  .manu-container-third
+                    .general-part
+                      .manu-nav
+                        .classification-third
+                          a href="#" продукти питания1
+                        .classification-third
+                          a href="#" косметика и гигиєна1
+                        .classification-third
+                          a href="#" товары для дома1
+                        .classification-third
+                          a href="#" Канцелярские товары1
+                        .classification-third
+                          a href="#" Автотовары1
+                        .classification-third
+                          a href="#" товары для ЖИВОТНЫХ1
+                        .classification-third
+                          a href="#" промишленость1
+        .tex-heder
+          a.one-text href=premium_path Премиум
+          a.one-text href=tradergram_path Tradergram
+          a.one-text href=aboutus_path О нас
+          a.one-text  href=contacts_path Контакты

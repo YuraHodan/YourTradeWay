@@ -159,3 +159,81 @@ $('.show-info').click( function() {
     }
   });
 });
+
+// heder gamburger
+$( "#nav-icon" ).click(function() {
+  // $( ".manu-container" ).addClass( "opened" );
+  if ( $(".manu-container").hasClass("opened") ) {
+    $( ".manu-container" ).removeClass( "opened" );
+    $( ".manu-container-second" ).removeClass( "opened" );
+    $("body").removeClass("menuopen");
+    $('.arow').removeClass('visible');
+    $('.arowthird').removeClass('visible');
+    $('.arowtfourth').removeClass('visible');
+      $('.step-back p').html('виберите категорию');
+}else {
+  $( ".manu-container" ).addClass( "opened" );
+  $("body").addClass("menuopen")
+}
+});
+// function Second(){
+//   // $( ".manu-container" ).removeClass( "opened" );
+//   $( this ).find(".manu-container-second").addClass('opened');
+// }
+
+
+$( ".classification" ).click(function() {
+  // $('.step-back p').html($(this).html());
+  $('.step-back p').html($(this).find('a').html());
+  $( this ).find(".manu-container-second").addClass('opened');
+  $('.arow').addClass('visible');
+
+});
+$( ".arow" ).click(function() {
+    $('.step-back p').html('виберите категорию');
+$(".manu-container-second").removeClass('opened');
+$('.arow').removeClass('visible');
+});
+
+$( ".arowthird" ).click(function() {
+$(".manu-container-third").removeClass('opened');
+$('.arowthird').removeClass('visible');
+});
+
+$( ".arowtfourth" ).click(function() {
+$(".manu-container-fourth").removeClass('opened');
+$('.arowtfourth').removeClass('visible');
+});
+
+
+$( ".classification-second" ).click(function() {
+  // $('.step-back p').html($(this).find('a').html());
+  $( this ).find(".manu-container-third").addClass('opened');
+  $('.arowthird').addClass('visible');
+});
+
+$( ".classification-third" ).click(function() {
+  // $('.step-back p').html($(this).find('a').html());
+  $( this ).find(".manu-container-fourth").addClass('opened');
+  $('.arowtfourth').addClass('visible');
+});
+
+
+// scrol
+$(window).scroll(function() {
+	var $height = $(window).scrollTop();
+  if($height > 400) {
+    $( ".manu-container" ).removeClass( "opened" );
+    $( ".manu-container-second" ).removeClass( "opened" );
+    $("body").removeClass("menuopen");
+    $('.arow').removeClass('visible');
+    $('.arowthird').removeClass('visible');
+    $('.arowtfourth').removeClass('visible');
+    $('.step-back p').html('виберите категорию');
+	}
+});
+$(document).ready(function(){
+	$('#nav-icon').click(function(){
+		$(this).toggleClass('open');
+	});
+});
