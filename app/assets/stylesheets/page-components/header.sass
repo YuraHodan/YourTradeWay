@@ -420,22 +420,26 @@
 
 
 
-
+.heder-content
 .manu-container
   position: fixed
-  transform: translate(-200%, 0)
+  transform: translate(200%, 0)
   z-index: 99
-  width: 100%
+  width: 50%
+  right: 0
+  top: 98px
   min-height: 100vh
   overflow: hidden
   pointer-events: none
   -webkit-transition: 0.3s
   -o-transition: 0.3s
   transition: .7s
+  +breakpoint(small only)
+    width: 100%
   .general-part
     .manu-nav
       margin-left: 0
-      .classification
+      .classification, .classification-top
         margin-left: 0px
         padding: 20px 0
         background-color: $almostRed
@@ -453,8 +457,8 @@
           padding-left: 25px
 .manu-container-second
   position: absolute
-  top: 0
-  transform: translate(-200%, 0)
+  top: 63px
+  transform: translate(200%, 0)
   z-index: 99
   width: 100%
   min-height: 100vh
@@ -463,28 +467,125 @@
   -webkit-transition: 0.3s
   -o-transition: 0.3s
   transition: .7s
+  background: $black
   .general-part
     .manu-nav
-      .classification
+      .classification-second
+        margin-left: 0px
+        padding: 20px 0
         border-top: 1px solid black
         background-color: $black
         color: white
         text-transform: uppercase
         font-size: 14px
+.manu-container-third
+  position: absolute
+  top: 0
+  transform: translate(200%, 0)
+  z-index: 99
+  width: 100%
+  min-height: 100vh
+  overflow: hidden
+  pointer-events: none
+  -webkit-transition: 0.3s
+  -o-transition: 0.3s
+  transition: .7s
+  background: $menu
+  .general-part
+    .manu-nav
+      .classification-third, .classification-third-end
+        margin-left: 0px
+        padding: 20px 0
+        border-top: 1px solid black
+        background: $menu
+        text-transform: uppercase
+        font-size: 14px
+        color: $black
+.manu-container-fourth
+  position: absolute
+  top: 0
+  transform: translate(200%, 0)
+  z-index: 99
+  width: 100%
+  min-height: 100vh
+  overflow: hidden
+  pointer-events: none
+  -webkit-transition: 0.3s
+  -o-transition: 0.3s
+  transition: .7s
+  background: white
+  .general-part
+    .manu-nav
+      .classification-fourth
+        margin-left: 0px
+        padding: 20px 0
+        border-top: 1px solid black
+        background-color: white
+        text-transform: uppercase
+        font-size: 14px
+        color: $black
 .step-back
   background-color: $black
+  display: flex
+  align-items: center
+  border: 1px solid black
+  height: 68px
+  p
+    font-size: 18px
+    color: white
+    padding-left: 60px
   .arow
+    position: absolute
+    transform: translate(200%, 0)
+    overflow: hidden
+    pointer-events: none
+    -webkit-transition: 0.3s
+    -o-transition: 0.3s
+    transition: .7s
+    opacity: 0
     svg
       height: 60px
       background: $yellow
       padding: 15px
+  .arowthird
+    position: absolute
+    transform: translate(200%, 0)
+    overflow: hidden
+    pointer-events: none
+    -webkit-transition: 0.3s
+    -o-transition: 0.3s
+    transition: .7s
+    opacity: 0
+    svg
+      height: 64px
+      background: $black
+      padding: 15px
+      g
+        g
+          polygon
+            fill: white
+  .arowtfourth
+    position: absolute
+    transform: translate(200%, 0)
+    overflow: hidden
+    pointer-events: none
+    -webkit-transition: 0.3s
+    -o-transition: 0.3s
+    transition: .7s
+    opacity: 0
+    svg
+      height: 64px
+      background: $gray
+      padding: 15px
+
+  .visible
+    transform: translate(0, 0)
+    pointer-events: initial
+    opacity: 1
 
 
 .opened
   transform: translate(0, 0)
-  pointer-events: initial
-.openedend
-  transform: translate(-200%, 0)
   pointer-events: initial
 
 
@@ -494,5 +595,5 @@
 
 /// menu opened body
 .menuopen
-  overflow: hidden
+  // overflow: hidden
   position: relative
