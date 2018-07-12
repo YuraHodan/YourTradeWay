@@ -12,9 +12,11 @@
   +breakpoint(small only)
     padding: 0px
     height: initial
+  @media screen and (max-width: 1025px)
+    padding: 130px 0px 70px 0px
   .border-producers
     .one-new-producers
-      border: 1px solid $black
+      border: 1px solid $almostWhite
       position: relative
       padding-bottom: 100%
       cursor: pointer
@@ -29,6 +31,8 @@
   li
     height: 60vh
     position: relative
+    +breakpoint(small only)
+      height: 85vh
     &.slider
       height: 100%
     &::before
@@ -53,6 +57,8 @@
       text-transform: uppercase
       padding-bottom: 45px
       letter-spacing: 3px
+      +breakpoint(small only)
+        padding-bottom: 170px
       br
         padding: 10px
     p
@@ -125,7 +131,7 @@
 .mainlidet-small
   &.mobile
     +breakpoint(small only)
-      padding-top: 130px
+      padding-top: 100px
   .content-baner
     left: 0
     text-align: center
