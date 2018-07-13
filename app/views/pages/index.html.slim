@@ -37,15 +37,16 @@
         .one-list-box
           .img-bg style="background-image: url(#{asset_path('photo/main/distribute.jpg')})"
           .list-comntainer
-            h3 призвадители
-            ul
-              li Продукты питания
-              li косметика и гигиена
-              li товары для дома
-              li канцелярские товары
-              li автотовары
-              li товары для животных
-      .medium-6.columns
+            .content-list-comntainer
+              h3 призвадители
+              ul
+                li Продукты питания
+                li косметика и гигиена
+                li товары для дома
+                li канцелярские товары
+                li автотовары
+                li товары для животных
+      .medium-6.columns.bg
         .one-list-box.hover-list.long-list
           .img-bg style="background-image: url(#{asset_path('photo/main/distribute.jpg')})"
           .hover-list-box.destreb
@@ -65,32 +66,55 @@
               li Канцтовары
           #rotate2= inline_svg "photo/main/svg/list-arrow-top.svg"
 
-              li Lorem ipsum dolor sit amet
+      .medium-6.columns
+        .one-list-box.midle
+          .img-bg style="background-image: url(#{asset_path('photo/main/distribute.jpg')})"
+          .list-comntainer.destreb
+            .content-list-comntainer
+              h3 дистрибюторь
+              ul
+                li Продукты питания
+                li сырье
+                li бытовая химия / косметика
+                li посуда
+                li текстиль / спорт товары
+                li Электротовары
+                li Мебель
+                li Строительные аксессуары
+                li Медицина
+                li Промышленное оборудование
+                li Автотовары
+                li Канцтовары
+
+
+
 
       .medium-6.columns
         .one-list-box
           .img-bg style="background-image: url(#{asset_path('photo/main/distribute.jpg')})"
           .list-comntainer.marcet
-            h3 маркеть
-            ul
-              li супермаркет
-              li канцелярський
-              li вещевой
-              li строительный
-              li промышленный
-              li электроника
-              li мебельный
-              li смешанный
+            .content-list-comntainer
+              h3 маркеть
+              ul
+                li супермаркет
+                li канцелярський
+                li вещевой
+                li строительный
+                li промышленный
+                li электроника
+                li мебельный
+                li смешанный
       .medium-6.columns
         .one-list-box.logic
           .img-bg style="background-image: url(#{asset_path('photo/main/distribute.jpg')})"
           .list-comntainer.logic
-            h3 логистика
-            ul
-              li железнодорожный
-              li автотранспорт
-              li авиаперевозки
-              li морской транспорт
+            .content-list-comntainer
+              h3 логистика
+              ul
+                li железнодорожный
+                li автотранспорт
+                li авиаперевозки
+                li морской транспорт
 
 
 
@@ -206,7 +230,8 @@
   .new-producers-smoll
     .row.collapse
       .columns
-        h3.new-producers-tex.color-line.blue-block  новие призводител
+        .text-block.color-line.blue-block
+          h3.new-producers-tex  новие призводител
       =render "smollemaneslider"
       .btn-big.blue-btn  всі новини
   .new-producers.desktop

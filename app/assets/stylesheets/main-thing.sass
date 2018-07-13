@@ -1,7 +1,9 @@
 .main
   .tovars
-    padding-top: 0
+    padding: 0 0 50px 0
     position: relative
+    +breakpoint(small only)
+      padding: 0
     .tovars-producers-tex
       margin: 0 auto 50px
       width: 100%
@@ -112,6 +114,9 @@
         padding: 20px
         background-color: $blue
         color: white
+        text-transform: uppercase
+        h3
+          font-size: 18px
         &.gren
           background-color: $green
           color: $black
@@ -134,7 +139,19 @@
       overflow: hidden
       +breakpoint(small only)
         display: none
+      &.midle
+        display: none
+        ul
+          list-style: square outside
+          column-count: 2
+        @media only screen and (max-width: 1024px)
+          display: block
+        +breakpoint(small only)
+          display: none
       &.hover-list
+        @media only screen and (max-width: 1024px)
+          display: none
+
         &:hover
           #rotate2
             border-radius: 50px
@@ -156,6 +173,8 @@
         right: -90%
         z-index: 5
         +transition(.3s)
+        // @media only screen and (max-width: 1024px)
+        //   display: none
         svg
           height: 30px
       .hover-list-box
@@ -184,8 +203,25 @@
         bottom: 0
         color: $white
         +transition(.5s)
+        @media only screen and (max-width: 1024px)
+          width: 100%
+          .content-list-comntainer
+            h3
+              font-weight: 600
+              text-transform: uppercase
+              // padding-bottom: 10px
+            ul
+              li
+                line-height: 20px
+                font-weight: 500
+            padding-left: 40px
+            +breakpoint(medium down)
+              padding-left: 10px
+
         &.hover-list-box
           width: 51%
+          // @media only screen and (max-width: 1024px)
+            left: -241px
         ul
           li
             padding-top: 5px
@@ -193,7 +229,7 @@
               top: 12px
         &.destreb
           background-color: $green
-          color: $gray
+          color: $black
           +breakpoint(small only)
             width: 100%
           h3
@@ -208,9 +244,18 @@
         &.logic2
           background-color: $red
           color: $white
+        &.marcet
+          background-color: $red
+          h3
+            position: relative
+            top: -200px
+          ul
+            position: relative
+            top: -190px
+
         &.logic
           background-color: $orange
-          color: $gray
+          color: $black
           ul
             li
               &:before
@@ -237,6 +282,7 @@
     display: none
     +breakpoint(small only)
       display: block
+      padding: 30px 0 50px
     .btn-big
       left: 50%
       +translate(-50%,0)
@@ -249,6 +295,10 @@
       font-size: 20px
       font-weight: 600
       text-transform: uppercase
+      +breakpoint(small only)
+        padding-top: 20px
+        width: 50%
+        line-height: 30px
   .new-producers
     padding: 150px 0
     position: relative
