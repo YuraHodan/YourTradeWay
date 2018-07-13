@@ -331,6 +331,8 @@
     right: 50px
     display: flex
     align-items: center
+    +breakpoint(small only)
+      right: 5px
     .one-text
       font-size: 14px
       cursor: pointer
@@ -456,12 +458,13 @@
         display: flex
         flex-direction: column
         color: $almostWhite
+        padding: 20px 0
         .one-text
           padding: 20px 0 20px 25px
           cursor: pointer
           font-size: 16px
           text-transform: uppercase
-          font-weight: 400
+          font-weight: 500
       .classification, .classification-top
         margin-left: 0px
         padding: 20px 0
@@ -470,7 +473,7 @@
         align-items: center
         font-size: 16px
         text-transform: uppercase
-        font-weight: 400
+        font-weight: 500
         &.yellow
           background-color: $yellow
         &.blue
@@ -485,7 +488,7 @@
           width: 60%
           padding-left: 25px
         .arow-boxs
-          margin-left: 25%
+          margin-left: 30%
         &.classification-top
           padding: 25px 0
 .manu-container-second
@@ -569,6 +572,7 @@
   border: 1px solid black
   height: 68px
   p
+    font-weight: 600
     font-size: 18px
     color: $almostWhite
     padding-left: 80px

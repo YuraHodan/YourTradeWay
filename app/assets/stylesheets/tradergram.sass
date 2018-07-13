@@ -10,11 +10,18 @@
   .wrapper-tab
     display: flex
     justify-content: center
+    @media screen and (max-width: 1025px)
+      display: block
     .tab
+      @media screen and (max-width: 1025px)
+        display: flex
+        padding-left: 9%
       .tablist-content
         cursor: pointer
         display: flex
         padding: 10px 0
+        @media screen and (max-width: 1025px)
+          display: block
         .img-bg
           height: 150px
           width: 150px
@@ -50,10 +57,15 @@
             height: 500px
             width: 500px
             position: relative
+            @media screen and (max-width: 1025px)
+              height: 400px
+              white: 400px
         .text-tovar
           width: 500px
           padding: 50px 60px
           align-self: center
+          // @media screen and (max-width: 1025px)
+          //   padding: 0px
           .smole-taitle
             font-size: 18px
             font-weight: 600
@@ -87,6 +99,9 @@
           height: 500px
           width: 500px
           position: relative
+          @media screen and (max-width: 1025px)
+            height: 400px
+            width: 300px
       .text-nues
         padding-left: 15px
         .title-nues

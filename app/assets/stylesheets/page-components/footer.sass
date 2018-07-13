@@ -9,6 +9,8 @@
     .futer-logo
       position: relative
       width: 20%
+      +breakpoint(small only)
+        padding-bottom: 20px
       svg
         height: 50px
     .tex-futer
@@ -30,6 +32,9 @@
         cursor: pointer
         height: 30px
         padding: 0 25px
+        @media screen and (max-width: 1025px)
+          height: 15px
+          padding: 0 15px
         g
           g
             path
