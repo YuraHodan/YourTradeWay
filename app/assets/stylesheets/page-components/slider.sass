@@ -9,11 +9,15 @@
   padding: 200px 0 100px
   position: relative
   .mainlidet
+  // +breakpoint(small only)
+  //   padding: 0px
+  //   height: initial
+  @media screen and (max-width: 1025px)
+    padding: 130px 0px 70px 0px
   +breakpoint(small only)
     padding: 0px
     height: initial
-  @media screen and (max-width: 1025px)
-    padding: 130px 0px 70px 0px
+    padding: 130px 0px 30px 0px
   .border-producers
     .one-new-producers
       border: 1px solid $almostWhite
