@@ -364,12 +364,13 @@
 
     +breakpoint(medium down)
       padding: 20px 0
-      .about-box
-        display: block
       .text-about-product
         margin-right: 0px
       .btn-big
         margin-bottom: 20px
+    +breakpoint(small only)
+      .about-box
+        display: block
 
 
   .apply
@@ -402,7 +403,7 @@
         color: $gray
         padding-bottom: 70px
     +breakpoint(medium down)
-      padding: 20px 0
+      padding: 100px 0
       .comand-apply
         .apply-text
           width: 100%
