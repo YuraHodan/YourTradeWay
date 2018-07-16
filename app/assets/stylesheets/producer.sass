@@ -1,6 +1,26 @@
 .producer, .distributors, .marcet
   padding-top: 200px
   background-color: $grayBG
+  @media screen and (max-width: 1025px)
+    padding-top: 150px
+  .openfilters
+    display: none
+    // padding: 10px
+    width: 140px
+    height: 40px
+    border: 1px solid $yellow
+    border-radius: 50px
+    text-align: center
+    p
+      font-size: 16px
+      font-weight: 600
+      padding-top: 7px
+    +breakpoint(small only)
+      display: flex
+      position: relative
+      justify-content: center
+      // right: -70%
+      margin-left: 50%
   nav .drop-down
     overflow: hidden
     margin: 0 auto
@@ -19,13 +39,14 @@
       margin-top: -20px
   .topgoods
     background-color: $goodsYellow
-    height: 45vh
+    // height: 45vh
     padding: 50px 20px 10px 2px
     margin-left: -30px
     .topgoods-tex
       top: -20px
       &:before
         height: 1px
+        display: none
       .title
         color: $black
         font-size: 22px
@@ -65,12 +86,12 @@
   //       .maker
   //         color: $blue
   .topgoods
-    height: 40vh
+    height: 420px
     @media screen and (max-width: 1025px)
-      height: 25vh
+      height: 360px
     +breakpoint(small only)
       margin-left: 0px
-      height: 60vh
+      height: 330px
     .topgoods-tex
       &:before
         bottom: 660px
@@ -95,14 +116,14 @@
       text-transform: uppercase
       padding-bottom: 40px
   .recomendation-tovars
-    background-color: $almostWhite
-    height: 40vh
-    padding: 35px 20px 10px 2px
+    background-color: white
+    height: 420px
+    padding: 50px 20px 0px 2px
     margin-left: -30px
     @media screen and (max-width: 1025px)
-      height: 25vh
+      height: 360px
     +breakpoint(small only)
-      height: 150vh
+      height: 310px
       padding: 35px 0px 0px 0px
       margin-left: 0
   .salse-all
@@ -143,3 +164,6 @@
           color: $black
           font-size: 17px
           padding-bottom: 20px
+  .bage
+    +breakpoint(small only)
+      display: none

@@ -227,3 +227,21 @@ $(document).ready(function(){
 
 
 /// garburger ////
+
+
+
+
+/// filter smolle ////
+$( ".openfilters" ).click(function() {
+  // $( ".filter-container" ).addClass( "opened" );
+  // alert('1')
+  if ( $(".filter-container").hasClass("opened") ) {
+    $( ".filter-container" ).removeClass( "opened" );
+    $("body").removeClass("menuopen");
+    $('.openfilters p').html('фильтра');
+}else {
+  $( ".filter-container" ).addClass( "opened" );
+  $("body").addClass("menuopen")
+  $('.openfilters p').html('применить');
+}
+});

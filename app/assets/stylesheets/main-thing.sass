@@ -12,16 +12,24 @@
       font-size: 25px
       font-weight: 600
       text-transform: uppercase
-      +breakpoint(small only)
+      // +breakpoint(small only)
+      //   padding-top: 0px
+      //   padding-left: 10px
+      //   &:before
+      //     left: 10px
+      //     right: 10px
+      @media only screen and (max-width: 1024px)
         padding-top: 0px
         padding-left: 10px
-        &:before
+        &::before
           left: 10px
-    .aasd
-      display: flex
-      align-items: flex-start
-      flex-wrap: wrap
+          right: 10px
 
+    .aasd
+      +breakpoint(medium doun)
+        display: flex
+        align-items: flex-start
+        flex-wrap: wrap
     .one-tovar
       height: 400px
       width: 33.3%
@@ -38,6 +46,7 @@
       &.opened
         height: 550px
         .tovars-list
+
           ul
             &:before
               display: none
@@ -61,12 +70,14 @@
           left: 50px
           text-transform: uppercase
       .tovars-list
+        // display: none
         position: relative
         color: $gray
         font-size: 15px
         ul
+          //display: none
           padding-top: 25px
-          padding-left: 25px
+          // padding-left: 25px
           li
             position: relative
             +transition(.3s)
@@ -282,7 +293,12 @@
     display: none
     +breakpoint(small only)
       display: block
-      padding: 30px 0 50px
+      padding: 30px 0 70px
+    .text-block
+      @media only screen and (max-width: 1024px)
+        &:before
+          left: 10px
+          right: 10px
     .btn-big
       left: 50%
       +translate(-50%,0)
@@ -333,10 +349,10 @@
       width: 255px
       margin: 50px auto 0
     +breakpoint(medium down)
-      padding: 20px 10px
+      padding: 70px 10px
   .tradergram-wrapper
     background-color: $grayBg
-    padding: 200px 0
+    padding: 100px 0
     position: relative
     @media screen and (max-width: 1025px)
       padding: 100px 0
@@ -351,6 +367,8 @@
       margin: 0 auto 50px
       width: 900px
       max-width: 100%
+      +breakpoint(medium down)
+        padding-top: 40px
       h2
         padding-bottom: 40px
         font-size: 30px
@@ -365,6 +383,10 @@
     .tradergram-text
       padding: 20px 0
       cursor: pointer
+      +breakpoint(medium down)
+        text-align: center
+        h3
+          padding-bottom: 10px
       h3
         font-size: 16px
         font-weight: 600
@@ -379,13 +401,15 @@
     .btn-big
       margin: 50px 0 0
       left: 50%
+      +breakpoint(medium down)
+        margin: 20px 0 20px 0
       +translate(-50%,0)
     +breakpoint(medium down)
       padding: 20px 0
 
   .about-product
     display: flex
-    padding: 150px 0
+    padding: 100px 0
     @media screen and (max-width: 1025px)
       padding: 100px 0
     .about-box
@@ -400,17 +424,34 @@
         font-size: 40px
         word-spacing: 3em
         text-transform: uppercase
+        +breakpoint(medium down)
+          padding-top: 30px
       p
         font-size: 16px
-        font-family: OpenSans
         font-weight: 100
         word-spacing: .2em
         line-height: 1.5
         color: $gray
+        // overflow: 100px
+        // text-overflow: ellipsis
     .btn-big
       margin-top: 30px
+      +breakpoint(small only)
+        display: none
+    .btn-big-smole
+      color: $blue
+      text-transform: uppercase
+      text-align: left
+      font-size: 20px
+      font-weight: 500
+      padding: 30px 0 50px
+      display: none
+      +breakpoint(small only)
+        display: block
     .img-target
       padding-bottom: 140%
+      +breakpoint(small only)
+        display: none
 
     +breakpoint(medium down)
       padding: 20px 0
@@ -437,6 +478,9 @@
       justify-content: center
       align-items: center
       .apply-taitle
+        +breakpoint(small only)
+          text-align: center
+          line-height: 35px
         h2
           padding-bottom: 40px
           font-size: 30px
