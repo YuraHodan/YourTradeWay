@@ -12,13 +12,21 @@
       font-size: 25px
       font-weight: 600
       text-transform: uppercase
-      +breakpoint(small only)
+      // +breakpoint(small only)
+      //   padding-top: 0px
+      //   padding-left: 10px
+      //   &:before
+      //     left: 10px
+      //     right: 10px
+      @media only screen and (max-width: 1024px)
         padding-top: 0px
         padding-left: 10px
-        &:before
+        &::before
           left: 10px
+          right: 10px
+
     .aasd
-      +breakpoint(medium up)
+      +breakpoint(medium doun)
         display: flex
         align-items: flex-start
         flex-wrap: wrap
@@ -66,11 +74,11 @@
         position: relative
         color: $gray
         font-size: 15px
-        .list
+        ul
           //display: none
           padding-top: 25px
-          padding-left: 25px
-          .list-item
+          // padding-left: 25px
+          li
             position: relative
             +transition(.3s)
             &:nth-child(n+5)
@@ -286,6 +294,11 @@
     +breakpoint(small only)
       display: block
       padding: 30px 0 70px
+    .text-block
+      @media only screen and (max-width: 1024px)
+        &:before
+          left: 10px
+          right: 10px
     .btn-big
       left: 50%
       +translate(-50%,0)
@@ -336,7 +349,7 @@
       width: 255px
       margin: 50px auto 0
     +breakpoint(medium down)
-      padding: 20px 10px
+      padding: 70px 10px
   .tradergram-wrapper
     background-color: $grayBg
     padding: 100px 0
