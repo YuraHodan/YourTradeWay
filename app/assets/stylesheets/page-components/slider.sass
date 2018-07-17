@@ -82,7 +82,7 @@
       left: 90%
     .next-btn
   &.goode2
-    padding: 0
+    padding: 20px 0
     li
       cursor: pointer
     .next-btn2, .prev-btn2
@@ -101,10 +101,13 @@
       padding: 1rem 0
       position: absolute
       right: 0
-      top: -55px
+      top: -70px
+      align-items: center
+
       li
+        height: 2vh
         display: inline-block
-        margin: 0 0.25rem
+        margin: 0 12px
       button
         display: block
         width: 15px
@@ -122,6 +125,8 @@
         +breakpoint(small only)
           width: 7px
           height: 7px
+      .slick-active
+        padding-top: 2px
 
   &.advertising
     +breakpoint(small only)
