@@ -42,7 +42,7 @@
       margin-top: -20px
   .topgoods
     background-color: $goodsYellow
-    height: 45vh
+    height: 550px
     padding: 50px 20px 10px 2px
     margin-left: -30px
     @media screen and (max-width: 1025px)
@@ -54,6 +54,7 @@
       top: -20px
       &:before
         height: 1px
+        bottom: -20px
       .title
         color: $black
         font-size: 22px
@@ -66,8 +67,9 @@
     font-size: 22px
     font-weight: 600
     left: 10px
-    padding-left: 20px
-    top: 20px
+    // padding-left: 20px
+    // top: 20px
+    padding: 50px 0 30px 20px
     +breakpoint(small only)
       padding-top: 0px
     &:before
@@ -106,6 +108,8 @@
         color: $black
         font-size: 17px
         padding-bottom: 20px
+        font-weight: 600
+        line-height: 25px
       .price
         display: flex
         flex-wrap: nowrap
@@ -131,7 +135,7 @@
 //// recomendation
 .recomendation-tovars
   background-color: white
-  height: 45vh
+  height: 550px
   padding: 50px 0px 10px 2px
   @media screen and (max-width: 1025px)
     height: 35vh
@@ -140,6 +144,7 @@
   .recomendation-text
     top: -20px
     &:before
+
         height: 1px
         margin-left: 20px
     .title
@@ -148,7 +153,8 @@
       font-weight: 600
       left: 10px
       display: inline-block
-      padding-left: 20px
+      // padding-left: 20px
+      padding: 15px 0 20px 20px
 .selectorr
   box-shadow: 0 6px 6px 0 rgba(13, 1, 1, 0.2)
   +breakpoint(small only)
