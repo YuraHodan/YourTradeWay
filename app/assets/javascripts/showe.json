@@ -1,3 +1,4 @@
+товари
 [
   {
 "name": "",
@@ -10,14 +11,97 @@
 "group": ""
 },
 ]
-
+одиниця товару
 [
   {
 "name": "",
 "price": ,
+"imgUrl": "", ???
+"weight": "",
+"packaging": "",
+"number": "",
+"weight": "",
+"action": "",
+"description": "",
+"country": "",
+"address": "",
+"does": "",
+"site": ""
+},
++ сюда ще мають йти такий як перший з товарами з такоїж категорії або всі товари а я з них буду вибирати ті які мають туж категорію але я поки не знаю як то зробити буду пробувати
+]
+виробники дистрибютори маркети логістики
+[
+  {
+"name": "",
+"country": "",
 "imgUrl": "",
 "type": "",
 "category": "",
 "group": ""
 },
 ]
+одиниця виробники дистрибютори маркети логістики
+[
+  {
+"name": "",
+"price": ,
+"imgUrl": "", ???
+"country": "",
+"address": "",
+"site": "",
+"piple": "",
+"pfone": "",
+"email": "",
+"PriceList": "",
+"catalog": "",
+"certificate": "",
+},
++
+]
+муню ((  Ц
+
+menu: [
+        {name: 'Croatia', link: '0', sub: null
+        },
+        {name: 'England', link: '1', sub: [
+            {name: 'Arsenal',link: '0-0', sub: null},
+            {name: 'Liverpool',link: '0-1', sub: null},
+            {name: 'Manchester United',link: '0-2', sub: [
+              {name: 'Arsenal',link: '0-0-0', sub: null},
+              {name: 'Liverpool',link: '0-1-1', sub: null},
+              ]}
+            ]},
+        {name: 'Spain', link: '2', sub: [
+            {name: 'Barcelona',link: '2-0', sub: null},
+            {name: 'Real Madrid',link: '2-1', sub: null}
+        ]},
+        {name: 'Germany', link: '3',sub: [
+            {name: 'Bayern Munich',link: '3-1', sub: null},
+            {name: 'Borrusia Dortmund',link: '3-2', sub: null}
+            ]}
+    ]
+
+
+
+
+
+ЦЕ МОЯ ФІГНЯ НЕ ПЕРЕЖИВАЙ
+$(function () {
+
+    function parseMenu(ul, menu) {
+	for (var i=0;i<menu.length;i++) {
+		var li=$(ul).append('<li><a href="'+menu[i].link+'">'+menu[i].name+'</a></li>');
+		if (menu[i].sub!=null) {
+			var subul=$('<ul id="submenu'+menu[i].link+'"></ul>');
+			$(li).append(subul);
+			parseMenu($(subul), menu[i].sub);
+		}
+	}
+}
+
+var menu=$('#menu');
+parseMenu(menu, JSON.menu);
+
+
+ });
