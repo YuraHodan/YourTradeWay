@@ -16,41 +16,52 @@
       @media screen and (max-width: 1025px)
         display: flex
         padding-left: 9%
-      .tablist-content
-        cursor: pointer
-        display: flex
-        padding: 10px 0
-        @media screen and (max-width: 1025px)
-          display: block
-        .img-bg
-          height: 150px
-          width: 150px
-          position: relative
-        .tex
-          padding-left: 15px
-          width: 300px
-          align-self: center
-          .tab-text
-            font-size: 18px
-            font-weight: 600
-            line-height: 25px
-            transition: 1s
-          .tab-data
-            font-size: 14px
-            color: $gray
-        &:hover
+      @media screen and (max-width: 769px)
+        flex-wrap: wrap
+        align-content: flex-start
+        padding-left: 18%
+      .tablinks
+        // +breakpoint(medium doun)
+        //   width: 30%
+        .tablist-content
+          cursor: pointer
+          display: flex
+          padding: 10px 0
+          @media screen and (max-width: 1025px)
+            display: block
+          .img-bg
+            height: 150px
+            width: 150px
+            position: relative
           .tex
+            padding-left: 15px
+            width: 300px
+            align-self: center
             .tab-text
-              text-decoration: underline
-              color: $yellow
+              font-size: 18px
+              font-weight: 600
+              line-height: 25px
+              transition: 1s
+            .tab-data
+              font-size: 14px
+              color: $gray
+          &:hover
+            .tex
+              .tab-text
+                text-decoration: underline
+                color: $yellow
 
   #goods,
     display: block
   .tabcontent
     padding: 6px 12px
     .center-tab-all
+      display: flex
+      justify-content: center
       .content-tab
         display: flex
+        @media screen and (max-width: 1025px)
+          flex-direction: column
         .content-img
           .img-bg
             height: 500px
@@ -96,11 +107,9 @@
       .img-nues
         .img-bg
           height: 300px
-          width: 300px
           position: relative
           @media screen and (max-width: 1025px)
             height: 300px
-            width: 300px
       .text-nues
         padding-left: 15px
         .title-nues
