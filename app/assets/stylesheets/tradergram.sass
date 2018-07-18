@@ -1,6 +1,8 @@
 .tradergram
   padding-top: 200px
   background-color: white
+  +breakpoint(medium doun)
+    padding-top: 100px
   .tutle
     font-size: 34px
     font-weight: 600
@@ -8,21 +10,12 @@
     padding: 50px 0
     text-transform: uppercase
   .wrapper-tab
-    display: flex
-    // justify-content: center
-    @media screen and (max-width: 1025px)
-      display: block
     .tab
-      @media screen and (max-width: 1025px)
+      +breakpoint(medium doun)
         display: flex
-        padding-left: 9%
-      @media screen and (max-width: 769px)
         flex-wrap: wrap
         align-content: flex-start
-        padding-left: 18%
       .tablinks
-        // +breakpoint(medium doun)
-        //   width: 30%
         .tablist-content
           cursor: pointer
           display: flex
@@ -35,7 +28,7 @@
             position: relative
           .tex
             padding-left: 15px
-            width: 300px
+            width: 70%
             align-self: center
             .tab-text
               font-size: 18px
@@ -50,53 +43,42 @@
               .tab-text
                 text-decoration: underline
                 color: $yellow
-
-  #goods,
+  #goods
     display: block
+  #distributors, #marker
+    display: none
   .tabcontent
     padding: 6px 12px
     .center-tab-all
-      display: flex
-      justify-content: center
       .content-tab
-        display: flex
-        @media screen and (max-width: 1025px)
-          flex-direction: column
+        position: relative
+        padding-bottom: 100%
         .content-img
           .img-bg
-            height: 500px
-            width: 500px
-            position: relative
-            @media screen and (max-width: 1025px)
-              height: 400px
-              white: 400px
-        .text-tovar
-          width: 500px
-          padding: 50px 60px
-          align-self: center
-          // @media screen and (max-width: 1025px)
-          //   padding: 0px
-          .smole-taitle
-            font-size: 18px
-            font-weight: 600
-            line-height: 25px
-          .tab-data
-            padding: 10px 0 40px
-            font-size: 14px
-            color: $gray
-          .tex-abaut-tovar
-            font-size: 14px
-            color: $gray
-            word-spacing: .2em
-            line-height: 20px
-            padding-bottom: 20px
-          .rede-more
-            font-size: 16px
-            color: $blue
-            cursor: pointer
-            font-weight: 600
-            &:hover
-              color: $yellow
+            padding-bottom: 100%
+      .text-tovar
+        padding: 50px 60px
+        .smole-taitle
+          font-size: 18px
+          font-weight: 600
+          line-height: 25px
+        .tab-data
+          padding: 10px 0 40px
+          font-size: 14px
+          color: $gray
+        .tex-abaut-tovar
+          font-size: 14px
+          color: $gray
+          word-spacing: .2em
+          line-height: 20px
+          padding-bottom: 20px
+        .rede-more
+          font-size: 16px
+          color: $blue
+          cursor: pointer
+          font-weight: 600
+          &:hover
+            color: $yellow
   .nues-alle
     padding-top: 100px
     .ful-nues
@@ -105,11 +87,8 @@
       &:hover
         color: $yellow
       .img-nues
-        .img-bg
-          height: 300px
-          position: relative
-          @media screen and (max-width: 1025px)
-            height: 300px
+        position: relative
+        padding-bottom: 100%
       .text-nues
         padding-left: 15px
         .title-nues
