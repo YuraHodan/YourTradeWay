@@ -6,7 +6,7 @@ $scope.phoneNumbr = /^\+?\d{2}[- ]?\d{3}[- ]?\d{5}$/;
 		$scope.submitForm = function() {
 			// check to make sure the form is completely valid
 			if ($scope.userForm.$valid) {
-        // $scope.user = {};
+        $scope.user = {};
         // $scope.userForm.$setPristine();
 			}
 
