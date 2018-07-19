@@ -248,3 +248,22 @@ $( ".openfilters" ).click(function() {
   $('.openfilters p').html('применить');
 }
 });
+
+
+
+jQuery(function($){
+	$(document).mouseup(function (e){
+		var div = $(".manu-container");
+		if (!div.is(e.target)
+		    && div.has(e.target).length === 0) {
+      $( ".manu-container" ).removeClass( "opened" );
+      $( ".manu-container-second" ).removeClass( "opened" );
+      $("body").removeClass("menuopen");
+      $('.arow').removeClass('visible');
+      $('.arowthird').removeClass('visible');
+      $('.arowtfourth').removeClass('visible');
+      $('.main-wrapper').removeClass('font');
+        $('.step-back p').html('виберите категорию');
+		}
+	});
+});
