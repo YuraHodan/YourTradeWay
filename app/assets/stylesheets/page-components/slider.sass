@@ -165,16 +165,24 @@
     padding-top: 25px
     width: 60%
     margin: auto
+    +breakpoint(medium doun)
+      width: 100%
     .slick-slide
       height: 50px
       position: relative
       // border: 2px solid $goodsgrayeband
       margin: 0 10px
+    .slick-current
+      img
+      opacity: 0.5
     img
       width: 50px
       height: 50px
       padding: 10px
+      background-color: $black
       +centered-inside
+      +breakpoint(medium doun)
+        padding: 0
       @media #{$small-only}
         width: 200px
         height: 200px

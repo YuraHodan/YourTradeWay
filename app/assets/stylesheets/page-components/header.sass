@@ -517,6 +517,9 @@
         color: white
         // text-transform: uppercase
         font-size: 14px
+        font-weight: bold
+        letter-spacing: 1.4px
+
 .manu-container-third
   position: absolute
   top: 0
@@ -534,14 +537,17 @@
   .general-part
     .manu-nav
       .classification-third, .classification-third-end
+        font-family : Open Sans
         text-transform: capitalize
         margin-left: 0px
         padding: 20px 0
-        border-top: 1px solid black
+        border-top: 1px solid #e7ebed
         background: $menu
         text-transform: uppercase
         font-size: 14px
         color: $black
+        line-height : 40px
+        letter-spacing : 0.42px
 .manu-container-fourth
   position: absolute
   top: 0
@@ -560,11 +566,13 @@
       .classification-fourth
         margin-left: 0px
         padding: 20px 0
-        border-top: 0.5px solid black
+        border-top: 1px solid #e7ebed
         background-color: white
         text-transform: uppercase
         font-size: 14px
         color: $black
+        font-family : Open Sans
+        letter-spacing : 0.42px
 .step-back
   background-color: $black
   display: flex
@@ -631,7 +639,15 @@
   pointer-events: initial
 
 
-
+.font
+  // position: fixed
+  // top: 0
+  // right: 0
+  // left: 0
+  // height: 0
+  opacity: 0.6
+  -webkit-transition: opacity 2s
+  transition: opacity 2s
 
 
 
@@ -639,6 +655,8 @@
 .menuopen
   overflow: hidden
   position: relative
+  height: 100%
+  background-color: $black
 
 
 
