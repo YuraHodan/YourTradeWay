@@ -170,10 +170,12 @@ $( "#nav-icon" ).click(function() {
     $('.arow').removeClass('visible');
     $('.arowthird').removeClass('visible');
     $('.arowtfourth').removeClass('visible');
+    $('.main-wrapper').removeClass('font');
       $('.step-back p').html('виберите категорию');
 }else {
   $( ".manu-container" ).addClass( "opened" );
   $("body").addClass("menuopen")
+  $('.main-wrapper').addClass('font');
 }
 });
 // function Second(){
@@ -239,6 +241,7 @@ $( ".openfilters" ).click(function() {
     $( ".filter-container" ).removeClass( "opened" );
     $("body").removeClass("menuopen");
     $('.openfilters p').html('фильтра');
+
 }else {
   $( ".filter-container" ).addClass( "opened" );
   $("body").addClass("menuopen")

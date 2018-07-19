@@ -63,7 +63,7 @@
     color: $gray
     font-size: 14px
     .copywriting
-      width: 80%
+      width: 70%
     .voroninlogo
       svg
         cursor: pointer
@@ -73,6 +73,9 @@
           g
             path
               fill: $gray
+    +breakpoint(medium doun)
+      .tex-voronin
+        width: 35%
     +breakpoint(small only)
       display: flex
       flex-direction: column-reverse
