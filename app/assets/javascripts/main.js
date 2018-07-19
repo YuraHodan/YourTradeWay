@@ -72,7 +72,7 @@ function ReadMore (_jObj, lineNum) { //class
   var HIDE_LABEL = "скрить";
 
   var jObj = _jObj;
-  var textMinHeight = ""+ (parseInt(jObj.children(".text").css("line-height"),23)*lineNum) +"px";
+  var textMinHeight = ""+ (parseInt(jObj.children(".text").css("line-height"),22)*lineNum) +"px";
   var textMaxHeight = ""+jObj.children(".text").css("height");
 
   jObj.children(".text").css("height", ""+textMaxHeight);
