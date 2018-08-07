@@ -27,6 +27,8 @@
             button.tablinks.btn-big.red-btn.red onclick="openPremium(event, 'marker')"  маркеть
           .targer
             button.tablinks.btn-big.orange-btn.orange onclick="openPremium(event, 'logistics')"  логист
+
+
       #goods.tabcontent
         form name="usubmitForm" ng-submit="submitForm()" novalidate=""
           // tariff
@@ -177,7 +179,6 @@
 
 
 
-
       #distributors.tabcontent
         form name="dusubmitForm" ng-submit="submitForm()" novalidate=""
           // tariff
@@ -323,7 +324,12 @@
             p.help-block.phone ng-show="dusubmitForm.fax.$error.pattern"  Please match pattern [+910367865844444 or 910367865844444]
           .button-te
             button.open-popup data-id="popup_default" ng-disabled="dusubmitForm.$invalid" type="submit"  отпраить
+
+
+
+
       #marker.tabcontent
+
         form name="musubmitForm" ng-submit="submitForm()" novalidate=""
           // tariff
           .form-group ng-class=("{ 'has-error' : musubmitForm.tariff.$invalid && !musubmitForm.tariff.$pristine }")
@@ -468,6 +474,16 @@
             p.help-block.phone ng-show="musubmitForm.fax.$error.pattern"  Please match pattern [+910367865844444 or 910367865844444]
           .button-te
             button.open-popup data-id="popup_default" ng-disabled="musubmitForm.$invalid" type="submit"  отпраить
+
+
+
+
+
+
+
+
+
+
       #logistics.tabcontent
         form name="lusubmitForm" ng-submit="submitForm()" novalidate=""
           // tariff

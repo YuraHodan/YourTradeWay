@@ -56,6 +56,21 @@ gem "protected_attributes"
 
 # gem 'devise'
 
+gem 'rails_admin'
+# gem 'rails_admin_nestable'
+
+# gem 'devise'
+gem 'mini_magick'
+gem 'carrierwave'
+gem 'devise'
+gem 'rails_admin_globalize_field'
+gem 'rails_admin-i18n'
+gem 'devise-i18n'
+gem 'globalize'
+gem 'route_translator'
+gem 'ckeditor'
+gem 'pry'
+gem 'ace-rails-ap'
 gem 'enumerize'
 
 # gem 'ckeditor'
