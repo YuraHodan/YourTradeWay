@@ -9,4 +9,8 @@ class PagesController < ApplicationController
   def goods
   end
 
+  def message
+ render json: {}
+end
+
 end

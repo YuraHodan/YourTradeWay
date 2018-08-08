@@ -29,7 +29,7 @@ Rails.application.routes.draw do
 
 
     post "registration", action: "registration"
-    post "contacts", action: "contacts"
+    post "message", action: "message"
 
   end
 
