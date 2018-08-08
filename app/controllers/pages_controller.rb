@@ -10,6 +10,7 @@ class PagesController < ApplicationController
   end
 
   def message
+  binding.pry  ##dsadasajkdkjqwnjkeqwjkehjkqsdhjkasjkdhasjkdqjkdqwjklndqwlkdnqwlneklklqwelkwq
  render json: {}
 end
 
