@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
   devise_for :users
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root to: "pages#index"
@@ -25,6 +26,12 @@ Rails.application.routes.draw do
     get "registration", action: "registration"
     get "aboutus", action: "aboutus"
     get "topgoods", action: "topgoods"
+  end
+
+  namespace :api do
+    namespace :v1 do
+      resources :menus, only: [:index]
+    end
   end
 
   match "*url", to: "application#render_not_found", via: [:get, :post, :path, :put, :update, :delete]
