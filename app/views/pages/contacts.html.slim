@@ -123,12 +123,12 @@
                 .lable-one
                   .label Сообщения
                   .span  *
-                textarea.form-control.ng-pristine.ng-valid.ng-empty.ng-touched name="comment"  ng-model="user.comment" placeholder=("Поле для коментарів...") rows="5" minlength="15"
+                textarea.form-control.ng-pristine.ng-valid.ng-empty.ng-touched name="message"  ng-model="user.comment" placeholder=("Поле для коментарів...") rows="5" minlength="15"
                 p.help-block ng-show="userForm.comment.$error.maxlength"  not less than 15 characters
 
             .medium-12.columns
               .button-te
-                button.open-popup data-id="popup_default" ng-disabled="userForm.$invalid" type="submit"  отпраить
+                button.open-popup data-id="popup_default" ng-disabled="userForm.$invalid" type="submit" ng-click="save(user, userForm)"  отпраить
 
 
 

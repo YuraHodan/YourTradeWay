@@ -26,6 +26,12 @@ Rails.application.routes.draw do
     get "registration", action: "registration"
     get "aboutus", action: "aboutus"
     get "topgoods", action: "topgoods"
+
+
+
+    post "registration", action: "registration"
+    post "message", action: "message"
+
   end
 
   namespace :api do
