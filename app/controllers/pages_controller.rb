@@ -10,8 +10,12 @@ class PagesController < ApplicationController
   end
 
   def message
-  binding.pry  ##dsadasajkdkjqwnjkeqwjkehjkqsdhjkasjkdhasjkdqjkdqwjklndqwlkdnqwlneklklqwelkwq
+    binding.pry  ##dsadasajkdkjqwnjkeqwjkehjkqsdhjkasjkdhasjkdqjkdqwjklndqwlkdnqwlneklklqwelkwq
  render json: {}
 end
+
+  def registration
+
+  end
 
 end

@@ -1,4 +1,4 @@
-.contacts ng-controller="contactsController as stor"
+.contacts ng-controller="ContactsCtrl"
   .row
     .medium-12.center
       .taitle
@@ -103,38 +103,38 @@
                   .span  *
                 input.form-control name="name" ng-model="user.name" required="" type="text" minlength="5" placeholder="Иванов Иван Ивіанович" /
                 p.help-block ng-show=("userForm.name.$invalid && !userForm.name.$pristine")  You name is required.
-              /! EMAIL
-              .form-group ng-class=("{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }")
-                .lable-one
-                  .label E-mail
-                  .span  *
-                input.form-control name="email" ng-model="user.email" required="" type="email" placeholder="gmail@gmail.com" /
-                p.help-block ng-show=("userForm.email.$invalid && !userForm.email.$pristine")  Enter a valid email.
-              /! phone
-              .form-group ng-class=("{ 'has-error' : userForm.phone.$invalid && !userForm.phone.$pristine }")
-                .lable-one
-                  .label Телефон:
-                input.form-control name="phone" ng-model="user.phone" type="text"  placeholder="+91-636-78658" ng-pattern="phoneNumbr"
-
-                p.help-block.phone ng-show="userForm.phone.$error.pattern"  Please match pattern [+91 036 78658 or 91 036 78658]
-            .medium-6.columns
-              /! question
-              .form-group ng-class=("{ 'has-error' : userForm.username.$invalid && !userForm.username.$pristine }")
-                .lable-one
-                  .label Сообщения
-                  .span  *
-                textarea.form-control.ng-pristine.ng-valid.ng-empty.ng-touched name="message"  ng-model="user.comment" placeholder=("Поле для коментарів...") rows="5" minlength="15"
-                p.help-block ng-show="userForm.comment.$error.maxlength"  not less than 15 characters
+            /   /! EMAIL
+            /   .form-group ng-class=("{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }")
+            /     .lable-one
+            /       .label E-mail
+            /       .span  *
+            /     input.form-control name="email" ng-model="user.email" required="" type="email" placeholder="gmail@gmail.com" /
+            /     p.help-block ng-show=("userForm.email.$invalid && !userForm.email.$pristine")  Enter a valid email.
+            /   /! phone
+            /   .form-group ng-class=("{ 'has-error' : userForm.phone.$invalid && !userForm.phone.$pristine }")
+            /     .lable-one
+            /       .label Телефон:
+            /     input.form-control name="phone" ng-model="user.phone" type="text"  placeholder="+91-636-78658" ng-pattern="phoneNumbr"
+            /
+            /     p.help-block.phone ng-show="userForm.phone.$error.pattern"  Please match pattern [+91 036 78658 or 91 036 78658]
+            / .medium-6.columns
+            /   /! question
+            /   .form-group ng-class=("{ 'has-error' : userForm.username.$invalid && !userForm.username.$pristine }")
+            /     .lable-one
+            /       .label Сообщения
+            /       .span  *
+            /     textarea.form-control.ng-pristine.ng-valid.ng-empty.ng-touched name="message"  ng-model="user.comment" placeholder=("Поле для коментарів...") rows="5" minlength="15"
+            /     p.help-block ng-show="userForm.comment.$error.maxlength"  not less than 15 characters
 
             .medium-12.columns
               .button-te
-                button.open-popup data-id="popup_default" ng-disabled="userForm.$invalid" type="submit" ng-click="save(user, userForm)"  отпраить
+                button.open-popup data-id="popup_default" ng-disabled="userForm.$invalid" type="submit" отпраить
 
 
 
-#popup_default.popup2
-  .popup-overlay2
-  .popup-content2
-    .title-text После обработки даньч вам придот увидамления на почту
-    .title Ваш запрос отправлен
-    a.close-popup data-id="popup_default" href="#"  =inline_svg "svg/Approve.svg"
+/ #popup_default.popup2
+/   .popup-overlay2
+/   .popup-content2
+/     .title-text После обработки даньч вам придот увидамления на почту
+/     .title Ваш запрос отправлен
+/     a.close-popup data-id="popup_default" href="#"  =inline_svg "svg/Approve.svg"

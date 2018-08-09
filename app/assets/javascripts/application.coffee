@@ -30,6 +30,7 @@
 # require plugins/jquery.simplePagination
 # require plagins/bootstrap.min
 
+
 #     I N I T I A L I Z E
 
 # require google_map
