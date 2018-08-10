@@ -54,15 +54,21 @@ ContactsCtrl.$inject = ['$http', '$scope'];
 
 ytwApp.controller('ContactsCtrl', ContactsCtrl);
 
-console.log('22222');
+console.log('33333');
 
 function ContactsCtrl($http, $scope) {
 
     // SENDING INFO AND ORDER
 
     $scope.user = {};
-
+    // $scope.Parameters={
+    //   commit=>"Update",
+    //   action=>"update",
+    //   method=>"post",
+    //   authenticity_token=>"ysiDvO5s7qhJQrnlSR2+f8jF1gxdB7T9I2ydxpRlSSk="
+    // }
     // POST REQUEST
+var token = document.getElementsByName('csrf-token')[0].content;
 
     $scope.submitForm = function () {
         var url = 'message';
@@ -71,7 +77,8 @@ function ContactsCtrl($http, $scope) {
         };
         var config = {
             headers : {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'X-CSRF-Token': token
             }
         };
 
@@ -79,7 +86,7 @@ function ContactsCtrl($http, $scope) {
             .then(
                 function(response){
                     // callback
-                    $scope.message = data.message;
+                    $scope.user = data.user;
                     alert("gooooo.");
                 },
                 function(response){

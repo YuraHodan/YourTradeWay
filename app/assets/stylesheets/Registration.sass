@@ -158,9 +158,9 @@
         left: 25%
         // background-color: $input
         color: $black
-        +breakpoint(medium down)
+        @media screen and (max-width: 1025px)
           width: 45%
-          left: 35%
+          left: 30%
         +breakpoint(small only)
           width: 100%
           left: 0%
@@ -215,6 +215,8 @@
         width: 470px
         height: 250px
         overflow: hidden
+        @media screen and (max-width: 1025px)
+          margin-right: 100px
         +breakpoint(medium down)
           margin-right: 0px
         +breakpoint(small only)
