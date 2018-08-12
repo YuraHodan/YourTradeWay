@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
+
+ # localized do
   devise_for :users
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root to: "pages#index"
-
   controller :pages do
     get "about-us", action: "about_us"
     # get "contact-us", action: "contact_us"
@@ -33,7 +34,7 @@ Rails.application.routes.draw do
     post "message", action: "message"
 
   end
-
+# end
   namespace :api do
     namespace :v1 do
       resources :menus, only: [:index]

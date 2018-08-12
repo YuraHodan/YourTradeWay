@@ -34,7 +34,7 @@ RailsAdmin.config do |config|
     delete
     show_in_app
 
-  config.included_models = [SecondMenu,User,Sociallink,Contact,Contact::Translation,Rule,Rule::Translation]
+  config.included_models = [ThirdMenu::Translation,SecondMenu::Translation,MainMenu::Translation,MainMenu,SecondMenu,ThirdMenu,User,Sociallink,Contact,Contact::Translation,Rule,Rule::Translation]
 
   config.model Sociallink do
     navigation_label "Посилання на соціальні мережі"
@@ -54,6 +54,40 @@ RailsAdmin.config do |config|
       fields :locale, :title, :country, :address
     end
 
+  config.model MainMenu do
+    field :translations, :globalize_tabs
+    field :category, :enum do
+       enum ["Products", "Factories", "Distributors", "Markets", "Logistic"]
+    end
+    field :second_menus
+  end
+
+  config.model MainMenu::Translation do
+    visible false
+    configure :locale, :hidden
+    fields :locale, :title
+  end
+
+  config.model SecondMenu do
+    field :third_menus
+    field :translations, :globalize_tabs
+  end
+
+  config.model SecondMenu::Translation do
+    visible false
+    configure :locale, :hidden
+    fields :locale, :title
+  end
+
+  config.model ThirdMenu do
+    field :translations, :globalize_tabs
+  end
+
+  config.model ThirdMenu::Translation do
+    visible false
+    configure :locale, :hidden
+    fields :locale, :title
+  end
 
     ## With an audit adapter, you can add:
     # history_index
