@@ -14,11 +14,11 @@ var ytwApp = angular.module('ytwApp', []);
 //     };
 //
 // })
-$scope.user.imageSrc = "";
-
-   $scope.$on("fileProgress", function(e, progress) {
-     $scope.progress = progress.loaded / progress.total;
-   });
+// $scope.user.imageSrc = "";
+//
+//    $scope.$on("fileProgress", function(e, progress) {
+//      $scope.progress = progress.loaded / progress.total;
+//    });
 ytwApp.factory('pagination', function( $sce ) {
 
   var currentPage = 0;
