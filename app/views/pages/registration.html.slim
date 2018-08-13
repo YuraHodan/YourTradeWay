@@ -29,9 +29,10 @@
             button.tablinks.btn-big.orange-btn.orange onclick="openPremium(event, 'logistics')"  логист
 
 
+
       #goods.tabcontent
-        form name="usubmitForm" ng-submit="submitForm()" novalidate=""
-          // tariff
+        form.ajax-form action="/message" method="post" enctype="multipart/form-data" name="usubmitForm" ng-submit="submitForm()" novalidate=""
+          / tariff
           .form-group ng-class=("{ 'has-error' : usubmitForm.tariff.$invalid && !usubmitForm.tariff.$pristine }")
             .lable-one
               .label Тарифньй план:
@@ -64,16 +65,16 @@
               option   для дома
 
 
-          //logotype
+          /logotype
           .form-group ng-class=("{ 'has-error' : usubmitForm.tariff.$invalid && !usubmitForm.tariff.$pristine }")
             .lable-one
               .label логотип:
 
-            input#upload.custom-file-input.none name='logo' ng-file-select="onFileSelect($files)"  ng-model="user.imageSrc" required=""  type="file"
+            input#upload.custom-file-input.none name='logo' ng-file-select="onFileSelect($files)"  ng-model="user.imageSrc" required=""  type="file" accept=".jpg, .jpeg, .png" multiple
             .img
               img.content-centering_element ng-src="{{user.imageSrc}}"
 
-          //aboyut as
+          /aboyut as
           .form-group ng-class=("{ 'has-error' : usubmitForm.comment.$invalid && !usubmitForm.comment.$pristine }")
             .lable-one
               .label описания
