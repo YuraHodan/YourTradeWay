@@ -10,13 +10,35 @@ class PagesController < ApplicationController
   def goods
   end
 
+  def contacts
+    @contacts = Contact.all
+  end
+
   def message
-    binding.pry  ##dsadasajkdkjqwnjkeqwjkehjkqsdhjkasjkdhasjkdqjkdqwjklndqwlkdnqwlneklklqwelkwq
+    # binding.pry  ##dsadasajkdkjqwnjkeqwjkehjkqsdhjkasjkdhasjkdqjkdqwjklndqwlkdnqwlneklklqwelkwq
       render json: {}
   end
 
+  def faq
+    @faq_articles = Faq.where(category: 'FAQ')
+    @guarantee_articles = Faq.where(category: 'Guarantee')
+    @payment_articles = Faq.where(category: 'Payment&Shipping')
+  end
   def registration
 
+  end
+
+  def terms
+    @rule = Rule.first_or_initialize
+  end
+
+  def news
+    @articles = Article.all.show.reverse
+  end
+
+  def one_news_page
+    @article = Article.where(url_fragment: params[:id]).first
+    return render 'errors/not_found.html', status: 404 unless @article
   end
 
   private

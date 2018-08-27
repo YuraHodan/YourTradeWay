@@ -34,13 +34,73 @@ RailsAdmin.config do |config|
     delete
     show_in_app
 
-  config.included_models = [ThirdMenu::Translation,SecondMenu::Translation,MainMenu::Translation,MainMenu,SecondMenu,ThirdMenu,User,Sociallink,Contact,Contact::Translation,Rule,Rule::Translation]
+  config.included_models = [Contact,Contact::Translation,Rule,Rule::Translation,Faq,Faq::Translation,Article,Article::Translation,ThirdMenu::Translation,SecondMenu::Translation,MainMenu::Translation,MainMenu,SecondMenu,ThirdMenu,User,Sociallink,Contact,Contact::Translation,Rule,Rule::Translation]
+
+
+  config.model Contact do
+    navigation_label "Contacts"
+    label "Contacts"
+    field :translations, :globalize_tabs
+    include_fields :email, :first_number, :second_number, :third_number, :fax
+  end
+    config.model Contact::Translation do
+      visible false
+      configure :locale, :hidden
+      fields :locale, :title, :country, :address
+    end
+
+  config.model Rule do
+    navigation_label "Rule"
+    label "Rules"
+    field :translations, :globalize_tabs
+  end
+    config.model Rule::Translation do
+      visible false
+      configure :locale, :hidden
+      fields :locale, :title
+      field :description, :ck_editor
+    end
+
+  config.model Faq do
+    navigation_label "Faq"
+    label "Faq"
+    field :translations, :globalize_tabs
+      field :category, :enum do
+     enum ["Payment&Shipping","FAQ","Guarantee"]
+   end
+  end
+    config.model Faq::Translation do
+      visible false
+      configure :locale, :hidden
+      fields :locale, :title
+      field :description, :ck_editor
+    end
 
   config.model Sociallink do
     navigation_label "Посилання на соціальні мережі"
     label "Соціальні мережі"
     include_fields :vkontakte_url, :facebook_url, :twitter_url, :youtube_url, :linkedin_url, :google_url, :pinterest_url, :odnoklasniki_url
   end
+
+  config.model Article do
+    navigation_label "Tradegram"
+    label "Article"
+    field :translations, :globalize_tabs
+    configure :date do
+      strftime_format do
+        "%d.%m.%Y"
+      end
+    end
+    include_fields :first_image, :second_image, :third_image, :date, :show
+  end
+    config.model Article::Translation do
+      visible false
+      configure :locale, :hidden
+      fields :locale, :title
+      field :first_description, :ck_editor
+      field :second_description, :ck_editor
+      field :third_description, :ck_editor
+    end
 
   config.model Contact do
     navigation_label "Контакти"

@@ -20,7 +20,7 @@ Rails.application.routes.draw do
     get "onemarket", action: "onemarket"
     get "onelogistics", action: "onelogistics"
     get "tradergram", action: "tradergram"
-    get "onenues", action: "onenues"
+    get "news-page/:id", action: "one_news_page", as: "one_news_page"
     get "contacts", action: "contacts"
     get "faq", action: "faq"
     get "terms", action: "terms"

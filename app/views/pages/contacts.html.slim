@@ -4,77 +4,37 @@
       .taitle
         .tex-taitle контакти
       .medium.columns
-        .contacts-alle
-          .medium-4.columns
-            .one-contacts
-              .taitle-contacts.color-line.yellow-block главний офис
-              .country
-                .olp-taitle
-                  .title Страна:
-                .text Азербайджан
-              .address
-                .olp-taitle
-                  .title Адрес:
-                .text ул.Ваулпшасова 4, Баку 220070
-              .e-mail
-                .olp-taitle
-                  .title E-mail:
-                a.text href="mailto:ivanov.i@yourtradeway.com" ivanov.i@yourtradeway.com
-              .phone
-                .olp-taitle
-                  .title Телефон:
-                .text +7 (772) 568 58 67
-              .fax
-                .olp-taitle
-                  .title Факс:
-                .text +810 375 29 6298480
-        .contacts-alle
-          .medium-4.columns
-            .one-contacts
-              .taitle-contacts.color-line.yellow-block комерческий отдел
-              .e-mail
-                .olp-taitle
-                  .title E-mail:
-                a.text href="mailto:ivanov.i@yourtradeway.com" ivanov.i@yourtradeway.com
-              .phone
-                .olp-taitle
-                  .title Телефон:
-                .olp-text
-                  .text +7 (772) 568 58 67
-                  .text +7 (772) 568 58 67
-                  .text +7 (772) 568 58 67
-              .fax
-                .olp-taitle
-                  .title Факс:
-                .text +810 375 29 6298480
-        .contacts-alle
-          .medium-4.columns
-            .one-contacts
-              .taitle-contacts.color-line.yellow-block техподдержка
-              .e-mail
-                .olp-taitle
-                  .title E-mail:
-                a.text href="mailto:ivanov.i@yourtradeway.com" ivanov.i@yourtradeway.com
-              .phone
-                .olp-taitle
-                  .title Телефон:
-                .olp-text
-                  .text +7 (772) 568 58 67
-                  .text +7 (772) 568 58 67
-      .contacts-alle
-        .medium-4.columns
-          .one-contacts
-            .taitle-contacts.color-line.yellow-block рекламодателям
-            .e-mail
-              .olp-taitle
-                .title E-mail:
-              a.text href="mailto:ivanov.i@yourtradeway.com" ivanov.i@yourtradeway.com
-            .phone
-              .olp-taitle
-                .title Телефон:
-              .olp-text
-                .text +7 (772) 568 58 67
-                .text +7 (772) 568 58 67
+        -@contacts.each do |contact|
+          .contacts-alle
+            .medium-4.columns
+              .one-contacts
+                .taitle-contacts.color-line.yellow-block =contact.title
+                .country
+                  .olp-taitle
+                    .title Страна:
+                  .text =contact.country
+                .address
+                  .olp-taitle
+                    .title Адрес:
+                  .text =contact.address
+                .e-mail
+                  .olp-taitle
+                    .title E-mail:
+                  a.text href="mailto:#{contact.email}" #{contact.email}
+                .phone
+                  .olp-taitle
+                    .title Телефон:
+                  .text =contact.first_number
+                  -if contact.second_number
+                    .text =contact.second_number
+                  -if contact.third_number
+                    .text =contact.third_number
+                -if contact.fax?
+                  .fax
+                    .olp-taitle
+                      .title Факс:
+                    .text =contact.fax
+
       .contacts-alle
         .medium-4.columns
           .one-contacts.sosial
