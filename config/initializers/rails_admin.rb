@@ -3,10 +3,10 @@ RailsAdmin.config do |config|
   ### Popular gems integration
 
   # == Devise ==
-  # config.authenticate_with do
-  #   warden.authenticate! scope: :user
-  # end
-  # config.current_user_method(&:current_user)
+  config.authenticate_with do
+    warden.authenticate! scope: :user
+  end
+  config.current_user_method(&:current_user)
 
   ## == Cancan ==
   # config.authorize_with :cancan
@@ -34,8 +34,123 @@ RailsAdmin.config do |config|
     delete
     show_in_app
 
-  config.included_models = [Contact,Contact::Translation,Rule,Rule::Translation,Faq,Faq::Translation,Article,Article::Translation,ThirdMenu::Translation,SecondMenu::Translation,MainMenu::Translation,MainMenu,SecondMenu,ThirdMenu,User,Sociallink,Contact,Contact::Translation,Rule,Rule::Translation]
+  config.included_models = [Logistic,Logistic::Translation,Market,Market::Translation,Distributor,Distributor::Translation,Manufacture::Translation,Product::Translation,Product,Manufacture,Contact,Contact::Translation,Rule,Rule::Translation,Faq,Faq::Translation,Article,Article::Translation,ThirdMenu::Translation,SecondMenu::Translation,MainMenu::Translation,MainMenu,SecondMenu,ThirdMenu,User,Sociallink,Contact,Contact::Translation,Rule,Rule::Translation]
 
+  config.model Sertificate do
+    fields :image
+  end
+  config.model Image do
+    fields :image
+  end
+config.model Logistic do
+    navigation_label "Logistic"
+    label "Logistic"
+    field :translations, :globalize_tabs
+    include_fields :country, :web_site_url, :first_email, :second_email, :third_email,
+    :first_phone_number, :second_phone_number, :third_phone_number, :logo_image,
+    :price_list_file, :sertificates_file, :premium, :recomend
+    field :main_menu
+    field :youtube_url
+    field :images
+    field :sertificates
+  end
+
+  config.model Logistic::Translation do
+    visible false
+    configure :locale, :hidden
+    fields :locale, :title, :address, :full_name
+    field :description, :ck_editor
+    field :our_benefits, :ck_editor
+  end
+
+  config.model Market do
+    navigation_label "Market"
+    label "Market"
+    field :translations, :globalize_tabs
+    include_fields :country, :web_site_url, :first_email, :second_email, :third_email,
+    :first_phone_number, :second_phone_number, :third_phone_number, :logo_image,
+    :price_list_file, :sertificates_file, :premium, :recomend
+    field :main_menu
+    field :youtube_url
+    field :images
+    field :sertificates
+  end
+
+  config.model Market::Translation do
+    visible false
+    configure :locale, :hidden
+    fields :locale, :title, :address, :full_name
+    field :description, :ck_editor
+    field :our_benefits, :ck_editor
+    field :our_brands, :ck_editor
+  end
+
+  config.model Country do
+    field :translations, :globalize_tabs
+  end
+
+  config.model Country::Translation do
+      visible false
+      configure :locale, :hidden
+      fields :locale, :title
+  end
+
+  config.model Distributor do
+    navigation_label "Distributor"
+    label "Distributor"
+    field :translations, :globalize_tabs
+    include_fields :country, :web_site_url, :first_email, :second_email, :third_email,
+    :first_phone_number, :second_phone_number, :third_phone_number, :logo_image,
+    :price_list_file, :sertificates_file, :premium, :recomend
+    field :second_menu
+    field :youtube_url
+    field :images
+    field :sertificates
+  end
+
+  config.model Distributor::Translation do
+    visible false
+    configure :locale, :hidden
+    fields :locale, :title, :address, :full_name
+    field :description, :ck_editor
+    field :our_benefits, :ck_editor
+  end
+
+  config.model Manufacture do
+    navigation_label "Manufactures"
+    label "Manufactures"
+    field :translations, :globalize_tabs
+    include_fields :country, :web_site_url, :first_email, :second_email, :third_email,
+    :first_phone_number, :second_phone_number, :third_phone_number, :logo_image, :catalog_file,
+    :price_list_file, :sertificates_file, :premium, :recomend
+    field :second_menu
+    field :youtube_url
+    field :images
+    field :sertificates
+  end
+
+  config.model Manufacture::Translation do
+    visible false
+    configure :locale, :hidden
+    fields :locale, :title, :address, :full_name
+    field :description, :ck_editor
+  end
+
+  config.model Product do
+    navigation_label "Products"
+    label "One product"
+    field :translations, :globalize_tabs
+    fields :manufacture, :country, :price, :volume, :amount, :weight, :youtube_url, :premium, :recomend, :third_menu, :logo_image
+    field :images
+    field :sertificates
+  end
+
+  config.model Product::Translation do
+    visible false
+    configure :locale, :hidden
+    fields :locale, :title,  :type_of_pack, :expiration_date
+    field :description, :ck_editor
+  end
 
   config.model Contact do
     navigation_label "Contacts"

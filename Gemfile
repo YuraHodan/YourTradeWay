@@ -98,11 +98,11 @@ gem 'kaminari'
 
 #gem 'paperclip-optimizer'
 
-#gem 'attachable', github: "VoroninNick/attachable"
+gem 'attachable', github: "VoroninNick/attachable"
 #gem 'attachable', path:"/media/data/pasha/gems/attachable"
-#gem 'cms', path: "/media/data/pasha/gems/cms"
+# gem 'cms', path: "/media/data/pasha/gems/cms"
 
-# gem 'cms', github: "pkorenev/cms"
+gem 'cms', github: "pkorenev/cms"
 
 # gem 'require_reloader'
 
