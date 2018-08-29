@@ -32,7 +32,7 @@ class PagesController < ApplicationController
     @rule = Rule.first_or_initialize
   end
 
-  def news
+  def tradergram
     @articles = Article.all.show.reverse
   end
 
