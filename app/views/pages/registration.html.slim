@@ -1,4 +1,4 @@
-.registration ng-controller="registrationController as stor"
+.registration ng-controller="registrationCtrl"
   .row.collapse
     .columns-9
       .title-top
@@ -27,51 +27,54 @@
             button.tablinks.btn-big.red-btn.red onclick="openPremium(event, 'marker')"  маркеть
           .targer
             button.tablinks.btn-big.orange-btn.orange onclick="openPremium(event, 'logistics')"  логист
+
+
+
       #goods.tabcontent
-        form name="usubmitForm" ng-submit="submitForm()" novalidate=""
-          // tariff
+        form.ajax-form action="/message" method="post" enctype="multipart/form-data" name="usubmitForm" ng-submit="submitForm()" novalidate=""
+          / tariff
           .form-group ng-class=("{ 'has-error' : usubmitForm.tariff.$invalid && !usubmitForm.tariff.$pristine }")
             .lable-one
               .label Тарифньй план:
               / .span  *
-            select#nazn.selectid.form-control name="tariff" required=""
+            select#nazn.selectid.form-control name="tariff" required="" ng-model="user.tariff" type="text"
               //ng-model="user.tariff"
               option#one1.sel_dok value="free"  free
               option#two1.sel_dok value="basic"  basic
               option#three1.sel_dok value="platinum"  platinum
 
-          //name
+          /name
           .form-group ng-class=("{ 'has-error' : usubmitForm.name.$invalid && !usubmitForm.name.$pristine }")
             .lable-one
               .label Названия компании:
               / .span  *
             input.text-input.form-control name="name" ng-model="user.name" required="" type="text" minlength="5" placeholder="ОАО 'ТУльский молочний комбинат'" /
             p.help-block ng-show=("usubmitForm.name.$invalid && !usubmitForm.name.$pristine")  You name is required.
-
-
-
-
+          /
+          /
+          /
+          /
           //manufacturers
           .form-group ng-class=("{ 'has-error' : usubmitForm.tariff.$invalid && !usubmitForm.tariff.$pristine }")
             .lable-one
               .label тип призводства план:
               / .span  *
-            select#nazn.selectid.form-control name="tariff" required=""
-              option value="1"  питания
-              option value="2"  косметика
-              option value="3"  для дома
+            select#nazn.selectid.form-control name="goods" required="" ng-model="user.goods" type="text"
+              option   питания
+              option   косметика
+              option   для дома
 
 
-          //logotype
+          /logotype
           .form-group ng-class=("{ 'has-error' : usubmitForm.tariff.$invalid && !usubmitForm.tariff.$pristine }")
             .lable-one
               .label логотип:
 
-            input#upload.custom-file-input.none name='logo' ng-file-select="onFileSelect($files)"  ng-model="imageSrc" required=""  type="file"
+            input#upload.custom-file-input.none name='logo' ng-file-select="onFileSelect($files)"  ng-model="user.imageSrc" required=""  type="file" accept=".jpg, .jpeg, .png" multiple
             .img
-              img.content-centering_element ng-src="{{imageSrc}}"
+              img.content-centering_element ng-src="{{user.imageSrc}}"
 
-          //aboyut as
+          /aboyut as
           .form-group ng-class=("{ 'has-error' : usubmitForm.comment.$invalid && !usubmitForm.comment.$pristine }")
             .lable-one
               .label описания
@@ -83,7 +86,7 @@
             .lable-one
               .label фото
             div.target
-              div  img-upload="" method="POST"
+              div  img-upload=""
               //video
           .form-group ng-class=("{ 'has-error' : usubmitForm.video.$invalid && !usubmitForm.video.$pristine }")
             .lable-one
@@ -149,7 +152,7 @@
             .lable-one
               .label страна:
               / .span  *
-            input.text-input.form-control name="fio" ng-model="user.fio" required="" type="text" minlength="5" placeholder="страна"
+            input.text-input.form-control name="fio" ng-model="user.fiocountry" required="" type="text" minlength="5" placeholder="страна"
             p.help-block ng-show=("usubmitForm.fio.$invalid && !usubmitForm.fio.$pristine")  You fio is street.
           // email
           .form-group ng-class=("{ 'has-error' : usubmitForm.email.$invalid && !usubmitForm.email.$pristine }")
@@ -167,446 +170,466 @@
           //fax
           .form-group ng-class=("{ 'has-error' : usubmitForm.fax.$invalid && !usubmitForm.fax.$pristine }")
             .lable-one
-              .label Телефон:
+              .label факс:
             input.text-input.form-control required="" name="fax" ng-model="user.fax" type="text"  placeholder="+910367865844444" ng-pattern="faxNumbr"
             p.help-block.phone ng-show="usubmitForm.fax.$error.pattern"  Please match pattern [+910367865844444 or 910367865844444]
           .button-te
             button.open-popup data-id="popup_default" ng-disabled="usubmitForm.$invalid" type="submit"  отпраить
-      #distributors.tabcontent
-        form name="dusubmitForm" ng-submit="submitForm()" novalidate=""
-          // tariff
-          .form-group ng-class=("{ 'has-error' : dusubmitForm.tariff.$invalid && !dusubmitForm.tariff.$pristine }")
-            .lable-one
-              .label Тарифньй план:
-              / .span  *
-            select#nazn.selectid.form-control name="tariff" required=""
-              //ng-model="user.tariff"
-              option#one1.sel_dok value="free"  free
-              option#two1.sel_dok value="basic"  basic
-              option#three1.sel_dok value="platinum"  platinum
-
-          //name
-          .form-group ng-class=("{ 'has-error' : dusubmitForm.name.$invalid && !dusubmitForm.name.$pristine }")
-            .lable-one
-              .label Названия компании:
-              / .span  *
-            input.text-input.form-control name="name" ng-model="user.name" required="" type="text" minlength="5" placeholder="ОАО 'ТУльский молочний комбинат'" /
-            p.help-block ng-show=("dusubmitForm.name.$invalid && !dusubmitForm.name.$pristine")  You name is required.
 
 
 
 
-          / //manufacturers
-          / .form-group ng-class=("{ 'has-error' : dusubmitForm.tariff.$invalid && !dusubmitForm.tariff.$pristine }")
-          /   .lable-one
-          /     .label тип призводства план:
-          /     / .span  *
-          /   select#nazn.selectid.form-control name="tariff" required=""
-          /     option value="1"  питания
-          /     option value="2"  косметика
-          /     option value="3"  для дома
 
-
-          //logotype
-          .form-group ng-class=("{ 'has-error' : dusubmitForm.tariff.$invalid && !dusubmitForm.tariff.$pristine }")
-            .lable-one
-              .label логотип:
-
-            input#upload.custom-file-input.none name='logo' ng-file-select="onFileSelect($files)"  ng-model="imageSrc" required=""  type="file"
-            .img
-              img.content-centering_element ng-src="{{imageSrc}}"
-
-          //aboyut as
-          .form-group ng-class=("{ 'has-error' : dusubmitForm.comment.$invalid && !dusubmitForm.comment.$pristine }")
-            .lable-one
-              .label описания
-            textarea.form-control.ng-pristine.ng-valid.ng-empty.ng-touched name="comment" ng-model="user.comment" placeholder=("") rows="5" minlength="15"
-            p.help-block ng-show="dusubmitForm.comment.$error.maxlength"  not less than 15 characters
-
-          // foto
-          .form-group ng-class=("{ 'has-error' : dusubmitForm.username.$invalid && !dusubmitForm.username.$pristine }")
-            .lable-one
-              .label фото
-            div.target
-              div  img-upload="" method="POST"
-              //video
-          .form-group ng-class=("{ 'has-error' : dusubmitForm.video.$invalid && !dusubmitForm.video.$pristine }")
-            .lable-one
-              .label посилання на відео:
-              / .span  *
-            input.text-input.form-control name="video" ng-model="user.video" required="" type="text" minlength="5" placeholder="https://www.youtube.com/watch" /
-            p.help-block ng-show=("dusubmitForm.video.$invalid && !dusubmitForm.video.$pristine")  You name is required.
-          / catalog
-          .form-group.fails ng-class=("{ 'has-error' : dusubmitForm.catalog.$invalid && !dusubmitForm.catalog.$pristine }")
-            .lable-one
-              .label каталог продукції:
-            input#upload.custom-file-input name="catalog" ng-model="user.catalog"  type="file"
-          // list
-          .form-group.fails ng-class=("{ 'has-error' : dusubmitForm.list.$invalid && !dusubmitForm.list.$pristine }")
-            .lable-one
-              .label Прайс лист:
-            input#upload.custom-file-input name="list" ng-model="user.list"  type="file"
-          // sert
-          .form-group.fails ng-class=("{ 'has-error' : dusubmitForm.sert.$invalid && !dusubmitForm.sert.$pristine }")
-            .lable-one
-              .label сертифікат:
-            input#upload.custom-file-input name="sert" ng-model="user.sert"  type="file"
-
-          .taitle-contacts.color-line.yellow-block Дополнитильная информация
-          //country
-          .form-group ng-class=("{ 'has-error' : dusubmitForm.country.$invalid && !dusubmitForm.country.$pristine }")
-            .lable-one
-              .label страна:
-              / .span  *
-            input.text-input.form-control name="country" ng-model="user.country" required="" type="text" minlength="3" placeholder="страна"
-            p.help-block ng-show=("dusubmitForm.country.$invalid && !dusubmitForm.country.$pristine")  You country is required.
-          // city
-          .form-group ng-class=("{ 'has-error' : dusubmitForm.city.$invalid && !dusubmitForm.city.$pristine }")
-            .lable-one
-              .label Город:
-              / .span  *
-            input.text-input.form-control name="city" ng-model="user.city" required="" type="text" minlength="3" placeholder="страна"
-            p.help-block ng-show=("dusubmitForm.city.$invalid && !dusubmitForm.city.$pristine")  You country is required.
-          // street
-          .form-group ng-class=("{ 'has-error' : dusubmitForm.street.$invalid && !dusubmitForm.street.$pristine }")
-            .lable-one
-              .label Улица:
-              / .span  *
-            input.text-input.form-control name="street" ng-model="user.street" required="" type="text" minlength="3" placeholder="страна"
-            p.help-block ng-show=("dusubmitForm.street.$invalid && !dusubmitForm.street.$pristine")  You country is street.
-          // phone
-          .form-group ng-class=("{ 'has-error' : dusubmitForm.phone.$invalid && !dusubmitForm.phone.$pristine }")
-            .lable-one
-              .label Телефон:
-            input.text-input.form-control required="" name="phone" ng-model="user.phone" type="text"  placeholder="+91-636-78658" ng-pattern="phoneNumbr"
-
-            p.help-block.phone ng-show="dusubmitForm.phone.$error.pattern"  Please match pattern [+91 036 78658 or 91 036 78658]
-          // site
-          .form-group ng-class=("{ 'has-error' : dusubmitForm.site.$invalid && !dusubmitForm.site.$pristine }")
-            .lable-one
-              .label Сайт:
-              / .span  *
-            input.text-input.form-control name="site" ng-model="user.site" required="" type="text" minlength="5" placeholder="страна"
-            p.help-block ng-show=("dusubmitForm.site.$invalid && !dusubmitForm.site.$pristine")  You site is street.
-          .taitle-contacts.color-line.yellow-block контактное лицо
-          // fio
-          .form-group ng-class=("{ 'has-error' : dusubmitForm.fio.$invalid && !dusubmitForm.fio.$pristine }")
-            .lable-one
-              .label страна:
-              / .span  *
-            input.text-input.form-control name="fio" ng-model="user.fio" required="" type="text" minlength="5" placeholder="страна"
-            p.help-block ng-show=("dusubmitForm.fio.$invalid && !dusubmitForm.fio.$pristine")  You fio is street.
-          // email
-          .form-group ng-class=("{ 'has-error' : dusubmitForm.email.$invalid && !dusubmitForm.email.$pristine }")
-            .lable-one
-              .label E-mail
-              .span  *
-            input.text-input.form-control name="email" ng-model="user.email" required="" type="email" placeholder="gmail@gmail.com" /
-            p.help-block ng-show=("dusubmitForm.email.$invalid && !dusubmitForm.email.$pristine")  Enter a valid email.
-          // phonefio
-          .form-group ng-class=("{ 'has-error' : dusubmitForm.phonefio.$invalid && !dusubmitForm.phonefio.$pristine }")
-            .lable-one
-              .label Телефон:
-            input.text-input.form-control required="" name="phonefio" ng-model="user.phonefio" type="text"  placeholder="+91-636-78658" ng-pattern="phoneNumbr"
-            p.help-block.phone ng-show="dusubmitForm.phonefio.$error.pattern"  Please match pattern [+91 036 78658 or 91 036 78658]
-          //fax
-          .form-group ng-class=("{ 'has-error' : dusubmitForm.fax.$invalid && !dusubmitForm.fax.$pristine }")
-            .lable-one
-              .label Телефон:
-            input.text-input.form-control required="" name="fax" ng-model="user.fax" type="text"  placeholder="+910367865844444" ng-pattern="faxNumbr"
-            p.help-block.phone ng-show="dusubmitForm.fax.$error.pattern"  Please match pattern [+910367865844444 or 910367865844444]
-          .button-te
-            button.open-popup data-id="popup_default" ng-disabled="dusubmitForm.$invalid" type="submit"  отпраить
-      #marker.tabcontent
-        form name="musubmitForm" ng-submit="submitForm()" novalidate=""
-          // tariff
-          .form-group ng-class=("{ 'has-error' : musubmitForm.tariff.$invalid && !musubmitForm.tariff.$pristine }")
-            .lable-one
-              .label Тарифньй план:
-              / .span  *
-            select#nazn.selectid.form-control name="tariff" required=""
-              //ng-model="user.tariff"
-              option#one1.sel_dok value="free"  free
-              option#two1.sel_dok value="basic"  basic
-              option#three1.sel_dok value="platinum"  platinum
-
-          //name
-          .form-group ng-class=("{ 'has-error' : musubmitForm.name.$invalid && !musubmitForm.name.$pristine }")
-            .lable-one
-              .label Названия компании:
-              / .span  *
-            input.text-input.form-control name="name" ng-model="user.name" required="" type="text" minlength="5" placeholder="ОАО 'ТУльский молочний комбинат'" /
-            p.help-block ng-show=("musubmitForm.name.$invalid && !musubmitForm.name.$pristine")  You name is required.
-
-
-
-
-          / //manufacturers
-          / .form-group ng-class=("{ 'has-error' : musubmitForm.tariff.$invalid && !musubmitForm.tariff.$pristine }")
-          /   .lable-one
-          /     .label тип призводства план:
-          /     / .span  *
-          /   select#nazn.selectid.form-control name="tariff" required=""
-          /     option value="1"  питания
-          /     option value="2"  косметика
-          /     option value="3"  для дома
-
-
-          //logotype
-          .form-group ng-class=("{ 'has-error' : musubmitForm.tariff.$invalid && !musubmitForm.tariff.$pristine }")
-            .lable-one
-              .label логотип:
-
-            input#upload.custom-file-input.none name='logo' ng-file-select="onFileSelect($files)"  ng-model="imageSrc" required=""  type="file"
-            .img
-              img.content-centering_element ng-src="{{imageSrc}}"
-
-          //aboyut as
-          .form-group ng-class=("{ 'has-error' : musubmitForm.comment.$invalid && !musubmitForm.comment.$pristine }")
-            .lable-one
-              .label описания
-            textarea.form-control.ng-pristine.ng-valid.ng-empty.ng-touched name="comment" ng-model="user.comment" placeholder=("") rows="5" minlength="15"
-            p.help-block ng-show="musubmitForm.comment.$error.maxlength"  not less than 15 characters
-
-          // foto
-          .form-group ng-class=("{ 'has-error' : musubmitForm.username.$invalid && !musubmitForm.username.$pristine }")
-            .lable-one
-              .label фото
-            div.target
-              div  img-upload="" method="POST"
-              //video
-          .form-group ng-class=("{ 'has-error' : musubmitForm.video.$invalid && !musubmitForm.video.$pristine }")
-            .lable-one
-              .label посилання на відео:
-              / .span  *
-            input.text-input.form-control name="video" ng-model="user.video" required="" type="text" minlength="5" placeholder="https://www.youtube.com/watch" /
-            p.help-block ng-show=("musubmitForm.video.$invalid && !musubmitForm.video.$pristine")  You name is required.
-          / catalog
-          .form-group.fails ng-class=("{ 'has-error' : musubmitForm.catalog.$invalid && !musubmitForm.catalog.$pristine }")
-            .lable-one
-              .label каталог продукції:
-            input#upload.custom-file-input name="catalog" ng-model="user.catalog"  type="file"
-          // list
-          .form-group.fails ng-class=("{ 'has-error' : musubmitForm.list.$invalid && !musubmitForm.list.$pristine }")
-            .lable-one
-              .label Прайс лист:
-            input#upload.custom-file-input name="list" ng-model="user.list"  type="file"
-          // sert
-          .form-group.fails ng-class=("{ 'has-error' : musubmitForm.sert.$invalid && !musubmitForm.sert.$pristine }")
-            .lable-one
-              .label сертифікат:
-            input#upload.custom-file-input name="sert" ng-model="user.sert"  type="file"
-
-          .taitle-contacts.color-line.yellow-block Дополнитильная информация
-          //country
-          .form-group ng-class=("{ 'has-error' : musubmitForm.country.$invalid && !musubmitForm.country.$pristine }")
-            .lable-one
-              .label страна:
-              / .span  *
-            input.text-input.form-control name="country" ng-model="user.country" required="" type="text" minlength="3" placeholder="страна"
-            p.help-block ng-show=("musubmitForm.country.$invalid && !musubmitForm.country.$pristine")  You country is required.
-          // city
-          .form-group ng-class=("{ 'has-error' : musubmitForm.city.$invalid && !musubmitForm.city.$pristine }")
-            .lable-one
-              .label Город:
-              / .span  *
-            input.text-input.form-control name="city" ng-model="user.city" required="" type="text" minlength="3" placeholder="страна"
-            p.help-block ng-show=("musubmitForm.city.$invalid && !musubmitForm.city.$pristine")  You country is required.
-          // street
-          .form-group ng-class=("{ 'has-error' : musubmitForm.street.$invalid && !musubmitForm.street.$pristine }")
-            .lable-one
-              .label Улица:
-              / .span  *
-            input.text-input.form-control name="street" ng-model="user.street" required="" type="text" minlength="3" placeholder="страна"
-            p.help-block ng-show=("musubmitForm.street.$invalid && !musubmitForm.street.$pristine")  You country is street.
-          // phone
-          .form-group ng-class=("{ 'has-error' : musubmitForm.phone.$invalid && !musubmitForm.phone.$pristine }")
-            .lable-one
-              .label Телефон:
-            input.text-input.form-control required="" name="phone" ng-model="user.phone" type="text"  placeholder="+91-636-78658" ng-pattern="phoneNumbr"
-
-            p.help-block.phone ng-show="musubmitForm.phone.$error.pattern"  Please match pattern [+91 036 78658 or 91 036 78658]
-          // site
-          .form-group ng-class=("{ 'has-error' : musubmitForm.site.$invalid && !musubmitForm.site.$pristine }")
-            .lable-one
-              .label Сайт:
-              / .span  *
-            input.text-input.form-control name="site" ng-model="user.site" required="" type="text" minlength="5" placeholder="страна"
-            p.help-block ng-show=("musubmitForm.site.$invalid && !musubmitForm.site.$pristine")  You site is street.
-          .taitle-contacts.color-line.yellow-block контактное лицо
-          // fio
-          .form-group ng-class=("{ 'has-error' : musubmitForm.fio.$invalid && !musubmitForm.fio.$pristine }")
-            .lable-one
-              .label страна:
-              / .span  *
-            input.text-input.form-control name="fio" ng-model="user.fio" required="" type="text" minlength="5" placeholder="страна"
-            p.help-block ng-show=("musubmitForm.fio.$invalid && !musubmitForm.fio.$pristine")  You fio is street.
-          // email
-          .form-group ng-class=("{ 'has-error' : musubmitForm.email.$invalid && !musubmitForm.email.$pristine }")
-            .lable-one
-              .label E-mail
-              .span  *
-            input.text-input.form-control name="email" ng-model="user.email" required="" type="email" placeholder="gmail@gmail.com" /
-            p.help-block ng-show=("musubmitForm.email.$invalid && !musubmitForm.email.$pristine")  Enter a valid email.
-          // phonefio
-          .form-group ng-class=("{ 'has-error' : musubmitForm.phonefio.$invalid && !musubmitForm.phonefio.$pristine }")
-            .lable-one
-              .label Телефон:
-            input.text-input.form-control required="" name="phonefio" ng-model="user.phonefio" type="text"  placeholder="+91-636-78658" ng-pattern="phoneNumbr"
-            p.help-block.phone ng-show="musubmitForm.phonefio.$error.pattern"  Please match pattern [+91 036 78658 or 91 036 78658]
-          //fax
-          .form-group ng-class=("{ 'has-error' : musubmitForm.fax.$invalid && !musubmitForm.fax.$pristine }")
-            .lable-one
-              .label Телефон:
-            input.text-input.form-control required="" name="fax" ng-model="user.fax" type="text"  placeholder="+910367865844444" ng-pattern="faxNumbr"
-            p.help-block.phone ng-show="musubmitForm.fax.$error.pattern"  Please match pattern [+910367865844444 or 910367865844444]
-          .button-te
-            button.open-popup data-id="popup_default" ng-disabled="musubmitForm.$invalid" type="submit"  отпраить
-      #logistics.tabcontent
-        form name="lusubmitForm" ng-submit="submitForm()" novalidate=""
-          // tariff
-          .form-group ng-class=("{ 'has-error' : lusubmitForm.tariff.$invalid && !lusubmitForm.tariff.$pristine }")
-            .lable-one
-              .label Тарифньй план:
-              / .span  *
-            select#nazn.selectid.form-control name="tariff" required=""
-              //ng-model="user.tariff"
-              option#one1.sel_dok value="free"  free
-              option#two1.sel_dok value="basic"  basic
-              option#three1.sel_dok value="platinum"  platinum
-
-          //name
-          .form-group ng-class=("{ 'has-error' : lusubmitForm.name.$invalid && !lusubmitForm.name.$pristine }")
-            .lable-one
-              .label Названия компании:
-              / .span  *
-            input.text-input.form-control name="name" ng-model="user.name" required="" type="text" minlength="5" placeholder="ОАО 'ТУльский молочний комбинат'" /
-            p.help-block ng-show=("lusubmitForm.name.$invalid && !lusubmitForm.name.$pristine")  You name is required.
-
-
-
-
-          / //manufacturers
-          / .form-group ng-class=("{ 'has-error' : lusubmitForm.tariff.$invalid && !lusubmitForm.tariff.$pristine }")
-          /   .lable-one
-          /     .label тип призводства план:
-          /     / .span  *
-          /   select#nazn.selectid.form-control name="tariff" required=""
-          /     option value="1"  питания
-          /     option value="2"  косметика
-          /     option value="3"  для дома
-
-
-          //logotype
-          .form-group ng-class=("{ 'has-error' : lusubmitForm.tariff.$invalid && !lusubmitForm.tariff.$pristine }")
-            .lable-one
-              .label логотип:
-
-            input#upload.custom-file-input.none name='logo' ng-file-select="onFileSelect($files)"  ng-model="imageSrc" required=""  type="file"
-            .img
-              img.content-centering_element ng-src="{{imageSrc}}"
-
-          //aboyut as
-          .form-group ng-class=("{ 'has-error' : lusubmitForm.comment.$invalid && !lusubmitForm.comment.$pristine }")
-            .lable-one
-              .label описания
-            textarea.form-control.ng-pristine.ng-valid.ng-empty.ng-touched name="comment" ng-model="user.comment" placeholder=("") rows="5" minlength="15"
-            p.help-block ng-show="lusubmitForm.comment.$error.maxlength"  not less than 15 characters
-
-          // foto
-          .form-group ng-class=("{ 'has-error' : lusubmitForm.username.$invalid && !lusubmitForm.username.$pristine }")
-            .lable-one
-              .label фото
-            div.target
-              div  img-upload="" method="POST"
-              //video
-          .form-group ng-class=("{ 'has-error' : lusubmitForm.video.$invalid && !lusubmitForm.video.$pristine }")
-            .lable-one
-              .label посилання на відео:
-              / .span  *
-            input.text-input.form-control name="video" ng-model="user.video" required="" type="text" minlength="5" placeholder="https://www.youtube.com/watch" /
-            p.help-block ng-show=("lusubmitForm.video.$invalid && !lusubmitForm.video.$pristine")  You name is required.
-          / catalog
-          .form-group.fails ng-class=("{ 'has-error' : lusubmitForm.catalog.$invalid && !lusubmitForm.catalog.$pristine }")
-            .lable-one
-              .label каталог продукції:
-            input#upload.custom-file-input name="catalog" ng-model="user.catalog"  type="file"
-          // list
-          .form-group.fails ng-class=("{ 'has-error' : lusubmitForm.list.$invalid && !lusubmitForm.list.$pristine }")
-            .lable-one
-              .label Прайс лист:
-            input#upload.custom-file-input name="list" ng-model="user.list"  type="file"
-          // sert
-          .form-group.fails ng-class=("{ 'has-error' : lusubmitForm.sert.$invalid && !lusubmitForm.sert.$pristine }")
-            .lable-one
-              .label сертифікат:
-            input#upload.custom-file-input name="sert" ng-model="user.sert"  type="file"
-
-          .taitle-contacts.color-line.yellow-block Дополнитильная информация
-          //country
-          .form-group ng-class=("{ 'has-error' : lusubmitForm.country.$invalid && !lusubmitForm.country.$pristine }")
-            .lable-one
-              .label страна:
-              / .span  *
-            input.text-input.form-control name="country" ng-model="user.country" required="" type="text" minlength="3" placeholder="страна"
-            p.help-block ng-show=("lusubmitForm.country.$invalid && !lusubmitForm.country.$pristine")  You country is required.
-          // city
-          .form-group ng-class=("{ 'has-error' : lusubmitForm.city.$invalid && !lusubmitForm.city.$pristine }")
-            .lable-one
-              .label Город:
-              / .span  *
-            input.text-input.form-control name="city" ng-model="user.city" required="" type="text" minlength="3" placeholder="страна"
-            p.help-block ng-show=("lusubmitForm.city.$invalid && !lusubmitForm.city.$pristine")  You country is required.
-          // street
-          .form-group ng-class=("{ 'has-error' : lusubmitForm.street.$invalid && !lusubmitForm.street.$pristine }")
-            .lable-one
-              .label Улица:
-              / .span  *
-            input.text-input.form-control name="street" ng-model="user.street" required="" type="text" minlength="3" placeholder="страна"
-            p.help-block ng-show=("lusubmitForm.street.$invalid && !lusubmitForm.street.$pristine")  You country is street.
-          // phone
-          .form-group ng-class=("{ 'has-error' : lusubmitForm.phone.$invalid && !lusubmitForm.phone.$pristine }")
-            .lable-one
-              .label Телефон:
-            input.text-input.form-control required="" name="phone" ng-model="user.phone" type="text"  placeholder="+91-636-78658" ng-pattern="phoneNumbr"
-
-            p.help-block.phone ng-show="lusubmitForm.phone.$error.pattern"  Please match pattern [+91 036 78658 or 91 036 78658]
-          // site
-          .form-group ng-class=("{ 'has-error' : lusubmitForm.site.$invalid && !lusubmitForm.site.$pristine }")
-            .lable-one
-              .label Сайт:
-              / .span  *
-            input.text-input.form-control name="site" ng-model="user.site" required="" type="text" minlength="5" placeholder="страна"
-            p.help-block ng-show=("lusubmitForm.site.$invalid && !lusubmitForm.site.$pristine")  You site is street.
-          .taitle-contacts.color-line.yellow-block контактное лицо
-          // fio
-          .form-group ng-class=("{ 'has-error' : lusubmitForm.fio.$invalid && !lusubmitForm.fio.$pristine }")
-            .lable-one
-              .label страна:
-              / .span  *
-            input.text-input.form-control name="fio" ng-model="user.fio" required="" type="text" minlength="5" placeholder="страна"
-            p.help-block ng-show=("lusubmitForm.fio.$invalid && !lusubmitForm.fio.$pristine")  You fio is street.
-          // email
-          .form-group ng-class=("{ 'has-error' : lusubmitForm.email.$invalid && !lusubmitForm.email.$pristine }")
-            .lable-one
-              .label E-mail
-              .span  *
-            input.text-input.form-control name="email" ng-model="user.email" required="" type="email" placeholder="gmail@gmail.com" /
-            p.help-block ng-show=("lusubmitForm.email.$invalid && !lusubmitForm.email.$pristine")  Enter a valid email.
-          // phonefio
-          .form-group ng-class=("{ 'has-error' : lusubmitForm.phonefio.$invalid && !lusubmitForm.phonefio.$pristine }")
-            .lable-one
-              .label Телефон:
-            input.text-input.form-control required="" name="phonefio" ng-model="user.phonefio" type="text"  placeholder="+91-636-78658" ng-pattern="phoneNumbr"
-            p.help-block.phone ng-show="lusubmitForm.phonefio.$error.pattern"  Please match pattern [+91 036 78658 or 91 036 78658]
-          //fax
-          .form-group ng-class=("{ 'has-error' : lusubmitForm.fax.$invalid && !lusubmitForm.fax.$pristine }")
-            .lable-one
-              .label Телефон:
-            input.text-input.form-control required="" name="fax" ng-model="user.fax" type="text"  placeholder="+910367865844444" ng-pattern="faxNumbr"
-            p.help-block.phone ng-show="lusubmitForm.fax.$error.pattern"  Please match pattern [+910367865844444 or 910367865844444]
-          .button-te
-            button.open-popup data-id="popup_default" ng-disabled="lusubmitForm.$invalid" type="submit"  отпраить
+      / #distributors.tabcontent
+      /   form name="usubmitForm2" ng-submit="submitForm()" novalidate=""
+      /     // tariff
+      /     .form-group ng-class=("{ 'has-error' : usubmitForm2.tariff.$invalid && !usubmitForm2.tariff.$pristine }")
+      /       .lable-one
+      /         .label Тарифньй план:
+      /         / .span  *
+      /       select#nazn.selectid.form-control name="tariff" required=""
+      /         //ng-model="user.tariff"
+      /         option#one1.sel_dok value="free"  free
+      /         option#two1.sel_dok value="basic"  basic
+      /         option#three1.sel_dok value="platinum"  platinum
+      /
+      /     //name
+      /     .form-group ng-class=("{ 'has-error' : usubmitForm2.name.$invalid && !usubmitForm2.name.$pristine }")
+      /       .lable-one
+      /         .label Названия компании:
+      /         / .span  *
+      /       input.text-input.form-control name="name" ng-model="user.name" required="" type="text" minlength="5" placeholder="ОАО 'ТУльский молочний комбинат'" /
+      /       p.help-block ng-show=("usubmitForm2.name.$invalid && !usubmitForm2.name.$pristine")  You name is required.
+      /
+      /
+      /
+      /
+      /     / //manufacturers
+      /     / .form-group ng-class=("{ 'has-error' : dusubmitForm.tariff.$invalid && !dusubmitForm.tariff.$pristine }")
+      /     /   .lable-one
+      /     /     .label тип призводства план:
+      /     /     / .span  *
+      /     /   select#nazn.selectid.form-control name="tariff" required=""
+      /     /     option value="1"  питания
+      /     /     option value="2"  косметика
+      /     /     option value="3"  для дома
+      /
+      /
+      /     //logotype
+      /     .form-group ng-class=("{ 'has-error' : usubmitForm2.tariff.$invalid && !usubmitForm2.tariff.$pristine }")
+      /       .lable-one
+      /         .label логотип:
+      /
+      /       input#upload.custom-file-input.none name='logo' ng-file-select="onFileSelect($files)"  ng-model="imageSrc" required=""  type="file"
+      /       .img
+      /         img.content-centering_element ng-src="{{imageSrc}}"
+      /
+      /     //aboyut as
+      /     .form-group ng-class=("{ 'has-error' : usubmitForm2.comment.$invalid && !usubmitForm2.comment.$pristine }")
+      /       .lable-one
+      /         .label описания
+      /       textarea.form-control.ng-pristine.ng-valid.ng-empty.ng-touched name="comment" ng-model="user.comment" placeholder=("") rows="5" minlength="15"
+      /       p.help-block ng-show="usubmitForm2.comment.$error.maxlength"  not less than 15 characters
+      /
+      /     // foto
+      /     .form-group ng-class=("{ 'has-error' : usubmitForm2.username.$invalid && !usubmitForm2.username.$pristine }")
+      /       .lable-one
+      /         .label фото
+      /       div.target
+      /         div  img-upload="" method="POST"
+      /         //video
+      /     .form-group ng-class=("{ 'has-error' : usubmitForm2.video.$invalid && !usubmitForm2.video.$pristine }")
+      /       .lable-one
+      /         .label посилання на відео:
+      /         / .span  *
+      /       input.text-input.form-control name="video" ng-model="user.video" required="" type="text" minlength="5" placeholder="https://www.youtube.com/watch" /
+      /       p.help-block ng-show=("usubmitForm2.video.$invalid && !usubmitForm2.video.$pristine")  You name is required.
+      /     / catalog
+      /     .form-group.fails ng-class=("{ 'has-error' : usubmitForm2.catalog.$invalid && !usubmitForm2.catalog.$pristine }")
+      /       .lable-one
+      /         .label каталог продукції:
+      /       input#upload.custom-file-input name="catalog" ng-model="user.catalog"  type="file"
+      /     // list
+      /     .form-group.fails ng-class=("{ 'has-error' : usubmitForm2.list.$invalid && !usubmitForm2.list.$pristine }")
+      /       .lable-one
+      /         .label Прайс лист:
+      /       input#upload.custom-file-input name="list" ng-model="user.list"  type="file"
+      /     // sert
+      /     .form-group.fails ng-class=("{ 'has-error' : usubmitForm2.sert.$invalid && !usubmitForm2.sert.$pristine }")
+      /       .lable-one
+      /         .label сертифікат:
+      /       input#upload.custom-file-input name="sert" ng-model="user.sert"  type="file"
+      /
+      /     .taitle-contacts.color-line.yellow-block Дополнитильная информация
+      /     //country
+      /     .form-group ng-class=("{ 'has-error' : usubmitForm2.country.$invalid && !usubmitForm2.country.$pristine }")
+      /       .lable-one
+      /         .label страна:
+      /         / .span  *
+      /       input.text-input.form-control name="country" ng-model="user.country" required="" type="text" minlength="3" placeholder="страна"
+      /       p.help-block ng-show=("usubmitForm2.country.$invalid && !usubmitForm2.country.$pristine")  You country is required.
+      /     // city
+      /     .form-group ng-class=("{ 'has-error' : usubmitForm2.city.$invalid && !usubmitForm2.city.$pristine }")
+      /       .lable-one
+      /         .label Город:
+      /         / .span  *
+      /       input.text-input.form-control name="city" ng-model="user.city" required="" type="text" minlength="3" placeholder="страна"
+      /       p.help-block ng-show=("usubmitForm2.city.$invalid && !usubmitForm2.city.$pristine")  You country is required.
+      /     // street
+      /     .form-group ng-class=("{ 'has-error' : usubmitForm2.street.$invalid && !usubmitForm2.street.$pristine }")
+      /       .lable-one
+      /         .label Улица:
+      /         / .span  *
+      /       input.text-input.form-control name="street" ng-model="user.street" required="" type="text" minlength="3" placeholder="страна"
+      /       p.help-block ng-show=("usubmitForm2.street.$invalid && !usubmitForm2.street.$pristine")  You country is street.
+      /     // phone
+      /     .form-group ng-class=("{ 'has-error' : usubmitForm2.phone.$invalid && !usubmitForm2.phone.$pristine }")
+      /       .lable-one
+      /         .label Телефон:
+      /       input.text-input.form-control required="" name="phone" ng-model="user.phone" type="text"  placeholder="+91-636-78658" ng-pattern="phoneNumbr"
+      /
+      /       p.help-block.phone ng-show="usubmitForm2.phone.$error.pattern"  Please match pattern [+91 036 78658 or 91 036 78658]
+      /     // site
+      /     .form-group ng-class=("{ 'has-error' : usubmitForm2.site.$invalid && !usubmitForm2.site.$pristine }")
+      /       .lable-one
+      /         .label Сайт:
+      /         / .span  *
+      /       input.text-input.form-control name="site" ng-model="user.site" required="" type="text" minlength="5" placeholder="страна"
+      /       p.help-block ng-show=("usubmitForm2.site.$invalid && !usubmitForm2.site.$pristine")  You site is street.
+      /     .taitle-contacts.color-line.yellow-block контактное лицо
+      /     // fio
+      /     .form-group ng-class=("{ 'has-error' : usubmitForm2.fio.$invalid && !usubmitForm2.fio.$pristine }")
+      /       .lable-one
+      /         .label страна:
+      /         / .span  *
+      /       input.text-input.form-control name="fio" ng-model="user.fio" required="" type="text" minlength="5" placeholder="страна"
+      /       p.help-block ng-show=("usubmitForm2.fio.$invalid && !usubmitForm2.fio.$pristine")  You fio is street.
+      /     // email
+      /     .form-group ng-class=("{ 'has-error' : usubmitForm2.email.$invalid && !usubmitForm2.email.$pristine }")
+      /       .lable-one
+      /         .label E-mail
+      /         .span  *
+      /       input.text-input.form-control name="email" ng-model="user.email" required="" type="email" placeholder="gmail@gmail.com" /
+      /       p.help-block ng-show=("usubmitForm2.email.$invalid && !usubmitForm2.email.$pristine")  Enter a valid email.
+      /     // phonefio
+      /     .form-group ng-class=("{ 'has-error' : usubmitForm2.phonefio.$invalid && !usubmitForm2.phonefio.$pristine }")
+      /       .lable-one
+      /         .label Телефон:
+      /       input.text-input.form-control required="" name="phonefio" ng-model="user.phonefio" type="text"  placeholder="+91-636-78658" ng-pattern="phoneNumbr"
+      /       p.help-block.phone ng-show="usubmitForm2.phonefio.$error.pattern"  Please match pattern [+91 036 78658 or 91 036 78658]
+      /     //fax
+      /     .form-group ng-class=("{ 'has-error' : usubmitForm2.fax.$invalid && !usubmitForm2.fax.$pristine }")
+      /       .lable-one
+      /         .label Телефон:
+      /       input.text-input.form-control required="" name="fax" ng-model="user.fax" type="text"  placeholder="+910367865844444" ng-pattern="faxNumbr"
+      /       p.help-block.phone ng-show="usubmitForm2.fax.$error.pattern"  Please match pattern [+910367865844444 or 910367865844444]
+      /     .button-te
+      /       button.open-popup data-id="popup_default" ng-disabled="usubmitForm2.$invalid" type="submit"  отпраить
+      /
+      /
+      /
+      /
+      / #marker.tabcontent
+      /
+      /   form name="usubmitForm3" ng-submit="submitForm()" novalidate=""
+      /     // tariff
+      /     .form-group ng-class=("{ 'has-error' : usubmitForm3.tariff.$invalid && !usubmitForm3.tariff.$pristine }")
+      /       .lable-one
+      /         .label Тарифньй план:
+      /         / .span  *
+      /       select#nazn.selectid.form-control name="tariff" required=""
+      /         //ng-model="user.tariff"
+      /         option#one1.sel_dok value="free"  free
+      /         option#two1.sel_dok value="basic"  basic
+      /         option#three1.sel_dok value="platinum"  platinum
+      /
+      /     //name
+      /     .form-group ng-class=("{ 'has-error' : usubmitForm3.name.$invalid && !usubmitForm3.name.$pristine }")
+      /       .lable-one
+      /         .label Названия компании:
+      /         / .span  *
+      /       input.text-input.form-control name="name" ng-model="user.name" required="" type="text" minlength="5" placeholder="ОАО 'ТУльский молочний комбинат'" /
+      /       p.help-block ng-show=("usubmitForm3.name.$invalid && !usubmitForm3.name.$pristine")  You name is required.
+      /
+      /
+      /
+      /
+      /     / //manufacturers
+      /     / .form-group ng-class=("{ 'has-error' : musubmitForm.tariff.$invalid && !musubmitForm.tariff.$pristine }")
+      /     /   .lable-one
+      /     /     .label тип призводства план:
+      /     /     / .span  *
+      /     /   select#nazn.selectid.form-control name="tariff" required=""
+      /     /     option value="1"  питания
+      /     /     option value="2"  косметика
+      /     /     option value="3"  для дома
+      /
+      /
+      /     //logotype
+      /     .form-group ng-class=("{ 'has-error' : usubmitForm3.tariff.$invalid && !usubmitForm3.tariff.$pristine }")
+      /       .lable-one
+      /         .label логотип:
+      /
+      /       input#upload.custom-file-input.none name='logo' ng-file-select="onFileSelect($files)"  ng-model="imageSrc" required=""  type="file"
+      /       .img
+      /         img.content-centering_element ng-src="{{imageSrc}}"
+      /
+      /     //aboyut as
+      /     .form-group ng-class=("{ 'has-error' : usubmitForm3.comment.$invalid && !usubmitForm3.comment.$pristine }")
+      /       .lable-one
+      /         .label описания
+      /       textarea.form-control.ng-pristine.ng-valid.ng-empty.ng-touched name="comment" ng-model="user.comment" placeholder=("") rows="5" minlength="15"
+      /       p.help-block ng-show="usubmitForm3.comment.$error.maxlength"  not less than 15 characters
+      /
+      /     // foto
+      /     .form-group ng-class=("{ 'has-error' : usubmitForm3.username.$invalid && !usubmitForm3.username.$pristine }")
+      /       .lable-one
+      /         .label фото
+      /       div.target
+      /         div  img-upload="" method="POST"
+      /         //video
+      /     .form-group ng-class=("{ 'has-error' : usubmitForm3.video.$invalid && !usubmitForm3.video.$pristine }")
+      /       .lable-one
+      /         .label посилання на відео:
+      /         / .span  *
+      /       input.text-input.form-control name="video" ng-model="user.video" required="" type="text" minlength="5" placeholder="https://www.youtube.com/watch" /
+      /       p.help-block ng-show=("usubmitForm3.video.$invalid && !usubmitForm3.video.$pristine")  You name is required.
+      /     / catalog
+      /     .form-group.fails ng-class=("{ 'has-error' : usubmitForm3.catalog.$invalid && !usubmitForm3.catalog.$pristine }")
+      /       .lable-one
+      /         .label каталог продукції:
+      /       input#upload.custom-file-input name="catalog" ng-model="user.catalog"  type="file"
+      /     // list
+      /     .form-group.fails ng-class=("{ 'has-error' : usubmitForm3.list.$invalid && !usubmitForm3.list.$pristine }")
+      /       .lable-one
+      /         .label Прайс лист:
+      /       input#upload.custom-file-input name="list" ng-model="user.list"  type="file"
+      /     // sert
+      /     .form-group.fails ng-class=("{ 'has-error' : usubmitForm3.sert.$invalid && !usubmitForm3.sert.$pristine }")
+      /       .lable-one
+      /         .label сертифікат:
+      /       input#upload.custom-file-input name="sert" ng-model="user.sert"  type="file"
+      /
+      /     .taitle-contacts.color-line.yellow-block Дополнитильная информация
+      /     //country
+      /     .form-group ng-class=("{ 'has-error' : usubmitForm3.country.$invalid && !usubmitForm3.country.$pristine }")
+      /       .lable-one
+      /         .label страна:
+      /         / .span  *
+      /       input.text-input.form-control name="country" ng-model="user.country" required="" type="text" minlength="3" placeholder="страна"
+      /       p.help-block ng-show=("usubmitForm3.country.$invalid && !usubmitForm3.country.$pristine")  You country is required.
+      /     // city
+      /     .form-group ng-class=("{ 'has-error' : usubmitForm3.city.$invalid && !usubmitForm3.city.$pristine }")
+      /       .lable-one
+      /         .label Город:
+      /         / .span  *
+      /       input.text-input.form-control name="city" ng-model="user.city" required="" type="text" minlength="3" placeholder="страна"
+      /       p.help-block ng-show=("usubmitForm3.city.$invalid && !usubmitForm3.city.$pristine")  You country is required.
+      /     // street
+      /     .form-group ng-class=("{ 'has-error' : usubmitForm3.street.$invalid && !usubmitForm3.street.$pristine }")
+      /       .lable-one
+      /         .label Улица:
+      /         / .span  *
+      /       input.text-input.form-control name="street" ng-model="user.street" required="" type="text" minlength="3" placeholder="страна"
+      /       p.help-block ng-show=("usubmitForm3.street.$invalid && !usubmitForm3.street.$pristine")  You country is street.
+      /     // phone
+      /     .form-group ng-class=("{ 'has-error' : usubmitForm3.phone.$invalid && !usubmitForm3.phone.$pristine }")
+      /       .lable-one
+      /         .label Телефон:
+      /       input.text-input.form-control required="" name="phone" ng-model="user.phone" type="text"  placeholder="+91-636-78658" ng-pattern="phoneNumbr"
+      /
+      /       p.help-block.phone ng-show="usubmitForm3.phone.$error.pattern"  Please match pattern [+91 036 78658 or 91 036 78658]
+      /     // site
+      /     .form-group ng-class=("{ 'has-error' : usubmitForm3.site.$invalid && !usubmitForm3.site.$pristine }")
+      /       .lable-one
+      /         .label Сайт:
+      /         / .span  *
+      /       input.text-input.form-control name="site" ng-model="user.site" required="" type="text" minlength="5" placeholder="страна"
+      /       p.help-block ng-show=("usubmitForm3.site.$invalid && !usubmitForm3.site.$pristine")  You site is street.
+      /     .taitle-contacts.color-line.yellow-block контактное лицо
+      /     // fio
+      /     .form-group ng-class=("{ 'has-error' : usubmitForm3.fio.$invalid && !usubmitForm3.fio.$pristine }")
+      /       .lable-one
+      /         .label страна:
+      /         / .span  *
+      /       input.text-input.form-control name="fio" ng-model="user.fio" required="" type="text" minlength="5" placeholder="страна"
+      /       p.help-block ng-show=("usubmitForm3.fio.$invalid && !usubmitForm3.fio.$pristine")  You fio is street.
+      /     // email
+      /     .form-group ng-class=("{ 'has-error' : usubmitForm3.email.$invalid && !usubmitForm3.email.$pristine }")
+      /       .lable-one
+      /         .label E-mail
+      /         .span  *
+      /       input.text-input.form-control name="email" ng-model="user.email" required="" type="email" placeholder="gmail@gmail.com" /
+      /       p.help-block ng-show=("usubmitForm3.email.$invalid && !usubmitForm3.email.$pristine")  Enter a valid email.
+      /     // phonefio
+      /     .form-group ng-class=("{ 'has-error' : usubmitForm3.phonefio.$invalid && !usubmitForm3.phonefio.$pristine }")
+      /       .lable-one
+      /         .label Телефон:
+      /       input.text-input.form-control required="" name="phonefio" ng-model="user.phonefio" type="text"  placeholder="+91-636-78658" ng-pattern="phoneNumbr"
+      /       p.help-block.phone ng-show="usubmitForm3.phonefio.$error.pattern"  Please match pattern [+91 036 78658 or 91 036 78658]
+      /     //fax
+      /     .form-group ng-class=("{ 'has-error' : usubmitForm3.fax.$invalid && !usubmitForm3.fax.$pristine }")
+      /       .lable-one
+      /         .label Телефон:
+      /       input.text-input.form-control required="" name="fax" ng-model="user.fax" type="text"  placeholder="+910367865844444" ng-pattern="faxNumbr"
+      /       p.help-block.phone ng-show="usubmitForm3.fax.$error.pattern"  Please match pattern [+910367865844444 or 910367865844444]
+      /     .button-te
+      /       button.open-popup data-id="popup_default" ng-disabled="usubmitForm3.$invalid" type="submit"  отпраить
+      /
+      /
+      /
+      /
+      /
+      /
+      /
+      /
+      /
+      /
+      / #logistics.tabcontent
+      /   form name="usubmitForm4" ng-submit="submitForm()" novalidate=""
+      /     // tariff
+      /     .form-group ng-class=("{ 'has-error' : usubmitForm4.tariff.$invalid && !usubmitForm4.tariff.$pristine }")
+      /       .lable-one
+      /         .label Тарифньй план:
+      /         / .span  *
+      /       select#nazn.selectid.form-control name="tariff" required=""
+      /         //ng-model="user.tariff"
+      /         option#one1.sel_dok value="free"  free
+      /         option#two1.sel_dok value="basic"  basic
+      /         option#three1.sel_dok value="platinum"  platinum
+      /
+      /     //name
+      /     .form-group ng-class=("{ 'has-error' : usubmitForm4.name.$invalid && !usubmitForm4.name.$pristine }")
+      /       .lable-one
+      /         .label Названия компании:
+      /         / .span  *
+      /       input.text-input.form-control name="name" ng-model="user.name" required="" type="text" minlength="5" placeholder="ОАО 'ТУльский молочний комбинат'" /
+      /       p.help-block ng-show=("usubmitForm4.name.$invalid && !usubmitForm4.name.$pristine")  You name is required.
+      /
+      /
+      /
+      /
+      /     / //manufacturers
+      /     / .form-group ng-class=("{ 'has-error' : lusubmitForm.tariff.$invalid && !lusubmitForm.tariff.$pristine }")
+      /     /   .lable-one
+      /     /     .label тип призводства план:
+      /     /     / .span  *
+      /     /   select#nazn.selectid.form-control name="tariff" required=""
+      /     /     option value="1"  питания
+      /     /     option value="2"  косметика
+      /     /     option value="3"  для дома
+      /
+      /
+      /     //logotype
+      /     .form-group ng-class=("{ 'has-error' : usubmitForm4.tariff.$invalid && !usubmitForm4.tariff.$pristine }")
+      /       .lable-one
+      /         .label логотип:
+      /
+      /       input#upload.custom-file-input.none name='logo' ng-file-select="onFileSelect($files)"  ng-model="imageSrc" required=""  type="file"
+      /       .img
+      /         img.content-centering_element ng-src="{{imageSrc}}"
+      /
+      /     //aboyut as
+      /     .form-group ng-class=("{ 'has-error' : usubmitForm4.comment.$invalid && !usubmitForm4.comment.$pristine }")
+      /       .lable-one
+      /         .label описания
+      /       textarea.form-control.ng-pristine.ng-valid.ng-empty.ng-touched name="comment" ng-model="user.comment" placeholder=("") rows="5" minlength="15"
+      /       p.help-block ng-show="usubmitForm4.comment.$error.maxlength"  not less than 15 characters
+      /
+      /     // foto
+      /     .form-group ng-class=("{ 'has-error' : usubmitForm4.username.$invalid && !usubmitForm4.username.$pristine }")
+      /       .lable-one
+      /         .label фото
+      /       div.target
+      /         div  img-upload="" method="POST"
+      /         //video
+      /     .form-group ng-class=("{ 'has-error' : usubmitForm4.video.$invalid && !usubmitForm4.video.$pristine }")
+      /       .lable-one
+      /         .label посилання на відео:
+      /         / .span  *
+      /       input.text-input.form-control name="video" ng-model="user.video" required="" type="text" minlength="5" placeholder="https://www.youtube.com/watch" /
+      /       p.help-block ng-show=("usubmitForm4.video.$invalid && !usubmitForm4.video.$pristine")  You name is required.
+      /     / catalog
+      /     .form-group.fails ng-class=("{ 'has-error' : usubmitForm4.catalog.$invalid && !usubmitForm4.catalog.$pristine }")
+      /       .lable-one
+      /         .label каталог продукції:
+      /       input#upload.custom-file-input name="catalog" ng-model="user.catalog"  type="file"
+      /     // list
+      /     .form-group.fails ng-class=("{ 'has-error' : usubmitForm4.list.$invalid && !usubmitForm4.list.$pristine }")
+      /       .lable-one
+      /         .label Прайс лист:
+      /       input#upload.custom-file-input name="list" ng-model="user.list"  type="file"
+      /     // sert
+      /     .form-group.fails ng-class=("{ 'has-error' : usubmitForm4.sert.$invalid && !usubmitForm4.sert.$pristine }")
+      /       .lable-one
+      /         .label сертифікат:
+      /       input#upload.custom-file-input name="sert" ng-model="user.sert"  type="file"
+      /
+      /     .taitle-contacts.color-line.yellow-block Дополнитильная информация
+      /     //country
+      /     .form-group ng-class=("{ 'has-error' : usubmitForm4.country.$invalid && !usubmitForm4.country.$pristine }")
+      /       .lable-one
+      /         .label страна:
+      /         / .span  *
+      /       input.text-input.form-control name="country" ng-model="user.country" required="" type="text" minlength="3" placeholder="страна"
+      /       p.help-block ng-show=("usubmitForm4.country.$invalid && !usubmitForm4.country.$pristine")  You country is required.
+      /     // city
+      /     .form-group ng-class=("{ 'has-error' : usubmitForm4.city.$invalid && !usubmitForm4.city.$pristine }")
+      /       .lable-one
+      /         .label Город:
+      /         / .span  *
+      /       input.text-input.form-control name="city" ng-model="user.city" required="" type="text" minlength="3" placeholder="страна"
+      /       p.help-block ng-show=("usubmitForm4.city.$invalid && !usubmitForm4.city.$pristine")  You country is required.
+      /     // street
+      /     .form-group ng-class=("{ 'has-error' : usubmitForm4.street.$invalid && !usubmitForm4.street.$pristine }")
+      /       .lable-one
+      /         .label Улица:
+      /         / .span  *
+      /       input.text-input.form-control name="street" ng-model="user.street" required="" type="text" minlength="3" placeholder="страна"
+      /       p.help-block ng-show=("usubmitForm4.street.$invalid && !usubmitForm4.street.$pristine")  You country is street.
+      /     // phone
+      /     .form-group ng-class=("{ 'has-error' : usubmitForm4.phone.$invalid && !usubmitForm4.phone.$pristine }")
+      /       .lable-one
+      /         .label Телефон:
+      /       input.text-input.form-control required="" name="phone" ng-model="user.phone" type="text"  placeholder="+91-636-78658" ng-pattern="phoneNumbr"
+      /
+      /       p.help-block.phone ng-show="usubmitForm4.phone.$error.pattern"  Please match pattern [+91 036 78658 or 91 036 78658]
+      /     // site
+      /     .form-group ng-class=("{ 'has-error' : usubmitForm4.site.$invalid && !usubmitForm4.site.$pristine }")
+      /       .lable-one
+      /         .label Сайт:
+      /         / .span  *
+      /       input.text-input.form-control name="site" ng-model="user.site" required="" type="text" minlength="5" placeholder="страна"
+      /       p.help-block ng-show=("usubmitForm4.site.$invalid && !usubmitForm4.site.$pristine")  You site is street.
+      /     .taitle-contacts.color-line.yellow-block контактное лицо
+      /     // fio
+      /     .form-group ng-class=("{ 'has-error' : usubmitForm4.fio.$invalid && !usubmitForm4.fio.$pristine }")
+      /       .lable-one
+      /         .label страна:
+      /         / .span  *
+      /       input.text-input.form-control name="fio" ng-model="user.fio" required="" type="text" minlength="5" placeholder="страна"
+      /       p.help-block ng-show=("usubmitForm4.fio.$invalid && !usubmitForm4.fio.$pristine")  You fio is street.
+      /     // email
+      /     .form-group ng-class=("{ 'has-error' : usubmitForm4.email.$invalid && !usubmitForm4.email.$pristine }")
+      /       .lable-one
+      /         .label E-mail
+      /         .span  *
+      /       input.text-input.form-control name="email" ng-model="user.email" required="" type="email" placeholder="gmail@gmail.com" /
+      /       p.help-block ng-show=("usubmitForm4.email.$invalid && !usubmitForm4.email.$pristine")  Enter a valid email.
+      /     // phonefio
+      /     .form-group ng-class=("{ 'has-error' : usubmitForm4.phonefio.$invalid && !usubmitForm4.phonefio.$pristine }")
+      /       .lable-one
+      /         .label Телефон:
+      /       input.text-input.form-control required="" name="phonefio" ng-model="user.phonefio" type="text"  placeholder="+91-636-78658" ng-pattern="phoneNumbr"
+      /       p.help-block.phone ng-show="usubmitForm4.phonefio.$error.pattern"  Please match pattern [+91 036 78658 or 91 036 78658]
+      /     //fax
+      /     .form-group ng-class=("{ 'has-error' : usubmitForm4.fax.$invalid && !usubmitForm4.fax.$pristine }")
+      /       .lable-one
+      /         .label Телефон:
+      /       input.text-input.form-control required="" name="fax" ng-model="user.fax" type="text"  placeholder="+910367865844444" ng-pattern="faxNumbr"
+      /       p.help-block.phone ng-show="usubmitForm4.fax.$error.pattern"  Please match pattern [+910367865844444 or 910367865844444]
+      /     .button-te
+      /       button.open-popup data-id="popup_default" ng-disabled="usubmitForm4.$invalid" type="submit"  отпраить
 
 
 #popup_default.popup

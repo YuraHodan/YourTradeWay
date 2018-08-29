@@ -56,6 +56,21 @@ gem "protected_attributes"
 
 # gem 'devise'
 
+gem 'rails_admin'
+# gem 'rails_admin_nestable'
+
+# gem 'devise'
+gem 'mini_magick'
+gem 'carrierwave'
+gem 'devise'
+gem 'rails_admin_globalize_field'
+gem 'rails_admin-i18n'
+gem 'devise-i18n'
+gem 'globalize'
+gem 'route_translator'
+gem 'ckeditor'
+gem 'pry'
+gem 'ace-rails-ap'
 gem 'enumerize'
 
 # gem 'ckeditor'
@@ -83,11 +98,11 @@ gem 'kaminari'
 
 #gem 'paperclip-optimizer'
 
-#gem 'attachable', github: "VoroninNick/attachable"
+gem 'attachable', github: "VoroninNick/attachable"
 #gem 'attachable', path:"/media/data/pasha/gems/attachable"
-#gem 'cms', path: "/media/data/pasha/gems/cms"
+# gem 'cms', path: "/media/data/pasha/gems/cms"
 
-# gem 'cms', github: "pkorenev/cms"
+gem 'cms', github: "pkorenev/cms"
 
 # gem 'require_reloader'
 
@@ -96,3 +111,5 @@ gem 'thin'
 gem 'puma'
 gem 'angularjs-rails', '1.6'
 gem 'angular-ui-bootstrap-rails'
+gem 'carrierwave'
+gem 'mini_magick'

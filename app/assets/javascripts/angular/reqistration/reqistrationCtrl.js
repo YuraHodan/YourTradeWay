@@ -1,40 +1,84 @@
-ytwApp.controller('registrationController', ['$scope', function($scope,$http) {
-$scope.phoneNumbr = /^\+?\d{2}[- ]?\d{3}[- ]?\d{5}$/;
-$scope.faxNumbr = /^\+?\d{2}[- ]?\d{3}[- ]?\d{10}$/;
+// ytwApp.controller('registrationController', ['$scope', function($scope,$http) {
+// $scope.phoneNumbr = /^\+?\d{2}[- ]?\d{3}[- ]?\d{5}$/;
+// $scope.faxNumbr = /^\+?\d{2}[- ]?\d{3}[- ]?\d{10}$/;
+//
+//
+// 		$scope.user = {};
+//      // function to submit the form after all validation has occurred
+//
+//          // $scope.save = function (answer, usubmitForm){
+//          //     if(usubmitForm.$valid){
+// 				 //
+//          //         $http.post("registration", answer).then(function success (response) {
+//          //             $scope.user=user.data;
+// 				 //
+//          //         });
+//          //     }
+//          // };
+//
+//
+//
+//
+//
+// 		$scope.user.imageSrc = "";
+//
+// 	     $scope.$on("fileProgress", function(e, progress) {
+// 	       $scope.progress = progress.loaded / progress.total;
+// 	     });
+//
+//
+// }]);
 
-     // function to submit the form after all validation has occurred
-		$scope.submitForm = function() {
-			// check to make sure the form is completely valid
-			if ($scope.usubmitForm.$valid) {
-			}
-			$scope.user = {};
-			$scope.usubmitForm.$setPristine();
+registrationCtrl.$inject = ['$http', '$scope'];
 
-
-			if ($scope.dusubmitForm.$valid) {
-			}
-			if ($scope.musubmitForm.$valid) {
-			}
-			if ($scope.lusubmitForm.$valid) {
-			}
-		};
-
-		$scope.imageSrc = "";
-
-	     $scope.$on("fileProgress", function(e, progress) {
-	       $scope.progress = progress.loaded / progress.total;
-	     });
-
-
-}]);
+ytwApp.controller('registrationCtrl', registrationCtrl);
 console.log('7');
 
 
 //////////////////////////////////
 
 
+/////////////////////////////////
 
 
+function registrationCtrl($http, $scope) {
+
+    // SENDING INFO AND ORDER
+
+    // $scope.user = {};
+    // POST REQUEST
+var token = document.getElementsByName('csrf-token')[0].content;
+
+    // $scope.submitForm = function () {
+    //     var url = 'message';
+    //     var data = {
+    //         info: $scope.user
+    //     };
+    //     var config = {
+    //         headers : {
+    //             'Content-Type': 'application/json',
+    //             'X-CSRF-Token': token
+    //         }
+    //     };
+    //
+    //     $http.post(url, data, config)
+    //         .then(
+    //             function(response){
+    //                 // callback
+    //                 $scope.user = data.user;
+    //                 alert("gooooo.");
+    //             },
+    //             function(response){
+    //                 // failure callback
+    //                 alert("єбать ти лох");
+    //             }
+    //         );
+    // };
+}
+//////////////////////////////////
+
+
+//////////////////////////////////
 ytwApp.directive("ngFileSelect", function(fileReader, $timeout, $http,$compile) {
     return {
       scope: {
@@ -122,7 +166,7 @@ ytwApp.directive("imgUpload",function($http,$compile){
 					url : "@",
 					method : "@"
 				},
-				template : 	'<input class="fileUpload" type="file" multiple />'+
+				template : 	'<input class="fileUpload" type="file" ng-model="user.foto" multiple />'+
 							'<div class="dropzone">'+
 								'<div class="svgo"></div>'+
 								'<h3 class="msg">перетяните сюда ваши файли</h3>'+

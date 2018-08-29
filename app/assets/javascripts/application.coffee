@@ -29,6 +29,7 @@
 #= require plugins/jquery.paginate.min
 # require plugins/jquery.simplePagination
 # require plagins/bootstrap.min
+#= require plugins/jquery.form.min
 
 #     I N I T I A L I Z E
 
@@ -51,6 +52,7 @@
 # require paginator
 #= require premium
 #= require popup
+#= require jquery_form
 
 
 

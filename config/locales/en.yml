@@ -20,4 +20,82 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  # hello: "Hello world"
+  header:
+    main: "Главная"
+    premium: "Премиум"
+    tradergram: "Tradergram"
+    about_us: "О нас"
+    contact_us: "Контакти"
+    check_in: "Регистрация"
+  menus:
+    top_products: "Топ товары"
+    products: "товары"
+    manufactuters: "производители"
+    distributors: "ДИСТРИБЬЮТОРЫ"
+    markets: "МАРКЕТЫ"
+    logistics: "ЛОГИСТИКА"
+  footer:
+    news: "НОВОСТИ"
+    faq: "FAQ"
+    terms_of_use: "Условия использования"
+  index:
+    new_manufactuters: "НОВЫЕ ПРОИЗВОДИТЕЛИ"
+    all_news: "все новости"
+    more_details: "подробнее"
+    submit_application: "ПОДАТЬ ЗАЯВКУ НА РАЗМЕЩЕНИЕ"
+
+
+  contact_page:
+    main_office: "ГЛАВНЫЙ ОФИС"
+    sales_department: "КОМЕРЧЕСКИЙ ОТДЕЛ"
+    technical_support: "ТЕХПОДДЕРЖКА"
+    for_advertisers: "РЕКЛАМОДАТЕЛЯМ"
+    we_in_social_networks: "МЫ В СОЦСЕТЯХ"
+    ask_a_question: "ЗАДАТЬ ВОПРОС"
+    send: "ОТПРАВИТЬ"
+    country: "СТРАНА"
+    address: "АДРЕСС"
+    phone: "ТЕЛЕФОН"
+    fax: "ФАКС"
+    full_name: "ФИО"
+    message: "СООБЩЕНИЕ"
+
+
+  check_in_page:
+    tariff_plan: "Тафный план"
+    company_name: "Название компании"
+    Type_of_production: "Тип производства"
+    Logotype: "Логотип"
+    Select_a_file: "Выбрать файл"
+    Description: "Описание"
+    photo: "Фото"
+    Link_to_video: "Ссылка на видео"
+    Product_Catalog: "Каталог продукции"
+    Price_list: "Прайс лист"
+    Сertificate: "Сертификат"
+    Additional_Information: "Дополнительная иформация"
+    Country: "Страна"
+    City: "Город"
+    Street: "Улица"
+    phone: "ТЕЛЕФОН"
+    Site: "Сайт"
+    The_contact_person: "Контактное лицо"
+
+
+  unit_of_goods:
+    indicative_price: "ОРИНТЕРОВОЧНАЯ ЦЕНА"
+    Weight: "Вес"
+    View: "Вид"
+    Аmount: "Количество"
+    Weight_of_packing: "Вес коробки"
+    Expiration_date: "Срок годности"
+    Description: "Описание"
+    Manufacturer: "Производитель"
+    Country: "Страна"
+    Address: "Адресс"
+    Kind_of_activity: "Вид деятельности"
+    Site: "Сайт"
+    Recommendations: "Рекомендации"
+    Similar_products: "Похожие товары"
+    Show_all: "Показать всё"

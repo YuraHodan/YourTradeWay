@@ -11,11 +11,17 @@
         .select-heder
         .language-box.dib
           .language-one.active
-            | ru
+            = I18n.locale
             = inline_svg "svg/ic_keyboard_arrow_down_black_24px.svg"
           .hover-block
-            .language-one ua
-            .language-one eu
+            - if @locale_links
+              - @locale_links.each do |locale, url|
+                - active = I18n.locale == locale
+                - tag_name =  active ? "span" : "a"
+                - tag_attrs = {class: "locale-link"}
+                - tag_attrs["href"] = url
+                - locale_names = {ru: "РУС",en: "ENG"}
+                .language-one = content_tag(tag_name, locale_names[locale.to_sym], tag_attrs)
         a.btn-big-heder href=registration_path РЕГИСТРАЦИЯ
 
 

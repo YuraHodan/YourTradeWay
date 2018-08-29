@@ -14,6 +14,11 @@ var ytwApp = angular.module('ytwApp', []);
 //     };
 //
 // })
+// $scope.user.imageSrc = "";
+//
+//    $scope.$on("fileProgress", function(e, progress) {
+//      $scope.progress = progress.loaded / progress.total;
+//    });
 ytwApp.factory('pagination', function( $sce ) {
 
   var currentPage = 0;
@@ -83,3 +88,17 @@ ytwApp.factory('pagination', function( $sce ) {
 
   }
 }) /* END of factory-pagination */
+
+
+
+// angular.module("ytwApp").directive("filesInput", function() {
+//   return {
+//     require: "ngModel",
+//     link: function postLink(scope,elem,attrs,ngModel) {
+//       elem.on("change", function(e) {
+//         var files = elem[0].files;
+//         ngModel.$setViewValue(files);
+//       })
+//     }
+//   }
+// });
