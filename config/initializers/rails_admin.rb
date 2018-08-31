@@ -24,7 +24,9 @@ RailsAdmin.config do |config|
   # config.show_gravatar = true
 
   config.actions do
-    dashboard                     # mandatory
+    dashboard do
+      statistics false
+    end                     # mandatory
     index                         # mandatory
     new
     export
@@ -33,13 +35,16 @@ RailsAdmin.config do |config|
     edit
     delete
     show_in_app
-
   config.included_models = [Logistic,Logistic::Translation,Market,Market::Translation,Distributor,Distributor::Translation,Manufacture::Translation,Product::Translation,Product,Manufacture,Contact,Contact::Translation,Rule,Rule::Translation,Faq,Faq::Translation,Article,Article::Translation,ThirdMenu::Translation,SecondMenu::Translation,MainMenu::Translation,MainMenu,SecondMenu,ThirdMenu,User,Sociallink,Contact,Contact::Translation,Rule,Rule::Translation]
 
   config.model Sertificate do
+      visible false
+
     fields :image
   end
   config.model Image do
+      visible false
+
     fields :image
   end
 config.model Logistic do
@@ -244,6 +249,7 @@ config.model Logistic do
   end
 
   config.model SecondMenu do
+    fields :main_menu
     field :third_menus
     field :translations, :globalize_tabs
   end
@@ -256,6 +262,7 @@ config.model Logistic do
 
   config.model ThirdMenu do
     field :translations, :globalize_tabs
+    fields :second_menu
   end
 
   config.model ThirdMenu::Translation do
@@ -264,7 +271,7 @@ config.model Logistic do
     fields :locale, :title
   end
 
-    ## With an audit adapter, you can add:
+    ## With an audit adapter, you can a`dd:
     # history_index
     # history_show
   end

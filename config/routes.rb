@@ -24,13 +24,13 @@ Rails.application.routes.draw do
     get "contacts", action: "contacts"
     get "faq", action: "faq"
     get "terms", action: "terms"
-    get "registration", action: "registration"
+    # get "registration", action: "registration"
     get "aboutus", action: "aboutus"
     get "topgoods", action: "topgoods"
 
 
 
-    post "registration", action: "registration"
+    # post "registration", action: "registration"
     post "message", action: "message"
 
   end
