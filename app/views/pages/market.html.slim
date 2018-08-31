@@ -1,350 +1,107 @@
-.marcet ng-controller="marcetControler as stor"
+.oneproducter
   .row
-    .medium-3.columns
-      .selector.bage
-        = render "selector"
-      .dubl-select
-        .accordion-button.opened
-          p afdsfdsf
-          .svg-slid = inline_svg "svg/ic_keyboard_arrow_down_black_24px.svg"
-        .accordion-inner.show
+    .medium-8.columns
+      .row
+        .medium-3.columns
+          .wrapper
+            .media-ob
+              .compani-logo
+                .img-bg style="background-image: url(#{asset_path('photo/main/logos/images.png')})"
+                .tex-box более 5000 товаров
+        .medium-6.columns
+          .text-oneproducter
+            .title
+              | Туровсикй молочний комбінат
+              .title-smolle
+                | продукть питания
+            .rules
+              .country
+                | Страна:
+                .text
+                  | Беларусь
+              .address
+                | Адреса:
+                .text
+                  | улица Ваупшпасова 4,Минск 220070
+              .site
+                | Сайт:
+                a.text href="https://www.youtube.com"
+                  | www.youtube.com
+            .contacts
+              .text-face.color-line.gray-block
+                | контактное лицо
+              .forms-abaut
+                .lup
+                  .icon = inline_svg "photo/main/svg/man.svg"
+                  .text.name
+                    | Иванов Иван Иванов
+                .lup
+                  .icon  = inline_svg "photo/main/svg/mail.svg"
+                  .text
+                    a href="mailto: example@com.ua" example@com.ua
+                .lup
+                  .icon = inline_svg "photo/main/svg/phone.svg"
+                  .text
+                    a href="tel:+78142332211" +7(814)-233-22-11
+                .lup
+                  .icon = inline_svg "photo/main/svg/phone.svg"
+                  .text
+                    a href="tel:+78142332211" +7(814)-233-22-11
+      .medium.columns
+        .about-us
+          .title.color-line.gray-block
+            .text-title о компании
+          .about-us-text
+            p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            .title.marka.color-line.gray-block
+              .text-title торговая марка
+            .about-us-text
+              table
+                tr
+                tr
+                  td Premiya Select
+                  td.rigt Zelena Krayina
+                tr
+                  td Premiya Select
+                  td.rigt Zelena Krayina
+                tr
+                  td Premiya Select
+                  td.rigt Zelena Krayina
+                tr
+                  td Premiya Select
+                  td.rigt Zelena Krayina
+                tr
+                  td Premiya Select
+                  td.rigt Zelena Krayina
 
-          .selector
-            ul.read-more-wrap
-              li
-                .one-checkbox
-                  .checkbox
-                    input#checkbox-salis1 type="checkbox"
-                    label.switcher-control for="checkbox-salis1"
-                    span продажа
-                    nav
-                      ul.drop-down.closed
-                        li
-                          a.nav-button href="#"   = inline_svg "svg/ic_keyboard_arrow_down_black_24px.svg"
-                        .down
-                          ul
-                            li
-                              .one-checkbox
-                                .checkbox
-                                  input#checkbox-salis6 type="checkbox"
-                                  label.switcher-control for="checkbox-salis6"
-                                  span продажа
-                            li
-                              .one-checkbox
-                                .checkbox
-                                  input#checkbox-salis7 type="checkbox"
-                                  label.switcher-control for="checkbox-salis7"
-                                  span продажа
-                            li
-                              .one-checkbox
-                                .checkbox
-                                  input#checkbox-salis8 type="checkbox"
-                                  label.switcher-control for="checkbox-salis8"
-                                  span продажа
-              li
-                .one-checkbox
-                  .checkbox
-                    input#checkbox-salis2 type="checkbox"
-                    label.switcher-control for="checkbox-salis2"
-                    span продажа
-                    nav
-                      ul.drop-down.closed
-                        li
-                          a.nav-button href="#"   = inline_svg "svg/ic_keyboard_arrow_down_black_24px.svg"
-                        li
-                          .one-checkbox
-                            .checkbox
-                              input#checkbox-salis9 type="checkbox"
-                              label.switcher-control for="checkbox-salis10"
-                              span продажа
-                        li
-                          .one-checkbox
-                            .checkbox
-                              input#checkbox-salis11 type="checkbox"
-                              label.switcher-control for="checkbox-salis11"
-                              span продажа
-                        li.
-                          .one-checkbox
-                            .checkbox
-                              input#checkbox-salis12 type="checkbox"
-                              label.switcher-control for="checkbox-salis12"
-                              span продажа
 
-              li
-                .one-checkbox
-                  .checkbox
-                    input#checkbox-salis3 type="checkbox"
-                    label.switcher-control for="checkbox-salis3"
-                      span продажа
-              li
-                .one-checkbox
-                  .checkbox
-                    input#checkbox-salis4 type="checkbox"
-                    label.switcher-control for="checkbox-salis4"
-                      span продажа
-              li
-                .one-checkbox
-                  .checkbox
-                    input#checkbox-salis5 type="checkbox"
-                    label.switcher-control for="checkbox-salis5"
-                      span продажа
-          .remove-all
-            .x-component = inline_svg "photo/main/svg/filter_clear.svg"
-            .ramove-text очистить все
-            /// smole select
-      .wrapper-filter
-        .openfilters
-          p фильтра
-        .filter-container
-          = render "selectsmole"
-          .dubl-select
-            .accordion-button.opened
-              p afdsfdsf
-              .svg-slid = inline_svg "svg/ic_keyboard_arrow_up_black_24px.svg"
-            .accordion-inner.show
+          .title.color-line.gray-block
+            .text-title наши примущества
+          .about-us-text
+            ul
+              li Специалисть високого класа с большим опитом работь
+              li Специалисть високого класа с большим опитом работь
+              li Специалисть високого класа с большим опитом работь
+              li Специалисть високого класа с большим опитом работь
+              li Специалисть високого класа с большим опитом работь
+              li Специалисть високого класа с большим опитом работь
+              li Специалисть високого класа с большим опитом работь
+              li Специалисть високого класа с большим опитом работь
+              li Специалисть високого класа с большим опитом работь
 
-              .selector
-                ul.read-more-wrap
-                  li
-                    .one-checkbox
-                      .checkbox
-                        input#checkbox-salis1 type="checkbox"
-                        label.switcher-control for="checkbox-salis1"
-                        span продажа
-                        nav
-                          ul.drop-down.closed
-                            li
-                              a.nav-button href="#"   = inline_svg "svg/ic_keyboard_arrow_down_black_24px.svg"
-                            .down
-                              ul
-                                li
-                                  .one-checkbox
-                                    .checkbox
-                                      input#checkbox-salis6 type="checkbox"
-                                      label.switcher-control for="checkbox-salis6"
-                                      span продажа
-                                li
-                                  .one-checkbox
-                                    .checkbox
-                                      input#checkbox-salis7 type="checkbox"
-                                      label.switcher-control for="checkbox-salis7"
-                                      span продажа
-                                li
-                                  .one-checkbox
-                                    .checkbox
-                                      input#checkbox-salis8 type="checkbox"
-                                      label.switcher-control for="checkbox-salis8"
-                                      span продажа
-                  li
-                    .one-checkbox
-                      .checkbox
-                        input#checkbox-salis2 type="checkbox"
-                        label.switcher-control for="checkbox-salis2"
-                        span продажа
-                        nav
-                          ul.drop-down.closed
-                            li
-                              a.nav-button href="#"   = inline_svg "svg/ic_keyboard_arrow_down_black_24px.svg"
-                            li
-                              .one-checkbox
-                                .checkbox
-                                  input#checkbox-salis9 type="checkbox"
-                                  label.switcher-control for="checkbox-salis10"
-                                  span продажа
-                            li
-                              .one-checkbox
-                                .checkbox
-                                  input#checkbox-salis11 type="checkbox"
-                                  label.switcher-control for="checkbox-salis11"
-                                  span продажа
-                            li.
-                              .one-checkbox
-                                .checkbox
-                                  input#checkbox-salis12 type="checkbox"
-                                  label.switcher-control for="checkbox-salis12"
-                                  span продажа
-
-                  li
-                    .one-checkbox
-                      .checkbox
-                        input#checkbox-salis3 type="checkbox"
-                        label.switcher-control for="checkbox-salis3"
-                          span продажа
-                  li
-                    .one-checkbox
-                      .checkbox
-                        input#checkbox-salis4 type="checkbox"
-                        label.switcher-control for="checkbox-salis4"
-                          span продажа
-                  li
-                    .one-checkbox
-                      .checkbox
-                        input#checkbox-salis5 type="checkbox"
-                        label.switcher-control for="checkbox-salis5"
-                          span продажа
-              .remove-all
-                .x-component = inline_svg "photo/main/svg/filter_clear.svg"
-                .ramove-text очистить все
-        /// smole select
+        .bg-slider
+          .wrapper
+            .targer
+              =render "onegoodsslider"
+    .medium-4.columns
+      .sertuficat
+        .title сертифікат
         .selector
-          = render "advertisingSlider"
-    .medium-9.columns
-      .topgoods
-        .topgoods-tex.color-line.gray-block
-          .title топ товари
-          .mainlidet.goode2
-            ul.goode2-slider-for
-            ul.goode2-slider-nav
-              li
-                .border-producers.color-line.red-block
-                  .one-new-product
-                    .img-bg style="background-image: url(#{asset_path('photo/main/logos/brands_icon_1.png')})"
-                  .description
-                    .description-txt
-                      .maker
-                        | Азербайджан
-                      .product-name
-                        | Softprom by ERC
-              li
-                .border-producers.color-line.red-block
-                  .one-new-product
-                    .img-bg style="background-image: url(#{asset_path('photo/main/logos/brands_icon_1.png')})"
-                  .description
-                    .description-txt
-                      .maker
-                        | Азербайджан
-                      .product-name
-                        | Softprom by ERC
-              li
-                .border-producers.color-line.red-block
-                  .one-new-product
-                    .img-bg style="background-image: url(#{asset_path('photo/main/logos/brands_icon_1.png')})"
-                  .description
-                    .description-txt
-                      .maker
-                        | Азербайджан
-                      .product-name
-                        | Softprom by ERC
-              li
-                .border-producers.color-line.red-block
-                  .one-new-product
-                    .img-bg style="background-image: url(#{asset_path('photo/main/logos/brands_icon_1.png')})"
-                  .description
-                    .description-txt
-                      .maker
-                        | Азербайджан
-                      .product-name
-                        | Softprom by ERC
-              li
-                .border-producers.color-line.red-block
-                  .one-new-product
-                    .img-bg style="background-image: url(#{asset_path('photo/main/logos/brands_icon_1.png')})"
-                  .description
-                    .description-txt
-                      .maker
-                        | Азербайджан
-                      .product-name
-                        | Softprom by ERC
-              li
-                .border-producers.color-line.red-block
-                  .one-new-product
-                    .img-bg style="background-image: url(#{asset_path('photo/main/logos/brands_icon_1.png')})"
-                  .description
-                    .description-txt
-                      .maker
-                        | Азербайджан
-                      .product-name
-                        | Softprom by ERC
-              li
-                .border-producers.color-line.red-block
-                  .one-new-product
-                    .img-bg style="background-image: url(#{asset_path('photo/main/logos/brands_icon_1.png')})"
-                  .description
-                    .description-txt
-                      .maker
-                        | Азербайджан
-                      .product-name
-                        | Softprom by ERC
-              li
-                .border-producers.color-line.red-block
-                  .one-new-product
-                    .img-bg style="background-image: url(#{asset_path('photo/main/logos/brands_icon_1.png')})"
-                  .description
-                    .description-txt
-                      .maker
-                        | Азербайджан
-                      .product-name
-                        | Softprom by ERC
-              li
-                .border-producers.color-line.red-block
-                  .one-new-product
-                    .img-bg style="background-image: url(#{asset_path('photo/main/logos/brands_icon_1.png')})"
-                  .description
-                    .description-txt
-                      .maker
-                        | Азербайджан
-                      .product-name
-                        | Softprom by ERC
-
-
-
-    / .medium-9.columns
-    /   .sales
-    /     .sales-leaders.color-line.gray-block
-    /       .title лидерь на рьнке
-    /       .medium-4.columns
-    /         .border-producers.color-line.red-block
-              / .one-new-producers
-              /   .img-bg style="background-image: url(#{asset_path('photo/main/logos/brands_icon_1.png')})"
-              / .description
-              /   .description-txt
-              /     .maker
-              /       | Азербайджан
-              /     .product-name
-              /       | Softprom by ERC
-    /       .medium-4.columns
-    /         .border-producers.color-line.red-block
-    /           .one-new-producers
-    /             .img-bg style="background-image: url(#{asset_path('photo/main/logos/brands_icon_1.png')})"
-    /           .description
-    /             .description-txt
-    /               .maker
-    /                 | Азербайджан
-    /               .product-name
-    /                 | Softprom by ERC
-    /       .medium-4.columns
-    /         .border-producers.color-line.red-block
-    /           .one-new-producers
-    /             .img-bg style="background-image: url(#{asset_path('photo/main/logos/brands_icon_1.png')})"
-    /           .description
-    /             .description-txt
-    /               .maker
-    /                 | Азербайджан
-    /               .product-name
-    /                 | Softprom by ERC
-    .medium-9.columns
-      .salse-all
-        .medium-4.columns  ng-repeat="product in records | limitTo:6:6"
-          .border-producers.color-line.red-block
-            .one-new-producers
-              a.img-bg href=onemarket_path style="background-image: url(#{asset_path('photo/main/logos/brands_icon_1.png')})"
-            .description
-              .description-txt
-                .maker
-                  | {{product.maker}}
-                .product-name
-                  | {{product.product}}
-    .medium-9.columns
-      = render "recomendationmarket"
-    .medium-9.columns
-      .salse-all
-        .medium-4.columns  ng-repeat="product in records | limitTo : 6"
-          .border-producers.color-line.red-block
-            .one-new-producers
-              .img-bg style="background-image: url(#{asset_path('photo/main/logos/brands_icon_1.png')})"
-            .description
-              .description-txt
-                .maker
-                  | {{product.maker}}
-                .product-name
-                  | {{product.product}}
+          = render "oneproducterslider"
+      .batton-doun
+        .btn-big
+          .text прайс лист
+          .icon = inline_svg "photo/main/svg/arrowdown.svg"
+        .btn-big
+          .text сертифікать
+          .icon = inline_svg "photo/main/svg/arrowdown.svg"
