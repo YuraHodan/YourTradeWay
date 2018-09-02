@@ -35,8 +35,26 @@ RailsAdmin.config do |config|
     edit
     delete
     show_in_app
-  config.included_models = [Logistic,Logistic::Translation,Market,Market::Translation,Distributor,Distributor::Translation,Manufacture::Translation,Product::Translation,Product,Manufacture,Contact,Contact::Translation,Rule,Rule::Translation,Faq,Faq::Translation,Article,Article::Translation,ThirdMenu::Translation,SecondMenu::Translation,MainMenu::Translation,MainMenu,SecondMenu,ThirdMenu,User,Sociallink,Contact,Contact::Translation,Rule,Rule::Translation]
+  config.included_models = [MainPage,MainPage::Translation,MainSlider,Logistic,Logistic::Translation,Market,Market::Translation,Distributor,Distributor::Translation,Manufacture::Translation,Product::Translation,Product,Manufacture,Contact,Contact::Translation,Rule,Rule::Translation,Faq,Faq::Translation,Article,Article::Translation,ThirdMenu::Translation,SecondMenu::Translation,MainMenu::Translation,MainMenu,SecondMenu,ThirdMenu,User,Sociallink,Contact,Contact::Translation,Rule,Rule::Translation]
 
+  config.model MainSlider do
+   include_fields :image, :show
+   field :product
+  end
+ config.model MainPage do
+  fields :about_image
+  field :translations, :globalize_tabs
+  end
+
+  config.model MainPage::Translation do
+    visible false
+    configure :locale, :hidden
+    fields :locale
+    field :about_description, :ck_editor
+    field :tradergram_description, :ck_editor
+    field :request_description, :ck_editor
+
+  end
   config.model Sertificate do
       visible false
 

@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   # before_action :initialize_locale_links, except: [:index]
-
+  before_action :set_social_links
   def index
   end
 
@@ -43,6 +43,9 @@ class PagesController < ApplicationController
 
   private
 
+  def set_social_links
+    @social_links = Sociallink.first_or_initialize
+  end
   # def set_locale
   #   redirect_to root_path(locale: I18n.default_locale) if params[:locale].blank?
 

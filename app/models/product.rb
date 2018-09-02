@@ -1,5 +1,6 @@
 class Product < ActiveRecord::Base
   has_many :images, class_name: Image
+  has_many :slides, class_name: MainSlider
   accepts_nested_attributes_for :images
   belongs_to :country, class_name: Country
   belongs_to :manufacture, class_name: Manufacture
