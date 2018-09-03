@@ -1,0 +1,76 @@
+.onegoods ng-controller="onegoodsControler as stor"
+  .row
+    .medium-5.columns
+      .wrapper
+        =render "onegoodsslider"
+    .medium-7.columns
+      .title =@product.title
+      .moni-or
+        .moni-tex
+          | оріентовочная
+          br
+          	| цена :
+        .moni-nomber=@product.price
+        | $
+      .about-product
+        .weight
+          | Вес/Обєм:
+          .text = @product.volume
+        .kind
+          |Вид:
+          .text = @product.type_of_pack
+        .number
+          | Количество:
+          .text = @product.amount
+        .weight
+          |Вес коробки:
+          .text = @product.weight
+            | кг
+        .suitability
+          |Срок годности:
+          .text = @product.expiration_date
+      .about-as.color-line.gray-block
+        .title2
+          | Описание:
+      #box.box
+        p.text = raw @product.description
+      .title3.color-line.gray-block
+        | производитель
+      .country
+        |страна
+        .text = @product.manufacture.country.title
+      .address
+        | Адреса:
+        .text = @product.manufacture.address
+      .activity
+        |Вид деятольности:
+        .text = @product.manufacture&.second_menu&.title
+      .sayt
+        |Сайт
+        a.text href="#{@product.manufacture.web_site_url}"
+          =@product.manufacture.web_site_url
+  .row
+    .medium.columns
+      .wrapper
+        =render "recomendationonegoods"
+        .vibe-text.color-line.gray-block
+          .title похожие товари
+        .vibe-goods
+          .medium-3.columns ng-repeat="product in records | limitTo:8"
+            .border-producers.color-line.yellow-block
+              .one-new-product
+                .img-bg style="background-image: url(#{asset_path('photo/main/news_3.jpg')})"
+              .description
+                .description-txt
+                  .maker
+                    | {{product.maker}}
+                  .product-name
+                    | {{product.product}}
+                  .price.color-line.gray-block
+                    .oriented-price
+                      | {{product.oriented}}
+                    .mony
+                      | {{product.mony}}
+    .medium.columns
+      .allap
+        .btn-big.yellow-btn показать все

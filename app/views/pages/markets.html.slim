@@ -1,12 +1,12 @@
-.tovarsp ng-controller="goodsControler as stor"
+.marcet ng-controller="marcetControler as stor"
   .row
     .medium-3.columns
-      .selectorr
+      .selector.bage
         = render "selector"
       .dubl-select
         .accordion-button.opened
           p afdsfdsf
-          .svg-slid = inline_svg "svg/ic_keyboard_arrow_up_black_24px.svg"
+          .svg-slid = inline_svg "svg/ic_keyboard_arrow_down_black_24px.svg"
         .accordion-inner.show
 
           .selector
@@ -91,7 +91,7 @@
           .remove-all
             .x-component = inline_svg "photo/main/svg/filter_clear.svg"
             .ramove-text очистить все
-      /// smole select
+            /// smole select
       .wrapper-filter
         .openfilters
           p фильтра
@@ -185,41 +185,166 @@
               .remove-all
                 .x-component = inline_svg "photo/main/svg/filter_clear.svg"
                 .ramove-text очистить все
-      /// smole select
-      .selector
-        = render "advertisingSlider"
+        /// smole select
+        .selector
+          = render "advertisingSlider"
     .medium-9.columns
-      .vibe-text.color-line.gray-block
-        .title топ товари
-      .vibe-goods
-        #page-content.medium-4.columns.page-content.gallery ng-repeat="product in records | limitTo : 6"
-          .border-producers.color-line.yellow-block
-            .one-new-product
-              a.img-bg href=article_path style="background-image: url(#{asset_path('photo/main/news_3.jpg')})"
-            .description
-              .description-txt
-                .maker
-                  | {{product.maker}}
-                .product-name
-                  | {{product.product}}
-                .price.color-line.gray-block
-                  .oriented-price
-                    | {{product.oriented}}
-                  .mony
-                    | {{product.mony}}
+      .topgoods
+        .topgoods-tex.color-line.gray-block
+          .title топ товари
+          .mainlidet.goode2
+            ul.goode2-slider-for
+            ul.goode2-slider-nav
+              li
+                .border-producers.color-line.red-block
+                  .one-new-product
+                    .img-bg style="background-image: url(#{asset_path('photo/main/logos/brands_icon_1.png')})"
+                  .description
+                    .description-txt
+                      .maker
+                        | Азербайджан
+                      .product-name
+                        | Softprom by ERC
+              li
+                .border-producers.color-line.red-block
+                  .one-new-product
+                    .img-bg style="background-image: url(#{asset_path('photo/main/logos/brands_icon_1.png')})"
+                  .description
+                    .description-txt
+                      .maker
+                        | Азербайджан
+                      .product-name
+                        | Softprom by ERC
+              li
+                .border-producers.color-line.red-block
+                  .one-new-product
+                    .img-bg style="background-image: url(#{asset_path('photo/main/logos/brands_icon_1.png')})"
+                  .description
+                    .description-txt
+                      .maker
+                        | Азербайджан
+                      .product-name
+                        | Softprom by ERC
+              li
+                .border-producers.color-line.red-block
+                  .one-new-product
+                    .img-bg style="background-image: url(#{asset_path('photo/main/logos/brands_icon_1.png')})"
+                  .description
+                    .description-txt
+                      .maker
+                        | Азербайджан
+                      .product-name
+                        | Softprom by ERC
+              li
+                .border-producers.color-line.red-block
+                  .one-new-product
+                    .img-bg style="background-image: url(#{asset_path('photo/main/logos/brands_icon_1.png')})"
+                  .description
+                    .description-txt
+                      .maker
+                        | Азербайджан
+                      .product-name
+                        | Softprom by ERC
+              li
+                .border-producers.color-line.red-block
+                  .one-new-product
+                    .img-bg style="background-image: url(#{asset_path('photo/main/logos/brands_icon_1.png')})"
+                  .description
+                    .description-txt
+                      .maker
+                        | Азербайджан
+                      .product-name
+                        | Softprom by ERC
+              li
+                .border-producers.color-line.red-block
+                  .one-new-product
+                    .img-bg style="background-image: url(#{asset_path('photo/main/logos/brands_icon_1.png')})"
+                  .description
+                    .description-txt
+                      .maker
+                        | Азербайджан
+                      .product-name
+                        | Softprom by ERC
+              li
+                .border-producers.color-line.red-block
+                  .one-new-product
+                    .img-bg style="background-image: url(#{asset_path('photo/main/logos/brands_icon_1.png')})"
+                  .description
+                    .description-txt
+                      .maker
+                        | Азербайджан
+                      .product-name
+                        | Softprom by ERC
+              li
+                .border-producers.color-line.red-block
+                  .one-new-product
+                    .img-bg style="background-image: url(#{asset_path('photo/main/logos/brands_icon_1.png')})"
+                  .description
+                    .description-txt
+                      .maker
+                        | Азербайджан
+                      .product-name
+                        | Softprom by ERC
 
-        #page-content.medium-4.columns.page-content.gallery ng-repeat="product in records | limitTo : 6 : 6"
-          .border-producers.color-line.yellow-block
-            .one-new-product
-              a.img-bg href=article_path style="background-image: url(#{asset_path('photo/main/news_3.jpg')})"
+
+
+    / .medium-9.columns
+    /   .sales
+    /     .sales-leaders.color-line.gray-block
+    /       .title лидерь на рьнке
+    /       .medium-4.columns
+    /         .border-producers.color-line.red-block
+              / .one-new-producers
+              /   .img-bg style="background-image: url(#{asset_path('photo/main/logos/brands_icon_1.png')})"
+              / .description
+              /   .description-txt
+              /     .maker
+              /       | Азербайджан
+              /     .product-name
+              /       | Softprom by ERC
+    /       .medium-4.columns
+    /         .border-producers.color-line.red-block
+    /           .one-new-producers
+    /             .img-bg style="background-image: url(#{asset_path('photo/main/logos/brands_icon_1.png')})"
+    /           .description
+    /             .description-txt
+    /               .maker
+    /                 | Азербайджан
+    /               .product-name
+    /                 | Softprom by ERC
+    /       .medium-4.columns
+    /         .border-producers.color-line.red-block
+    /           .one-new-producers
+    /             .img-bg style="background-image: url(#{asset_path('photo/main/logos/brands_icon_1.png')})"
+    /           .description
+    /             .description-txt
+    /               .maker
+    /                 | Азербайджан
+    /               .product-name
+    /                 | Softprom by ERC
+    .medium-9.columns
+      .salse-all
+        .medium-4.columns  ng-repeat="product in records | limitTo:6:6"
+          .border-producers.color-line.red-block
+            .one-new-producers
+              a.img-bg href=market_path style="background-image: url(#{asset_path('photo/main/logos/brands_icon_1.png')})"
             .description
               .description-txt
                 .maker
                   | {{product.maker}}
                 .product-name
                   | {{product.product}}
-                .price.color-line.gray-block
-                  .oriented-price
-                    | {{product.oriented}}
-                  .mony
-                    | {{product.mony}}
+    .medium-9.columns
+      = render "recomendationmarket"
+    .medium-9.columns
+      .salse-all
+        .medium-4.columns  ng-repeat="product in records | limitTo : 6"
+          .border-producers.color-line.red-block
+            .one-new-producers
+              .img-bg style="background-image: url(#{asset_path('photo/main/logos/brands_icon_1.png')})"
+            .description
+              .description-txt
+                .maker
+                  | {{product.maker}}
+                .product-name
+                  | {{product.product}}

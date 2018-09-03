@@ -3,4 +3,6 @@ class ThirdMenu < ActiveRecord::Base
   has_one :main_menus, class_name: MainMenu, through: :second_menu
   translates :title
   accepts_nested_attributes_for :translations, allow_destroy: true
+  belongs_to :sponsor_sliders, class_name: SponsorSlider
+
 end

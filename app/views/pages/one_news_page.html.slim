@@ -1,0 +1,45 @@
+.onenues
+  .row
+    .medium-12.center
+      .all-nues
+        .tutle
+          .title-text =@article.title
+          .data =@article.date
+        .text-nues = raw @article.first_description
+        .bord.beg
+          .img-bg style="background-image: url(#{@article.first_image})"
+        .text-nues = raw @article.second_description
+        .bord.smolle
+          .img-bg style="background-image: url(#{@article.second_image})"
+        .text-nues = raw @article.third_description
+        .bord.smolle
+          .img-bg style="background-image: url(#{@article.third_image})"
+        .text-nues = raw @article.fourth_description
+        .to-share
+          .to-share-tex Поделиться в соцсетяч:
+          .to-share-icons
+            .alle-to-shere
+              a.vk = inline_svg "svg/vk.svg"
+              a.fb = inline_svg "svg/face.svg"
+              a.tw = inline_svg "svg/twiter.svg"
+              a.gp = inline_svg "svg/google.svg"
+              a.in = inline_svg "svg/in.svg"
+              a.od = inline_svg "svg/o.svg"
+              a.pi = inline_svg "svg/pin.svg"
+      .tovars-in
+        / .recomendation-tovars
+        /   .recomendation-text.color-line.gray-block
+        /     .title товарь из стати
+        /   .recommendation-goods
+        /     - 8.times do |e|
+        /       .medium-3.columns
+        /         .border-producers.color-line.yellow-block
+        /           .one-new-product
+        /             .img-bg style="background-image: url(#{asset_path('photo/main/news_3.jpg')})"
+        /           .description
+        /             .description-txt
+        /               .maker Тульський молочний комбинат
+        /               .product-name Моцарула middle 100г (4 шарика)
+        /               .price.color-line.gray-block
+        /                 .oriented-price орієнтовочная цена:
+        /                 .mony 8.40$
