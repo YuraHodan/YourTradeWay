@@ -12,4 +12,6 @@ class Manufacture < ActiveRecord::Base
     accepts_nested_attributes_for :sertificates
   translates :title, :description, :address, :full_name
   accepts_nested_attributes_for :translations, allow_destroy: true
+  has_one :seo, as: "manufacture"
+  accepts_nested_attributes_for :seo
 end

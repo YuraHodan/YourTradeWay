@@ -8,6 +8,7 @@ class PagesController < ApplicationController
   end
 
   def goods
+    @products = Product.all
   end
 
   def contacts
@@ -24,6 +25,7 @@ class PagesController < ApplicationController
     @guarantee_articles = Faq.where(category: 'Guarantee')
     @payment_articles = Faq.where(category: 'Payment&Shipping')
   end
+
   def registration
 
   end
@@ -41,6 +43,9 @@ class PagesController < ApplicationController
     return render 'errors/not_found.html', status: 404 unless @article
   end
 
+  def article
+  @product = Product.first
+  end
   private
 
   def set_social_links

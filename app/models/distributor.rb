@@ -10,4 +10,6 @@ class Distributor < ActiveRecord::Base
     mount_uploader :price_list_file, FileUploader
   translates :title, :description, :address, :full_name, :our_benefits
   accepts_nested_attributes_for :translations, allow_destroy: true
+    has_one :seo, as: "distributor"
+  accepts_nested_attributes_for :seo
 end

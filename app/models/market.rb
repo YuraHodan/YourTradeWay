@@ -9,4 +9,6 @@ class Market < ActiveRecord::Base
     accepts_nested_attributes_for :sertificates
   translates :title, :description, :address, :full_name, :our_benefits, :our_brands
   accepts_nested_attributes_for :translations, allow_destroy: true
+  has_one :seo, as: "market"
+  accepts_nested_attributes_for :seo
 end

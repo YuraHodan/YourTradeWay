@@ -35,7 +35,25 @@ RailsAdmin.config do |config|
     edit
     delete
     show_in_app
-  config.included_models = [MainPage,MainPage::Translation,MainSlider,Logistic,Logistic::Translation,Market,Market::Translation,Distributor,Distributor::Translation,Manufacture::Translation,Product::Translation,Product,Manufacture,Contact,Contact::Translation,Rule,Rule::Translation,Faq,Faq::Translation,Article,Article::Translation,ThirdMenu::Translation,SecondMenu::Translation,MainMenu::Translation,MainMenu,SecondMenu,ThirdMenu,User,Sociallink,Contact,Contact::Translation,Rule,Rule::Translation]
+  config.included_models = [SponsorSlider,Seo,Seo::Translation,MainPage,MainPage::Translation,MainSlider,Logistic,Logistic::Translation,Market,Market::Translation,Distributor,Distributor::Translation,Manufacture::Translation,Product::Translation,Product,Manufacture,Contact,Contact::Translation,Rule,Rule::Translation,Faq,Faq::Translation,Article,Article::Translation,ThirdMenu::Translation,SecondMenu::Translation,MainMenu::Translation,MainMenu,SecondMenu,ThirdMenu,User,Sociallink,Contact,Contact::Translation,Rule,Rule::Translation]
+
+  config.model SponsorSlider do
+    fields :show, :image
+    field :main_menu
+    field :second_menu
+    field :third_menu
+  end
+
+  config.model Seo do
+    visible false
+    label "Seo"
+    field :translations, :globalize_tabs
+  end
+  config.model Seo::Translation do
+    visible false
+    configure :locale, :hidden
+    fields :locale, :title, :keywords, :description
+  end
 
   config.model MainSlider do
    include_fields :image, :show
@@ -76,6 +94,8 @@ config.model Logistic do
     field :youtube_url
     field :images
     field :sertificates
+    field :seo
+
   end
 
   config.model Logistic::Translation do
@@ -97,6 +117,8 @@ config.model Logistic do
     field :youtube_url
     field :images
     field :sertificates
+    field :seo
+
   end
 
   config.model Market::Translation do
@@ -129,6 +151,7 @@ config.model Logistic do
     field :youtube_url
     field :images
     field :sertificates
+    field :seo
   end
 
   config.model Distributor::Translation do
@@ -150,6 +173,7 @@ config.model Logistic do
     field :youtube_url
     field :images
     field :sertificates
+    field :seo
   end
 
   config.model Manufacture::Translation do
@@ -166,6 +190,7 @@ config.model Logistic do
     fields :manufacture, :country, :price, :volume, :amount, :weight, :youtube_url, :premium, :recomend, :third_menu, :logo_image
     field :images
     field :sertificates
+    field :seo
   end
 
   config.model Product::Translation do
@@ -230,6 +255,8 @@ config.model Logistic do
       end
     end
     include_fields :first_image, :second_image, :third_image, :date, :show
+    field :seo
+
   end
     config.model Article::Translation do
       visible false

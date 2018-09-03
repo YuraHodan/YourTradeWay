@@ -10,42 +10,45 @@
             .medium-6.columns
               .content-tab
                 .content-img
-                  .img-bg style="background-image: url(#{asset_path('photo/main/mozarella_1-100.jpg')})"
+                  .img-bg style="background-image: url(#{@articles.first.first_image.url})"
             .medium-6.columns
               .text-tovar
-                .smole-taitle Туровський комбинат вьвел на ринок бренд villmonte1
-                .tab-data 13.04.2018
+                .smole-taitle =@articles.first.title
+                .tab-data =@articles.first.date
                 .tex-abaut-tovar
-                  | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                a.rede-more подробниее
+                  =raw @articles.first.first_description
+                a.rede-more href=one_news_path(@articles.first)
+                  | Подробнее
       #distributors.tabcontent
         .center-tab-all
           .row
             .medium-6.columns
               .content-tab
                 .content-img
-                  .img-bg style="background-image: url(#{asset_path('photo/main/mozarella_1-100.jpg')})"
+                  .img-bg style="background-image: url(#{@articles.second.first_image.url})"
             .medium-6.columns
               .text-tovar
-                .smole-taitle Туровський комбинат вьвел на ринок бренд villmonte2
-                .tab-data 13.04.2018
+                .smole-taitle =@articles.second.title
+                .tab-data =@articles.second.date
                 .tex-abaut-tovar
-                  | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                a.rede-more подробниее
+                  =raw @articles.second.first_description
+                a.rede-more href=one_news_path(@articles.second)
+                  | Подробнее
       #marker.tabcontent
         .center-tab-all
           .row
             .medium-6.columns
               .content-tab
                 .content-img
-                  .img-bg style="background-image: url(#{asset_path('photo/main/mozarella_1-100.jpg')})"
+                  .img-bg style="background-image: url(#{@articles.third.first_image.url})"
             .medium-6.columns
               .text-tovar
-                .smole-taitle Туровський комбинат вьвел на ринок бренд villmonte3
-                .tab-data 13.04.2018
+                .smole-taitle =@articles.third.title
+                .tab-data =@articles.third.date
                 .tex-abaut-tovar
-                  | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                a.rede-more  подробниее
+                  =raw @articles.third.first_description
+                a.rede-more href=one_news_path(@articles.third)
+                  | Подробнее
     .medium-12.large-3.columns
       .nues.tab
         .tab-content
@@ -53,29 +56,29 @@
             .tab
               .tablinks onclick="openPremium(event, 'goods')"
                 .tablist-content
-                  .img-bg style="background-image: url(#{asset_path('photo/main/smallnews.jpg')})"
+                  .img-bg style="background-image: url(#{@articles.first.first_image.url})"
                   .tex
-                    .tab-text Голандський сьр Old Amsterdam
-                    .tab-data 13.04.2018
+                    .tab-text =@articles.first.title
+                    .tab-data =@articles.first.date
               .tablinks onclick="openPremium(event, 'distributors')"
                 .tablist-content
-                  .img-bg style="background-image: url(#{asset_path('photo/main/smallnews.jpg')})"
+                  .img-bg style="background-image: url(#{@articles.second.first_image.url})"
                   .tex
-                    .tab-text Голандський сьр Old Amsterdam
-                    .tab-data 13.04.2018
+                    .tab-text =@articles.second.title
+                    .tab-data =@articles.second.date
               .tablinks onclick="openPremium(event, 'marker')"
                 .tablist-content
-                  .img-bg style="background-image: url(#{asset_path('photo/main/newssmall2.jpg')})"
+                  .img-bg style="background-image: url(#{@articles.third.first_image.url})"
                   .tex
-                    .tab-text Голандський сьр Old Amsterdam
-                    .tab-data 13.04.2018
+                    .tab-text =@articles.third.title
+                    .tab-data =@articles.third.date
     .medium.columns
       .nues-alle
-        - 6.times do |e|
+        - @articles.drop(3).each do |article|
           .medium-4.columns
-            .ful-nues
+            a.ful-nues href=one_news_path(article)
               .img-nues
-                .img-bg style="background-image: url(#{asset_path('photo/main/mozarella_1-100.jpg')})"
+                .img-bg style="background-image: url(#{article.first_image.url})"
               .text-nues
-                .title-nues Тулровсикмй молочний комбінат вивел на ринок бренд Villmonte
-                .tab-data 13.04.2018
+                .title-nues =article.title
+                .tab-data =article.date

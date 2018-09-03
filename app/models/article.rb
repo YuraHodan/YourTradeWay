@@ -9,7 +9,8 @@ class Article < ActiveRecord::Base
   validates :url_fragment, presence: true, uniqueness: {case_sensitive: false}
   before_validation :initialize_url_fragment
   scope :show, -> {where(show: true)}
-
+  has_one :seo, as: "product"
+  accepts_nested_attributes_for :seo
   def initialize_url_fragment
     return true if url_fragment.present?
     I18n.with_locale :ru do
