@@ -22,8 +22,8 @@ RailsAdmin.config do |config|
   ## == Gravatar integration ==
   ## To disable Gravatar integration in Navigation Bar set to false
   # config.show_gravatar = true
-
   config.actions do
+
     dashboard do
       statistics false
     end                     # mandatory
@@ -36,6 +36,7 @@ RailsAdmin.config do |config|
     delete
     show_in_app
   config.included_models = [SponsorSlider,Seo,Seo::Translation,MainPage,MainPage::Translation,MainSlider,Logistic,Logistic::Translation,Market,Market::Translation,Distributor,Distributor::Translation,Manufacture::Translation,Product::Translation,Product,Manufacture,Contact,Contact::Translation,Rule,Rule::Translation,Faq,Faq::Translation,Article,Article::Translation,ThirdMenu::Translation,SecondMenu::Translation,MainMenu::Translation,MainMenu,SecondMenu,ThirdMenu,User,Sociallink,Contact,Contact::Translation,Rule,Rule::Translation]
+RailsAdmin.config {|c| c.label_methods << :title}
 
   config.model SponsorSlider do
     fields :show, :image
@@ -132,6 +133,8 @@ config.model Logistic do
 
   config.model Country do
     field :translations, :globalize_tabs
+    object_label_method :custom_name
+
   end
 
   config.model Country::Translation do
@@ -174,6 +177,7 @@ config.model Logistic do
     field :images
     field :sertificates
     field :seo
+    object_label_method :custom_name
   end
 
   config.model Manufacture::Translation do
@@ -285,6 +289,8 @@ config.model Logistic do
        enum ["Products", "Factories", "Distributors", "Markets", "Logistic"]
     end
     field :second_menus
+    object_label_method :custom_name
+
   end
 
   config.model MainMenu::Translation do
@@ -297,6 +303,8 @@ config.model Logistic do
     fields :main_menu
     field :third_menus
     field :translations, :globalize_tabs
+    object_label_method :custom_name
+
   end
 
   config.model SecondMenu::Translation do
@@ -308,12 +316,15 @@ config.model Logistic do
   config.model ThirdMenu do
     field :translations, :globalize_tabs
     fields :second_menu
+    object_label_method :custom_name
+
   end
 
   config.model ThirdMenu::Translation do
     visible false
     configure :locale, :hidden
     fields :locale, :title
+
   end
 
     ## With an audit adapter, you can a`dd:

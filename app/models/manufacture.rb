@@ -14,4 +14,7 @@ class Manufacture < ActiveRecord::Base
   accepts_nested_attributes_for :translations, allow_destroy: true
   has_one :seo, as: "manufacture"
   accepts_nested_attributes_for :seo
+  def custom_name
+    self.title
+  end
 end

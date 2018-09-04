@@ -7,4 +7,8 @@ class Country < ActiveRecord::Base
 
   translates :title
   accepts_nested_attributes_for :translations, allow_destroy: true
+
+  def custom_name
+    self.title
+  end
 end
