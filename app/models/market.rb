@@ -1,4 +1,5 @@
 class Market < ActiveRecord::Base
+  mount_uploader :logo_image, ImageUploader
   belongs_to :country, class_name: Country
   has_many :images, class_name: Image
   accepts_nested_attributes_for :images

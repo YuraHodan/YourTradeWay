@@ -324,16 +324,17 @@
     /                 | Softprom by ERC
     .medium-9.columns
       .salse-all
-        .medium-4.columns  ng-repeat="product in records | limitTo:6:6"
-          .border-producers.color-line.red-block
-            .one-new-producers
-              a.img-bg href=market_path style="background-image: url(#{asset_path('photo/main/logos/brands_icon_1.png')})"
-            .description
-              .description-txt
-                .maker
-                  | {{product.maker}}
-                .product-name
-                  | {{product.product}}
+        -@markets.each do |market|
+          .medium-4.columns
+            .border-producers.color-line.red-block
+              .one-new-producers
+                a.img-bg href=market_path(market.id) style="background-image: url(#{market.logo_image.url})"
+              .description
+                .description-txt
+                  .maker
+                    =market.country&.title
+                  .product-name
+                    =market.title
     .medium-9.columns
       = render "recomendationmarket"
     .medium-9.columns

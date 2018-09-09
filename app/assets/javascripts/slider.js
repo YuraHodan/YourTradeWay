@@ -16,17 +16,31 @@ $('.slider2-nav').slick({
  autoplay: true,
  autoplaySpeed: 2000,
  nextArrow: $('.mainlidet').find('.next-btn'),
- prevArrow: $('.mainlidet').find('.prev-btn')
+ prevArrow: $('.mainlidet').find('.prev-btn'),
+ responsive:[
+   {
+     breakpoint: 376,
+     settings:{
+        autoplay: false,
+        autoplaySpeed: 2000,
+        dots: false,
+        prevArrow: false,
+        nextArrow: false,
+        centerMode: false,
+        focusOnSelect: false
+     },
+   }
+ ]
 
 });
 
-$('.slider-nav-small').slick({
- autoplay: true,
- autoplaySpeed: 2000,
- dots: false,
- prevArrow: false,
- nextArrow: false
-});
+// $('.slider-nav-small').slick({
+//  autoplay: true,
+//  autoplaySpeed: 2000,
+//  dots: false,
+//  prevArrow: false,
+//  nextArrow: false
+// });
 
 
 /// goood slider 1

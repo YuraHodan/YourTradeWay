@@ -323,27 +323,28 @@
     /                 | Softprom by ERC
     .medium-9.columns
       .salse-all
-        .medium-4.columns  ng-repeat="product in records | limitTo:6:6"
-          .border-producers.color-line.green-block
-            .one-new-producers
-              a.img-bg href=distributor_path style="background-image: url(#{asset_path('photo/main/logos/2677650ac2e6996116659b8a3f91438a.png')})"
-            .description
-              .description-txt
-                .maker
-                  | {{product.maker}}
-                .product-name
-                  | {{product.product}}
+        -@distributors.each do |distributor|
+          .medium-4.columns
+              .border-producers.color-line.green-block
+                .one-new-producers
+                  a.img-bg href=distributor_path(distributor.id) style="background-image: url(#{distributor.logo_image&.url})"
+                .description
+                  .description-txt
+                    .maker
+                      =distributor.country&.title
+                    .product-name
+                      =distributor.title
     .medium-9.columns
       = render "recomendationdistributors"
-    .medium-9.columns
-      .salse-all
-        .medium-4.columns  ng-repeat="product in records | limitTo : 6"
-          .border-producers.color-line.green-block
-            .one-new-producers
-              .img-bg style="background-image: url(#{asset_path('photo/main/logos/2677650ac2e6996116659b8a3f91438a.png')})"
-            .description
-              .description-txt
-                .maker
-                  | {{product.maker}}
-                .product-name
-                  | {{product.product}}
+    / .medium-9.columns
+    /   .salse-all
+    /     .medium-4.columns  ng-repeat="product in records | limitTo : 6"
+    /       .border-producers.color-line.green-block
+    /         .one-new-producers
+    /           .img-bg style="background-image: url(#{asset_path('photo/main/logos/2677650ac2e6996116659b8a3f91438a.png')})"
+    /         .description
+    /           .description-txt
+    /             .maker
+    /               | {{product.maker}}
+    /             .product-name
+    /               | {{product.product}}

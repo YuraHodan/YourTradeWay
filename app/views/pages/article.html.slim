@@ -2,7 +2,7 @@
   .row
     .medium-5.columns
       .wrapper
-        =render "onegoodsslider"
+        =render "onegoodsslider", product: @product
     .medium-7.columns
       .title =@product.title
       .moni-or
@@ -33,7 +33,8 @@
         .title2
           | Описание:
       #box.box
-        p.text = raw @product.description
+        p.text
+        = raw @product.description
       .title3.color-line.gray-block
         | производитель
       .country

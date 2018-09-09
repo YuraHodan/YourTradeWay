@@ -6,27 +6,27 @@
           .wrapper
             .media-ob
               .compani-logo
-                .img-bg style="background-image: url(#{asset_path('photo/main/logos/images.png')})"
+                .img-bg style="background-image: url(#{@market.logo_image.url})"
                 .tex-box более 5000 товаров
         .medium-6.columns
           .text-oneproducter
             .title
-              | Туровсикй молочний комбінат
+              =@market.title
               .title-smolle
-                | продукть питания
+                =@market.main_menu&.title
             .rules
               .country
                 | Страна:
                 .text
-                  | Беларусь
+                  =@market.country&.title
               .address
                 | Адреса:
                 .text
-                  | улица Ваупшпасова 4,Минск 220070
+                  =@market.address
               .site
                 | Сайт:
-                a.text href="https://www.youtube.com"
-                  | www.youtube.com
+                a.text href="#{@market.web_site_url}"
+                  =@market.web_site_url
             .contacts
               .text-face.color-line.gray-block
                 | контактное лицо
@@ -34,70 +34,60 @@
                 .lup
                   .icon = inline_svg "photo/main/svg/man.svg"
                   .text.name
-                    | Иванов Иван Иванов
+                    =@market.full_name
                 .lup
                   .icon  = inline_svg "photo/main/svg/mail.svg"
                   .text
-                    a href="mailto: example@com.ua" example@com.ua
+                    a href="mailto: #{@market.first_email}" =@market.first_email
+                -if @market.second_email
+                  .lup
+                    .icon  = inline_svg "photo/main/svg/mail.svg"
+                    .text
+                      a href="mailto: #{@market.second_email}" =@market.second_email
+                -if @market.third_email
+                  .lup
+                    .icon  = inline_svg "photo/main/svg/mail.svg"
+                    .text
+                      a href="mailto: #{@market.third_email}" =@market.third_email
                 .lup
                   .icon = inline_svg "photo/main/svg/phone.svg"
                   .text
-                    a href="tel:+78142332211" +7(814)-233-22-11
-                .lup
+                    a href="tel:#{@market.first_phone_number}" =@market.first_phone_number
+                -if @market.second_phone_number
+                 .lup
                   .icon = inline_svg "photo/main/svg/phone.svg"
                   .text
-                    a href="tel:+78142332211" +7(814)-233-22-11
+                    a href="tel:#{@market.second_phone_number}" =@market.second_phone_number
+                -if @market.third_phone_number
+                 .lup
+                  .icon = inline_svg "photo/main/svg/phone.svg"
+                  .text
+                    a href="tel:#{@market.third_phone_number}" =@market.third_phone_number
       .medium.columns
         .about-us
           .title.color-line.gray-block
             .text-title о компании
           .about-us-text
-            p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            =raw @market.description
             .title.marka.color-line.gray-block
               .text-title торговая марка
             .about-us-text
-              table
-                tr
-                tr
-                  td Premiya Select
-                  td.rigt Zelena Krayina
-                tr
-                  td Premiya Select
-                  td.rigt Zelena Krayina
-                tr
-                  td Premiya Select
-                  td.rigt Zelena Krayina
-                tr
-                  td Premiya Select
-                  td.rigt Zelena Krayina
-                tr
-                  td Premiya Select
-                  td.rigt Zelena Krayina
+              =raw @market.our_brands
 
 
           .title.color-line.gray-block
             .text-title наши примущества
           .about-us-text
-            ul
-              li Специалисть високого класа с большим опитом работь
-              li Специалисть високого класа с большим опитом работь
-              li Специалисть високого класа с большим опитом работь
-              li Специалисть високого класа с большим опитом работь
-              li Специалисть високого класа с большим опитом работь
-              li Специалисть високого класа с большим опитом работь
-              li Специалисть високого класа с большим опитом работь
-              li Специалисть високого класа с большим опитом работь
-              li Специалисть високого класа с большим опитом работь
-
+            = raw @market.our_benefits
         .bg-slider
           .wrapper
             .targer
-              =render "onegoodsslider"
+              =render "onegoodsslider", product: @market
     .medium-4.columns
       .sertuficat
         .title сертифікат
         .selector
-          = render "oneproducterslider"
+          = render "oneproducterslider", product: @market
       .batton-doun
         .btn-big
           .text прайс лист
