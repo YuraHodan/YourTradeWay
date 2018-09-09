@@ -10,6 +10,8 @@ class Logistic < ActiveRecord::Base
     mount_uploader :logo_image, ImageUploader
   has_one :seo, as: "logistic"
   accepts_nested_attributes_for :seo
+  validates  :country, :manufacture, :main_menu, :title, :logo_image, presence: true
+
 
   translates :title, :description, :address, :full_name, :our_benefits
   accepts_nested_attributes_for :translations, allow_destroy: true

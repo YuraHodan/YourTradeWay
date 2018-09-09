@@ -12,4 +12,6 @@ class Distributor < ActiveRecord::Base
   accepts_nested_attributes_for :translations, allow_destroy: true
     has_one :seo, as: "distributor"
   accepts_nested_attributes_for :seo
+  validates  :country, :manufacture, :second_menu, :title, :logo_image, presence: true
+
 end
