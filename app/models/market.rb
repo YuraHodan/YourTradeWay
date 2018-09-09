@@ -12,4 +12,6 @@ class Market < ActiveRecord::Base
   accepts_nested_attributes_for :translations, allow_destroy: true
   has_one :seo, as: "market"
   accepts_nested_attributes_for :seo
+  validates  :country, :manufacture, :main_menu, :title, :logo_image, presence: true
+
 end

@@ -13,6 +13,7 @@ class Product < ActiveRecord::Base
 
   translates :title, :description, :type_of_pack, :expiration_date
   accepts_nested_attributes_for :translations, allow_destroy: true
+  validates  :country, :manufacture, :third_menu, :title, :logo_image, presence: true
   def menu_title
   self.third_menu.title
 end
