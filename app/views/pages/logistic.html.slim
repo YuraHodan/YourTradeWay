@@ -6,26 +6,26 @@
           .wrapper
             .media-ob
               .compani-logo
-                .img-bg style="background-image: url(#{asset_path('photo/main/logos/11520-1484293005.jpg')})"
+                .img-bg style="background-image: url(#{@logistic.logo_image.url})"
         .medium-6.columns
           .text-oneproducter
             .title
-              | Туровсикй молочний комбінат
+              =@logistic.title
               .title-smolle
-                | продукть питания
+                =@logistic.main_menu&.title
             .rules
               .country
                 | Страна:
                 .text
-                  | Беларусь
+                  =@logistic.country&.title
               .address
                 | Адреса:
                 .text
-                  | улица Ваупшпасова 4,Минск 220070
+                  =@logistic.address
               .site
                 | Сайт:
-                a.text href="https://www.youtube.com"
-                  | www.youtube.com
+                a.text href="#{@logistic.web_site_url}"
+                  =@logistic.web_site_url
             .contacts
               .text-face.color-line.gray-block
                 | контактное лицо
@@ -33,48 +33,55 @@
                 .lup
                   .icon = inline_svg "photo/main/svg/man.svg"
                   .text.name
-                    | Иванов Иван Иванов
+                    =@logistic.full_name
                 .lup
                   .icon  = inline_svg "photo/main/svg/mail.svg"
                   .text
-                    a href="mailto: example@com.ua" example@com.ua
+                    a href="mailto: #{@logistic.first_email}" =@logistic.first_email
+                -if @logistic.second_email
+                  .lup
+                    .icon  = inline_svg "photo/main/svg/mail.svg"
+                    .text
+                      a href="mailto: #{@logistic.second_email}" =@logistic.second_email
+                -if @logistic.third_email
+                  .lup
+                    .icon  = inline_svg "photo/main/svg/mail.svg"
+                    .text
+                      a href="mailto: #{@logistic.third_email}" =@logistic.third_email
                 .lup
                   .icon = inline_svg "photo/main/svg/phone.svg"
                   .text
-                    a href="tel:+78142332211" +7(814)-233-22-11
-                .lup
+                    a href="tel:#{@logistic.first_phone_number}" =@logistic.first_phone_number
+                -if @logistic.second_phone_number
+                 .lup
                   .icon = inline_svg "photo/main/svg/phone.svg"
                   .text
-                    a href="tel:+78142332211" +7(814)-233-22-11
+                    a href="tel:#{@logistic.second_phone_number}" =@logistic.second_phone_number
+                -if @logistic.third_phone_number
+                 .lup
+                  .icon = inline_svg "photo/main/svg/phone.svg"
+                  .text
+                    a href="tel:#{@logistic.third_phone_number}" =@logistic.third_phone_number
       .medium.columns
         .about-us
           .title.color-line.gray-block
             .text-title о компании
           .about-us-text
-            p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            =raw @logistic.description
           .title.color-line.gray-block
             .text-title наши примущества
           .about-us-text
-            ul
-              li Специалисть високого класа с большим опитом работь
-              li Специалисть високого класа с большим опитом работь
-              li Специалисть високого класа с большим опитом работь
-              li Специалисть високого класа с большим опитом работь
-              li Специалисть високого класа с большим опитом работь
-              li Специалисть високого класа с большим опитом работь
-              li Специалисть високого класа с большим опитом работь
-              li Специалисть високого класа с большим опитом работь
-              li Специалисть високого класа с большим опитом работь
+            =raw @logistic.our_benefits
 
         .bg-slider
           .wrapper
             .targer
-              =render "onegoodsslider"
+              =render "onegoodsslider", product: @logistic
     .medium-4.columns
       .sertuficat
         .title сертифікат
         .selector
-          = render "oneproducterslider"
+          = render "oneproducterslider", product: @logistic
       .batton-doun
         .btn-big
           .text прайс лист

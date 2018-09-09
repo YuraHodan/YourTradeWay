@@ -322,26 +322,27 @@
     /                 | Йорсан
     .medium-9.columns
       .salse-all
-        .medium-4.columns  ng-repeat="product in records | limitTo:6:6"
-          .border-producers.color-line.blue-block
-            .one-new-producers
-              a.img-bg href=maker_path style="background-image: url(#{asset_path('photo/main/logos/images.png')})"
-            .description
-              .description-txt
-                .maker
-                  | {{product.maker}}
-                .product-name
-                  | {{product.product}}
+         -@manufactures.each do |manufacture|
+          .medium-4.columns
+              .border-producers.color-line.blue-block
+                .one-new-producers
+                  a.img-bg href=maker_path(manufacture.id) style="background-image: url(#{manufacture&.logo_image&.url})"
+                .description
+                  .description-txt
+                    .maker
+                      =manufacture.country&.title
+                    .product-name
+                      =manufacture.title
     .medium-9.columns
       = render "recomendationSalse"
-      .salse-all
-        .medium-4.columns  ng-repeat="product in records | limitTo : 6"
-          .border-producers.color-line.blue-block
-            .one-new-producers
-              a.img-bg href=maker_path style="background-image: url(#{asset_path('photo/main/logos/images.png')})"
-            .description
-              .description-txt
-                .maker
-                  | {{product.maker}}
-                .product-name
-                  | {{product.product}}
+      / .salse-all
+      /   .medium-4.columns  ng-repeat="product in records | limitTo : 6"
+      /     .border-producers.color-line.blue-block
+      /       .one-new-producers
+      /         a.img-bg href=maker_path(1) style="background-image: url(#{asset_path('photo/main/logos/images.png')})"
+      /       .description
+      /         .description-txt
+      /           .maker
+      /             | {{product.maker}}
+      /           .product-name
+      /             | {{product.product}}

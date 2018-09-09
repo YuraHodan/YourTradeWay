@@ -7,6 +7,34 @@ class PagesController < ApplicationController
   def about_us
   end
 
+  def distributor
+    @distributor = Distributor.find(params[:id])
+  end
+
+  def distributors
+    @distributors = Distributor.all
+  end
+
+  def maker
+    @manufacture = Manufacture.find(params[:format])
+  end
+
+  def logistics
+    @logistics = Logistic.all
+  end
+
+  def logistic
+    @logistic = Logistic.find(params[:id])
+  end
+
+  def markets
+    @markets = Market.all
+  end
+
+  def market
+    @market = Market.find(params[:id])
+  end
+
   def goods
     @products = Product.all
   end
@@ -44,8 +72,13 @@ class PagesController < ApplicationController
   end
 
   def article
-  @product = Product.first
+  @product = Product.find(params[:id])
   end
+
+  def products
+    @manufactures = Manufacture.all
+  end
+
   private
 
   def set_social_links
