@@ -22,7 +22,8 @@
                 - tag_attrs["href"] = url
                 - locale_names = {ru: "РУС",en: "ENG"}
                 .language-one = content_tag(tag_name, locale_names[locale.to_sym], tag_attrs)
-        a.btn-big-heder href=new_user_registration_path РЕГИСТРАЦИЯ
+        / a.btn-big-heder href=new_user_registration_path РЕГИСТРАЦИЯ
+        a.btn-big-heder href=post_product_path РЕГИСТРАЦИЯ
 
 
       .heder-menu

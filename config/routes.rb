@@ -25,6 +25,7 @@ Rails.application.routes.draw do
     get "faq", action: "faq"
     get "terms", action: "terms"
     # get "registration", action: "registration"
+    get "post_product", action: "post_product"
     get "aboutus", action: "aboutus"
     get "topgoods", action: "topgoods"
 

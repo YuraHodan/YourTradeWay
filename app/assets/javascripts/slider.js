@@ -81,7 +81,7 @@ $('.goode2-slider-nav').slick({
  slidesToScroll: 3,
  asNavFor: '.goode2-slider-for',
  dots: true,
- autoplay: true,
+ autoplay: false,
  autoplaySpeed: 2000,
  nextArrow: false,
  prevArrow: false,
@@ -90,6 +90,8 @@ $('.goode2-slider-nav').slick({
    breakpoint: 400,
    settings: {
       slidesToShow: 1,
+      slidesToScroll: 1,
+      dots: false,
    }
  }
  ]
