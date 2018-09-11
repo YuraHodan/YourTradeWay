@@ -1,7 +1,10 @@
-.header-container
+.header-container ng-controller="menusControler"
   .heder-content-bg
     .heder-content
       a.heder-logo href=root_path = inline_svg "photo/main/svg/top-logo.svg"
+      .lol ng-repeat="(index, menus) in menus_list"
+        p
+          | {{menus.category}}
       .tex-heder
         a.one-text href=root_path Главная
         a.one-text href=premium_path Премиум

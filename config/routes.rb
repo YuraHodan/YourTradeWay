@@ -33,6 +33,7 @@ Rails.application.routes.draw do
 
     # post "registration", action: "registration"
     post "message", action: "message"
+    post "contain_us", action: "contain_us"
 
   end
 # end
