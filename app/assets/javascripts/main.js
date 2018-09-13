@@ -40,15 +40,16 @@ $(function(){
   });
 
   $('#menu li li').on('mouseover',function(e){
-    if($(this).has('ul').length) {
-      $(this).parent().addClass('expanded');
-    }
-    $('ul:first',this).parent().find('> a').addClass('active');
-    $('ul:first',this).show();
+    // if($(this).has('ul').length) {
+    //   // tuta navelennya na li
+    //   $(this).parent().addClass('expanded');
+    // }
+    // $('ul:first',this).parent().find('> a').addClass('active');
+    // $('ul:first',this).show();
   }).on('mouseout',function(e){
-    $(this).parent().removeClass('expanded');
-    $('ul:first',this).parent().find('> a').removeClass('active');
-    $('ul:first', this).hide();
+    // $(this).parent().removeClass('expanded');
+    // $('ul:first',this).parent().find('> a').removeClass('active');
+    // $('ul:first', this).hide();
   });
 
     $('#rotate2').on('click', function(e){
