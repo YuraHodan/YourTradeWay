@@ -39,20 +39,20 @@
                   ul.bige
                     .title ТИП ТОВАРОВ
                     li.target ng-repeat="person in question" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()"
-                      a.pap href="#"
+                      a.pap href="goods?id={{person.id}}"
                         |{{person.name}}
                         = inline_svg "svg/ic_keyboard_arrow_right_black_24px.svg"
                       ul.second_menu
                         .title2 КАТЕГОРИЯ ТОВАРОВ
                         .second-performance
                           li ng-repeat="second_menu in person.second_menu"
-                            a href="#"
+                            a href="goods?second_menu_id={{second_menu.id}}"
                               |{{second_menu.title}}
                             ul
                               .title2 ГРУПА ТОВАРОВ
                               .img-bg style="background-image: url(#{asset_path('photo/main/food.jpg')})"
                               li ng-repeat="third_menu in second_menu.third_menu"
-                                a href="#"
+                                a href="goods?third_menu_id={{third_menu.id}}"
                                  | {{third_menu.title}}
 
                 // products
@@ -61,13 +61,13 @@
                   ul.blue.bige
                     li.purple ng-repeat="factorie in questionfactories"
                       .title ТИП ПРИЗВОДИТЕЛЕИ
-                      a href="#"
+                      a href="products?id={{factorie.id}}"
                         | {{factorie.name}}
                       ul.second_menu
                         .title2 ГРУПА ПРИЗВОДИТЕЛЕИ
                         .second-performance.blue
                           li ng-repeat="second_menu in factorie.second_menu"
-                            a href="#"
+                            a href="products?second_menu_id={{second_menu.id}}"
                               | {{second_menu.title}}
 
 
@@ -77,13 +77,13 @@
                   ul.green.bige
                     li.green2 ng-repeat="distributor in questiondistributors"
                       .title ГРУПА ДИСТРИБЮТОРОВ
-                      a href="#"
+                      a href="distributors?id={{distributor.id}}"
                         | {{distributor.name}}
                       ul.second_menu
                         .title2 ГРУПА ДИСТРИБЮТОРОВ
                         .second-performance.green
                           li ng-repeat="second_menu in distributor.second_menu"
-                            a href="#"
+                            a href="distributors?second_menu_id={{second_menu.id}}"
                               | {{second_menu.title}}
 
                 // marcets
@@ -92,7 +92,7 @@
                   ul.redb
                     li.aqua ng-repeat="markets in questionmarkets"
                       .title ГРУПА МАРКЕТОВ
-                      a href="#"
+                      a href="markets?id={{markets.id}}"
                         | {{markets.name}}
 
 
@@ -102,7 +102,7 @@
                   ul.orangb ng-repeat="logistic in questionlogistic"
                     li.orange2
                       .title логистика
-                      a href="#"
+                      a href="logistics?id={{logistic.id}}"
                         | {{logistic.name}}
 
 
