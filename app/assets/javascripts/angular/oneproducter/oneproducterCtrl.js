@@ -1,26 +1,67 @@
 ytwApp.controller('oneproducterControler',function($scope){
 
-  function QuestionController($scope, $http){
 
-      $http({method: 'GET', url: '/api/v1/menus.json'}).
-          then(function success(response) {
-              $scope.questionlogistic=response.data.logistic;
-      });
-
-      $scope.voteUp = function (answer){
-      };
-      $scope.voteDown = function (answer){
-      };
-      $scope.node = document.getElementsByClassName("target")
-      $scope.hoverIn = function (){
-
-        // var z = document.getElementById('lol').style.display = 'block';
-      };
-      $scope.hoverOut = function (){
-        // document.getElementById('lol').style.display = 'none'
-      };
-
-  }
-
+//   $scope.records = [
+//           {maker: 'Тульський молочний комбинат',
+//           product : 'Моцарула middle 100г (4 шарика)',
+//           oriented : 'орієнтовочная цена:',
+//           mony : '1$' },
+//           {maker: 'Тульський молочний комбинат',
+//           product : 'Моцарула middle 100г (4 шарика)',
+//           oriented : 'орієнтовочная цена:',
+//           mony : '2$' },
+//           {maker: 'Тульський молочний комбинат',
+//           product : 'Моцарула middle 100г (4 шарика)',
+//           oriented : 'орієнтовочная цена:',
+//           mony : '3$' },
+//           {maker: 'Тульський молочний комбинат',
+//           product : 'Моцарула middle 100г (4 шарика)',
+//           oriented : 'орієнтовочная цена:',
+//           mony : '4$' },
+//           {maker: 'Тульський молочний комбинат',
+//           product : 'Моцарула middle 100г (4 шарика)',
+//           oriented : 'орієнтовочная цена:',
+//           mony : '5$' },
+//           {maker: 'Тульський молочний комбинат',
+//           product : 'Моцарула middle 100г (4 шарика)',
+//           oriented : 'орієнтовочная цена:',
+//           mony : '6$' },
+//           {maker: 'Тульський молочний комбинат',
+//           product : 'Моцарула middle 100г (4 шарика)',
+//           oriented : 'орієнтовочная цена:',
+//           mony : '7$' },
+//           {maker: 'Тульський молочний комбинат',
+//           product : 'Моцарула middle 100г (4 шарика)',
+//           oriented : 'орієнтовочная цена:',
+//           mony : '8$' },
+//           {maker: 'Тульський молочний комбинат',
+//           product : 'Моцарула middle 100г (4 шарика)',
+//           oriented : 'орієнтовочная цена:',
+//           mony : '9$' },
+//           {maker: 'Тульський молочний комбинат',
+//           product : 'Моцарула middle 100г (4 шарика)',
+//           oriented : 'орієнтовочная цена:',
+//           mony : '10$' },
+//           {maker: 'Тульський молочний комбинат',
+//           product : 'Моцарула middle 100г (4 шарика)',
+//           oriented : 'орієнтовочная цена:',
+//           mony : '11$' },
+//           {maker: 'Тульський молочний комбинат',
+//           product : 'Моцарула middle 100г (4 шарика)',
+//           oriented : 'орієнтовочная цена:',
+//           mony : '12$' },
+//           {maker: 'Тульський молочний комбинат',
+//           product : 'Моцарула middle 100г (4 шарика)',
+//           oriented : 'орієнтовочная цена:',
+//           mony : '13$' },
+//           {maker: 'Тульський молочний комбинат',
+//           product : 'Моцарула middle 100г (4 шарика)',
+//           oriented : 'орієнтовочная цена:',
+//           mony : '14$' },
+//           {maker: 'Тульський молочний комбинат',
+//           product : 'Моцарула middle 100г (4 шарика)',
+//           oriented : 'орієнтовочная цена:',
+//           mony : '15$' }
+//         ]
 });
 console.log('3');

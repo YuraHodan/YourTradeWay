@@ -1,55 +1,19 @@
-ytwApp.controller('dustrubutorsControler',function($scope){
+ytwApp.controller('dustrubutorsControler',
+    function QuestionController($scope, $http){
 
+        $http({method: 'GET', url: '/api/v1/menus.json'}).
+            then(function success(response) {
+                // $scope.question=response.data.products;
+                // $scope.questionfactories=response.data.factories;
+                $scope.questiondistributors=response.data.distributors;
+                // $scope.questionmarkets=response.data.markets;
+                // $scope.questionlogistic=response.data.logistic;
+        });
 
-  $scope.records = [
-          {maker: "Азербайджан",
-           product: "Softprom by ERC"},
-           {maker: "Азербайджан",
-            product: "Softprom by ERC"},
-            {maker: "Азербайджан",
-             product: "Softprom by ERC"},
-             {maker: "Азербайджан",
-              product: "Softprom by ERC"},
-              {maker: "Азербайджан",
-               product: "Softprom by ERC"},
-               {maker: "Азербайджан",
-                product: "Softprom by ERC"},
-                {maker: "Азербайджан",
-                 product: "Softprom by ERC"},
-                 {maker: "Азербайджан",
-                  product: "Softprom by ERC"},
-                  {maker: "Азербайджан",
-                   product: "Softprom by ERC"},
-                   {maker: "Азербайджан",
-                    product: "Softprom by ERC"},
-                    {maker: "Азербайджан",
-                     product: "Softprom by ERC"},
-                     {maker: "Азербайджан",
-                      product: "Softprom by ERC"},
-                      {maker: "Азербайджан",
-                       product: "Softprom by ERC"},
-                       {maker: "Азербайджан",
-                        product: "Softprom by ERC"},
-                        {maker: "Азербайджан",
-                         product: "Softprom by ERC"},
-                         {maker: "Азербайджан",
-                          product: "Softprom by ERC"},
-                          {maker: "Азербайджан",
-                           product: "Softprom by ERC"},
-                           {maker: "Азербайджан",
-                            product: "Softprom by ERC"},
-                            {maker: "Азербайджан",
-                             product: "Softprom by ERC"},
-                             {maker: "Азербайджан",
-                              product: "Softprom by ERC"},
-                              {maker: "Азербайджан",
-                               product: "Softprom by ERC"},
-                               {maker: "Азербайджан",
-                                product: "Softprom by ERC"},
-                                {maker: "Азербайджан",
-                                 product: "Softprom by ERC"}
-
-
-        ]
-});
-console.log('2');
+        $scope.voteUp = function (){
+          // document.getElementsByClassName('drop-down').classList.add("closed")
+        };
+        $scope.voteDown = function (answer){
+        };
+    }
+)
