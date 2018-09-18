@@ -32,6 +32,8 @@
 
       #goods.tabcontent
         form.ajax-form action="/message" method="post" enctype="multipart/form-data" name="usubmitForm" ng-submit="submitForm()" novalidate=""
+          /category
+          input.d-none type="text" value='products' name="category"
           / tariff
           .form-group ng-class=("{ 'has-error' : usubmitForm.tariff.$invalid && !usubmitForm.tariff.$pristine }")
             .lable-one
@@ -43,7 +45,7 @@
               option#two1.sel_dok value="basic"  basic
               option#three1.sel_dok value="platinum"  platinum
 
-          /name
+          name
           .form-group ng-class=("{ 'has-error' : usubmitForm.name.$invalid && !usubmitForm.name.$pristine }")
             .lable-one
               .label Названия компании:
@@ -70,7 +72,7 @@
             .lable-one
               .label логотип:
 
-            input#upload.custom-file-input.none name='logo' ng-file-select="onFileSelect($files)"  ng-model="user.imageSrc" required=""  type="file" accept=".jpg, .jpeg, .png" multiple
+            input#upload.custom-file-input.none name='logo' ng-file-select="onFileSelect($files)"  ng-model="user.imageSrc" required=""  type="file" accept=".jpg, .jpeg, .png"
             .img
               img.content-centering_element ng-src="{{user.imageSrc}}"
 
@@ -182,6 +184,8 @@
 
       #distributors.tabcontent
         form.ajax-form action="/message" method="post" enctype="multipart/form-data" name="usubmitForm2" ng-submit="submitForm()" novalidate=""
+          /category
+          input.d-none type="text" value='distributors' name="category"
           // tariff
           .form-group ng-class=("{ 'has-error' : usubmitForm2.tariff.$invalid && !usubmitForm2.tariff.$pristine }")
             .lable-one
@@ -329,9 +333,12 @@
 
 
 
+
       #marker.tabcontent
 
         form.ajax-form action="/message" method="post" enctype="multipart/form-data" name="usubmitForm3" ng-submit="submitForm()" novalidate=""
+          /category
+          input.d-none type="text" value='markets' name="category"
           // tariff
           .form-group ng-class=("{ 'has-error' : usubmitForm3.tariff.$invalid && !usubmitForm3.tariff.$pristine }")
             .lable-one
@@ -477,16 +484,14 @@
             button.open-popup data-id="popup_default" ng-disabled="usubmitForm3.$invalid" type="submit"  отпраить
       /
       /
-      /
-      /
-      /
-      /
-      /
-      /
-      /
+
+
+
 
       #logistics.tabcontent
         form.ajax-form action="/message" method="post" enctype="multipart/form-data" name="usubmitForm4" ng-submit="submitForm()" novalidate=""
+          /category
+          input.d-none type="text" value='logistics' name="category"
           // tariff
           .form-group ng-class=("{ 'has-error' : usubmitForm4.tariff.$invalid && !usubmitForm4.tariff.$pristine }")
             .lable-one
@@ -630,6 +635,9 @@
             p.help-block.phone ng-show="usubmitForm4.fax.$error.pattern"  Please match pattern [+910367865844444 or 910367865844444]
           .button-te
             button.open-popup data-id="popup_default" ng-disabled="usubmitForm4.$invalid" type="submit"  отпраить
+
+
+
 
 
 #popup_default.popup

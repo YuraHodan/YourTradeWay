@@ -134,7 +134,7 @@
     .general-part
       .step-back
         .arow = inline_svg "svg/arrowleft.svg"
-        .arowthird = inline_svg "svg/arrowleft.svg"
+        #arowthird.arowthird = inline_svg "svg/arrowleft.svg"
         .arowtfourth = inline_svg "svg/arrowleft.svg"
         p виберите категорию
       .manu-nav
@@ -572,420 +572,41 @@
             = inline_svg "svg/ic_keyboard_arrow_right_black_24px.svg"
           .manu-container-second
             .general-part
-              .manu-nav
+              .manu-nav ng-repeat="distributor in questiondistributors"
                 .classification-second
-                  a href="#" продукти питания3
-                  .manu-container-third
+                  a href="distributors?id={{distributor.id}}"
+                    | {{distributor.name}}
+                  a.arow-boxs ng-click="myFunc()"
+                    = inline_svg "svg/ic_keyboard_arrow_right_black_24px.svg"
+                  #lol.manu-container-third
                     .general-part
                       .manu-nav
-                        .classification-third
-                          a href="#" продукти питания1
-                        .classification-third
-                          a href="#" косметика и гигиєна1
-                        .classification-third
-                          a href="#" товары для дома1
-                        .classification-third
-                          a href="#" Канцелярские товары1
-                        .classification-third
-                          a href="#" Автотовары1
-                        .classification-third
-                          a href="#" товары для ЖИВОТНЫХ1
-                        .classification-third
-                          a href="#" промишленость1
-                .classification-second
-                  a href="#" косметика и гигиєна3
-                  .manu-container-third
-                    .general-part
-                      .manu-nav
-                        .classification-third
-                          a href="#" продукти питания1
-                        .classification-third
-                          a href="#" косметика и гигиєна1
-                        .classification-third
-                          a href="#" товары для дома1
-                        .classification-third
-                          a href="#" Канцелярские товары1
-                        .classification-third
-                          a href="#" Автотовары1
-                        .classification-third
-                          a href="#" товары для ЖИВОТНЫХ1
-                        .classification-third
-                          a href="#" промишленость1
-                .classification-second
-                  a href="#" товары для дома3
-                  .manu-container-third
-                    .general-part
-                      .manu-nav
-                        .classification-third
-                          a href="#" продукти питания1
-                        .classification-third
-                          a href="#" косметика и гигиєна1
-                        .classification-third
-                          a href="#" товары для дома1
-                        .classification-third
-                          a href="#" Канцелярские товары1
-                        .classification-third
-                          a href="#" Автотовары1
-                        .classification-third
-                          a href="#" товары для ЖИВОТНЫХ1
-                        .classification-third
-                          a href="#" промишленость1
-                .classification-second
-                  a href="#" Канцелярские товары3
-                  .manu-container-third
-                    .general-part
-                      .manu-nav
-                        .classification-third
-                          a href="#" продукти питания1
-                        .classification-third
-                          a href="#" косметика и гигиєна1
-                        .classification-third
-                          a href="#" товары для дома1
-                        .classification-third
-                          a href="#" Канцелярские товары1
-                        .classification-third
-                          a href="#" Автотовары1
-                        .classification-third
-                          a href="#" товары для ЖИВОТНЫХ1
-                        .classification-third
-                          a href="#" промишленость1
-                .classification-second
-                  a href="#" Автотовары3
-                  .manu-container-third
-                    .general-part
-                      .manu-nav
-                        .classification-third
-                          a href="#" продукти питания1
-                        .classification-third
-                          a href="#" косметика и гигиєна1
-                        .classification-third
-                          a href="#" товары для дома1
-                        .classification-third
-                          a href="#" Канцелярские товары1
-                        .classification-third
-                          a href="#" Автотовары1
-                        .classification-third
-                          a href="#" товары для ЖИВОТНЫХ1
-                        .classification-third
-                          a href="#" промишленость1
-                .classification-second
-                  a href="#" товары для ЖИВОТНЫХ3
-                  .manu-container-third
-                    .general-part
-                      .manu-nav
-                        .classification-third
-                          a href="#" продукти питания1
-                        .classification-third
-                          a href="#" косметика и гигиєна1
-                        .classification-third
-                          a href="#" товары для дома1
-                        .classification-third
-                          a href="#" Канцелярские товары1
-                        .classification-third
-                          a href="#" Автотовары1
-                        .classification-third
-                          a href="#" товары для ЖИВОТНЫХ1
-                        .classification-third
-                          a href="#" промишленость1
-                .classification-second
-                  a href="#" промишленость3
-                  .manu-container-third
-                    .general-part
-                      .manu-nav
-                        .classification-third
-                          a href="#" продукти питания1
-                        .classification-third
-                          a href="#" косметика и гигиєна1
-                        .classification-third
-                          a href="#" товары для дома1
-                        .classification-third
-                          a href="#" Канцелярские товары1
-                        .classification-third
-                          a href="#" Автотовары1
-                        .classification-third
-                          a href="#" товары для ЖИВОТНЫХ1
-                        .classification-third
-                          a href="#" промишленость1
+                        .classification-third ng-repeat="second_menu in distributor.second_menu"
+                          a href="distributors?second_menu_id={{second_menu.id}}"
+                            | {{second_menu.title}}
+
+
+                            
         .classification.red
           a href="#"  Маркеты
           .arow-boxs
             = inline_svg "svg/ic_keyboard_arrow_right_black_24px.svg"
           .manu-container-second
             .general-part
-              .manu-nav
+              .manu-nav ng-repeat="markets in questionmarkets"
                 .classification-second
-                  a href="#" продукти питания4
-                  .manu-container-third
-                    .general-part
-                      .manu-nav
-                        .classification-third
-                          a href="#" продукти питания1
-                        .classification-third
-                          a href="#" косметика и гигиєна1
-                        .classification-third
-                          a href="#" товары для дома1
-                        .classification-third
-                          a href="#" Канцелярские товары1
-                        .classification-third
-                          a href="#" Автотовары1
-                        .classification-third
-                          a href="#" товары для ЖИВОТНЫХ1
-                        .classification-third
-                          a href="#" промишленость1
-                .classification-second
-                  a href="#" косметика и гигиєна4
-                  .manu-container-third
-                    .general-part
-                      .manu-nav
-                        .classification-third
-                          a href="#" продукти питания1
-                        .classification-third
-                          a href="#" косметика и гигиєна1
-                        .classification-third
-                          a href="#" товары для дома1
-                        .classification-third
-                          a href="#" Канцелярские товары1
-                        .classification-third
-                          a href="#" Автотовары1
-                        .classification-third
-                          a href="#" товары для ЖИВОТНЫХ1
-                        .classification-third
-                          a href="#" промишленость1
-                .classification-second
-                  a href="#" товары для дома4
-                  .manu-container-third
-                    .general-part
-                      .manu-nav
-                        .classification-third
-                          a href="#" продукти питания1
-                        .classification-third
-                          a href="#" косметика и гигиєна1
-                        .classification-third
-                          a href="#" товары для дома1
-                        .classification-third
-                          a href="#" Канцелярские товары1
-                        .classification-third
-                          a href="#" Автотовары1
-                        .classification-third
-                          a href="#" товары для ЖИВОТНЫХ1
-                        .classification-third
-                          a href="#" промишленость1
-                .classification-second
-                  a href="#" Канцелярские товары4
-                  .manu-container-third
-                    .general-part
-                      .manu-nav
-                        .classification-third
-                          a href="#" продукти питания1
-                        .classification-third
-                          a href="#" косметика и гигиєна1
-                        .classification-third
-                          a href="#" товары для дома1
-                        .classification-third
-                          a href="#" Канцелярские товары1
-                        .classification-third
-                          a href="#" Автотовары1
-                        .classification-third
-                          a href="#" товары для ЖИВОТНЫХ1
-                        .classification-third
-                          a href="#" промишленость1
-                .classification-second
-                  a href="#" Автотовары4
-                  .manu-container-third
-                    .general-part
-                      .manu-nav
-                        .classification-third
-                          a href="#" продукти питания1
-                        .classification-third
-                          a href="#" косметика и гигиєна1
-                        .classification-third
-                          a href="#" товары для дома1
-                        .classification-third
-                          a href="#" Канцелярские товары1
-                        .classification-third
-                          a href="#" Автотовары1
-                        .classification-third
-                          a href="#" товары для ЖИВОТНЫХ1
-                        .classification-third
-                          a href="#" промишленость1
-                .classification-second
-                  a href="#" товары для ЖИВОТНЫХ4
-                  .manu-container-third
-                    .general-part
-                      .manu-nav
-                        .classification-third
-                          a href="#" продукти питания1
-                        .classification-third
-                          a href="#" косметика и гигиєна1
-                        .classification-third
-                          a href="#" товары для дома1
-                        .classification-third
-                          a href="#" Канцелярские товары1
-                        .classification-third
-                          a href="#" Автотовары1
-                        .classification-third
-                          a href="#" товары для ЖИВОТНЫХ1
-                        .classification-third
-                          a href="#" промишленость1
-                .classification-second
-                  a href="#" промишленость4
-                  .manu-container-third
-                    .general-part
-                      .manu-nav
-                        .classification-third
-                          a href="#" продукти питания1
-                        .classification-third
-                          a href="#" косметика и гигиєна1
-                        .classification-third
-                          a href="#" товары для дома1
-                        .classification-third
-                          a href="#" Канцелярские товары1
-                        .classification-third
-                          a href="#" Автотовары1
-                        .classification-third
-                          a href="#" товары для ЖИВОТНЫХ1
-                        .classification-third
-                          a href="#" промишленость1
+                  a href="markets?id={{markets.id}}"
+                    | {{markets.name}}
         .classification.orange
           a href="#"  Логистика
           .arow-boxs
             = inline_svg "svg/ic_keyboard_arrow_right_black_24px.svg"
           .manu-container-second
             .general-part
-              .manu-nav
+              .manu-nav ng-repeat="logistic in questionlogistic"
                 .classification-second
-                  a href="#" продукти питания5
-                  .manu-container-third
-                    .general-part
-                      .manu-nav
-                        .classification-third
-                          a href="#" продукти питания1
-                        .classification-third
-                          a href="#" косметика и гигиєна1
-                        .classification-third
-                          a href="#" товары для дома1
-                        .classification-third
-                          a href="#" Канцелярские товары1
-                        .classification-third
-                          a href="#" Автотовары1
-                        .classification-third
-                          a href="#" товары для ЖИВОТНЫХ1
-                        .classification-third
-                          a href="#" промишленость1
-                .classification-second
-                  a href="#" косметика и гигиєна5
-                  .manu-container-third
-                    .general-part
-                      .manu-nav
-                        .classification-third
-                          a href="#" продукти питания1
-                        .classification-third
-                          a href="#" косметика и гигиєна1
-                        .classification-third
-                          a href="#" товары для дома1
-                        .classification-third
-                          a href="#" Канцелярские товары1
-                        .classification-third
-                          a href="#" Автотовары1
-                        .classification-third
-                          a href="#" товары для ЖИВОТНЫХ1
-                        .classification-third
-                          a href="#" промишленость1
-                .classification-second
-                  a href="#" товары для дома5
-                  .manu-container-third
-                    .general-part
-                      .manu-nav
-                        .classification-third
-                          a href="#" продукти питания1
-                        .classification-third
-                          a href="#" косметика и гигиєна1
-                        .classification-third
-                          a href="#" товары для дома1
-                        .classification-third
-                          a href="#" Канцелярские товары1
-                        .classification-third
-                          a href="#" Автотовары1
-                        .classification-third
-                          a href="#" товары для ЖИВОТНЫХ1
-                        .classification-third
-                          a href="#" промишленость1
-                .classification-second
-                  a href="#" Канцелярские товары5
-                  .manu-container-third
-                    .general-part
-                      .manu-nav
-                        .classification-third
-                          a href="#" продукти питания1
-                        .classification-third
-                          a href="#" косметика и гигиєна1
-                        .classification-third
-                          a href="#" товары для дома1
-                        .classification-third
-                          a href="#" Канцелярские товары1
-                        .classification-third
-                          a href="#" Автотовары1
-                        .classification-third
-                          a href="#" товары для ЖИВОТНЫХ1
-                        .classification-third
-                          a href="#" промишленость1
-                .classification-second
-                  a href="#" Автотовары5
-                  .manu-container-third
-                    .general-part
-                      .manu-nav
-                        .classification-third
-                          a href="#" продукти питания1
-                        .classification-third
-                          a href="#" косметика и гигиєна1
-                        .classification-third
-                          a href="#" товары для дома1
-                        .classification-third
-                          a href="#" Канцелярские товары1
-                        .classification-third
-                          a href="#" Автотовары1
-                        .classification-third
-                          a href="#" товары для ЖИВОТНЫХ1
-                        .classification-third
-                          a href="#" промишленость1
-                .classification-second
-                  a href="#" товары для ЖИВОТНЫХ5
-                  .manu-container-third
-                    .general-part
-                      .manu-nav
-                        .classification-third
-                          a href="#" продукти питания1
-                        .classification-third
-                          a href="#" косметика и гигиєна1
-                        .classification-third
-                          a href="#" товары для дома1
-                        .classification-third
-                          a href="#" Канцелярские товары1
-                        .classification-third
-                          a href="#" Автотовары1
-                        .classification-third
-                          a href="#" товары для ЖИВОТНЫХ1
-                        .classification-third
-                          a href="#" промишленость1
-                .classification-second
-                  a href="#" промишленость5
-                  .manu-container-third
-                    .general-part
-                      .manu-nav
-                        .classification-third
-                          a href="#" продукти питания1
-                        .classification-third
-                          a href="#" косметика и гигиєна1
-                        .classification-third
-                          a href="#" товары для дома1
-                        .classification-third
-                          a href="#" Канцелярские товары1
-                        .classification-third
-                          a href="#" Автотовары1
-                        .classification-third
-                          a href="#" товары для ЖИВОТНЫХ1
-                        .classification-third
-                          a href="#" промишленость1
+                  a href="logistics?id={{logistic.id}}"
+                    | {{logistic.name}}
         .tex-heder
           a.one-text href=premium_path Премиум
           a.one-text href=tradergram_path Tradergram

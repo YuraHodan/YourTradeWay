@@ -4,7 +4,17 @@ html
     / = seo_tags
     meta name="viewport" content="width=device-width, initial-scale=1.0"
     = stylesheet_link_tag    "application", media: 'all', 'data-turbolinks-track' => true
-    = csrf_meta_tags 
+    = csrf_meta_tags
+
+    link rel="icon" type="image/png" href=asset_path("favicon/16x16.png") sizes="16x16"
+    link rel="icon" type="image/png" href=asset_path("favicon/32x32.png") sizes="32x32"
+
+    link rel="icon" type="image/png" href=asset_path("favicon/96x96.png") sizes="96x96"
+    link rel="icon" type="image/png" href=asset_path("favicon/196x196.png") sizes="196x196"
+    link rel="icon" type="image/png" href=asset_path("favicon/228x228.png") sizes="228x228"
+
+    link rel="apple-touch-icon-precomposed" type="image/png" href=asset_path("favicon/76x76.png") sizes="76x76"
+    link rel="apple-touch-icon-precomposed" type="image/png" href=asset_path("favicon/180x180.png") sizes="180x180"
   body ng-app="ytwApp"
 
     = render "header"

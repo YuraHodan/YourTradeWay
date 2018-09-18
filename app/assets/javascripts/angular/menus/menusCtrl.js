@@ -23,5 +23,11 @@ ytwApp.controller('QuestionController',
           // document.getElementById('lol').style.display = 'none'
         };
 
+        $scope.myFunc = function() {
+          var element = document.getElementById("lol");
+          element.classList.add("opened");
+          var element2 = document.getElementById("arowthird");
+          element2.classList.add("visible");
+        };
     }
 )
