@@ -11,6 +11,8 @@ class Logistic < ActiveRecord::Base
   has_one :seo, as: "logistic"
   accepts_nested_attributes_for :seo
   validates  :country, :manufacture, :main_menu, :title, :logo_image, presence: true
+  scope :premium, -> {where(premium: true)}
+  scope :recomend, -> {where(recomend: true)}
 
 
   translates :title, :description, :address, :full_name, :our_benefits

@@ -10,6 +10,8 @@ class Product < ActiveRecord::Base
     accepts_nested_attributes_for :sertificates
   has_one :seo, as: "product"
   accepts_nested_attributes_for :seo
+  scope :premium, -> {where(premium: true)}
+  scope :recomend, -> {where(recomend: true)}
 
   translates :title, :description, :type_of_pack, :expiration_date
   accepts_nested_attributes_for :translations, allow_destroy: true

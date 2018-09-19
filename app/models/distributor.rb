@@ -13,5 +13,7 @@ class Distributor < ActiveRecord::Base
     has_one :seo, as: "distributor"
   accepts_nested_attributes_for :seo
   validates  :country, :manufacture, :second_menu, :title, :logo_image, presence: true
+  scope :premium, -> {where(premium: true)}
+  scope :recomend, -> {where(recomend: true)}
 
 end

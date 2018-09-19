@@ -40,6 +40,11 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :menus, only: [:index]
+      resources :products, only: [:index]
+      resources :manufactures, only: [:index]
+      resources :distributors, only: [:index]
+      resources :markets, only: [:index]
+      resources :logistics, only: [:index]
     end
   end
 
