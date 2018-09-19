@@ -10,87 +10,33 @@
         .accordion-inner.show
 
           .selector
-            ul.read-more-wrap
+            ul.read-more-wrap ng-repeat="distributor in questiondistributors"
               li
                 .one-checkbox
                   .checkbox
                     input#checkbox-salis1 type="checkbox"
                     label.switcher-control for="checkbox-salis1"
-                    span продажа
+                    span
+                      a href="distributors?id={{distributor.id}}"
+                        | {{distributor.name}}
                     nav
                       ul.drop-down.closed
                         li
-                          a.nav-button href="#"   = inline_svg "svg/ic_keyboard_arrow_down_black_24px.svg"
+                          a.nav-button href="#" ng-click="voteUp" = inline_svg "svg/ic_keyboard_arrow_down_black_24px.svg"
                         .down
-                          ul
+                          ul ng-repeat="second_menu in distributor.second_menu"
                             li
                               .one-checkbox
                                 .checkbox
                                   input#checkbox-salis6 type="checkbox"
                                   label.switcher-control for="checkbox-salis6"
-                                  span продажа
-                            li
-                              .one-checkbox
-                                .checkbox
-                                  input#checkbox-salis7 type="checkbox"
-                                  label.switcher-control for="checkbox-salis7"
-                                  span продажа
-                            li
-                              .one-checkbox
-                                .checkbox
-                                  input#checkbox-salis8 type="checkbox"
-                                  label.switcher-control for="checkbox-salis8"
-                                  span продажа
-              li
-                .one-checkbox
-                  .checkbox
-                    input#checkbox-salis2 type="checkbox"
-                    label.switcher-control for="checkbox-salis2"
-                    span продажа
-                    nav
-                      ul.drop-down.closed
-                        li
-                          a.nav-button href="#"   = inline_svg "svg/ic_keyboard_arrow_down_black_24px.svg"
-                        li
-                          .one-checkbox
-                            .checkbox
-                              input#checkbox-salis9 type="checkbox"
-                              label.switcher-control for="checkbox-salis10"
-                              span продажа
-                        li
-                          .one-checkbox
-                            .checkbox
-                              input#checkbox-salis11 type="checkbox"
-                              label.switcher-control for="checkbox-salis11"
-                              span продажа
-                        li.
-                          .one-checkbox
-                            .checkbox
-                              input#checkbox-salis12 type="checkbox"
-                              label.switcher-control for="checkbox-salis12"
-                              span продажа
-
-              li
-                .one-checkbox
-                  .checkbox
-                    input#checkbox-salis3 type="checkbox"
-                    label.switcher-control for="checkbox-salis3"
-                      span продажа
-              li
-                .one-checkbox
-                  .checkbox
-                    input#checkbox-salis4 type="checkbox"
-                    label.switcher-control for="checkbox-salis4"
-                      span продажа
-              li
-                .one-checkbox
-                  .checkbox
-                    input#checkbox-salis5 type="checkbox"
-                    label.switcher-control for="checkbox-salis5"
-                      span продажа
+                                  span
+                                    a href="distributors?second_menu_id={{second_menu.id}}"
+                                      | {{second_menu.title}}
           .remove-all
             .x-component = inline_svg "photo/main/svg/filter_clear.svg"
-            .ramove-text очистить все
+            .ramove-text
+              a href=distributors_path очистить все
             /// smole select
       .wrapper-filter
         .openfilters
@@ -196,16 +142,16 @@
           .mainlidet.goode2
             ul.goode2-slider-for
             ul.goode2-slider-nav
-              li
-                .border-producers.color-line.yellow-block
-                  .one-new-product
-                    .img-bg style="background-image: url(#{asset_path('photo/main/logos/2677650ac2e6996116659b8a3f91438a.png')})"
-                  .description
-                    .description-txt
-                      .maker
-                        | Азербайджан
-                      .product-name
-                        | Softprom by ERC
+              / li ng-repeat="distributor_top in toptdistributors"
+              /   .border-producers.color-line.yellow-block
+              /     .one-new-product
+              /       a.img-bg href="distributor/{{distributor_top.id}}" style="background-image: url('{{distributor_top.image_url}}')"
+              /     .description
+              /       .description-txt
+              /         .maker
+              /           | {{distributor_top.country}}
+              /         .product-name
+              /           | {{distributor_top.title}}
               li
                 .border-producers.color-line.yellow-block
                   .one-new-product
@@ -287,53 +233,33 @@
                       .product-name
                         | Softprom by ERC
 
-    / .medium-9.columns
-    /   .sales
-    /     .sales-leaders.color-line.gray-block
-    /       .title лидерь на рьнке
-    /       .medium-4.columns
-    /         .border-producers.color-line.green-block
-    /           .one-new-producers
-    /             .img-bg style="background-image: url(#{asset_path('photo/main/logos/2677650ac2e6996116659b8a3f91438a.png')})"
-    /           .description
-    /             .description-txt
-    /               .maker
-    /                 | Азербайджан
-    /               .product-name
-    /                 | Softprom by ERC
-    /       .medium-4.columns
-    /         .border-producers.color-line.green-block
-    /           .one-new-producers
-    /             .img-bg style="background-image: url(#{asset_path('photo/main/logos/2677650ac2e6996116659b8a3f91438a.png')})"
-    /           .description
-    /             .description-txt
-    /               .maker
-    /                 | Азербайджан
-    /               .product-name
-    /                 | Softprom by ERC
-    /       .medium-4.columns
-    /         .border-producers.color-line.green-block
-    /           .one-new-producers
-    /             .img-bg style="background-image: url(#{asset_path('photo/main/logos/2677650ac2e6996116659b8a3f91438a.png')})"
-    /           .description
-    /             .description-txt
-    /               .maker
-    /                 | Азербайджан
-    /               .product-name
-    /                 | Softprom by ERC
     .medium-9.columns
       .salse-all
-        -@distributors.each do |distributor|
+        .sales-leaders ng-repeat="distributorall in alldistributors"
           .medium-4.columns
-              .border-producers.color-line.green-block
-                .one-new-producers
-                  a.img-bg href=distributor_path(distributor.id) style="background-image: url(#{distributor.logo_image&.url})"
-                .description
-                  .description-txt
-                    .maker
-                      =distributor.country&.title
-                    .product-name
-                      =distributor.title
+            .border-producers.color-line.green-block
+              .one-new-producers
+                / href="distributors?id={{distributor.id}}"
+                a.img-bg href="distributor/{{distributorall.id}}" style="background-image: url('{{distributorall.image_url}}')"
+              .description
+                .description-txt
+                  .maker
+                    | {{distributorall.country}}
+                  .product-name
+                    | {{distributorall.title}}
+    / .medium-9.columns
+    /   .salse-all
+    /     -@distributors.each do |distributor|
+    /       .medium-4.columns
+    /           .border-producers.color-line.green-block
+    /             .one-new-producers
+    /               a.img-bg href=distributor_path(distributor.id) style="background-image: url(#{distributor.logo_image&.url})"
+    /             .description
+    /               .description-txt
+    /                 .maker
+    /                   =distributor.country&.title
+    /                 .product-name
+    /                   =distributor.title
     .medium-9.columns
       = render "recomendationdistributors"
     / .medium-9.columns

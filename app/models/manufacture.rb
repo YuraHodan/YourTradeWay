@@ -9,12 +9,15 @@ class Manufacture < ActiveRecord::Base
     mount_uploader :price_list_file, FileUploader
   belongs_to :second_menu, class_name: SecondMenu
   has_many :sertificates, class_name: Sertificate
+    scope :premium, -> {where(premium: true)}
+  scope :recomend, -> {where(recomend: true)}
+
     accepts_nested_attributes_for :sertificates
   translates :title, :description, :address, :full_name
   accepts_nested_attributes_for :translations, allow_destroy: true
   has_one :seo, as: "manufacture"
   accepts_nested_attributes_for :seo
-  validates  :country, :manufacture, :second_menu, :title, :logo_image, presence: true
+  validates  :country,  :second_menu, :title, :logo_image, presence: true
 
   def custom_name
     self.title

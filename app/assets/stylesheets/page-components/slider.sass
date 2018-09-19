@@ -1,11 +1,11 @@
 
-.mainlidet,.mainlidet-small
+.mainlidet
   padding: 200px 0 100px
   position: relative
   +breakpoint(small only)
-  ul
-    li
-      margin-left: 0px
+    ul
+      li
+        margin-left: 0px
   .mainlidet
   // +breakpoint(small only)
   //   padding: 0px
@@ -26,10 +26,6 @@
         background-size: contain
         left: 10px
         right: 10px
-  &.mainlidet-small
-    ul
-      li
-        margin-left: 0px
   li
     height: 60vh
     position: relative
@@ -45,6 +41,8 @@
     background-color: $black
     z-index: 10
     +y-align
+    +breakpoint(small only)
+      display: none
   .prev-btn
     left: 20px
   .next-btn
@@ -52,6 +50,9 @@
   .content-baner
     +y-align
     left: 100px
+    +breakpoint(small only)
+      left: auto
+      text-align: center
   .tex-baner
     z-index: 2
     h4
@@ -78,6 +79,8 @@
       top: 0
     .prev-btn
       left: 90%
+      // +breakpoint(medium doun)
+      //   left: 85%
     .next-btn
   &.goode2
     padding: 20px 0
@@ -135,21 +138,21 @@
       li
         margin-left: 0px
 
-.mainlidet-small
-  &.mobile
-    +breakpoint(small only)
-      padding-top: 100px
-  .content-baner
-    left: 0
-    text-align: center
-    padding-top: 20px
-    // top: 200px
-    +x-align
-  +breakpoint(small only)
-    .content-baner
-      top: 50px
-      h4
-        font-size: 30px
+// .mainlidet-small
+//   // &.mobile
+//   //   +breakpoint(small only)
+//   //     padding-top: 100px
+//   .content-baner
+//     left: 0
+//     text-align: center
+//     padding-top: 20px
+//     // top: 200px
+//     +x-align
+//   +breakpoint(small only)
+//     .content-baner
+//       top: 50px
+//       h4
+//         font-size: 30px
 
 
 ////// onegoodsslider

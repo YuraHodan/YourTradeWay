@@ -77,3 +77,5 @@
 #= require angular/contacts/contactsCtrl
 
 #= require angular/reqistration/reqistrationCtrl
+
+#= require angular/menus/menusCtrl

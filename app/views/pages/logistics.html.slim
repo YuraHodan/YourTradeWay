@@ -1,96 +1,28 @@
-.marcet ng-controller="logisticsControler as stor"
+.marcet ng-controller="logisticsController"
   .row
     .medium-3.columns
       .selector.bage
         = render "selector"
       .dubl-select
         .accordion-button.opened
-          p afdsfdsf
+          p afdsfdsf2222
           .svg-slid = inline_svg "svg/ic_keyboard_arrow_down_black_24px.svg"
         .accordion-inner.show
 
           .selector
-            ul.read-more-wrap
+            ul.read-more-wrap ng-repeat="logistic in questionlogistic"
               li
                 .one-checkbox
                   .checkbox
                     input#checkbox-salis1 type="checkbox"
                     label.switcher-control for="checkbox-salis1"
-                    span продажа
-                    nav
-                      ul.drop-down.closed
-                        li
-                          a.nav-button href="#"   = inline_svg "svg/ic_keyboard_arrow_down_black_24px.svg"
-                        .down
-                          ul
-                            li
-                              .one-checkbox
-                                .checkbox
-                                  input#checkbox-salis6 type="checkbox"
-                                  label.switcher-control for="checkbox-salis6"
-                                  span продажа
-                            li
-                              .one-checkbox
-                                .checkbox
-                                  input#checkbox-salis7 type="checkbox"
-                                  label.switcher-control for="checkbox-salis7"
-                                  span продажа
-                            li
-                              .one-checkbox
-                                .checkbox
-                                  input#checkbox-salis8 type="checkbox"
-                                  label.switcher-control for="checkbox-salis8"
-                                  span продажа
-              li
-                .one-checkbox
-                  .checkbox
-                    input#checkbox-salis2 type="checkbox"
-                    label.switcher-control for="checkbox-salis2"
-                    span продажа
-                    nav
-                      ul.drop-down.closed
-                        li
-                          a.nav-button href="#"   = inline_svg "svg/ic_keyboard_arrow_down_black_24px.svg"
-                        li
-                          .one-checkbox
-                            .checkbox
-                              input#checkbox-salis9 type="checkbox"
-                              label.switcher-control for="checkbox-salis10"
-                              span продажа
-                        li
-                          .one-checkbox
-                            .checkbox
-                              input#checkbox-salis11 type="checkbox"
-                              label.switcher-control for="checkbox-salis11"
-                              span продажа
-                        li.
-                          .one-checkbox
-                            .checkbox
-                              input#checkbox-salis12 type="checkbox"
-                              label.switcher-control for="checkbox-salis12"
-                              span продажа
-
-              li
-                .one-checkbox
-                  .checkbox
-                    input#checkbox-salis3 type="checkbox"
-                    label.switcher-control for="checkbox-salis3"
-                      span продажа
-              li
-                .one-checkbox
-                  .checkbox
-                    input#checkbox-salis4 type="checkbox"
-                    label.switcher-control for="checkbox-salis4"
-                      span продажа
-              li
-                .one-checkbox
-                  .checkbox
-                    input#checkbox-salis5 type="checkbox"
-                    label.switcher-control for="checkbox-salis5"
-                      span продажа
+                    span
+                      a href="logistics?id={{logistic.id}}"
+                        | {{logistic.name}}
           .remove-all
             .x-component = inline_svg "photo/main/svg/filter_clear.svg"
-            .ramove-text очистить все
+            .ramove-text
+              a href=logistics_path очистить все
             /// smole select
       .wrapper-filter
         .openfilters

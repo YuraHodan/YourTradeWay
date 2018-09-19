@@ -286,53 +286,35 @@
                       .product-name
                         | Йорсан
 
-    / .medium-9.columns
-    /   .sales
-    /     .sales-leaders.color-line.gray-block
-    /       .title лидерь на рьнке
-    /       .medium-4.columns
-    /         .border-producers.color-line.blue-block
-    /           .one-new-producers
-    /             .img-bg style="background-image: url(#{asset_path('photo/main/logos/images.png')})"
-    /           .description
-    /             .description-txt
-    /               .maker
-    /                 | Азербайджан
-    /               .product-name
-    /                 | Йорсан
-    /       .medium-4.columns
-    /         .border-producers.color-line.blue-block
-    /           .one-new-producers
-    /             .img-bg style="background-image: url(#{asset_path('photo/main/logos/images.png')})"
-    /           .description
-    /             .description-txt
-    /               .maker
-    /                 | Азербайджан
-    /               .product-name
-    /                 | Йорсан
-    /       .medium-4.columns
-    /         .border-producers.color-line.blue-block
-    /           .one-new-producers
-    /             .img-bg style="background-image: url(#{asset_path('photo/main/logos/images.png')})"
-    /           .description
-    /             .description-txt
-    /               .maker
-    /                 | Азербайджан
-    /               .product-name
-    /                 | Йорсан
     .medium-9.columns
       .salse-all
-         -@manufactures.each do |manufacture|
+        .sales-leaders ng-repeat="manufacturesl_all in all_manufactures"
           .medium-4.columns
-              .border-producers.color-line.blue-block
-                .one-new-producers
-                  a.img-bg href=maker_path(manufacture.id) style="background-image: url(#{manufacture&.logo_image&.url})"
-                .description
-                  .description-txt
-                    .maker
-                      =manufacture.country&.title
-                    .product-name
-                      =manufacture.title
+            .border-producers.color-line.blue-block
+              .one-new-producers
+                a.img-bg href="maker/{{manufacturesl_all.id}}" style="background-image: url('{{manufacturesl_all.image_url}}')"
+              .description
+                .description-txt
+                  .maker
+                    | {{manufacturesl_all.country}}
+                  .product-name
+                    | {{manufacturesl_all.title}}
+
+
+
+    / .medium-9.columns
+    /   .salse-all
+    /      -@manufactures.each do |manufacture|
+    /       .medium-4.columns
+    /           .border-producers.color-line.blue-block
+    /             .one-new-producers
+    /               a.img-bg href=maker_path(manufacture.id) style="background-image: url(#{manufacture&.logo_image&.url})"
+    /             .description
+    /               .description-txt
+    /                 .maker
+    /                   =manufacture.country&.title
+    /                 .product-name
+    /                   =manufacture.title
     .medium-9.columns
       = render "recomendationSalse"
       / .salse-all

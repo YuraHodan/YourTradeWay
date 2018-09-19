@@ -25,6 +25,7 @@ Rails.application.routes.draw do
     get "faq", action: "faq"
     get "terms", action: "terms"
     # get "registration", action: "registration"
+    get "post_product", action: "post_product"
     get "aboutus", action: "aboutus"
     get "topgoods", action: "topgoods"
 
@@ -32,12 +33,18 @@ Rails.application.routes.draw do
 
     # post "registration", action: "registration"
     post "message", action: "message"
+    post "contain_us", action: "contain_us"
 
   end
 # end
   namespace :api do
     namespace :v1 do
       resources :menus, only: [:index]
+      resources :products, only: [:index]
+      resources :manufactures, only: [:index]
+      resources :distributors, only: [:index]
+      resources :markets, only: [:index]
+      resources :logistics, only: [:index]
     end
   end
 
