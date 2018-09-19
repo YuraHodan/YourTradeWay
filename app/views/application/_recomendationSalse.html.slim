@@ -1,34 +1,14 @@
 .recomendation-tovars
   .recomendation-text.color-line.gray-block
     .title рекомендаии
-  .recommendation-goods
+  .recommendation-goods ng-repeat="manufactures_recom in recom_manufactures"
     .medium-4.columns
       .border-producers.color-line.blue-block
         .one-new-producers
-          .img-bg style="background-image: url(#{asset_path('photo/main/logos/images.png')})"
+          a.img-bg href="maker/{{manufactures_recom.id}}" style="background-image: url('{{manufactures_recom.image_url}}')"
         .description
           .description-txt
             .maker
-              | Азербайджан
+              | {{manufactures_recom.country}}
             .product-name
-              | Йорсан
-    .medium-4.columns
-      .border-producers.color-line.blue-block
-        .one-new-producers
-          .img-bg style="background-image: url(#{asset_path('photo/main/logos/images.png')})"
-        .description
-          .description-txt
-            .maker
-              | Азербайджан
-            .product-name
-              | Йорсан
-    .medium-4.columns
-      .border-producers.color-line.blue-block
-        .one-new-producers
-          .img-bg style="background-image: url(#{asset_path('photo/main/logos/images.png')})"
-        .description
-          .description-txt
-            .maker
-              | Азербайджан
-            .product-name
-              | Йорсан
+              | {{manufactures_recom.title}}

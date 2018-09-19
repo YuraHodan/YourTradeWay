@@ -15,5 +15,11 @@ ytwApp.controller('marcetControler',
         };
         $scope.voteDown = function (answer){
         };
+        $http({method: 'GET', url: '/api/v1/markets.json'}).
+            then(function success2(response) {
+                $scope.top_markets=response.data.top_markets;
+                $scope.all_markets=response.data.markets;
+                $scope.recom_markets=response.data.recomend_markets;
+        });
     }
 )

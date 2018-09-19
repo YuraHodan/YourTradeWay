@@ -195,68 +195,43 @@
           .topgoods-tex.color-line.gray-block
             .title топ товари
           = render "goodsSlider2"
-      .medium-9.columns.large-9
-        .vibe-text.color-line.gray-block
-          .title средстрва по уходу за волосами
-        .vibe-goods
-          -@products.each do |product|
-            #page-content.medium-4.columns.page-content.gallery ng-repeat="product in records | limitTo : 1"
-              .border-producers.color-line.yellow-block
-                .one-new-product
-                  a.img-bg href=article_path(product.id) style="background-image: url(#{product.logo_image.url})"
-                .description
-                  .description-txt
-                    .maker =product&.manufacture.title
-                    .product-name = product.title
-                    .price.color-line.gray-block
-                      .oriented-price
-                        | {{product.oriented}}
-                      .mony
-                        =product.price
-                        | $
+      / .medium-9.columns.large-9
+      /   .vibe-text.color-line.gray-block
+      /     .title средстрва по уходу за волосами
+        / .vibe-goods
+        /   -@products.each do |product|
+        /     #page-content.medium-4.columns.page-content.gallery ng-repeat="product in records | limitTo : 1"
+        /       .border-producers.color-line.yellow-block
+        /         .one-new-product
+        /           a.img-bg href=article_path(product.id) style="background-image: url(#{product.logo_image.url})"
+        /         .description
+        /           .description-txt
+        /             .maker =product&.manufacture.title
+        /             .product-name = product.title
+        /             .price.color-line.gray-block
+        /               .oriented-price
+        /                 | {{product.oriented}}
+        /               .mony
+        /                 =product.price
+        /                 | $
 
       .medium-9.columns
-        = render "recomendation"
+        / = render "recomendation"
         .vibe-goods
-          .medium-4.columns ng-repeat="product in store.data | limitTo:6:6 "
+          .medium-4.columns ng-repeat="products_all in all_products"
             .border-producers.color-line.yellow-block
               .one-new-product
-                a.img-bg href="*" style="background-image: url(#{asset_path('photo/main/news_3.jpg')})"
+                a.img-bg href="article/{{products_all.id}}" style="background-image: url('{{products_all.image_url}}')"
               .description
                 .description-txt
                   .maker
-                    | {{product.maker}}
+                    | {{products_all.title}}
                   .product-name
-                    | {{product.product}}
+                    | {{products_all.manufacture_title}}
                   .price.color-line.gray-block
                     .oriented-price
-                      | {{product.oriented}}
+                      | орієнтовочная цена:
                     .mony
-                      | {{product.mony}}
-
-          #page-content.medium-4.columns.page-content.gallery ng-repeat="product in records | limitTo : 6 : 6"
-            .border-producers.color-line.yellow-block
-              .one-new-product
-                a.img-bg href="*" style="background-image: url(#{asset_path('photo/main/news_3.jpg')})"
-              .description
-                .description-txt
-                  .maker
-                    | {{product.maker}}
-                  .product-name
-                    | {{product.product}}
-                  .price.color-line.gray-block
-                    .oriented-price
-                      | {{product.oriented}}
-                    .mony
-                      | {{product.mony}}
-    / .bodyt ng-controller="mainCtrl"
-    /   .container
-    /     .row
-    /       .col-sm-3 ng-repeat=("item in products")
-    /         .thumbnail
-    /           .caption
-    /             h4  { item.name }
-    /     .pagination-wrap
-    /       ul.pagination
-    /         li max-size="3" ng-class=("{'active': currentPageNum() == page.link}") ng-click="showPage(page.link)" ng-repeat=("page in paginationList")
-    /           a ng-bind-html="page.name"
+                      | {{products_all.price}}$
+      .medium-9.columns
+        = render "recomendation"

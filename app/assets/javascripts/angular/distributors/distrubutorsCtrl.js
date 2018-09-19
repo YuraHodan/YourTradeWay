@@ -15,5 +15,11 @@ ytwApp.controller('dustrubutorsControler',
         };
         $scope.voteDown = function (answer){
         };
+        $http({method: 'GET', url: '/api/v1/distributors.json'}).
+            then(function success2(response) {
+                $scope.toptdistributors=response.data.top_distributors;
+                $scope.alldistributors=response.data.distributors;
+                $scope.recomdistributors=response.data.recomend_distributors;
+        });
     }
 )
