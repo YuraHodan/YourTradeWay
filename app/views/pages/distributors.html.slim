@@ -139,99 +139,26 @@
       .topgoods
         .topgoods-tex.color-line.gray-block
           .title топ товари
-          .mainlidet.goode2
-            ul.goode2-slider-for
-            ul.goode2-slider-nav
-              / li ng-repeat="distributor_top in toptdistributors"
-              /   .border-producers.color-line.yellow-block
-              /     .one-new-product
-              /       a.img-bg href="distributor/{{distributor_top.id}}" style="background-image: url('{{distributor_top.image_url}}')"
-              /     .description
-              /       .description-txt
-              /         .maker
-              /           | {{distributor_top.country}}
-              /         .product-name
-              /           | {{distributor_top.title}}
-              li
-                .border-producers.color-line.yellow-block
-                  .one-new-product
-                    .img-bg style="background-image: url(#{asset_path('photo/main/logos/2677650ac2e6996116659b8a3f91438a.png')})"
-                  .description
-                    .description-txt
-                      .maker
-                        | Азербайджан
-                      .product-name
-                        | Softprom by ERC
-              li
-                .border-producers.color-line.yellow-block
-                  .one-new-product
-                    .img-bg style="background-image: url(#{asset_path('photo/main/logos/2677650ac2e6996116659b8a3f91438a.png')})"
-                  .description
-                    .description-txt
-                      .maker
-                        | Азербайджан
-                      .product-name
-                        | Softprom by ERC
-              li
-                .border-producers.color-line.yellow-block
-                  .one-new-product
-                    .img-bg style="background-image: url(#{asset_path('photo/main/logos/2677650ac2e6996116659b8a3f91438a.png')})"
-                  .description
-                    .description-txt
-                      .maker
-                        | Азербайджан
-                      .product-name
-                        | Softprom by ERC
-              li
-                .border-producers.color-line.yellow-block
-                  .one-new-product
-                    .img-bg style="background-image: url(#{asset_path('photo/main/logos/2677650ac2e6996116659b8a3f91438a.png')})"
-                  .description
-                    .description-txt
-                      .maker
-                        | Азербайджан
-                      .product-name
-                        | Softprom by ERC
-              li
-                .border-producers.color-line.yellow-block
-                  .one-new-product
-                    .img-bg style="background-image: url(#{asset_path('photo/main/logos/2677650ac2e6996116659b8a3f91438a.png')})"
-                  .description
-                    .description-txt
-                      .maker
-                        | Азербайджан
-                      .product-name
-                        | Softprom by ERC
-              li
-                .border-producers.color-line.yellow-block
-                  .one-new-product
-                    .img-bg style="background-image: url(#{asset_path('photo/main/logos/2677650ac2e6996116659b8a3f91438a.png')})"
-                  .description
-                    .description-txt
-                      .maker
-                        | Азербайджан
-                      .product-name
-                        | Softprom by ERC
-              li
-                .border-producers.color-line.yellow-block
-                  .one-new-product
-                    .img-bg style="background-image: url(#{asset_path('photo/main/logos/2677650ac2e6996116659b8a3f91438a.png')})"
-                  .description
-                    .description-txt
-                      .maker
-                        | Азербайджан
-                      .product-name
-                        | Softprom by ERC
-              li
-                .border-producers.color-line.yellow-block
-                  .one-new-product
-                    .img-bg style="background-image: url(#{asset_path('photo/main/logos/2677650ac2e6996116659b8a3f91438a.png')})"
-                  .description
-                    .description-txt
-                      .maker
-                        | Азербайджан
-                      .product-name
-                        | Softprom by ERC
+        #sliderBX-contenedor
+          #btnSliderNext
+            i.fa.fa-angle-right aria-hidden="true"
+          #btnSliderPrev
+            i.fa.fa-angle-left aria-hidden="true"
+          #sliderBX
+            .sliderBXcell ng-repeat="tdistributors_top in toptdistributors"
+              / .medium-4.columns
+              .border-producers.color-line.green-block
+                .one-new-producers
+                  a.img-bg href="distributor/{{tdistributors_top.id}}" style="background-image: url('{{tdistributors_top.image_url}}')"
+                .description
+                  .description-txt
+                    .maker
+                      | {{tdistributors_top.country}}
+                    .product-name
+                      | {{tdistributors_top.title}}
+            .sliderBXcell
+            .sliderBXcell
+            .sliderBXcell
 
     .medium-9.columns
       .salse-all
