@@ -15,7 +15,7 @@ class Api::V1::DistributorsController < Api::V1::BaseController
         id:         distributor.id,
         title:   distributor.title,
         country:       distributor.country.title,
-        image_url:  distributor.logo_image.url,
+        image_url:  distributor.logo_image.url
         }
       }
   end

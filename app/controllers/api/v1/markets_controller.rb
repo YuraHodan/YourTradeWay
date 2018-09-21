@@ -13,9 +13,9 @@ class Api::V1::MarketsController < Api::V1::BaseController
   def map_markets(markets)
     markets.map{ |market| {
         id:         market.id,
-        title:   market.title,
-        country:       market.country.title,
-        image_url:  market.logo_image.url,
+        title:      market.title,
+        country:    market.country.title,
+        image_url:  market.logo_image.url
         }
       }
   end

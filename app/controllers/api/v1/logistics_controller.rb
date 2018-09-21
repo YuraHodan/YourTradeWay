@@ -1,21 +1,21 @@
 class Api::V1::LogisticsController < Api::V1::BaseController
   def index
-     @manufactures =  {
-      top_manufactures:       map_manufactures(Manufacture.premium),
-      manufactures:           map_manufactures(Manufacture.all),
-      recomend_manufactures:  map_manufactures(Manufacture.recomend)
+     @logistics =  {
+      top_logistics:       map_logistics(Logistic.premium),
+      logistics:           map_logistics(Logistic.all),
+      recomend_logistics:  map_logistics(Logistic.recomend)
     }
-    respond_with @manufactures
+    respond_with @logistics
   end
 
   private
 
-  def map_manufactures(manufactures)
-    manufactures.map{ |manufacture| {
-        id:         manufacture.id,
-        title:   manufacture.title,
-        country:       manufacture.country.title,
-        image_url:  manufacture.logo_image.url,
+  def map_logistics(logistics)
+    logistics.map{ |logistic| {
+        id:         logistic.id,
+        title:      logistic.title,
+        country:    logistic.country.title,
+        image_url:  logistic.logo_image.url
         }
       }
   end

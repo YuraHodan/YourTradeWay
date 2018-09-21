@@ -13,9 +13,9 @@ class Api::V1::ManufacturesController < Api::V1::BaseController
   def map_manufactures(manufactures)
     manufactures.map{ |manufacture| {
         id:         manufacture.id,
-        title:   manufacture.title,
-        country:       manufacture.country.title,
-        image_url:  manufacture.logo_image.url,
+        title:      manufacture.title,
+        country:    manufacture.country.title,
+        image_url:  manufacture.logo_image.url
         }
       }
   end

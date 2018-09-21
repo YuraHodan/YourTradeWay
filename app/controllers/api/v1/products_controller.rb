@@ -12,10 +12,10 @@ class Api::V1::ProductsController < Api::V1::BaseController
 
   def map_products(products)
     products.map{ |product| {
-        id:         product.id,
-        title:   product.title,
-        price:       product.price,
-        image_url:  product.logo_image.url,
+        id:                product.id,
+        title:             product.title,
+        price:             product.price,
+        image_url:         product.logo_image.url,
         manufacture_title: product.manufacture.title
         }
       }
