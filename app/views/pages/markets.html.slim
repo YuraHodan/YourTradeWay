@@ -220,64 +220,63 @@
 
 
 
-    / .medium-9.columns
-    /   .sales
-    /     .sales-leaders.color-line.gray-block
-    /       .title лидерь на рьнке
-    /       .medium-4.columns
-    /         .border-producers.color-line.red-block
-              / .one-new-producers
-              /   .img-bg style="background-image: url(#{asset_path('photo/main/logos/brands_icon_1.png')})"
-              / .description
-              /   .description-txt
-              /     .maker
-              /       | Азербайджан
-              /     .product-name
-              /       | Softprom by ERC
-    /       .medium-4.columns
-    /         .border-producers.color-line.red-block
-    /           .one-new-producers
-    /             .img-bg style="background-image: url(#{asset_path('photo/main/logos/brands_icon_1.png')})"
-    /           .description
-    /             .description-txt
-    /               .maker
-    /                 | Азербайджан
-    /               .product-name
-    /                 | Softprom by ERC
-    /       .medium-4.columns
-    /         .border-producers.color-line.red-block
-    /           .one-new-producers
-    /             .img-bg style="background-image: url(#{asset_path('photo/main/logos/brands_icon_1.png')})"
-    /           .description
-    /             .description-txt
-    /               .maker
-    /                 | Азербайджан
-    /               .product-name
-    /                 | Softprom by ERC
     .medium-9.columns
       .salse-all
-        -@markets.each do |market|
+        .sales-leaders ng-repeat="markets_all in all_markets"
           .medium-4.columns
             .border-producers.color-line.red-block
               .one-new-producers
-                a.img-bg href=market_path(market.id) style="background-image: url(#{market.logo_image.url})"
+                a.img-bg href="market/{{markets_all.id}}" style="background-image: url('{{markets_all.image_url}}')"
               .description
                 .description-txt
                   .maker
-                    =market.country&.title
+                    | {{markets_all.country}}
                   .product-name
-                    =market.title
+                    | {{markets_all.title}}
+    /       .medium-4.columns
+    /         .border-producers.color-line.red-block
+    /           .one-new-producers
+    /             .img-bg style="background-image: url(#{asset_path('photo/main/logos/brands_icon_1.png')})"
+    /           .description
+    /             .description-txt
+    /               .maker
+    /                 | Азербайджан
+    /               .product-name
+    /                 | Softprom by ERC
+    /       .medium-4.columns
+    /         .border-producers.color-line.red-block
+    /           .one-new-producers
+    /             .img-bg style="background-image: url(#{asset_path('photo/main/logos/brands_icon_1.png')})"
+    /           .description
+    /             .description-txt
+    /               .maker
+    /                 | Азербайджан
+    /               .product-name
+    /                 | Softprom by ERC
+    / .medium-9.columns
+    /   .salse-all
+    /     -@markets.each do |market|
+    /       .medium-4.columns
+    /         .border-producers.color-line.red-block
+    /           .one-new-producers
+    /             a.img-bg href=market_path(market.id) style="background-image: url(#{market.logo_image.url})"
+    /           .description
+    /             .description-txt
+    /               .maker
+    /                 =market.country&.title
+    /               .product-name
+    /                 =market.title
     .medium-9.columns
       = render "recomendationmarket"
-    .medium-9.columns
-      .salse-all
-        .medium-4.columns  ng-repeat="product in records | limitTo : 6"
-          .border-producers.color-line.red-block
-            .one-new-producers
-              .img-bg style="background-image: url(#{asset_path('photo/main/logos/brands_icon_1.png')})"
-            .description
-              .description-txt
-                .maker
-                  | {{product.maker}}
-                .product-name
-                  | {{product.product}}
+    / .medium-9.columns
+    /   .salse-all
+    /     .medium-4.columns  ng-repeat="product in records | limitTo : 6"
+    /       .border-producers.color-line.red-block
+    /         .one-new-producers
+    /           .img-bg style="background-image: url(#{asset_path('photo/main/logos/brands_icon_1.png')})"
+    /         .description
+    /           .description-txt
+    /             .maker
+    /               | {{product.maker}}
+    /             .product-name
+    /               | {{product.product}}

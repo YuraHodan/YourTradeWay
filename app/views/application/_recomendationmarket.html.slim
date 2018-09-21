@@ -1,34 +1,34 @@
 .recomendation-tovars
   .recomendation-text.color-line.red-block
     .title рекомендаии
-  .recommendation-goods
+  .recommendation-goods ng-repeat="markets_recom in recom_markets"
     .medium-4.columns
       .border-producers.color-line.red-block
         .one-new-producers
-          .img-bg style="background-image: url(#{asset_path('photo/main/logos/brands_icon_1.png')})"
+          a.img-bg href="market/{{markets_recom.id}}" style="background-image: url('{{markets_recom.image_url}}')"
         .description
           .description-txt
             .maker
-              | Україна
+              | {{markets_recom.country}}
             .product-name
-              | Супермаркет 'АТБ'
-    .medium-4.columns
-      .border-producers.color-line.red-block
-        .one-new-producers
-          .img-bg style="background-image: url(#{asset_path('photo/main/logos/brands_icon_1.png')})"
-        .description
-          .description-txt
-            .maker
-              | Україна
-            .product-name
-              | Супермаркет 'АТБ'
-    .medium-4.columns
-      .border-producers.color-line.red-block
-        .one-new-producers
-          .img-bg style="background-image: url(#{asset_path('photo/main/logos/brands_icon_1.png')})"
-        .description
-          .description-txt
-            .maker
-              | Україна
-            .product-name
-              | Супермаркет 'АТБ'
+              | {{markets_recom.title}}
+    / .medium-4.columns
+    /   .border-producers.color-line.red-block
+    /     .one-new-producers
+    /       .img-bg style="background-image: url(#{asset_path('photo/main/logos/brands_icon_1.png')})"
+    /     .description
+    /       .description-txt
+    /         .maker
+    /           | Україна
+    /         .product-name
+    /           | Супермаркет 'АТБ'
+    / .medium-4.columns
+    /   .border-producers.color-line.red-block
+    /     .one-new-producers
+    /       .img-bg style="background-image: url(#{asset_path('photo/main/logos/brands_icon_1.png')})"
+    /     .description
+    /       .description-txt
+    /         .maker
+    /           | Україна
+    /         .product-name
+    /           | Супермаркет 'АТБ'

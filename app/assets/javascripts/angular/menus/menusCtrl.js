@@ -24,7 +24,7 @@ ytwApp.controller('QuestionController',
         };
 
         $scope.myFunc = function() {
-          var element = document.getElementById("lol");
+          var element = document.getElementById("third");
           element.classList.add("opened");
           var element2 = document.getElementById("arowthird");
           element2.classList.add("visible");
