@@ -10,6 +10,10 @@ class Api::V1::ProductsController < Api::V1::BaseController
 
   private
 
+  def search_ids
+
+  end
+
   def map_products(products)
     products.map{ |product| {
         id:                product.id,

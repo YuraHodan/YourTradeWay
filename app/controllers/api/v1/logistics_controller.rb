@@ -1,14 +1,43 @@
 class Api::V1::LogisticsController < Api::V1::BaseController
   def index
      @logistics =  {
-      top_logistics:       map_logistics(Logistic.premium),
-      logistics:           map_logistics(Logistic.all),
-      recomend_logistics:  map_logistics(Logistic.recomend)
+      top_logistics:       filtered_logistics(Logistic.premium),
+      logistics:           filtered_logistics(Logistic.all),
+      recomend_logistics:  filtered_logistics(Logistic.recomend),
+      countries:           map_countries(Country.all),
+      current_page:        current_page,
+      pages_count:         pages_count
     }
     respond_with @logistics
   end
 
   private
+
+  def filtered_logistics(logistics)
+    filtered_data = logistics
+    filtered_data = filtered_data.where(country_id: params[:country_ids]) if params[:country_ids].present?
+    filtered_data = filtered_data.where(main_menu_id: params[:type_ids]) if  params[:country_ids].present?
+    map_logistics(filtered_data)
+  end
+
+  def pages_count
+    Logistic.all.count / 12 + 1
+  end
+
+  def current_page
+    return 1 unless params[:page_number]
+
+    params[:page_number]
+  end
+
+  def map_countries(countries)
+    countries.map { |country|
+      { id:    country.id,
+        title: country.title
+      }
+    }
+
+  end
 
   def map_logistics(logistics)
     logistics.map{ |logistic| {

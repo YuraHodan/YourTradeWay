@@ -288,7 +288,6 @@ config.model Logistic do
     field :category, :enum do
        enum ["Products", "Factories", "Distributors", "Markets", "Logistic"]
     end
-    field :second_menus
     object_label_method :custom_name
 
   end
@@ -301,7 +300,6 @@ config.model Logistic do
 
   config.model SecondMenu do
     fields :main_menu
-    field :third_menus
     field :translations, :globalize_tabs
     object_label_method :custom_name
 
