@@ -16,7 +16,7 @@ class Api::V1::LogisticsController < Api::V1::BaseController
   def filtered_logistics(logistics)
     filtered_data = logistics
     filtered_data = filtered_data.where(country_id: params[:country_ids]) if params[:country_ids].present?
-    filtered_data = filtered_data.where(main_menu_id: params[:type_ids]) if  params[:country_ids].present?
+    filtered_data = filtered_data.where(main_menu_id: params[:type_ids]) if  params[:type_ids].present?
     map_logistics(filtered_data)
   end
 
