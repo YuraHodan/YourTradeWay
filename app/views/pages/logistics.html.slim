@@ -125,150 +125,53 @@
       .topgoods
         .topgoods-tex.color-line.gray-block
           .title топ товари
-          .mainlidet.goode2
-            ul.goode2-slider-for
-            ul.goode2-slider-nav
-              li
-                .border-producers.color-line.orange-block
-                  .one-new-product
-                    .img-bg style="background-image: url(#{asset_path('photo/main/logos/11520-1484293005.jpg')})"
-                  .description
-                    .description-txt
-                      .maker
-                        | Азербайджан
-                      .product-name
-                        | EGT EXPRESS
-              li
-                .border-producers.color-line.orange-block
-                  .one-new-product
-                    .img-bg style="background-image: url(#{asset_path('photo/main/logos/11520-1484293005.jpg')})"
-                  .description
-                    .description-txt
-                      .maker
-                        | Азербайджан
-                      .product-name
-                        | EGT EXPRESS
-              li
-                .border-producers.color-line.orange-block
-                  .one-new-product
-                    .img-bg style="background-image: url(#{asset_path('photo/main/logos/11520-1484293005.jpg')})"
-                  .description
-                    .description-txt
-                      .maker
-                        | Азербайджан
-                      .product-name
-                        | EGT EXPRESS
-              li
-                .border-producers.color-line.orange-block
-                  .one-new-product
-                    .img-bg style="background-image: url(#{asset_path('photo/main/logos/11520-1484293005.jpg')})"
-                  .description
-                    .description-txt
-                      .maker
-                        | Азербайджан
-                      .product-name
-                        | EGT EXPRESS
-              li
-                .border-producers.color-line.orange-block
-                  .one-new-product
-                    .img-bg style="background-image: url(#{asset_path('photo/main/logos/11520-1484293005.jpg')})"
-                  .description
-                    .description-txt
-                      .maker
-                        | Азербайджан
-                      .product-name
-                        | EGT EXPRESS
-              li
-                .border-producers.color-line.orange-block
-                  .one-new-product
-                    .img-bg style="background-image: url(#{asset_path('photo/main/logos/11520-1484293005.jpg')})"
-                  .description
-                    .description-txt
-                      .maker
-                        | Азербайджан
-                      .product-name
-                        | EGT EXPRESS
-              li
-                .border-producers.color-line.orange-block
-                  .one-new-product
-                    .img-bg style="background-image: url(#{asset_path('photo/main/logos/11520-1484293005.jpg')})"
-                  .description
-                    .description-txt
-                      .maker
-                        | Азербайджан
-                      .product-name
-                        | EGT EXPRESS
-              li
-                .border-producers.color-line.orange-block
-                  .one-new-product
-                    .img-bg style="background-image: url(#{asset_path('photo/main/logos/11520-1484293005.jpg')})"
-                  .description
-                    .description-txt
-                      .maker
-                        | Азербайджан
-                      .product-name
-                        | EGT EXPRESS
-              li
-                .border-producers.color-line.orange-block
-                  .one-new-product
-                    .img-bg style="background-image: url(#{asset_path('photo/main/logos/11520-1484293005.jpg')})"
-                  .description
-                    .description-txt
-                      .maker
-                        | Азербайджан
-                      .product-name
-                        | EGT EXPRESS
+        #sliderBX-contenedor
+          #btnSliderNext
+            i.fa.fa-angle-right aria-hidden="true"
+          #btnSliderPrev
+            i.fa.fa-angle-left aria-hidden="true"
+          #sliderBX
+            .sliderBXcell ng-repeat="logistics_top in top_logistics"
+              / .medium-4.columns
+              .border-producers.color-line.orange-block
+                .one-new-producers
+                  a.img-bg href="logistic/{{logistics_top.id}}" style="background-image: url('{{logistics_top.image_url}}')"
+                .description
+                  .description-txt
+                    .maker
+                      | {{logistics_top.country}}
+                    .product-name
+                      | {{logistics_top.title}}
 
 
-    / .medium-9.columns
-    /   .sales
-    /     .sales-leaders.color-line.gray-block
-    /       .title лидерь на рьнке
-    /       .medium-4.columns
-    /         .border-producers.color-line.orange-block
-    /           .one-new-producers
-              /   .img-bg style="background-image: url(#{asset_path('photo/main/logos/11520-1484293005.jpg')})"
-              / .description
-              /   .description-txt
-              /     .maker
-              /       | Азербайджан
-              /     .product-name
-              /       | EGT EXPRESS
-    /       .medium-4.columns
-    /         .border-producers.color-line.orange-block
-    /           .one-new-producers
-    /             .img-bg style="background-image: url(#{asset_path('photo/main/logos/11520-1484293005.jpg')})"
-    /           .description
-    /             .description-txt
-    /               .maker
-    /                 | Азербайджан
-    /               .product-name
-    /                 | EGT EXPRESS
-    /       .medium-4.columns
-    /         .border-producers.color-line.orange-block
-    /           .one-new-producers
-    /             .img-bg style="background-image: url(#{asset_path('photo/main/logos/11520-1484293005.jpg')})"
-    /           .description
-    /             .description-txt
-    /               .maker
-    /                 | Азербайджан
-    /               .product-name
-    /                 | EGT EXPRESS
     .medium-9.columns
       .salse-all
-        -@logistics.each do |logistic|
+        .sales-leaders ng-repeat="logistics_all in all_logistics"
           .medium-4.columns
             .border-producers.color-line.orange-block
               .one-new-producers
-                a.img-bg href=logistic_path(logistic.id) style="background-image: url(#{asset_path('photo/main/logos/11520-1484293005.jpg')})"
+                  a.img-bg href="logistic/{{logistics_all.id}}" style="background-image: url('{{logistics_all.image_url}}')"
               .description
                 .description-txt
                   .maker
-                    =logistic.country&.title
+                    | {{logistics_all.country}}
                   .product-name
-                    =logistic.title
+                    | {{logistics_all.title}}
     / .medium-9.columns
-    /   = render "recomendationlogistics"
+    /   .salse-all
+    /     -@logistics.each do |logistic|
+    /       .medium-4.columns
+    /         .border-producers.color-line.orange-block
+    /           .one-new-producers
+    /             a.img-bg href=logistic_path(logistic.id) style="background-image: url(#{asset_path('photo/main/logos/11520-1484293005.jpg')})"
+    /           .description
+    /             .description-txt
+    /               .maker
+    /                 =logistic.country&.title
+    /               .product-name
+    /                 =logistic.title
+    .medium-9.columns
+      = render "recomendationlogistics"
     / / .medium-9.columns
     / /   .salse-all
     / /     .medium-4.columns  ng-repeat="product in records | limitTo : 6"
