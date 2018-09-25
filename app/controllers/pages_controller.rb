@@ -2,6 +2,8 @@ class PagesController < ApplicationController
   # before_action :initialize_locale_links, except: [:index]
   before_action :set_social_links
   def index
+    @new_manufactures = Manufacture.last(8)
+    @last_news = Article.last(3)
   end
 
   def about_us

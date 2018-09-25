@@ -3,7 +3,9 @@ class SecondMenu < ActiveRecord::Base
   has_many :third_menus, class_name: ThirdMenu
   has_many :distributors, class_name: Distributor
   has_many :manufactures, class_name: Manufacture
-  belongs_to :sponsor_sliders, class_name: SponsorSlider
+  has_many :sponsor_sliders, class_name: SponsorSlider
+  has_many :sponsor_side_sliders, class_name: SponsorSideSlider
+
   translates :title
   accepts_nested_attributes_for :translations, allow_destroy: true
   def custom_name

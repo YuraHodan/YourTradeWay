@@ -35,8 +35,15 @@ RailsAdmin.config do |config|
     edit
     delete
     show_in_app
-  config.included_models = [SponsorSlider,Seo,Seo::Translation,MainPage,MainPage::Translation,MainSlider,Logistic,Logistic::Translation,Market,Market::Translation,Distributor,Distributor::Translation,Manufacture::Translation,Product::Translation,Product,Manufacture,Contact,Contact::Translation,Rule,Rule::Translation,Faq,Faq::Translation,Article,Article::Translation,ThirdMenu::Translation,SecondMenu::Translation,MainMenu::Translation,MainMenu,SecondMenu,ThirdMenu,User,Sociallink,Contact,Contact::Translation,Rule,Rule::Translation]
+  config.included_models = [SponsorSideSlider,SponsorSlider,Seo,Seo::Translation,MainPage,MainPage::Translation,MainSlider,Logistic,Logistic::Translation,Market,Market::Translation,Distributor,Distributor::Translation,Manufacture::Translation,Product::Translation,Product,Manufacture,Contact,Contact::Translation,Rule,Rule::Translation,Faq,Faq::Translation,Article,Article::Translation,ThirdMenu::Translation,SecondMenu::Translation,MainMenu::Translation,MainMenu,SecondMenu,ThirdMenu,User,Sociallink,Contact,Contact::Translation,Rule,Rule::Translation]
 RailsAdmin.config {|c| c.label_methods << :title}
+
+  config.model SponsorSideSlider do
+    fields :show, :image
+    field :main_menu
+    field :second_menu
+    field :third_menu
+  end
 
   config.model SponsorSlider do
     fields :show, :image

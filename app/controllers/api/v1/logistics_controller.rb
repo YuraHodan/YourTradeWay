@@ -1,12 +1,14 @@
 class Api::V1::LogisticsController < Api::V1::BaseController
   def index
      @logistics =  {
-      top_logistics:       filtered_logistics(Logistic.premium),
-      logistics:           filtered_logistics(Logistic.all),
-      recomend_logistics:  filtered_logistics(Logistic.recomend),
-      countries:           map_countries(Country.all),
-      current_page:        current_page,
-      pages_count:         pages_count
+      top_logistics:      filtered_logistics(Logistic.premium),
+      logistics:          filtered_logistics(Logistic.all),
+      recomend_logistics: filtered_logistics(Logistic.recomend),
+      countries:          map_countries(Country.all),
+      current_page:       current_page,
+      pages_count:        pages_count,
+      header_slider:      map_slider(SponsorSlider.show),
+      side_slider:        map_slider(SponsorSideSlider.show)
     }
     respond_with @logistics
   end
@@ -47,5 +49,13 @@ class Api::V1::LogisticsController < Api::V1::BaseController
         image_url:  logistic.logo_image.url
         }
       }
+  end
+
+  def map_slider(slides)
+    slides.map { |slide|
+      {
+        image_url: slide.image.url
+      }
+    }
   end
 end

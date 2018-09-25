@@ -1,12 +1,14 @@
 class Api::V1::MarketsController < Api::V1::BaseController
   def index
      @markets =  {
-      top_markets:       filtered_markets(Market.premium),
-      markets:           filtered_markets(Market.all),
-      recomend_markets:  filtered_markets(Market.recomend),
-      countries:         map_countries(Country.all),
-      current_page:      current_page,
-      pages_count:       pages_count
+      top_markets:      filtered_markets(Market.premium),
+      markets:          filtered_markets(Market.all),
+      recomend_markets: filtered_markets(Market.recomend),
+      countries:        map_countries(Country.all),
+      current_page:     current_page,
+      pages_count:      pages_count,
+      header_slider:    map_slider(SponsorSlider.show),
+      side_slider:      map_slider(SponsorSideSlider.show)
     }
     respond_with @markets
   end
@@ -47,5 +49,13 @@ class Api::V1::MarketsController < Api::V1::BaseController
         image_url:  market.logo_image.url
         }
       }
+  end
+
+  def map_slider(slides)
+    slides.map { |slide|
+      {
+        image_url: slide.image.url
+      }
+    }
   end
 end
