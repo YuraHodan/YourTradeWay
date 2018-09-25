@@ -2,10 +2,38 @@
   .row
     .medium-3.columns
       .selector.bage
-        = render "selector"
+        / = render "selector"
+        .select
+          .accordion-button
+            p  countries
+            .svg-slid = inline_svg "svg/ic_keyboard_arrow_up_black_24px.svg"
+          .accordion-inner.show
+
+            .selector
+              input#post-2.read-more-state type="checkbox" /
+              ul.read-more-wrap ng-repeat="countries in all_countries"
+                li
+                  .one-checkbox
+                    .checkbox
+                      input#checkbox-saliss1 type="checkbox"
+                      label.switcher-control for="checkbox-saliss1"
+                        button type="submit"
+                          span
+                            / a href="logistics?country_ids={{countries.id}}"
+                            input#submit type="submit" ng-model="text" value="{{countries.id}}"
+                              | {{countries.title}}
+                            .pre
+                              | list={{list}}
+              form ng-submit="submit()"
+                | Enter text and hit enter:
+                input name="text" ng-model="text" type="text"
+                input#submit type="submit" value="Submit"
+                .pre
+                  | list={{list}}
+              label.read-more-trigger for="post-2"
       .dubl-select
         .accordion-button.opened
-          p afdsfdsf2222
+          p логистика
           .svg-slid = inline_svg "svg/ic_keyboard_arrow_down_black_24px.svg"
         .accordion-inner.show
 
@@ -119,7 +147,42 @@
                 .ramove-text очистить все
         /// smole select
         .selector
-          = render "advertisingSlider"
+          / = render "advertisingSlider"
+          / .mainlidet.advertising
+          /   ul.advertising-slider-for
+          /   ul.advertising-slider-nav
+          /     li
+          /       .img-bg style="background-image: url(#{asset_path('photo/main/main-page-slider.jpg')})"
+          /     li
+          /       .img-bg style="background-image: url(#{asset_path('photo/main/main-page-slider.jpg')})"
+          /     li
+          /       .img-bg style="background-image: url(#{asset_path('photo/main/main-page-slider.jpg')})"
+          /     li
+          /       .img-bg style="background-image: url(#{asset_path('photo/main/main-page-slider.jpg')})"
+          /     li
+          /       .img-bg style="background-image: url(#{asset_path('photo/main/main-page-slider.jpg')})"
+          /     li
+          /       .img-bg style="background-image: url(#{asset_path('photo/main/main-page-slider.jpg')})"
+          /     li
+          /       .img-bg style="background-image: url(#{asset_path('photo/main/main-page-slider.jpg')})"
+          /     li
+          /       .img-bg style="background-image: url(#{asset_path('photo/main/main-page-slider.jpg')})"
+          /     li
+          /       .img-bg style="background-image: url(#{asset_path('photo/main/main-page-slider.jpg')})"
+          .slideshow-container
+            .mySlides.fade
+              .img-bg style="background-image: url(#{asset_path('photo/main/main-page-slider.jpg')})"
+            .mySlides.fade
+              p
+              | 1
+              .img-bg style="background-image: url(#{asset_path('photo/main/main-page-slider.jpg')})"
+            .mySlides.fade
+              p
+              | 2
+              .img-bg style="background-image: url(#{asset_path('photo/main/main-page-slider.jpg')})"
+            a.prev onclick="plusSlides(-1)"  ❮
+            a.next onclick="plusSlides(1)"  ❯
+
 
     .medium-9.columns
       .topgoods
