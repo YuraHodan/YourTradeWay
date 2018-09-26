@@ -79,10 +79,56 @@ function sliderAvanza(){
 }
 function sliderRetrocede(){
   if(contador >0){
-   posicionIzq+=250;
+   posicionIzq+=335;
    sliderCont.style.marginLeft=`${posicionIzq}px`;
     margenIzquierda = posicionIzq;
     espacioDerecha = anchoDinamico + posicionIzq
      contador--;
      }
+}
+setTimeout(function sliderAvanza(){
+  espacioFinal = espacioDerecha - sliderWrapper.offsetWidth;
+  if(espacioFinal>0){
+    posicionIzq-=335;
+    margenIzquierda = posicionIzq;
+    espacioDerecha = anchoDinamico + posicionIzq
+
+    ef = espacioDerecha-sliderWrapper.offsetWidth;
+     contador++;
+    if(ef<0){
+      sliderCont.style.marginLeft=`${posicionIzq+Math.abs(ef)}px`;
+       }else{
+         sliderCont.style.marginLeft=`${posicionIzq}px`;
+       }
+     }
+},1000)
+
+
+
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
 }
