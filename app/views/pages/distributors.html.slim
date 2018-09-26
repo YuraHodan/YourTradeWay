@@ -2,7 +2,19 @@
   .row
     .medium-3.columns
       .selector.bage
-        = render "selector"
+        / = render "selector"
+        .select
+          .accordion-button
+            p  countries
+            .svg-slid = inline_svg "svg/ic_keyboard_arrow_up_black_24px.svg"
+          .accordion-inner.show
+
+            .selector
+              / input#post-2.read-more-state type="checkbox"
+              form name="userForm" ng-submit="submitForm()"
+                ul.read-more-wrap ng-repeat="countries in all_countries"
+                  li
+                    input type="checkbox" ng-model="countries.selected" ng-change='trackOrder(countries)'  value="{{countries.id}}" ng-click="submitForm().submit()"  {{countries.title}}
       .dubl-select
         .accordion-button.opened
           p afdsfdsf
