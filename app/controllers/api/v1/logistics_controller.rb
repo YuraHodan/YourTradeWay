@@ -22,25 +22,6 @@ class Api::V1::LogisticsController < Api::V1::BaseController
     map_logistics(filtered_data)
   end
 
-  def pages_count
-    Logistic.all.count / 12 + 1
-  end
-
-  def current_page
-    return 1 unless params[:page_number]
-
-    params[:page_number]
-  end
-
-  def map_countries(countries)
-    countries.map { |country|
-      { id:    country.id,
-        title: country.title
-      }
-    }
-
-  end
-
   def map_logistics(logistics)
     logistics.map{ |logistic| {
         id:         logistic.id,
@@ -49,13 +30,5 @@ class Api::V1::LogisticsController < Api::V1::BaseController
         image_url:  logistic.logo_image.url
         }
       }
-  end
-
-  def map_slider(slides)
-    slides.map { |slide|
-      {
-        image_url: slide.image.url
-      }
-    }
   end
 end

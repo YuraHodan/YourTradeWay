@@ -11,6 +11,7 @@ class Api::V1::DistributorsController < Api::V1::BaseController
       side_slider:            map_slider(SponsorSideSlider.show),
       type_ids:               params[:type_ids],
       group_ids:              params[:group_ids],
+      category_ids:           params[:category_ids],
       country_ids:            params[:country_ids]
     }
     respond_with @distributors
