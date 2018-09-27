@@ -4,7 +4,7 @@ class Api::V1::LogisticsController < Api::V1::BaseController
       top_logistics:      filtered_logistics(Logistic.premium),
       logistics:          filtered_logistics(Logistic.all),
       recomend_logistics: filtered_logistics(Logistic.recomend),
-      countries:          map_countries(Country.all),
+      countries:          countries,
       current_page:       current_page,
       pages_count:        pages_count,
       header_slider:      map_slider(SponsorSlider.show),
