@@ -10,27 +10,17 @@
           .accordion-inner.show
 
             .selector
-              input#post-2.read-more-state type="checkbox" /
-              ul.read-more-wrap ng-repeat="countries in all_countries"
-                li
-                  .one-checkbox
-                    .checkbox
-                      input#checkbox-saliss1 type="checkbox"
-                      label.switcher-control for="checkbox-saliss1"
-                        button type="submit"
-                          span
-                            / a href="logistics?country_ids={{countries.id}}"
-                            input#submit type="submit" ng-model="text" value="{{countries.id}}"
-                              | {{countries.title}}
-                            .pre
-                              | list={{list}}
-              form ng-submit="submit()"
-                | Enter text and hit enter:
-                input name="text" ng-model="text" type="text"
-                input#submit type="submit" value="Submit"
-                .pre
-                  | list={{list}}
-              label.read-more-trigger for="post-2"
+              / input#post-2.read-more-state type="checkbox"
+              form name="userForm" ng-submit="submitForm()"
+                ul.read-more-wrap ng-repeat="countries in all_countries"
+                  li
+                    / .one-checkbox
+                    /   .checkbox
+                    /     input#checkbox-saliss1 type="checkbox"
+                    /     label.switcher-control for="checkbox-saliss1"
+                    /       button type="submit"
+                    /         span
+                    input type="checkbox" ng-model="countries.selected" ng-change='trackOrder(countries)'  value="{{countries.id}}" ng-click="submitForm().submit()"  {{countries.title}}
       .dubl-select
         .accordion-button.opened
           p логистика
@@ -38,15 +28,17 @@
         .accordion-inner.show
 
           .selector
-            ul.read-more-wrap ng-repeat="logistic in questionlogistic"
-              li
-                .one-checkbox
-                  .checkbox
-                    input#checkbox-salis1 type="checkbox"
-                    label.switcher-control for="checkbox-salis1"
-                    span
-                      a href="logistics?id={{logistic.id}}"
-                        | {{logistic.name}}
+            form name="userForm2" ng-submit="submitForm2()"
+              ul.read-more-wrap ng-repeat="logistic in questionlogistic"
+                li
+                  input type="checkbox" ng-model="logistic.selected" ng-change='trackOrder2(logistic)'  value="{{logistic.id}}" ng-click="submitForm2().submit()"  {{logistic.name}}
+                  / .one-checkbox
+                  /   .checkbox
+                  /     input#checkbox-salis1 type="checkbox"
+                  /     label.switcher-control for="checkbox-salis1"
+                  /     span
+                        a href="logistics?id={{logistic.id}}"
+                          | {{logistic.name}}
           .remove-all
             .x-component = inline_svg "photo/main/svg/filter_clear.svg"
             .ramove-text
