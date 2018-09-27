@@ -43,13 +43,13 @@
                         |{{person.name}}
                         = inline_svg "svg/ic_keyboard_arrow_right_black_24px.svg"
                       ul.second_menu
-                        .title2 КАТЕГОРИЯ ТОВАРОВ
+                        .title2 ГРУПА ТОВАРОВ
                         .second-performance
                           li ng-repeat="second_menu in person.second_menu"
                             a href="goods?second_menu_id={{second_menu.id}}"
                               |{{second_menu.title}}
                             ul
-                              .title2 ГРУПА ТОВАРОВ
+                              .title2 КАТЕГОРИЯ ТОВАРОВ
                               .img-bg style="background-image: url(#{asset_path('photo/main/food.jpg')})"
                               li ng-repeat="third_menu in second_menu.third_menu"
                                 a href="goods?third_menu_id={{third_menu.id}}"
@@ -59,8 +59,8 @@
                 li
                   a.blue href=products_path  Производители
                   ul.blue.bige
+                    .title ТИП ПРИЗВОДИТЕЛЕИ
                     li.purple ng-repeat="factorie in questionfactories"
-                      .title ТИП ПРИЗВОДИТЕЛЕИ
                       a href="products?id={{factorie.id}}"
                         | {{factorie.name}}
                       ul.second_menu
@@ -75,8 +75,8 @@
                 li
                   a.green href=distributors_path  Дистрибьюторы
                   ul.green.bige
+                    .title ГРУПА ДИСТРИБЮТОРОВ
                     li.green2 ng-repeat="distributor in questiondistributors"
-                      .title ГРУПА ДИСТРИБЮТОРОВ
                       a href="distributors?id={{distributor.id}}"
                         | {{distributor.name}}
                       ul.second_menu

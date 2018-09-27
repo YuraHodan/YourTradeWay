@@ -21,6 +21,7 @@ class Api::V1::DistributorsController < Api::V1::BaseController
 
   def filtered_distributors(distributors)
     filtered_data = distributors
+# binding.pry
     filtered_data = filtered_data.where(second_menu_id: filter_ids) if filter_ids.any?
     filtered_data = filtered_data.where(country_id: params[:country_ids]) if params[:country_ids].present?
     map_distributors(filtered_data)

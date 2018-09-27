@@ -4,10 +4,6 @@ ytwApp.controller('logisticsController',
 
         $http({method: 'GET', url: '/api/v1/menus.json'}).
             then(function success(response) {
-                // $scope.question=response.data.products;
-                // $scope.questionfactories=response.data.factories;
-                // $scope.questiondistributors=response.data.distributors;
-                // $scope.questionmarkets=response.data.markets;
                 $scope.questionlogistic=response.data.logistic;
         });
 
@@ -42,36 +38,26 @@ ytwApp.controller('logisticsController',
         }
         var token = document.getElementsByName('csrf-token')[0].content;
 
-            $scope.submitForm = function () {
-                var url = '/api/v1/logistics.json';
-                var data = {
-                    country_ids: $scope.country_ids
-                };
-                var config = {
-                    headers : {
-                        'Content-Type': 'application/json',
-                        'X-CSRF-Token': token
-                    }
-                };
+        $scope.submitForm = function () {
+            $http({
+              url: '/api/v1/logistics.json',
+              method: "GET",
+              params: { country_ids: $scope.country_ids}
+           }).then(
+              function(response){
 
-                $http.post(url, data, config)
-                    .then(
-                        function(response){
-                            // alert("gooooo.");
-                    // $http({method: 'GET', url: '/api/v1/logistics.json'}).
-                    //     then(function success2(response) {
-                    //         $scope.top_logistics=response.data.top_logistics;
-                    //         $scope.all_logistics=response.data.logistics;
-                    //         $scope.recom_logistics=response.data.recomend_logistics;
-                    //         $scope.current_page=response.data.current_page;
-                    //         $scope.pages_count=response.data.pages_count;
-                    // });
-                        },
-                        function(response){
-                            // alert("єбать ти лох");
-                        }
-                    );
-            };
+                $scope.top_logistics=response.data.top_logistics;
+                $scope.all_logistics=response.data.logistics;
+                $scope.recom_logistics=response.data.recomend_logistics;
+                // $scope.all_countries=response.data.countries;
+                $scope.current_page=response.data.current_page;
+                $scope.pages_count=response.data.pages_count;
+                // });
+              },
+              function(response){
+              }
+           )
+                };
 
 
 /// type_ids
@@ -92,36 +78,26 @@ ytwApp.controller('logisticsController',
           }
           var token = document.getElementsByName('csrf-token')[0].content;
 
-              $scope.submitForm2 = function () {
-                  var url = '/api/v1/logistics.json';
-                  var data = {
-                      type_ids: $scope.type_ids
-                  };
-                  var config = {
-                      headers : {
-                          'Content-Type': 'application/json',
-                          'X-CSRF-Token': token
-                      }
-                  };
+          $scope.submitForm2 = function () {
+              $http({
+                url: '/api/v1/logistics.json',
+                method: "GET",
+                params: { type_ids: $scope.type_ids}
+             }).then(
+                function(response){
 
-                  $http.post(url, data, config)
-                      .then(
-                          function(response){
-                              // alert("gooooo.");
-                      // $http({method: 'GET', url: '/api/v1/logistics.json'}).
-                      //     then(function success2(response) {
-                      //         $scope.top_logistics=response.data.top_logistics;
-                      //         $scope.all_logistics=response.data.logistics;
-                      //         $scope.recom_logistics=response.data.recomend_logistics;
-                      //         $scope.current_page=response.data.current_page;
-                      //         $scope.pages_count=response.data.pages_count;
-                      // });
-                          },
-                          function(response){
-                              // alert("єбать ти лох");
-                          }
-                      );
-              };
+                  $scope.top_logistics=response.data.top_logistics;
+                  $scope.all_logistics=response.data.logistics;
+                  $scope.recom_logistics=response.data.recomend_logistics;
+                  // $scope.all_countries=response.data.countries;
+                  $scope.current_page=response.data.current_page;
+                  $scope.pages_count=response.data.pages_count;
+                  // });
+                },
+                function(response){
+                }
+             )
+                  };
 
     }
 

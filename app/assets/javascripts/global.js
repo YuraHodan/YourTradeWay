@@ -86,22 +86,22 @@ function sliderRetrocede(){
      contador--;
      }
 }
-setTimeout(function sliderAvanza(){
-  espacioFinal = espacioDerecha - sliderWrapper.offsetWidth;
-  if(espacioFinal>0){
-    posicionIzq-=335;
-    margenIzquierda = posicionIzq;
-    espacioDerecha = anchoDinamico + posicionIzq
-
-    ef = espacioDerecha-sliderWrapper.offsetWidth;
-     contador++;
-    if(ef<0){
-      sliderCont.style.marginLeft=`${posicionIzq+Math.abs(ef)}px`;
-       }else{
-         sliderCont.style.marginLeft=`${posicionIzq}px`;
-       }
-     }
-},1000)
+// setTimeout(function sliderAvanza(){
+//   espacioFinal = espacioDerecha - sliderWrapper.offsetWidth;
+//   if(espacioFinal>0){
+//     posicionIzq-=335;
+//     margenIzquierda = posicionIzq;
+//     espacioDerecha = anchoDinamico + posicionIzq
+//
+//     ef = espacioDerecha-sliderWrapper.offsetWidth;
+//      contador++;
+//     if(ef<0){
+//       sliderCont.style.marginLeft=`${posicionIzq+Math.abs(ef)}px`;
+//        }else{
+//          sliderCont.style.marginLeft=`${posicionIzq}px`;
+//        }
+//      }
+// },1000)
 
 
 
