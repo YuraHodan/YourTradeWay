@@ -2,101 +2,63 @@
   .row
     .medium-3.columns
       .selectorr
-        = render "selector"
+        .select
+          .accordion-button
+            p  countries
+            .svg-slid = inline_svg "svg/ic_keyboard_arrow_up_black_24px.svg"
+          .accordion-inner.show
+
+            .selector
+              / input#post-2.read-more-state type="checkbox"
+              form name="userForm" ng-submit="submitForm()"
+                ul.read-more-wrap ng-repeat="countries in all_countries"
+                  li
+                    input type="checkbox" ng-model="countries.selected" ng-change='trackOrder(countries)'  value="{{countries.id}}" ng-click="submitForm().submit()"  {{countries.title}}
+
       .dubl-select
-        .accordion-button.opened
-          p afdsfdsf
+        .accordion-button
+          p afdsfdsf2
           .svg-slid = inline_svg "svg/ic_keyboard_arrow_up_black_24px.svg"
         .accordion-inner.show
 
           .selector
-            ul.read-more-wrap
-              li
-                .one-checkbox
-                  .checkbox
-                    input#checkbox-salis1 type="checkbox"
-                    label.switcher-control for="checkbox-salis1"
-                    span продажа
-                    nav
-                      ul.drop-down.closed
-                        li
-                          a.nav-button href="#"   = inline_svg "svg/ic_keyboard_arrow_down_black_24px.svg"
-                        .down
-                          ul
+            form name="userForm2" ng-submit="submitForm2()"
+              ul.read-more-wrap ng-repeat="products in question"
+                li
+                  input type="checkbox" ng-model="products.selected" ng-change='trackOrder2(products)'  value="{{products.id}}" ng-click="submitForm2().submit()"  {{products.name}}
+                  nav
+                    ul.drop-down
+                      li
+                        a.nav-button href="#" ng-click="voteUp" = inline_svg "svg/ic_keyboard_arrow_down_black_24px.svg"
+                      .down
+                        form name="userForm3" ng-submit="submitForm3()"
+                          ul ng-repeat="second_menu in products.second_menu"
                             li
-                              .one-checkbox
-                                .checkbox
-                                  input#checkbox-salis6 type="checkbox"
-                                  label.switcher-control for="checkbox-salis6"
-                                  span продажа
-                            li
-                              .one-checkbox
-                                .checkbox
-                                  input#checkbox-salis7 type="checkbox"
-                                  label.switcher-control for="checkbox-salis7"
-                                  span продажа
-                            li
-                              .one-checkbox
-                                .checkbox
-                                  input#checkbox-salis8 type="checkbox"
-                                  label.switcher-control for="checkbox-salis8"
-                                  span продажа
-              li
-                .one-checkbox
-                  .checkbox
-                    input#checkbox-salis2 type="checkbox"
-                    label.switcher-control for="checkbox-salis2"
-                    span продажа
-                    nav
-                      ul.drop-down.closed
-                        li
-                          a.nav-button href="#"   = inline_svg "svg/ic_keyboard_arrow_down_black_24px.svg"
-                        li
-                          .one-checkbox
-                            .checkbox
-                              input#checkbox-salis9 type="checkbox"
-                              label.switcher-control for="checkbox-salis10"
-                              span продажа
-                        li
-                          .one-checkbox
-                            .checkbox
-                              input#checkbox-salis11 type="checkbox"
-                              label.switcher-control for="checkbox-salis11"
-                              span продажа
-                        li.
-                          .one-checkbox
-                            .checkbox
-                              input#checkbox-salis12 type="checkbox"
-                              label.switcher-control for="checkbox-salis12"
-                              span продажа
+                              input type="checkbox" ng-model="second_menu.selected" ng-change='trackOrder3(second_menu)'  value="{{second_menu.id}}" ng-click="submitForm3().submit()"  {{second_menu.title}}
 
-              li
-                .one-checkbox
-                  .checkbox
-                    input#checkbox-salis3 type="checkbox"
-                    label.switcher-control for="checkbox-salis3"
-                      span продажа
-              li
-                .one-checkbox
-                  .checkbox
-                    input#checkbox-salis4 type="checkbox"
-                    label.switcher-control for="checkbox-salis4"
-                      span продажа
-              li
-                .one-checkbox
-                  .checkbox
-                    input#checkbox-salis5 type="checkbox"
-                    label.switcher-control for="checkbox-salis5"
-                      span продажа
           .remove-all
             .x-component = inline_svg "photo/main/svg/filter_clear.svg"
             .ramove-text очистить все
-      /// smole select
+
+
+      // smole select ///////////////////
       .wrapper-filter
         .openfilters
           p фильтра
         .filter-container
-          = render "selectsmole"
+          / = render "selectsmole"
+          .select
+            .accordion-button
+              p  countries
+              .svg-slid = inline_svg "svg/ic_keyboard_arrow_up_black_24px.svg"
+            .accordion-inner.show
+
+              .selector
+                / input#post-2.read-more-state type="checkbox"
+                form name="userForm" ng-submit="submitForm()"
+                  ul.read-more-wrap ng-repeat="countries in all_countries"
+                    li
+                      input type="checkbox" ng-model="countries.selected" ng-change='trackOrder(countries)'  value="{{countries.id}}" ng-click="submitForm().submit()"  {{countries.title}}
           .dubl-select
             .accordion-button.opened
               p afdsfdsf
@@ -104,84 +66,19 @@
             .accordion-inner.show
 
               .selector
-                ul.read-more-wrap
-                  li
-                    .one-checkbox
-                      .checkbox
-                        input#checkbox-salis1 type="checkbox"
-                        label.switcher-control for="checkbox-salis1"
-                        span продажа
-                        nav
-                          ul.drop-down.closed
-                            li
-                              a.nav-button href="#"   = inline_svg "svg/ic_keyboard_arrow_down_black_24px.svg"
-                            .down
-                              ul
+                form name="userForm2" ng-submit="submitForm2()"
+                  ul.read-more-wrap ng-repeat="products in question"
+                    li
+                      input type="checkbox" ng-model="products.selected" ng-change='trackOrder2(products)'  value="{{products.id}}" ng-click="submitForm2().submit()"  {{products.name}}
+                      nav
+                        ul.drop-down
+                          li
+                            a.nav-button href="#" ng-click="voteUp" = inline_svg "svg/ic_keyboard_arrow_down_black_24px.svg"
+                          .down
+                            form name="userForm3" ng-submit="submitForm3()"
+                              ul ng-repeat="second_menu in products.second_menu"
                                 li
-                                  .one-checkbox
-                                    .checkbox
-                                      input#checkbox-salis6 type="checkbox"
-                                      label.switcher-control for="checkbox-salis6"
-                                      span продажа
-                                li
-                                  .one-checkbox
-                                    .checkbox
-                                      input#checkbox-salis7 type="checkbox"
-                                      label.switcher-control for="checkbox-salis7"
-                                      span продажа
-                                li
-                                  .one-checkbox
-                                    .checkbox
-                                      input#checkbox-salis8 type="checkbox"
-                                      label.switcher-control for="checkbox-salis8"
-                                      span продажа
-                  li
-                    .one-checkbox
-                      .checkbox
-                        input#checkbox-salis2 type="checkbox"
-                        label.switcher-control for="checkbox-salis2"
-                        span продажа
-                        nav
-                          ul.drop-down.closed
-                            li
-                              a.nav-button href="#"   = inline_svg "svg/ic_keyboard_arrow_down_black_24px.svg"
-                            li
-                              .one-checkbox
-                                .checkbox
-                                  input#checkbox-salis9 type="checkbox"
-                                  label.switcher-control for="checkbox-salis10"
-                                  span продажа
-                            li
-                              .one-checkbox
-                                .checkbox
-                                  input#checkbox-salis11 type="checkbox"
-                                  label.switcher-control for="checkbox-salis11"
-                                  span продажа
-                            li.
-                              .one-checkbox
-                                .checkbox
-                                  input#checkbox-salis12 type="checkbox"
-                                  label.switcher-control for="checkbox-salis12"
-                                  span продажа
-
-                  li
-                    .one-checkbox
-                      .checkbox
-                        input#checkbox-salis3 type="checkbox"
-                        label.switcher-control for="checkbox-salis3"
-                          span продажа
-                  li
-                    .one-checkbox
-                      .checkbox
-                        input#checkbox-salis4 type="checkbox"
-                        label.switcher-control for="checkbox-salis4"
-                          span продажа
-                  li
-                    .one-checkbox
-                      .checkbox
-                        input#checkbox-salis5 type="checkbox"
-                        label.switcher-control for="checkbox-salis5"
-                          span продажа
+                                  input type="checkbox" ng-model="second_menu.selected" ng-change='trackOrder3(second_menu)'  value="{{second_menu.id}}" ng-click="submitForm3().submit()"  {{second_menu.title}}
               .remove-all
                 .x-component = inline_svg "photo/main/svg/filter_clear.svg"
                 .ramove-text очистить все
@@ -192,34 +89,18 @@
       .vibe-text.color-line.gray-block
         .title топ товари
       .vibe-goods
-        #page-content.medium-4.columns.page-content.gallery ng-repeat="product in records | limitTo : 6"
+        .medium-4.columns ng-repeat="products_top in top_products"
           .border-producers.color-line.yellow-block
             .one-new-product
-              a.img-bg href=article_path(1) style="background-image: url(#{asset_path('photo/main/news_3.jpg')})"
+              a.img-bg href="article/{{products_top.id}}" style="background-image: url('{{products_top.image_url}}')"
             .description
               .description-txt
                 .maker
-                  | {{product.maker}}
+                  | {{products_top.title}}
                 .product-name
-                  | {{product.product}}
+                  | {{products_top.manufacture_title}}
                 .price.color-line.gray-block
                   .oriented-price
-                    | {{product.oriented}}
+                    | орієнтовочная цена:
                   .mony
-                    | {{product.mony}}
-
-        #page-content.medium-4.columns.page-content.gallery ng-repeat="product in records | limitTo : 6 : 6"
-          .border-producers.color-line.yellow-block
-            .one-new-product
-              a.img-bg href=article_path(1) style="background-image: url(#{asset_path('photo/main/news_3.jpg')})"
-            .description
-              .description-txt
-                .maker
-                  | {{product.maker}}
-                .product-name
-                  | {{product.product}}
-                .price.color-line.gray-block
-                  .oriented-price
-                    | {{product.oriented}}
-                  .mony
-                    | {{product.mony}}
+                    | {{products_top.price}}$

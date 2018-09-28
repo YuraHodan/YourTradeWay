@@ -44,28 +44,26 @@ ytwApp.controller('goodsControler',
        }
     }
 
-        $scope.submitForm = function () {
-            var url = '/api/v1/products.json';
-            var data = {
-                country_ids: $scope.country_ids
-            };
-            var config = {
-                headers : {
-                    'Content-Type': 'application/json',
-                    'X-CSRF-Token': token
-                }
-            };
+    $scope.submitForm = function () {
+        $http({
+          url: '/api/v1/products.json',
+          method: "GET",
+          params: { country_ids: $scope.country_ids}
+       }).then(
+          function(response){
 
-            $http.post(url, data, config)
-                .then(
-                    function(response){
-                        // alert("gooooo.");
-                    },
-                    function(response){
-                        // alert("єбать ти лох");
-                    }
-                );
-        };
+            $scope.top_products=response.data.top_products;
+            $scope.all_products=response.data.products;
+            $scope.recomend_products=response.data.recomend_products;
+            // $scope.all_countries=response.data.countries;
+            $scope.current_page=response.data.current_page;
+            $scope.pages_count=response.data.pages_count;
+            // });
+          },
+          function(response){
+          }
+       )
+            };
 
 
 
@@ -87,28 +85,26 @@ ytwApp.controller('goodsControler',
      }
   }
 
-      $scope.submitForm2 = function () {
-          var url = '/api/v1/products.json';
-          var data = {
-              type_ids: $scope.type_ids
-          };
-          var config = {
-              headers : {
-                  'Content-Type': 'application/json',
-                  'X-CSRF-Token': token
-              }
-          };
+  $scope.submitForm2 = function () {
+      $http({
+        url: '/api/v1/products.json',
+        method: "GET",
+        params: { type_ids: $scope.type_ids}
+     }).then(
+        function(response){
 
-          $http.post(url, data, config)
-              .then(
-                  function(response){
-                      // alert("gooooo.");
-                  },
-                  function(response){
-                      // alert("єбать ти лох");
-                  }
-              );
-              };
+          $scope.top_products=response.data.top_products;
+          $scope.all_products=response.data.products;
+          $scope.recomend_products=response.data.recomend_products;
+          // $scope.all_countries=response.data.countries;
+          $scope.current_page=response.data.current_page;
+          $scope.pages_count=response.data.pages_count;
+          // });
+        },
+        function(response){
+        }
+     )
+          };
 
 
 /// group_ids
@@ -129,29 +125,26 @@ ytwApp.controller('goodsControler',
    }
   }
 
-    $scope.submitForm3 = function () {
-        var url = '/api/v1/products.json';
-        var data = {
-            group_ids: $scope.group_ids
-        };
-        var config = {
-            headers : {
-                'Content-Type': 'application/json',
-                'X-CSRF-Token': token
-            }
-        };
+  $scope.submitForm3 = function () {
+    $http({
+      url: '/api/v1/products.json',
+      method: "GET",
+      params: { group_ids: $scope.group_ids}
+   }).then(
+      function(response){
 
-        $http.post(url, data, config)
-            .then(
-                function(response){
-                    // alert("gooooo.");
-                },
-                function(response){
-                    // alert("єбать ти лох");
-                }
-            );
-            };
-
+                $scope.toptdistributors=response.data.top_distributors;
+                $scope.alldistributors=response.data.distributors;
+                $scope.recomdistributors=response.data.recomend_distributors;
+                // $scope.all_countries=response.data.countries;
+                $scope.current_page=response.data.current_page;
+                $scope.pages_count=response.data.pages_count;
+        // });
+      },
+      function(response){
+      }
+   )
+          };
 
 
     }

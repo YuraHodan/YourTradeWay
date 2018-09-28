@@ -56,7 +56,7 @@ ytwApp.controller('dustrubutorsControler',
                         $scope.alldistributors=response.data.distributors;
                         $scope.recomdistributors=response.data.recomend_distributors;
                         // $scope.all_countries=response.data.countries;
-                        // $scope.current_page=response.data.current_page;
+                        $scope.current_page=response.data.current_page;
                         $scope.pages_count=response.data.pages_count;
                 // });
               },
@@ -95,7 +95,7 @@ ytwApp.controller('dustrubutorsControler',
                       $scope.alldistributors=response.data.distributors;
                       $scope.recomdistributors=response.data.recomend_distributors;
                       // $scope.all_countries=response.data.countries;
-                      // $scope.current_page=response.data.current_page;
+                      $scope.current_page=response.data.current_page;
                       $scope.pages_count=response.data.pages_count;
               // });
             },
@@ -135,7 +135,7 @@ ytwApp.controller('dustrubutorsControler',
                       $scope.alldistributors=response.data.distributors;
                       $scope.recomdistributors=response.data.recomend_distributors;
                       // $scope.all_countries=response.data.countries;
-                      // $scope.current_page=response.data.current_page;
+                      $scope.current_page=response.data.current_page;
                       $scope.pages_count=response.data.pages_count;
               // });
             },

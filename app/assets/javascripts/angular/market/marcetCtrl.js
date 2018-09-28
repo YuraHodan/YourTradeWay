@@ -49,7 +49,7 @@ ytwApp.controller('marcetControler',
                       url: '/api/v1/markets.json',
                       method: "GET",
                       params: { country_ids: $scope.country_ids}
-                   }).then(
+                    }).then(
                       function(response){
 
                         $scope.top_markets=response.data.top_markets;
@@ -61,8 +61,8 @@ ytwApp.controller('marcetControler',
                       },
                       function(response){
                       }
-                   )
-                        };
+                    )
+                            };
 
 
 /// type_ids
