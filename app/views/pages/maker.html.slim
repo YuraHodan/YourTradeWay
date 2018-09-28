@@ -91,7 +91,7 @@
       .company-products
         .title продукия компании
       .wrapper
-        =render "recomendationeproducter"
+        =render "recomendationeproducter", products: @manufacture.products.premium
       .vibe-goods
         .medium-3.columns
           -@manufacture.products.each do |product|

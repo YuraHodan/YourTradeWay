@@ -18,7 +18,7 @@ class PagesController < ApplicationController
   end
 
   def maker
-    @manufacture = Manufacture.find(params[:format])
+    @manufacture = Manufacture.find(params[:id])
   end
 
   def logistics
@@ -75,6 +75,8 @@ class PagesController < ApplicationController
 
   def article
   @product = Product.find(params[:id])
+  @recomend_products = Product.where(third_menu_id: @product.third_menu_id).recomend
+  @related_products = Product.where(third_menu_id: @product.third_menu_id)
   end
 
   def products
