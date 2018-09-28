@@ -232,46 +232,19 @@
       .columns
         .text-block.color-line.blue-block
           h3.new-producers-tex  новие призводител
-      =render "smollemaneslider"
-      .btn-big.blue-btn  всі новини
+      =render "smollemaneslider", manufactures: @new_manufactures
+      .btn-big.blue-btn  всі новиниі
   .new-producers.desktop
     .row.collapse
       .columns
         h3.new-producers-tex.color-line.blue-block  новие призводители
       .row
-        .medium-3.columns
-          .border-producers.color-line.blue-block
-            .one-new-producers
-              .img-bg style="background-image: url(#{asset_path('photo/main/logos/images.png')})"
-        .medium-3.columns
-          .border-producers.color-line.blue-block
-            .one-new-producers
-              .img-bg style="background-image: url(#{asset_path('photo/main/logos/images.png')})"
-        .medium-3.columns
-          .border-producers.color-line.blue-block
-            .one-new-producers
-              .img-bg style="background-image: url(#{asset_path('photo/main/logos/brands_icon_1.png')})"
-        .medium-3.columns
-          .border-producers.color-line.blue-block
-            .one-new-producers
-              .img-bg style="background-image: url(#{asset_path('photo/main/logos/images.png')})"
-        .medium-3.columns
-          .border-producers.color-line.blue-block
-            .one-new-producers
-              .img-bg style="background-image: url(#{asset_path('photo/main/logos/images.png')})"
-        .medium-3.columns
-          .border-producers.color-line.blue-block
-            .one-new-producers
-              .img-bg style="background-image: url(#{asset_path('photo/main/logos/images.png')})"
-        .medium-3.columns
-          .border-producers.color-line.blue-block
-            .one-new-producers
-              .img-bg style="background-image: url(#{asset_path('photo/main/logos/images.png')})"
-        .medium-3.columns
-          .border-producers.color-line.blue-block
-            .one-new-producers
-              .img-bg style="background-image: url(#{asset_path('photo/main/logos/images.png')})"
-      .btn-big.blue-btn  всі новини
+        -@new_manufactures.each do |manufacture|
+          .medium-3.columns
+            .border-producers.color-line.blue-block
+              .one-new-producers
+                .img-bg style="background-image: url(#{manufacture.logo_image.url})"
+      .btn-big.blue-btn  всі новиниі
   .tradergram-wrapper.smole
     .row
       .columns
@@ -279,12 +252,13 @@
           h2 tradergram
           p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
         .row
-          .medium-4.columns
-            .one-tradergram-box
-              .img-bg style="background-image: url(#{asset_path('photo/main/news_1.jpg')})"
-            .tradergram-text
-              h3 Lorem ipsum dolor sit amet,60 consectetur adipisicing elit
-              p 12.04.2018
+          -@last_news.each do |article|
+            .medium-4.columns
+              .one-tradergram-box
+                .img-bg style="background-image: url(#{article.first_image.url})"
+              .tradergram-text
+                h3 #{article.title}
+                p #{article.date}
         .btn-big  всі новини
   .tradergram-wrapper
     .row
@@ -293,24 +267,13 @@
           h2 tradergram
           p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
         .row
-          .medium-4.columns
-            .one-tradergram-box
-              .img-bg style="background-image: url(#{asset_path('photo/main/news_1.jpg')})"
-            .tradergram-text
-              h3 Lorem ipsum dolor sit amet,60 consectetur adipisicing elit
-              p 12.04.2018
-          .medium-4.columns
-            .one-tradergram-box
-              .img-bg style="background-image: url(#{asset_path('photo/main/news_1.jpg')})"
-            .tradergram-text
-              h3 Lorem ipsum dolor sit amet,60 consectetur adipisicing elit
-              p 12.04.2018
-          .medium-4.columns
-            .one-tradergram-box
-              .img-bg style="background-image: url(#{asset_path('photo/main/news_1.jpg')})"
-            .tradergram-text
-              h3 Lorem ipsum dolor sit amet,60 consectetur adipisicing elit
-              p 12.04.2018
+          -@last_news.each do |article|
+            .medium-4.columns
+              .one-tradergram-box
+                .img-bg style="background-image: url(#{article.first_image.url})"
+              .tradergram-text
+                h3 #{article.title}
+                p #{article.date}
 
         .btn-big  всі новини
 

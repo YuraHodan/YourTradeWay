@@ -35,8 +35,48 @@ RailsAdmin.config do |config|
     edit
     delete
     show_in_app
-  config.included_models = [SponsorSlider,Seo,Seo::Translation,MainPage,MainPage::Translation,MainSlider,Logistic,Logistic::Translation,Market,Market::Translation,Distributor,Distributor::Translation,Manufacture::Translation,Product::Translation,Product,Manufacture,Contact,Contact::Translation,Rule,Rule::Translation,Faq,Faq::Translation,Article,Article::Translation,ThirdMenu::Translation,SecondMenu::Translation,MainMenu::Translation,MainMenu,SecondMenu,ThirdMenu,User,Sociallink,Contact,Contact::Translation,Rule,Rule::Translation]
+  config.included_models = [Email,PremiumLogistic,PremiumMarket,PremiumDistributor,Email,PremiumManufacture,SponsorSideSlider,SponsorSlider,Seo,Seo::Translation,MainPage,MainPage::Translation,MainSlider,Logistic,Logistic::Translation,Market,Market::Translation,Distributor,Distributor::Translation,Manufacture::Translation,Product::Translation,Product,Manufacture,Contact,Contact::Translation,Rule,Rule::Translation,Faq,Faq::Translation,Article,Article::Translation,ThirdMenu::Translation,SecondMenu::Translation,MainMenu::Translation,MainMenu,SecondMenu,ThirdMenu,User,Sociallink,Contact,Contact::Translation,Rule,Rule::Translation]
 RailsAdmin.config {|c| c.label_methods << :title}
+
+  config.model Email do
+    fields :email, :send_email
+  end
+
+  config.model PremiumManufacture do
+    field :type, :enum do
+     enum ["Free","Basic","Platinum"]
+   end
+    fields :companies_count, :show_count, :products_count
+  end
+
+
+  config.model PremiumMarket do
+    field :type, :enum do
+     enum ["Free","Basic","Platinum"]
+   end
+    fields :companies_count, :show_count, :products_count
+  end
+
+  config.model PremiumLogistic do
+    field :type, :enum do
+     enum ["Free","Basic","Platinum"]
+   end
+    fields :companies_count, :show_count, :products_count
+  end
+
+  config.model PremiumDistributor do
+    field :type, :enum do
+     enum ["Free","Basic","Platinum"]
+   end
+    fields :companies_count, :show_count, :products_count
+  end
+
+  config.model SponsorSideSlider do
+    fields :show, :image
+    field :main_menu
+    field :second_menu
+    field :third_menu
+  end
 
   config.model SponsorSlider do
     fields :show, :image
@@ -288,7 +328,6 @@ config.model Logistic do
     field :category, :enum do
        enum ["Products", "Factories", "Distributors", "Markets", "Logistic"]
     end
-    field :second_menus
     object_label_method :custom_name
 
   end
@@ -301,7 +340,6 @@ config.model Logistic do
 
   config.model SecondMenu do
     fields :main_menu
-    field :third_menus
     field :translations, :globalize_tabs
     object_label_method :custom_name
 

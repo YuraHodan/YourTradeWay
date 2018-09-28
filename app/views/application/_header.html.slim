@@ -38,18 +38,18 @@
                   a.yellow href=goods_path  Товары
                   ul.bige
                     .title ТИП ТОВАРОВ
-                    li.target ng-repeat="person in question" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()"
+                    li.target ng-repeat="person in question"
                       a.pap href="goods?id={{person.id}}"
                         |{{person.name}}
                         = inline_svg "svg/ic_keyboard_arrow_right_black_24px.svg"
-                      ul.second_menu
-                        .title2 КАТЕГОРИЯ ТОВАРОВ
+                      ul.second_menu ng-if="person.second_menu != ''"
+                        .title2 ГРУПА ТОВАРОВ
                         .second-performance
                           li ng-repeat="second_menu in person.second_menu"
                             a href="goods?second_menu_id={{second_menu.id}}"
                               |{{second_menu.title}}
-                            ul
-                              .title2 ГРУПА ТОВАРОВ
+                            ul ng-if="second_menu.third_menu != ''"
+                              .title2 КАТЕГОРИЯ ТОВАРОВ
                               .img-bg style="background-image: url(#{asset_path('photo/main/food.jpg')})"
                               li ng-repeat="third_menu in second_menu.third_menu"
                                 a href="goods?third_menu_id={{third_menu.id}}"
@@ -59,11 +59,11 @@
                 li
                   a.blue href=products_path  Производители
                   ul.blue.bige
+                    .title ТИП ПРИЗВОДИТЕЛЕИ
                     li.purple ng-repeat="factorie in questionfactories"
-                      .title ТИП ПРИЗВОДИТЕЛЕИ
                       a href="products?id={{factorie.id}}"
                         | {{factorie.name}}
-                      ul.second_menu
+                      ul.second_menu ng-if="factorie.second_menu != ''"
                         .title2 ГРУПА ПРИЗВОДИТЕЛЕИ
                         .second-performance.blue
                           li ng-repeat="second_menu in factorie.second_menu"
@@ -75,11 +75,11 @@
                 li
                   a.green href=distributors_path  Дистрибьюторы
                   ul.green.bige
+                    .title ГРУПА ДИСТРИБЮТОРОВ
                     li.green2 ng-repeat="distributor in questiondistributors"
-                      .title ГРУПА ДИСТРИБЮТОРОВ
                       a href="distributors?id={{distributor.id}}"
                         | {{distributor.name}}
-                      ul.second_menu
+                      ul.second_menu ng-if="distributor.second_menu != ''"
                         .title2 ГРУПА ДИСТРИБЮТОРОВ
                         .second-performance.green
                           li ng-repeat="second_menu in distributor.second_menu"
@@ -147,296 +147,17 @@
           .manu-container-second
             .general-part
               .manu-nav ng-repeat="person in question"
-                #find.classification-second
+                #find.classification-second ng-if="person.id = 1"
                   a.pap href="goods?id={{person.id}}"
                     |{{person.name}}
                   a.arow-boxs ng-click="myFunc()"
                     = inline_svg "svg/ic_keyboard_arrow_right_black_24px.svg"
                   #third.manu-container-third
                     .general-part
-                      .manu-nav
-                        .classification-third ng-repeat="second_menu in person.second_menu"
+                      .manu-nav ng-repeat="second_menu in person.second_menu"
+                        .classification-third
                           a href="goods?second_menu_id={{second_menu.id}}"
                             |{{second_menu.title}}
-                / .classification-second
-                /   a href="#" продукти питания
-                /   .manu-container-third
-                /     .general-part
-                /       .manu-nav
-                /         .classification-third
-                /           a href="#" овощи / фрукты
-                /           .manu-container-fourth
-                /             .general-part
-                /               .manu-nav
-                /                 .classification-fourth
-                /                   a href="#" Овощи/Грибы
-                /                 .classification-fourth
-                /                   a href="#" Фрукты и Ягоды
-                /                 .classification-fourth
-                /                   a href="#" Сухофрукты/Орехи
-                /                 .classification-fourth
-                /                   a href="#" Кондитерские изделия
-                /                 .classification-fourth
-                /                   a href="#" Зелень
-                /         .classification-third
-                /           a href="#" Заморозка
-                /           .manu-container-fourth
-                /             .general-part
-                /               .manu-nav
-                /                 .classification-fourth
-                /                   a href="#" Готовые блюда/Полуфабрикаты
-                /                 .classification-fourth
-                /                   a href="#" Замороженные овощи и фрукты
-                /                 .classification-fourth
-                /                   a href="#" Мороженное
-                /                 .classification-fourth
-                /                   a href="#" Кондитерские изделия
-                /                 .classification-fourth
-                /                   a href="#" Рыба и Морепродукты
-                /         .classification-third
-                /           a href="#" мясо / риба / птица
-                /           .manu-container-fourth
-                /             .general-part
-                /               .manu-nav
-                /                 .classification-fourth
-                /                   a href="#" Рыбные продукты
-                /                 .classification-fourth
-                /                   a href="#" Свежое мясо(птица/говядина/свинина)
-                /                 .classification-fourth
-                /                   a href="#" Колбасные изделия
-                /         .classification-third
-                /           a href="#" Кондитерские изделия
-                /           .manu-container-fourth
-                /             .general-part
-                /               .manu-nav
-                /                 .classification-fourth
-                /                   a href="#" Жевательные резинки и мятные драже
-                /                 .classification-fourth
-                /                   a href="#" Диабетические Продукты
-                /                 .classification-fourth
-                /                   a href="#" Конфеты(шоколадные/карамель/весовые)
-                /                 .classification-fourth
-                /                   a href="#" Шоколад(крем/плитка/батон/яйца)
-                /                 .classification-fourth
-                /                   a href="#" Печенье
-                /                 .classification-fourth
-                /                   a href="#" Мармелад,зефир,пастила
-                /                 .classification-fourth
-                /                   a href="#" Кексы,рулеты,круассаны,торты
-                /         .classification-third
-                /           a href="#" Соусы / консервы
-                /           .manu-container-fourth
-                /             .general-part
-                /               .manu-nav
-                /                 .classification-fourth
-                /                   a href="#" Соусы,кетчупы,заправки
-                /                 .classification-fourth
-                /                   a href="#" Фруктовая консервация
-                /                 .classification-fourth
-                /                   a href="#" Овощная,грибная консервация
-                /                 .classification-fourth
-                /                   a href="#" Рыбные консервы
-                /                 .classification-fourth
-                /                   a href="#" Мясная консервация
-                /                 .classification-fourth
-                /                   a href="#" Сгущеное молоко
-                /         .classification-third
-                /           a href="#" Бакалея/консервы
-                /           .manu-container-fourth
-                /             .general-part
-                /               .manu-nav
-                /                 .classification-fourth
-                /                   a href="#" Масло растительное
-                /                 .classification-fourth
-                /                   a href="#" Макаронные изделия/Мука
-                /                 .classification-fourth
-                /                   a href="#" Крупы
-                /                 .classification-fourth
-                /                   a href="#" Чай,кофе,какао
-                /                 .classification-fourth
-                /                   a href="#" Соль,сахар,крахмал,сода,уксус
-                /                 .classification-fourth
-                /                   a href="#" Мед
-                /                 .classification-fourth
-                /                   a href="#" Сухие завтраки / Еда быстрого приготовления
-                /                 .classification-fourth
-                /                   a href="#" Кондитерские п/ф
-                /                 .classification-fourth
-                /                   a href="#" Снеки
-                /                 .classification-fourth
-                /                   a href="#" Специи и приправы
-                /                 .classification-fourth
-                /                   a href="#" Соевая продукция/Восточная кухня
-                /                 .classification-fourth
-                /                   a href="#" Сухари,гренки,сдоба/Хлеба
-                /         .classification-third
-                /           a href="#" напитки
-                /           .manu-container-fourth
-                /             .general-part
-                /               .manu-nav
-                /                 .classification-fourth
-                /                   a href="#" Безалкогольные напитки и соки
-                /                 .classification-fourth
-                /                   a href="#" Пиво и слабоалкогольные напитки
-                /                 .classification-fourth
-                /                   a href="#" Алкогольные напитки
-                /         .classification-third
-                /           a href="#" молоко / Сьрь / яйца
-                /           .manu-container-fourth
-                /             .general-part
-                /               .manu-nav
-                /                 .classification-fourth
-                /                   a href="#" Яйца
-                /                 .classification-fourth
-                /                   a href="#" Молоко/Сметана/Йогурты
-                /                 .classification-fourth
-                /                   a href="#" Сыры/Творожные изделия
-                /                 .classification-fourth
-                /                   a href="#" Масло/Маргарин/Спред
-                /                 .classification-fourth
-                /                   a href="#" Кефир,кисломолочные продукты,сливки,сырки
-                / .classification-second
-                /   a href="#" косметика и гигиєна
-                /   .manu-container-third
-                /     .general-part
-                /       .manu-nav
-                /         .classification-third-end
-                /           a href="#" Средства по уходу за волосами
-                /         .classification-third-end
-                /           a href="#" Уход за кожей/за ногтями
-                /         .classification-third-end
-                /           a href="#" Дезодаранты,антипреспиранты/Аптечные товары/Женская гигиена
-                /         .classification-third-end
-                /           a href="#" Влажные салфетки/Ватные и Бумажные изделия
-                /         .classification-third-end
-                /           a href="#" Средства для ванн/Уход за зубамии, полостью рта
-                /         .classification-third-end
-                /           a href="#" Бытовая химия/мыло и гели
-                / .classification-second
-                /   a href="#" товары для дома
-                /   .manu-container-third
-                /     .general-part
-                /       .manu-nav
-                /         .classification-third-end
-                /           a href="#" Все для ванной комнаты и туалета/для уборки
-                /         .classification-third-end
-                /           a href="#" Все для кухни и уборки
-                /         .classification-third-end
-                /           a href="#" Порядок в доме
-                /         .classification-third-end
-                /           a href="#" Электротовары.
-                /         .classification-third-end
-                /           a href="#" Текстиль / Постельное белье / Галантерийные товары и аксессуары
-                /         .classification-third-end
-                /           a href="#" Аксессуары для отдыха и пикника
-                /         .classification-third-end
-                /           a href="#" Посуда
-                /         .classification-third-end
-                /           a href="#" Интерьер/Аксессуары для декора и праздника
-                /         .classification-third-end
-                /           a href="#" Мебель
-                /         .classification-third-end
-                /           a href="#" Строительство и Ремонт
-                /         .classification-third-end
-                /           a href="#" Медицина
-                /         .classification-third-end
-                /           a href="#" Спорттовары
-                /         .classification-third-end
-                /           a href="#" Ювелирные изделия
-                /         .classification-third-end
-                /           a href="#" Цветы, посадочный материал / смеси / удобрения
-                / .classification-second
-                /   a href="#" Канцелярские товары
-                /   .manu-container-third
-                /     .general-part
-                /       .manu-nav
-                /         .classification-third-end
-                /           a href="#" продукти питания1
-                /         .classification-third-end
-                /           a href="#" косметика и гигиєна1
-                /         .classification-third-end
-                /           a href="#" товары для дома1
-                /         .classification-third-end
-                /           a href="#" Канцелярские товары1
-                /         .classification-third-end
-                /           a href="#" Автотовары1
-                /         .classification-third-end
-                /           a href="#" товары для ЖИВОТНЫХ1
-                /         .classification-third-end
-                /           a href="#" промишленость1
-                / .classification-second
-                /   a href="#" Автотовары
-                /   .manu-container-third
-                /     .general-part
-                /       .manu-nav
-                /         .classification-third-end
-                /           a href="#" продукти питания1
-                /         .classification-third-end
-                /           a href="#" косметика и гигиєна1
-                /         .classification-third-end
-                /           a href="#" товары для дома1
-                /         .classification-third-end
-                /           a href="#" Канцелярские товары1
-                /         .classification-third-end
-                /           a href="#" Автотовары1
-                /         .classification-third-end
-                /           a href="#" товары для ЖИВОТНЫХ1
-                /         .classification-third-end
-                /           a href="#" промишленость1
-                / .classification-second
-                /   a href="#" товары для ЖИВОТНЫХ
-                /   .manu-container-third
-                /     .general-part
-                /       .manu-nav
-                /         .classification-third-end
-                /           a href="#" продукти питания1
-                /         .classification-third-end
-                /           a href="#" косметика и гигиєна1
-                /         .classification-third-end
-                /           a href="#" товары для дома1
-                /         .classification-third-end
-                /           a href="#" Канцелярские товары1
-                /         .classification-third-end
-                /           a href="#" Автотовары1
-                /         .classification-third-end
-                /           a href="#" товары для ЖИВОТНЫХ1
-                /         .classification-third-end
-                /           a href="#" промишленость1
-                / .classification-second
-                /   a href="#" промишленость
-                /   .manu-container-third
-                /     .general-part
-                /       .manu-nav
-                /         .classification-third
-                /           a href="#" ПИЩЕВЫЕ ИНГРИДИЕНТЫ
-                /           .classification-third
-                /             .manu-container-fourth
-                /               .general-part
-                /                 .manu-nav
-                /                   .classification-fourth
-                /                     a href="#" Безалкогольные напитки и соки
-                /                   .classification-fourth
-                /                     a href="#" Пиво и слабоалкогольные напитки
-                /                   .classification-fourth
-                /                     a href="#" Алкогольные напитки
-                /         .classification-third
-                /           a href="#" ПРОМЫШЛЕННОЕ ОБОРУДОВАНИЕ / СЫРЬЕ
-                /           .classification-third
-                /             .manu-container-fourth
-                /               .general-part
-                /                 .manu-nav
-                /                   .classification-fourth
-                /                     a href="#" Легкая/Пищевая промышленность
-                /                   .classification-fourth
-                /                     a href="#" Химическая/Лесная промышленность
-                /                   .classification-fourth
-                /                     a href="#" Топливно энергетическая промышленность
-                /                   .classification-fourth
-                /                     a href="#" Легкая/Пищевая промышленность
-                /                   .classification-fourth
-                /                     a href="#" Химическая/Лесная промышленность
-                /                   .classification-fourth
-                /                     a href="#" Топливно энергетическая промышленность
 
 
 
@@ -506,4 +227,4 @@
           a.one-text href=premium_path Премиум
           a.one-text href=tradergram_path Tradergram
           a.one-text href=aboutus_path О нас
-          a.one-text  href=contacts_path Контакты
+          / a.one-text  href=contacts_path Контакты

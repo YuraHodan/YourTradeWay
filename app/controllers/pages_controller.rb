@@ -2,6 +2,8 @@ class PagesController < ApplicationController
   # before_action :initialize_locale_links, except: [:index]
   before_action :set_social_links
   def index
+    @new_manufactures = Manufacture.last(8)
+    @last_news = Article.last(3)
   end
 
   def about_us
@@ -16,7 +18,7 @@ class PagesController < ApplicationController
   end
 
   def maker
-    @manufacture = Manufacture.find(params[:format])
+    @manufacture = Manufacture.find(params[:id])
   end
 
   def logistics
@@ -73,6 +75,8 @@ class PagesController < ApplicationController
 
   def article
   @product = Product.find(params[:id])
+  @recomend_products = Product.where(third_menu_id: @product.third_menu_id).recomend
+  @related_products = Product.where(third_menu_id: @product.third_menu_id)
   end
 
   def products

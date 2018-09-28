@@ -83,6 +83,8 @@
       //   left: 85%
     .next-btn
   &.goode2
+    // check later on something
+    display: none
     padding: 20px 0
     li
       cursor: pointer
@@ -194,3 +196,146 @@
         width: 200px
         height: 200px
         padding: 0
+
+
+
+
+
+
+#sliderBX
+  // height: 100px
+  // background: #ddd
+  margin-left: 0px
+  transition: margin .2s ease-in-out
+  // padding: 10px
+
+#sliderBX-contenedor
+  width: 100%
+  overflow-x: hidden
+  overflow-y: hidden
+  position: relative
+
+#btnSliderNext i, #btnSliderPrev i
+  padding-top: 6px
+
+#btnSliderNext, #btnSliderPrev
+  position: absolute
+  background: $black
+  z-index: 2
+  width: 15px
+  height: 15px
+  padding: 0px
+  text-align: center
+
+#btnSliderNext:hover, #btnSliderPrev:hover
+  cursor: pointer
+  background: black
+
+#btnSliderNext
+  position: absolute
+  right: 5px
+
+#btnSliderPrev
+  position: absolute
+  right: 25px
+
+.sliderBXcell
+  width: 335px
+  display: inline-block
+  float: left
+  @media #{$small-only}
+    width: 300px
+  p
+    padding-top: 40px
+
+#sliderBX .sliderBXcell
+  padding: 10px
+  &:nth-child(odd)
+    // height: 100px
+    // background: #f2f2f2
+    display: inline-block
+    float: left
+  &:nth-child(even)
+    height: 100px
+    // background: #ddd
+    display: inline-block
+    float: left
+
+
+
+
+
+.selector
+  .slideshow-container
+    max-width: 1000px
+    position: relative
+    margin: auto
+    .mySlides
+      .img-bg
+        position: relative
+        height: 600px
+  /* Next & previous buttons
+
+  // .prev
+  //   cursor: pointer
+  //   position: absolute
+  //   top: 50%
+  //   width: auto
+  //   padding: 16px
+  //   margin-top: -22px
+  //   color: white
+  //   font-weight: bold
+  //   font-size: 18px
+  //   transition: 0.6s ease
+  //   border-radius: 0 3px 3px 0
+  //
+  // .next
+  //   cursor: pointer
+  //   position: absolute
+  //   top: 50%
+  //   width: auto
+  //   padding: 16px
+  //   margin-top: -22px
+  //   color: white
+  //   font-weight: bold
+  //   font-size: 18px
+  //   transition: 0.6s ease
+  //   border-radius: 0 3px 3px 0
+  //   right: 0
+  //   border-radius: 3px 0 0 3px
+
+  /* Position the "next button" to the right
+
+  /* On hover, add a black background color with a little bit see-through
+  // 
+  // .prev:hover, .next:hover
+  //   background-color: rgba(0, 0, 0, 0.8)
+
+  /* The dots/bullets/indicators
+
+  .dot
+    cursor: pointer
+    height: 15px
+    width: 15px
+    margin: 0 2px
+    background-color: #bbb
+    border-radius: 50%
+    display: inline-block
+    transition: background-color 0.6s ease
+
+  .active, .dot:hover
+    background-color: #717171
+
+  /* Fading animation
+
+  .fade
+    -webkit-animation-name: fade
+    -webkit-animation-duration: 1.5s
+    animation-name: fade
+    animation-duration: 1.5s
+
+
+  /* On smaller screens, decrease text size
+  @media only screen and (max-width: 300px)
+    .prev, .next, .text
+      font-size: 11px

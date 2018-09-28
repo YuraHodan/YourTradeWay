@@ -2,7 +2,22 @@
   .row
     .medium-3.columns
       .selector.bage
-        = render "selector"
+        / = render "selector"
+        .select
+          .accordion-button
+            p  countries
+            .svg-slid = inline_svg "svg/ic_keyboard_arrow_up_black_24px.svg"
+          .accordion-inner.show
+
+            .selector
+              / input#post-2.read-more-state type="checkbox"
+              form name="userForm" ng-submit="submitForm()"
+                ul.read-more-wrap ng-repeat="countries in all_countries"
+                  li
+                    label.container
+                      | {{countries.title}}
+                      input type="checkbox" ng-model="countries.selected" ng-change='trackOrder(countries)'  value="{{countries.id}}" ng-click="submitForm().submit()"
+                      span.checkmark
       .dubl-select
         .accordion-button.opened
           p afdsfdsf
@@ -10,93 +25,42 @@
         .accordion-inner.show
 
           .selector
-            ul.read-more-wrap
-              li
-                .one-checkbox
-                  .checkbox
-                    input#checkbox-salis1 type="checkbox"
-                    label.switcher-control for="checkbox-salis1"
-                    span продажа
-                    nav
-                      ul.drop-down.closed
-                        li
-                          a.nav-button href="#"   = inline_svg "svg/ic_keyboard_arrow_down_black_24px.svg"
-                        .down
-                          ul
+            form name="userForm2" ng-submit="submitForm2()"
+              ul.read-more-wrap ng-repeat="factories in questionfactories"
+                li
+                  input type="checkbox" ng-model="factories.selected" ng-change='trackOrder2(factories)'  value="{{factories.id}}" ng-click="submitForm2().submit()"  {{factories.name}}
+                  nav
+                    ul.drop-down
+                      li
+                        a.nav-button href="#" ng-click="voteUp" = inline_svg "svg/ic_keyboard_arrow_down_black_24px.svg"
+                      .down
+                        form name="userForm3" ng-submit="submitForm3()"
+                          ul ng-repeat="second_menu in factories.second_menu"
                             li
-                              .one-checkbox
-                                .checkbox
-                                  input#checkbox-salis6 type="checkbox"
-                                  label.switcher-control for="checkbox-salis6"
-                                  span продажа
-                            li
-                              .one-checkbox
-                                .checkbox
-                                  input#checkbox-salis7 type="checkbox"
-                                  label.switcher-control for="checkbox-salis7"
-                                  span продажа
-                            li
-                              .one-checkbox
-                                .checkbox
-                                  input#checkbox-salis8 type="checkbox"
-                                  label.switcher-control for="checkbox-salis8"
-                                  span продажа
-              li
-                .one-checkbox
-                  .checkbox
-                    input#checkbox-salis2 type="checkbox"
-                    label.switcher-control for="checkbox-salis2"
-                    span продажа
-                    nav
-                      ul.drop-down.closed
-                        li
-                          a.nav-button href="#"   = inline_svg "svg/ic_keyboard_arrow_down_black_24px.svg"
-                        li
-                          .one-checkbox
-                            .checkbox
-                              input#checkbox-salis9 type="checkbox"
-                              label.switcher-control for="checkbox-salis10"
-                              span продажа
-                        li
-                          .one-checkbox
-                            .checkbox
-                              input#checkbox-salis11 type="checkbox"
-                              label.switcher-control for="checkbox-salis11"
-                              span продажа
-                        li.
-                          .one-checkbox
-                            .checkbox
-                              input#checkbox-salis12 type="checkbox"
-                              label.switcher-control for="checkbox-salis12"
-                              span продажа
-
-              li
-                .one-checkbox
-                  .checkbox
-                    input#checkbox-salis3 type="checkbox"
-                    label.switcher-control for="checkbox-salis3"
-                      span продажа
-              li
-                .one-checkbox
-                  .checkbox
-                    input#checkbox-salis4 type="checkbox"
-                    label.switcher-control for="checkbox-salis4"
-                      span продажа
-              li
-                .one-checkbox
-                  .checkbox
-                    input#checkbox-salis5 type="checkbox"
-                    label.switcher-control for="checkbox-salis5"
-                      span продажа
+                              input type="checkbox" ng-model="second_menu.selected" ng-change='trackOrder3(second_menu)'  value="{{second_menu.id}}" ng-click="submitForm3().submit()"  {{second_menu.title}}
           .remove-all
             .x-component = inline_svg "photo/main/svg/filter_clear.svg"
             .ramove-text очистить все
+
+
             /// smole select
       .wrapper-filter
         .openfilters
           p фильтра
         .filter-container
-          = render "selectsmole"
+          / = render "selectsmole"
+          .select
+            .accordion-button
+              p  countries
+              .svg-slid = inline_svg "svg/ic_keyboard_arrow_up_black_24px.svg"
+            .accordion-inner.show
+
+              .selector
+                / input#post-2.read-more-state type="checkbox"
+                form name="userForm" ng-submit="submitForm()"
+                  ul.read-more-wrap ng-repeat="countries in all_countries"
+                    li
+                      input type="checkbox" ng-model="countries.selected" ng-change='trackOrder(countries)'  value="{{countries.id}}" ng-click="submitForm().submit()"  {{countries.title}}
           .dubl-select
             .accordion-button.opened
               p afdsfdsf
@@ -104,84 +68,19 @@
             .accordion-inner.show
 
               .selector
-                ul.read-more-wrap
-                  li
-                    .one-checkbox
-                      .checkbox
-                        input#checkbox-salis1 type="checkbox"
-                        label.switcher-control for="checkbox-salis1"
-                        span продажа
-                        nav
-                          ul.drop-down.closed
-                            li
-                              a.nav-button href="#"   = inline_svg "svg/ic_keyboard_arrow_down_black_24px.svg"
-                            .down
-                              ul
+                form name="userForm2" ng-submit="submitForm2()"
+                  ul.read-more-wrap ng-repeat="factories in questionfactories"
+                    li
+                      input type="checkbox" ng-model="factories.selected" ng-change='trackOrder2(factories)'  value="{{factories.id}}" ng-click="submitForm2().submit()"  {{factories.name}}
+                      nav
+                        ul.drop-down
+                          li
+                            a.nav-button href="#" ng-click="voteUp" = inline_svg "svg/ic_keyboard_arrow_down_black_24px.svg"
+                          .down
+                            form name="userForm3" ng-submit="submitForm3()"
+                              ul ng-repeat="second_menu in factories.second_menu"
                                 li
-                                  .one-checkbox
-                                    .checkbox
-                                      input#checkbox-salis6 type="checkbox"
-                                      label.switcher-control for="checkbox-salis6"
-                                      span продажа
-                                li
-                                  .one-checkbox
-                                    .checkbox
-                                      input#checkbox-salis7 type="checkbox"
-                                      label.switcher-control for="checkbox-salis7"
-                                      span продажа
-                                li
-                                  .one-checkbox
-                                    .checkbox
-                                      input#checkbox-salis8 type="checkbox"
-                                      label.switcher-control for="checkbox-salis8"
-                                      span продажа
-                  li
-                    .one-checkbox
-                      .checkbox
-                        input#checkbox-salis2 type="checkbox"
-                        label.switcher-control for="checkbox-salis2"
-                        span продажа
-                        nav
-                          ul.drop-down.closed
-                            li
-                              a.nav-button href="#"   = inline_svg "svg/ic_keyboard_arrow_down_black_24px.svg"
-                            li
-                              .one-checkbox
-                                .checkbox
-                                  input#checkbox-salis9 type="checkbox"
-                                  label.switcher-control for="checkbox-salis10"
-                                  span продажа
-                            li
-                              .one-checkbox
-                                .checkbox
-                                  input#checkbox-salis11 type="checkbox"
-                                  label.switcher-control for="checkbox-salis11"
-                                  span продажа
-                            li.
-                              .one-checkbox
-                                .checkbox
-                                  input#checkbox-salis12 type="checkbox"
-                                  label.switcher-control for="checkbox-salis12"
-                                  span продажа
-
-                  li
-                    .one-checkbox
-                      .checkbox
-                        input#checkbox-salis3 type="checkbox"
-                        label.switcher-control for="checkbox-salis3"
-                          span продажа
-                  li
-                    .one-checkbox
-                      .checkbox
-                        input#checkbox-salis4 type="checkbox"
-                        label.switcher-control for="checkbox-salis4"
-                          span продажа
-                  li
-                    .one-checkbox
-                      .checkbox
-                        input#checkbox-salis5 type="checkbox"
-                        label.switcher-control for="checkbox-salis5"
-                          span продажа
+                                  input type="checkbox" ng-model="second_menu.selected" ng-change='trackOrder3(second_menu)'  value="{{second_menu.id}}" ng-click="submitForm3().submit()"  {{second_menu.title}}
               .remove-all
                 .x-component = inline_svg "photo/main/svg/filter_clear.svg"
                 .ramove-text очистить все
@@ -192,99 +91,24 @@
       .topgoods
         .topgoods-tex.color-line.gray-block
           .title топ товари
-          .mainlidet.goode2
-            ul.goode2-slider-for
-            ul.goode2-slider-nav
-              li
-                .border-producers.color-line.yellow-block
-                  .one-new-product
-                    .img-bg style="background-image: url(#{asset_path('photo/main/logos/images.png')})"
-                  .description
-                    .description-txt
-                      .maker
-                        | Азербайджан
-                      .product-name
-                        | Йорсан
-              li
-                .border-producers.color-line.yellow-block
-                  .one-new-product
-                    .img-bg style="background-image: url(#{asset_path('photo/main/logos/images.png')})"
-                  .description
-                    .description-txt
-                      .maker
-                        | Азербайджан
-                      .product-name
-                        | Йорсан
-              li
-                .border-producers.color-line.yellow-block
-                  .one-new-product
-                    .img-bg style="background-image: url(#{asset_path('photo/main/logos/images.png')})"
-                  .description
-                    .description-txt
-                      .maker
-                        | Азербайджан
-                      .product-name
-                        | Йорсан
-              li
-                .border-producers.color-line.yellow-block
-                  .one-new-product
-                    .img-bg style="background-image: url(#{asset_path('photo/main/logos/images.png')})"
-                  .description
-                    .description-txt
-                      .maker
-                        | Азербайджан
-                      .product-name
-                        | Йорсан
-              li
-                .border-producers.color-line.yellow-block
-                  .one-new-product
-                    .img-bg style="background-image: url(#{asset_path('photo/main/logos/images.png')})"
-                  .description
-                    .description-txt
-                      .maker
-                        | Азербайджан
-                      .product-name
-                        | Йорсан
-              li
-                .border-producers.color-line.yellow-block
-                  .one-new-product
-                    .img-bg style="background-image: url(#{asset_path('photo/main/logos/images.png')})"
-                  .description
-                    .description-txt
-                      .maker
-                        | Азербайджан
-                      .product-name
-                        | Йорсан
-              li
-                .border-producers.color-line.yellow-block
-                  .one-new-product
-                    .img-bg style="background-image: url(#{asset_path('photo/main/logos/images.png')})"
-                  .description
-                    .description-txt
-                      .maker
-                        | Азербайджан
-                      .product-name
-                        | Йорсан
-              li
-                .border-producers.color-line.yellow-block
-                  .one-new-product
-                    .img-bg style="background-image: url(#{asset_path('photo/main/logos/images.png')})"
-                  .description
-                    .description-txt
-                      .maker
-                        | Азербайджан
-                      .product-name
-                        | Йорсан
-              li
-                .border-producers.color-line.yellow-block
-                  .one-new-product
-                    .img-bg style="background-image: url(#{asset_path('photo/main/logos/images.png')})"
-                  .description
-                    .description-txt
-                      .maker
-                        | Азербайджан
-                      .product-name
-                        | Йорсан
+        #sliderBX-contenedor
+          #btnSliderNext
+            i.fa.fa-angle-right aria-hidden="true"
+          #btnSliderPrev
+            i.fa.fa-angle-left aria-hidden="true"
+          #sliderBX
+            .sliderBXcell ng-repeat="manufactures_top in top_manufactures"
+              / .medium-4.columns
+              .border-producers.color-line.blue-block
+                .one-new-producers
+                  a.img-bg href="maker/{{manufactures_top.id}}" style="background-image: url('{{manufactures_top.image_url}}')"
+                .description
+                  .description-txt
+                    .maker
+                      | {{manufactures_top.country}}
+                    .product-name
+                      | {{manufactures_top.title}}
+            / .sliderBXcell
 
     .medium-9.columns
       .salse-all

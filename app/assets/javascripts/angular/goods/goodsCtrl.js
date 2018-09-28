@@ -2,12 +2,14 @@
 ytwApp.controller('goodsControler',
     function QuestionController($scope, $http){
 
+        var token = document.getElementsByName('csrf-token')[0].content;
+
         $http({method: 'GET', url: '/api/v1/menus.json'}).
             then(function success(response) {
-                // $scope.question=response.data.products;
+                $scope.question=response.data.products;
                 // $scope.questionfactories=response.data.factories;
                 // $scope.questiondistributors=response.data.distributors;
-                $scope.questionmarkets=response.data.markets;
+                // $scope.questionmarkets=response.data.markets;
                 // $scope.questionlogistic=response.data.logistic;
         });
 
@@ -20,100 +22,130 @@ ytwApp.controller('goodsControler',
                 $scope.top_products=response.data.top_products;
                 $scope.all_products=response.data.products;
                 $scope.recomend_products=response.data.recomend_products;
+                $scope.all_countries=response.data.countries;
+                $scope.current_page=response.data.current_page;
+                $scope.pages_count=response.data.pages_count;
         });
+
+
+////countries
+      $scope.country_ids= []
+    $scope.trackOrder = function(countries,$http){
+      //add album in the array
+       if(countries.selected){
+         $scope.country_ids.push(countries.id);
+         console.log($scope.country_ids);
+
+       }else{
+         //remove album fron the array
+         var index = $scope.country_ids.indexOf(countries.id);
+         $scope.country_ids.splice(index,1);
+         console.log($scope.country_ids);
+       }
+    }
+
+    $scope.submitForm = function () {
+        $http({
+          url: '/api/v1/products.json',
+          method: "GET",
+          params: { country_ids: $scope.country_ids}
+       }).then(
+          function(response){
+
+            $scope.top_products=response.data.top_products;
+            $scope.all_products=response.data.products;
+            $scope.recomend_products=response.data.recomend_products;
+            // $scope.all_countries=response.data.countries;
+            $scope.current_page=response.data.current_page;
+            $scope.pages_count=response.data.pages_count;
+            // });
+          },
+          function(response){
+          }
+       )
+            };
+
+
+
+
+/// type_ids
+
+    $scope.type_ids= []
+  $scope.trackOrder2 = function(distributor){
+    //add album in the array
+     if(distributor.selected){
+       $scope.type_ids.push(distributor.id);
+       console.log($scope.type_ids);
+
+     }else{
+       //remove album fron the array
+       var index = $scope.type_ids.indexOf(distributor.id);
+       $scope.type_ids.splice(index,1);
+       console.log($scope.type_ids);
+     }
+  }
+
+  $scope.submitForm2 = function () {
+      $http({
+        url: '/api/v1/products.json',
+        method: "GET",
+        params: { type_ids: $scope.type_ids}
+     }).then(
+        function(response){
+
+          $scope.top_products=response.data.top_products;
+          $scope.all_products=response.data.products;
+          $scope.recomend_products=response.data.recomend_products;
+          // $scope.all_countries=response.data.countries;
+          $scope.current_page=response.data.current_page;
+          $scope.pages_count=response.data.pages_count;
+          // });
+        },
+        function(response){
+        }
+     )
+          };
+
+
+/// group_ids
+
+
+  $scope.group_ids= []
+  $scope.trackOrder3 = function(second_menu){
+  //add album in the array
+   if(second_menu.selected){
+     $scope.group_ids.push(second_menu.id);
+     console.log($scope.group_ids);
+
+   }else{
+     //remove album fron the array
+     var index = $scope.type_ids.indexOf(second_menu.id);
+     $scope.group_ids.splice(index,1);
+     console.log($scope.group_ids);
+   }
+  }
+
+  $scope.submitForm3 = function () {
+    $http({
+      url: '/api/v1/products.json',
+      method: "GET",
+      params: { group_ids: $scope.group_ids}
+   }).then(
+      function(response){
+
+                $scope.toptdistributors=response.data.top_distributors;
+                $scope.alldistributors=response.data.distributors;
+                $scope.recomdistributors=response.data.recomend_distributors;
+                // $scope.all_countries=response.data.countries;
+                $scope.current_page=response.data.current_page;
+                $scope.pages_count=response.data.pages_count;
+        // });
+      },
+      function(response){
+      }
+   )
+          };
+
+
     }
 )
-
-// ytwApp.controller('goodsControler',function($scope){
-//
-//
-//   $scope.records = [
-//           {maker: 'Тульський молочний комбинат',
-//           product : 'Моцарула middle 100г (4 шарика)',
-//           oriented : 'орієнтовочная цена:',
-//           mony : '1$' },
-//           {maker: 'Тульський молочний комбинат',
-//           product : 'Моцарула middle 100г (4 шарика)',
-//           oriented : 'орієнтовочная цена:',
-//           mony : '2$' },
-//           {maker: 'Тульський молочний комбинат',
-//           product : 'Моцарула middle 100г (4 шарика)',
-//           oriented : 'орієнтовочная цена:',
-//           mony : '3$' },
-//           {maker: 'Тульський молочний комбинат',
-//           product : 'Моцарула middle 100г (4 шарика)',
-//           oriented : 'орієнтовочная цена:',
-//           mony : '4$' },
-//           {maker: 'Тульський молочний комбинат',
-//           product : 'Моцарула middle 100г (4 шарика)',
-//           oriented : 'орієнтовочная цена:',
-//           mony : '5$' },
-//           {maker: 'Тульський молочний комбинат',
-//           product : 'Моцарула middle 100г (4 шарика)',
-//           oriented : 'орієнтовочная цена:',
-//           mony : '6$' },
-//           {maker: 'Тульський молочний комбинат',
-//           product : 'Моцарула middle 100г (4 шарика)',
-//           oriented : 'орієнтовочная цена:',
-//           mony : '7$' },
-//           {maker: 'Тульський молочний комбинат',
-//           product : 'Моцарула middle 100г (4 шарика)',
-//           oriented : 'орієнтовочная цена:',
-//           mony : '8$' },
-//           {maker: 'Тульський молочний комбинат',
-//           product : 'Моцарула middle 100г (4 шарика)',
-//           oriented : 'орієнтовочная цена:',
-//           mony : '9$' },
-//           {maker: 'Тульський молочний комбинат',
-//           product : 'Моцарула middle 100г (4 шарика)',
-//           oriented : 'орієнтовочная цена:',
-//           mony : '10$' },
-//           {maker: 'Тульський молочний комбинат',
-//           product : 'Моцарула middle 100г (4 шарика)',
-//           oriented : 'орієнтовочная цена:',
-//           mony : '11$' },
-//           {maker: 'Тульський молочний комбинат',
-//           product : 'Моцарула middle 100г (4 шарика)',
-//           oriented : 'орієнтовочная цена:',
-//           mony : '12$' },
-//           {maker: 'Тульський молочний комбинат',
-//           product : 'Моцарула middle 100г (4 шарика)',
-//           oriented : 'орієнтовочная цена:',
-//           mony : '13$' },
-//           {maker: 'Тульський молочний комбинат',
-//           product : 'Моцарула middle 100г (4 шарика)',
-//           oriented : 'орієнтовочная цена:',
-//           mony : '14$' },
-//           {maker: 'Тульський молочний комбинат',
-//           product : 'Моцарула middle 100г (4 шарика)',
-//           oriented : 'орієнтовочная цена:',
-//           mony : '15$' }
-//         ]
-// });
-// console.log('2');
-// // ytwApp.controller('mainCtrl', function( $scope, $http){
-// //
-// //
-// //   $http.get('./menu.json')
-// //     .then(function(data){
-// //       $scope.menuObj = data;
-// //       pagination.setProducts( data.products );
-// //       $scope.products = pagination.getPageProducts( $scope.currentPage );
-// //       $scope.paginationList = pagination.getPaginationList();
-// //     }).catch(angular.noop);
-// //
-// //   $scope.showPage = function(page) {
-// //     if ( page == 'prev' ) {
-// //       $scope.products = pagination.getPrevPageProducts();
-// //     } else if ( page == 'next' ) {
-// //       $scope.products = pagination.getNextPageProducts();
-// //     } else {
-// //       $scope.products = pagination.getPageProducts( page );
-// //     }
-// //   }
-// //
-// //   $scope.currentPageNum = function() {
-// //     return pagination.getCurrentPageNum();
-// //   }
-// //
-// // })
