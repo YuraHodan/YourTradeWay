@@ -13,7 +13,10 @@
               form name="userForm" ng-submit="submitForm()"
                 ul.read-more-wrap ng-repeat="countries in all_countries"
                   li
-                    input type="checkbox" ng-model="countries.selected" ng-change='trackOrder(countries)'  value="{{countries.id}}" ng-click="submitForm().submit()"  {{countries.title}}
+                    label.container
+                      | {{countries.title}}
+                      input type="checkbox" ng-model="countries.selected" ng-change='trackOrder(countries)'  value="{{countries.id}}" ng-click="submitForm().submit()"  
+                      span.checkmark
 
       .dubl-select
         .accordion-button

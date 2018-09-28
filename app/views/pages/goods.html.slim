@@ -14,7 +14,10 @@
                 form name="userForm" ng-submit="submitForm()"
                   ul.read-more-wrap ng-repeat="countries in all_countries"
                     li
-                      input type="checkbox" ng-model="countries.selected" ng-change='trackOrder(countries)'  value="{{countries.id}}" ng-click="submitForm().submit()"  {{countries.title}}
+                      label.container
+                        | {{countries.title}}
+                        input type="checkbox" ng-model="countries.selected" ng-change='trackOrder(countries)'  value="{{countries.id}}" ng-click="submitForm().submit()"
+                        span.checkmark
 
         .dubl-select
           .accordion-button
@@ -85,7 +88,7 @@
                   .x-component = inline_svg "photo/main/svg/filter_clear.svg"
                   .ramove-text очистить все
 
-                  
+
             /// smole select
         .selector.smole-none
           = render "advertisingSlider"
