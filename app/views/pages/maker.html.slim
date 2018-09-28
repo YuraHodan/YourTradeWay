@@ -77,13 +77,13 @@
         .selector
           = render "oneproducterslider", product: @manufacture
       .batton-doun
-        .btn-big
+        a.btn-big href="#{@manufacture.catalog_file}"
           .text каталог продукції
           .icon = inline_svg "photo/main/svg/arrowdown.svg"
-        .btn-big
+        a.btn-big href="#{@manufacture.price_list_file}"
           .text прайс лист
           .icon = inline_svg "photo/main/svg/arrowdown.svg"
-        .btn-big
+        a.btn-big href="#{@manufacture.sertificates_file}"
           .text сертифікать
           .icon = inline_svg "photo/main/svg/arrowdown.svg"
   .row

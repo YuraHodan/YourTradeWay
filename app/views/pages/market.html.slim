@@ -89,9 +89,9 @@
         .selector
           = render "oneproducterslider", product: @market
       .batton-doun
-        a.btn-big href="#"
+        a.btn-big href="#{@market.price_list_file}"
           .text прайс лист
           .icon = inline_svg "photo/main/svg/arrowdown.svg"
-        a.btn-big href="#"
+        a.btn-big href="#{@market.sertificates_file}"
           .text сертифікать
           .icon = inline_svg "photo/main/svg/arrowdown.svg"
