@@ -35,7 +35,7 @@ RailsAdmin.config do |config|
     edit
     delete
     show_in_app
-  config.included_models = [MainPageSlider,Email,PremiumLogistic,PremiumMarket,PremiumDistributor,Email,PremiumManufacture,SponsorSideSlider,SponsorSlider,Seo,Seo::Translation,MainPage,MainPage::Translation,Logistic,Logistic::Translation,Market,Market::Translation,Distributor,Distributor::Translation,Manufacture::Translation,Product::Translation,Product,Manufacture,Contact,Contact::Translation,Rule,Rule::Translation,Faq,Faq::Translation,Article,Article::Translation,ThirdMenu::Translation,SecondMenu::Translation,MainMenu::Translation,MainMenu,SecondMenu,ThirdMenu,User,Sociallink,Contact,Contact::Translation,Rule,Rule::Translation]
+  config.included_models = [MainPageSlider,Email,SponsorSideSlider,SponsorSlider,Seo,Seo::Translation,MainPage,MainPage::Translation,Logistic,Logistic::Translation,Market,Market::Translation,Distributor,Distributor::Translation,Manufacture::Translation,Product::Translation,Product,Manufacture,Contact,Contact::Translation,Rule,Rule::Translation,Faq,Faq::Translation,Article,Article::Translation,ThirdMenu::Translation,SecondMenu::Translation,MainMenu::Translation,MainMenu,SecondMenu,ThirdMenu,User,Sociallink,Contact,Contact::Translation,Rule,Rule::Translation]
   config.navigation_static_links = { locales: "/file_editor/locales"}
   RailsAdmin.config {|c| c.label_methods << :title}
 
@@ -53,42 +53,42 @@ RailsAdmin.config do |config|
     fields :email, :send_email
   end
 
-  config.model PremiumManufacture do
-    navigation_label "Premium Info"
-    label "Manufacture"
-    field :type, :enum do
-     enum ["Free","Basic","Platinum"]
-   end
-    fields :companies_count, :show_count, :products_count
-  end
+  # config.model PremiumManufacture do
+  #   navigation_label "Premium Info"
+  #   label "Manufacture"
+  #   field :type, :enum do
+  #    enum ["Free","Basic","Platinum"]
+  #  end
+  #   fields :companies_count, :show_count, :products_count
+  # end
 
 
-  config.model PremiumMarket do
-    navigation_label "Premium Info"
-    label "Market"
-    field :type, :enum do
-     enum ["Free","Basic","Platinum"]
-   end
-    fields :companies_count, :show_count, :products_count
-  end
+  # config.model PremiumMarket do
+  #   navigation_label "Premium Info"
+  #   label "Market"
+  #   field :type, :enum do
+  #    enum ["Free","Basic","Platinum"]
+  #  end
+  #   fields :companies_count, :show_count, :products_count
+  # end
 
-  config.model PremiumLogistic do
-    navigation_label "Premium Info"
-    label "Logistic"
-    field :type, :enum do
-     enum ["Free","Basic","Platinum"]
-   end
-    fields :companies_count, :show_count, :products_count
-  end
+  # config.model PremiumLogistic do
+  #   navigation_label "Premium Info"
+  #   label "Logistic"
+  #   field :type, :enum do
+  #    enum ["Free","Basic","Platinum"]
+  #  end
+  #   fields :companies_count, :show_count, :products_count
+  # end
 
-  config.model PremiumDistributor do
-    navigation_label "Premium Info"
-    label "Distributor"
-    field :type, :enum do
-     enum ["Free","Basic","Platinum"]
-   end
-    fields :companies_count, :show_count, :products_count
-  end
+  # config.model PremiumDistributor do
+  #   navigation_label "Premium Info"
+  #   label "Distributor"
+  #   field :type, :enum do
+  #    enum ["Free","Basic","Platinum"]
+  #  end
+  #   fields :companies_count, :show_count, :products_count
+  # end
 
   config.model Seo do
     visible false
