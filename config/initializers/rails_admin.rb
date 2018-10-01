@@ -35,14 +35,27 @@ RailsAdmin.config do |config|
     edit
     delete
     show_in_app
-  config.included_models = [Email,PremiumLogistic,PremiumMarket,PremiumDistributor,Email,PremiumManufacture,SponsorSideSlider,SponsorSlider,Seo,Seo::Translation,MainPage,MainPage::Translation,MainSlider,Logistic,Logistic::Translation,Market,Market::Translation,Distributor,Distributor::Translation,Manufacture::Translation,Product::Translation,Product,Manufacture,Contact,Contact::Translation,Rule,Rule::Translation,Faq,Faq::Translation,Article,Article::Translation,ThirdMenu::Translation,SecondMenu::Translation,MainMenu::Translation,MainMenu,SecondMenu,ThirdMenu,User,Sociallink,Contact,Contact::Translation,Rule,Rule::Translation]
-RailsAdmin.config {|c| c.label_methods << :title}
+  config.included_models = [MainPageSlider,Email,PremiumLogistic,PremiumMarket,PremiumDistributor,Email,PremiumManufacture,SponsorSideSlider,SponsorSlider,Seo,Seo::Translation,MainPage,MainPage::Translation,Logistic,Logistic::Translation,Market,Market::Translation,Distributor,Distributor::Translation,Manufacture::Translation,Product::Translation,Product,Manufacture,Contact,Contact::Translation,Rule,Rule::Translation,Faq,Faq::Translation,Article,Article::Translation,ThirdMenu::Translation,SecondMenu::Translation,MainMenu::Translation,MainMenu,SecondMenu,ThirdMenu,User,Sociallink,Contact,Contact::Translation,Rule,Rule::Translation]
+  config.navigation_static_links = { locales: "/file_editor/locales"}
+  RailsAdmin.config {|c| c.label_methods << :title}
+
+  config.model MainPageSlider do
+    fields :image, :show, :product
+    field :translations, :globalize_tabs
+  end
+  config.model MainPageSlider::Translation do
+    visible false
+    configure :locale, :hidden
+    fields :locale, :title
+  end
 
   config.model Email do
     fields :email, :send_email
   end
 
   config.model PremiumManufacture do
+    navigation_label "Premium Info"
+    label "Manufacture"
     field :type, :enum do
      enum ["Free","Basic","Platinum"]
    end
@@ -51,6 +64,8 @@ RailsAdmin.config {|c| c.label_methods << :title}
 
 
   config.model PremiumMarket do
+    navigation_label "Premium Info"
+    label "Market"
     field :type, :enum do
      enum ["Free","Basic","Platinum"]
    end
@@ -58,6 +73,8 @@ RailsAdmin.config {|c| c.label_methods << :title}
   end
 
   config.model PremiumLogistic do
+    navigation_label "Premium Info"
+    label "Logistic"
     field :type, :enum do
      enum ["Free","Basic","Platinum"]
    end
@@ -65,24 +82,12 @@ RailsAdmin.config {|c| c.label_methods << :title}
   end
 
   config.model PremiumDistributor do
+    navigation_label "Premium Info"
+    label "Distributor"
     field :type, :enum do
      enum ["Free","Basic","Platinum"]
    end
     fields :companies_count, :show_count, :products_count
-  end
-
-  config.model SponsorSideSlider do
-    fields :show, :image
-    field :main_menu
-    field :second_menu
-    field :third_menu
-  end
-
-  config.model SponsorSlider do
-    fields :show, :image
-    field :main_menu
-    field :second_menu
-    field :third_menu
   end
 
   config.model Seo do
@@ -96,11 +101,9 @@ RailsAdmin.config {|c| c.label_methods << :title}
     fields :locale, :title, :keywords, :description
   end
 
-  config.model MainSlider do
-   include_fields :image, :show
-   field :product
-  end
  config.model MainPage do
+  navigation_label "Static pages"
+  label "Main page"
   fields :about_image
   field :translations, :globalize_tabs
   end
@@ -124,8 +127,8 @@ RailsAdmin.config {|c| c.label_methods << :title}
 
     fields :image
   end
-config.model Logistic do
-    navigation_label "Logistic"
+  config.model Logistic do
+    navigation_label "Catalog"
     label "Logistic"
     field :translations, :globalize_tabs
     include_fields :country, :web_site_url, :first_email, :second_email, :third_email,
@@ -148,7 +151,7 @@ config.model Logistic do
   end
 
   config.model Market do
-    navigation_label "Market"
+    navigation_label "Catalog"
     label "Market"
     field :translations, :globalize_tabs
     include_fields :country, :web_site_url, :first_email, :second_email, :third_email,
@@ -172,6 +175,8 @@ config.model Logistic do
   end
 
   config.model Country do
+    navigation_label "Menu"
+    label "Country"
     field :translations, :globalize_tabs
     object_label_method :custom_name
 
@@ -184,7 +189,7 @@ config.model Logistic do
   end
 
   config.model Distributor do
-    navigation_label "Distributor"
+    navigation_label "Catalog"
     label "Distributor"
     field :translations, :globalize_tabs
     include_fields :country, :web_site_url, :first_email, :second_email, :third_email,
@@ -206,8 +211,8 @@ config.model Logistic do
   end
 
   config.model Manufacture do
-    navigation_label "Manufactures"
-    label "Manufactures"
+    navigation_label "Catalog"
+    label "Manufacture"
     field :translations, :globalize_tabs
     include_fields :country, :web_site_url, :first_email, :second_email, :third_email,
     :first_phone_number, :second_phone_number, :third_phone_number, :logo_image, :catalog_file,
@@ -228,8 +233,9 @@ config.model Logistic do
   end
 
   config.model Product do
-    navigation_label "Products"
-    label "One product"
+    navigation_label "Catalog"
+    label "Products"
+    object_label_method :custom_name
     field :translations, :globalize_tabs
     fields :manufacture, :country, :price, :volume, :amount, :weight, :youtube_url, :premium, :recomend, :third_menu, :logo_image
     field :images
@@ -245,7 +251,7 @@ config.model Logistic do
   end
 
   config.model Contact do
-    navigation_label "Contacts"
+    navigation_label "Static pages"
     label "Contacts"
     field :translations, :globalize_tabs
     include_fields :email, :first_number, :second_number, :third_number, :fax
@@ -257,7 +263,7 @@ config.model Logistic do
     end
 
   config.model Rule do
-    navigation_label "Rule"
+    navigation_label "Static pages"
     label "Rules"
     field :translations, :globalize_tabs
   end
@@ -269,7 +275,7 @@ config.model Logistic do
     end
 
   config.model Faq do
-    navigation_label "Faq"
+    navigation_label "Static pages"
     label "Faq"
     field :translations, :globalize_tabs
       field :category, :enum do
@@ -284,8 +290,8 @@ config.model Logistic do
     end
 
   config.model Sociallink do
-    navigation_label "Посилання на соціальні мережі"
-    label "Соціальні мережі"
+    navigation_label "Static pages"
+    label "Social links"
     include_fields :vkontakte_url, :facebook_url, :twitter_url, :youtube_url, :linkedin_url, :google_url, :pinterest_url, :odnoklasniki_url
   end
 
@@ -312,8 +318,8 @@ config.model Logistic do
     end
 
   config.model Contact do
-    navigation_label "Контакти"
-    label "Контакти"
+    navigation_label "Static pages"
+    label "Contacts"
     field :translations, :globalize_tabs
     include_fields :email, :first_number, :second_number, :third_number, :fax
   end
@@ -324,6 +330,8 @@ config.model Logistic do
     end
 
   config.model MainMenu do
+    navigation_label "Menu"
+    label "Type"
     field :translations, :globalize_tabs
     field :category, :enum do
        enum ["Products", "Factories", "Distributors", "Markets", "Logistic"]
@@ -339,6 +347,8 @@ config.model Logistic do
   end
 
   config.model SecondMenu do
+    navigation_label "Menu"
+    label "Group"
     fields :main_menu
     field :translations, :globalize_tabs
     object_label_method :custom_name
@@ -352,6 +362,8 @@ config.model Logistic do
   end
 
   config.model ThirdMenu do
+    navigation_label "Menu"
+    label "Category"
     field :translations, :globalize_tabs
     fields :second_menu
     object_label_method :custom_name

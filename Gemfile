@@ -113,3 +113,7 @@ gem 'angularjs-rails', '1.6'
 gem 'angular-ui-bootstrap-rails'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'will_paginate'
+gem 'cms', github: "pkorenev/cms"
+gem 'ace-rails-ap'
+gem 'figaro'
