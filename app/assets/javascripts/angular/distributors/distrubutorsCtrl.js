@@ -1,15 +1,13 @@
 ytwApp.controller('dustrubutorsControler',
-    function QuestionController($scope, $http){
+    function QuestionController($scope, $http, $rootScope, $window){
+      $scope.type_ids= window.localStorage.getItem("storageArray");
+      $scope.group_ids= window.localStorage.getItem("storageArray2");
       /// http 'X-CSRF-Token': token
       var token = document.getElementsByName('csrf-token')[0].content;
 
         $http({method: 'GET', url: '/api/v1/menus.json'}).
             then(function success(response) {
-                // $scope.question=response.data.products;
-                // $scope.questionfactories=response.data.factories;
                 $scope.questiondistributors=response.data.distributors;
-                // $scope.questionmarkets=response.data.markets;
-                // $scope.questionlogistic=response.data.logistic;
         });
 
         $scope.voteUp = function (){
@@ -17,7 +15,12 @@ ytwApp.controller('dustrubutorsControler',
         };
         $scope.voteDown = function (answer){
         };
-        $http({method: 'GET', url: '/api/v1/distributors.json'}).
+        $http({
+          url: '/api/v1/distributors.json',
+          method: "GET",
+          params: { type_ids: $scope.type_ids,
+               group_ids: $scope.group_ids}
+        }).
             then(function success2(response) {
                 $scope.toptdistributors=response.data.top_distributors;
                 $scope.alldistributors=response.data.distributors;
@@ -25,6 +28,8 @@ ytwApp.controller('dustrubutorsControler',
                 $scope.all_countries=response.data.countries;
                 $scope.current_page=response.data.current_page;
                 $scope.pages_count=response.data.pages_count;
+                localStorage.setItem('storageArray',JSON.stringify(""));
+                localStorage.setItem('storageArray2',JSON.stringify(""));
         });
 
 
