@@ -37,7 +37,7 @@ SECRET_KEY_BASE:
 # GOOGLE MAPS
 # ========================
 GOOGLE_MAPS_API_KEY: "AIzaSyAvkI36T-T6xJe8Qif7QkbQ1xvTl8Ha_9o"
-#file_editor_base_dir: "/media/data/projects/ekran/config"
+file_editor_base_dir: "config"
 
 
 # ========================
