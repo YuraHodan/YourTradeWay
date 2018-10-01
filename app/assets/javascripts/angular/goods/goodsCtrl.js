@@ -1,7 +1,18 @@
 
 ytwApp.controller('goodsControler',
     function QuestionController($scope, $http){
-
+      $scope.type_ids= window.localStorage.getItem("storageArray");
+      $scope.group_ids= window.localStorage.getItem("storageArray2");
+        $scope.test = function(){
+          if ($scope.type_ids.value.length !== 0 ) {
+            $scope.type_ids = null
+          }
+        }
+        $scope.test2 = function(){
+          if ($scope.group_ids.value.length !== 0 ) {
+            $scope.group_ids = null
+          }
+        }
         var token = document.getElementsByName('csrf-token')[0].content;
 
         $http({method: 'GET', url: '/api/v1/menus.json'}).
@@ -17,7 +28,12 @@ ytwApp.controller('goodsControler',
         };
         $scope.voteDown = function (answer){
         };
-        $http({method: 'GET', url: '/api/v1/products.json'}).
+        $http({
+          url: '/api/v1/products.json',
+          method: "GET",
+          params: { type_ids: $scope.type_ids,
+               group_ids: $scope.group_ids}
+        }).
             then(function success2(response) {
                 $scope.top_products=response.data.top_products;
                 $scope.all_products=response.data.products;
@@ -25,6 +41,8 @@ ytwApp.controller('goodsControler',
                 $scope.all_countries=response.data.countries;
                 $scope.current_page=response.data.current_page;
                 $scope.pages_count=response.data.pages_count;
+                localStorage.removeItem('storageArray',JSON.stringify(""));
+                localStorage.removeItem('storageArray2',JSON.stringify(""));
         });
 
 
