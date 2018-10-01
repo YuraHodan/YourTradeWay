@@ -11,6 +11,7 @@ class Article < ActiveRecord::Base
   scope :show, -> {where(show: true)}
   has_one :seo, as: "product"
   accepts_nested_attributes_for :seo
+    validates  :title, :first_image, presence: true
   def initialize_url_fragment
     return true if url_fragment.present?
     I18n.with_locale :ru do

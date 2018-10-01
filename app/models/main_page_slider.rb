@@ -4,4 +4,5 @@ class MainPageSlider < ActiveRecord::Base
   mount_uploader :image, ImageUploader
   belongs_to :product, class_name: Product
   scope :show, -> {where(show: true)}
+   validates  :product, :image, presence: true
 end

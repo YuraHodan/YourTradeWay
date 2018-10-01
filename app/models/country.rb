@@ -4,10 +4,10 @@ class Country < ActiveRecord::Base
   has_many :distributors, class_name: Distributor
   has_many :markets, class_name: Market
   has_many :logistics, class_name: Logistic
+  validates  :title, presence: true
 
   translates :title
   accepts_nested_attributes_for :translations, allow_destroy: true
-
   def custom_name
     self.title
   end
