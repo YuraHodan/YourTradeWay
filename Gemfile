@@ -114,3 +114,5 @@ gem 'angular-ui-bootstrap-rails'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'will_paginate'
+gem 'cms', github: "pkorenev/cms"
+gem 'ace-rails-ap'

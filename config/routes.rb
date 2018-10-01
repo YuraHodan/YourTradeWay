@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
+  mount Cms::Engine => '/', as: 'cms' # localized do
   mount Ckeditor::Engine => '/ckeditor'
-
- # localized do
   devise_for :users
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root to: "pages#index"
