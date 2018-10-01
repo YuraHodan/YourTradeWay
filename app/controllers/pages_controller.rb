@@ -4,6 +4,7 @@ class PagesController < ApplicationController
   def index
     @new_manufactures = Manufacture.last(8)
     @last_news = Article.last(3)
+    @main_page_slider = MainPageSlider.show
   end
 
   def about_us

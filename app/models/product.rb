@@ -1,6 +1,7 @@
 class Product < ActiveRecord::Base
   has_many :images, class_name: Image
   has_many :slides, class_name: MainSlider
+  has_one  :main_slide, class_name: MainPageSlider
   accepts_nested_attributes_for :images
   belongs_to :country, class_name: Country
   belongs_to :manufacture, class_name: Manufacture
@@ -19,4 +20,7 @@ class Product < ActiveRecord::Base
   def menu_title
   self.third_menu.title
 end
+    def custom_name
+    self.title
+  end
 end

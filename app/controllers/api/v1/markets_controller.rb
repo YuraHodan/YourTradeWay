@@ -7,8 +7,8 @@ class Api::V1::MarketsController < Api::V1::BaseController
       countries:        map_countries(Country.all),
       current_page:     current_page,
       pages_count:      pages_count,
-      header_slider:    map_slider(SponsorSlider.show),
-      side_slider:      map_slider(SponsorSideSlider.show)
+      header_slider:    filter_slider(SponsorSlider.show),
+      side_slider:      filter_slider(SponsorSideSlider.show)
     }
     respond_with @markets
   end
@@ -19,7 +19,7 @@ class Api::V1::MarketsController < Api::V1::BaseController
     filtered_data = markets
     filtered_data = filtered_data.where(country_id: params[:country_ids]) if params[:ids].present?
     filtered_data = filtered_data.where(main_menu_id: params[:type_ids]) if  params[:type_ids].present?
-    map_markets(filtered_data)
+    map_markets(filtered_data.paginate(page: current_page, per_page: 12))
   end
 
   def pages_count

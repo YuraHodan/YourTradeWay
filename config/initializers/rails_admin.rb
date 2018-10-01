@@ -35,8 +35,18 @@ RailsAdmin.config do |config|
     edit
     delete
     show_in_app
-  config.included_models = [Email,PremiumLogistic,PremiumMarket,PremiumDistributor,Email,PremiumManufacture,SponsorSideSlider,SponsorSlider,Seo,Seo::Translation,MainPage,MainPage::Translation,MainSlider,Logistic,Logistic::Translation,Market,Market::Translation,Distributor,Distributor::Translation,Manufacture::Translation,Product::Translation,Product,Manufacture,Contact,Contact::Translation,Rule,Rule::Translation,Faq,Faq::Translation,Article,Article::Translation,ThirdMenu::Translation,SecondMenu::Translation,MainMenu::Translation,MainMenu,SecondMenu,ThirdMenu,User,Sociallink,Contact,Contact::Translation,Rule,Rule::Translation]
+  config.included_models = [MainPageSlider,Email,PremiumLogistic,PremiumMarket,PremiumDistributor,Email,PremiumManufacture,SponsorSideSlider,SponsorSlider,Seo,Seo::Translation,MainPage,MainPage::Translation,MainSlider,Logistic,Logistic::Translation,Market,Market::Translation,Distributor,Distributor::Translation,Manufacture::Translation,Product::Translation,Product,Manufacture,Contact,Contact::Translation,Rule,Rule::Translation,Faq,Faq::Translation,Article,Article::Translation,ThirdMenu::Translation,SecondMenu::Translation,MainMenu::Translation,MainMenu,SecondMenu,ThirdMenu,User,Sociallink,Contact,Contact::Translation,Rule,Rule::Translation]
 RailsAdmin.config {|c| c.label_methods << :title}
+
+  config.model MainPageSlider do
+    fields :image, :show, :product
+    field :translations, :globalize_tabs
+  end
+    config.model MainPageSlider::Translation do
+      visible false
+      configure :locale, :hidden
+      fields :locale, :title
+    end
 
   config.model Email do
     fields :email, :send_email
@@ -69,20 +79,6 @@ RailsAdmin.config {|c| c.label_methods << :title}
      enum ["Free","Basic","Platinum"]
    end
     fields :companies_count, :show_count, :products_count
-  end
-
-  config.model SponsorSideSlider do
-    fields :show, :image
-    field :main_menu
-    field :second_menu
-    field :third_menu
-  end
-
-  config.model SponsorSlider do
-    fields :show, :image
-    field :main_menu
-    field :second_menu
-    field :third_menu
   end
 
   config.model Seo do
@@ -229,6 +225,7 @@ config.model Logistic do
 
   config.model Product do
     navigation_label "Products"
+    object_label_method :custom_name
     label "One product"
     field :translations, :globalize_tabs
     fields :manufacture, :country, :price, :volume, :amount, :weight, :youtube_url, :premium, :recomend, :third_menu, :logo_image
