@@ -17,7 +17,7 @@ class Api::V1::MarketsController < Api::V1::BaseController
 
   def filtered_markets(markets)
     filtered_data = markets
-    filtered_data = filtered_data.where(country_id: params[:country_ids]) if params[:ids].any?
+    filtered_data = filtered_data.where(country_id: params[:country_ids]) if params[:country_ids].any?
     filtered_data = filtered_data.where(main_menu_id: params[:type_ids]) if  params[:type_ids].any?
     map_markets(filtered_data.paginate(page: current_page, per_page: 12))
   end
