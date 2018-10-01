@@ -28,7 +28,7 @@ ytwApp.controller('logisticsController',
                 $scope.recom_logistics=response.data.recomend_logistics;
                 $scope.all_countries=response.data.countries;
                 $scope.current_page=response.data.current_page;
-                $scope.pages_count=response.data.pages_count;
+                // $scope.pages_count=response.data.pages_count;
                 localStorage.removeItem('storageArray',JSON.stringify(""));
         });
 ////countries
@@ -108,6 +108,17 @@ ytwApp.controller('logisticsController',
                 }
              )
                   };
+
+// current_page
+  $scope.current_page= ""
+  $scope.trackOrder2 = function(logistic){
+    //add album in the array
+       $scope.current_page=(logistic.id);
+       console.log($scope.type_ids);
+
+     }
+
+
 
     }
 
