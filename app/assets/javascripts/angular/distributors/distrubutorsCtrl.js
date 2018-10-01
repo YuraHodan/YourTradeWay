@@ -2,6 +2,16 @@ ytwApp.controller('dustrubutorsControler',
     function QuestionController($scope, $http, $rootScope, $window){
       $scope.type_ids= window.localStorage.getItem("storageArray");
       $scope.group_ids= window.localStorage.getItem("storageArray2");
+      $scope.test = function(){
+        if ($scope.type_ids.value.length !== 0 ) {
+          $scope.type_ids = null
+        }
+      }
+      $scope.test2 = function(){
+        if ($scope.group_ids.value.length !== 0 ) {
+          $scope.group_ids = null
+        }
+      }
       /// http 'X-CSRF-Token': token
       var token = document.getElementsByName('csrf-token')[0].content;
 
@@ -28,8 +38,8 @@ ytwApp.controller('dustrubutorsControler',
                 $scope.all_countries=response.data.countries;
                 $scope.current_page=response.data.current_page;
                 $scope.pages_count=response.data.pages_count;
-                localStorage.setItem('storageArray',JSON.stringify(""));
-                localStorage.setItem('storageArray2',JSON.stringify(""));
+                localStorage.removeItem('storageArray',JSON.stringify(""));
+                localStorage.removeItem('storageArray2',JSON.stringify(""));
         });
 
 

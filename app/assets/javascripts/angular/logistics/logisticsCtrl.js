@@ -3,8 +3,11 @@ ytwApp.controller('logisticsController',
     function QuestionController($scope, $http, $rootScope, $window){
 
       $scope.type_ids= window.localStorage.getItem("storageArray");
-      $scope.group_ids= window.localStorage.getItem("storageArray2");
-
+        $scope.test = function(){
+          if ($scope.type_ids.value.length !== 0 ) {
+            $scope.type_ids = null
+          }
+        }
         $http({method: 'GET', url: '/api/v1/menus.json'}).
             then(function success(response) {
                 $scope.questionlogistic=response.data.logistic;
@@ -17,8 +20,7 @@ ytwApp.controller('logisticsController',
         $http({
           url: '/api/v1/logistics.json',
           method: "GET",
-          params: { type_ids: $scope.type_ids,
-               group_ids: $scope.group_ids}
+          params: { type_ids: $scope.type_ids}
         }).
             then(function success2(response) {
                 $scope.top_logistics=response.data.top_logistics;
@@ -27,8 +29,7 @@ ytwApp.controller('logisticsController',
                 $scope.all_countries=response.data.countries;
                 $scope.current_page=response.data.current_page;
                 $scope.pages_count=response.data.pages_count;
-                localStorage.setItem('storageArray',JSON.stringify(""));
-                localStorage.setItem('storageArray2',JSON.stringify(""));
+                localStorage.removeItem('storageArray',JSON.stringify(""));
         });
 ////countries
           $scope.country_ids= []

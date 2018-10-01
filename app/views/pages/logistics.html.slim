@@ -154,3 +154,7 @@
     /                 =logistic.title
     .medium-9.columns
       = render "recomendationlogistics"
+    .medium-9.columns
+      .pagination ng-repeat="current_page in current_page2"
+        .current_page
+          | {{current_page}}
