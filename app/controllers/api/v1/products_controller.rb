@@ -11,7 +11,8 @@ class Api::V1::ProductsController < Api::V1::BaseController
       side_slider:        filter_slider(SponsorSideSlider.show),
       type_ids:           params[:type_ids],
       category_ids:       params[:category_ids],
-      country_ids:        params[:country_ids],
+      group_ids:          params[:group_ids],
+      country_ids:        params[:country_ids]
       }
     respond_with @products
   end
