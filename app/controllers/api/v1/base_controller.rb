@@ -13,7 +13,7 @@ class Api::V1::BaseController < ApplicationController
   end
 
   def map_slider(slides)
-    slides.map { |slide|
+    slides.uniq.map { |slide|
       {
         image_url: slide.image.url
       }
@@ -28,5 +28,13 @@ class Api::V1::BaseController < ApplicationController
     return 1 unless params[:page_number]
 
     params[:page_number]
+  end
+
+  def filter_slider(slides)
+    filtered_slides = params[:type_ids].blank? && params[:group_ids].blank? && params[:category_ids].blank?  ? slides : []
+    filtered_slides << slides.where(main_menu_id: params[:type_ids]) if params[:type_ids].present?
+    filtered_slides << slides.where(second_menu_id: params[:group_ids]) if params[:group_ids].present?
+    filtered_slides << slides.where(third_menu_id: params[:category_ids]) if params[:category_ids].present?
+    map_slider(filtered_slides.flatten)
   end
 end

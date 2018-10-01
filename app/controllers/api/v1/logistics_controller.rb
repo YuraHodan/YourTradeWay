@@ -7,8 +7,8 @@ class Api::V1::LogisticsController < Api::V1::BaseController
       countries:          countries,
       current_page:       current_page,
       pages_count:        pages_count,
-      header_slider:      map_slider(SponsorSlider.show),
-      side_slider:        map_slider(SponsorSideSlider.show)
+      header_slider:      filter_slider(SponsorSlider.show),
+      side_slider:        filter_slider(SponsorSideSlider.show)
     }
     respond_with @logistics
   end
@@ -19,7 +19,7 @@ class Api::V1::LogisticsController < Api::V1::BaseController
     filtered_data = logistics
     filtered_data = filtered_data.where(country_id: params[:country_ids]) if params[:country_ids].present?
     filtered_data = filtered_data.where(main_menu_id: params[:type_ids]) if  params[:type_ids].present?
-    map_logistics(filtered_data)
+    map_logistics(filtered_data.paginate(page: current_page, per_page: 12))
   end
 
   def map_logistics(logistics)

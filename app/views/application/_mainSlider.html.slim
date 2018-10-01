@@ -3,36 +3,15 @@
   .prev-btn = inline_svg 'photo/main/svg/slider-arrow-left.svg'
   ul.slider2-for
   ul.slider2-nav
-    li
-      .img-bg style="background-image: url(#{asset_path('photo/main/main-page-slider.jpg')})"
-        .content-baner
-          .tex-baner
-            p Новинка
-            h4
-              |cream cheese
-              br
-              | bonfesto
-          .btn-big.yellow-btn смотреть
-    li
-      .img-bg style="background-image: url(#{asset_path('photo/main/main-page-slider.jpg')})"
-        .content-baner
-          .tex-baner
-            p Новинка
-            h4
-              |cream cheese
-              br
-              | bonfesto
-          .btn-big.yellow-btn смотреть
-    li
-      .img-bg style="background-image: url(#{asset_path('photo/main/main-page-slider.jpg')})"
-        .content-baner
-          .tex-baner
-            p Новинка
-            h4
-              |cream cheese
-              br
-              | bonfesto
-          .btn-big.yellow-btn href="#" смотреть
+    -slides.each do |slide|
+      li
+        .img-bg style="background-image: url(#{slide.image.url})"
+          .content-baner
+            .tex-baner
+              p Новинка
+              h4
+                = slide.title
+            .btn-big.yellow-btn смотреть
 
 
 
