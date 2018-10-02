@@ -12,11 +12,6 @@ ytwApp.controller('logisticsController',
             then(function success(response) {
                 $scope.questionlogistic=response.data.logistic;
         });
-
-        $scope.voteUp = function (answer){
-        };
-        $scope.voteDown = function (answer){
-        };
         $http({
           url: '/api/v1/logistics.json',
           method: "GET",
@@ -30,15 +25,13 @@ ytwApp.controller('logisticsController',
                 $scope.current_page=response.data.current_page;
                 $scope.pages_count=response.data.pages_count;
                 localStorage.removeItem('storageArray',JSON.stringify(""));
-                console.log($scope.current_page);
-                console.log($scope.pages_count);
-                var i;
-                for (var i = $scope.current_page; i <= 11; i++) {
-                  console.log( i );
-
-
+                var range = [];
+                for (var i = $scope.current_page; i <=$scope.pages_count; i++) {
+                  range.push(i)
                 }
+                $scope.driverAges = range;
         });
+
 ////countries
           $scope.country_ids= []
         $scope.trackOrder = function(countries,$http){
@@ -117,16 +110,34 @@ ytwApp.controller('logisticsController',
              )
                   };
 
-// current_page
- //  $scope.current_page= ""
- // console.log($scope.type_ids);
- //  $scope.trackOrder23 = function(countries){
- //    //add album in the array
- //       $scope.current_page=(input.value);
- //       console.log($scope.type_ids);
- //
- //     }
 
+
+$scope.current_page =0
+  $scope.trackOrder23 = function(age){
+    //add album in the array
+       $scope.current_page = (age);
+       console.log($scope.current_page);
+  }
+$scope.submitForm23 = function () {
+    $http({
+      url: '/api/v1/logistics.json',
+      method: "GET",
+      params: {page_number: $scope.current_page }
+   }).then(
+      function(response){
+
+        $scope.top_logistics=response.data.top_logistics;
+        $scope.all_logistics=response.data.logistics;
+        $scope.recom_logistics=response.data.recomend_logistics;
+        // $scope.all_countries=response.data.countries;
+        $scope.current_page=response.data.current_page;
+        $scope.pages_count=response.data.pages_count;
+        // });
+      },
+      function(response){
+      }
+   )
+        };
 
 
     }
