@@ -28,8 +28,16 @@ ytwApp.controller('logisticsController',
                 $scope.recom_logistics=response.data.recomend_logistics;
                 $scope.all_countries=response.data.countries;
                 $scope.current_page=response.data.current_page;
-                // $scope.pages_count=response.data.pages_count;
+                $scope.pages_count=response.data.pages_count;
                 localStorage.removeItem('storageArray',JSON.stringify(""));
+                console.log($scope.current_page);
+                console.log($scope.pages_count);
+                var i;
+                for (var i = $scope.current_page; i <= 11; i++) {
+                  console.log( i );
+
+
+                }
         });
 ////countries
           $scope.country_ids= []
@@ -110,13 +118,14 @@ ytwApp.controller('logisticsController',
                   };
 
 // current_page
-  $scope.current_page= ""
-  $scope.trackOrder2 = function(logistic){
-    //add album in the array
-       $scope.current_page=(logistic.id);
-       console.log($scope.type_ids);
-
-     }
+ //  $scope.current_page= ""
+ // console.log($scope.type_ids);
+ //  $scope.trackOrder23 = function(countries){
+ //    //add album in the array
+ //       $scope.current_page=(input.value);
+ //       console.log($scope.type_ids);
+ //
+ //     }
 
 
 

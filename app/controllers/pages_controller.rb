@@ -50,6 +50,11 @@ class PagesController < ApplicationController
       render json: {}
   end
 
+  def contain_us
+    # binding.pry  ##dsadasajkdkjqwnjkeqwjkehjkqsdhjkasjkdhasjkdqjkdqwjklndqwlkdnqwlneklklqwelkwq
+      render json: {}
+  end
+
   def faq
     @faq_articles = Faq.where(category: 'FAQ')
     @guarantee_articles = Faq.where(category: 'Guarantee')

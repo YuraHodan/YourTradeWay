@@ -54,7 +54,7 @@
         .tex-taitle задать вопрос
       .medium.columns
         .question
-          form name="userForm" ng-submit="submitForm()" novalidate=""
+          form.ajax-form action="/contain_us" method="post" enctype="multipart/form-data" name="userForm" ng-submit="submitForm()" novalidate="" 
             .medium-6.columns
               /! NAME
               .form-group ng-class=("{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }")

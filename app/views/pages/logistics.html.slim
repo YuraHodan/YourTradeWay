@@ -152,13 +152,26 @@
     /                 =logistic.country&.title
     /               .product-name
     /                 =logistic.title
-    .medium-9.columns
+    .medium-9.columns.right
       = render "recomendationlogistics"
     .medium-9.columns
-      ul.read-more-wrap
-        li value="{{current_page -1 }}" ng-if="current_page >=2"
-          | {{current_page -1 }}
-        li value="{{current_page}}"
-          | {{current_page}}
-        li value="{{current_page -+1 }}"
-          | {{current_page +1}}
+      form name="userForm23" ng-submit="submitForm23()"
+        ul.read-more-wrap
+          li  ng-if="current_page >=5"
+            input type="submit" value="{{current_page -4 }}"
+          li  ng-if="current_page >=4"
+            input type="submit" value="{{current_page -3 }}"
+          li  ng-if="current_page >=3"
+            input type="submit" value="{{current_page -2 }}"
+          li  ng-if="current_page >=2"
+            input type="submit" value="{{current_page -1 }}"
+          li
+            input type="submit" value="{{current_page}}" ng-click="trackOrder23(countries)"
+          li
+            input type="submit" value="{{current_page +1 }}"
+          li
+            input type="submit" value="{{current_page +2 }}"
+          li
+            input type="submit" value="{{current_page +3 }}"
+          li
+            input type="submit" value="{{current_page +4 }}"
