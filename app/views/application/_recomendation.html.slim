@@ -1,7 +1,7 @@
-.recomendation-tovars
+.recomendation-tovars ng-if="recomend_products != ''"
   .recomendation-text.color-line.gray-block
     .title рекомендаии
-  .recommendation-goods ng-repeat="products_recomend in recomend_products"
+  .recommendation-goods ng-repeat="products_recomend in recomend_products | limitTo : 3"
     .medium-4.columns
       .border-producers.color-line.yellow-block
         .one-new-product

@@ -1,7 +1,7 @@
-.recomendation-tovars
+.recomendation-tovars ng-if="recom_logistics != ''"
   .recomendation-text.color-line.orange-block
     .title рекомендаии
-  .recommendation-goods ng-repeat="logistics_recom in recom_logistics"
+  .recommendation-goods ng-repeat="logistics_recom in recom_logistics | limitTo : 3"
     .medium-4.columns
       .border-producers.color-line.orange-block
         .one-new-producers

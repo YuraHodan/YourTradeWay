@@ -66,41 +66,11 @@
                 .ramove-text очистить все
         /// smole select
         .selector
-          / = render "advertisingSlider"
-          / .mainlidet.advertising
-          /   ul.advertising-slider-for
-          /   ul.advertising-slider-nav
-          /     li
-          /       .img-bg style="background-image: url(#{asset_path('photo/main/main-page-slider.jpg')})"
-          /     li
-          /       .img-bg style="background-image: url(#{asset_path('photo/main/main-page-slider.jpg')})"
-          /     li
-          /       .img-bg style="background-image: url(#{asset_path('photo/main/main-page-slider.jpg')})"
-          /     li
-          /       .img-bg style="background-image: url(#{asset_path('photo/main/main-page-slider.jpg')})"
-          /     li
-          /       .img-bg style="background-image: url(#{asset_path('photo/main/main-page-slider.jpg')})"
-          /     li
-          /       .img-bg style="background-image: url(#{asset_path('photo/main/main-page-slider.jpg')})"
-          /     li
-          /       .img-bg style="background-image: url(#{asset_path('photo/main/main-page-slider.jpg')})"
-          /     li
-          /       .img-bg style="background-image: url(#{asset_path('photo/main/main-page-slider.jpg')})"
-          /     li
-          /       .img-bg style="background-image: url(#{asset_path('photo/main/main-page-slider.jpg')})"
-          .slideshow-container
+          .slideshow-container ng-repeat="side_slid in side_slider"
             .mySlides.fade
-              .img-bg style="background-image: url(#{asset_path('photo/main/main-page-slider.jpg')})"
-            .mySlides.fade
-              p
-              | 1
-              .img-bg style="background-image: url(#{asset_path('photo/main/main-page-slider.jpg')})"
-            .mySlides.fade
-              p
-              | 2
-              .img-bg style="background-image: url(#{asset_path('photo/main/main-page-slider.jpg')})"
-            a.prev onclick="plusSlides(-1)"  ❮
-            a.next onclick="plusSlides(1)"  ❯
+              .img-bg style="background-image: url('{{side_slid.image_url}}')"
+            / a.prev onclick="plusSlides(-1)"  ❮
+            / a.next onclick="plusSlides(1)"  ❯
 
 
     .medium-9.columns
@@ -128,7 +98,7 @@
 
     .medium-9.columns
       .salse-all
-        .sales-leaders ng-repeat="logistics_all in all_logistics"
+        .sales-leaders ng-repeat="logistics_all in all_logistics | limitTo : 6"
           .medium-4.columns
             .border-producers.color-line.orange-block
               .one-new-producers
@@ -139,21 +109,29 @@
                     | {{logistics_all.country}}
                   .product-name
                     | {{logistics_all.title}}
-    / .medium-9.columns
-    /   .salse-all
-    /     -@logistics.each do |logistic|
-    /       .medium-4.columns
-    /         .border-producers.color-line.orange-block
-    /           .one-new-producers
-    /             a.img-bg href=logistic_path(logistic.id) style="background-image: url(#{asset_path('photo/main/logos/11520-1484293005.jpg')})"
-    /           .description
-    /             .description-txt
-    /               .maker
-    /                 =logistic.country&.title
-    /               .product-name
-    /                 =logistic.title
+
+
+
+  .row.columns-right
     .medium-9.columns
       = render "recomendationlogistics"
+
+
+    .medium-9.columns
+      .salse-all
+        .sales-leaders ng-repeat="logistics_all in all_logistics | limitTo :12:6"
+          .medium-4.columns
+            .border-producers.color-line.orange-block
+              .one-new-producers
+                  a.img-bg href="logistic/{{logistics_all.id}}" style="background-image: url('{{logistics_all.image_url}}')"
+              .description
+                .description-txt
+                  .maker
+                    | {{logistics_all.country}}
+                  .product-name
+                    | {{logistics_all.title}}
+
+
     .medium-9.columns
       .pagination
         form.form-pagination name="userForm23" ng-submit="submitForm()"

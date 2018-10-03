@@ -15,7 +15,7 @@
                   li
                     label.container
                       | {{countries.title}}
-                      input type="checkbox" ng-model="countries.selected" ng-change='trackOrder(countries)'  value="{{countries.id}}" ng-click="submitForm().submit()"  
+                      input type="checkbox" ng-model="countries.selected" ng-change='trackOrder(countries)'  value="{{countries.id}}" ng-click="submitForm().submit()"
                       span.checkmark
 
       .dubl-select
@@ -87,7 +87,7 @@
                 .ramove-text очистить все
       /// smole select
       .selector
-        = render "advertisingSlider"
+        / = render "advertisingSlider"
     .medium-9.columns
       .vibe-text.color-line.gray-block
         .title топ товари
@@ -107,3 +107,19 @@
                     | орієнтовочная цена:
                   .mony
                     | {{products_top.price}}$
+
+    .medium-9.columns
+      .pagination
+        form.form-pagination name="userForm23" ng-submit="submitForm()"
+          ul ng-if="current_page >=4"
+            li
+              input type="button" ng-model="age.selected" value="{{current_page-1}}" ng-click="trackOrder23(current_page-3); submitForm23().submit()"
+          ul ng-if="current_page >=3"
+            li
+              input type="button" ng-model="age.selected" value="{{current_page-1}}" ng-click="trackOrder23(current_page-2); submitForm23().submit()"
+          ul ng-if="current_page >=2"
+            li
+              input type="button" ng-model="age.selected" value="{{current_page-1}}" ng-click="trackOrder23(current_page-1); submitForm23().submit()"
+          ul ng-repeat="age in driverAges | limitTo : 3"
+            li
+              input.butnPag type="button" ng-model="age.selected" value="{{age}}" ng-click="trackOrder23(age); submitForm23()".
