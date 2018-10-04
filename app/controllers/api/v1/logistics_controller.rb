@@ -1,5 +1,6 @@
 class Api::V1::LogisticsController < Api::V1::BaseController
   def index
+    # binding.pry
      @logistics =  {
       top_logistics:      filtered_logistics(Logistic.premium),
       logistics:          filtered_logistics(Logistic.all),

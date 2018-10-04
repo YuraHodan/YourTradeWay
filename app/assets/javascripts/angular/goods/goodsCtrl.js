@@ -63,7 +63,7 @@ ytwApp.controller('goodsControler',
         $scope.type_ids= []
         $scope.current_page
         $scope.group_ids= []
-        $scope.group_ids= []
+        $scope.category_ids= []
 
 
 
@@ -87,10 +87,10 @@ ytwApp.controller('goodsControler',
         $http({
           url: '/api/v1/products.json',
           method: "GET",
-          params: { country_ids: $scope.country_ids,
-                type_ids: $scope.type_ids,
-                group_ids: $scope.group_ids,
-                group_ids: $scope.group_ids}
+          params: { "country_ids[]": $scope.country_ids,
+                "type_ids[]": $scope.type_ids,
+                "group_ids[]": $scope.group_ids,
+                "category_ids[]": $scope.category_ids}
        }).then(
           function(response){
 
@@ -131,10 +131,10 @@ ytwApp.controller('goodsControler',
       $http({
         url: '/api/v1/products.json',
         method: "GET",
-        params: { country_ids: $scope.country_ids,
-              type_ids: $scope.type_ids,
-              group_ids: $scope.group_ids,
-              group_ids: $scope.group_ids}
+        params: { "country_ids[]": $scope.country_ids,
+              "type_ids[]": $scope.type_ids,
+              "group_ids[]": $scope.group_ids,
+              "category_ids[]": $scope.category_ids}
      }).then(
         function(response){
 
@@ -174,10 +174,10 @@ ytwApp.controller('goodsControler',
     $http({
       url: '/api/v1/products.json',
       method: "GET",
-      params: { country_ids: $scope.country_ids,
-            type_ids: $scope.type_ids,
-            group_ids: $scope.group_ids,
-            group_ids: $scope.group_ids}
+      params: { "country_ids[]": $scope.country_ids,
+            "type_ids[]": $scope.type_ids,
+            "group_ids[]": $scope.group_ids,
+            "category_ids[]": $scope.category_ids}
    }).then(
       function(response){
 
@@ -195,6 +195,9 @@ ytwApp.controller('goodsControler',
           };
 
 
+///category_ids  do not show said designer
+
+
 // $scope.current_page =0
 $scope.trackOrder23 = function(age){
 //add album in the array
@@ -205,11 +208,11 @@ $scope.submitForm23 = function () {
 $http({
   url: '/api/v1/products.json',
   method: "GET",
-  params: { country_ids: $scope.country_ids,
-        type_ids: $scope.type_ids,
-        group_ids: $scope.group_ids,
+  params: { "country_ids[]": $scope.country_ids,
+        "type_ids[]": $scope.type_ids,
+        "group_ids[]": $scope.group_ids,
         page_number: $scope.current_page,
-        group_ids: $scope.group_ids}
+        "category_ids[]": $scope.category_ids}
 }).then(
   function(response){
 

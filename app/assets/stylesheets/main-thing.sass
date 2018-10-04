@@ -12,12 +12,6 @@
       font-size: 25px
       font-weight: 600
       text-transform: uppercase
-      // +breakpoint(small only)
-      //   padding-top: 0px
-      //   padding-left: 10px
-      //   &:before
-      //     left: 10px
-      //     right: 10px
       @media only screen and (max-width: 1024px)
         padding-top: 0px
         padding-left: 10px
@@ -148,6 +142,8 @@
       position: relative
       margin-bottom: 30px
       overflow: hidden
+      .img-bg
+        background-size: auto
       +breakpoint(small only)
         display: none
       &.midle
@@ -192,7 +188,7 @@
         pointer-events: none
         +transition(.5s)
         width: 100% !important
-        +translate(50%,0)
+        +translate(47.5%,0)
         left: 0
         ul
           column-count: 2
@@ -207,7 +203,7 @@
 
       .list-comntainer, .hover-list-box
         background-color: $blue
-        width: 50%
+        width: 53%
         position: absolute
         top: 0
         right: 0
@@ -230,9 +226,7 @@
               padding-left: 10px
 
         &.hover-list-box
-          width: 51%
-          // @media only screen and (max-width: 1024px)
-            left: -241px
+          width: 53%
         ul
           li
             padding-top: 5px
@@ -346,7 +340,7 @@
       right: 60px
     .btn-big
       display: block
-      width: 255px
+      width: 280px
       margin: 50px auto 0
     +breakpoint(medium down)
       padding: 70px 10px

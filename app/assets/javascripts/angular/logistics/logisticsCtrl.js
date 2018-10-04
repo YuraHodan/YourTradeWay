@@ -39,7 +39,7 @@ ytwApp.controller('logisticsController',
         });
 
 
-        $scope.country_ids= []
+        $scope.country_ids = []
         $scope.type_ids= []
         $scope.current_page
 
@@ -66,8 +66,8 @@ ytwApp.controller('logisticsController',
             $http({
               url: '/api/v1/logistics.json',
               method: "GET",
-              params: { country_ids: $scope.country_ids,
-                    type_ids: $scope.type_ids}
+              params: { "country_ids[]":$scope.country_ids,
+                    "type_ids[]": $scope.type_ids}
            }).then(
               function(response){
 
@@ -107,8 +107,8 @@ ytwApp.controller('logisticsController',
               $http({
                 url: '/api/v1/logistics.json',
                 method: "GET",
-                params: { country_ids: $scope.country_ids,
-                      type_ids: $scope.type_ids}
+                params: { "country_ids[]": $scope.country_ids,
+                      "type_ids[]": $scope.type_ids}
              }).then(
                 function(response){
 
@@ -137,8 +137,8 @@ $scope.submitForm23 = function () {
     $http({
       url: '/api/v1/logistics.json',
       method: "GET",
-      params: { country_ids: $scope.country_ids,
-            type_ids: $scope.type_ids,
+      params: { "country_ids[]": $scope.country_ids,
+            "type_ids[]": $scope.type_ids,
             page_number: $scope.current_page}
    }).then(
       function(response){

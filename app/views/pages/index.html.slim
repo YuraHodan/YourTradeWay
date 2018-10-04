@@ -1,4 +1,4 @@
-.main
+.main ng-controller="QuestionController"
   .slider
     = render "mainSlider", slides: @main_page_slider
   .tovars
@@ -8,26 +8,84 @@
       .row.collapse
         .columns
           .aasd
-            - 6.times do |e|
-              .one-tovar
-                .tovars-top-box
-                  .img-bg style="background-image: url(#{asset_path('photo/main/food.jpg')})"
-                  .tex-tovar
-                    h4
-                      | косметика
-                      br
-                      | и гигиена
+            / - 6.times do |e|
+            .one-tovar
+              .tovars-top-box
+                .img-bg style="background-image: url(#{asset_path('photo/main/food.jpg')})"
+                .tex-tovar
+                  h4
+                    | {{productsquestion[0].name}}
+              .tovars-list
+                ul
+                  li ng-repeat="second_menu in productsquestion[0].second_menu"
+                    a href=goods_path ng-model="second_menu.selected" ng-click="trackOrder2(second_menu)"
+                      |{{second_menu.title}}
+              .list-arrow= inline_svg "photo/main/svg/list-arrow-down.svg"
 
-                .tovars-list
-                  ul
-                    li Продукты питания
-                    li косметика и гигиена
-                    li товары для дома
-                    li канцелярские товары
-                    li автотовары
-                    li товары для животных
-                    li товары для животных
-                .list-arrow= inline_svg "photo/main/svg/list-arrow-down.svg"
+            .one-tovar
+              .tovars-top-box
+                .img-bg style="background-image: url(#{asset_path('photo/main/cosm.jpg')})"
+                .tex-tovar
+                  h4
+                    | {{productsquestion[1].name}}
+              .tovars-list
+                ul
+                  li ng-repeat="second_menu in productsquestion[1].second_menu"
+                    a href=goods_path ng-model="second_menu.selected" ng-click="trackOrder2(second_menu)"
+                      |{{second_menu.title}}
+              .list-arrow= inline_svg "photo/main/svg/list-arrow-down.svg"
+
+            .one-tovar
+              .tovars-top-box
+                .img-bg style="background-image: url(#{asset_path('photo/main/home.jpg')})"
+                .tex-tovar
+                  h4
+                    | {{productsquestion[2].name}}
+              .tovars-list
+                ul
+                  li ng-repeat="second_menu in productsquestion[2].second_menu"
+                    a href=goods_path ng-model="second_menu.selected" ng-click="trackOrder2(second_menu)"
+                      |{{second_menu.title}}
+              .list-arrow= inline_svg "photo/main/svg/list-arrow-down.svg"
+
+            .one-tovar
+              .tovars-top-box
+                .img-bg style="background-image: url(#{asset_path('photo/main/stationery.jpg')})"
+                .tex-tovar
+                  h4
+                    | {{productsquestion[3].name}}
+              .tovars-list
+                ul
+                  li ng-repeat="second_menu in productsquestion[3].second_menu"
+                    a href=goods_path ng-model="second_menu.selected" ng-click="trackOrder2(second_menu)"
+                      |{{second_menu.title}}
+              .list-arrow= inline_svg "photo/main/svg/list-arrow-down.svg"
+
+            .one-tovar
+              .tovars-top-box
+                .img-bg style="background-image: url(#{asset_path('photo/main/auto.jpg')})"
+                .tex-tovar
+                  h4
+                    | {{productsquestion[4].name}}
+              .tovars-list
+                ul
+                  li ng-repeat="second_menu in productsquestion[4].second_menu"
+                    a href=goods_path ng-model="second_menu.selected" ng-click="trackOrder2(second_menu)"
+                      |{{second_menu.title}}
+              .list-arrow= inline_svg "photo/main/svg/list-arrow-down.svg"
+
+            .one-tovar
+              .tovars-top-box
+                .img-bg style="background-image: url(#{asset_path('photo/main/agro.jpg')})"
+                .tex-tovar
+                  h4
+                    | {{productsquestion[5].name}}
+              .tovars-list
+                ul
+                  li ng-repeat="second_menu in productsquestion[5].second_menu"
+                    a href=goods_path ng-model="second_menu.selected" ng-click="trackOrder2(second_menu)"
+                      |{{second_menu.title}}
+              .list-arrow= inline_svg "photo/main/svg/list-arrow-down.svg"
 
 
 
@@ -35,86 +93,76 @@
     .row
       .medium-6.columns
         .one-list-box
-          .img-bg style="background-image: url(#{asset_path('photo/main/distribute.jpg')})"
+          .img-bg style="background-image: url(#{asset_path('photo/main/manufactude.jpg')})"
           .list-comntainer
             .content-list-comntainer
-              h3 призвадители
+              h3
+                a href=products_path  Производители
               ul
-                li Продукты питания
-                li косметика и гигиена
-                li товары для дома
-                li канцелярские товары
-                li автотовары
-                li товары для животных
+                li  ng-repeat="factorie in questionfactories"
+                  a href=products_path ng-model="factorie.selected" ng-click="trackOrder(factorie)"
+                    | {{factorie.name}}
+
+
       .medium-6.columns.bg
         .one-list-box.hover-list.long-list
           .img-bg style="background-image: url(#{asset_path('photo/main/distribute.jpg')})"
           .hover-list-box.destreb
-            h3 дистрибюторь
+            h3
+              a href=distributors_path  Дистрибьюторы
             ul
-              li Продукты питания
-              li сырье
-              li бытовая химия / косметика
-              li посуда
-              li текстиль / спорт товары
-              li Электротовары
-              li Мебель
-              li Строительные аксессуары
-              li Медицина
-              li Промышленное оборудование
-              li Автотовары
-              li Канцтовары
+              li ng-repeat="distributor in questiondistributors"
+                a href=distributors_path ng-model="distributor.selected" ng-click="trackOrder(distributor)"
+                  | {{distributor.name}}
           #rotate2= inline_svg "photo/main/svg/list-arrow-top.svg"
 
-      .medium-6.columns
-        .one-list-box.midle
-          .img-bg style="background-image: url(#{asset_path('photo/main/distribute.jpg')})"
-          .list-comntainer.destreb
-            .content-list-comntainer
-              h3 дистрибюторь
-              ul
-                li Продукты питания
-                li сырье
-                li бытовая химия / косметика
-                li посуда
-                li текстиль / спорт товары
-                li Электротовары
-                li Мебель
-                li Строительные аксессуары
-                li Медицина
-                li Промышленное оборудование
-                li Автотовары
-                li Канцтовары
+      / .medium-6.columns
+      /   .one-list-box.midle
+      /     .img-bg style="background-image: url(#{asset_path('photo/main/distribute.jpg')})"
+      /     .list-comntainer.destreb
+      /       .content-list-comntainer
+      /         h3 дистрибюторь
+      /         ul
+      /           li Продукты питания
+      /           li сырье
+      /           li бытовая химия / косметика
+      /           li посуда
+      /           li текстиль / спорт товары
+      /           li Электротовары
+      /           li Мебель
+      /           li Строительные аксессуары
+      /           li Медицина
+      /           li Промышленное оборудование
+      /           li Автотовары
+      /           li Канцтовары
 
 
 
 
       .medium-6.columns
         .one-list-box
-          .img-bg style="background-image: url(#{asset_path('photo/main/distribute.jpg')})"
+          .img-bg style="background-image: url(#{asset_path('photo/main/market.jpg')})"
           .list-comntainer.marcet
             .content-list-comntainer
-              h3 маркеть
+              h3
+                a href=markets_path  Маркеты
               ul
-                li супермаркет
-                li канцелярський
-                li вещевой
-                li строительный
-                li промышленный
-                li электроника
-                li мебельный
-                li смешанный
+                li ng-repeat="markets in questionmarkets"
+                  a href=markets_path ng-model="markets.selected" ng-click="trackOrder(markets)"
+                    | {{markets.name}}
+
+
       .medium-6.columns
         .one-list-box.logic
-          .img-bg style="background-image: url(#{asset_path('photo/main/distribute.jpg')})"
+          .img-bg style="background-image: url(#{asset_path('photo/main/delivery.jpg')})"
           .list-comntainer.logic
             .content-list-comntainer
-              h3 логистика
+              h3
+                a href=logistics_path  Логистика
               ul
-                li железнодорожный
-                li автотранспорт
-                li авиаперевозки
-                li морской транспорт
+                li ng-repeat="logistic in questionlogistic"
+                  a href=logistics_path ng-model="logistic.selected" ng-click="trackOrder(logistic)"
+                    | {{logistic.name}}
 
 
 
@@ -129,51 +177,37 @@
             h3 призвадители
             .more-info
               ul
-                li Продукты питания
-                li косметика и гигиена
-                li товары для дома
-                li канцелярские товары
-                li автотовары
-                li товары для животных
+                li  ng-repeat="factorie in questionfactories"
+                  a href=products_path ng-model="factorie.selected" ng-click="trackOrder(factorie)"
+                    | {{factorie.name}}
+
         .medium-3.columns
           .show-info.gren
             h3 дистрибюторь
             .more-info
               ul
-                li Продукты питания
-                li сырье
-                li бытовая химия / косметика
-                li посуда
-                li текстиль / спорт товары
-                li Электротовары
-                li Мебель
-                li Строительные аксессуары
-                li Медицина
-                li Промышленное оборудование
-                li Автотовары
-                li Канцтовары
+                li ng-repeat="distributor in questiondistributors"
+                  a href=distributors_path ng-model="distributor.selected" ng-click="trackOrder(distributor)"
+                    | {{distributor.name}}
+
         .medium-3.columns
           .show-info.red
             h3 маркеть
             .more-info
               ul
-                li супермаркет
-                li канцелярський
-                li вещевой
-                li строительный
-                li промышленный
-                li электроника
-                li мебельный
-                li смешанный
+                li ng-repeat="markets in questionmarkets"
+                  a href=markets_path ng-model="markets.selected" ng-click="trackOrder(markets)"
+                    | {{markets.name}}
+
         .medium-3.columns
           .show-info.orange
             h3 логистика
             .more-info
               ul
-                li железнодорожный
-                li автотранспорт
-                li авиаперевозки
-                li морской транспорт
+                li ng-repeat="logistic in questionlogistic"
+                  a href=logistics_path ng-model="logistic.selected" ng-click="trackOrder(logistic)"
+                    | {{logistic.name}}
+                    
       .medium-6.columns
         .one-list-box
           .img-bg style="background-image: url(#{asset_path('photo/main/distribute.jpg')})"

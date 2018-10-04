@@ -81,9 +81,9 @@ ytwApp.controller('producerControler',
             $http({
               url: '/api/v1/manufactures.json',
               method: "GET",
-              params: { country_ids: $scope.country_ids,
-                    type_ids: $scope.type_ids,
-                    group_ids: $scope.group_ids}
+              params: { "country_ids[]": $scope.country_ids,
+                    "type_ids[]": $scope.type_ids,
+                    "group_ids[]": $scope.group_ids}
             }).then(
               function(response){
 
@@ -122,9 +122,9 @@ ytwApp.controller('producerControler',
         $http({
           url: '/api/v1/manufactures.json',
           method: "GET",
-          params: { country_ids: $scope.country_ids,
-                type_ids: $scope.type_ids,
-                group_ids: $scope.group_ids}
+          params: { "country_ids[]": $scope.country_ids,
+                "type_ids[]": $scope.type_ids,
+                "group_ids[]": $scope.group_ids}
        }).then(
           function(response){
 
@@ -164,9 +164,9 @@ ytwApp.controller('producerControler',
     $http({
       url: '/api/v1/manufactures.json',
       method: "GET",
-      params: { country_ids: $scope.country_ids,
-            type_ids: $scope.type_ids,
-            group_ids: $scope.group_ids}
+      params: { "country_ids[]": $scope.country_ids,
+            "type_ids[]": $scope.type_ids,
+            "group_ids[]": $scope.group_ids}
    }).then(
       function(response){
 
@@ -193,9 +193,9 @@ ytwApp.controller('producerControler',
           $http({
             url: '/api/v1/manufactures.json',
             method: "GET",
-            params: { country_ids: $scope.country_ids,
-                  type_ids: $scope.type_ids,
-                  group_ids: $scope.group_ids,
+            params: { "country_ids[]": $scope.country_ids,
+                  "type_ids[]": $scope.type_ids,
+                  "group_ids[]": $scope.group_ids,
                   page_number: $scope.current_page}
           }).then(
             function(response){

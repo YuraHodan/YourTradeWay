@@ -73,8 +73,8 @@ ytwApp.controller('marcetControler',
                     $http({
                       url: '/api/v1/markets.json',
                       method: "GET",
-                      params: { country_ids: $scope.country_ids,
-                            type_ids: $scope.type_ids}
+                      params: { "country_ids[]": $scope.country_ids,
+                            "type_ids[]": $scope.type_ids}
                     }).then(
                       function(response){
 
@@ -112,8 +112,8 @@ ytwApp.controller('marcetControler',
         $http({
           url: '/api/v1/markets.json',
           method: "GET",
-          params: { country_ids: $scope.country_ids,
-                type_ids: $scope.type_ids}
+          params: { "country_ids[]": $scope.country_ids,
+                "type_ids[]": $scope.type_ids}
        }).then(
           function(response){
 
@@ -142,8 +142,8 @@ $scope.submitForm23 = function () {
 $http({
   url: '/api/v1/markets.json',
   method: "GET",
-  params: { country_ids: $scope.country_ids,
-        type_ids: $scope.type_ids,
+  params: { "country_ids[]": $scope.country_ids,
+        "type_ids[]": $scope.type_ids,
         page_number: $scope.current_page}
 }).then(
   function(response){
