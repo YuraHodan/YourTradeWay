@@ -1,7 +1,7 @@
-.recomendation-tovars
+.recomendation-tovars ng-if="recom_markets != ''"
   .recomendation-text.color-line.red-block
     .title рекомендаии
-  .recommendation-goods ng-repeat="markets_recom in recom_markets"
+  .recommendation-goods ng-repeat="markets_recom in recom_markets | limitTo : 3"
     .medium-4.columns
       .border-producers.color-line.red-block
         .one-new-producers

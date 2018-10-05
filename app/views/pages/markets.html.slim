@@ -21,7 +21,7 @@
 
       .dubl-select
         .accordion-button.opened
-          p afdsfdsf
+          p afdsfdsf222
           .svg-slid = inline_svg "svg/ic_keyboard_arrow_down_black_24px.svg"
         .accordion-inner.show
 
@@ -29,7 +29,10 @@
             form name="userForm2" ng-submit="submitForm2()"
               ul.read-more-wrap ng-repeat="markets in questionmarkets"
                 li
-                  input type="checkbox" ng-model="markets.selected" ng-change='trackOrder2(markets)'  value="{{markets.id}}" ng-click="submitForm2().submit()"  {{markets.name}}
+                  label.container
+                    |  {{markets.name}}
+                    input type="checkbox" ng-model="markets.selected" ng-change='trackOrder2(markets)'  value="{{markets.id}}" ng-click="submitForm2().submit()"
+                    span.checkmark
           .remove-all
             .x-component = inline_svg "photo/main/svg/filter_clear.svg"
             .ramove-text
@@ -70,7 +73,10 @@
                 .ramove-text очистить все
         /// smole select
         .selector
-          = render "advertisingSlider"
+          / = render "advertisingSlider"
+          .slideshow-container ng-repeat="side_slid in side_slider"
+            .mySlides.fade
+              .img-bg style="background-image: url('{{side_slid.image_url}}')"
     .medium-9.columns
       .topgoods
         .topgoods-tex.color-line.gray-block
@@ -101,7 +107,7 @@
 
     .medium-9.columns
       .salse-all
-        .sales-leaders ng-repeat="markets_all in all_markets"
+        .sales-leaders ng-repeat="markets_all in all_markets | limitTo : 6"
           .medium-4.columns
             .border-producers.color-line.red-block
               .one-new-producers
@@ -112,30 +118,40 @@
                     | {{markets_all.country}}
                   .product-name
                     | {{markets_all.title}}
-    / .medium-9.columns
-    /   .salse-all
-    /     -@markets.each do |market|
-    /       .medium-4.columns
-    /         .border-producers.color-line.red-block
-    /           .one-new-producers
-    /             a.img-bg href=market_path(market.id) style="background-image: url(#{market.logo_image.url})"
-    /           .description
-    /             .description-txt
-    /               .maker
-    /                 =market.country&.title
-    /               .product-name
-    /                 =market.title
+
+
+  .row.columns-right
     .medium-9.columns
       = render "recomendationmarket"
-    / .medium-9.columns
-    /   .salse-all
-    /     .medium-4.columns  ng-repeat="product in records | limitTo : 6"
-    /       .border-producers.color-line.red-block
-    /         .one-new-producers
-    /           .img-bg style="background-image: url(#{asset_path('photo/main/logos/brands_icon_1.png')})"
-    /         .description
-    /           .description-txt
-    /             .maker
-    /               | {{product.maker}}
-    /             .product-name
-    /               | {{product.product}}
+
+    .medium-9.columns
+      .salse-all
+        .sales-leaders ng-repeat="markets_all in all_markets | limitTo : 12:6"
+          .medium-4.columns
+            .border-producers.color-line.red-block
+              .one-new-producers
+                a.img-bg href="market/{{markets_all.id}}" style="background-image: url('{{markets_all.image_url}}')"
+              .description
+                .description-txt
+                  .maker
+                    | {{markets_all.country}}
+                  .product-name
+                    | {{markets_all.title}}
+
+
+
+    .medium-9.columns
+      .pagination
+        form.form-pagination name="userForm23" ng-submit="submitForm()"
+          ul ng-if="current_page >=4"
+            li
+              input type="button" ng-model="age.selected" value="{{current_page-1}}" ng-click="trackOrder23(current_page-3); submitForm23().submit()"
+          ul ng-if="current_page >=3"
+            li
+              input type="button" ng-model="age.selected" value="{{current_page-1}}" ng-click="trackOrder23(current_page-2); submitForm23().submit()"
+          ul ng-if="current_page >=2"
+            li
+              input type="button" ng-model="age.selected" value="{{current_page-1}}" ng-click="trackOrder23(current_page-1); submitForm23().submit()"
+          ul ng-repeat="age in driverAges | limitTo : 3"
+            li
+              input.butnPag type="button" ng-model="age.selected" value="{{age}}" ng-click="trackOrder23(age); submitForm23()".

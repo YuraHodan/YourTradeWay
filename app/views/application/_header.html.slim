@@ -91,8 +91,8 @@
                 li
                   a.red href=markets_path  Маркеты
                   ul.redb
+                    .title ГРУПА МАРКЕТОВ
                     li.aqua ng-repeat="markets in questionmarkets"
-                      .title ГРУПА МАРКЕТОВ
                       a href=markets_path ng-model="markets.selected" ng-click="trackOrder(markets)"
                         | {{markets.name}}
 
@@ -100,9 +100,9 @@
                 // logistic
                 li
                   a.orange href=logistics_path  Логистика
-                  ul.orangb ng-repeat="logistic in questionlogistic"
-                    li.orange2
-                      .title логистика
+                  ul.orangb
+                    .title логистика
+                    li.orange2 ng-repeat="logistic in questionlogistic"
                       a href=logistics_path ng-model="logistic.selected" ng-click="trackOrder(logistic)"
                         | {{logistic.name}}
 

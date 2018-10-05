@@ -1,6 +1,6 @@
 class Api::V1::MenusController < Api::V1::BaseController
   def index
-
+    # binding.pry
     @menus =  {
       products:     map_menu(MainMenu.where(category: "Products")),
       markets:      map_menu(MainMenu.where(category: "Markets")),

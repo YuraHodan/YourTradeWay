@@ -21,7 +21,7 @@
 
         .dubl-select
           .accordion-button
-            p afdsfdsf2
+            p afdsfdsf23
             .svg-slid = inline_svg "svg/ic_keyboard_arrow_up_black_24px.svg"
           .accordion-inner.show
 
@@ -91,7 +91,10 @@
 
             /// smole select
         .selector.smole-none
-          = render "advertisingSlider"
+          / = render "advertisingSlider"
+          .slideshow-container ng-repeat="side_slid in side_slider"
+            .mySlides.fade
+              .img-bg style="background-image: url('{{side_slid.image_url}}')"
       .medium-9.columns.smole-none
         = render "goodsSlider1"
       .medium-9.columns.large-9
@@ -123,7 +126,7 @@
       .medium-9.columns
         / = render "recomendation"
         .vibe-goods
-          .medium-4.columns ng-repeat="products_all in all_products"
+          .medium-4.columns ng-repeat="products_all in all_products | limitTo : 6"
             .border-producers.color-line.yellow-block
               .one-new-product
                 a.img-bg href="article/{{products_all.id}}" style="background-image: url('{{products_all.image_url}}')"
@@ -138,5 +141,45 @@
                       | орієнтовочная цена:
                     .mony
                       | {{products_all.price}}$
+
+    .row.columns-right
       .medium-9.columns
         = render "recomendation"
+
+      .medium-9.columns
+        / = render "recomendation"
+        .vibe-goods
+          .medium-4.columns ng-repeat="products_all in all_products | limitTo : 12:6"
+            .border-producers.color-line.yellow-block
+              .one-new-product
+                a.img-bg href="article/{{products_all.id}}" style="background-image: url('{{products_all.image_url}}')"
+              .description
+                .description-txt
+                  .maker
+                    | {{products_all.title}}
+                  .product-name
+                    | {{products_all.manufacture_title}}
+                  .price.color-line.gray-block
+                    .oriented-price
+                      | орієнтовочная цена:
+                    .mony
+                      | {{products_all.price}}$
+
+
+
+
+      .medium-9.columns
+        .pagination
+          form.form-pagination name="userForm23" ng-submit="submitForm()"
+            ul ng-if="current_page >=4"
+              li
+                input type="button" ng-model="age.selected" value="{{current_page-1}}" ng-click="trackOrder23(current_page-3); submitForm23().submit()"
+            ul ng-if="current_page >=3"
+              li
+                input type="button" ng-model="age.selected" value="{{current_page-1}}" ng-click="trackOrder23(current_page-2); submitForm23().submit()"
+            ul ng-if="current_page >=2"
+              li
+                input type="button" ng-model="age.selected" value="{{current_page-1}}" ng-click="trackOrder23(current_page-1); submitForm23().submit()"
+            ul ng-repeat="age in driverAges | limitTo : 3"
+              li
+                input.butnPag type="button" ng-model="age.selected" value="{{age}}" ng-click="trackOrder23(age); submitForm23()".

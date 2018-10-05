@@ -1,5 +1,11 @@
 ytwApp.controller('dustrubutorsControler',
     function QuestionController($scope, $http, $rootScope, $window){
+
+      setTimeout(function(){showSlides(slideIndex++)}, 1000);
+      setInterval(function(){
+        showSlides(slideIndex++);
+      }, 7000);
+
       $scope.type_ids= window.localStorage.getItem("storageArray");
       $scope.group_ids= window.localStorage.getItem("storageArray2");
       $scope.test = function(){
@@ -38,13 +44,24 @@ ytwApp.controller('dustrubutorsControler',
                 $scope.all_countries=response.data.countries;
                 $scope.current_page=response.data.current_page;
                 $scope.pages_count=response.data.pages_count;
+                $scope.side_slider=response.data.side_slider;
                 localStorage.removeItem('storageArray',JSON.stringify(""));
                 localStorage.removeItem('storageArray2',JSON.stringify(""));
+                var range = [];
+                for (var i = $scope.current_page; i <=$scope.pages_count; i++) {
+                  range.push(i)
+                }
+                $scope.driverAges = range;
         });
 
 
+        $scope.country_ids= []
+        $scope.type_ids= []
+        $scope.current_page
+        $scope.group_ids= []
+
         ////countries
-                  $scope.country_ids= []
+                  // $scope.country_ids= []
                 $scope.trackOrder = function(countries,$http){
                   //add album in the array
                    if(countries.selected){
@@ -63,7 +80,9 @@ ytwApp.controller('dustrubutorsControler',
             $http({
               url: '/api/v1/distributors.json',
               method: "GET",
-              params: { country_ids: $scope.country_ids}
+              params: { "country_ids[]": $scope.country_ids,
+                    "type_ids[]": $scope.type_ids,
+                    "group_ids[]": $scope.group_ids}
            }).then(
               function(response){
 
@@ -73,7 +92,7 @@ ytwApp.controller('dustrubutorsControler',
                         // $scope.all_countries=response.data.countries;
                         $scope.current_page=response.data.current_page;
                         $scope.pages_count=response.data.pages_count;
-                // });
+                        $scope.side_slider=response.data.side_slider;
               },
               function(response){
               }
@@ -83,7 +102,7 @@ ytwApp.controller('dustrubutorsControler',
 
 /// type_ids
 
-    $scope.type_ids= []
+    // $scope.type_ids= []
   $scope.trackOrder2 = function(distributor){
     //add album in the array
      if(distributor.selected){
@@ -102,7 +121,9 @@ ytwApp.controller('dustrubutorsControler',
           $http({
             url: '/api/v1/distributors.json',
             method: "GET",
-            params: { type_ids: $scope.type_ids}
+            params: { "country_ids[]": $scope.country_ids,
+                  "type_ids[]": $scope.type_ids,
+                  "group_ids[]": $scope.group_ids}
          }).then(
             function(response){
 
@@ -112,7 +133,7 @@ ytwApp.controller('dustrubutorsControler',
                       // $scope.all_countries=response.data.countries;
                       $scope.current_page=response.data.current_page;
                       $scope.pages_count=response.data.pages_count;
-              // });
+                      $scope.side_slider=response.data.side_slider;
             },
             function(response){
             }
@@ -123,7 +144,7 @@ ytwApp.controller('dustrubutorsControler',
 /// group_ids
 
 
-      $scope.group_ids= []
+      // $scope.group_ids= []
       $scope.trackOrder3 = function(second_menu){
       //add album in the array
        if(second_menu.selected){
@@ -142,7 +163,9 @@ ytwApp.controller('dustrubutorsControler',
           $http({
             url: '/api/v1/distributors.json',
             method: "GET",
-            params: { group_ids: $scope.group_ids}
+            params: { "country_ids[]": $scope.country_ids,
+                  "type_ids[]": $scope.type_ids,
+                  "group_ids[]": $scope.group_ids}
          }).then(
             function(response){
 
@@ -152,12 +175,44 @@ ytwApp.controller('dustrubutorsControler',
                       // $scope.all_countries=response.data.countries;
                       $scope.current_page=response.data.current_page;
                       $scope.pages_count=response.data.pages_count;
-              // });
+                      $scope.side_slider=response.data.side_slider;
             },
             function(response){
             }
          )
                 };
+
+
+// $scope.current_page =0
+$scope.trackOrder23 = function(age){
+//add album in the array
+   $scope.current_page = (age);
+   console.log($scope.current_page);
+}
+$scope.submitForm23 = function () {
+$http({
+  url: '/api/v1/distributors.json',
+  method: "GET",
+  params: { "country_ids[]": $scope.country_ids,
+        "type_ids[]": $scope.type_ids,
+        "group_ids[]": $scope.group_ids,
+        page_number: $scope.current_page}
+}).then(
+  function(response){
+
+    $scope.top_logistics=response.data.top_logistics;
+    $scope.all_logistics=response.data.logistics;
+    $scope.recomdistributors=response.data.recomend_distr
+    // $scope.all_countries=response.data.countries;
+    $scope.current_page=response.data.current_page;
+    $scope.pages_count=response.data.pages_count;
+    $scope.side_slider=response.data.side_slider;
+  },
+  function(response){
+  }
+)
+    };
+
 
     }
 )
