@@ -27,11 +27,11 @@
 }(jQuery));
 
 // Click functions for popup
-$('.open-popup').click(function(){
-  $('#'+$(this).data('id')).openPopup({
-    anim: (!$(this).attr('data-animation') || $(this).data('animation') == null) ? 'fade' : $(this).data('animation')
-  });
-});
+// $('.open-popup').click(function(){
+//   $('#'+$(this).data('id')).openPopup({
+//     anim: (!$(this).attr('data-animation') || $(this).data('animation') == null) ? 'fade' : $(this).data('animation')
+//   });
+// });
 $('.close-popup').click(function(){
   $('#'+$(this).data('id')).closePopup({
     anim: (!$(this).attr('data-animation') || $(this).data('animation') == null) ? 'fade' : $(this).data('animation')

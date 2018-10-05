@@ -13,4 +13,6 @@ $document.on 'submit', 'form.ajax-form', (e)->
 			# $(this)[0].reset();
 			# document.location.reload(true);
 			# of reload
+			$(".popup2").css 'display' , 'block'
+			$(".popup").css 'display' , 'block'
 	})

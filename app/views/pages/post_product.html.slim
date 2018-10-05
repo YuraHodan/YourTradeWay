@@ -39,7 +39,7 @@
             .lable-one
               .label Тарифньй план:
               / .span  *
-            select#nazn.selectid.form-control name="tariff" required="" ng-model="user.tariff" type="text"
+            select#nazn.selectid.form-control name="selected_fare" required="" ng-model="user.tariff" type="text"
               //ng-model="user.tariff"
               option#one1.sel_dok value="free"  free
               option#two1.sel_dok value="basic"  basic
@@ -62,9 +62,9 @@
               .label тип призводства план:
               / .span  *
             select#nazn.selectid.form-control name="goods" required="" ng-model="user.goods" type="text"
-              option   питания
-              option   косметика
-              option   для дома
+              option питания
+              option косметика
+              option для дома
 
 
           /logotype
@@ -105,7 +105,7 @@
           .form-group.fails ng-class=("{ 'has-error' : usubmitForm.list.$invalid && !usubmitForm.list.$pristine }")
             .lable-one
               .label Прайс лист:
-            input#upload.custom-file-input name="list" ng-model="user.list"  type="file"
+            input#upload.custom-file-input name="price_list" ng-model="user.list"  type="file"
           // sert
           .form-group.fails ng-class=("{ 'has-error' : usubmitForm.sert.$invalid && !usubmitForm.sert.$pristine }")
             .lable-one
@@ -154,7 +154,7 @@
             .lable-one
               .label страна:
               / .span  *
-            input.text-input.form-control name="fio" ng-model="user.fiocountry" required="" type="text" minlength="5" placeholder="страна"
+            input.text-input.form-control name="contact_person" ng-model="user.fiocountry" required="" type="text" minlength="5" placeholder="страна"
             p.help-block ng-show=("usubmitForm.fio.$invalid && !usubmitForm.fio.$pristine")  You fio is street.
           // email
           .form-group ng-class=("{ 'has-error' : usubmitForm.email.$invalid && !usubmitForm.email.$pristine }")
@@ -167,7 +167,7 @@
           .form-group ng-class=("{ 'has-error' : usubmitForm.phonefio.$invalid && !usubmitForm.phonefio.$pristine }")
             .lable-one
               .label Телефон:
-            input.text-input.form-control required="" name="phonefio" ng-model="user.phonefio" type="text"  placeholder="+91-636-78658" ng-pattern="phoneNumbr"
+            input.text-input.form-control required="" name="contact_person_phone" ng-model="user.phonefio" type="text"  placeholder="+91-636-78658" ng-pattern="phoneNumbr"
             p.help-block.phone ng-show="usubmitForm.phonefio.$error.pattern"  Please match pattern [+91 036 78658 or 91 036 78658]
           //fax
           .form-group ng-class=("{ 'has-error' : usubmitForm.fax.$invalid && !usubmitForm.fax.$pristine }")
@@ -191,7 +191,7 @@
             .lable-one
               .label Тарифньй план:
               / .span  *
-            select#nazn.selectid.form-control name="tariff" required=""
+            select#nazn.selectid.form-control name="selected_fare" required=""
               //ng-model="user.tariff"
               option#one1.sel_dok value="free"  free
               option#two1.sel_dok value="basic"  basic
@@ -208,15 +208,6 @@
 
 
 
-          / //manufacturers
-          / .form-group ng-class=("{ 'has-error' : dusubmitForm.tariff.$invalid && !dusubmitForm.tariff.$pristine }")
-          /   .lable-one
-          /     .label тип призводства план:
-          /     / .span  *
-          /   select#nazn.selectid.form-control name="tariff" required=""
-          /     option value="1"  питания
-          /     option value="2"  косметика
-          /     option value="3"  для дома
 
 
           //logotype
@@ -257,7 +248,7 @@
           .form-group.fails ng-class=("{ 'has-error' : usubmitForm2.list.$invalid && !usubmitForm2.list.$pristine }")
             .lable-one
               .label Прайс лист:
-            input#upload.custom-file-input name="list" ng-model="user.list"  type="file"
+            input#upload.custom-file-input name="price_list" ng-model="user.list"  type="file"
           // sert
           .form-group.fails ng-class=("{ 'has-error' : usubmitForm2.sert.$invalid && !usubmitForm2.sert.$pristine }")
             .lable-one
@@ -306,7 +297,7 @@
             .lable-one
               .label страна:
               / .span  *
-            input.text-input.form-control name="fio" ng-model="user.fio" required="" type="text" minlength="5" placeholder="страна"
+            input.text-input.form-control name="contact_person" ng-model="user.fio" required="" type="text" minlength="5" placeholder="страна"
             p.help-block ng-show=("usubmitForm2.fio.$invalid && !usubmitForm2.fio.$pristine")  You fio is street.
           // email
           .form-group ng-class=("{ 'has-error' : usubmitForm2.email.$invalid && !usubmitForm2.email.$pristine }")
@@ -319,7 +310,7 @@
           .form-group ng-class=("{ 'has-error' : usubmitForm2.phonefio.$invalid && !usubmitForm2.phonefio.$pristine }")
             .lable-one
               .label Телефон:
-            input.text-input.form-control required="" name="phonefio" ng-model="user.phonefio" type="text"  placeholder="+91-636-78658" ng-pattern="phoneNumbr"
+            input.text-input.form-control required="" name="contact_person_phone" ng-model="user.phonefio" type="text"  placeholder="+91-636-78658" ng-pattern="phoneNumbr"
             p.help-block.phone ng-show="usubmitForm2.phonefio.$error.pattern"  Please match pattern [+91 036 78658 or 91 036 78658]
           //fax
           .form-group ng-class=("{ 'has-error' : usubmitForm2.fax.$invalid && !usubmitForm2.fax.$pristine }")
@@ -344,7 +335,7 @@
             .lable-one
               .label Тарифньй план:
               / .span  *
-            select#nazn.selectid.form-control name="tariff" required=""
+            select#nazn.selectid.form-control name="selected_fare" required=""
               //ng-model="user.tariff"
               option#one1.sel_dok value="free"  free
               option#two1.sel_dok value="basic"  basic
@@ -361,15 +352,6 @@
 
 
 
-          / //manufacturers
-          / .form-group ng-class=("{ 'has-error' : musubmitForm.tariff.$invalid && !musubmitForm.tariff.$pristine }")
-          /   .lable-one
-          /     .label тип призводства план:
-          /     / .span  *
-          /   select#nazn.selectid.form-control name="tariff" required=""
-          /     option value="1"  питания
-          /     option value="2"  косметика
-          /     option value="3"  для дома
 
 
           //logotype
@@ -410,7 +392,7 @@
           .form-group.fails ng-class=("{ 'has-error' : usubmitForm3.list.$invalid && !usubmitForm3.list.$pristine }")
             .lable-one
               .label Прайс лист:
-            input#upload.custom-file-input name="list" ng-model="user.list"  type="file"
+            input#upload.custom-file-input name="price_list" ng-model="user.list"  type="file"
           // sert
           .form-group.fails ng-class=("{ 'has-error' : usubmitForm3.sert.$invalid && !usubmitForm3.sert.$pristine }")
             .lable-one
@@ -459,7 +441,7 @@
             .lable-one
               .label страна:
               / .span  *
-            input.text-input.form-control name="fio" ng-model="user.fio" required="" type="text" minlength="5" placeholder="страна"
+            input.text-input.form-control name="contact_person" ng-model="user.fio" required="" type="text" minlength="5" placeholder="страна"
             p.help-block ng-show=("usubmitForm3.fio.$invalid && !usubmitForm3.fio.$pristine")  You fio is street.
           // email
           .form-group ng-class=("{ 'has-error' : usubmitForm3.email.$invalid && !usubmitForm3.email.$pristine }")
@@ -472,7 +454,7 @@
           .form-group ng-class=("{ 'has-error' : usubmitForm3.phonefio.$invalid && !usubmitForm3.phonefio.$pristine }")
             .lable-one
               .label Телефон:
-            input.text-input.form-control required="" name="phonefio" ng-model="user.phonefio" type="text"  placeholder="+91-636-78658" ng-pattern="phoneNumbr"
+            input.text-input.form-control required="" name="contact_person_phone" ng-model="user.phonefio" type="text"  placeholder="+91-636-78658" ng-pattern="phoneNumbr"
             p.help-block.phone ng-show="usubmitForm3.phonefio.$error.pattern"  Please match pattern [+91 036 78658 or 91 036 78658]
           //fax
           .form-group ng-class=("{ 'has-error' : usubmitForm3.fax.$invalid && !usubmitForm3.fax.$pristine }")
@@ -497,7 +479,7 @@
             .lable-one
               .label Тарифньй план:
               / .span  *
-            select#nazn.selectid.form-control name="tariff" required=""
+            select#nazn.selectid.form-control name="selected_fare" required=""
               //ng-model="user.tariff"
               option#one1.sel_dok value="free"  free
               option#two1.sel_dok value="basic"  basic
@@ -514,15 +496,6 @@
 
 
 
-          / //manufacturers
-          / .form-group ng-class=("{ 'has-error' : lusubmitForm.tariff.$invalid && !lusubmitForm.tariff.$pristine }")
-          /   .lable-one
-          /     .label тип призводства план:
-          /     / .span  *
-          /   select#nazn.selectid.form-control name="tariff" required=""
-          /     option value="1"  питания
-          /     option value="2"  косметика
-          /     option value="3"  для дома
 
 
           //logotype
@@ -563,7 +536,7 @@
           .form-group.fails ng-class=("{ 'has-error' : usubmitForm4.list.$invalid && !usubmitForm4.list.$pristine }")
             .lable-one
               .label Прайс лист:
-            input#upload.custom-file-input name="list" ng-model="user.list"  type="file"
+            input#upload.custom-file-input name="price_list" ng-model="user.list"  type="file"
           // sert
           .form-group.fails ng-class=("{ 'has-error' : usubmitForm4.sert.$invalid && !usubmitForm4.sert.$pristine }")
             .lable-one
@@ -610,9 +583,9 @@
           // fio
           .form-group ng-class=("{ 'has-error' : usubmitForm4.fio.$invalid && !usubmitForm4.fio.$pristine }")
             .lable-one
-              .label страна:
+              .label ФИО:
               / .span  *
-            input.text-input.form-control name="fio" ng-model="user.fio" required="" type="text" minlength="5" placeholder="страна"
+            input.text-input.form-control name="contact_person" ng-model="user.fio" required="" type="text" minlength="5" placeholder="страна"
             p.help-block ng-show=("usubmitForm4.fio.$invalid && !usubmitForm4.fio.$pristine")  You fio is street.
           // email
           .form-group ng-class=("{ 'has-error' : usubmitForm4.email.$invalid && !usubmitForm4.email.$pristine }")
@@ -625,7 +598,7 @@
           .form-group ng-class=("{ 'has-error' : usubmitForm4.phonefio.$invalid && !usubmitForm4.phonefio.$pristine }")
             .lable-one
               .label Телефон:
-            input.text-input.form-control required="" name="phonefio" ng-model="user.phonefio" type="text"  placeholder="+91-636-78658" ng-pattern="phoneNumbr"
+            input.text-input.form-control required="" name="contact_person_phone" ng-model="user.phonefio" type="text"  placeholder="+91-636-78658" ng-pattern="phoneNumbr"
             p.help-block.phone ng-show="usubmitForm4.phonefio.$error.pattern"  Please match pattern [+91 036 78658 or 91 036 78658]
           //fax
           .form-group ng-class=("{ 'has-error' : usubmitForm4.fax.$invalid && !usubmitForm4.fax.$pristine }")

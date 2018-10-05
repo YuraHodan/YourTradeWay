@@ -1,33 +1,3 @@
-// ytwApp.controller('registrationController', ['$scope', function($scope,$http) {
-// $scope.phoneNumbr = /^\+?\d{2}[- ]?\d{3}[- ]?\d{5}$/;
-// $scope.faxNumbr = /^\+?\d{2}[- ]?\d{3}[- ]?\d{10}$/;
-//
-//
-// 		$scope.user = {};
-//      // function to submit the form after all validation has occurred
-//
-//          // $scope.save = function (answer, usubmitForm){
-//          //     if(usubmitForm.$valid){
-// 				 //
-//          //         $http.post("registration", answer).then(function success (response) {
-//          //             $scope.user=user.data;
-// 				 //
-//          //         });
-//          //     }
-//          // };
-//
-//
-//
-//
-//
-// 		$scope.user.imageSrc = "";
-//
-// 	     $scope.$on("fileProgress", function(e, progress) {
-// 	       $scope.progress = progress.loaded / progress.total;
-// 	     });
-//
-//
-// }]);
 
 registrationCtrl.$inject = ['$http', '$scope'];
 
@@ -166,7 +136,7 @@ ytwApp.directive("imgUpload",function($http,$compile){
 					url : "@",
 					method : "@"
 				},
-				template : 	'<input class="fileUpload" type="file" ng-model="user.foto" multiple />'+
+				template : 	'<input class="fileUpload" name="photo" type="file" ng-model="user.foto" multiple />'+
 							'<div class="dropzone">'+
 								'<div class="svgo"></div>'+
 								'<h3 class="msg">перетяните сюда ваши файли</h3>'+
