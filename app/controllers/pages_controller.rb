@@ -45,6 +45,21 @@ class PagesController < ApplicationController
     @contacts = Contact.all
   end
 
+  def premium
+    @free_manufacture = PremiumManufacture.find_by(type_of_plan: 'Free')
+    @basic_manufacture = PremiumManufacture.find_by(type_of_plan: 'Basic')
+    @platinum_manufacture = PremiumManufacture.find_by(type_of_plan: 'Platinum')
+    @free_distributor = PremiumDistributor.find_by(type_of_plan: 'Free')
+    @basic_distributor = PremiumDistributor.find_by(type_of_plan: 'Basic')
+    @platinum_distributor = PremiumDistributor.find_by(type_of_plan: 'Platinum')
+    @free_market = PremiumMarket.find_by(type_of_plan: 'Free')
+    @basic_market = PremiumMarket.find_by(type_of_plan: 'Basic')
+    @platinum_market = PremiumMarket.find_by(type_of_plan: 'Platinum')
+    @free_logistic = PremiumLogistic.find_by(type_of_plan: 'Free')
+    @basic_logistic = PremiumLogistic.find_by(type_of_plan: 'Basic')
+    @platinum_logistic = PremiumLogistic.find_by(type_of_plan: 'Platinum')
+  end
+
   def message
     # binding.pry  ##dsadasajkdkjqwnjkeqwjkehjkqsdhjkasjkdhasjkdqjkdqwjklndqwlkdnqwlneklklqwelkwq
       render json: {}

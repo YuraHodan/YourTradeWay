@@ -18,12 +18,12 @@
                   | free
                 .goods
                   .number
-                    | 1
+                    = @free_manufacture&.companies_count
                   .number-text
                     | компанія
                 .tovars
                   .number
-                    | 15
+                    = @free_manufacture&.products_count
                   .number-text
                     | товаров
                 .support
@@ -33,7 +33,7 @@
                     | кругосуточная поддержка
                 .impressions
                   .number
-                    | до 100 000
+                    = @free_manufacture&.show_count
                   .number-text
                     | рекламних показаний в год
                 .battons
@@ -46,12 +46,12 @@
                   | basic
                 .goods
                   .number
-                    | 1
+                    = @basic_manufacture&.companies_count
                   .number-text
                     | компанія
                 .tovars
                   .number
-                    | 25
+                    = @basic_manufacture&.products_count
                   .number-text
                     | товаров
                 .support
@@ -61,7 +61,7 @@
                     | кругосуточная поддержка
                 .impressions
                   .number
-                    | более 100 000
+                    = @basic_manufacture&.show_count
                   .number-text
                     | рекламних показаний в год
                 .support-platinum
@@ -79,12 +79,12 @@
                   | platinum
                 .goods
                   .number
-                    | 1
+                    = @platinum_manufacture&.companies_count
                   .number-text
                     | компанія
                 .tovars
                   .number
-                    | 50
+                    = @platinum_manufacture&.products_count
                   .number-text
                     | товаров
                 .support
@@ -94,7 +94,7 @@
                     | кругосуточная поддержка
                 .impressions
                   .number
-                    | более 100 000
+                    = @platinum_manufacture&.show_count
                   .number-text
                     | рекламних показаний в год
                 .support-platinum
@@ -118,12 +118,12 @@
                   | free
                 .goods
                   .number
-                    | 1
+                    = @free_distributor&.companies_count
                   .number-text
                     | компанія
                 .tovars
                   .number
-                    | 15
+                    = @free_distributor&.products_count
                   .number-text
                     | товаров
                 .support
@@ -133,7 +133,7 @@
                     | кругосуточная поддержка
                 .impressions
                   .number
-                    | до 100 000
+                    = @free_distributor&.show_count
                   .number-text
                     | рекламних показаний в год
                 .battons
@@ -146,12 +146,12 @@
                   | basic
                 .goods
                   .number
-                    | 1
+                    = @basic_distributor&.companies_count
                   .number-text
                     | компанія
                 .tovars
                   .number
-                    | 25
+                    = @basic_distributor&.products_count
                   .number-text
                     | товаров
                 .support
@@ -161,7 +161,7 @@
                     | кругосуточная поддержка
                 .impressions
                   .number
-                    | более 100 000
+                    = @basic_distributor&.show_count
                   .number-text
                     | рекламних показаний в год
                 .support-platinum
@@ -179,12 +179,12 @@
                   | platinum
                 .goods
                   .number
-                    | 1
+                    = @platinum_distributor&.companies_count
                   .number-text
                     | компанія
                 .tovars
                   .number
-                    | 50
+                    = @platinum_distributor&.products_count
                   .number-text
                     | товаров
                 .support
@@ -194,7 +194,7 @@
                     | кругосуточная поддержка
                 .impressions
                   .number
-                    | более 100 000
+                    = @platinum_distributor&.show_count
                   .number-text
                     | рекламних показаний в год
                 .support-platinum
@@ -218,12 +218,12 @@
                   | free
                 .goods
                   .number
-                    | 1
+                    = @free_market&.companies_count
                   .number-text
                     | компанія
                 .tovars
                   .number
-                    | 15
+                    = @free_market&.products_count
                   .number-text
                     | товаров
                 .support
@@ -233,7 +233,7 @@
                     | кругосуточная поддержка
                 .impressions
                   .number
-                    | до 100 000
+                    = @free_market&.show_count
                   .number-text
                     | рекламних показаний в год
                 .battons
@@ -246,12 +246,12 @@
                   | basic
                 .goods
                   .number
-                    | 1
+                    = @basic_market&.companies_count
                   .number-text
                     | компанія
                 .tovars
                   .number
-                    | 25
+                    = @basic_market&.products_count
                   .number-text
                     | товаров
                 .support
@@ -261,7 +261,7 @@
                     | кругосуточная поддержка
                 .impressions
                   .number
-                    | более 100 000
+                    = @basic_market&.show_count
                   .number-text
                     | рекламних показаний в год
                 .support-platinum
@@ -279,12 +279,12 @@
                   | platinum
                 .goods
                   .number
-                    | 1
+                    = @platinum_market&.companies_count
                   .number-text
                     | компанія
                 .tovars
                   .number
-                    | 50
+                    = @platinum_market&.products_count
                   .number-text
                     | товаров
                 .support
@@ -294,7 +294,7 @@
                     | кругосуточная поддержка
                 .impressions
                   .number
-                    | более 100 000
+                    = @platinum_market&.show_count
                   .number-text
                     | рекламних показаний в год
                 .support-platinum
@@ -318,12 +318,12 @@
                   | free
                 .goods
                   .number
-                    | 54
+                    = @free_logistic&.companies_count
                   .number-text
                     | компанія
                 .tovars
                   .number
-                    | 15
+                    = @free_logistic&.products_count
                   .number-text
                     | товаров
                 .support
@@ -333,7 +333,7 @@
                     | кругосуточная поддержка
                 .impressions
                   .number
-                    | до 1100 000
+                    = @free_logistic&.show_count
                   .number-text
                     | рекламних показаний в год
                 .battons
@@ -346,12 +346,12 @@
                   | basic
                 .goods
                   .number
-                    | 1
+                    = @basic_logistic&.companies_count
                   .number-text
                     | компанія
                 .tovars
                   .number
-                    | 25
+                    = @basic_logistic&.products_count
                   .number-text
                     | товаров
                 .support
@@ -361,7 +361,7 @@
                     | кругосуточная поддержка
                 .impressions
                   .number
-                    | более 100 000
+                    = @basic_logistic&.show_count
                   .number-text
                     | рекламних показаний в год
                 .support-platinum
@@ -379,12 +379,12 @@
                   | platinum
                 .goods
                   .number
-                    | 1
+                    = @platinum_logistic&.companies_count
                   .number-text
                     | компанія
                 .tovars
                   .number
-                    | 50
+                    = @platinum_logistic&.products_count
                   .number-text
                     | товаров
                 .support
@@ -394,7 +394,7 @@
                     | кругосуточная поддержка
                 .impressions
                   .number
-                    | более 100 000
+                    = @platinum_logistic&.show_count
                   .number-text
                     | рекламних показаний в год
                 .support-platinum
