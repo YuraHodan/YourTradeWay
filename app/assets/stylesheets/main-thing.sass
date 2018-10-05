@@ -24,11 +24,13 @@
         display: flex
         align-items: flex-start
         flex-wrap: wrap
+        text-transform: capitalize
     .one-tovar
       height: 400px
       width: 33.3%
       padding-right: 20px
       line-height: 1.7
+
       +breakpoint(small only)
         padding: 0px 10px
       li
@@ -38,7 +40,7 @@
       &:nth-child(3n)
         padding-right: 0
       &.opened
-        height: 550px
+        height: 720px
         .tovars-list
 
           ul

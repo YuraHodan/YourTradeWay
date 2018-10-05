@@ -136,3 +136,25 @@
   &:hover
     opacity: 0.6
     .ramove-text
+
+
+.new
+  .arrow[type="checkbox"]
+    display: none
+
+  .first
+    cursor: pointer
+    display: block
+    position: relative
+    left: 80%
+    margin-top: -50px
+
+  input[type="checkbox"]
+    ~ ul
+      height: 0
+      transform: scaleY(0)
+    &:checked ~ ul
+      height: 100%
+      transform-origin: top
+      transition: transform 0.2s ease-out
+      transform: scaleY(1)

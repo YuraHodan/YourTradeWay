@@ -31,7 +31,7 @@
 
 
       #goods.tabcontent
-        form.ajax-form action="/message" method="post" enctype="multipart/form-data" name="usubmitForm" ng-submit="submitForm()" novalidate=""
+        form.ajax-form action="/creating_unit" method="post" enctype="multipart/form-data" name="usubmitForm" ng-submit="submitForm()" novalidate=""
           /category
           input.d-none type="text" value='products' name="category"
           / tariff
@@ -110,7 +110,7 @@
           .form-group.fails ng-class=("{ 'has-error' : usubmitForm.sert.$invalid && !usubmitForm.sert.$pristine }")
             .lable-one
               .label сертифікат:
-            input#upload.custom-file-input name="sert" ng-model="user.sert"  type="file"
+            input#upload.custom-file-input name="certificate" ng-model="user.sert"  type="file"
 
           .taitle-contacts.color-line.yellow-block Дополнитильная информация
           //country
@@ -183,7 +183,7 @@
 
 
       #distributors.tabcontent
-        form.ajax-form action="/message" method="post" enctype="multipart/form-data" name="usubmitForm2" ng-submit="submitForm()" novalidate=""
+        form.ajax-form action="/creating_unit" method="post" enctype="multipart/form-data" name="usubmitForm2" ng-submit="submitForm()" novalidate=""
           /category
           input.d-none type="text" value='distributors' name="category"
           // tariff
@@ -262,7 +262,7 @@
           .form-group.fails ng-class=("{ 'has-error' : usubmitForm2.sert.$invalid && !usubmitForm2.sert.$pristine }")
             .lable-one
               .label сертифікат:
-            input#upload.custom-file-input name="sert" ng-model="user.sert"  type="file"
+            input#upload.custom-file-input name="certificate" ng-model="user.sert"  type="file"
 
           .taitle-contacts.color-line.yellow-block Дополнитильная информация
           //country
@@ -336,7 +336,7 @@
 
       #marker.tabcontent
 
-        form.ajax-form action="/message" method="post" enctype="multipart/form-data" name="usubmitForm3" ng-submit="submitForm()" novalidate=""
+        form.ajax-form action="/creating_unit" method="post" enctype="multipart/form-data" name="usubmitForm3" ng-submit="submitForm()" novalidate=""
           /category
           input.d-none type="text" value='markets' name="category"
           // tariff
@@ -415,7 +415,7 @@
           .form-group.fails ng-class=("{ 'has-error' : usubmitForm3.sert.$invalid && !usubmitForm3.sert.$pristine }")
             .lable-one
               .label сертифікат:
-            input#upload.custom-file-input name="sert" ng-model="user.sert"  type="file"
+            input#upload.custom-file-input name="certificate" ng-model="user.sert"  type="file"
 
           .taitle-contacts.color-line.yellow-block Дополнитильная информация
           //country
@@ -489,7 +489,7 @@
 
 
       #logistics.tabcontent
-        form.ajax-form action="/message" method="post" enctype="multipart/form-data" name="usubmitForm4" ng-submit="submitForm()" novalidate=""
+        form.ajax-form action="/creating_unit" method="post" enctype="multipart/form-data" name="usubmitForm4" ng-submit="submitForm()" novalidate=""
           /category
           input.d-none type="text" value='logistics' name="category"
           // tariff
@@ -568,7 +568,7 @@
           .form-group.fails ng-class=("{ 'has-error' : usubmitForm4.sert.$invalid && !usubmitForm4.sert.$pristine }")
             .lable-one
               .label сертифікат:
-            input#upload.custom-file-input name="sert" ng-model="user.sert"  type="file"
+            input#upload.custom-file-input name="certificate" ng-model="user.sert"  type="file"
 
           .taitle-contacts.color-line.yellow-block Дополнитильная информация
           //country

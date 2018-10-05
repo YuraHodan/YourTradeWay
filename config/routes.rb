@@ -32,7 +32,7 @@ Rails.application.routes.draw do
 
     # post "registration", action: "registration"
     post "message", action: "message"
-    post "contain_us", action: "contain_us"
+    post "creating_unit", action: "creating_unit"
 
   end
 # end

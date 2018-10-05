@@ -60,11 +60,11 @@ class PagesController < ApplicationController
     @platinum_logistic = PremiumLogistic.find_by(type_of_plan: 'Platinum')
   end
 
-  def message
+  def creating_unit
      render json: {}
   end
 
-  def contain_us
+  def message
   question =  Question.new(params.permit(:email, :name, :phone, :message))
    if question.save
     render json: {message: "Question created"}, status: 200
