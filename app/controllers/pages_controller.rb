@@ -60,6 +60,10 @@ class PagesController < ApplicationController
     @platinum_logistic = PremiumLogistic.find_by(type_of_plan: 'Platinum')
   end
 
+  def message
+     render json: {}
+  end
+
   def contain_us
   question =  Question.new(params.permit(:email, :name, :phone, :message))
    if question.save
