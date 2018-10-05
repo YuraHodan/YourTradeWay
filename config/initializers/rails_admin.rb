@@ -35,9 +35,15 @@ RailsAdmin.config do |config|
     edit
     delete
     show_in_app
-  config.included_models = [PremiumManufacture,PremiumMarket,PremiumLogistic,PremiumDistributor,MainPageSlider,Email,SponsorSideSlider,SponsorSlider,Seo,Seo::Translation,MainPage,MainPage::Translation,Logistic,Logistic::Translation,Market,Market::Translation,Distributor,Distributor::Translation,Manufacture::Translation,Product::Translation,Product,Manufacture,Contact,Contact::Translation,Rule,Rule::Translation,Faq,Faq::Translation,Article,Article::Translation,ThirdMenu::Translation,SecondMenu::Translation,MainMenu::Translation,MainMenu,SecondMenu,ThirdMenu,User,Sociallink,Contact,Contact::Translation,Rule,Rule::Translation]
+  config.included_models = [Question,PremiumManufacture,PremiumMarket,PremiumLogistic,PremiumDistributor,MainPageSlider,Email,SponsorSideSlider,SponsorSlider,Seo,Seo::Translation,MainPage,MainPage::Translation,Logistic,Logistic::Translation,Market,Market::Translation,Distributor,Distributor::Translation,Manufacture::Translation,Product::Translation,Product,Manufacture,Contact,Contact::Translation,Rule,Rule::Translation,Faq,Faq::Translation,Article,Article::Translation,ThirdMenu::Translation,SecondMenu::Translation,MainMenu::Translation,MainMenu,SecondMenu,ThirdMenu,User,Sociallink,Contact,Contact::Translation,Rule,Rule::Translation]
   config.navigation_static_links = { locales: "/file_editor/locales"}
   RailsAdmin.config {|c| c.label_methods << :title}
+
+  config.model Question do
+    navigation_label "Contact Forms"
+    label "Ask us"
+    fields :name, :email, :phone,:message
+  end
 
   config.model MainPageSlider do
     fields :image, :show, :product

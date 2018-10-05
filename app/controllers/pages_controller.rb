@@ -60,14 +60,13 @@ class PagesController < ApplicationController
     @platinum_logistic = PremiumLogistic.find_by(type_of_plan: 'Platinum')
   end
 
-  def message
-    # binding.pry  ##dsadasajkdkjqwnjkeqwjkehjkqsdhjkasjkdhasjkdqjkdqwjklndqwlkdnqwlneklklqwelkwq
-      render json: {}
-  end
-
   def contain_us
-    # binding.pry  ##dsadasajkdkjqwnjkeqwjkehjkqsdhjkasjkdhasjkdqjkdqwjklndqwlkdnqwlneklklqwelkwq
-      render json: {}
+  question =  Question.new(params.permit(:email, :name, :phone, :message))
+   if question.save
+    render json: {message: "Question created"}, status: 200
+   else
+     render json: {message: "Error"}, status: :bad_request
+   end
   end
 
   def faq
