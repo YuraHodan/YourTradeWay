@@ -237,7 +237,7 @@ RailsAdmin.config do |config|
     label "Products"
     object_label_method :custom_name
     field :translations, :globalize_tabs
-    fields :manufacture, :country, :price, :volume, :amount, :weight, :youtube_url, :premium, :recomend, :third_menu, :logo_image
+    fields :manufacture, :country, :price, :volume, :amount, :weight, :youtube_url, :premium, :recomend, :third_menu, :second_menu, :logo_image
     field :images
     field :sertificates
     field :seo

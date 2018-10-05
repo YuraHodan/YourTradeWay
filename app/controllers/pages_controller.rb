@@ -61,10 +61,6 @@ class PagesController < ApplicationController
     @payment_articles = Faq.where(category: 'Payment&Shipping')
   end
 
-  def registration
-
-  end
-
   def terms
     @rule = Rule.first_or_initialize
   end
