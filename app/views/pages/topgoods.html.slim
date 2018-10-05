@@ -65,10 +65,14 @@
                 form name="userForm" ng-submit="submitForm()"
                   ul.read-more-wrap ng-repeat="countries in all_countries"
                     li
-                      input type="checkbox" ng-model="countries.selected" ng-change='trackOrder(countries)'  value="{{countries.id}}" ng-click="submitForm().submit()"  {{countries.title}}
+                      label.container
+                        | {{countries.title}}
+                        input type="checkbox" ng-model="countries.selected" ng-change='trackOrder(countries)'  value="{{countries.id}}" ng-click="submitForm().submit()"
+                        span.checkmark
+
           .dubl-select
-            .accordion-button.opened
-              p afdsfdsf
+            .accordion-button
+              p afdsfdsf2
               .svg-slid = inline_svg "svg/ic_keyboard_arrow_up_black_24px.svg"
             .accordion-inner.show
 
@@ -76,16 +80,21 @@
                 form name="userForm2" ng-submit="submitForm2()"
                   ul.read-more-wrap ng-repeat="products in question"
                     li
-                      input type="checkbox" ng-model="products.selected" ng-change='trackOrder2(products)'  value="{{products.id}}" ng-click="submitForm2().submit()"  {{products.name}}
-                      nav
-                        ul.drop-down
-                          li
-                            a.nav-button href="#" ng-click="voteUp" = inline_svg "svg/ic_keyboard_arrow_down_black_24px.svg"
-                          .down
-                            form name="userForm3" ng-submit="submitForm3()"
-                              ul ng-repeat="second_menu in products.second_menu"
-                                li
+                      label.container
+                        | {{products.name}}
+                        input type="checkbox" ng-model="products.selected" ng-change='trackOrder2(products)'  value="{{products.id}}" ng-click="submitForm2().submit()"
+                        span.checkmark
+                    .new ng-if="products.second_menu != ''"
+                      ul
+                        li
+                          input.arrow id="{{products.id}}" type="checkbox" /
+                          label.first for="{{products.id}}" = inline_svg "svg/ic_keyboard_arrow_down_black_24px.svg"
+                          form name="userForm3" ng-submit="submitForm3()"
+                            ul ng-repeat="second_menu in products.second_menu"
+                                label.container
                                   input type="checkbox" ng-model="second_menu.selected" ng-change='trackOrder3(second_menu)'  value="{{second_menu.id}}" ng-click="submitForm3().submit()"  {{second_menu.title}}
+                                  span.checkmark
+
               .remove-all
                 .x-component = inline_svg "photo/main/svg/filter_clear.svg"
                 .ramove-text очистить все
