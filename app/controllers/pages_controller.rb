@@ -4,9 +4,11 @@ class PagesController < ApplicationController
     @new_manufactures = Manufacture.last(8)
     @last_news = Article.last(3)
     @main_page_slider = MainPageSlider.show
+    @main_page_info = MainPage.first_or_initialize
   end
 
-  def about_us
+  def aboutus
+    @about_us = AboutUs.first_or_initialize
   end
 
   def distributor

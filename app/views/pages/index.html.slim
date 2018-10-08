@@ -264,7 +264,7 @@
       .columns
         .comand-tradergram
           h2 tradergram
-          p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+          = raw @main_page_info.tradergram_description
         .row
           -@last_news.each do |article|
             .medium-4.columns
@@ -279,7 +279,7 @@
       .columns
         .comand-tradergram
           h2 tradergram
-          p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+          = raw @main_page_info.tradergram_description
         .row
           -@last_news.each do |article|
             .medium-4.columns
@@ -299,11 +299,13 @@
             .text-about-product
               h2 dsvgsdfg
               p Lorem ipsum dolor sit amet,60 consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+              / = raw @main_page_info.about_description
               a.btn-big href="#" подробнее
+
               a.btn-big-smole href="#" подробнее
           .columns.large-5
             .img-target.color-line.yellow-block
-              .img-bg style="background-image: url(#{asset_path('photo/main/about.jpg')})"
+              .img-bg style="background-image: url(#{@main_page_info.about_image.url})"
   .apply
     .row
       .columns.lerge-12
@@ -311,5 +313,5 @@
             .apply-taitle
               h2 подати заявку на розміщення
             .apply-text
-              p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+              = raw @main_page_info.request_description
             a.btn-big.yellow-btn href=post_product_path регістрація

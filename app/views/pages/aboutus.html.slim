@@ -6,35 +6,26 @@
       .block-aboutus
         .taitle-ansers.color-line.yellow-block о проекте
         .aboutus-baner
-          .img-bg style="background-image: url(#{asset_path('photo/main/news_3.jpg')})"
+          .img-bg style="background-image: url(#{@about_us.about_project_image.url})"
         .text-aboutus
-          .taitle-smole Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et d
-          .text-smole Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          = raw  @about_us.about_project_description
       .block-aboutus
         .taitle-ansers.color-line.yellow-block задачи и цели
         .aboutus-baner
-          .img-bg style="background-image: url(#{asset_path('photo/main/news_3.jpg')})"
+          .img-bg style="background-image: url(#{@about_us.tasks_image.url})"
         .text-aboutus
-          .taitle-smole цели нашей командь
-          ol type="1"
-            li опредилить сегмент ринка
-            li опредилить сегмент ринка
-            li опредилить сегмент ринка
-            li опредилить сегмент ринка
-            li опредилить сегмент ринка
-            li опредилить сегмент ринка
+          =raw @about_us.tasks_description
       .block-aboutus
         .taitle-ansers.color-line.yellow-block преимущество
         .text-aboutus
-          .taitle-smole Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-          .text-smole Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          = raw @about_us.advantages_description
         .nomber-aboutus
           .row.columns-left
             .columns.large-5
               .goods-in-the-catalog
-                .nomber 850 000
+                .nomber =@about_us.products_count
                 .text товаров в каталоге
             .columns.large-3
               .goods-in-the-catalog.lft
-                .nomber 7 352
+                .nomber =@about_us.companies_count
                 .text компаний на сайте
