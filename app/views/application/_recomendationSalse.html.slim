@@ -1,6 +1,7 @@
 .recomendation-tovars ng-if="recom_manufactures != ''"
   .recomendation-text.color-line.gray-block
-    .title рекомендаии
+    .title
+      = t("menus.recommended")
   .recommendation-goods ng-repeat="manufactures_recom in recom_manufactures | limitTo : 3"
     .medium-4.columns
       .border-producers.color-line.blue-block

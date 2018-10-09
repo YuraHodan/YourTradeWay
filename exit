@@ -1,0 +1,39 @@
+=> {[31m[1;31m"[0m[31mupload_file[1;31m"[0m[31m[0m=>
+  [[32m#<ActionDispatch::Http::UploadedFile:0x005618a5424a78[0m
+    @content_type[32m=[0m[31m[1;31m"[0m[31mimage/png[1;31m"[0m[31m[0m,
+    @headers[32m=[0m[31m[1;31m"[0m[31mContent-Disposition: form-data; name=[1;35m\"[0m[31mupload_file[][1;35m\"[0m[31m; filename=[1;35m\"[0m[31m16x16.png[1;35m\"[0m[31m[1;35m\r[0m[31m[1;35m\n[0m[31mContent-Type: image/png[1;35m\r[0m[31m[1;35m\n[0m[31m[1;31m"[0m[31m[0m,
+    @original_filename[32m=[0m[31m[1;31m"[0m[31m16x16.png[1;31m"[0m[31m[0m,
+    @tempfile[32m=[0m[32m#<File:/tmp/RackMultipart20181009-3136-1wevxzx.png>[0m[32m>[0m,
+   [32m#<ActionDispatch::Http::UploadedFile:0x005618a5424960[0m
+    @content_type[32m=[0m[31m[1;31m"[0m[31mimage/png[1;31m"[0m[31m[0m,
+    @headers[32m=[0m[31m[1;31m"[0m[31mContent-Disposition: form-data; name=[1;35m\"[0m[31mupload_file[][1;35m\"[0m[31m; filename=[1;35m\"[0m[31m32x32.png[1;35m\"[0m[31m[1;35m\r[0m[31m[1;35m\n[0m[31mContent-Type: image/png[1;35m\r[0m[31m[1;35m\n[0m[31m[1;31m"[0m[31m[0m,
+    @original_filename[32m=[0m[31m[1;31m"[0m[31m32x32.png[1;31m"[0m[31m[0m,
+    @tempfile[32m=[0m[32m#<File:/tmp/RackMultipart20181009-3136-1vxsbbg.png>[0m[32m>[0m,
+   [32m#<ActionDispatch::Http::UploadedFile:0x005618a5424898[0m
+    @content_type[32m=[0m[31m[1;31m"[0m[31mimage/png[1;31m"[0m[31m[0m,
+    @headers[32m=[0m[31m[1;31m"[0m[31mContent-Disposition: form-data; name=[1;35m\"[0m[31mupload_file[][1;35m\"[0m[31m; filename=[1;35m\"[0m[31m76x76.png[1;35m\"[0m[31m[1;35m\r[0m[31m[1;35m\n[0m[31mContent-Type: image/png[1;35m\r[0m[31m[1;35m\n[0m[31m[1;31m"[0m[31m[0m,
+    @original_filename[32m=[0m[31m[1;31m"[0m[31m76x76.png[1;31m"[0m[31m[0m,
+    @tempfile[32m=[0m[32m#<File:/tmp/RackMultipart20181009-3136-4kjij6.png>[0m[32m>[0m,
+   [32m#<ActionDispatch::Http::UploadedFile:0x005618a5424870[0m
+    @content_type[32m=[0m[31m[1;31m"[0m[31mimage/png[1;31m"[0m[31m[0m,
+    @headers[32m=[0m[31m[1;31m"[0m[31mContent-Disposition: form-data; name=[1;35m\"[0m[31mupload_file[][1;35m\"[0m[31m; filename=[1;35m\"[0m[31m96x96.png[1;35m\"[0m[31m[1;35m\r[0m[31m[1;35m\n[0m[31mContent-Type: image/png[1;35m\r[0m[31m[1;35m\n[0m[31m[1;31m"[0m[31m[0m,
+    @original_filename[32m=[0m[31m[1;31m"[0m[31m96x96.png[1;31m"[0m[31m[0m,
+    @tempfile[32m=[0m[32m#<File:/tmp/RackMultipart20181009-3136-1qqz25v.png>[0m[32m>[0m,
+   [32m#<ActionDispatch::Http::UploadedFile:0x005618a5424690[0m
+    @content_type[32m=[0m[31m[1;31m"[0m[31mimage/png[1;31m"[0m[31m[0m,
+    @headers[32m=[0m[31m[1;31m"[0m[31mContent-Disposition: form-data; name=[1;35m\"[0m[31mupload_file[][1;35m\"[0m[31m; filename=[1;35m\"[0m[31m180x180.png[1;35m\"[0m[31m[1;35m\r[0m[31m[1;35m\n[0m[31mContent-Type: image/png[1;35m\r[0m[31m[1;35m\n[0m[31m[1;31m"[0m[31m[0m,
+    @original_filename[32m=[0m[31m[1;31m"[0m[31m180x180.png[1;31m"[0m[31m[0m,
+    @tempfile[32m=[0m[32m#<File:/tmp/RackMultipart20181009-3136-x3r3f6.png>[0m[32m>[0m,
+   [32m#<ActionDispatch::Http::UploadedFile:0x005618a5424668[0m
+    @content_type[32m=[0m[31m[1;31m"[0m[31mimage/png[1;31m"[0m[31m[0m,
+    @headers[32m=[0m[31m[1;31m"[0m[31mContent-Disposition: form-data; name=[1;35m\"[0m[31mupload_file[][1;35m\"[0m[31m; filename=[1;35m\"[0m[31m190x120.png[1;35m\"[0m[31m[1;35m\r[0m[31m[1;35m\n[0m[31mContent-Type: image/png[1;35m\r[0m[31m[1;35m\n[0m[31m[1;31m"[0m[31m[0m,
+    @original_filename[32m=[0m[31m[1;31m"[0m[31m190x120.png[1;31m"[0m[31m[0m,
+    @tempfile[32m=[0m[32m#<File:/tmp/RackMultipart20181009-3136-scof28.png>[0m[32m>[0m,
+   [32m#<ActionDispatch::Http::UploadedFile:0x005618a54245a0[0m
+    @content_type[32m=[0m[31m[1;31m"[0m[31mimage/png[1;31m"[0m[31m[0m,
+    @headers[32m=[0m[31m[1;31m"[0m[31mContent-Disposition: form-data; name=[1;35m\"[0m[31mupload_file[][1;35m\"[0m[31m; filename=[1;35m\"[0m[31m196x196.png[1;35m\"[0m[31m[1;35m\r[0m[31m[1;35m\n[0m[31mContent-Type: image/png[1;35m\r[0m[31m[1;35m\n[0m[31m[1;31m"[0m[31m[0m,
+    @original_filename[32m=[0m[31m[1;31m"[0m[31m196x196.png[1;31m"[0m[31m[0m,
+    @tempfile[32m=[0m[32m#<File:/tmp/RackMultipart20181009-3136-a0naeh.png>[0m[32m>[0m],
+ [31m[1;31m"[0m[31msubmit_image[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mUpload Image[1;31m"[0m[31m[0m,
+ [31m[1;31m"[0m[31mcontroller[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mpages[1;31m"[0m[31m[0m,
+ [31m[1;31m"[0m[31maction[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mcreating_unit[1;31m"[0m[31m[0m}

@@ -5,12 +5,13 @@
         / = render "selector"
         .select
           .accordion-button
-            p  countries
+            p
+              = t("filter.countries")
             .svg-slid = inline_svg "svg/ic_keyboard_arrow_up_black_24px.svg"
           .accordion-inner.show
 
             .selector
-              / input#post-2.read-more-state type="checkbox"
+              input#post-2.read-more-state type="checkbox"
               form name="userForm" ng-submit="submitForm()"
                 ul.read-more-wrap ng-repeat="countries in all_countries"
                   li
@@ -18,6 +19,7 @@
                       | {{countries.title}}
                       input type="checkbox" ng-model="countries.selected" ng-change='trackOrder(countries)'  value="{{countries.id}}" ng-click="submitForm().submit()"
                       span.checkmark
+              label.read-more-trigger for="post-2"
 
       .dubl-select
         .accordion-button.opened
@@ -36,7 +38,8 @@
           .remove-all
             .x-component = inline_svg "photo/main/svg/filter_clear.svg"
             .ramove-text
-                a href=logistics_path очистить все
+                a href=logistics_path
+                  = t("filter.clear_everything")
             /// smole select
 
 
@@ -78,7 +81,8 @@
               .remove-all
                 .x-component = inline_svg "photo/main/svg/filter_clear.svg"
                 .ramove-text
-                    a href=logistics_path очистить все
+                    a href=logistics_path
+                      = t("filter.clear_everything")
         /// smole select
         .selector
           / = render "advertisingSlider"
@@ -86,9 +90,10 @@
             .mySlides.fade
               .img-bg style="background-image: url('{{side_slid.image_url}}')"
     .medium-9.columns
-      .topgoods
+      .topgoods ng-if="top_markets != ''"
         .topgoods-tex.color-line.gray-block
-          .title топ товари
+          .title
+            = t("menus.top_products")
 
         #sliderBX-contenedor
           #btnSliderNext

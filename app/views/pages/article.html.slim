@@ -7,46 +7,47 @@
       .title =@product.title
       .moni-or
         .moni-tex
-          | оріентовочная
-          br
-          	| цена :
+          = t("unit_of_goods.indicative_price")
+          / | оріентовочная
+          / br
+          / 	| цена :
         .moni-nomber #{@product.price} $
       .about-product
         .weight
-          | Вес/Обєм:
+          = t("unit_of_goods.Weight")
           .text = @product.volume
         .kind
-          |Вид:
+          = t("unit_of_goods.View")
           .text = @product.type_of_pack
         .number
-          | Количество:
+          = t("unit_of_goods.Аmount")
           .text = @product.amount
         .weight
-          |Вес коробки:
+          = t("unit_of_goods.Weight_of_packing")
           .text = @product.weight
             | кг
         .suitability
-          |Срок годности:
+          = t("unit_of_goods.Expiration_date")
           .text = @product.expiration_date
       .about-as.color-line.gray-block
         .title2
-          | Описание:
+          = t("unit_of_goods.Description")
       #box.box
         p.text
         = raw @product.description
       .title3.color-line.gray-block
-        | производитель
+        = t("unit_of_goods.Manufacturer")
       .country
-        |страна
+        = t("unit_of_goods.Country")
         .text = @product.manufacture.country.title
       .address
-        | Адреса:
+        = t("unit_of_goods.Address")
         .text = @product.manufacture.address
       .activity
-        |Вид деятольности:
+        = t("unit_of_goods.Kind_of_activity")
         .text = @product.manufacture&.second_menu&.title
       .sayt
-        |Сайт
+        = t("unit_of_goods.Site")
         a.text href="#{@product.manufacture.web_site_url}"
           =@product.manufacture.web_site_url
   .row
@@ -54,7 +55,8 @@
       .wrapper
         =render "recomendationonegoods", products: @recomend_products
         .vibe-text.color-line.gray-block
-          .title похожие товари
+          .title
+            = t("unit_of_goods.Similar_products")
         .vibe-goods
           -@related_products.each do |product|
             .medium-3.columns
@@ -69,7 +71,7 @@
                       =product.title
                     .price.color-line.gray-block
                       .oriented-price
-                        | орієнтовочная цена:
+                        = t("unit_of_goods.tentative_price")
                       .mony
                         =product.price
                         | $

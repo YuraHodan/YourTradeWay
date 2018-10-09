@@ -3,11 +3,16 @@
     .heder-content
       a.heder-logo href=root_path = inline_svg "photo/main/svg/top-logo.svg"
       .tex-heder
-        a.one-text href=root_path Главная
-        a.one-text href=premium_path Премиум
-        a.one-text href=tradergram_path Tradergram
-        a.one-text href=aboutus_path О нас
-        a.one-text  href=contacts_path Контакты
+        a.one-text href=root_path
+          = t("header.main")
+        a.one-text href=premium_path
+          = t("header.premium")
+        a.one-text href=tradergram_path
+          = t("header.tradergram")
+        a.one-text href=aboutus_path
+          = t("header.about_us")
+        a.one-text  href=contacts_path
+          = t("header.contact_us")
         .select-heder
         .language-box.dib
           .language-one.active
@@ -23,7 +28,8 @@
                 - locale_names = {ru: "РУС",en: "ENG"}
                 .language-one = content_tag(tag_name, locale_names[locale.to_sym], tag_attrs)
         / a.btn-big-heder href=new_user_registration_path РЕГИСТРАЦИЯ
-        a.btn-big-heder href=post_product_path РЕГИСТРАЦИЯ
+        a.btn-big-heder href=post_product_path
+          = t("header.check_in")
 
 
       .heder-menu
@@ -32,24 +38,29 @@
             .wrapper
               ul#menu.clearfix
                 li
-                  a href=topgoods_path Топ товары
+                  a href=topgoods_path
+                    = t("menus.top_products")
                 // goods
                 li
-                  a.yellow href=goods_path  Товары
+                  a.yellow href=goods_path
+                    = t("menus.products")
                   ul.bige
-                    .title ТИП ТОВАРОВ
+                    .title
+                      = t("menus.type_goods")
                     li.target ng-repeat="products in productsquestion"
                       a.pap href=goods_path ng-model="products.selected" ng-click="trackOrder(products)"
                         |{{products.name}}
                         = inline_svg "svg/ic_keyboard_arrow_right_black_24px.svg"
                       ul.second_menu ng-if="person.second_menu != ''"
-                        .title2 ГРУПА ТОВАРОВ
+                        .title2
+                          = t("menus.group_of_goods")
                         .second-performance
                           li ng-repeat="second_menu in products.second_menu"
                             a href=goods_path ng-model="second_menu.selected" ng-click="trackOrder2(second_menu)"
                               |{{second_menu.title}}
                             ul ng-if="second_menu.third_menu != ''"
-                              .title2 КАТЕГОРИЯ ТОВАРОВ
+                              .title2
+                                = t("menus.category_of_goods")
                               .img-bg style="background-image: url(#{asset_path('photo/main/food.jpg')})"
                               li ng-repeat="third_menu in second_menu.third_menu"
                                 a href=goods_path
@@ -57,15 +68,18 @@
 
                 // products
                 li
-                  a.blue href=products_path  Производители
+                  a.blue href=products_path
+                    = t("menus.manufactuters")
                   ul.blue.bige
-                    .title ТИП ПРИЗВОДИТЕЛЕИ
+                    .title
+                      = t("menus.type_manufactuters")
                     li.purple ng-repeat="factorie in questionfactories"
                       a href=products_path ng-model="factorie.selected" ng-click="trackOrder(factorie)"
                         | {{factorie.name}}
                         / href="products?id={{factorie.id}}"
                       ul.second_menu ng-if="factorie.second_menu != ''"
-                        .title2 ГРУПА ПРИЗВОДИТЕЛЕИ
+                        .title2
+                          = t("menus.group_of_manufactuters")
                         .second-performance.blue
                           li ng-repeat="second_menu in factorie.second_menu"
                             a href=products_path  ng-model="second_menu.selected" ng-click="trackOrder2(second_menu)"
@@ -74,14 +88,17 @@
 
                 // distributors
                 li
-                  a.green href=distributors_path  Дистрибьюторы
+                  a.green href=distributors_path
+                    = t("menus.distributors")
                   ul.green.bige
-                    .title ГРУПА ДИСТРИБЮТОРОВ
+                    .title
+                      = t("menus.type_distributors")
                     li.green2 ng-repeat="distributor in questiondistributors"
                       a href=distributors_path ng-model="distributor.selected" ng-click="trackOrder(distributor)"
                         | {{distributor.name}}
                       ul.second_menu ng-if="distributor.second_menu != ''"
-                        .title2 ГРУПА ДИСТРИБЮТОРОВ
+                        .title2
+                          = t("menus.group_of_distributors")
                         .second-performance.green
                           li ng-repeat="second_menu in distributor.second_menu"
                             a href=distributors_path ng-model="second_menu.selected" ng-click="trackOrder2(second_menu)"
@@ -89,9 +106,11 @@
 
                 // marcets
                 li
-                  a.red href=markets_path  Маркеты
+                  a.red href=markets_path
+                    = t("menus.markets")
                   ul.redb
-                    .title ГРУПА МАРКЕТОВ
+                    .title
+                      = t("menus.type_markets")
                     li.aqua ng-repeat="markets in questionmarkets"
                       a href=markets_path ng-model="markets.selected" ng-click="trackOrder(markets)"
                         | {{markets.name}}
@@ -99,9 +118,11 @@
 
                 // logistic
                 li
-                  a.orange href=logistics_path  Логистика
+                  a.orange href=logistics_path
+                    = t("menus.logistics")
                   ul.orangb
-                    .title логистика
+                    .title
+                      = t("menus.type_logistics")
                     li.orange2 ng-repeat="logistic in questionlogistic"
                       a href=logistics_path ng-model="logistic.selected" ng-click="trackOrder(logistic)"
                         | {{logistic.name}}
@@ -112,10 +133,14 @@
   .heder-content.smole
     a.heder-logo href=root_path = inline_svg "photo/main/svg/top-logo.svg"
     .tex-heder
-      a.one-text href=premium_path Премиум
-      a.one-text href=tradergram_path Tradergram
-      a.one-text href=aboutus_path О нас
-      a.one-text  href=contacts_path Контакты
+      a.one-text href=premium_path
+        = t("header.premium")
+      a.one-text href=tradergram_path
+        = t("header.tradergram")
+      a.one-text href=aboutus_path
+        = t("header.about_us")
+      a.one-text  href=contacts_path
+        = t("header.contact_us")
       .select-heder
       .language-box.dib
         .language-one.active
@@ -137,12 +162,15 @@
         .arow = inline_svg "svg/arrowleft.svg"
         #arowthird.arowthird = inline_svg "svg/arrowleft.svg"
         .arowtfourth = inline_svg "svg/arrowleft.svg"
-        p виберите категорию
+        p
+          = t("menus.chose_category")
       .manu-nav
         .classification-top
-          a href=topgoods_path Топ товары
+          a href=topgoods_path
+            = t("menus.top_products")
         .classification.yellow
-          a href="#" товары
+          a href=goods_path
+            = t("menus.products")
           .arow-boxs
             = inline_svg "svg/ic_keyboard_arrow_right_black_24px.svg"
           .manu-container-second
@@ -165,7 +193,8 @@
 
 
         .classification.blue
-          a href="#"  Производители
+          a href=products_path
+            = t("menus.manufactuters")
           .arow-boxs
             = inline_svg "svg/ic_keyboard_arrow_right_black_24px.svg"
           .manu-container-second
@@ -184,7 +213,8 @@
                             | {{second_menu.title}}
 
         .classification.green
-          a href="#"  Дистрибьюторы
+          a href=distributors_path
+            = t("menus.distributors")
           .arow-boxs
             = inline_svg "svg/ic_keyboard_arrow_right_black_24px.svg"
           .manu-container-second
@@ -205,7 +235,8 @@
 
 
         .classification.red
-          a href="#"  Маркеты
+          a href=markets_path
+            = t("menus.markets")
           .arow-boxs
             = inline_svg "svg/ic_keyboard_arrow_right_black_24px.svg"
           .manu-container-second
@@ -214,8 +245,10 @@
                 .classification-second
                   a href="markets?id={{markets.id}}"
                     | {{markets.name}}
+
         .classification.orange
-          a href="#"  Логистика
+          a href=logistics_path
+            = t("menus.logistics")
           .arow-boxs
             = inline_svg "svg/ic_keyboard_arrow_right_black_24px.svg"
           .manu-container-second
@@ -225,7 +258,10 @@
                   a href="logistics?id={{logistic.id}}"
                     | {{logistic.name}}
         .tex-heder
-          a.one-text href=premium_path Премиум
-          a.one-text href=tradergram_path Tradergram
-          a.one-text href=aboutus_path О нас
+          a.one-text href=premium_path
+            = t("header.premium")
+          a.one-text href=tradergram_path
+            = t("header.tradergram")
+          a.one-text href=aboutus_path
+            = t("header.about_us")
           / a.one-text  href=contacts_path Контакты

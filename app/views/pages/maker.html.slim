@@ -15,20 +15,20 @@
                 =@manufacture.second_menu&.title
             .rules
               .country
-                | Страна:
+                = t("unit_of_goods.Country")
                 .text
                    =@manufacture.second_menu&.title
               .address
-                | Адреса:
+                = t("unit_of_goods.Address")
                 .text
                   =@manufacture.address
               .site
-                | Сайт:
+                = t("unit_of_goods.Site")
                 a.text href="#{@manufacture.web_site_url}"
                   =@manufacture.web_site_url
             .contacts
               .text-face.color-line.gray-block
-                | контактное лицо
+                = t("post_product.company_name")
               .forms-abaut
                 .lup
                   .icon = inline_svg "photo/main/svg/man.svg"
@@ -65,7 +65,8 @@
       .medium.columns
         .about-us
           .title.color-line.gray-block
-            .text-title о компании
+            .text-title
+              = t("unit_of_goods.about_company")
           .about-us-text
             =raw @manufacture.description
         .bg-slider
@@ -73,23 +74,28 @@
             =render "onegoodsslider", product: @manufacture
     .medium-4.columns
       .sertuficat
-        .title сертифікат
+        .title
+          = t("post_product.certificate")
         .selector
           = render "oneproducterslider", product: @manufacture
       .batton-doun
         a.btn-big href="#{@manufacture.catalog_file}"
-          .text каталог продукції
+          .text
+            = t("unit_of_goods.goods_catalog")
           .icon = inline_svg "photo/main/svg/arrowdown.svg"
         a.btn-big href="#{@manufacture.price_list_file}"
-          .text прайс лист
+          .text
+            = t("unit_of_goods.price_list")
           .icon = inline_svg "photo/main/svg/arrowdown.svg"
         a.btn-big href="#{@manufacture.sertificates_file}"
-          .text сертифікать
+          .text
+            = t("post_product.certificate")
           .icon = inline_svg "photo/main/svg/arrowdown.svg"
   .row
     .medium.columns
       .company-products
-        .title продукия компании
+        .title
+          = t("post_product.companies_goods")
       .wrapper
         =render "recomendationeproducter", products: @manufacture.products.premium
       .vibe-goods
@@ -106,7 +112,7 @@
                     =product.title
                   .price.color-line.gray-block
                     .oriented-price
-                      Оріентовна ціна
+                      = t("unit_of_goods.tentative_price")
                     .mony
                       =product.price
                       |$

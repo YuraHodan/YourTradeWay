@@ -2,27 +2,19 @@
 registrationCtrl.$inject = ['$http', '$scope'];
 
 ytwApp.controller('registrationCtrl', registrationCtrl);
-console.log('7');
-
 
 //////////////////////////////////
-
 
 /////////////////////////////////
 
 
 function registrationCtrl($http, $scope) {
-
-    // SENDING INFO AND ORDER
-
-    // $scope.user = {};
-    // POST REQUEST
 var token = document.getElementsByName('csrf-token')[0].content;
 
     // $scope.submitForm = function () {
     //     var url = 'message';
     //     var data = {
-    //         info: $scope.user
+    //         info: $scope.z
     //     };
     //     var config = {
     //         headers : {
@@ -35,7 +27,7 @@ var token = document.getElementsByName('csrf-token')[0].content;
     //         .then(
     //             function(response){
     //                 // callback
-    //                 $scope.user = data.user;
+    //                 $scope.z = data.z;
     //                 alert("gooooo.");
     //             },
     //             function(response){
@@ -123,9 +115,6 @@ ytwApp.factory("fileReader", function($q, $log) {
 
 
 
-
-
-
 //////////////////////////////////
 
 
@@ -136,7 +125,8 @@ ytwApp.directive("imgUpload",function($http,$compile){
 					url : "@",
 					method : "@"
 				},
-				template : 	'<input class="fileUpload" name="photo" type="file" ng-model="user.foto" multiple />'+
+				template :
+        '<input class="fileUpload"  name="photo" type="file" ng-model="user.foto" ng-change="submit()" multiple  value= "{{previewData}}"/>'+
 							'<div class="dropzone">'+
 								'<div class="svgo"></div>'+
 								'<h3 class="msg">перетяните сюда ваши файли</h3>'+
@@ -146,12 +136,13 @@ ytwApp.directive("imgUpload",function($http,$compile){
 						   '<div class="preview clearfix">'+
 						   		'<div class="previewData clearfix" ng-repeat="data in previewData track by $index">'+
 						   			'<img  src={{data.src}}></img>'+
+                  // '<input type="hidden" name="myHiddenField" value={{data}} >'+
 						   				'<span ng-click="remove(data)" class="circle remove">'+
 						   					'<i class="fa fa-close"></i>'+
 						   				'</span>'+
 						   			'</div>'+
 						   		'</div>'+
-						   '</div>',
+                  '</div>',
 				link : function(scope,elem,attrs){
 					var formData = new FormData();
 					scope.previewData = [];
@@ -167,9 +158,12 @@ ytwApp.directive("imgUpload",function($http,$compile){
 														'src':src,'data':obj});
 							});
 							console.log(scope.previewData);
+              z =scope.previewData
+              console.log(z);
         				}
         				reader.readAsDataURL(file);
 					}
+
 
 					function uploadFile(e,type){
 						e.preventDefault();
@@ -203,9 +197,35 @@ ytwApp.directive("imgUpload",function($http,$compile){
 					elem.find('.dropzone').bind("drop",function(e){
 						uploadFile(e,'drop');
 					});
+
 					scope.upload=function(obj){
 						$http({method:scope.method,url:scope.url,data: obj.data,
 							headers: {'Content-Type': undefined},transformRequest: angular.identity
+              // $scope.submitForm = function () {
+              //     var url = 'message';
+              //     var data = {
+              //         info: $scope.z
+              //     };
+              //     var config = {
+              //         headers : {
+              //             'Content-Type': 'application/json',
+              //             'X-CSRF-Token': token
+              //         }
+              //     };
+              //
+              //     $http.post(url, data, config)
+              //         .then(
+              //             function(response){
+              //                 // callback
+              //                 $scope.z = data.z;
+              //                 alert("gooooo.");
+              //             },
+              //             function(response){
+              //                 // failure callback
+              //                 alert("єбать ти лох");
+              //             }
+              //         );
+              // };
 						}).success(function(data){
 
 						});
@@ -215,6 +235,7 @@ ytwApp.directive("imgUpload",function($http,$compile){
 						var index= scope.previewData.indexOf(data);
 						scope.previewData.splice(index,1);
 					}
+
 				}
 			}
 		});

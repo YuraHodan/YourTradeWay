@@ -2,42 +2,52 @@
   .row.collapse
     .columns-9
       .title-top
-        | регистрация
-      .taitle-contacts.color-line.yellow-block о компании
+        = t("post_product.check_in")
+      .taitle-contacts.color-line.yellow-block
+        = t("post_product.about_company")
       .wrapper-tab.bge
           .taitle
-            .text-taitle Вид деятольности:
+            .text-taitle
+              = t("post_product.Kind_of_activity")
           .targer
-            button.tablinks.btn-big.blue-btn.active onclick="openPremium(event, 'goods')"  призводители
+            button.tablinks.btn-big.blue-btn.active onclick="openPremium(event, 'goods')"
+              = t("index.manufacturers")
           .targer
-            button.tablinks.btn-big.green-btn.green onclick="openPremium(event, 'distributors')"  дистрибютори
+            button.tablinks.btn-big.green-btn.green onclick="openPremium(event, 'distributors')"
+              = t("index.distributors")
           .targer
-            button.tablinks.btn-big.red-btn.red onclick="openPremium(event, 'marker')"  маркеть
+            button.tablinks.btn-big.red-btn.red onclick="openPremium(event, 'marker')"
+              = t("index.market")
           .targer
-            button.tablinks.btn-big.orange-btn.orange onclick="openPremium(event, 'logistics')"  логист
+            button.tablinks.btn-big.orange-btn.orange onclick="openPremium(event, 'logistics')"
+              = t("index.logistic")
       .wrapper-tab.smole
         .taitle-smolle
-          .text-taitle Вид деятольности:
+          .text-taitle
+            = t("post_product.Kind_of_activity")
         .button-smolle
           .targer
-            button.tablinks.btn-big.blue-btn.active onclick="openPremium(event, 'goods')"  призводители
+            button.tablinks.btn-big.blue-btn.active onclick="openPremium(event, 'goods')"
+              = t("index.manufacturers")
           .targer
-            button.tablinks.btn-big.green-btn.green onclick="openPremium(event, 'distributors')"  дистрибютори
+            button.tablinks.btn-big.green-btn.green onclick="openPremium(event, 'distributors')"
+              = t("index.distributors")
           .targer
-            button.tablinks.btn-big.red-btn.red onclick="openPremium(event, 'marker')"  маркеть
+            button.tablinks.btn-big.red-btn.red onclick="openPremium(event, 'marker')"
+              = t("index.market")
           .targer
-            button.tablinks.btn-big.orange-btn.orange onclick="openPremium(event, 'logistics')"  логист
-
-
+            button.tablinks.btn-big.orange-btn.orange onclick="openPremium(event, 'logistics')"
+              = t("index.logistic")
 
       #goods.tabcontent
-        form.ajax-form action="/creating_unit" method="post" enctype="multipart/form-data" name="usubmitForm" ng-submit="submitForm()" novalidate=""
-          /category
+        form.ajax-form  action="/creating_unit" method="post" enctype="multipart/form-data" name="usubmitForm" ng-submit="submitForm()" novalidate=""
+          category
           input.d-none type="text" value='products' name="category"
           / tariff
           .form-group ng-class=("{ 'has-error' : usubmitForm.tariff.$invalid && !usubmitForm.tariff.$pristine }")
             .lable-one
-              .label Тарифньй план:
+              .label
+                = t("post_product.tariff_plan")
               / .span  *
             select#nazn.selectid.form-control name="selected_fare" required="" ng-model="user.tariff" type="text"
               //ng-model="user.tariff"
@@ -48,9 +58,10 @@
           name
           .form-group ng-class=("{ 'has-error' : usubmitForm.name.$invalid && !usubmitForm.name.$pristine }")
             .lable-one
-              .label Названия компании:
+              .label
+                = t("post_product.company_name")
               / .span  *
-            input.text-input.form-control name="name" ng-model="user.name" required="" type="text" minlength="5" placeholder="ОАО 'ТУльский молочний комбинат'" /
+            input.text-input.form-control name="name" ng-model="user.name" required="" type="text" minlength="5" placeholder= t("post_product.сompany_placeholder")
             p.help-block ng-show=("usubmitForm.name.$invalid && !usubmitForm.name.$pristine")  You name is required.
           /
           /
@@ -59,9 +70,10 @@
           //manufacturers
           .form-group ng-class=("{ 'has-error' : usubmitForm.tariff.$invalid && !usubmitForm.tariff.$pristine }")
             .lable-one
-              .label тип призводства план:
+              .label
+                = t("post_product.type_of_production")
               / .span  *
-            select#nazn.selectid.form-control name="goods" required="" ng-model="user.goods" type="text"
+            select#nazn.selectid.form-control name="Type_production" required="" ng-model="user.Type_production" type="text"
               option питания
               option косметика
               option для дома
@@ -70,7 +82,8 @@
           /logotype
           .form-group ng-class=("{ 'has-error' : usubmitForm.tariff.$invalid && !usubmitForm.tariff.$pristine }")
             .lable-one
-              .label логотип:
+              .label
+                = t("post_product.Logotype")
 
             input#upload.custom-file-input.none name='logo' ng-file-select="onFileSelect($files)"  ng-model="user.imageSrc" required=""  type="file" accept=".jpg, .jpeg, .png"
             .img
@@ -79,82 +92,127 @@
           /aboyut as
           .form-group ng-class=("{ 'has-error' : usubmitForm.comment.$invalid && !usubmitForm.comment.$pristine }")
             .lable-one
-              .label описания
+              .label
+                = t("post_product.Description")
             textarea.form-control.ng-pristine.ng-valid.ng-empty.ng-touched name="comment" ng-model="user.comment" placeholder=("") rows="5" minlength="15"
             p.help-block ng-show="usubmitForm.comment.$error.maxlength"  not less than 15 characters
 
           // foto
           .form-group ng-class=("{ 'has-error' : usubmitForm.username.$invalid && !usubmitForm.username.$pristine }")
             .lable-one
-              .label фото
-            div.target
-              div  img-upload=""
-              //video
+              .label
+                = t("post_product.photo")
+            / div.target
+            /   div  img-upload=""
+
+            .wrap-custom-file
+              .image1
+                input#image1.olt accept=".gif, .jpg, .png" name="photo[]" type="file" /
+                label for="image1"
+                  span Select Image One
+            .wrap-custom-file
+              .image2
+                input#image2.olt accept=".gif, .jpg, .png" name="photo[]" type="file" /
+                label for="image2"
+                  span Select Image Two
+            .wrap-custom-file
+              .image3
+                input#image3.olt accept=".gif, .jpg, .png" name="photo[]" type="file" /
+                label for="image3"
+                  span Select Image Three
+            .wrap-custom-file
+              .image4
+                input#image4.olt accept=".gif, .jpg, .png" name="photo[]" type="file" /
+                label for="image4"
+                  span Select Image Four
+            .wrap-custom-file
+              .image5
+                input#image5.olt accept=".gif, .jpg, .png" name="photo[]" type="file" /
+                label for="image5"
+                  span Select Image fifth
+            .wrap-custom-file
+              .image6
+                input#image6.olt accept=".gif, .jpg, .png" name="photo[]" type="file" /
+                label for="image6"
+                  span Select Image fifth
+              /video
           .form-group ng-class=("{ 'has-error' : usubmitForm.video.$invalid && !usubmitForm.video.$pristine }")
             .lable-one
-              .label посилання на відео:
+              .label
+                = t("post_product.link_to_video")
               / .span  *
-            input.text-input.form-control name="video" ng-model="user.video" required="" type="text" minlength="5" placeholder="https://www.youtube.com/watch" /
+            input.text-input.form-control name="link_video" ng-model="user.link_video" required="" type="text" minlength="5" placeholder="https://www.youtube.com/watch" /
             p.help-block ng-show=("usubmitForm.video.$invalid && !usubmitForm.video.$pristine")  You name is required.
           / catalog
           .form-group.fails ng-class=("{ 'has-error' : usubmitForm.catalog.$invalid && !usubmitForm.catalog.$pristine }")
             .lable-one
-              .label каталог продукції:
+              .label
+                = t("post_product.product_Catalog")
             input#upload.custom-file-input name="catalog" ng-model="user.catalog"  type="file"
           // list
           .form-group.fails ng-class=("{ 'has-error' : usubmitForm.list.$invalid && !usubmitForm.list.$pristine }")
             .lable-one
-              .label Прайс лист:
+              .label
+                = t("post_product.price_list")
             input#upload.custom-file-input name="price_list" ng-model="user.list"  type="file"
           // sert
           .form-group.fails ng-class=("{ 'has-error' : usubmitForm.sert.$invalid && !usubmitForm.sert.$pristine }")
             .lable-one
-              .label сертифікат:
+              .label
+                = t("post_product.certificate")
             input#upload.custom-file-input name="certificate" ng-model="user.sert"  type="file"
 
-          .taitle-contacts.color-line.yellow-block Дополнитильная информация
+          .taitle-contacts.color-line.yellow-block
+            = t("post_product.additional_Information")
           //country
           .form-group ng-class=("{ 'has-error' : usubmitForm.country.$invalid && !usubmitForm.country.$pristine }")
             .lable-one
-              .label страна:
+              .label
+                = t("post_product.country")
               / .span  *
-            input.text-input.form-control name="country" ng-model="user.country" required="" type="text" minlength="3" placeholder="страна"
+            input.text-input.form-control name="country" ng-model="user.country" required="" type="text" minlength="3" placeholder= t("post_product.country")
             p.help-block ng-show=("usubmitForm.country.$invalid && !usubmitForm.country.$pristine")  You country is required.
           // city
           .form-group ng-class=("{ 'has-error' : usubmitForm.city.$invalid && !usubmitForm.city.$pristine }")
             .lable-one
-              .label Город:
+              .label
+                = t("post_product.city")
               / .span  *
-            input.text-input.form-control name="city" ng-model="user.city" required="" type="text" minlength="3" placeholder="страна"
+            input.text-input.form-control name="city" ng-model="user.city" required="" type="text" minlength="3" placeholder= t("post_product.city")
             p.help-block ng-show=("usubmitForm.city.$invalid && !usubmitForm.city.$pristine")  You country is required.
           // street
           .form-group ng-class=("{ 'has-error' : usubmitForm.street.$invalid && !usubmitForm.street.$pristine }")
             .lable-one
-              .label Улица:
+              .label
+                = t("post_product.street")
               / .span  *
-            input.text-input.form-control name="street" ng-model="user.street" required="" type="text" minlength="3" placeholder="страна"
+            input.text-input.form-control name="street" ng-model="user.street" required="" type="text" minlength="3" placeholder= t("post_product.street")
             p.help-block ng-show=("usubmitForm.street.$invalid && !usubmitForm.street.$pristine")  You country is street.
           // phone
           .form-group ng-class=("{ 'has-error' : usubmitForm.phone.$invalid && !usubmitForm.phone.$pristine }")
             .lable-one
-              .label Телефон:
+              .label
+                = t("post_product.phone")
             input.text-input.form-control required="" name="phone" ng-model="user.phone" type="text"  placeholder="+91-636-78658" ng-pattern="phoneNumbr"
 
             p.help-block.phone ng-show="usubmitForm.phone.$error.pattern"  Please match pattern [+91 036 78658 or 91 036 78658]
           // site
           .form-group ng-class=("{ 'has-error' : usubmitForm.site.$invalid && !usubmitForm.site.$pristine }")
             .lable-one
-              .label Сайт:
+              .label
+                = t("post_product.site")
               / .span  *
-            input.text-input.form-control name="site" ng-model="user.site" required="" type="text" minlength="5" placeholder="страна"
+            input.text-input.form-control name="site" ng-model="user.site" required="" type="text" minlength="5" placeholder="www.site.com"
             p.help-block ng-show=("usubmitForm.site.$invalid && !usubmitForm.site.$pristine")  You site is street.
-          .taitle-contacts.color-line.yellow-block контактное лицо
+          .taitle-contacts.color-line.yellow-block
+            = t("post_product.the_contact_person")
           // fio
           .form-group ng-class=("{ 'has-error' : usubmitForm.fio.$invalid && !usubmitForm.fio.$pristine }")
             .lable-one
-              .label страна:
+              .label
+                = t("post_product.full_name")
               / .span  *
-            input.text-input.form-control name="contact_person" ng-model="user.fiocountry" required="" type="text" minlength="5" placeholder="страна"
+            input.text-input.form-control name="contact_person" ng-model="user.fiocountry" required="" type="text" minlength="5" placeholder= t("post_product.full_name")
             p.help-block ng-show=("usubmitForm.fio.$invalid && !usubmitForm.fio.$pristine")  You fio is street.
           // email
           .form-group ng-class=("{ 'has-error' : usubmitForm.email.$invalid && !usubmitForm.email.$pristine }")
@@ -166,17 +224,20 @@
           // phonefio
           .form-group ng-class=("{ 'has-error' : usubmitForm.phonefio.$invalid && !usubmitForm.phonefio.$pristine }")
             .lable-one
-              .label Телефон:
+              .label
+                = t("post_product.phone")
             input.text-input.form-control required="" name="contact_person_phone" ng-model="user.phonefio" type="text"  placeholder="+91-636-78658" ng-pattern="phoneNumbr"
             p.help-block.phone ng-show="usubmitForm.phonefio.$error.pattern"  Please match pattern [+91 036 78658 or 91 036 78658]
           //fax
           .form-group ng-class=("{ 'has-error' : usubmitForm.fax.$invalid && !usubmitForm.fax.$pristine }")
             .lable-one
-              .label факс:
+              .label
+                = t("post_product.fax")
             input.text-input.form-control required="" name="fax" ng-model="user.fax" type="text"  placeholder="+910367865844444" ng-pattern="faxNumbr"
             p.help-block.phone ng-show="usubmitForm.fax.$error.pattern"  Please match pattern [+910367865844444 or 910367865844444]
           .button-te
-            button.open-popup data-id="popup_default" ng-disabled="usubmitForm.$invalid" type="submit"  отпраить
+            button#submitotp.open-popup data-id="popup_default" ng-disabled="usubmitForm.$invalid" type="submit"
+              = t("post_product.send")
 
 
 
@@ -189,9 +250,10 @@
           // tariff
           .form-group ng-class=("{ 'has-error' : usubmitForm2.tariff.$invalid && !usubmitForm2.tariff.$pristine }")
             .lable-one
-              .label Тарифньй план:
+              .label
+                = t("post_product.tariff_plan")
               / .span  *
-            select#nazn.selectid.form-control name="selected_fare" required=""
+            select#nazn.selectid.form-control name="Type_production" required=""
               //ng-model="user.tariff"
               option#one1.sel_dok value="free"  free
               option#two1.sel_dok value="basic"  basic
@@ -200,9 +262,10 @@
           //name
           .form-group ng-class=("{ 'has-error' : usubmitForm2.name.$invalid && !usubmitForm2.name.$pristine }")
             .lable-one
-              .label Названия компании:
+              .label
+                = t("post_product.company_name")
               / .span  *
-            input.text-input.form-control name="name" ng-model="user.name" required="" type="text" minlength="5" placeholder="ОАО 'ТУльский молочний комбинат'" /
+            input.text-input.form-control name="name" ng-model="user.name" required="" type="text" minlength="5" placeholder= t("post_product.сompany_placeholder")
             p.help-block ng-show=("usubmitForm2.name.$invalid && !usubmitForm2.name.$pristine")  You name is required.
 
 
@@ -213,7 +276,8 @@
           //logotype
           .form-group ng-class=("{ 'has-error' : usubmitForm2.tariff.$invalid && !usubmitForm2.tariff.$pristine }")
             .lable-one
-              .label логотип:
+              .label
+                = t("post_product.Logotype")
 
             input#upload.custom-file-input.none name='logo' ng-file-select="onFileSelect($files)"  ng-model="imageSrc" required=""  type="file"
             .img
@@ -222,82 +286,126 @@
           //aboyut as
           .form-group ng-class=("{ 'has-error' : usubmitForm2.comment.$invalid && !usubmitForm2.comment.$pristine }")
             .lable-one
-              .label описания
+              .label
+                = t("post_product.Description")
             textarea.form-control.ng-pristine.ng-valid.ng-empty.ng-touched name="comment" ng-model="user.comment" placeholder=("") rows="5" minlength="15"
             p.help-block ng-show="usubmitForm2.comment.$error.maxlength"  not less than 15 characters
 
           // foto
           .form-group ng-class=("{ 'has-error' : usubmitForm2.username.$invalid && !usubmitForm2.username.$pristine }")
             .lable-one
-              .label фото
-            div.target
-              div  img-upload="" method="POST"
+              .label
+                = t("post_product.photo")
+            .wrap-custom-file
+              .image7
+                input#image7.olt accept=".gif, .jpg, .png" name="photo[]" type="file" /
+                label for="image7"
+                  span Select Image One
+            .wrap-custom-file
+              .image8
+                input#image8.olt accept=".gif, .jpg, .png" name="photo[]" type="file" /
+                label for="image8"
+                  span Select Image Two
+            .wrap-custom-file
+              .image9
+                input#image9.olt accept=".gif, .jpg, .png" name="photo[]" type="file" /
+                label for="image9"
+                  span Select Image Three
+            .wrap-custom-file
+              .image10
+                input#image10.olt accept=".gif, .jpg, .png" name="photo[]" type="file" /
+                label for="image10"
+                  span Select Image Four
+            .wrap-custom-file
+              .image11
+                input#image11.olt accept=".gif, .jpg, .png" name="photo[]" type="file" /
+                label for="image11"
+                  span Select Image fifth
+            .wrap-custom-file
+              .image12
+                input#image12.olt accept=".gif, .jpg, .png" name="photo[]" type="file" /
+                label for="image12"
+                  span Select Image fifth
+            / div.target
+            /   div  img-upload="" method="POST"
               //video
           .form-group ng-class=("{ 'has-error' : usubmitForm2.video.$invalid && !usubmitForm2.video.$pristine }")
             .lable-one
-              .label посилання на відео:
+              .label
+                = t("post_product.link_to_video")
               / .span  *
-            input.text-input.form-control name="video" ng-model="user.video" required="" type="text" minlength="5" placeholder="https://www.youtube.com/watch" /
+            input.text-input.form-control name="link_video" ng-model="user.link_video" required="" type="text" minlength="5" placeholder="https://www.youtube.com/watch" /
             p.help-block ng-show=("usubmitForm2.video.$invalid && !usubmitForm2.video.$pristine")  You name is required.
           / catalog
           .form-group.fails ng-class=("{ 'has-error' : usubmitForm2.catalog.$invalid && !usubmitForm2.catalog.$pristine }")
             .lable-one
-              .label каталог продукції:
+              .label
+                = t("post_product.product_Catalog")
             input#upload.custom-file-input name="catalog" ng-model="user.catalog"  type="file"
           // list
           .form-group.fails ng-class=("{ 'has-error' : usubmitForm2.list.$invalid && !usubmitForm2.list.$pristine }")
             .lable-one
-              .label Прайс лист:
+              .label
+                = t("post_product.price_list")
             input#upload.custom-file-input name="price_list" ng-model="user.list"  type="file"
           // sert
           .form-group.fails ng-class=("{ 'has-error' : usubmitForm2.sert.$invalid && !usubmitForm2.sert.$pristine }")
             .lable-one
-              .label сертифікат:
+              .label
+                = t("post_product.certificate")
             input#upload.custom-file-input name="certificate" ng-model="user.sert"  type="file"
 
-          .taitle-contacts.color-line.yellow-block Дополнитильная информация
+          .taitle-contacts.color-line.yellow-block
+            = t("post_product.additional_Information")
           //country
           .form-group ng-class=("{ 'has-error' : usubmitForm2.country.$invalid && !usubmitForm2.country.$pristine }")
             .lable-one
-              .label страна:
+              .label
+                = t("post_product.country")
               / .span  *
-            input.text-input.form-control name="country" ng-model="user.country" required="" type="text" minlength="3" placeholder="страна"
+            input.text-input.form-control name="country" ng-model="user.country" required="" type="text" minlength="3" placeholder= t("post_product.country")
             p.help-block ng-show=("usubmitForm2.country.$invalid && !usubmitForm2.country.$pristine")  You country is required.
           // city
           .form-group ng-class=("{ 'has-error' : usubmitForm2.city.$invalid && !usubmitForm2.city.$pristine }")
             .lable-one
-              .label Город:
+              .label
+                = t("post_product.city")
               / .span  *
-            input.text-input.form-control name="city" ng-model="user.city" required="" type="text" minlength="3" placeholder="страна"
+            input.text-input.form-control name="city" ng-model="user.city" required="" type="text" minlength="3" placeholder= t("post_product.city")
             p.help-block ng-show=("usubmitForm2.city.$invalid && !usubmitForm2.city.$pristine")  You country is required.
           // street
           .form-group ng-class=("{ 'has-error' : usubmitForm2.street.$invalid && !usubmitForm2.street.$pristine }")
             .lable-one
-              .label Улица:
+              .label
+                = t("post_product.street")
               / .span  *
-            input.text-input.form-control name="street" ng-model="user.street" required="" type="text" minlength="3" placeholder="страна"
+            input.text-input.form-control name="street" ng-model="user.street" required="" type="text" minlength="3" placeholder= t("post_product.street")
             p.help-block ng-show=("usubmitForm2.street.$invalid && !usubmitForm2.street.$pristine")  You country is street.
           // phone
           .form-group ng-class=("{ 'has-error' : usubmitForm2.phone.$invalid && !usubmitForm2.phone.$pristine }")
             .lable-one
-              .label Телефон:
+              .label
+                = t("post_product.phone")
             input.text-input.form-control required="" name="phone" ng-model="user.phone" type="text"  placeholder="+91-636-78658" ng-pattern="phoneNumbr"
 
             p.help-block.phone ng-show="usubmitForm2.phone.$error.pattern"  Please match pattern [+91 036 78658 or 91 036 78658]
           // site
           .form-group ng-class=("{ 'has-error' : usubmitForm2.site.$invalid && !usubmitForm2.site.$pristine }")
             .lable-one
-              .label Сайт:
+              .label
+                = t("post_product.site")
               / .span  *
-            input.text-input.form-control name="site" ng-model="user.site" required="" type="text" minlength="5" placeholder="страна"
+            input.text-input.form-control name="site" ng-model="user.site" required="" type="text" minlength="5" placeholder="www.site.com"
             p.help-block ng-show=("usubmitForm2.site.$invalid && !usubmitForm2.site.$pristine")  You site is street.
-          .taitle-contacts.color-line.yellow-block контактное лицо
+          .taitle-contacts.color-line.yellow-block
+            = t("post_product.the_contact_person")
           // fio
           .form-group ng-class=("{ 'has-error' : usubmitForm2.fio.$invalid && !usubmitForm2.fio.$pristine }")
             .lable-one
-              .label страна:
+              .label
+                = t("post_product.full_name")
               / .span  *
-            input.text-input.form-control name="contact_person" ng-model="user.fio" required="" type="text" minlength="5" placeholder="страна"
+            input.text-input.form-control name="contact_person" ng-model="user.fio" required="" type="text" minlength="5" placeholder= t("post_product.full_name")
             p.help-block ng-show=("usubmitForm2.fio.$invalid && !usubmitForm2.fio.$pristine")  You fio is street.
           // email
           .form-group ng-class=("{ 'has-error' : usubmitForm2.email.$invalid && !usubmitForm2.email.$pristine }")
@@ -309,22 +417,25 @@
           // phonefio
           .form-group ng-class=("{ 'has-error' : usubmitForm2.phonefio.$invalid && !usubmitForm2.phonefio.$pristine }")
             .lable-one
-              .label Телефон:
+              .label
+                = t("post_product.phone")
             input.text-input.form-control required="" name="contact_person_phone" ng-model="user.phonefio" type="text"  placeholder="+91-636-78658" ng-pattern="phoneNumbr"
             p.help-block.phone ng-show="usubmitForm2.phonefio.$error.pattern"  Please match pattern [+91 036 78658 or 91 036 78658]
           //fax
           .form-group ng-class=("{ 'has-error' : usubmitForm2.fax.$invalid && !usubmitForm2.fax.$pristine }")
             .lable-one
-              .label Телефон:
+              .label
+                = t("post_product.fax")
             input.text-input.form-control required="" name="fax" ng-model="user.fax" type="text"  placeholder="+910367865844444" ng-pattern="faxNumbr"
             p.help-block.phone ng-show="usubmitForm2.fax.$error.pattern"  Please match pattern [+910367865844444 or 910367865844444]
           .button-te
-            button.open-popup data-id="popup_default" ng-disabled="usubmitForm2.$invalid" type="submit"  отпраить
-
-
-
-
-
+            button.open-popup data-id="popup_default" ng-disabled="usubmitForm2.$invalid" type="submit"
+              = t("post_product.send")
+      / /
+      / /
+      / /
+      / /
+      / /
       #marker.tabcontent
 
         form.ajax-form action="/creating_unit" method="post" enctype="multipart/form-data" name="usubmitForm3" ng-submit="submitForm()" novalidate=""
@@ -333,7 +444,8 @@
           // tariff
           .form-group ng-class=("{ 'has-error' : usubmitForm3.tariff.$invalid && !usubmitForm3.tariff.$pristine }")
             .lable-one
-              .label Тарифньй план:
+              .label
+                = t("post_product.tariff_plan")
               / .span  *
             select#nazn.selectid.form-control name="selected_fare" required=""
               //ng-model="user.tariff"
@@ -344,9 +456,10 @@
           //name
           .form-group ng-class=("{ 'has-error' : usubmitForm3.name.$invalid && !usubmitForm3.name.$pristine }")
             .lable-one
-              .label Названия компании:
+              .label
+                = t("post_product.company_name")
               / .span  *
-            input.text-input.form-control name="name" ng-model="user.name" required="" type="text" minlength="5" placeholder="ОАО 'ТУльский молочний комбинат'" /
+            input.text-input.form-control name="name" ng-model="user.name" required="" type="text" minlength="5" placeholder= t("post_product.сompany_placeholder")
             p.help-block ng-show=("usubmitForm3.name.$invalid && !usubmitForm3.name.$pristine")  You name is required.
 
 
@@ -357,7 +470,8 @@
           //logotype
           .form-group ng-class=("{ 'has-error' : usubmitForm3.tariff.$invalid && !usubmitForm3.tariff.$pristine }")
             .lable-one
-              .label логотип:
+              .label
+                = t("post_product.Logotype")
 
             input#upload.custom-file-input.none name='logo' ng-file-select="onFileSelect($files)"  ng-model="imageSrc" required=""  type="file"
             .img
@@ -366,82 +480,126 @@
           //aboyut as
           .form-group ng-class=("{ 'has-error' : usubmitForm3.comment.$invalid && !usubmitForm3.comment.$pristine }")
             .lable-one
-              .label описания
+              .label
+                = t("post_product.Description")
             textarea.form-control.ng-pristine.ng-valid.ng-empty.ng-touched name="comment" ng-model="user.comment" placeholder=("") rows="5" minlength="15"
             p.help-block ng-show="usubmitForm3.comment.$error.maxlength"  not less than 15 characters
 
           // foto
           .form-group ng-class=("{ 'has-error' : usubmitForm3.username.$invalid && !usubmitForm3.username.$pristine }")
             .lable-one
-              .label фото
-            div.target
-              div  img-upload="" method="POST"
+              .label
+                = t("post_product.photo")
+            .wrap-custom-file
+              .image13
+                input#image13.olt accept=".gif, .jpg, .png" name="photo[]" type="file" /
+                label for="image13"
+                  span Select Image One
+            .wrap-custom-file
+              .image14
+                input#image14.olt accept=".gif, .jpg, .png" name="photo[]" type="file" /
+                label for="image14"
+                  span Select Image Two
+            .wrap-custom-file
+              .image15
+                input#image15.olt accept=".gif, .jpg, .png" name="photo[]" type="file" /
+                label for="image15"
+                  span Select Image Three
+            .wrap-custom-file
+              .image16
+                input#image16.olt accept=".gif, .jpg, .png" name="photo[]" type="file" /
+                label for="image16"
+                  span Select Image Four
+            .wrap-custom-file
+              .image17
+                input#image17.olt accept=".gif, .jpg, .png" name="photo[]" type="file" /
+                label for="image17"
+                  span Select Image fifth
+            .wrap-custom-file
+              .image18
+                input#image18.olt accept=".gif, .jpg, .png" name="photo[]" type="file" /
+                label for="image18"
+                  span Select Image fifth
+            / div.target
+            /   div  img-upload="" method="POST"
               //video
           .form-group ng-class=("{ 'has-error' : usubmitForm3.video.$invalid && !usubmitForm3.video.$pristine }")
             .lable-one
-              .label посилання на відео:
+              .label
+                = t("post_product.link_to_video")
               / .span  *
-            input.text-input.form-control name="video" ng-model="user.video" required="" type="text" minlength="5" placeholder="https://www.youtube.com/watch" /
+            input.text-input.form-control name="link_video" ng-model="user.link_video" required="" type="text" minlength="5" placeholder="https://www.youtube.com/watch" /
             p.help-block ng-show=("usubmitForm3.video.$invalid && !usubmitForm3.video.$pristine")  You name is required.
           / catalog
           .form-group.fails ng-class=("{ 'has-error' : usubmitForm3.catalog.$invalid && !usubmitForm3.catalog.$pristine }")
             .lable-one
-              .label каталог продукції:
+              .label
+                = t("post_product.product_Catalog")
             input#upload.custom-file-input name="catalog" ng-model="user.catalog"  type="file"
           // list
           .form-group.fails ng-class=("{ 'has-error' : usubmitForm3.list.$invalid && !usubmitForm3.list.$pristine }")
             .lable-one
-              .label Прайс лист:
+              .label
+                = t("post_product.price_list")
             input#upload.custom-file-input name="price_list" ng-model="user.list"  type="file"
           // sert
           .form-group.fails ng-class=("{ 'has-error' : usubmitForm3.sert.$invalid && !usubmitForm3.sert.$pristine }")
             .lable-one
-              .label сертифікат:
+              .label
+                = t("post_product.certificate")
             input#upload.custom-file-input name="certificate" ng-model="user.sert"  type="file"
 
-          .taitle-contacts.color-line.yellow-block Дополнитильная информация
+          .taitle-contacts.color-line.yellow-block
+            = t("post_product.additional_Information")
           //country
           .form-group ng-class=("{ 'has-error' : usubmitForm3.country.$invalid && !usubmitForm3.country.$pristine }")
             .lable-one
-              .label страна:
+              .label
+                = t("post_product.country")
               / .span  *
-            input.text-input.form-control name="country" ng-model="user.country" required="" type="text" minlength="3" placeholder="страна"
+            input.text-input.form-control name="country" ng-model="user.country" required="" type="text" minlength="3" placeholder= t("post_product.country")
             p.help-block ng-show=("usubmitForm3.country.$invalid && !usubmitForm3.country.$pristine")  You country is required.
           // city
           .form-group ng-class=("{ 'has-error' : usubmitForm3.city.$invalid && !usubmitForm3.city.$pristine }")
             .lable-one
-              .label Город:
+              .label
+                = t("post_product.city")
               / .span  *
-            input.text-input.form-control name="city" ng-model="user.city" required="" type="text" minlength="3" placeholder="страна"
+            input.text-input.form-control name="city" ng-model="user.city" required="" type="text" minlength="3" placeholder= t("post_product.city")
             p.help-block ng-show=("usubmitForm3.city.$invalid && !usubmitForm3.city.$pristine")  You country is required.
           // street
           .form-group ng-class=("{ 'has-error' : usubmitForm3.street.$invalid && !usubmitForm3.street.$pristine }")
             .lable-one
-              .label Улица:
+              .label
+                = t("post_product.street")
               / .span  *
-            input.text-input.form-control name="street" ng-model="user.street" required="" type="text" minlength="3" placeholder="страна"
+            input.text-input.form-control name="street" ng-model="user.street" required="" type="text" minlength="3" placeholder= t("post_product.street")
             p.help-block ng-show=("usubmitForm3.street.$invalid && !usubmitForm3.street.$pristine")  You country is street.
           // phone
           .form-group ng-class=("{ 'has-error' : usubmitForm3.phone.$invalid && !usubmitForm3.phone.$pristine }")
             .lable-one
-              .label Телефон:
+              .label
+                = t("post_product.phone")
             input.text-input.form-control required="" name="phone" ng-model="user.phone" type="text"  placeholder="+91-636-78658" ng-pattern="phoneNumbr"
 
             p.help-block.phone ng-show="usubmitForm3.phone.$error.pattern"  Please match pattern [+91 036 78658 or 91 036 78658]
           // site
           .form-group ng-class=("{ 'has-error' : usubmitForm3.site.$invalid && !usubmitForm3.site.$pristine }")
             .lable-one
-              .label Сайт:
+              .label
+                = t("post_product.site")
               / .span  *
-            input.text-input.form-control name="site" ng-model="user.site" required="" type="text" minlength="5" placeholder="страна"
+            input.text-input.form-control name="site" ng-model="user.site" required="" type="text" minlength="5" placeholder="www.site.com"
             p.help-block ng-show=("usubmitForm3.site.$invalid && !usubmitForm3.site.$pristine")  You site is street.
-          .taitle-contacts.color-line.yellow-block контактное лицо
+          .taitle-contacts.color-line.yellow-block
+            = t("post_product.the_contact_person")
           // fio
           .form-group ng-class=("{ 'has-error' : usubmitForm3.fio.$invalid && !usubmitForm3.fio.$pristine }")
             .lable-one
-              .label страна:
+              .label
+                = t("post_product.full_name")
               / .span  *
-            input.text-input.form-control name="contact_person" ng-model="user.fio" required="" type="text" minlength="5" placeholder="страна"
+            input.text-input.form-control name="contact_person" ng-model="user.fio" required="" type="text" minlength="5" placeholder= t("post_product.full_name")
             p.help-block ng-show=("usubmitForm3.fio.$invalid && !usubmitForm3.fio.$pristine")  You fio is street.
           // email
           .form-group ng-class=("{ 'has-error' : usubmitForm3.email.$invalid && !usubmitForm3.email.$pristine }")
@@ -453,23 +611,26 @@
           // phonefio
           .form-group ng-class=("{ 'has-error' : usubmitForm3.phonefio.$invalid && !usubmitForm3.phonefio.$pristine }")
             .lable-one
-              .label Телефон:
+              .label
+                = t("post_product.phone")
             input.text-input.form-control required="" name="contact_person_phone" ng-model="user.phonefio" type="text"  placeholder="+91-636-78658" ng-pattern="phoneNumbr"
             p.help-block.phone ng-show="usubmitForm3.phonefio.$error.pattern"  Please match pattern [+91 036 78658 or 91 036 78658]
           //fax
           .form-group ng-class=("{ 'has-error' : usubmitForm3.fax.$invalid && !usubmitForm3.fax.$pristine }")
             .lable-one
-              .label Телефон:
+              .label
+                = t("post_product.fax")
             input.text-input.form-control required="" name="fax" ng-model="user.fax" type="text"  placeholder="+910367865844444" ng-pattern="faxNumbr"
             p.help-block.phone ng-show="usubmitForm3.fax.$error.pattern"  Please match pattern [+910367865844444 or 910367865844444]
           .button-te
-            button.open-popup data-id="popup_default" ng-disabled="usubmitForm3.$invalid" type="submit"  отпраить
+            button.open-popup data-id="popup_default" ng-disabled="usubmitForm3.$invalid" type="submit"
+              = t("post_product.send")
+      / /
+      / /
       /
       /
-
-
-
-
+      /
+      /
       #logistics.tabcontent
         form.ajax-form action="/creating_unit" method="post" enctype="multipart/form-data" name="usubmitForm4" ng-submit="submitForm()" novalidate=""
           /category
@@ -477,7 +638,8 @@
           // tariff
           .form-group ng-class=("{ 'has-error' : usubmitForm4.tariff.$invalid && !usubmitForm4.tariff.$pristine }")
             .lable-one
-              .label Тарифньй план:
+              .label
+                = t("post_product.tariff_plan")
               / .span  *
             select#nazn.selectid.form-control name="selected_fare" required=""
               //ng-model="user.tariff"
@@ -488,9 +650,10 @@
           //name
           .form-group ng-class=("{ 'has-error' : usubmitForm4.name.$invalid && !usubmitForm4.name.$pristine }")
             .lable-one
-              .label Названия компании:
+              .label
+                = t("post_product.company_name")
               / .span  *
-            input.text-input.form-control name="name" ng-model="user.name" required="" type="text" minlength="5" placeholder="ОАО 'ТУльский молочний комбинат'" /
+            input.text-input.form-control name="name" ng-model="user.name" required="" type="text" minlength="5" placeholder= t("post_product.сompany_placeholder")
             p.help-block ng-show=("usubmitForm4.name.$invalid && !usubmitForm4.name.$pristine")  You name is required.
 
 
@@ -501,7 +664,8 @@
           //logotype
           .form-group ng-class=("{ 'has-error' : usubmitForm4.tariff.$invalid && !usubmitForm4.tariff.$pristine }")
             .lable-one
-              .label логотип:
+              .label
+                = t("post_product.Logotype")
 
             input#upload.custom-file-input.none name='logo' ng-file-select="onFileSelect($files)"  ng-model="imageSrc" required=""  type="file"
             .img
@@ -510,82 +674,126 @@
           //aboyut as
           .form-group ng-class=("{ 'has-error' : usubmitForm4.comment.$invalid && !usubmitForm4.comment.$pristine }")
             .lable-one
-              .label описания
+              .label
+                = t("post_product.Description")
             textarea.form-control.ng-pristine.ng-valid.ng-empty.ng-touched name="comment" ng-model="user.comment" placeholder=("") rows="5" minlength="15"
             p.help-block ng-show="usubmitForm4.comment.$error.maxlength"  not less than 15 characters
 
           // foto
           .form-group ng-class=("{ 'has-error' : usubmitForm4.username.$invalid && !usubmitForm4.username.$pristine }")
             .lable-one
-              .label фото
-            div.target
-              div  img-upload="" method="POST"
+              .label
+                = t("post_product.photo")
+            .wrap-custom-file
+              .image19
+                input#image19.olt accept=".gif, .jpg, .png" name="photo[]" type="file" /
+                label for="image19"
+                  span Select Image One
+            .wrap-custom-file
+              .image20
+                input#image20.olt accept=".gif, .jpg, .png" name="photo[]" type="file" /
+                label for="image20"
+                  span Select Image Two
+            .wrap-custom-file
+              .image21
+                input#image21.olt accept=".gif, .jpg, .png" name="photo[]" type="file" /
+                label for="image21"
+                  span Select Image Three
+            .wrap-custom-file
+              .image22
+                input#image22.olt accept=".gif, .jpg, .png" name="photo[]" type="file" /
+                label for="image22"
+                  span Select Image Four
+            .wrap-custom-file
+              .image23
+                input#image23.olt accept=".gif, .jpg, .png" name="photo[]" type="file" /
+                label for="image23"
+                  span Select Image fifth
+            .wrap-custom-file
+              .image24
+                input#image24.olt accept=".gif, .jpg, .png" name="photo[]" type="file" /
+                label for="image24"
+                  span Select Image fifth
+            / div.target
+            /   div  img-upload="" method="POST"
               //video
           .form-group ng-class=("{ 'has-error' : usubmitForm4.video.$invalid && !usubmitForm4.video.$pristine }")
             .lable-one
-              .label посилання на відео:
+              .label
+                = t("post_product.link_to_video")
               / .span  *
-            input.text-input.form-control name="video" ng-model="user.video" required="" type="text" minlength="5" placeholder="https://www.youtube.com/watch" /
+            input.text-input.form-control name="link_video" ng-model="user.link_video" required="" type="text" minlength="5" placeholder="https://www.youtube.com/watch" /
             p.help-block ng-show=("usubmitForm4.video.$invalid && !usubmitForm4.video.$pristine")  You name is required.
           / catalog
           .form-group.fails ng-class=("{ 'has-error' : usubmitForm4.catalog.$invalid && !usubmitForm4.catalog.$pristine }")
             .lable-one
-              .label каталог продукції:
+              .label
+                = t("post_product.product_Catalog")
             input#upload.custom-file-input name="catalog" ng-model="user.catalog"  type="file"
           // list
           .form-group.fails ng-class=("{ 'has-error' : usubmitForm4.list.$invalid && !usubmitForm4.list.$pristine }")
             .lable-one
-              .label Прайс лист:
+              .label
+                = t("post_product.price_list")
             input#upload.custom-file-input name="price_list" ng-model="user.list"  type="file"
           // sert
           .form-group.fails ng-class=("{ 'has-error' : usubmitForm4.sert.$invalid && !usubmitForm4.sert.$pristine }")
             .lable-one
-              .label сертифікат:
+              .label
+                = t("post_product.certificate")
             input#upload.custom-file-input name="certificate" ng-model="user.sert"  type="file"
 
-          .taitle-contacts.color-line.yellow-block Дополнитильная информация
+          .taitle-contacts.color-line.yellow-block
+            = t("post_product.additional_Information")
           //country
           .form-group ng-class=("{ 'has-error' : usubmitForm4.country.$invalid && !usubmitForm4.country.$pristine }")
             .lable-one
-              .label страна:
+              .label
+                = t("post_product.country")
               / .span  *
-            input.text-input.form-control name="country" ng-model="user.country" required="" type="text" minlength="3" placeholder="страна"
+            input.text-input.form-control name="country" ng-model="user.country" required="" type="text" minlength="3" placeholder= t("post_product.country")
             p.help-block ng-show=("usubmitForm4.country.$invalid && !usubmitForm4.country.$pristine")  You country is required.
           // city
           .form-group ng-class=("{ 'has-error' : usubmitForm4.city.$invalid && !usubmitForm4.city.$pristine }")
             .lable-one
-              .label Город:
+              .label
+                = t("post_product.city")
               / .span  *
-            input.text-input.form-control name="city" ng-model="user.city" required="" type="text" minlength="3" placeholder="страна"
+            input.text-input.form-control name="city" ng-model="user.city" required="" type="text" minlength="3" placeholder= t("post_product.city")
             p.help-block ng-show=("usubmitForm4.city.$invalid && !usubmitForm4.city.$pristine")  You country is required.
           // street
           .form-group ng-class=("{ 'has-error' : usubmitForm4.street.$invalid && !usubmitForm4.street.$pristine }")
             .lable-one
-              .label Улица:
+              .label
+                = t("post_product.street")
               / .span  *
-            input.text-input.form-control name="street" ng-model="user.street" required="" type="text" minlength="3" placeholder="страна"
+            input.text-input.form-control name="street" ng-model="user.street" required="" type="text" minlength="3" placeholder= t("post_product.street")
             p.help-block ng-show=("usubmitForm4.street.$invalid && !usubmitForm4.street.$pristine")  You country is street.
           // phone
           .form-group ng-class=("{ 'has-error' : usubmitForm4.phone.$invalid && !usubmitForm4.phone.$pristine }")
             .lable-one
-              .label Телефон:
+              .label
+                = t("post_product.phone")
             input.text-input.form-control required="" name="phone" ng-model="user.phone" type="text"  placeholder="+91-636-78658" ng-pattern="phoneNumbr"
 
             p.help-block.phone ng-show="usubmitForm4.phone.$error.pattern"  Please match pattern [+91 036 78658 or 91 036 78658]
           // site
           .form-group ng-class=("{ 'has-error' : usubmitForm4.site.$invalid && !usubmitForm4.site.$pristine }")
             .lable-one
-              .label Сайт:
+              .label
+                = t("post_product.site")
               / .span  *
-            input.text-input.form-control name="site" ng-model="user.site" required="" type="text" minlength="5" placeholder="страна"
+            input.text-input.form-control name="site" ng-model="user.site" required="" type="text" minlength="5" placeholder="www.site.com"
             p.help-block ng-show=("usubmitForm4.site.$invalid && !usubmitForm4.site.$pristine")  You site is street.
-          .taitle-contacts.color-line.yellow-block контактное лицо
+          .taitle-contacts.color-line.yellow-block
+            = t("post_product.the_contact_person")
           // fio
           .form-group ng-class=("{ 'has-error' : usubmitForm4.fio.$invalid && !usubmitForm4.fio.$pristine }")
             .lable-one
-              .label ФИО:
+              .label
+                = t("post_product.full_name")
               / .span  *
-            input.text-input.form-control name="contact_person" ng-model="user.fio" required="" type="text" minlength="5" placeholder="страна"
+            input.text-input.form-control name="contact_person" ng-model="user.fio" required="" type="text" minlength="5" placeholder= t("post_product.full_name")
             p.help-block ng-show=("usubmitForm4.fio.$invalid && !usubmitForm4.fio.$pristine")  You fio is street.
           // email
           .form-group ng-class=("{ 'has-error' : usubmitForm4.email.$invalid && !usubmitForm4.email.$pristine }")
@@ -597,17 +805,20 @@
           // phonefio
           .form-group ng-class=("{ 'has-error' : usubmitForm4.phonefio.$invalid && !usubmitForm4.phonefio.$pristine }")
             .lable-one
-              .label Телефон:
+              .label
+                = t("post_product.photo")
             input.text-input.form-control required="" name="contact_person_phone" ng-model="user.phonefio" type="text"  placeholder="+91-636-78658" ng-pattern="phoneNumbr"
             p.help-block.phone ng-show="usubmitForm4.phonefio.$error.pattern"  Please match pattern [+91 036 78658 or 91 036 78658]
           //fax
           .form-group ng-class=("{ 'has-error' : usubmitForm4.fax.$invalid && !usubmitForm4.fax.$pristine }")
             .lable-one
-              .label Телефон:
+              .label
+                = t("post_product.fax")
             input.text-input.form-control required="" name="fax" ng-model="user.fax" type="text"  placeholder="+910367865844444" ng-pattern="faxNumbr"
             p.help-block.phone ng-show="usubmitForm4.fax.$error.pattern"  Please match pattern [+910367865844444 or 910367865844444]
           .button-te
-            button.open-popup data-id="popup_default" ng-disabled="usubmitForm4.$invalid" type="submit"  отпраить
+            button.open-popup data-id="popup_default" ng-disabled="usubmitForm4.$invalid" type="submit"
+              = t("post_product.send")
 
 
 
@@ -616,6 +827,8 @@
 #popup_default.popup
   .popup-overlay
   .popup-content
-    .title-text После обработки даньч вам придот увидамления на почту
-    .title Ваш запрос отправлен
+    .title-text
+      = t("post_product.after_processing")
+    .title
+      = t("post_product.been_sent")
     a.close-popup data-id="popup_default" href="#"  =inline_svg "svg/Approve.svg"

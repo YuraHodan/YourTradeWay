@@ -1,0 +1,57 @@
+=> {[31m[1;31m"[0m[31mcategory[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mproducts[1;31m"[0m[31m[0m,
+ [31m[1;31m"[0m[31mselected_fare[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mbasic[1;31m"[0m[31m[0m,
+ [31m[1;31m"[0m[31mname[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mфвпіапваіп[1;31m"[0m[31m[0m,
+ [31m[1;31m"[0m[31mgoods[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mкосметика[1;31m"[0m[31m[0m,
+ [31m[1;31m"[0m[31mlogo[1;31m"[0m[31m[0m=>
+  [32m#<ActionDispatch::Http::UploadedFile:0x005651c947cae0[0m
+   @content_type[32m=[0m[31m[1;31m"[0m[31mimage/png[1;31m"[0m[31m[0m,
+   @headers[32m=[0m[31m[1;31m"[0m[31mContent-Disposition: form-data; name=[1;35m\"[0m[31mlogo[1;35m\"[0m[31m; filename=[1;35m\"[0m[31m375x375.png[1;35m\"[0m[31m[1;35m\r[0m[31m[1;35m\n[0m[31mContent-Type: image/png[1;35m\r[0m[31m[1;35m\n[0m[31m[1;31m"[0m[31m[0m,
+   @original_filename[32m=[0m[31m[1;31m"[0m[31m375x375.png[1;31m"[0m[31m[0m,
+   @tempfile[32m=[0m[32m#<File:/tmp/RackMultipart20181009-10212-gti39m.png>[0m[32m>[0m,
+ [31m[1;31m"[0m[31mcomment[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mвпавіп івапвапрвапрвар[1;31m"[0m[31m[0m,
+ [31m[1;31m"[0m[31mfavFood[1;31m"[0m[31m[0m=>
+  [[32m#<ActionDispatch::Http::UploadedFile:0x005651c947ca40[0m
+    @content_type[32m=[0m[31m[1;31m"[0m[31mimage/png[1;31m"[0m[31m[0m,
+    @headers[32m=[0m[31m[1;31m"[0m[31mContent-Disposition: form-data; name=[1;35m\"[0m[31mfavFood[][1;35m\"[0m[31m; filename=[1;35m\"[0m[31m196x196.png[1;35m\"[0m[31m[1;35m\r[0m[31m[1;35m\n[0m[31mContent-Type: image/png[1;35m\r[0m[31m[1;35m\n[0m[31m[1;31m"[0m[31m[0m,
+    @original_filename[32m=[0m[31m[1;31m"[0m[31m196x196.png[1;31m"[0m[31m[0m,
+    @tempfile[32m=[0m[32m#<File:/tmp/RackMultipart20181009-10212-dcpjz5.png>[0m[32m>[0m,
+   [32m#<ActionDispatch::Http::UploadedFile:0x005651c947ca18[0m
+    @content_type[32m=[0m[31m[1;31m"[0m[31mimage/png[1;31m"[0m[31m[0m,
+    @headers[32m=[0m[31m[1;31m"[0m[31mContent-Disposition: form-data; name=[1;35m\"[0m[31mfavFood[][1;35m\"[0m[31m; filename=[1;35m\"[0m[31m375x375.png[1;35m\"[0m[31m[1;35m\r[0m[31m[1;35m\n[0m[31mContent-Type: image/png[1;35m\r[0m[31m[1;35m\n[0m[31m[1;31m"[0m[31m[0m,
+    @original_filename[32m=[0m[31m[1;31m"[0m[31m375x375.png[1;31m"[0m[31m[0m,
+    @tempfile[32m=[0m[32m#<File:/tmp/RackMultipart20181009-10212-1snpfv8.png>[0m[32m>[0m,
+   [32m#<ActionDispatch::Http::UploadedFile:0x005651c947c9f0[0m
+    @content_type[32m=[0m[31m[1;31m"[0m[31mimage/png[1;31m"[0m[31m[0m,
+    @headers[32m=[0m[31m[1;31m"[0m[31mContent-Disposition: form-data; name=[1;35m\"[0m[31mfavFood[][1;35m\"[0m[31m; filename=[1;35m\"[0m[31m196x196.png[1;35m\"[0m[31m[1;35m\r[0m[31m[1;35m\n[0m[31mContent-Type: image/png[1;35m\r[0m[31m[1;35m\n[0m[31m[1;31m"[0m[31m[0m,
+    @original_filename[32m=[0m[31m[1;31m"[0m[31m196x196.png[1;31m"[0m[31m[0m,
+    @tempfile[32m=[0m[32m#<File:/tmp/RackMultipart20181009-10212-1d9osyd.png>[0m[32m>[0m],
+ [31m[1;31m"[0m[31mvideo[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mфвпіапвапр[1;31m"[0m[31m[0m,
+ [31m[1;31m"[0m[31mcatalog[1;31m"[0m[31m[0m=>
+  [32m#<ActionDispatch::Http::UploadedFile:0x005651c947c950[0m
+   @content_type[32m=[0m[31m[1;31m"[0m[31mimage/png[1;31m"[0m[31m[0m,
+   @headers[32m=[0m[31m[1;31m"[0m[31mContent-Disposition: form-data; name=[1;35m\"[0m[31mcatalog[1;35m\"[0m[31m; filename=[1;35m\"[0m[31m196x196.png[1;35m\"[0m[31m[1;35m\r[0m[31m[1;35m\n[0m[31mContent-Type: image/png[1;35m\r[0m[31m[1;35m\n[0m[31m[1;31m"[0m[31m[0m,
+   @original_filename[32m=[0m[31m[1;31m"[0m[31m196x196.png[1;31m"[0m[31m[0m,
+   @tempfile[32m=[0m[32m#<File:/tmp/RackMultipart20181009-10212-1hvzq13.png>[0m[32m>[0m,
+ [31m[1;31m"[0m[31mprice_list[1;31m"[0m[31m[0m=>
+  [32m#<ActionDispatch::Http::UploadedFile:0x005651c947c8b0[0m
+   @content_type[32m=[0m[31m[1;31m"[0m[31mimage/png[1;31m"[0m[31m[0m,
+   @headers[32m=[0m[31m[1;31m"[0m[31mContent-Disposition: form-data; name=[1;35m\"[0m[31mprice_list[1;35m\"[0m[31m; filename=[1;35m\"[0m[31m196x196.png[1;35m\"[0m[31m[1;35m\r[0m[31m[1;35m\n[0m[31mContent-Type: image/png[1;35m\r[0m[31m[1;35m\n[0m[31m[1;31m"[0m[31m[0m,
+   @original_filename[32m=[0m[31m[1;31m"[0m[31m196x196.png[1;31m"[0m[31m[0m,
+   @tempfile[32m=[0m[32m#<File:/tmp/RackMultipart20181009-10212-4lzamo.png>[0m[32m>[0m,
+ [31m[1;31m"[0m[31mcertificate[1;31m"[0m[31m[0m=>
+  [32m#<ActionDispatch::Http::UploadedFile:0x005651c947c860[0m
+   @content_type[32m=[0m[31m[1;31m"[0m[31mimage/png[1;31m"[0m[31m[0m,
+   @headers[32m=[0m[31m[1;31m"[0m[31mContent-Disposition: form-data; name=[1;35m\"[0m[31mcertificate[1;35m\"[0m[31m; filename=[1;35m\"[0m[31m375x375.png[1;35m\"[0m[31m[1;35m\r[0m[31m[1;35m\n[0m[31mContent-Type: image/png[1;35m\r[0m[31m[1;35m\n[0m[31m[1;31m"[0m[31m[0m,
+   @original_filename[32m=[0m[31m[1;31m"[0m[31m375x375.png[1;31m"[0m[31m[0m,
+   @tempfile[32m=[0m[32m#<File:/tmp/RackMultipart20181009-10212-1a9tjuj.png>[0m[32m>[0m,
+ [31m[1;31m"[0m[31mcountry[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mвфіпіап[1;31m"[0m[31m[0m,
+ [31m[1;31m"[0m[31mcity[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mфіавіавіа[1;31m"[0m[31m[0m,
+ [31m[1;31m"[0m[31mstreet[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mфпвівап[1;31m"[0m[31m[0m,
+ [31m[1;31m"[0m[31mphone[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mфіавіаівапвіп[1;31m"[0m[31m[0m,
+ [31m[1;31m"[0m[31msite[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mівапвапвпіапівап[1;31m"[0m[31m[0m,
+ [31m[1;31m"[0m[31mcontact_person[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mфіавіапаіп[1;31m"[0m[31m[0m,
+ [31m[1;31m"[0m[31memail[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31msdgs@sdgfdfsg[1;31m"[0m[31m[0m,
+ [31m[1;31m"[0m[31mcontact_person_phone[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31madgfsdgdfsg[1;31m"[0m[31m[0m,
+ [31m[1;31m"[0m[31mfax[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31m222222222222[1;31m"[0m[31m[0m,
+ [31m[1;31m"[0m[31mcontroller[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mpages[1;31m"[0m[31m[0m,
+ [31m[1;31m"[0m[31maction[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mcreating_unit[1;31m"[0m[31m[0m}

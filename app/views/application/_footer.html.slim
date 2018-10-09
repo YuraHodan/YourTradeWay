@@ -3,10 +3,14 @@
       .futer-content
         a.futer-logo href=root_path = inline_svg "photo/main/svg/top-logo.svg"
         .tex-futer
-          a.one-text Премиум
-          a.one-text Новости
-          a.one-text href=faq_path FAQ
-          a.one-text href=terms_path Условия исользования
+          a.one-text href=premium_path
+            = t("header.premium")
+          a.one-text href=tradergram_path
+            = t("footer.news")
+          a.one-text href=faq_path
+            = t("footer.faq")
+          a.one-text href=terms_path
+            = t("footer.terms_of_use")
         .icons-futer
           a.icons-futer-target href="#{@social_links.twitter_url}" = inline_svg "photo/main/svg/twitter.svg"
           a.icons-futer-target href="#{@social_links.google_url}" = inline_svg "photo/main/svg/g-plus.svg"

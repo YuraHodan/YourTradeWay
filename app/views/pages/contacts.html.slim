@@ -2,7 +2,8 @@
   .row
     .medium-12.center
       .taitle
-        .tex-taitle контакти
+        .tex-taitle
+          = t("contact_page.contacts")
       .medium.columns
         -@contacts.each do |contact|
           .contacts-alle
@@ -11,11 +12,13 @@
                 .taitle-contacts.color-line.yellow-block =contact.title
                 .country
                   .olp-taitle
-                    .title Страна:
+                    .title
+                      = t("contact_page.country")
                   .text =contact.country
                 .address
                   .olp-taitle
-                    .title Адрес:
+                    .title
+                      = t("contact_page.address")
                   .text =contact.address
                 .e-mail
                   .olp-taitle
@@ -23,7 +26,8 @@
                   a.text href="mailto:#{contact.email}" #{contact.email}
                 .phone
                   .olp-taitle
-                    .title Телефон:
+                    .title
+                      = t("contact_page.phone")
                   .text =contact.first_number
                   -if contact.second_number
                     .text =contact.second_number
@@ -32,13 +36,15 @@
                 -if contact.fax?
                   .fax
                     .olp-taitle
-                      .title Факс:
+                      .title
+                        = t("contact_page.fax")
                     .text =contact.fax
 
       .contacts-alle
         .medium-4.columns
           .one-contacts.sosial
-            .taitle-contacts.color-line.yellow-block ми в соцсетях
+            .taitle-contacts.color-line.yellow-block
+              = t("contact_page.we_in_social_networks")
             .icons
               a.vk href="#{@social_links.vkontakte_url}/" =inline_svg "svg/smole/Asset9.svg"
               a.fb href="#{@social_links.facebook_url}" =inline_svg "svg/smole/Asset8.svg"
@@ -51,15 +57,17 @@
   .row
     .medium-12.columns
       .taitle
-        .tex-taitle задать вопрос
+        .tex-taitle
+          = t("contact_page.ask_a_question")
       .medium.columns
         .question
-          form.ajax-form action="/message" method="post" enctype="multipart/form-data" name="userForm" ng-submit="submitForm()" novalidate="" 
+          form.ajax-form action="/message" method="post" enctype="multipart/form-data" name="userForm" ng-submit="submitForm()" novalidate=""
             .medium-6.columns
               /! NAME
               .form-group ng-class=("{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }")
                 .lable-one
-                  .label ФИО
+                  .label
+                    = t("contact_page.full_name")
                   .span  *
                 input.form-control name="name" ng-model="user.name" required="" type="text" minlength="5" placeholder="Иванов Иван Ивіанович"
                 p.help-block ng-show=("userForm.name.$invalid && !userForm.name.$pristine")  You name is required.
@@ -73,7 +81,8 @@
               /! phone
               .form-group ng-class=("{ 'has-error' : userForm.phone.$invalid && !userForm.phone.$pristine }")
                 .lable-one
-                  .label Телефон:
+                  .label
+                    = t("contact_page.phone")
                 input.form-control name="phone" ng-model="user.phone" type="text"  placeholder="+91-636-78658" ng-pattern="phoneNumbr"
 
                 p.help-block.phone ng-show="userForm.phone.$error.pattern"  Please match pattern [+91 036 78658 or 91 036 78658]
@@ -81,20 +90,24 @@
               /! question
               .form-group ng-class=("{ 'has-error' : userForm.username.$invalid && !userForm.username.$pristine }")
                 .lable-one
-                  .label Сообщения
+                  .label
+                    = t("contact_page.message")
                   .span  *
                 textarea.form-control.ng-pristine.ng-valid.ng-empty.ng-touched name="message"  ng-model="user.comment" placeholder=("Поле для коментарів...") rows="5" minlength="15"
                 p.help-block ng-show="userForm.comment.$error.maxlength"  not less than 15 characters
 
             .medium-12.columns
               .button-te
-                button.open-popup data-id="popup_default" ng-disabled="userForm.$invalid" type="submit" отпраить
+                button.open-popup data-id="popup_default" ng-disabled="userForm.$invalid" type="submit"
+                  = t("contact_page.send")
 
 
 
 #popup_default.popup2
   .popup-overlay2
   .popup-content2
-    .title-text После обработки даньч вам придот увидамления на почту
-    .title Ваш запрос отправлен
+    .title-text
+      = t("contact_page.after_processing")
+    .title
+      = t("contact_page.been_sent")
     a.close-popup data-id="popup_default" href="#"  =inline_svg "svg/Approve.svg"

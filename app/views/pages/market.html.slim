@@ -16,20 +16,20 @@
                 =@market.main_menu&.title
             .rules
               .country
-                | Страна:
+                = t("unit_of_goods.Country")
                 .text
                   =@market.country&.title
               .address
-                | Адреса:
+                = t("unit_of_goods.Address")
                 .text
                   =@market.address
               .site
-                | Сайт:
+                = t("unit_of_goods.Site")
                 a.text href="#{@market.web_site_url}"
                   =@market.web_site_url
             .contacts
               .text-face.color-line.gray-block
-                | контактное лицо
+                = t("post_product.company_name")
               .forms-abaut
                 .lup
                   .icon = inline_svg "photo/main/svg/man.svg"
@@ -66,7 +66,8 @@
       .medium.columns
         .about-us
           .title.color-line.gray-block
-            .text-title о компании
+            .text-title
+              = t("unit_of_goods.about_company")
           .about-us-text
             =raw @market.description
             .title.marka.color-line.gray-block
@@ -76,7 +77,8 @@
 
 
           .title.color-line.gray-block
-            .text-title наши примущества
+            .text-title
+              = t("unit_of_goods.our_advantages")
           .about-us-text
             = raw @market.our_benefits
         .bg-slider
@@ -85,13 +87,16 @@
               =render "onegoodsslider", product: @market
     .medium-4.columns
       .sertuficat
-        .title сертифікат
+        .title
+          = t("post_product.certificate")
         .selector
           = render "oneproducterslider", product: @market
       .batton-doun
         a.btn-big href="#{@market.price_list_file}"
-          .text прайс лист
+          .text
+            = t("post_product.price_list")
           .icon = inline_svg "photo/main/svg/arrowdown.svg"
         a.btn-big href="#{@market.sertificates_file}"
-          .text сертифікать
+          .text
+            = t("post_product.certificate")
           .icon = inline_svg "photo/main/svg/arrowdown.svg"

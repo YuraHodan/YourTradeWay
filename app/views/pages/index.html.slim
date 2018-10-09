@@ -4,11 +4,11 @@
   .tovars
     .row.collapse
       .columns
-        h3.tovars-producers-tex.color-line.yellow-block  товари
+        h3.tovars-producers-tex.color-line.yellow-block
+          = t("index.product")
       .row.collapse
         .columns
           .aasd
-            / - 6.times do |e|
             .one-tovar
               .tovars-top-box
                 .img-bg style="background-image: url(#{asset_path('photo/main/food.jpg')})"
@@ -97,7 +97,8 @@
           .list-comntainer
             .content-list-comntainer
               h3
-                a href=products_path  Производители
+                a href=products_path
+                  = t("index.manufacturers")
               ul
                 li  ng-repeat="factorie in questionfactories"
                   a href=products_path ng-model="factorie.selected" ng-click="trackOrder(factorie)"
@@ -109,7 +110,8 @@
           .img-bg style="background-image: url(#{asset_path('photo/main/distribute.jpg')})"
           .hover-list-box.destreb
             h3
-              a href=distributors_path  Дистрибьюторы
+              a href=distributors_path
+                = t("index.distributors")
             ul
               li ng-repeat="distributor in questiondistributors"
                 a href=distributors_path ng-model="distributor.selected" ng-click="trackOrder(distributor)"
@@ -125,7 +127,8 @@
           .list-comntainer.marcet
             .content-list-comntainer
               h3
-                a href=markets_path  Маркеты
+                a href=markets_path
+                  = t("index.market")
               ul
                 li ng-repeat="markets in questionmarkets"
                   a href=markets_path ng-model="markets.selected" ng-click="trackOrder(markets)"
@@ -138,7 +141,8 @@
           .list-comntainer.logic
             .content-list-comntainer
               h3
-                a href=logistics_path  Логистика
+                a href=logistics_path
+                  = t("index.logistic")
               ul
                 li ng-repeat="logistic in questionlogistic"
                   a href=logistics_path ng-model="logistic.selected" ng-click="trackOrder(logistic)"
@@ -154,7 +158,8 @@
       .row
         .medium-3.columns
           .show-info
-            h3 призвадители
+            h3
+              = t("index.manufacturers")
             .more-info
               ul
                 li  ng-repeat="factorie in questionfactories"
@@ -163,7 +168,8 @@
 
         .medium-3.columns
           .show-info.gren
-            h3 дистрибюторь
+            h3
+              = t("index.distributors")
             .more-info
               ul
                 li ng-repeat="distributor in questiondistributors"
@@ -172,7 +178,8 @@
 
         .medium-3.columns
           .show-info.red
-            h3 маркеть
+            h3
+              = t("index.market")
             .more-info
               ul
                 li ng-repeat="markets in questionmarkets"
@@ -181,84 +188,35 @@
 
         .medium-3.columns
           .show-info.orange
-            h3 логистика
+            h3
+              = t("index.logistic")
             .more-info
               ul
                 li ng-repeat="logistic in questionlogistic"
                   a href=logistics_path ng-model="logistic.selected" ng-click="trackOrder(logistic)"
                     | {{logistic.name}}
 
-      / .medium-6.columns
-      /   .one-list-box
-      /     .img-bg style="background-image: url(#{asset_path('photo/main/distribute.jpg')})"
-      /     .list-comntainer
-      /       h3 призвадители
-      /       ul
-      /         li Продукты питания
-      /         li косметика и гигиена
-      /         li товары для дома
-      /         li канцелярские товары
-      /         li автотовары
-      /         li товары для животных
-      / .medium-6.columns
-      /   .one-list-box.hover-list.long-list
-      /     .img-bg style="background-image: url(#{asset_path('photo/main/distribute.jpg')})"
-      /     .hover-list-box.destreb
-      /       h3 дистрибюторь
-      /       ul
-      /         li супермаркет
-      /         li канцелярський
-      /         li вещевой
-      /         li строительный
-      /         li промышленный
-      /         li электроника
-      /         li мебельный
-      /         li смешанный
-      /     #rotate2= inline_svg "photo/main/svg/list-arrow-down.svg"
-      /
-      /         li Lorem ipsum dolor sit amet
-      / .medium-6.columns
-      /   .one-list-box.marcet
-      /     .img-bg style="background-image: url(#{asset_path('photo/main/distribute.jpg')})"
-      /     .list-comntainer.logic2
-      /       h3 маркеть
-      /       ul
-      /         li супермаркет
-      /         li канцелярський
-      /         li вещевой
-      /         li строительный
-      /         li промышленный
-      /         li электроника
-      /         li мебельный
-      /         li смешанный
-      / .medium-6.columns
-      /   .one-list-box.logic
-      /     .img-bg style="background-image: url(#{asset_path('photo/main/distribute.jpg')})"
-      /     .list-comntainer.logic
-      /       h3 логистика
-      /       ul
-      /         li железнодорожный
-      /         li автотранспорт
-      /         li авиаперевозки
-      /         li морской транспорт
   .new-producers-smoll
     .row.collapse
       .columns
         .text-block.color-line.blue-block
-          h3.new-producers-tex  новие призводител
+          h3.new-producers-tex
+            = t("index.new_manufacturers")
       =render "smollemaneslider", manufactures: @new_manufactures
       .btn-big.blue-btn  всі новиниі
   .new-producers.desktop
     .row.collapse
       .columns
-        h3.new-producers-tex.color-line.blue-block  новие призводители
+        h3.new-producers-tex.color-line.blue-block
+          = t("index.new_manufacturers")
       .row
         -@new_manufactures.each do |manufacture|
           .medium-3.columns
             .border-producers.color-line.blue-block
               .one-new-producers
                 a.img-bg href=maker_path(manufacture.id) style="background-image: url(#{manufacture.logo_image.url})"
-      a.btn-big.blue-btn href=products_path  всі новини
+      a.btn-big.blue-btn href=products_path
+        = t("index.all_new")
   .tradergram-wrapper.smole
     .row
       .columns
@@ -273,7 +231,8 @@
               .tradergram-text
                 h3 #{article.title}
                 p #{article.date}
-        a.btn-big href=tradergram_path   всі новини
+        a.btn-big href=tradergram_path
+          = t("index.all_news")
   .tradergram-wrapper
     .row
       .columns
@@ -289,7 +248,8 @@
                 h3 #{article.title}
                 p #{article.date}
 
-        a.btn-big href=tradergram_path всі новини
+        a.btn-big href=tradergram_path
+          = t("index.all_news")
 
   .about-product
     .row
@@ -299,8 +259,10 @@
             .text-about-product
               h2 dsvgsdfg
               p Lorem ipsum dolor sit amet,60 consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-              a.btn-big href="#" подробнее
-              a.btn-big-smole href="#" подробнее
+              a.btn-big href="#"
+                = t("index.more_details")
+              a.btn-big-small href="#"
+                = t("index.more_details")
           .columns.large-5
             .img-target.color-line.yellow-block
               .img-bg style="background-image: url(#{asset_path('photo/main/about.jpg')})"
@@ -309,7 +271,9 @@
       .columns.lerge-12
           .comand-apply
             .apply-taitle
-              h2 подати заявку на розміщення
+              h2
+                = t("index.submit_application")
             .apply-text
               p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            a.btn-big.yellow-btn href=post_product_path регістрація
+            a.btn-big.yellow-btn href=post_product_path
+              = t("index.registration")

@@ -15,20 +15,20 @@
                 =@logistic.main_menu&.title
             .rules
               .country
-                | Страна:
+                = t("unit_of_goods.Country")
                 .text
                   =@logistic.country&.title
               .address
-                | Адреса:
+                = t("unit_of_goods.Address")
                 .text
                   =@logistic.address
               .site
-                | Сайт:
+                = t("unit_of_goods.Site")
                 a.text href="#{@logistic.web_site_url}"
                   =@logistic.web_site_url
             .contacts
               .text-face.color-line.gray-block
-                | контактное лицо
+                = t("post_product.company_name")
               .forms-abaut
                 .lup
                   .icon = inline_svg "photo/main/svg/man.svg"
@@ -65,11 +65,13 @@
       .medium.columns
         .about-us
           .title.color-line.gray-block
-            .text-title о компании
+            .text-title
+              = t("unit_of_goods.about_company")
           .about-us-text
             =raw @logistic.description
           .title.color-line.gray-block
-            .text-title наши примущества
+            .text-title
+              = t("unit_of_goods.our_advantages")
           .about-us-text
             =raw @logistic.our_benefits
 
@@ -79,13 +81,16 @@
               =render "onegoodsslider", product: @logistic
     .medium-4.columns
       .sertuficat
-        .title сертифікат
+        .title
+          = t("post_product.certificate")
         .selector
           = render "oneproducterslider", product: @logistic
       .batton-doun
         a.btn-big href="#{@logistic.price_list_file}"
-          .text прайс лист
+          .text
+            = t("post_product.price_list")
           .icon = inline_svg "photo/main/svg/arrowdown.svg"
         a.btn-big href="#{@logistic.sertificates_file}"
-          .text сертифікать
+          .text
+            = t("post_product.certificate")
           .icon = inline_svg "photo/main/svg/arrowdown.svg"

@@ -1,6 +1,7 @@
 .recomendation-tovars
   .recomendation-text.color-line.gray-block
-    .title топ товари
+    .title
+      = t("menus.top_products")
   .recommendation-goods
     -products.each do |product|
       .medium-3.columns
@@ -12,5 +13,6 @@
               .maker #{product.manufacture&.title}
               .product-name #{product.title}
               .price.color-line.gray-block
-                .oriented-price орієнтовочная цена:
+                .oriented-price
+                  = t("unit_of_goods.tentative_price")
                 .mony #{product.price} $

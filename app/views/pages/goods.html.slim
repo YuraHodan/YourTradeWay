@@ -5,12 +5,13 @@
           / = render "selector"
           .select
             .accordion-button
-              p  countries
+              p
+                = t("filter.countries")
               .svg-slid = inline_svg "svg/ic_keyboard_arrow_up_black_24px.svg"
             .accordion-inner.show
 
               .selector
-                / input#post-2.read-more-state type="checkbox"
+                input#post-2.read-more-state type="checkbox"
                 form name="userForm" ng-submit="submitForm()"
                   ul.read-more-wrap ng-repeat="countries in all_countries"
                     li
@@ -18,6 +19,7 @@
                         | {{countries.title}}
                         input type="checkbox" ng-model="countries.selected" ng-change='trackOrder(countries)'  value="{{countries.id}}" ng-click="submitForm().submit()"
                         span.checkmark
+                label.read-more-trigger for="post-2"
 
         .dubl-select
           .accordion-button
@@ -45,7 +47,8 @@
                                 span.checkmark
             .remove-all
               .x-component = inline_svg "photo/main/svg/filter_clear.svg"
-              .ramove-text очистить все
+              .ramove-text
+                = t("filter.clear_everything")
 
 
 
@@ -98,7 +101,8 @@
                                     span.checkmark
                 .remove-all
                   .x-component = inline_svg "photo/main/svg/filter_clear.svg"
-                  .ramove-text очистить все
+                  .ramove-text
+                    = t("filter.clear_everything")
 
 
             /// smole select
@@ -110,30 +114,11 @@
       .medium-9.columns.smole-none
         = render "goodsSlider1"
       .medium-9.columns.large-9
-        .topgoods
+        .topgoods ng-if="top_products != ''"
           .topgoods-tex.color-line.gray-block
-            .title топ товари
+            .title
+              = t("menus.top_products")
           = render "goodsSlider2"
-
-      / .medium-9.columns.large-9
-      /   .vibe-text.color-line.gray-block
-      /     .title средстрва по уходу за волосами
-        / .vibe-goods
-        /   -@products.each do |product|
-        /     #page-content.medium-4.columns.page-content.gallery ng-repeat="product in records | limitTo : 1"
-        /       .border-producers.color-line.yellow-block
-        /         .one-new-product
-        /           a.img-bg href=article_path(product.id) style="background-image: url(#{product.logo_image.url})"
-        /         .description
-        /           .description-txt
-        /             .maker =product&.manufacture.title
-        /             .product-name = product.title
-        /             .price.color-line.gray-block
-        /               .oriented-price
-        /                 | {{product.oriented}}
-        /               .mony
-        /                 =product.price
-        /                 | $
 
       .medium-9.columns
         / = render "recomendation"
@@ -150,7 +135,7 @@
                     | {{products_all.manufacture_title}}
                   .price.color-line.gray-block
                     .oriented-price
-                      | орієнтовочная цена:
+                      = t("unit_of_goods.tentative_price")
                     .mony
                       | {{products_all.price}}$
 
@@ -173,7 +158,7 @@
                     | {{products_all.manufacture_title}}
                   .price.color-line.gray-block
                     .oriented-price
-                      | орієнтовочная цена:
+                      = t("unit_of_goods.tentative_price")
                     .mony
                       | {{products_all.price}}$
 
