@@ -35,9 +35,42 @@ RailsAdmin.config do |config|
     edit
     delete
     show_in_app
-  config.included_models = [Question,PremiumManufacture,PremiumMarket,PremiumLogistic,PremiumDistributor,MainPageSlider,Email,SponsorSideSlider,SponsorSlider,Seo,Seo::Translation,MainPage,MainPage::Translation,Logistic,Logistic::Translation,Market,Market::Translation,Distributor,Distributor::Translation,Manufacture::Translation,Product::Translation,Product,Manufacture,Contact,Contact::Translation,Rule,Rule::Translation,Faq,Faq::Translation,Article,Article::Translation,ThirdMenu::Translation,SecondMenu::Translation,MainMenu::Translation,MainMenu,SecondMenu,ThirdMenu,User,Sociallink,Contact,Contact::Translation,Rule,Rule::Translation]
+  config.included_models = [MainPage,MainPage::Translation,AboutUs,AboutUs::Translation,Question,PremiumManufacture,PremiumMarket,PremiumLogistic,PremiumDistributor,MainPageSlider,Email,SponsorSideSlider,SponsorSlider,Seo,Seo::Translation,MainPage,MainPage::Translation,Logistic,Logistic::Translation,Market,Market::Translation,Distributor,Distributor::Translation,Manufacture::Translation,Product::Translation,Product,Manufacture,Contact,Contact::Translation,Rule,Rule::Translation,Faq,Faq::Translation,Article,Article::Translation,ThirdMenu::Translation,SecondMenu::Translation,MainMenu::Translation,MainMenu,SecondMenu,ThirdMenu,User,Sociallink,Contact,Contact::Translation,Rule,Rule::Translation]
   config.navigation_static_links = { locales: "/file_editor/locales"}
   RailsAdmin.config {|c| c.label_methods << :title}
+
+  config.model MainPage do
+    navigation_label "Static pages"
+    label "MainPage"
+    fields :about_image
+    field :translations, :globalize_tabs
+  end
+
+  config.model MainPage::Translation do
+    visible false
+    configure :locale, :hidden
+    fields :locale
+    field :tradergram_description, :ck_editor
+    field :about_description, :ck_editor
+    field :request_description, :ck_editor
+  end
+
+
+  config.model AboutUs do
+    navigation_label "Static pages"
+    label "About us"
+    fields :about_project_image, :tasks_image, :products_count, :companies_count
+    field :translations, :globalize_tabs
+  end
+
+  config.model AboutUs::Translation do
+    visible false
+    configure :locale, :hidden
+    fields :locale
+    field :tasks_description, :ck_editor
+    field :about_project_description, :ck_editor
+    field :advantages_description, :ck_editor
+  end
 
   config.model Question do
     navigation_label "Contact Forms"

@@ -222,7 +222,7 @@
       .columns
         .comand-tradergram
           h2 tradergram
-          p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+          = raw @main_page_info.tradergram_description
         .row
           -@last_news.each do |article|
             .medium-4.columns
@@ -238,7 +238,7 @@
       .columns
         .comand-tradergram
           h2 tradergram
-          p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+          = raw @main_page_info.tradergram_description
         .row
           -@last_news.each do |article|
             .medium-4.columns
@@ -265,7 +265,7 @@
                 = t("index.more_details")
           .columns.large-5
             .img-target.color-line.yellow-block
-              .img-bg style="background-image: url(#{asset_path('photo/main/about.jpg')})"
+              .img-bg style="background-image: url(#{@main_page_info.about_image.url})"
   .apply
     .row
       .columns.lerge-12
@@ -274,6 +274,5 @@
               h2
                 = t("index.submit_application")
             .apply-text
-              p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            a.btn-big.yellow-btn href=post_product_path
-              = t("index.registration")
+              = raw @main_page_info.request_description
+            a.btn-big.yellow-btn href=post_product_path регістрація
