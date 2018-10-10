@@ -32,7 +32,7 @@
                 li
                   label.container
                     | {{factories.name}}
-                    input type="checkbox" ng-model="factories.selected" ng-change='trackOrder2(factories)'  value="{{factories.id}}" ng-click="submitForm2().submit()"
+                    input type="checkbox" ng-model="factories.selected" ng-change='trackOrder2(factories)'  value="{{factories.id}}" ng-click="submitForm2().submit()" ng-checked="factories.id == type_ids2 "
                     span.checkmark
                 .new ng-if="factories.second_menu != ''"
                   ul
@@ -42,7 +42,7 @@
                       form name="userForm3" ng-submit="submitForm3()"
                         ul ng-repeat="second_menu in factories.second_menu"
                             label.container
-                              input type="checkbox" ng-model="second_menu.selected" ng-change='trackOrder3(second_menu)'  value="{{second_menu.id}}" ng-click="submitForm3().submit()"  {{second_menu.title}}
+                              input type="checkbox" ng-model="second_menu.selected" ng-change='trackOrder3(second_menu)'  value="{{second_menu.id}}" ng-click="submitForm3().submit()" ng-checked="second_menu.id == group_ids2"  {{second_menu.title}}
                               span.checkmark
           .remove-all
             .x-component = inline_svg "photo/main/svg/filter_clear.svg"
@@ -53,7 +53,8 @@
             /// smole select
       .wrapper-filter
         .openfilters
-          p фильтра
+          p
+            = t("menus.filter")
         .filter-container
           / = render "selectsmole"
           .select

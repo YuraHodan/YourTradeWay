@@ -15,11 +15,15 @@ ytwApp.controller('goodsControler',
             $scope.type_ids = null
           }
         }
+        $scope.type_ids2=[]
+        $scope.type_ids2.push($scope.type_ids);
         $scope.test2 = function(){
           if ($scope.group_ids.value.length !== 0 ) {
             $scope.group_ids = null
           }
         }
+        $scope.group_ids2=[]
+        $scope.group_ids2.push($scope.group_ids);
         var token = document.getElementsByName('csrf-token')[0].content;
 
         $http({method: 'GET', url: '/api/v1/menus.json'}).

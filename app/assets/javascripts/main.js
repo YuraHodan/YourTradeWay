@@ -63,7 +63,7 @@ $(function(){
 
 function readMore (jObj, lineNum) { //function
   if ( isNaN(lineNum) ) {
-    lineNum = 4;
+    lineNum = 6;
   }
   var go = new ReadMore (jObj, lineNum);
 }
@@ -73,7 +73,7 @@ function ReadMore (_jObj, lineNum) { //class
   var HIDE_LABEL = "скрить";
 
   var jObj = _jObj;
-  var textMinHeight = ""+ (parseInt(jObj.children(".text").css("line-height"),22)*lineNum) +"px";
+  var textMinHeight = ""+ (parseInt(jObj.children(".text").css("line-height"),25)*lineNum) +"px";
   var textMaxHeight = ""+jObj.children(".text").css("height");
 
   jObj.children(".text").css("height", ""+textMaxHeight);
@@ -107,7 +107,7 @@ readMore( $("#box"), 2);
 
 $('.show-info').click( function() {
 	$(this).find('.more-info').slideToggle('slow');
-  console.log('3');
+  // console.log('3');
 });
 
  $('.list-arrow').click(function(){
@@ -241,12 +241,12 @@ $( ".openfilters" ).click(function() {
   if ( $(".filter-container").hasClass("opened") ) {
     $( ".filter-container" ).removeClass( "opened" );
     $("body").removeClass("menuopen");
-    $('.openfilters p').html('фильтра');
+    // $('.openfilters p').html('фильтра');
 
 }else {
   $( ".filter-container" ).addClass( "opened" );
   $("body").addClass("menuopen")
-  $('.openfilters p').html('применить');
+  // $('.openfilters p').html('применить');
 }
 });
 

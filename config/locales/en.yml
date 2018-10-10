@@ -20,19 +20,6 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  activerecord:
-    attributes:
-      product:
-        second_menu: "Group"
-        third_menu: "Category"
-      market:
-        main_menu: "Type"
-      manufacture:
-        second_menu: "Group"
-      logistic:
-        main_menu: "Type"
-      distributor:
-        second_menu: "Group"
 
   # hello: "Hello world"
   header:
@@ -56,6 +43,7 @@ en:
     markets: "Markets"
     logistics: "Logistics"
     recommended: "recommended"
+    filter: "filter"
 
     type_goods: "Тype Goods"
     type_manufactuters: "Тype Manufactuters"
@@ -155,3 +143,30 @@ en:
     companies_goods: "Companies goods"
     our_advantages: "Our advantages"
     price_list: "Price List"
+
+
+
+
+
+
+# /////////////////////////////////////////////
+# /////////////////////////////////////////////
+# /////////////////////////////////////////////
+# /////////////////////////////////////////////
+# /////////do not move forbidden////////////////
+# /////////////////////////////////////////////
+# /////////////////////////////////////////////
+
+  activerecord:
+    attributes:
+      product:
+        second_menu: "Group"
+        third_menu: "Category"
+      market:
+        main_menu: "Type"
+      manufacture:
+        second_menu: "Group"
+      logistic:
+        main_menu: "Type"
+      distributor:
+        second_menu: "Group"

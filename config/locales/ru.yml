@@ -20,18 +20,126 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 ru:
-  activerecord:
-    attributes:
-      product:
-        second_menu: "Group"
-        third_menu: "Category"
-      market:
-        main_menu: "Type"
-      manufacture:
-        second_menu: "Group"
-      logistic:
-        main_menu: "Type"
-      distributor:
-        second_menu: "Group"
+  header:
+    main: "Maisdsadasdasdn"
+    premium: "Premium"
+    tradergram: "Tradergram"
+    about_us: "About us"
+    contact_us: "Contancts"
+    check_in: "Sign up"
+    about_project: "about the project"
+    objectives_and_goals: "objectives and goals"
+    advantages: "advantages"
+    companies_on_site: "companies on the site"
+    goods_in_catalog : "goods in the catalog"
+    team_goals: "our team goals"
+  menus:
+    top_products: "Top goods"
+    products: "Goods"
+    manufactuters: "Manufactuters"
+    distributors: "Distributers"
+    markets: "Markets"
+    logistics: "Logistics"
+    recommended: "recommended"
+    filter: "filter"
+
+    type_goods: "Тype Goods"
+    type_manufactuters: "Тype Manufactuters"
+    type_distributors: "Тype distributors"
+    type_markets: "Тype markets"
+    type_logistics: "Тype logistics"
+    group_of_goods: "Group of goods"
+    group_of_manufactuters: "Group of manufactuters"
+    group_of_distributors: "Group of distributors"
+    category_of_goods: "Category of goods"
+    chose_category: "Chose a category"
+
+  footer:
+    news: "News"
+    faq: "FAQ"
+    terms_of_use: "Terms and conditions"
+  filter:
+    countries: "countries"
+    clear_everything: "clear everything"
+  index:
+    product: "product"
+    manufacturers: "Manufacturers"
+    distributors: "Distributors"
+    market: "Markets"
+    logistic: "logistic"
+    new_manufacturers: "New manufacturers"
+    all_new: "all new"
+    all_news: "all news"
+    more_details: "more"
+    registration: "registration"
+    submit_application: "Thank you for submitting your application"
+
+
+  contact_page:
+    contacts: "contacts"
+    we_in_social_networks: "we are in social networks"
+    ask_a_question: "ask a question"
+    send: "send"
+    country: "country:"
+    address: "address:"
+    phone: "phone:"
+    fax: "fax:"
+    full_name: "Full name"
+    message: "message"
+    after_processing: "After processing, the tribute to you will receive a notification in the mail."
+    been_sent: "Your request has been sent"
+
+
+  post_product:
+    check_in: "check in"
+    about_company: "about company"
+    Kind_of_activity: "Kind of activity:"
+    tariff_plan: "Tariff plan:"
+    company_name: "Company name:"
+    type_of_production: "Type of production:"
+    Logotype: "Logo:"
+    Select_a_file: "Select a file"
+    Description: "Description:"
+    photo: "Photo:"
+    link_to_video: "link to the video:"
+    product_Catalog: "Product catalog:"
+    price_list: "Price List:"
+    certificate: "Certificate:"
+    additional_Information: "Additional Information"
+    country: "Country:"
+    city: "City:"
+    street: "Street:"
+    phone: "Phone:"
+    site: "Site:"
+    the_contact_person: "The contact person:"
+    full_name: "Full name"
+    fax: "fax:"
+    send: "send"
+    сompany_placeholder: "'name of your company'"
+
+
+  unit_of_goods:
+    indicative_price: "Approximate price"
+    Weight: "weight"
+    View: "form"
+    Аmount: "Amount"
+    Weight_of_packing: "Package weight"
+    Expiration_date: "Expiration date"
+    Description: "Description"
+    Manufacturer: "Manufacturer"
+    Country: " Country "
+    Address: "Address "
+    Kind_of_activity: "Type of activity"
+    Site: "Website"
+    Recommendations: "Recommendations"
+    Similar_products: "Similar goods"
+    Show_all: "Show all"
+    tentative_price: "Tentative price:"
+    about_company: "about company"
+    goods_catalog: "goods catalog"
+    price_list: "price list"
+    companies_goods: "Companies goods"
+    our_advantages: "Our advantages"
+    price_list: "Price List"
 
   # hello: "Hello world"

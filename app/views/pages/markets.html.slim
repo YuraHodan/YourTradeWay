@@ -23,7 +23,8 @@
 
       .dubl-select
         .accordion-button.opened
-          p afdsfdsf222
+          p
+            = t("menus.type_markets")
           .svg-slid = inline_svg "svg/ic_keyboard_arrow_down_black_24px.svg"
         .accordion-inner.show
 
@@ -33,7 +34,7 @@
                 li
                   label.container
                     |  {{markets.name}}
-                    input type="checkbox" ng-model="markets.selected" ng-change='trackOrder2(markets)'  value="{{markets.id}}" ng-click="submitForm2().submit()"
+                    input type="checkbox" ng-model="markets.selected" ng-change='trackOrder2(markets)'  value="{{markets.id}}" ng-click="submitForm2().submit()" ng-checked="markets.id == type_ids2"
                     span.checkmark
           .remove-all
             .x-component = inline_svg "photo/main/svg/filter_clear.svg"
@@ -45,7 +46,8 @@
 
       .wrapper-filter
         .openfilters
-          p фильтра
+          p
+            = t("menus.filter")
         .filter-container
           / = render "selectsmole"
           .select
@@ -66,7 +68,8 @@
 
           .dubl-select
             .accordion-button.opened
-              p afdsfdsf222
+              p
+                = t("menus.type_markets")
               .svg-slid = inline_svg "svg/ic_keyboard_arrow_down_black_24px.svg"
             .accordion-inner.show
 
