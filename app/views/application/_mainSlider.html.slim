@@ -8,8 +8,10 @@
         .img-bg style="background-image: url(#{slide.image.url})"
           .content-baner
             .tex-baner
-              p Новинка
+              p
+                = t("index.new")
               h4
                 = slide.title
-            a.btn-big.yellow-btn href=article_path(slide.product_id) смотреть
+            a.btn-big.yellow-btn href=article_path(slide.product_id)
+              = t("index.watch")
             / href=article_path(product.id)

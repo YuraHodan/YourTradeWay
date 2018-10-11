@@ -60,7 +60,6 @@
 #= require angular/app
 
 #= require angular/goods/goodsCtrl
-#= require angular/goods/goodsService
 
 #= require angular/producer/producerCtrl
 
