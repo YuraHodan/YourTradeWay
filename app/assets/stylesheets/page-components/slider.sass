@@ -270,6 +270,8 @@
     max-width: 1000px
     position: relative
     margin: auto
+    @media #{$small-only}
+      display: none
     .mySlides
       .img-bg
         position: relative
@@ -307,7 +309,7 @@
   /* Position the "next button" to the right
 
   /* On hover, add a black background color with a little bit see-through
-  // 
+  //
   // .prev:hover, .next:hover
   //   background-color: rgba(0, 0, 0, 0.8)
 

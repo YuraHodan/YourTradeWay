@@ -13,6 +13,13 @@ ytwApp.controller('logisticsController',
             $scope.type_ids = null
           }
         }
+        
+        $scope.type_ids2=[]
+        $scope.type_ids2.push($scope.type_ids);
+
+
+
+
         $http({method: 'GET', url: '/api/v1/menus.json'}).
             then(function success(response) {
                 $scope.questionlogistic=response.data.logistic;

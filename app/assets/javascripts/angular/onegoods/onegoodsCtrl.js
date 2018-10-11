@@ -64,4 +64,3 @@ ytwApp.controller('onegoodsControler',function($scope){
           mony : '15$' }
         ]
 });
-console.log('3');

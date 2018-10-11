@@ -168,6 +168,7 @@
         .classification-top
           a href=topgoods_path
             = t("menus.top_products")
+
         .classification.yellow
           a href=goods_path
             = t("menus.products")
@@ -175,18 +176,19 @@
             = inline_svg "svg/ic_keyboard_arrow_right_black_24px.svg"
           .manu-container-second
             .general-part
-              .manu-nav ng-repeat="person in question"
-                #find.classification-second ng-if="person.id = 1"
-                  a.pap href="goods?id={{person.id}}"
-                    |{{person.name}}
-                  a.arow-boxs ng-click="myFunc()"
-                    = inline_svg "svg/ic_keyboard_arrow_right_black_24px.svg"
-                  #third.manu-container-third
-                    .general-part
-                      .manu-nav ng-repeat="second_menu in person.second_menu"
-                        .classification-third
-                          a href="goods?second_menu_id={{second_menu.id}}"
-                            |{{second_menu.title}}
+              .manu-nav ng-repeat="products in productsquestion"
+                / #find.classification-second ng-if="person.id = 1"
+                .classification-second
+                  a.pap href=goods_path ng-model="products.selected" ng-click="trackOrder(products)"
+                    |{{products.name}}
+                  / a.arow-boxs ng-click="myFunc()"
+                  /   = inline_svg "svg/ic_keyboard_arrow_right_black_24px.svg"
+                  / #third.manu-container-third
+                  /   .general-part
+                  /     .manu-nav ng-repeat="second_menu in person.second_menu"
+                  /       .classification-third
+                  /         a href="goods?second_menu_id={{second_menu.id}}"
+                  /           |{{second_menu.title}}
 
 
 
@@ -201,16 +203,16 @@
             .general-part
               .manu-nav ng-repeat="factorie in questionfactories"
                 .classification-second
-                  a href="products?id={{factorie.id}}"
+                  a href=products_path ng-model="factorie.selected" ng-click="trackOrder(factorie)"
                     | {{factorie.name}}
-                  a.arow-boxs ng-click="myFunc()"
-                    = inline_svg "svg/ic_keyboard_arrow_right_black_24px.svg"
-                  #third.manu-container-third
-                    .general-part
-                      .manu-nav
-                        .classification-third ng-repeat="second_menu in factorie.second_menu"
-                          a href="products?second_menu_id={{second_menu.id}}"
-                            | {{second_menu.title}}
+                  / a.arow-boxs ng-click="myFunc()"
+                  /   = inline_svg "svg/ic_keyboard_arrow_right_black_24px.svg"
+                  / #third.manu-container-third
+                  /   .general-part
+                  /     .manu-nav
+                  /       .classification-third ng-repeat="second_menu in factorie.second_menu"
+                  /         a href="products?second_menu_id={{second_menu.id}}"
+                  /           | {{second_menu.title}}
 
         .classification.green
           a href=distributors_path
@@ -221,16 +223,16 @@
             .general-part
               .manu-nav ng-repeat="distributor in questiondistributors"
                 .classification-second
-                  a href="distributors?id={{distributor.id}}"
+                  a href=distributors_path ng-model="distributor.selected" ng-click="trackOrder(distributor)"
                     | {{distributor.name}}
-                  a.arow-boxs ng-click="myFunc()"
-                    = inline_svg "svg/ic_keyboard_arrow_right_black_24px.svg"
-                  #third.manu-container-third
-                    .general-part
-                      .manu-nav
-                        .classification-third ng-repeat="second_menu in distributor.second_menu"
-                          a href="distributors?second_menu_id={{second_menu.id}}"
-                            | {{second_menu.title}}
+                  / a.arow-boxs ng-click="myFunc()"
+                  /   = inline_svg "svg/ic_keyboard_arrow_right_black_24px.svg"
+                  / #third.manu-container-third
+                  /   .general-part
+                  /     .manu-nav
+                  /       .classification-third ng-repeat="second_menu in distributor.second_menu"
+                  /         a href="distributors?second_menu_id={{second_menu.id}}"
+                  /           | {{second_menu.title}}
 
 
 
@@ -243,7 +245,7 @@
             .general-part
               .manu-nav ng-repeat="markets in questionmarkets"
                 .classification-second
-                  a href="markets?id={{markets.id}}"
+                  a href=markets_path ng-model="markets.selected" ng-click="trackOrder(markets)"
                     | {{markets.name}}
 
         .classification.orange
@@ -255,7 +257,7 @@
             .general-part
               .manu-nav ng-repeat="logistic in questionlogistic"
                 .classification-second
-                  a href="logistics?id={{logistic.id}}"
+                  a href=logistics_path ng-model="logistic.selected" ng-click="trackOrder(logistic)"
                     | {{logistic.name}}
         .tex-heder
           a.one-text href=premium_path

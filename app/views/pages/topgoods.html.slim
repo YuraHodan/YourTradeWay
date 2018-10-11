@@ -22,7 +22,8 @@
 
       .dubl-select
         .accordion-button
-          p afdsfdsf2
+          p
+            = t("menus.type_manufactuters")
           .svg-slid = inline_svg "svg/ic_keyboard_arrow_up_black_24px.svg"
         .accordion-inner.show
 
@@ -32,7 +33,7 @@
                 li
                   label.container
                     | {{products.name}}
-                    input type="checkbox" ng-model="products.selected" ng-change='trackOrder2(products)'  value="{{products.id}}" ng-click="submitForm2().submit()"
+                    input type="checkbox" ng-model="products.selected" ng-change='trackOrder2(products)'  value="{{products.id}}" ng-click="submitForm2().submit()" 
                     span.checkmark
                 .new ng-if="products.second_menu != ''"
                   ul
@@ -54,7 +55,8 @@
       // smole select ///////////////////
       .wrapper-filter
         .openfilters
-          p фильтра
+          p
+            = t("menus.filter")
         .filter-container
           / = render "selectsmole"
           .select
@@ -76,7 +78,8 @@
 
           .dubl-select
             .accordion-button
-              p afdsfdsf2
+              p
+                = t("menus.type_manufactuters")
               .svg-slid = inline_svg "svg/ic_keyboard_arrow_up_black_24px.svg"
             .accordion-inner.show
 

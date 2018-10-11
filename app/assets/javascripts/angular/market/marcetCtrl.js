@@ -13,15 +13,13 @@ ytwApp.controller('marcetControler',
           $scope.type_ids = null
         }
       }
+        $scope.type_ids2=[]
+        $scope.type_ids2.push($scope.type_ids);
       var token = document.getElementsByName('csrf-token')[0].content;
 
         $http({method: 'GET', url: '/api/v1/menus.json'}).
             then(function success(response) {
-                // $scope.question=response.data.products;
-                // $scope.questionfactories=response.data.factories;
-                // $scope.questiondistributors=response.data.distributors;
                 $scope.questionmarkets=response.data.markets;
-                // $scope.questionlogistic=response.data.logistic;
         });
 
         $scope.voteUp = function (answer){

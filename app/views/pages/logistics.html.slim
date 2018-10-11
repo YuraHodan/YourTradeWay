@@ -23,7 +23,8 @@
 
       .dubl-select
         .accordion-button.opened
-          p логистика
+          p
+            = t("menus.type_logistics")
           .svg-slid = inline_svg "svg/ic_keyboard_arrow_down_black_24px.svg"
         .accordion-inner.show
 
@@ -33,8 +34,9 @@
                 li
                   label.container
                     | {{logistic.name}}
-                    input type="checkbox" ng-model="logistic.selected" ng-change='trackOrder2(logistic)'  value="{{logistic.id}}" ng-click="submitForm2().submit()"
+                    input type="checkbox" ng-model="logistic.selected" ng-change='trackOrder2(logistic)'  value="{{logistic.id}}" ng-click="submitForm2().submit()" ng-checked="logistic.id == type_ids2"
                     span.checkmark
+                    
           .remove-all
             .x-component = inline_svg "photo/main/svg/filter_clear.svg"
             .ramove-text
@@ -43,7 +45,8 @@
             /// smole select
       .wrapper-filter
         .openfilters
-          p фильтра
+          p
+            = t("menus.filter")
         .filter-container
           / = render "selectsmole"
           .select
@@ -62,7 +65,8 @@
                         span.checkmark
           .dubl-select
             .accordion-button.opened
-              p логистика
+              p
+                = t("menus.type_logistics")
               .svg-slid = inline_svg "svg/ic_keyboard_arrow_down_black_24px.svg"
             .accordion-inner.show
 
