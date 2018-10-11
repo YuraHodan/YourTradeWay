@@ -25,7 +25,7 @@
                 - tag_name =  active ? "span" : "a"
                 - tag_attrs = {class: "locale-link"}
                 - tag_attrs["href"] = url
-                - locale_names = {ru: "РУС",en: "ENG"}
+                - locale_names = {ru: "РУС",en: "ENG", tr: "TUR"}
                 .language-one = content_tag(tag_name, locale_names[locale.to_sym], tag_attrs)
         / a.btn-big-heder href=new_user_registration_path РЕГИСТРАЦИЯ
         a.btn-big-heder href=post_product_path

@@ -12,6 +12,6 @@ class MainMenu < ActiveRecord::Base
   accepts_nested_attributes_for :translations, allow_destroy: true
 
   def custom_name
-    self.title
+    "#{self.title}" + " " + "#{self.category}"
   end
 end

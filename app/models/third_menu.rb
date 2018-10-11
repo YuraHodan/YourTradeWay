@@ -8,6 +8,6 @@ class ThirdMenu < ActiveRecord::Base
   has_many :sponsor_side_sliders, class_name: SponsorSideSlider
 
   def custom_name
-    self.title
+   "#{self&.title}" + " " + "#{self.second_menu&.title}"
   end
 end

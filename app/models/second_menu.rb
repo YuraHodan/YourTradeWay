@@ -9,6 +9,6 @@ class SecondMenu < ActiveRecord::Base
   translates :title
   accepts_nested_attributes_for :translations, allow_destroy: true
   def custom_name
-    self.title
+   "#{self.title}" + " " + "#{self.main_menu&.title}"
   end
 end

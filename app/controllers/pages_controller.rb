@@ -1,9 +1,16 @@
 class PagesController < ApplicationController
-  # before_action :initialize_locale_links, except: [:index]
+  # before_action :initialize_locale_links, except: [:index, :locale]
+  # before_action :set_locale
+
+  # def locale
+  #   render json: {locale: I18n.locale}
+  # end
+
   def index
     @new_manufactures = Manufacture.last(8)
     @last_news = Article.last(3)
     @main_page_slider = MainPageSlider.show
+    # initialize_locale_links("root")
     @main_page_info = MainPage.first_or_initialize
   end
 
@@ -91,6 +98,7 @@ class PagesController < ApplicationController
 
   def one_news_page
     @article = Article.where(url_fragment: params[:id]).first
+
     return render 'errors/not_found.html', status: 404 unless @article
   end
 
@@ -105,7 +113,6 @@ class PagesController < ApplicationController
   end
 
   private
-
 
   # def set_locale
   #   redirect_to root_path(locale: I18n.default_locale) if params[:locale].blank?

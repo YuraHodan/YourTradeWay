@@ -40,7 +40,7 @@ class Api::V1::ProductsController < Api::V1::BaseController
         title:             product.title,
         price:             product.price,
         image_url:         product.logo_image.url,
-        manufacture_title: product.manufacture.title
+        manufacture_title: product.manufacture&.title
         }
       }
   end
