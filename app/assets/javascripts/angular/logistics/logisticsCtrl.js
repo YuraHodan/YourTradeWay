@@ -13,12 +13,14 @@ ytwApp.controller('logisticsController',
             $scope.type_ids = null
           }
         }
-        
+
         $scope.type_ids2=[]
         $scope.type_ids2.push($scope.type_ids);
 
 
-
+        // language switch end url
+        $scope.languru='';
+        $scope.url='/api/v1/logistics.json';
 
         $http({method: 'GET', url: '/api/v1/menus.json'}).
             then(function success(response) {
@@ -49,7 +51,7 @@ ytwApp.controller('logisticsController',
         $scope.country_ids = []
         $scope.type_ids= []
         $scope.current_page
-
+        // $scope.url='/api/v1/logistics.json';
 
 
 ////countries
@@ -58,20 +60,20 @@ ytwApp.controller('logisticsController',
           //add album in the array
            if(countries.selected){
              $scope.country_ids.push(countries.id);
-             console.log($scope.country_ids);
+             // console.log($scope.country_ids);
 
            }else{
              //remove album fron the array
              var index = $scope.country_ids.indexOf(countries.id);
              $scope.country_ids.splice(index,1);
-             console.log($scope.country_ids);
+             // console.log($scope.country_ids);
            }
         }
         var token = document.getElementsByName('csrf-token')[0].content;
 
         $scope.submitForm = function () {
             $http({
-              url: '/api/v1/logistics.json',
+              url:$scope.languru+$scope.url,
               method: "GET",
               params: { "country_ids[]":$scope.country_ids,
                     "type_ids[]": $scope.type_ids}

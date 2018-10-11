@@ -85,10 +85,7 @@ function showSlides(n) {
 
 
 
-
-
-
-// Home: https://github.com/heysafronov/drag-and-drop
+// Home:
 
 "use strict";
 

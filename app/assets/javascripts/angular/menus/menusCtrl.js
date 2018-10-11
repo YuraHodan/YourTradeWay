@@ -16,7 +16,6 @@ ytwApp.controller('QuestionController',
         };
         $scope.node = document.getElementsByClassName("target")
         $scope.hoverIn = function (){
-
           // var z = document.getElementById('lol').style.display = 'block';
         };
         $scope.hoverOut = function (){
@@ -51,16 +50,6 @@ $scope.trackOrder2 = function(second_menu){
 
 }
 
-
-// $scope.group_ids= ''
-//
-// $scope.trackOrder3 = function(second_menu){
-//   //add album in the array
-//      $scope.group_ids = (second_menu.id)
-//      console.log($scope.group_ids);
-//      localStorage.setItem('storageArray2',JSON.stringify($scope.group_ids));
-//
-// }
 
     }
 )
