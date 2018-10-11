@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   mount Cms::Engine => '/', as: 'cms' # localized do
   mount Ckeditor::Engine => '/ckeditor'
   devise_for :users
-  # localized do
+  localized do
     mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
     root to: "pages#index"
     controller :pages do
@@ -20,7 +20,7 @@ Rails.application.routes.draw do
       get "market/:id", action: "market", as: "market"
       get "logistic/:id", action: "logistic", as: "logistic"
       get "tradergram", action: "tradergram"
-      get "news-page/:id", action: "one_news_page", as: "one-news"
+      get "news-page/:id", action: "one_news_page", as: "one-news_page"
       get "contacts", action: "contacts"
       get "faq", action: "faq"
       get "terms", action: "terms"
@@ -46,7 +46,7 @@ Rails.application.routes.draw do
         resources :logistics, only: [:index]
       end
     end
-  # end
+  end
 # end
 
   match "*url", to: "application#render_not_found", via: [:get, :post, :path, :put, :update, :delete]

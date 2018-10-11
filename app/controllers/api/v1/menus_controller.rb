@@ -1,4 +1,5 @@
 class Api::V1::MenusController < Api::V1::BaseController
+  before_action :set_locale
   def index
     # binding.pry
     @menus =  {

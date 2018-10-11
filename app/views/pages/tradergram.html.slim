@@ -17,7 +17,7 @@
                 .tab-data =@articles.first.date
                 .tex-abaut-tovar
                   =raw @articles.first.first_description
-                a.rede-more href=one_news_path(@articles.first)
+                a.rede-more href=one_news_page_path(@articles.first)
                   | Подробнее
       #distributors.tabcontent
         .center-tab-all
@@ -32,7 +32,7 @@
                 .tab-data =@articles.second.date
                 .tex-abaut-tovar
                   =raw @articles.second.first_description
-                a.rede-more href=one_news_path(@articles.second)
+                a.rede-more href=one_news_page_path(@articles.second)
                   | Подробнее
       #marker.tabcontent
         .center-tab-all
@@ -47,7 +47,7 @@
                 .tab-data =@articles.third.date
                 .tex-abaut-tovar
                   =raw @articles.third.first_description
-                a.rede-more href=one_news_path(@articles.third)
+                a.rede-more href=one_news_page_path(@articles.third)
                   | Подробнее
     .medium-12.large-3.columns
       .nues.tab
@@ -76,7 +76,7 @@
       .nues-alle
         - @articles.drop(3).each do |article|
           .medium-4.columns
-            a.ful-nues href=one_news_path(article)
+            a.ful-nues href=one_news_page_path(article)
               .img-nues
                 .img-bg style="background-image: url(#{article.first_image.url})"
               .text-nues

@@ -1,16 +1,15 @@
 class PagesController < ApplicationController
-  # before_action :initialize_locale_links, except: [:index, :locale]
-  # before_action :set_locale
+  before_action :initialize_locale_links, except: [:index, :locale]
 
-  # def locale
-  #   render json: {locale: I18n.locale}
-  # end
+  def locale
+    render json: {locale: I18n.locale}
+  end
 
   def index
     @new_manufactures = Manufacture.last(8)
     @last_news = Article.last(3)
     @main_page_slider = MainPageSlider.show
-    # initialize_locale_links("root")
+    initialize_locale_links("root")
     @main_page_info = MainPage.first_or_initialize
   end
 
@@ -114,17 +113,16 @@ class PagesController < ApplicationController
 
   private
 
-  # def set_locale
-  #   redirect_to root_path(locale: I18n.default_locale) if params[:locale].blank?
+  def set_locale
+    redirect_to root_path(locale: I18n.default_locale) if params[:locale].blank?
+    I18n.locale = params[:locale] if params[:locale].present?
+  end
 
-  #   I18n.locale = params[:locale] if params[:locale].present?
-  # end
-
-  # def initialize_locale_links(route_name = nil)
-  #   @locale_links = {}
-  #   route_name ||= action_name
-  #   I18n.available_locales.each do |locale|
-  #     @locale_links[locale.to_sym] = send("#{route_name}_#{locale}_path")
-  #   end
-  # end
+  def initialize_locale_links(route_name = nil)
+    @locale_links = {}
+    route_name ||= action_name
+    I18n.available_locales.each do |locale|
+      @locale_links[locale.to_sym] = send("#{route_name}_#{locale}_path")
+    end
+  end
 end
