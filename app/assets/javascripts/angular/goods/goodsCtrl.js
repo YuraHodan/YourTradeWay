@@ -8,6 +8,10 @@ ytwApp.controller('goodsControler',
       }, 7000);
 
 
+
+
+
+
       $scope.type_ids= window.localStorage.getItem("storageArray");
       $scope.group_ids= window.localStorage.getItem("storageArray2");
         $scope.test = function(){
@@ -105,6 +109,11 @@ ytwApp.controller('goodsControler',
             $scope.current_page=response.data.current_page;
             $scope.pages_count=response.data.pages_count;
             $scope.side_slider=response.data.side_slider;
+            var range = [];
+            for (var i = $scope.current_page; i <=$scope.pages_count; i++) {
+              range.push(i)
+            }
+            $scope.driverAges = range;
           },
           function(response){
           }
@@ -149,6 +158,11 @@ ytwApp.controller('goodsControler',
           $scope.current_page=response.data.current_page;
           $scope.pages_count=response.data.pages_count;
           $scope.side_slider=response.data.side_slider;
+          var range = [];
+          for (var i = $scope.current_page; i <=$scope.pages_count; i++) {
+            range.push(i)
+          }
+          $scope.driverAges = range;
         },
         function(response){
         }
@@ -192,6 +206,11 @@ ytwApp.controller('goodsControler',
                 $scope.current_page=response.data.current_page;
                 $scope.pages_count=response.data.pages_count;
                 $scope.side_slider=response.data.side_slider;
+                var range = [];
+                for (var i = $scope.current_page; i <=$scope.pages_count; i++) {
+                  range.push(i)
+                }
+                $scope.driverAges = range;
       },
       function(response){
       }
@@ -227,6 +246,11 @@ $http({
     $scope.current_page=response.data.current_page;
     $scope.pages_count=response.data.pages_count;
     $scope.side_slider=response.data.side_slider;
+    var range = [];
+    for (var i = $scope.current_page; i <=$scope.pages_count; i++) {
+      range.push(i)
+    }
+    $scope.driverAges = range;
   },
   function(response){
   }

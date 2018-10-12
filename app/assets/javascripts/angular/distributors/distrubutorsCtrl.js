@@ -97,6 +97,11 @@ ytwApp.controller('dustrubutorsControler',
                         $scope.current_page=response.data.current_page;
                         $scope.pages_count=response.data.pages_count;
                         $scope.side_slider=response.data.side_slider;
+                        var range = [];
+                        for (var i = $scope.current_page; i <=$scope.pages_count; i++) {
+                          range.push(i)
+                        }
+                        $scope.driverAges = range;
               },
               function(response){
               }
@@ -138,6 +143,11 @@ ytwApp.controller('dustrubutorsControler',
                       $scope.current_page=response.data.current_page;
                       $scope.pages_count=response.data.pages_count;
                       $scope.side_slider=response.data.side_slider;
+                      var range = [];
+                      for (var i = $scope.current_page; i <=$scope.pages_count; i++) {
+                        range.push(i)
+                      }
+                      $scope.driverAges = range;
             },
             function(response){
             }
@@ -180,6 +190,11 @@ ytwApp.controller('dustrubutorsControler',
                       $scope.current_page=response.data.current_page;
                       $scope.pages_count=response.data.pages_count;
                       $scope.side_slider=response.data.side_slider;
+                      var range = [];
+                      for (var i = $scope.current_page; i <=$scope.pages_count; i++) {
+                        range.push(i)
+                      }
+                      $scope.driverAges = range;
             },
             function(response){
             }

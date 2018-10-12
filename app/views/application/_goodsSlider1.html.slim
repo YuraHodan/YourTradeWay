@@ -10,4 +10,17 @@
   /   li
   /     .img-bg style="background-image: url(#{asset_path('photo/main/main-page-slider.jpg')})"
 
-  
+  / .container
+  /   ul#slides
+  /     li.slide.showing
+  /     li.slide
+  /     li.slide
+  /   .buttons
+  /     button#previous.controls sdgdfgdf
+  /     button#pause.controls dsgdfsg
+  /     button#next.controls  dsfsd
+  / .selector.smole-none
+  /   / = render "advertisingSlider"
+  /   .slideshow-container ng-repeat="side_slid in side_slider"
+      / .mySlides2.fade
+      /   .img-bg style="background-image: url('{{side_slid.image_url}}')"

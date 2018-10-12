@@ -57,6 +57,8 @@
 
 
 #     A N G U L A  R
+#= require angular/angular-animate
+
 #= require angular/app
 
 #= require angular/goods/goodsCtrl

@@ -6,7 +6,7 @@ width = window.innerWidth;
 
 
 
-
+//// top gods slidert
 //Colocamos los elementos del DOM para el slider en variables
 var sliderCont= document.getElementById("sliderBX");
 var sliderWrapper= document.getElementById("sliderBX-contenedor");
@@ -50,12 +50,8 @@ function sliderRetrocede(){
      contador--;
      }
 }
-// setTimeout(function(){showSlides(slideIndex++)}, 1000);
-// setInterval(function(){
-//   showSlides(slideIndex++);
-// }, 7000);
 
-
+///colms 3 slider
 var slideIndex = 1;
 showSlides(slideIndex);
 
@@ -221,3 +217,10 @@ var DragAndDrop = function () {
 var element = document.querySelector("#drag-and-drop");
 var dragAndDrop = new DragAndDrop(element);
 dragAndDrop.run();
+
+
+
+
+
+
+///////////////
