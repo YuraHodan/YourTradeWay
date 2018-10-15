@@ -4,12 +4,17 @@ registrationCtrl.$inject = ['$http', '$scope'];
 ytwApp.controller('registrationCtrl', registrationCtrl);
 
 //////////////////////////////////
-
 /////////////////////////////////
 
 
 function registrationCtrl($http, $scope) {
-var token = document.getElementsByName('csrf-token')[0].content;
+
+
+  $http({method: 'GET', url: '/api/v1/menus.json'}).
+      then(function success(response) {
+          $scope.questionfactories=response.data.factories;
+  });
+
 
     // $scope.submitForm = function () {
     //     var url = 'message';
@@ -201,31 +206,6 @@ ytwApp.directive("imgUpload",function($http,$compile){
 					scope.upload=function(obj){
 						$http({method:scope.method,url:scope.url,data: obj.data,
 							headers: {'Content-Type': undefined},transformRequest: angular.identity
-              // $scope.submitForm = function () {
-              //     var url = 'message';
-              //     var data = {
-              //         info: $scope.z
-              //     };
-              //     var config = {
-              //         headers : {
-              //             'Content-Type': 'application/json',
-              //             'X-CSRF-Token': token
-              //         }
-              //     };
-              //
-              //     $http.post(url, data, config)
-              //         .then(
-              //             function(response){
-              //                 // callback
-              //                 $scope.z = data.z;
-              //                 alert("gooooo.");
-              //             },
-              //             function(response){
-              //                 // failure callback
-              //                 alert("єбать ти лох");
-              //             }
-              //         );
-              // };
 						}).success(function(data){
 
 						});

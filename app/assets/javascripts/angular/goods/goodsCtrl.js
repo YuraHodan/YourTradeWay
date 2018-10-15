@@ -2,15 +2,16 @@
 ytwApp.controller('goodsControler',
     function QuestionController($scope, $http){
 
-      setTimeout(function(){showSlides(slideIndex++)}, 1000);
-      setInterval(function(){
-        showSlides(slideIndex++);
-      }, 7000);
+      ///gods slider 1
+      var slides2 = document.querySelectorAll('#slides2 .slide2');
+      var currentSlide2 = 0;
+      var slideInterval2 = setInterval(nextSlide2,7000);
 
-
-
-
-
+      function nextSlide2(){
+      	slides2[currentSlide2].className = 'slide2';
+      	currentSlide2 = (currentSlide2+1)%slides.length;
+      	slides2[currentSlide2].className = 'slide2 showing';
+      }
 
       $scope.type_ids= window.localStorage.getItem("storageArray");
       $scope.group_ids= window.localStorage.getItem("storageArray2");

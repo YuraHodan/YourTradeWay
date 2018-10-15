@@ -1,11 +1,9 @@
 ytwApp.controller('dustrubutorsControler',
     function QuestionController($scope, $http, $rootScope, $window){
-
-      setTimeout(function(){showSlides(slideIndex++)}, 1000);
-      setInterval(function(){
-        showSlides(slideIndex++);
-      }, 7000);
-
+      // setTimeout(function(){showSlides(slideIndex++)}, 1000);
+      // setInterval(function(){
+      //   showSlides(slideIndex++);
+      // }, 7000);
       $scope.type_ids= window.localStorage.getItem("storageArray");
       $scope.group_ids= window.localStorage.getItem("storageArray2");
       $scope.test = function(){

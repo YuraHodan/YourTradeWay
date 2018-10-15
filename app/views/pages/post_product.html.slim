@@ -73,10 +73,10 @@
               .label
                 = t("post_product.type_of_production")
               / .span  *
-            select#nazn.selectid.form-control name="Type_production" required="" ng-model="user.Type_production" type="text"
-              option питания
-              option косметика
-              option для дома
+            select#nazn.selectid.form-control name="Type_production" required="" ng-model="user.Type_production" type="text" ng-options="item.name for item in questionfactories"
+              / option питания
+              / option косметика
+              / option для дома
 
 
           /logotype

@@ -110,10 +110,21 @@
 
             /// smole select
         .selector.smole-none
+          ul#slides
+            li.slide.showing
+             .img-bg style="background-image: url('{{side_slider[0].image_url}}')"
+            li.slide
+              .img-bg style="background-image: url('{{side_slider[1].image_url}}')"
+            li.slide
+              .img-bg style="background-image: url('{{side_slider[2].image_url}}')"
+            li.slide
+              .img-bg style="background-image: url('{{side_slider[3].image_url}}')"
+            li.slide
+              .img-bg style="background-image: url('{{side_slider[4].image_url}}')"
           / = render "advertisingSlider"
-          .slideshow-container ng-repeat="side_slid in side_slider"
-            .mySlides.fade
-              .img-bg style="background-image: url('{{side_slid.image_url}}')"
+          / .slideshow-container ng-repeat="side_slid in side_slider"
+          /   .mySlides.fade
+          /     .img-bg style="background-image: url('{{side_slid.image_url}}')"
       .medium-9.columns.smole-none
         = render "goodsSlider1"
       .medium-9.columns.large-9

@@ -88,10 +88,17 @@
                       = t("filter.clear_everything")
         /// smole select
         .selector
-          / = render "advertisingSlider"
-          .slideshow-container ng-repeat="side_slid in side_slider"
-            .mySlides.fade
-              .img-bg style="background-image: url('{{side_slid.image_url}}')"
+          ul#slides
+            li.slide.showing
+             .img-bg style="background-image: url('{{side_slider[0].image_url}}')"
+            li.slide
+              .img-bg style="background-image: url('{{side_slider[1].image_url}}')"
+            li.slide
+              .img-bg style="background-image: url('{{side_slider[2].image_url}}')"
+            li.slide
+              .img-bg style="background-image: url('{{side_slider[3].image_url}}')"
+            li.slide
+              .img-bg style="background-image: url('{{side_slider[4].image_url}}')"
     .medium-9.columns
       .topgoods ng-if="top_markets != ''"
         .topgoods-tex.color-line.gray-block

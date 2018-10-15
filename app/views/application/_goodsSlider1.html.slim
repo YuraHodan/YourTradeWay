@@ -9,18 +9,16 @@
   /     .img-bg style="background-image: url(#{asset_path('photo/main/main-page-slider.jpg')})"
   /   li
   /     .img-bg style="background-image: url(#{asset_path('photo/main/main-page-slider.jpg')})"
-
-  / .container
-  /   ul#slides
-  /     li.slide.showing
-  /     li.slide
-  /     li.slide
-  /   .buttons
-  /     button#previous.controls sdgdfgdf
-  /     button#pause.controls dsgdfsg
-  /     button#next.controls  dsfsd
-  / .selector.smole-none
-  /   / = render "advertisingSlider"
-  /   .slideshow-container ng-repeat="side_slid in side_slider"
-      / .mySlides2.fade
-      /   .img-bg style="background-image: url('{{side_slid.image_url}}')"
+.wrapper-slider
+  .container
+    ul#slides2
+      li.slide2.showing
+       .img-bg style="background-image: url('{{side_slider[0].image_url}}')"
+      li.slide2
+        .img-bg style="background-image: url('{{side_slider[1].image_url}}')"
+      li.slide2
+        .img-bg style="background-image: url('{{side_slider[2].image_url}}')"
+      li.slide2
+        .img-bg style="background-image: url('{{side_slider[3].image_url}}')"
+      li.slide2
+        .img-bg style="background-image: url('{{side_slider[4].image_url}}')"

@@ -1,12 +1,6 @@
 
 ytwApp.controller('marcetControler',
     function QuestionController($scope, $http){
-
-      setTimeout(function(){showSlides(slideIndex++)}, 1000);
-      setInterval(function(){
-        showSlides(slideIndex++);
-      }, 7000);
-
       $scope.type_ids= window.localStorage.getItem("storageArray");
       $scope.test = function(){
         if ($scope.type_ids.value.length !== 0 ) {

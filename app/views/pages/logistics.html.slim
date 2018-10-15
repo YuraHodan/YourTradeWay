@@ -36,7 +36,7 @@
                     | {{logistic.name}}
                     input type="checkbox" ng-model="logistic.selected" ng-change='trackOrder2(logistic)'  value="{{logistic.id}}" ng-click="submitForm2().submit()" ng-checked="logistic.id == type_ids2"
                     span.checkmark
-                    
+
           .remove-all
             .x-component = inline_svg "photo/main/svg/filter_clear.svg"
             .ramove-text
@@ -85,9 +85,20 @@
                     = t("filter.clear_everything")
         /// smole select
         .selector
-          .slideshow-container ng-repeat="side_slid in side_slider"
-            .mySlides.fade
-              .img-bg style="background-image: url('{{side_slid.image_url}}')"
+          ul#slides
+            li.slide.showing
+             .img-bg style="background-image: url('{{side_slider[0].image_url}}')"
+            li.slide
+              .img-bg style="background-image: url('{{side_slider[1].image_url}}')"
+            li.slide
+              .img-bg style="background-image: url('{{side_slider[2].image_url}}')"
+            li.slide
+              .img-bg style="background-image: url('{{side_slider[3].image_url}}')"
+            li.slide
+              .img-bg style="background-image: url('{{side_slider[4].image_url}}')"
+        /   .slideshow-container ng-repeat="side_slid in side_slider"
+        /     .mySlides.fade
+        /       .img-bg style="background-image: url('{{side_slid.image_url}}')"
         /     / a.prev onclick="plusSlides(-1)"  ❮
         /     / a.next onclick="plusSlides(1)"  ❯
 
