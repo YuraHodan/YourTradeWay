@@ -35,6 +35,7 @@ en:
     companies_on_site: "companies on the site"
     goods_in_catalog : "goods in the catalog"
     team_goals: "our team goals"
+    go_back: "go back"
   menus:
     top_products: "Top goods"
     products: "Goods"
