@@ -1,9 +1,6 @@
 class PagesController < ApplicationController
   before_action :initialize_locale_links, except: [:index, :locale]
-
-  def locale
-    render json: {locale: I18n.locale}
-  end
+  before_action :set_locale_for_api
 
   def index
     @new_manufactures = Manufacture.last(8)
@@ -69,6 +66,7 @@ class PagesController < ApplicationController
   end
 
   def creating_unit
+    form = Form.new
      render json: {}
   end
 
@@ -124,5 +122,9 @@ class PagesController < ApplicationController
     I18n.available_locales.each do |locale|
       @locale_links[locale.to_sym] = send("#{route_name}_#{locale}_path")
     end
+  end
+
+  def set_locale_for_api
+    $zalupa = params[:locale]
   end
 end

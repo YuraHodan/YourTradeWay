@@ -4,6 +4,7 @@ class Image < ActiveRecord::Base
   belongs_to :distributor, class_name: Distributor
   belongs_to :market, class_name: Market
   belongs_to :logistic, class_name: Logistic
-
-    mount_uploader :image, ImageUploader
+  belongs_to :registration, class_name: RegistrationForm
+  mount_uploader :image, ImageUploader
 end
+

@@ -1,5 +1,6 @@
 class Api::V1::BaseController < ApplicationController
   respond_to :json
+  before_action :set_locale_json
 
   private
 
@@ -36,5 +37,9 @@ class Api::V1::BaseController < ApplicationController
     filtered_slides << slides.where(second_menu_id: params[:group_ids]) if params[:group_ids].present?
     filtered_slides << slides.where(third_menu_id: params[:category_ids]) if params[:category_ids].present?
     map_slider(filtered_slides.flatten)
+  end
+
+  def set_locale_json
+    I18n.locale = $zalupa
   end
 end

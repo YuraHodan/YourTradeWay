@@ -45,7 +45,7 @@ class Api::V1::MarketsController < Api::V1::BaseController
     markets.map{ |market| {
         id:         market.id,
         title:      market.title,
-        country:    market.country.title,
+        country:    market.country&.title,
         image_url:  market.logo_image.url
         }
       }

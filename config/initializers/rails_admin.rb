@@ -35,9 +35,33 @@ RailsAdmin.config do |config|
     edit
     delete
     show_in_app
-  config.included_models = [MainPage,MainPage::Translation,AboutUs,AboutUs::Translation,Question,PremiumManufacture,PremiumMarket,PremiumLogistic,PremiumDistributor,MainPageSlider,Email,SponsorSideSlider,SponsorSlider,Seo,Seo::Translation,MainPage,MainPage::Translation,Logistic,Logistic::Translation,Market,Market::Translation,Distributor,Distributor::Translation,Manufacture::Translation,Product::Translation,Product,Manufacture,Contact,Contact::Translation,Rule,Rule::Translation,Faq,Faq::Translation,Article,Article::Translation,ThirdMenu::Translation,SecondMenu::Translation,MainMenu::Translation,MainMenu,SecondMenu,ThirdMenu,User,Sociallink,Contact,Contact::Translation,Rule,Rule::Translation]
+  config.included_models = [RegistrationForm,MainPage,MainPage::Translation,AboutUs,AboutUs::Translation,Question,PremiumManufacture,PremiumMarket,PremiumLogistic,PremiumDistributor,MainPageSlider,Email,SponsorSideSlider,SponsorSlider,Seo,Seo::Translation,MainPage,MainPage::Translation,Logistic,Logistic::Translation,Market,Market::Translation,Distributor,Distributor::Translation,Manufacture::Translation,Product::Translation,Product,Manufacture,Contact,Contact::Translation,Rule,Rule::Translation,Faq,Faq::Translation,Article,Article::Translation,ThirdMenu::Translation,SecondMenu::Translation,MainMenu::Translation,MainMenu,SecondMenu,ThirdMenu,User,Sociallink,Contact,Contact::Translation,Rule,Rule::Translation]
   config.navigation_static_links = { locales: "/file_editor/locales"}
   RailsAdmin.config {|c| c.label_methods << :title}
+
+  config.model RegistrationForm do
+    navigation_label "Contact Forms"
+    label "Sign UP"
+    fields :type_of_activity,
+       :type_of_tariff,
+       :company_name,
+       :type_of_products,
+       :logo_image,
+   :description,
+       :video_url,
+       :catalog_file,
+       :price_list_file,
+       :certificate_file,
+       :country,
+       :city,
+       :street,
+       :phone_number,
+       :web_site_url,
+       :person_full_name,
+       :person_email,
+       :person_phone_number,
+       :person_fax_number, :images
+  end
 
   config.model MainPage do
     navigation_label "Static pages"
