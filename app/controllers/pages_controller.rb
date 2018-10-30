@@ -66,7 +66,28 @@ class PagesController < ApplicationController
   end
 
   def creating_unit
-    form = Form.new
+    unit = RegistrationForm.new
+    unit.type_of_activity = params[:category]
+    unit.type_of_tariff = params[:selected_fare]
+    unit.company_name =  params[:name]
+    unit.logo_image = params[:logo]&.tempfile
+    unit.description = params[:comment]
+    unit.video_url =  params[:link_video]
+    unit.catalog_file = params[:catalog]&.tempfile
+    unit.certificate_file = params[:certificate]&.tempfile
+    unit.country = params[:country]
+    unit.city = params[:city]
+    unit.street = params[:street]
+    unit.phone_number = params[:phone]
+    unit.web_site_url = params[:site]
+    unit.person_full_name = params[:contact_person]
+    unit.person_email = params[:email]
+    unit.person_phone_number = params[:contact_person_phone]
+    unit.person_fax_number = params[:fax]
+    unit.save
+    params[:photo]&.each do |photo|
+      Image.create(image: photo&.tempfile, registration_form_id: unit.id)
+    end
      render json: {}
   end
 
