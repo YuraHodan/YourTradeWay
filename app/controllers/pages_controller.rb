@@ -66,14 +66,17 @@ class PagesController < ApplicationController
   end
 
   def creating_unit
+    binding.pry
     unit = RegistrationForm.new
     unit.type_of_activity = params[:category]
     unit.type_of_tariff = params[:selected_fare]
     unit.company_name =  params[:name]
+    unit.type_of_products = params[:type_production]
     unit.logo_image = params[:logo]&.tempfile
     unit.description = params[:comment]
     unit.video_url =  params[:link_video]
     unit.catalog_file = params[:catalog]&.tempfile
+    unit.price_list_file = params[:price_list]&.tempfile
     unit.certificate_file = params[:certificate]&.tempfile
     unit.country = params[:country]
     unit.city = params[:city]

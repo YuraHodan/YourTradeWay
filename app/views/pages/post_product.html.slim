@@ -42,7 +42,7 @@
       #goods.tabcontent
         form.ajax-form  action="/creating_unit" method="post" enctype="multipart/form-data" name="usubmitForm" ng-submit="submitForm()" novalidate=""
           category
-          input.d-none type="text" value='products' name="category"
+          input.d-none type="text" value='manufacturers' name="category"
           / tariff
           .form-group ng-class=("{ 'has-error' : usubmitForm.tariff.$invalid && !usubmitForm.tariff.$pristine }")
             .lable-one
@@ -73,11 +73,9 @@
               .label
                 = t("post_product.type_of_production")
               / .span  *
-            select#nazn.selectid.form-control name="Type_production" required="" ng-model="user.Type_production" type="text" ng-options="item.name for item in questionfactories"
-              / option питания
-              / option косметика
-              / option для дома
-
+            select#nazn.selectid.form-control name="type_production" required="" ng-model="user.type_production" type="text"
+              option ng-repeat="factorie in questionfactories" value="{{factorie.name}}"
+                | {{factorie.name}}
 
           /logotype
           .form-group ng-class=("{ 'has-error' : usubmitForm.tariff.$invalid && !usubmitForm.tariff.$pristine }")
@@ -102,8 +100,6 @@
             .lable-one
               .label
                 = t("post_product.photo")
-            / div.target
-            /   div  img-upload=""
 
             .wrap-custom-file
               .image1
@@ -253,7 +249,7 @@
               .label
                 = t("post_product.tariff_plan")
               / .span  *
-            select#nazn.selectid.form-control name="Type_production" required=""
+            select#nazn.selectid.form-control name="selected_fare" required=""
               //ng-model="user.tariff"
               option#one1.sel_dok value="free"  free
               option#two1.sel_dok value="basic"  basic
