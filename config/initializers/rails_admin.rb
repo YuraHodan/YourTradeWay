@@ -428,7 +428,9 @@ RailsAdmin.config do |config|
     navigation_label "Menu"
     label "Category"
     field :translations, :globalize_tabs
-    fields :second_menu
+    field :second_menu do
+      associated_collection_cache_all true	    
+    end	    
     object_label_method :custom_name
 
   end
